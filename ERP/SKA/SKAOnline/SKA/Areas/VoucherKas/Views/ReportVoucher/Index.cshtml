@@ -1,0 +1,47 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Voucher - Cetak Voucher";
+    Layout = "~/Areas/VoucherKas/Views/Shared/_VoucherLayout.cshtml";
+
+    string thresholdValue = string.Empty;
+
+    if (Session["ThresholdValue"] != null)
+    {
+        thresholdValue = Session["ThresholdValue"].ToString();
+    }    
+}
+
+<div class="box-head">
+<h2>Cetak Voucher</h2>
+</div>  
+
+<div class ="box-content">
+@(Html.Telerik().TreeView()
+.Name("TreeViewReport")
+.Items(item =>
+    {
+        if (ViewBag.BranchCode == "00")
+        {
+            item.Add()
+                .Text("Cetak Voucher > " + thresholdValue).Action("ShowReport", "ReportVoucher", new { reportName = "VoucherUp" });
+            item.Add()
+                .Text("Cetak Voucher < " + thresholdValue).Action("ShowReport", "ReportVoucher", new { reportName = "VoucherDownCenter" });
+            item.Add()
+                .Text("Cetak Voucher yang Belum Diperiksa").Action("ShowReport", "ReportVoucher", new { reportName = "VoucherDownCenter(Uncheck)" });
+            item.Add()
+                .Text("Cetak Voucher yang Telah Diperiksa Per Nomor Voucher").Action("ShowReport", "ReportVoucher", new { reportName = "VoucherDownCenter2" });
+            item.Add()
+                .Text("Cetak Voucher > " + thresholdValue + " yang Belum Diperiksa").Action("ShowReport", "ReportVoucher", new { reportName = "VoucherUp(Uncheck)" });
+        }
+        else { 
+            item.Add()
+                .Text("Cetak Voucher < " + thresholdValue).Action("ShowReport", "ReportVoucher", new { reportName = "VoucherDownBranch" });
+            item.Add()
+                .Text("Cetak Voucher yang Belum Diperiksa").Action("ShowReport", "ReportVoucher", new { reportName = "VoucherDownBranch(Uncheck)" });
+        }
+    })
+    )
+
+</div>
+
+

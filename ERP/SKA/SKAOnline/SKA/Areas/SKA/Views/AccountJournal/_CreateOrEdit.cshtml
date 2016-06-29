@@ -1,0 +1,281 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.AccountJournalViewModel
+@using Telerik.Web.Mvc.UI
+
+<script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div class ="box-content">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    
+    <table>
+            <tr>
+                <td>Nomor DRD</td>
+                <td>:</td>
+                <td>
+                    @Html.TextBoxFor(model => model.DRDNumber, new { maxlength ="20" , style ="width:100px ", onBlur = "javascript:onChanges();"})
+                    @Html.ValidationMessageFor(model => model.DRDNumber)
+                    <img src = "@Url.Content("~/Content/images/check.png")" id = "valid" style ="display:none" alt = "home"/>
+                    <img src = "@Url.Content("~/Content/images/cross.png")" id = "invalid" style = "display:none" alt = "home"/>
+                    <label id = "message"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>Tanggal</td>
+                <td>:</td>
+                <td>
+                  @(Html.Telerik().DatePickerFor(model => model.DocumentDate).Name("DocumentDate").Format("dd-MM-yyyy").HtmlAttributes(new { style = "width:140px" }))
+                  @Html.ValidationMessageFor(model => model.DocumentDate )
+                </td>
+            </tr>
+            <tr>
+                <td>Keterangan</td>
+                <td>:</td>
+                <td>
+                   @Html.TextAreaFor(model => model.Description, new { maxlength ="255", style ="width:250px"})
+                   @Html.ValidationMessageFor(model => model.Description)
+                </td>
+            </tr>
+            <tr>
+                <td>Rekening Air</td>
+                <td>:</td>
+                <td>
+                    @Html.EditorFor(model => model.WaterBill, new { maxlength = "10", style = "width:70px" })
+                    @Html.ValidationMessageFor(model => model.WaterBill)
+                </td>
+            </tr>
+            <tr>
+                <td>Rekening Non Air</td>
+                <td>:</td>
+                <td>
+                    @Html.EditorFor(model => model.NonWaterBill, new { maxlength = "10", style = "width:70px" })
+                    @Html.ValidationMessageFor(model => model.NonWaterBill)
+                </td>
+            </tr>
+            </table>
+    
+  @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.AccountJournalDetailViewModel>()
+        .Name("Grid")
+
+        .DataKeys(keys =>
+        {
+            keys.Add(p => p.Id);
+        })
+        .ToolBar(commands => commands.Insert().ButtonType(GridButtonType.ImageAndText).ImageHtmlAttributes(new { style = "margin-left:0" }))
+        .DataBinding(dataBinding =>
+        {
+            dataBinding.Ajax()
+                .Select("_SelectDetail", "AccountJournal")
+                .Insert("_InsertDetail", "AccountJournal")
+                .Update("_UpdateDetail", "AccountJournal")
+                .Delete("_DeleteDetail", "AccountJournal");
+        })
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.AccountCode).Title("Perkiraan").Width(300);
+            columns.Bound(p => p.Debet).Format("{0:N}").Width(120);
+            columns.Bound(p => p.Kredit).Format("{0:N}").Width(120);
+            //columns.Bound(p => p.Id).Hidden();
+            columns.Command(commands =>
+            {
+                commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                commands.Delete().ButtonType(GridButtonType.ImageAndText);
+            }).Width(140).Title("");
+        })
+        .ClientEvents(events =>
+            {
+                events.OnDataBound("Grid_OnDataBound");
+                events.OnEdit("onEdit");
+                events.OnError("onError");
+            }
+        )
+        .Sortable()
+        .Filterable()
+        .Scrollable()
+      )
+    <br />
+     <table>
+        <tr>
+            <td>Total Debet</td>
+            <td>@Html.Telerik().CurrencyTextBoxFor(model => model.AmountDebet).Name("AmountDebet").EmptyMessage("").CurrencySymbol("Rp. ")</td>
+            <td>Total Kredit</td>
+            <td>@Html.Telerik().CurrencyTextBoxFor(model => model.AmountKredit).Name("AmountKredit").EmptyMessage("").CurrencySymbol("Rp. ")</td>
+        </tr>
+        @*<tr>
+            <td>Jumlah yang Dibayar</td>
+            <td></td>
+            <td>@Html.Telerik().CurrencyTextBox().Name("TotalTextBox").EmptyMessage("").CurrencySymbol("Rp. ")</td>
+        </tr>*@
+    </table>
+    <br />
+    <input type ="submit" style ="width:60px" value ="Simpan" class ="t-button" />
+    <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "AccountJournal", null)">Batal</a>
+}
+</div>
+@Html.HiddenFor(model => model.Id)
+@Html.Hidden("urlCheckKreditDebet",Url.Action("CheckDebetKredit","AccountJournal"))
+@Html.Hidden("urlCheckNumber", Url.Action("CheckNumber", "AccountJournal"))
+<script type="text/javascript">
+    function onChanges(e)
+    {
+        var urlNumber = $("#urlCheckNumber").val();
+        var drdnumber = $("#DRDNumber").val();
+        var id = $("#Id").val();
+        $.post(urlNumber,
+                    { DRDNumber: drdnumber,
+                    Id : id },
+                function (data) {
+                    if (data != "") {
+                        $("#valid").hide();
+                        $("#invalid").show();
+                        $("#message").html("Nomor sudah ada, silahkan masukkan nomor yang lain.");
+                    }
+                    else {
+                        $("#valid").show();
+                        $("#invalid").hide();
+                        $("#message").html("Nomor diterima.");
+                    }
+                });
+    }
+    function onError(e) {
+        if (e.textStatus == "modelstateerror") {
+            alert(e.modelState.AccountCode.errors[0]);
+        }
+    }
+    
+    function onEdit(e) {
+        $("#AccountCode").select();
+        $("#Debet").hide();
+        $("#Kredit").hide();
+    }
+
+    function onSelectItem(e) {
+        if (e.keyCode == 9 || e.keyCode == 13) {
+            var url = $("#urlCheckKreditDebet").val();
+            var accountCode = $("#AccountCode").val();
+            //alert(accountCode);
+            $.post(url,
+                    { AccountCode: accountCode },
+                    function (data) {
+                        if (data == "D") {
+                            $("#Debet").show();
+                            $("#Kredit").hide();
+                            $("#Debet").focus();
+                            //get current balance
+                            var balance = Math.abs(CountBalance(data));
+                            $("#Debet").val(balance);
+                            $("#Debet").select();
+                            //set new balance status    
+                            $("#StatusBalance").val("D");
+                        } else {
+                            $("#Kredit").show();
+                            $("#Debet").hide();
+                            $("#Kredit").focus();
+                            //get current balance
+                            var balance = Math.abs(CountBalance(data));
+                            $("#Kredit").val(balance);
+                            $("#Kredit").select();
+                            //set new balance status
+                            $("#StatusBalance").val("K");
+                        }
+                    });
+
+        }
+    }
+
+
+    //function for count balance from debet and credit.
+    function CountBalance(status) {
+        var balance = 0;
+        var totalDebet = 0;
+        var totalKredit = 0;
+
+        $.each($('#Grid').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden column.
+                var debet = $($(row).find('td')[1]).text();
+                debet = debet.replace(/,/gi, "");
+                var kredit = $($(row).find('td')[2]).text();
+                kredit = kredit.replace(/,/gi, "");
+
+                // note: make sure to convert the amount to decimal/float data type.
+                if (debet) {
+                    totalDebet = totalDebet + parseFloat(debet);
+                }
+                if (kredit) {
+                    totalKredit = totalKredit + parseFloat(kredit);
+                }
+
+                balance = totalDebet - totalKredit;
+
+
+
+            }
+        });
+
+        var oldstatus = $("#StatusBalance").val();
+
+        //clear balance if new status is larger than 0 and the balance will be entry on this event
+        if ((status == "D") && (status == oldstatus)) {
+            if (balance > 0) {
+                balance = 0;
+            }
+        }
+        else if ((status == "D") && (status != oldstatus)) {
+            if (balance > 0) {
+                balance = 0;
+            }
+        }
+        else if ((status == "K") && (status == oldstatus)) {
+            if (balance < 0) {
+                balance = 0;
+            }
+        }
+        else if ((status == "K") && (status != oldstatus)) {
+            if (balance < 0) {
+                balance = 0;
+            }
+        }
+
+        return balance;
+    }
+
+
+    function Grid_OnDataBound(e) {
+        total = 0;
+        totalDebet = 0;
+        totalKredit = 0;
+
+        $.each($('#Grid').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden column.
+                var debet = $($(row).find('td')[1]).text();
+                debet = debet.replace(/,/gi, "");
+                var kredit = $($(row).find('td')[2]).text();
+                kredit = kredit.replace(/,/gi, "");
+
+
+                // note: make sure to convert the amount to decimal/float data type.
+                if (debet) {
+                    totalDebet = totalDebet + parseFloat(debet);
+                }
+                if (kredit) {
+                    totalKredit = totalKredit + parseFloat(kredit);
+                }
+                total = totalDebet - totalKredit
+
+            }
+        });
+
+        var input = $("#AmountDebet").data("tTextBox");
+        input.value(totalDebet);
+        var input2 = $("#AmountKredit").data("tTextBox");
+        input2.value(totalKredit);
+    }
+</script>
+
+

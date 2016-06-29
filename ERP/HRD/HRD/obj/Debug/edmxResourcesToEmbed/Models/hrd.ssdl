@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRDModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="HRDModelStoreContainer">
+    <EntitySet Name="ManagementLevel" EntityType="HRDModel.Store.ManagementLevel" store:Type="Tables" Schema="HRD" />
+    <EntitySet Name="Master_Personal" EntityType="HRDModel.Store.Master_Personal" store:Type="Tables" Schema="HRD" />
+    <EntitySet Name="Occupation" EntityType="HRDModel.Store.Occupation" store:Type="Tables" Schema="HRD" />
+    <EntitySet Name="vOffice" EntityType="HRDModel.Store.vOffice" store:Type="Views" store:Schema="dbo" store:Name="vOffice">
+      <DefiningQuery>SELECT 
+      [vOffice].[Id] AS [Id], 
+      [vOffice].[Code] AS [Code], 
+      [vOffice].[Name] AS [Name], 
+      [vOffice].[Abbreviation] AS [Abbreviation], 
+      [vOffice].[Parent_ID] AS [Parent_ID], 
+      [vOffice].[Ordinal] AS [Ordinal]
+      FROM [dbo].[vOffice] AS [vOffice]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Master_Personal_Occupation" Association="HRDModel.Store.FK_Master_Personal_Occupation">
+      <End Role="Occupation" EntitySet="Occupation" />
+      <End Role="Master_Personal" EntitySet="Master_Personal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Occupation_ManagementLevel" Association="HRDModel.Store.FK_Occupation_ManagementLevel">
+      <End Role="ManagementLevel" EntitySet="ManagementLevel" />
+      <End Role="Occupation" EntitySet="Occupation" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ManagementLevel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="LevelName" Type="varchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Master_Personal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="Alias" Type="nvarchar" MaxLength="50" />
+    <Property Name="NIK" Type="nvarchar" MaxLength="30" />
+    <Property Name="Title_Front" Type="nvarchar" MaxLength="10" />
+    <Property Name="Title_Back" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="PlaceOfBirth" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Religion" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="HomeAddress_Street" Type="nvarchar" MaxLength="255" />
+    <Property Name="HomeAddress_City" Type="nvarchar" MaxLength="50" />
+    <Property Name="HomeAddress_PostCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="HomePhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="MobilePhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaritalStatus" Type="nvarchar" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Photo" Type="image" />
+    <Property Name="LastUpdate" Type="datetime" />
+    <Property Name="WorkStartDate" Type="datetime" />
+    <Property Name="BloodType" Type="varchar" MaxLength="2" />
+    <Property Name="EmergencyCallNumber" Type="varchar" MaxLength="20" />
+    <Property Name="OccupationID" Type="int" Nullable="false" />
+    <Property Name="OfficeId" Type="int" Nullable="false" />
+    <Property Name="WorkerStatus" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Occupation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="ManagementLevelId" Type="int" Nullable="false" />
+    <Property Name="Ordinat" Type="int" Nullable="false" />
+    <Property Name="ReportTo" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'MDK.dbo.vOffice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vOffice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="varchar" MaxLength="30" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Abbreviation" Type="varchar" MaxLength="30" />
+    <Property Name="Parent_ID" Type="int" Nullable="false" />
+    <Property Name="Ordinal" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Master_Personal_Occupation">
+    <End Role="Occupation" Type="HRDModel.Store.Occupation" Multiplicity="1" />
+    <End Role="Master_Personal" Type="HRDModel.Store.Master_Personal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Occupation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Master_Personal">
+        <PropertyRef Name="OccupationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Occupation_ManagementLevel">
+    <End Role="ManagementLevel" Type="HRDModel.Store.ManagementLevel" Multiplicity="1" />
+    <End Role="Occupation" Type="HRDModel.Store.Occupation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementLevel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Occupation">
+        <PropertyRef Name="ManagementLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ReportEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="HRD">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+</Schema>

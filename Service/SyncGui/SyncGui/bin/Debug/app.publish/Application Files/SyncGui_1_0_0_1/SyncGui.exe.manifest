@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="SyncGui.exe" version="1.0.0.1" publicKeyToken="1d45a84488c25d7d" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SyncGui" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="SyncGui.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SyncGui.exe" size="29184">
+      <assemblyIdentity name="SyncGui" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>xehVD9PJHshRIDLprZj+cN+GtCU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Halotec-48x48_Windows_48x48.ico" size="2374">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>JM8utlU39JRVTUrNQvQpF4jcbi8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Adlin-PC\Adlin" issuerKeyHash="22131b8d311c127ecd42ce5f30ad20a7866e2d03" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>tJZLCiiOULEfRO8KuzvkLelo27A=</DigestValue></Reference></SignedInfo><SignatureValue>Ku04qETB/6ms8NvAr9S9dODM1yPqQXVvQYS+7+EiPvu2b26pBc2HK1dxzZplQQ3AvdAxH+XWXc2EGJpbff+M4uf7sKXKsQf+qI68rHkGeGeLMUR+YiqnD5bWyzdFQEErLWc2lgJDP0eIAzypFQUcLMkTGwXnzQDDUr8nNZuewHo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>ygnrUaJwF49/DvEaUog1audPY3jCbnDogPxvuaQEXVjxPoGhMMC4J5/ugwNcimE8LlLceteO40rxXUnhGgKHApE/YIRcgt7lWl4wM5T9HUBwzllgKB7h1Ta8m/6jcVGUxRD2Zajo7qsEInoCTFfKR56Jh7ZUAVD15molgh8qI4k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="b0db68e92de43bbb0aef441fb1508e280a4b96b4" Description="" Url=""><as:assemblyIdentity name="SyncGui.exe" version="1.0.0.1" publicKeyToken="1d45a84488c25d7d" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Adlin-PC\Adlin</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>kD7iT1HcONWCuL8s9UxoAbW4yxs=</DigestValue></Reference></SignedInfo><SignatureValue>BGvOhZEF7n8jNS75MWTZm3EpDVna16itSehMNnmy1FWIAo1S6IBKRvYfYsljaveMbo/qnDqsbbhCj7+NopcxFouSUAJy0C0F3hcFxxhmjCn0oMqk19jKscuebFQ62IOnnIOwgUqPx6k+E+MhvSArT09Rxtt1QrClZCcabzLsly8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>ygnrUaJwF49/DvEaUog1audPY3jCbnDogPxvuaQEXVjxPoGhMMC4J5/ugwNcimE8LlLceteO40rxXUnhGgKHApE/YIRcgt7lWl4wM5T9HUBwzllgKB7h1Ta8m/6jcVGUxRD2Zajo7qsEInoCTFfKR56Jh7ZUAVD15molgh8qI4k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQKZrd7f5Lb6lAlE+UNDLTMjANBgkqhkiG9w0BAQUFADAnMSUwIwYDVQQDHhwAQQBkAGwAaQBuAC0AUABDAFwAQQBkAGwAaQBuMB4XDTE1MDQyMDAzMjQyNVoXDTE2MDQxOTA5MjQyNVowJzElMCMGA1UEAx4cAEEAZABsAGkAbgAtAFAAQwBcAEEAZABsAGkAbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAygnrUaJwF49/DvEaUog1audPY3jCbnDogPxvuaQEXVjxPoGhMMC4J5/ugwNcimE8LlLceteO40rxXUnhGgKHApE/YIRcgt7lWl4wM5T9HUBwzllgKB7h1Ta8m/6jcVGUxRD2Zajo7qsEInoCTFfKR56Jh7ZUAVD15molgh8qI4kCAwEAATANBgkqhkiG9w0BAQUFAAOBgQByI/9HCE2vPa75UItmmIkbrMXil7Cvu/jTweHpQcaufVlXBm+ob7lVKX+36raLl3XNBhGzwiJwNRSoaJbWr3uQDzGFaxxLIT9YPfFwYLaUAaxe8g9Px5JO1q20GgDrYp6nMBprfka4J+xBYXEowz64bYlp/wCyKdFEWIofoSSepw==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

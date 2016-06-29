@@ -1,0 +1,119 @@
+﻿@model SKA.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Setting - Edit User";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div class="box-head">
+	<h2>Edit User</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
+    <table>
+        <tr>
+            <td>
+                Nama Pengguna
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.UserName)
+                @Html.ValidationMessageFor(model => model.UserName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.Email, new { @style = "width : 200px" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Alamat
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextAreaFor(model => model.Address, new { @style = "width : 200px"})
+                @Html.ValidationMessageFor(model => model.Address)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Cabang
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.BranchName, new {@readonly = "readonly", @disabled = "disabled", @style = "width : 200px"})
+                @Html.ValidationMessageFor(model => model.BranchName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Status
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                 <select id="role" name="role">
+                       <option value="">Pilih Hak Akses</option>
+                        @foreach (var item in Roles.GetAllRoles().ToList())
+                        {	
+                             <option value="@item.ToString()"> @item.ToString()</option>
+                        }
+                      </select> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password Baru
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.PasswordFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Konfirmasi Password Baru
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.PasswordFor(model => model.ConfirmPassword)
+                @Html.ValidationMessageFor(model => model.ConfirmPassword)
+            </td>
+        </tr>
+    </table>
+    <p>
+        <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+        &nbsp;
+        <input type="reset" value="Reset" class="t-button" style ="width:60px" />
+        &nbsp;
+        <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "Account", new { Area = "" })">Kembali</a>
+     </p>
+}
+
+</div>
+

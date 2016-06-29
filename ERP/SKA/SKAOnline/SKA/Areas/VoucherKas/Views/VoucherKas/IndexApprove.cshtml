@@ -1,0 +1,51 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Voucher Kas";
+    Layout = "~/Areas/VoucherKas/Views/Shared/_VoucherLayout.cshtml";
+}
+<div class="box-head">
+    <h2>
+        Voucher Kas</h2>
+</div>
+<div class="box-content">
+    @using (Html.BeginForm("IndexApprove", "VoucherKas"))
+    { 
+        <table>
+            <tr>
+                <td>
+                    Cari
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextBox("searchValue")
+                </td>
+                <td>
+                    <input type="submit" value="Cari" />
+                </td>
+            </tr>
+        </table>
+    }
+    @(Html.Telerik().Grid<SKA.Areas.VoucherKas.Models.ViewModel.VoucherViewModel>()
+                .Name("VoucherTypeGrid")
+
+                .Columns(col =>
+                {
+                    //col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Periksa", "ApproveVoucher", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                    //col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(30);
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Voucher Detail", "Detail", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(30);
+                    col.Bound(o => o.Number).Title("Nomor Voucher").Width(100);
+                    col.Bound(o => o.TransactionDate).Title("Tanggal Transaksi").Format("{0:dd-MM-yyyy}").Width(100);
+                    col.Bound(o => o.ApproveDate).Title("Tanggal Periksa").Format("{0:dd-MM-yyyy}").Width(100);
+                    col.Bound(o => o.PartnerName).Title("Nama Rekanan").Width(100);
+
+                })
+                .DataBinding(binding => binding.Ajax().Select("GetApproveVoucherList", "VoucherKas", new { searchValue = @ViewBag.SearchValueApprove }))
+                        .Sortable(sorting =>
+                                        sorting.OrderBy(sortOrder => sortOrder.Add(o => o.Number).Ascending())
+                                )
+                .Filterable()
+                .Pageable(paging => paging.PageSize(20))
+    )
+</div>

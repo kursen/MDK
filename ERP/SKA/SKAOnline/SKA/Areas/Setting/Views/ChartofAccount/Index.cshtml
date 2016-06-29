@@ -1,0 +1,66 @@
+﻿@using Telerik.Web.Mvc.UI;
+@{
+    ViewBag.Title = "Setting - Daftar Data Perkiraan";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+    
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+
+    //int countBranch = Int16.Parse(ViewData["CodeBranch"].ToString());
+}
+<div class="box-head">
+	<h2>Daftar Data Perkiraan</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "ChartofAccount")) 
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input type = "submit" value = "Cari" />
+            </td>
+        </tr>
+    </table>
+    
+}
+@(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.ChartofAccountViewModel>()
+            .Name("ChartofAccountTypeGrid")
+            .ToolBar(toolbar =>
+            {
+                if (userBranchCode == "00" && User.IsInRole("User") == false)
+                { 
+                    toolbar.Custom().Action("Create", "ChartofAccount").Text("Tambah").ButtonType(GridButtonType.ImageAndText).HtmlAttributes(new { style = "width:100px" });
+                    //toolbar.Custom().Action("Index", "BeginningBalance").Text("Saldo Awal").ButtonType(GridButtonType.Text).HtmlAttributes(new { style = "width:120px" });
+                }
+            })
+            .Columns(col =>
+            {
+                if (userBranchCode == "00" && User.IsInRole("User") == false)
+                {
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Ubah", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(10);
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(10);
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Saldo Awal", "BeginningBalance", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(10);
+                }
+                col.Bound(o => o.Code).Title("Kode Perkiraan").Width(100);
+                col.Bound(o => o.Name).Title("Nama Perkiraan").Width(350);
+            })
+            .DataBinding(binding => binding.Ajax().Select("GetList", "ChartofAccount", new { searchValue = @ViewBag.SearchValue}))
+                .Sortable(sorting =>
+                                 sorting.OrderBy(sortOrder => sortOrder.Add(o => o.Code).Ascending())
+                        )
+            .Pageable(paging => paging.PageSize(10))
+)
+</div>

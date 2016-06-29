@@ -1,0 +1,55 @@
+﻿@model SKA.Areas.VoucherKas.Models.ViewModel.BankViewModel
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Setting - Bank";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+<div class="box-head">
+    <h2>
+        Rekanan</h2>
+</div>
+<div class="box-content">
+    @using (Html.BeginForm("Index", "Bank"))
+    { 
+        <table>
+            <tr>
+                <td>
+                    Cari
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextBox("searchValue")
+                </td>
+                <td>
+                    <input type="submit" class="t-button" style="width: 60px" value="Cari" />
+                </td>
+            </tr>
+        </table>
+    
+    }
+    @(Html.Telerik().Grid<SKA.Areas.VoucherKas.Models.ViewModel.BankViewModel>()
+                .Name("BankGrid")
+                .ToolBar(toolbar =>
+                {
+                    toolbar.Custom().Action("Create", "Bank").Text("Tambah").ButtonType(GridButtonType.ImageAndText).HtmlAttributes(new { style = "width:100px" });
+                })
+                .Columns(col =>
+                {
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(30);
+                    if (User.IsInRole("User") == false)
+                    { 
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(30);
+                    }
+                    col.Bound(o => o.BankName).Title("Nama Bank").Width(200);
+                    col.Bound(o => o.ACNumber).Title("Nomor AC").Width(100);
+                })
+                        .DataBinding(binding => binding.Ajax().Select("GetListBank", "Bank", new { searchValue = @ViewBag.SearchValue }))
+                        .Sortable(sorting =>
+                                 sorting.OrderBy(sortOrder => sortOrder.Add(o => o.BankName).Ascending())
+                        )
+                .Filterable()
+                .Pageable(paging => paging.PageSize(10))
+    )
+</div>

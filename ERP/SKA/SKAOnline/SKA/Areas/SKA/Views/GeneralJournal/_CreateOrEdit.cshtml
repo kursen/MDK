@@ -1,0 +1,266 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.GeneralJournalViewModel
+@using Telerik.Web.Mvc.UI
+
+<script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div class ="box-content">
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+<table>
+        <tr>
+            <td>Nomor Bukti</td>
+            <td>:</td>
+            <td>
+                @Html.TextBoxFor(model => model.EvidenceNumber, new { maxlength = "20", style = "width:200px", onBlur = "javascript:onChanges();" })
+                @Html.ValidationMessageFor(model => model.EvidenceNumber)
+                <img src = "@Url.Content("~/Content/images/check.png")" id = "valid" style ="display:none"/>
+                <img src = "@Url.Content("~/Content/images/cross.png")" id = "invalid" style = "display:none"/>
+                <label id = "message"></label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Tanggal</td>
+            <td>:</td>
+            <td>
+                @Html.Telerik().DatePickerFor(model => model.DocumentDate).Name("DocumentDate").Format("dd-MM-yyyy").HtmlAttributes(new { style = "width:130px" })
+                @Html.ValidationMessageFor(model => model.DocumentDate)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Keterangan</td>
+            <td>:</td>
+            <td>
+                @Html.TextAreaFor(model => model.Description, new { maxlength = "255", style ="250px"})
+                @Html.ValidationMessageFor(model => model.Description)
+            </td>
+        </tr>
+        <tr> 
+            <td>Tutup Saldo(70.07.00)</td>
+            <td>:</td>
+            <td>
+                @Html.CheckBox("IsLabaDitahan", "IsLabaDitahan")
+            </td>
+        </tr>
+        <tr>
+            <td>Cabang</td>
+            <td>:</td>
+            <td>
+                @Html.DropDownList("BranchCode", (SelectList)ViewBag.Branch, new { disabled = "disabled" })
+            </td>
+        
+        </tr>
+    </table>
+    <p></p><br />
+    
+    @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.GeneralJournalDetailViewModel>()
+        .Name("Grid")
+
+        .DataKeys(keys =>
+        {
+            keys.Add(p => p.Id);
+        })
+        .ToolBar(commands => commands.Insert().ButtonType(GridButtonType.ImageAndText).ImageHtmlAttributes(new { style = "margin-left:0" }))
+        .DataBinding(dataBinding =>
+        {
+            dataBinding.Ajax()
+                .Select("_SelectDetail", "GeneralJournal")
+                .Insert("_InsertDetail", "GeneralJournal")
+                .Update("_UpdateDetail", "GeneralJournal")
+                .Delete("_DeleteDetail", "GeneralJournal");
+        })
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.AccountCode).Title("Perkiraan").Width(300);
+            columns.Bound(p => p.Debet).Format("{0:N}").Width(120);
+            columns.Bound(p => p.Kredit).Format("{0:N}").Width(120);
+            //columns.Bound(p => p.Id).Hidden();
+            columns.Command(commands =>
+            {
+                commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                commands.Delete().ButtonType(GridButtonType.ImageAndText);
+            }).Width(180);
+        })
+        .ClientEvents(events =>
+            {
+                events.OnDataBound("Grid_OnDataBound");
+                events.OnEdit("onEdit");
+                events.OnError("onError");
+            }
+        )
+        .Sortable()
+        .Filterable()
+      )
+      <br />
+     <table>
+        <tr>
+            <td>Total Debet</td>
+            <td>@Html.Telerik().CurrencyTextBoxFor(model => model.AmountDebet).Name("AmountDebet").EmptyMessage("").CurrencySymbol("Rp. ")</td>
+            <td>Total Kredit</td>
+            <td>@Html.Telerik().CurrencyTextBoxFor(model => model.AmountKredit).Name("AmountKredit").EmptyMessage("").CurrencySymbol("Rp. ")</td>
+        </tr>
+    </table>
+        <br />
+            <input class ="t-button" style ="width:60px"  type="submit" value="Simpan" />
+            <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "GeneralJournal", null)">Batal</a>
+}
+</div>
+@Html.HiddenFor(model => model.Id)
+@Html.Hidden("urlCheckNumber", Url.Action("CheckNumber", "GeneralJournal"))
+@Html.HiddenFor(model => model.Month)
+<script type="text/javascript">
+    $(document).ready(function () {
+        // $("#Month").val("1");
+        $("input[name='IsLabaDitahan']").click(function () {
+            //alert("tes");
+            if ($(this).is(":checked")) {
+                $("#BranchCode").attr('disabled', false);
+            } else {
+                $("#BranchCode").attr('disabled', true);
+            }
+        });
+
+        if ($("#Month").val() != "") {
+            $("#BranchCode").attr('disabled', false);
+            $("#IsLabaDitahan").attr('checked','checked');
+        }
+    });
+
+    function onChanges(e) {
+        var urlNumber = $("#urlCheckNumber").val();
+        var evidencenumber = $("#EvidenceNumber").val();
+        var id = $("#Id").val();
+        $.post(urlNumber,
+                    { EvidenceNumber: evidencenumber,
+                    Id : id },
+                function (data) {
+                    if (data != "") {
+                        $("#valid").hide();
+                        $("#invalid").show();
+                        $("#message").html("Nomor sudah ada, silahkan masukkan nomor yang lain.");
+                    }
+                    else {
+                        $("#valid").show();
+                        $("#invalid").hide();
+                        $("#message").html("Nomor diterima.");
+                    }
+                });
+    }
+    function onError(e) {
+        if (e.textStatus == "modelstateerror") {
+            alert(e.modelState.AccountCode.errors[0]);
+        }
+    }
+    function onEdit(e) {
+        $("#AccountCode").select();
+
+        var totalDebet = 0;
+        var totalKredit = 0;
+
+        $.each($('#Grid').find('tbody tr'), function (idx, row) {
+            if (idx >= 0) {
+                var debet = $($(row).find('td')[1]).text();
+                var kredit = $($(row).find('td')[2]).text();
+
+                if (debet) {
+                    totalDebet = totalDebet + parseFloat(debet);
+                }
+                if (kredit) {
+                    totalKredit = totalKredit + parseFloat(kredit);
+                }
+            }
+        });
+
+    }
+
+    function onSelectItem(e) {
+        if (e.keyCode == 9) {
+            var balance = CountBalance();
+            if (balance < 0) {
+                $("#Debet").show();
+                $("#Debet").focus();
+                var debetBalance = Math.abs(balance);
+                $("#Debet").val(debetBalance);
+                $("#AccountCode").select();
+            }
+            else {
+                $("#Kredit").show();
+                $("#Kredit").focus();
+                var debetKredit = Math.abs(balance);
+                $("#Kredit").val(debetKredit);
+                $("#Debet").select();
+            }
+        }
+    }
+
+    //function for count balance from debet and credit.
+    function CountBalance() {
+        var balance = 0;
+        var totalDebet = 0;
+        var totalKredit = 0;
+
+        $.each($('#Grid').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden column.
+                var debet = $($(row).find('td')[1]).text();
+                debet = debet.replace(/,/gi, "");
+                var kredit = $($(row).find('td')[2]).text();
+                kredit = kredit.replace(/,/gi, "");
+
+                // note: make sure to convert the amount to decimal/float data type.
+                if (debet) {
+                    totalDebet = totalDebet + parseFloat(debet);
+                }
+                if (kredit) {
+                    totalKredit = totalKredit + parseFloat(kredit);
+                }
+
+                balance = totalDebet - totalKredit;
+
+            }
+        });
+
+        return balance;
+    }
+    
+    
+    function Grid_OnDataBound(e) {
+        total = 0;
+        totalDebet = 0;
+        totalKredit = 0;
+
+        $.each($('#Grid').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden column.
+                var debet = $($(row).find('td')[1]).text();
+                debet = debet.replace(/,/gi, "");
+                var kredit = $($(row).find('td')[2]).text();
+                kredit = kredit.replace(/,/gi, "");
+
+
+                // note: make sure to convert the amount to decimal/float data type.
+                if (debet) {
+                    totalDebet = totalDebet + parseFloat(debet);
+                }
+                if (kredit) {
+                    totalKredit = totalKredit + parseFloat(kredit);
+                }
+                total = totalDebet - totalKredit
+
+            }
+        });
+
+        var input = $("#AmountDebet").data("tTextBox");
+        input.value(totalDebet);
+        var input2 = $("#AmountKredit").data("tTextBox");
+        input2.value(totalKredit);
+    }
+</script>
+
+

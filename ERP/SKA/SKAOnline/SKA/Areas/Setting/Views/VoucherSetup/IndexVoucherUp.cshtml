@@ -1,0 +1,69 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    string thresholdValue = string.Empty;
+
+    if (Session["ThresholdValue"] != null)
+    {
+        thresholdValue = Session["ThresholdValue"].ToString();
+    }   
+    
+    ViewBag.Title = "Setup Jabatan - Cetak > " + thresholdValue;
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Setup Jabatan - Cetak < @thresholdValue</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("IndexVoucherUp", "VoucherSetup"))
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input type = "submit" value = "Cari" />
+            </td>
+        </tr>
+    </table>
+    
+}
+@(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.VoucherSetupViewModel>()
+        .Name("VoucherSetupGrid")
+        .ToolBar(toolbar =>
+        {
+            toolbar.Custom().Action("CreateVoucherUp", "VoucherSetup").Text("Tambah").ButtonType(GridButtonType.Text).HtmlAttributes(new { style = "width:100px" });
+        })
+        .Columns(col =>
+        {
+            col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "EditVoucherUp", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+            if (User.IsInRole("User") == false)
+            {
+                col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "DeleteVoucherUp", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(60);
+            }
+            col.Bound(o => o.Id).Hidden();
+            col.Bound(o => o.MakerName).Title("Dibuat Oleh").Width(150);
+            col.Bound(o => o.MakerPosition).Title("Jabatan").Width(150);
+            col.Bound(o => o.InvestigatorName).Title("Diteliti Oleh").Width(150);
+            col.Bound(o => o.InvestigatorPosition).Title("Jabatan").Width(150);
+            col.Bound(o => o.ExaminerName).Title("Diperiksa Oleh").Width(150);
+            col.Bound(o => o.ExaminerPosition).Title("Jabatan").Width(150);
+            col.Bound(o => o.FirstAdministrationName).Title("Direksi I").Width(150);
+            col.Bound(o => o.SecondAdministrationName).Title("Direksi II").Width(150);
+            col.Bound(o => o.BranchName).Title("Cabang").Width(100);
+        })
+            .DataBinding(binding => binding.Ajax().Select("GetListVoucherUp", "VoucherSetup", new { searchValue = @ViewBag.SearchValue}))
+            .Sortable()
+            .HtmlAttributes(new {style = "width:100%"})
+            .Scrollable()
+            .Pageable()
+            
+)
+</div>

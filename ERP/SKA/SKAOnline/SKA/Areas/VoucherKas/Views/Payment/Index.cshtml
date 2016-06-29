@@ -1,0 +1,54 @@
+﻿@using Telerik.Web.Mvc.UI 
+
+@{
+    ViewBag.Title = "Pembayaran";
+    Layout = "~/Areas/VoucherKas/Views/Shared/_VoucherLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Pembayaran Voucher</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "Payment"))
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input class ="t-button" type="submit" value="Cari" style="width:60px"/>
+            </td>
+        </tr>
+    </table>
+}
+
+
+
+@(Html.Telerik().Grid<SKA.Areas.VoucherKas.Models.ViewModel.VoucherViewModel>()
+            .Name("PaymentTypeGrid")
+            
+            .Columns(col =>
+            {
+                col.Bound(o => o.Id).ClientTemplate("<# if (PaymentDate != null)  { #>" +                    
+                    Html.ActionLink("Ubah", "Edit", new { id = "<#= Id #>" }).ToString() +
+                    "<# } #>").Title("").Sortable(false).Width(50);
+                col.Bound(o => o.Id).ClientTemplate("<# if (PaymentDate == null)  { #>" +
+                    Html.ActionLink("Bayar", "Paid", new { id = "<#= Id #>" }).ToString()+
+                    "<# } #>").Title("").Sortable(false).Width(50);
+                col.Bound(o => o.Number).Title("Nomor Voucher").Width(250);
+                col.Bound(o => o.PaymentDate).Title("Tanggal Pembayaran").Width(250);
+                col.Bound(o => o.TransactionDate).Title("Tanggal Transaksi").Width(250);
+                
+            })
+                .DataBinding(binding => binding.Ajax().Select("GetList", "Payment", new { searchValue = @ViewBag.SearchValue }))
+            .Sortable()
+            .Filterable()
+            .Pageable(page => page.PageSize(20))
+)
+</div>

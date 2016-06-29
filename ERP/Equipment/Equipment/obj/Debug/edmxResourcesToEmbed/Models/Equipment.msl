@@ -1,0 +1,959 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EquipmentModelStoreContainer" CdmEntityContainer="EquipmentEntities">
+    <FunctionImportMapping FunctionImportName="DetailFuel" FunctionName="EquipmentModel.Store.DetailFuel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.DetailFuel_Result">
+          <ScalarProperty Name="IDFuel" ColumnName="IDFuel" />
+          <ScalarProperty Name="AmountFuel" ColumnName="AmountFuel" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DetailNonOperation" FunctionName="EquipmentModel.Store.DetailNonOperation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.DetailNonOperation_Result">
+          <ScalarProperty Name="IDNonOperation" ColumnName="IDNonOperation" />
+          <ScalarProperty Name="NonOperationType" ColumnName="NonOperationType" />
+          <ScalarProperty Name="Begin" ColumnName="Begin" />
+          <ScalarProperty Name="End" ColumnName="End" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="No" ColumnName="No" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DetailOil" FunctionName="EquipmentModel.Store.DetailOil">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.DetailOil_Result">
+          <ScalarProperty Name="IDOil" ColumnName="IDOil" />
+          <ScalarProperty Name="OilType" ColumnName="OilType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="No" ColumnName="No" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DetailOperation" FunctionName="EquipmentModel.Store.DetailOperation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.DetailOperation_Result">
+          <ScalarProperty Name="IDOperation" ColumnName="IDOperation" />
+          <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+          <ScalarProperty Name="VolumeOperation" ColumnName="VolumeOperation" />
+          <ScalarProperty Name="LocationOperation" ColumnName="LocationOperation" />
+          <ScalarProperty Name="BeginHM" ColumnName="BeginHM" />
+          <ScalarProperty Name="EndHM" ColumnName="EndHM" />
+          <ScalarProperty Name="PacketOperation" ColumnName="PacketOperation" />
+          <ScalarProperty Name="No" ColumnName="No" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportHeavyEqpActivities" FunctionName="EquipmentModel.Store.ReportHeavyEqpActivities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportHeavyEqpActivities_Result">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Merk" ColumnName="Merk" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="IDOp" ColumnName="IDOp" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="BeginSecondOvertime" ColumnName="BeginSecondOvertime" />
+          <ScalarProperty Name="EndSecondOvertime" ColumnName="EndSecondOvertime" />
+          <ScalarProperty Name="BeginNormalI" ColumnName="BeginNormalI" />
+          <ScalarProperty Name="EndNormalI" ColumnName="EndNormalI" />
+          <ScalarProperty Name="BeginBreakI" ColumnName="BeginBreakI" />
+          <ScalarProperty Name="EndBreakI" ColumnName="EndBreakI" />
+          <ScalarProperty Name="BeginNormalII" ColumnName="BeginNormalII" />
+          <ScalarProperty Name="EndNormalII" ColumnName="EndNormalII" />
+          <ScalarProperty Name="BeginBreakII" ColumnName="BeginBreakII" />
+          <ScalarProperty Name="EndBreakII" ColumnName="EndBreakII" />
+          <ScalarProperty Name="BeginFirstOverTime1" ColumnName="BeginFirstOverTime1" />
+          <ScalarProperty Name="BeginFirstOverTime2" ColumnName="BeginFirstOverTime2" />
+          <ScalarProperty Name="EndFirstOverTime1" ColumnName="EndFirstOverTime1" />
+          <ScalarProperty Name="EndFirstOverTime2" ColumnName="EndFirstOverTime2" />
+          <ScalarProperty Name="JamNormal" ColumnName="JamNormal" />
+          <ScalarProperty Name="JamLembur1" ColumnName="JamLembur1" />
+          <ScalarProperty Name="JamLembur2" ColumnName="JamLembur2" />
+          <ScalarProperty Name="CorrectBy" ColumnName="CorrectBy" />
+          <ScalarProperty Name="KnownBy" ColumnName="KnownBy" />
+          <ScalarProperty Name="JabatanCorrectBy" ColumnName="JabatanCorrectBy" />
+          <ScalarProperty Name="JabatanKnowBy" ColumnName="JabatanKnowBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AutocompleteLoadType" FunctionName="EquipmentModel.Store.AutocompleteLoadType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.AutocompleteLoadType_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AutocompleteLocation" FunctionName="EquipmentModel.Store.AutocompleteLocation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.AutocompleteLocation_Result">
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DetailDumpTruckOperation" FunctionName="EquipmentModel.Store.DetailDumpTruckOperation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.DetailDumpTruckOperation_Result">
+          <ScalarProperty Name="IDOperation" ColumnName="IDOperation" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="loadtype" ColumnName="loadtype" />
+          <ScalarProperty Name="sourcelocation" ColumnName="sourcelocation" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="departuretime" ColumnName="departuretime" />
+          <ScalarProperty Name="arrivaltime" ColumnName="arrivaltime" />
+          <ScalarProperty Name="distance" ColumnName="distance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NonOpType" FunctionName="EquipmentModel.Store.NonOpType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.NonOpType_Result">
+          <ScalarProperty Name="NonOpType" ColumnName="NonOpType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportDumpTruckActivities" FunctionName="EquipmentModel.Store.ReportDumpTruckActivities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportDumpTruckActivities_Result">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="PoliceNumber" ColumnName="PoliceNumber" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="BeginSecondOvertime" ColumnName="BeginSecondOvertime" />
+          <ScalarProperty Name="EndSecondOvertime" ColumnName="EndSecondOvertime" />
+          <ScalarProperty Name="BeginNormalI" ColumnName="BeginNormalI" />
+          <ScalarProperty Name="EndNormalI" ColumnName="EndNormalI" />
+          <ScalarProperty Name="BeginBreakI" ColumnName="BeginBreakI" />
+          <ScalarProperty Name="EndBreakI" ColumnName="EndBreakI" />
+          <ScalarProperty Name="BeginNormalII" ColumnName="BeginNormalII" />
+          <ScalarProperty Name="EndNormalII" ColumnName="EndNormalII" />
+          <ScalarProperty Name="BeginBreakII" ColumnName="BeginBreakII" />
+          <ScalarProperty Name="EndBreakII" ColumnName="EndBreakII" />
+          <ScalarProperty Name="BeginFirstOverTime1" ColumnName="BeginFirstOverTime1" />
+          <ScalarProperty Name="BeginFirstOverTime2" ColumnName="BeginFirstOverTime2" />
+          <ScalarProperty Name="EndFirstOverTime1" ColumnName="EndFirstOverTime1" />
+          <ScalarProperty Name="EndFirstOverTime2" ColumnName="EndFirstOverTime2" />
+          <ScalarProperty Name="JamNormal" ColumnName="JamNormal" />
+          <ScalarProperty Name="JamLembur1" ColumnName="JamLembur1" />
+          <ScalarProperty Name="JamLembur2" ColumnName="JamLembur2" />
+          <ScalarProperty Name="CorrectBy" ColumnName="CorrectBy" />
+          <ScalarProperty Name="KnownBy" ColumnName="KnownBy" />
+          <ScalarProperty Name="JabatanCorrectBy" ColumnName="JabatanCorrectBy" />
+          <ScalarProperty Name="JabatanKnownBy" ColumnName="JabatanKnownBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="OperatorType" FunctionName="EquipmentModel.Store.OperatorType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.OperatorType_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="AllMerks">
+      <EntityTypeMapping TypeName="EquipmentModel.AllMerk">
+        <MappingFragment StoreEntitySet="AllMerk">
+          <ScalarProperty Name="MerkName" ColumnName="MerkName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllOils">
+      <EntityTypeMapping TypeName="EquipmentModel.AllOil">
+        <MappingFragment StoreEntitySet="AllOil">
+          <ScalarProperty Name="OilName" ColumnName="OilName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DumpTruckNonOperations">
+      <EntityTypeMapping TypeName="EquipmentModel.DumpTruckNonOperation">
+        <MappingFragment StoreEntitySet="DumpTruckNonOperation">
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="End" ColumnName="End" />
+          <ScalarProperty Name="Begin" ColumnName="Begin" />
+          <ScalarProperty Name="NonOperationType" ColumnName="NonOperationType" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DumpTruckOperations">
+      <EntityTypeMapping TypeName="EquipmentModel.DumpTruckOperation">
+        <MappingFragment StoreEntitySet="DumpTruckOperation">
+          <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="SourceLocation" ColumnName="SourceLocation" />
+          <ScalarProperty Name="LoadType" ColumnName="LoadType" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuelUsedDumpTrucks">
+      <EntityTypeMapping TypeName="EquipmentModel.FuelUsedDumpTruck">
+        <MappingFragment StoreEntitySet="FuelUsedDumpTruck">
+          <ScalarProperty Name="AmountFuel" ColumnName="AmountFuel" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuelUsedHeavyEqps">
+      <EntityTypeMapping TypeName="EquipmentModel.FuelUsedHeavyEqp">
+        <MappingFragment StoreEntitySet="FuelUsedHeavyEqp">
+          <ScalarProperty Name="AmountFuel" ColumnName="AmountFuel" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuelUsedOutTradoes">
+      <EntityTypeMapping TypeName="EquipmentModel.FuelUsedOutTrado">
+        <MappingFragment StoreEntitySet="FuelUsedOutTrado">
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="AmountFuelOut" ColumnName="AmountFuelOut" />
+          <ScalarProperty Name="Alocation" ColumnName="Alocation" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuelUsedTradoes">
+      <EntityTypeMapping TypeName="EquipmentModel.FuelUsedTrado">
+        <MappingFragment StoreEntitySet="FuelUsedTrado">
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="AmountFuel" ColumnName="AmountFuel" />
+          <ScalarProperty Name="TimeFill" ColumnName="TimeFill" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEqps">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEqp">
+        <MappingFragment StoreEntitySet="HeavyEqp">
+          <ScalarProperty Name="OprName" ColumnName="OprName" />
+          <ScalarProperty Name="IDOpr" ColumnName="IDOpr" />
+          <ScalarProperty Name="BuiltYear" ColumnName="BuiltYear" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Species" ColumnName="Species" />
+          <ScalarProperty Name="Merk" ColumnName="Merk" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IDArea" ColumnName="IDArea" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEqpNonOperations">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEqpNonOperation">
+        <MappingFragment StoreEntitySet="HeavyEqpNonOperation">
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="End" ColumnName="End" />
+          <ScalarProperty Name="Begin" ColumnName="Begin" />
+          <ScalarProperty Name="NonOperationType" ColumnName="NonOperationType" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEqpOperations">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEqpOperation">
+        <MappingFragment StoreEntitySet="HeavyEqpOperation">
+          <ScalarProperty Name="PacketOperation" ColumnName="PacketOperation" />
+          <ScalarProperty Name="EndHM" ColumnName="EndHM" />
+          <ScalarProperty Name="BeginHM" ColumnName="BeginHM" />
+          <ScalarProperty Name="LocationOperation" ColumnName="LocationOperation" />
+          <ScalarProperty Name="VolumeOperation" ColumnName="VolumeOperation" />
+          <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEquipmentTypes">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEquipmentType">
+        <MappingFragment StoreEntitySet="HeavyEquipmentType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OilAndSparePartUsedTradoes">
+      <EntityTypeMapping TypeName="EquipmentModel.OilAndSparePartUsedTrado">
+        <MappingFragment StoreEntitySet="OilAndSparePartUsedTrado">
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="OilOrSparePartType" ColumnName="OilOrSparePartType" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OilUsedDumpTrucks">
+      <EntityTypeMapping TypeName="EquipmentModel.OilUsedDumpTruck">
+        <MappingFragment StoreEntitySet="OilUsedDumpTruck">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="OilType" ColumnName="OilType" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OilUsedHeavyEqps">
+      <EntityTypeMapping TypeName="EquipmentModel.OilUsedHeavyEqp">
+        <MappingFragment StoreEntitySet="OilUsedHeavyEqp">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="OilType" ColumnName="OilType" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutFitEqps">
+      <EntityTypeMapping TypeName="EquipmentModel.OutFitEqp">
+        <MappingFragment StoreEntitySet="OutFitEqp">
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TradoNonOperations">
+      <EntityTypeMapping TypeName="EquipmentModel.TradoNonOperation">
+        <MappingFragment StoreEntitySet="TradoNonOperation">
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="NonOperationType" ColumnName="NonOperationType" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TradoOperations">
+      <EntityTypeMapping TypeName="EquipmentModel.TradoOperation">
+        <MappingFragment StoreEntitySet="TradoOperation">
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="EndKM" ColumnName="EndKM" />
+          <ScalarProperty Name="BeginKM" ColumnName="BeginKM" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="SourceLocation" ColumnName="SourceLocation" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="LoadType" ColumnName="LoadType" />
+          <ScalarProperty Name="IDActivity" ColumnName="IDActivity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeNonOperations">
+      <EntityTypeMapping TypeName="EquipmentModel.TypeNonOperation">
+        <MappingFragment StoreEntitySet="TypeNonOperation">
+          <ScalarProperty Name="NonOpType" ColumnName="NonOpType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEqpActivities">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEqpActivity">
+        <MappingFragment StoreEntitySet="HeavyEqpActivity">
+          <ScalarProperty Name="JabatanKnowBy" ColumnName="JabatanKnowBy" />
+          <ScalarProperty Name="JabatanCorrectBy" ColumnName="JabatanCorrectBy" />
+          <ScalarProperty Name="KnownBy" ColumnName="KnownBy" />
+          <ScalarProperty Name="CorrectBy" ColumnName="CorrectBy" />
+          <ScalarProperty Name="IDArea" ColumnName="IDArea" />
+          <ScalarProperty Name="EndFirstOvertime2" ColumnName="EndFirstOvertime2" />
+          <ScalarProperty Name="BeginFirstOverTime2" ColumnName="BeginFirstOverTime2" />
+          <ScalarProperty Name="EndFirstOverTime1" ColumnName="EndFirstOverTime1" />
+          <ScalarProperty Name="BeginFirstOverTime1" ColumnName="BeginFirstOverTime1" />
+          <ScalarProperty Name="EndBreakII" ColumnName="EndBreakII" />
+          <ScalarProperty Name="BeginBreakII" ColumnName="BeginBreakII" />
+          <ScalarProperty Name="EndNormalII" ColumnName="EndNormalII" />
+          <ScalarProperty Name="BeginNormalII" ColumnName="BeginNormalII" />
+          <ScalarProperty Name="EndBreakI" ColumnName="EndBreakI" />
+          <ScalarProperty Name="BeginBreakI" ColumnName="BeginBreakI" />
+          <ScalarProperty Name="EndNormalI" ColumnName="EndNormalI" />
+          <ScalarProperty Name="BeginNormalI" ColumnName="BeginNormalI" />
+          <ScalarProperty Name="EndSecondOverTime" ColumnName="EndSecondOverTime" />
+          <ScalarProperty Name="BeginSecondOverTime" ColumnName="BeginSecondOverTime" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IDOp" ColumnName="IDOp" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Merk" ColumnName="Merk" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ReportTradoActivities" FunctionName="EquipmentModel.Store.ReportTradoActivities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportTradoActivities_Result">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Driver" ColumnName="Driver" />
+          <ScalarProperty Name="PoliceNumber" ColumnName="PoliceNumber" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="ApprovalBy" ColumnName="ApprovalBy" />
+          <ScalarProperty Name="JabatanApproval" ColumnName="JabatanApproval" />
+          <ScalarProperty Name="CorrectBy" ColumnName="CorrectBy" />
+          <ScalarProperty Name="JabatanCorrectBy" ColumnName="JabatanCorrectBy" />
+          <ScalarProperty Name="KnownBy" ColumnName="KnownBy" />
+          <ScalarProperty Name="JabatanKnownBy" ColumnName="JabatanKnownBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ProcTradoOperations" FunctionName="EquipmentModel.Store.ProcTradoOperations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ProcTradoOperations_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="LoadType" ColumnName="LoadType" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="SourceLocation" ColumnName="SourceLocation" />
+          <ScalarProperty Name="departuretime" ColumnName="departuretime" />
+          <ScalarProperty Name="arrivaltime" ColumnName="arrivaltime" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="BeginKM" ColumnName="BeginKM" />
+          <ScalarProperty Name="EndKM" ColumnName="EndKM" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ProcTradoNonOp" FunctionName="EquipmentModel.Store.ProcTradoNonOp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ProcTradoNonOp_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="NonOperationType" ColumnName="NonOperationType" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ProcBBMTradoOut" FunctionName="EquipmentModel.Store.ProcBBMTradoOut">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ProcBBMTradoOut_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="AmountFuelOut" ColumnName="AmountFuelOut" />
+          <ScalarProperty Name="Alocation" ColumnName="Alocation" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ProcBBMTrado" FunctionName="EquipmentModel.Store.ProcBBMTrado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ProcBBMTrado_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="AmountFuel" ColumnName="AmountFuel" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="TimeFill" ColumnName="TimeFill" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ProcOil_SparePart" FunctionName="EquipmentModel.Store.ProcOil_SparePart">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ProcOil_SparePart_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="OilOrSparePartType" ColumnName="OilOrSparePartType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="DetailMaintenanceHeavyEqps">
+      <EntityTypeMapping TypeName="EquipmentModel.DetailMaintenanceHeavyEqp">
+        <MappingFragment StoreEntitySet="DetailMaintenanceHeavyEqp">
+          <ScalarProperty Name="Mechanic" ColumnName="Mechanic" />
+          <ScalarProperty Name="IDMaintenanceHeavyEqp" ColumnName="IDMaintenanceHeavyEqp" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaintenanceHeavyEquipments">
+      <EntityTypeMapping TypeName="EquipmentModel.MaintenanceHeavyEquipment">
+        <MappingFragment StoreEntitySet="MaintenanceHeavyEquipment">
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Trouble" ColumnName="Trouble" />
+          <ScalarProperty Name="DateMaintenance" ColumnName="DateMaintenance" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="HM" ColumnName="HM" />
+          <ScalarProperty Name="IDHeavyEqp" ColumnName="IDHeavyEqp" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleMaintenanceChecks">
+      <EntityTypeMapping TypeName="EquipmentModel.VehicleMaintenanceCheck">
+        <MappingFragment StoreEntitySet="VehicleMaintenanceCheck">
+          <ScalarProperty Name="AverageUsagePerKilometer" ColumnName="AverageUsagePerKilometer" />
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleMaintenanceCheckItems">
+      <EntityTypeMapping TypeName="EquipmentModel.VehicleMaintenanceCheckItem">
+        <MappingFragment StoreEntitySet="VehicleMaintenanceCheckItem">
+          <ScalarProperty Name="LastCheck_Date" ColumnName="LastCheck_Date" />
+          <ScalarProperty Name="LastCheck_Kilometer" ColumnName="LastCheck_Kilometer" />
+          <ScalarProperty Name="UnitValue" ColumnName="UnitValue" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="VehicleMaintenanceCheckId" ColumnName="VehicleMaintenanceCheckId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MachineTypes">
+      <EntityTypeMapping TypeName="EquipmentModel.MachineType">
+        <MappingFragment StoreEntitySet="MachineType">
+          <ScalarProperty Name="MachineTypeName" ColumnName="MachineTypeName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaintenanceTemplateItems">
+      <EntityTypeMapping TypeName="EquipmentModel.MaintenanceTemplateItem">
+        <MappingFragment StoreEntitySet="MaintenanceTemplateItem">
+          <ScalarProperty Name="MachineTypeID" ColumnName="MachineTypeID" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEquipmentMaintenanceCheckItems">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEquipmentMaintenanceCheckItem">
+        <MappingFragment StoreEntitySet="HeavyEquipmentMaintenanceCheckItem">
+          <ScalarProperty Name="LastCheck_Date" ColumnName="LastCheck_Date" />
+          <ScalarProperty Name="LastCheck_HM" ColumnName="LastCheck_HM" />
+          <ScalarProperty Name="UnitValue" ColumnName="UnitValue" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="HeavyEquipmentMaintenanceCheckId" ColumnName="HeavyEquipmentMaintenanceCheckId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEquipmentMaintenanceChecks">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEquipmentMaintenanceCheck">
+        <MappingFragment StoreEntitySet="HeavyEquipmentMaintenanceCheck">
+          <ScalarProperty Name="AverageHourMeter" ColumnName="AverageHourMeter" />
+          <ScalarProperty Name="HeavyEqpId" ColumnName="HeavyEqpId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MachineEqpMaintenanceChecks">
+      <EntityTypeMapping TypeName="EquipmentModel.MachineEqpMaintenanceCheck">
+        <MappingFragment StoreEntitySet="MachineEqpMaintenanceCheck">
+          <ScalarProperty Name="AverageHourMeter" ColumnName="AverageHourMeter" />
+          <ScalarProperty Name="MachineEqpId" ColumnName="MachineEqpId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MachineEqpMaintenanceCheckItems">
+      <EntityTypeMapping TypeName="EquipmentModel.MachineEqpMaintenanceCheckItem">
+        <MappingFragment StoreEntitySet="MachineEqpMaintenanceCheckItem">
+          <ScalarProperty Name="LastCheck_Date" ColumnName="LastCheck_Date" />
+          <ScalarProperty Name="UnitValue" ColumnName="UnitValue" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="MachineEqpMaintenanceCheckId" ColumnName="MachineEqpMaintenanceCheckId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="EquipmentModel.Vehicle">
+        <MappingFragment StoreEntitySet="Vehicle">
+          <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+          <ScalarProperty Name="IDDriver" ColumnName="IDDriver" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="BuiltYear" ColumnName="BuiltYear" />
+          <ScalarProperty Name="KeurDueDate" ColumnName="KeurDueDate" />
+          <ScalarProperty Name="KeurNumber" ColumnName="KeurNumber" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="BonesNumber" ColumnName="BonesNumber" />
+          <ScalarProperty Name="MachineNumber" ColumnName="MachineNumber" />
+          <ScalarProperty Name="PoliceNumber" ColumnName="PoliceNumber" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Species" ColumnName="Species" />
+          <ScalarProperty Name="Merk" ColumnName="Merk" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IDArea" ColumnName="IDArea" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DumpTruckActivities">
+      <EntityTypeMapping TypeName="EquipmentModel.DumpTruckActivity">
+        <MappingFragment StoreEntitySet="DumpTruckActivity">
+          <ScalarProperty Name="JabatanKnownBy" ColumnName="JabatanKnownBy" />
+          <ScalarProperty Name="JabatanCorrectBy" ColumnName="JabatanCorrectBy" />
+          <ScalarProperty Name="KnownBy" ColumnName="KnownBy" />
+          <ScalarProperty Name="CorrectBy" ColumnName="CorrectBy" />
+          <ScalarProperty Name="IDArea" ColumnName="IDArea" />
+          <ScalarProperty Name="EndFirstOvertime2" ColumnName="EndFirstOvertime2" />
+          <ScalarProperty Name="BeginFirstOverTime2" ColumnName="BeginFirstOverTime2" />
+          <ScalarProperty Name="EndFirstOverTime1" ColumnName="EndFirstOverTime1" />
+          <ScalarProperty Name="BeginFirstOverTime1" ColumnName="BeginFirstOverTime1" />
+          <ScalarProperty Name="EndBreakII" ColumnName="EndBreakII" />
+          <ScalarProperty Name="BeginBreakII" ColumnName="BeginBreakII" />
+          <ScalarProperty Name="EndNormalII" ColumnName="EndNormalII" />
+          <ScalarProperty Name="BeginNormalII" ColumnName="BeginNormalII" />
+          <ScalarProperty Name="EndBreakI" ColumnName="EndBreakI" />
+          <ScalarProperty Name="BeginBreakI" ColumnName="BeginBreakI" />
+          <ScalarProperty Name="EndNormalI" ColumnName="EndNormalI" />
+          <ScalarProperty Name="BeginNormalI" ColumnName="BeginNormalI" />
+          <ScalarProperty Name="EndSecondOverTime" ColumnName="EndSecondOverTime" />
+          <ScalarProperty Name="BeginSecondOverTime" ColumnName="BeginSecondOverTime" />
+          <ScalarProperty Name="PoliceNumber" ColumnName="PoliceNumber" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IDOp" ColumnName="IDOp" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Merk" ColumnName="Merk" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TradoActivities">
+      <EntityTypeMapping TypeName="EquipmentModel.TradoActivity">
+        <MappingFragment StoreEntitySet="TradoActivity">
+          <ScalarProperty Name="JabatanKnownBy" ColumnName="JabatanKnownBy" />
+          <ScalarProperty Name="KnownBy" ColumnName="KnownBy" />
+          <ScalarProperty Name="JabatanCorrectBy" ColumnName="JabatanCorrectBy" />
+          <ScalarProperty Name="CorrectBy" ColumnName="CorrectBy" />
+          <ScalarProperty Name="JabatanApproval" ColumnName="JabatanApproval" />
+          <ScalarProperty Name="ApprovalBy" ColumnName="ApprovalBy" />
+          <ScalarProperty Name="IDArea" ColumnName="IDArea" />
+          <ScalarProperty Name="PoliceNumber" ColumnName="PoliceNumber" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IDDriver" ColumnName="IDDriver" />
+          <ScalarProperty Name="Driver" ColumnName="Driver" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Merk" ColumnName="Merk" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AutocompleteItemMaintenance" FunctionName="EquipmentModel.Store.AutocompleteItemMaintenance">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.AutocompleteItemMaintenance_Result">
+          <ScalarProperty Name="Item" ColumnName="Item" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="VehicleTypes">
+      <EntityTypeMapping TypeName="EquipmentModel.VehicleType">
+        <MappingFragment StoreEntitySet="VehicleType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleMaintenanceRecordItems">
+      <EntityTypeMapping TypeName="EquipmentModel.VehicleMaintenanceRecordItem">
+        <MappingFragment StoreEntitySet="VehicleMaintenanceRecordItem">
+          <ScalarProperty Name="VehicleMaintenanceCheckItemId" ColumnName="VehicleMaintenanceCheckItemId" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="VehicleMaintenanceRecordId" ColumnName="VehicleMaintenanceRecordId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleMaintenanceRecordMaterialUseds">
+      <EntityTypeMapping TypeName="EquipmentModel.VehicleMaintenanceRecordMaterialUsed">
+        <MappingFragment StoreEntitySet="VehicleMaintenanceRecordMaterialUsed">
+          <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MaterialUsed" ColumnName="MaterialUsed" />
+          <ScalarProperty Name="VehicleMaintenanceRecordId" ColumnName="VehicleMaintenanceRecordId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleMaintenanceRecordOthers">
+      <EntityTypeMapping TypeName="EquipmentModel.VehicleMaintenanceRecordOther">
+        <MappingFragment StoreEntitySet="VehicleMaintenanceRecordOther">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="VehicleMaintenanceRecordId" ColumnName="VehicleMaintenanceRecordId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleMaintenanceRecords">
+      <EntityTypeMapping TypeName="EquipmentModel.VehicleMaintenanceRecord">
+        <MappingFragment StoreEntitySet="VehicleMaintenanceRecord">
+          <ScalarProperty Name="MaintenanceState" ColumnName="MaintenanceState" />
+          <ScalarProperty Name="OdometerValue" ColumnName="OdometerValue" />
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+          <ScalarProperty Name="MaintenanceDateEnd" ColumnName="MaintenanceDateEnd" />
+          <ScalarProperty Name="MaintenanceDateStart" ColumnName="MaintenanceDateStart" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ReportVehicleMaintenance" FunctionName="EquipmentModel.Store.ReportVehicleMaintenance">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportVehicleMaintenance_Result">
+          <ScalarProperty Name="OdometerValue" ColumnName="OdometerValue" />
+          <ScalarProperty Name="MaintenanceState" ColumnName="MaintenanceState" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Merk" ColumnName="Merk" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Species" ColumnName="Species" />
+          <ScalarProperty Name="PoliceNumber" ColumnName="PoliceNumber" />
+          <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+          <ScalarProperty Name="MaintenanceDateStart" ColumnName="MaintenanceDateStart" />
+          <ScalarProperty Name="MaintenanceDateEnd" ColumnName="MaintenanceDateEnd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportVehicleMaintenanceOther" FunctionName="EquipmentModel.Store.ReportVehicleMaintenanceOther">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportVehicleMaintenanceOther_Result">
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportVehicleMaintenanceMaterialUsed" FunctionName="EquipmentModel.Store.ReportVehicleMaintenanceMaterialUsed">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportVehicleMaintenanceMaterialUsed_Result">
+          <ScalarProperty Name="MaterialUsed" ColumnName="MaterialUsed" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportVehicleMaintenanceItemWork" FunctionName="EquipmentModel.Store.ReportVehicleMaintenanceItemWork">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportVehicleMaintenanceItemWork_Result">
+          <ScalarProperty Name="ItemPekerjaan" ColumnName="ItemPekerjaan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="MachineEqps">
+      <EntityTypeMapping TypeName="EquipmentModel.MachineEqp">
+        <MappingFragment StoreEntitySet="MachineEqp">
+          <ScalarProperty Name="IDArea" ColumnName="IDArea" />
+          <ScalarProperty Name="BuyYear" ColumnName="BuyYear" />
+          <ScalarProperty Name="MadeYear" ColumnName="MadeYear" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Merk" ColumnName="Merk" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEqpMaintenanceRecords">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEqpMaintenanceRecord">
+        <MappingFragment StoreEntitySet="HeavyEqpMaintenanceRecord">
+          <ScalarProperty Name="MaintenanceState" ColumnName="MaintenanceState" />
+          <ScalarProperty Name="HourmeterValue" ColumnName="HourmeterValue" />
+          <ScalarProperty Name="HeavyEqpId" ColumnName="HeavyEqpId" />
+          <ScalarProperty Name="MaintenanceDateEnd" ColumnName="MaintenanceDateEnd" />
+          <ScalarProperty Name="MaintenanceDateStart" ColumnName="MaintenanceDateStart" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEqpMaintenanceRecordItems">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEqpMaintenanceRecordItem">
+        <MappingFragment StoreEntitySet="HeavyEqpMaintenanceRecordItem">
+          <ScalarProperty Name="HeavyEquipmentMaintenanceCheckItemId" ColumnName="HeavyEquipmentMaintenanceCheckItemId" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="HeavyEqpMaintenanceRecordId" ColumnName="HeavyEqpMaintenanceRecordId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEqpMaintenanceRecordMaterialUseds">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEqpMaintenanceRecordMaterialUsed">
+        <MappingFragment StoreEntitySet="HeavyEqpMaintenanceRecordMaterialUsed">
+          <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MaterialUsed" ColumnName="MaterialUsed" />
+          <ScalarProperty Name="HeavyEqpMaintenanceRecordId" ColumnName="HeavyEqpMaintenanceRecordId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HeavyEqpMaintenanceRecordOthers">
+      <EntityTypeMapping TypeName="EquipmentModel.HeavyEqpMaintenanceRecordOther">
+        <MappingFragment StoreEntitySet="HeavyEqpMaintenanceRecordOther">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="HeavyEqpMaintenanceRecordId" ColumnName="HeavyEqpMaintenanceRecordId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MachineMaintenanceRecords">
+      <EntityTypeMapping TypeName="EquipmentModel.MachineMaintenanceRecord">
+        <MappingFragment StoreEntitySet="MachineMaintenanceRecord">
+          <ScalarProperty Name="MaintenanceState" ColumnName="MaintenanceState" />
+          <ScalarProperty Name="MachineId" ColumnName="MachineId" />
+          <ScalarProperty Name="MaintenanceDateEnd" ColumnName="MaintenanceDateEnd" />
+          <ScalarProperty Name="MaintenanceDateStart" ColumnName="MaintenanceDateStart" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MachineMaintenanceRecordItems">
+      <EntityTypeMapping TypeName="EquipmentModel.MachineMaintenanceRecordItem">
+        <MappingFragment StoreEntitySet="MachineMaintenanceRecordItem">
+          <ScalarProperty Name="MachineMaintenanceCheckItemId" ColumnName="MachineMaintenanceCheckItemId" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="MachineMaintenanceRecordId" ColumnName="MachineMaintenanceRecordId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MachineMaintenanceRecordMaterialUseds">
+      <EntityTypeMapping TypeName="EquipmentModel.MachineMaintenanceRecordMaterialUsed">
+        <MappingFragment StoreEntitySet="MachineMaintenanceRecordMaterialUsed">
+          <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MaterialUsed" ColumnName="MaterialUsed" />
+          <ScalarProperty Name="MachineMaintenanceRecordId" ColumnName="MachineMaintenanceRecordId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MachineMaintenanceRecordOthers">
+      <EntityTypeMapping TypeName="EquipmentModel.MachineMaintenanceRecordOther">
+        <MappingFragment StoreEntitySet="MachineMaintenanceRecordOther">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="MachineMaintenanceRecordId" ColumnName="MachineMaintenanceRecordId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ReportMachineMaintenance" FunctionName="EquipmentModel.Store.ReportMachineMaintenance">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportMachineMaintenance_Result">
+          <ScalarProperty Name="TanggalMulai" ColumnName="TanggalMulai" />
+          <ScalarProperty Name="TanggalSelesai" ColumnName="TanggalSelesai" />
+          <ScalarProperty Name="MaintenanceState" ColumnName="MaintenanceState" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Merk" ColumnName="Merk" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportMachineMaintenanceItemWork" FunctionName="EquipmentModel.Store.ReportMachineMaintenanceItemWork">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportMachineMaintenanceItemWork_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="ItemPekerjaan" ColumnName="ItemPekerjaan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportMachineMaintenanceMaterialUsed" FunctionName="EquipmentModel.Store.ReportMachineMaintenanceMaterialUsed">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportMachineMaintenanceMaterialUsed_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="MaterialUsed" ColumnName="MaterialUsed" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportMachineMaintenanceOther" FunctionName="EquipmentModel.Store.ReportMachineMaintenanceOther">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportMachineMaintenanceOther_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportHeavyEqpMaintenance" FunctionName="EquipmentModel.Store.ReportHeavyEqpMaintenance">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportHeavyEqpMaintenance_Result">
+          <ScalarProperty Name="TanggalMulai" ColumnName="TanggalMulai" />
+          <ScalarProperty Name="TanggalSelesai" ColumnName="TanggalSelesai" />
+          <ScalarProperty Name="HourMeterValue" ColumnName="HourMeterValue" />
+          <ScalarProperty Name="MaintenanceState" ColumnName="MaintenanceState" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Merk" ColumnName="Merk" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Species" ColumnName="Species" />
+          <ScalarProperty Name="OprName" ColumnName="OprName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportHeavyEqpMaintenanceMaterialUsed" FunctionName="EquipmentModel.Store.ReportHeavyEqpMaintenanceMaterialUsed">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportHeavyEqpMaintenanceMaterialUsed_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="MaterialUsed" ColumnName="MaterialUsed" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportHeavyEqpMaintenanceOther" FunctionName="EquipmentModel.Store.ReportHeavyEqpMaintenanceOther">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportHeavyEqpMaintenanceOther_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReportHeavyEquipmentMaintenanceItemWork" FunctionName="EquipmentModel.Store.ReportHeavyEquipmentMaintenanceItemWork">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EquipmentModel.ReportHeavyEquipmentMaintenanceItemWork_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="ItemPekerjaan" ColumnName="ItemPekerjaan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,1028 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectManagement_ERPModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ProjectManagement_ERPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CompanyInfoes" EntityType="ProjectManagement_ERPModel.CompanyInfo" />
+    <EntitySet Name="ProjectTaskDivisions" EntityType="ProjectManagement_ERPModel.ProjectTaskDivision" />
+    <EntitySet Name="ProjectTaskDivisionItems" EntityType="ProjectManagement_ERPModel.ProjectTaskDivisionItem" />
+    <EntitySet Name="ProjectTaskWeights" EntityType="ProjectManagement_ERPModel.ProjectTaskWeight" />
+    <EntitySet Name="ProjectTimeSheets" EntityType="ProjectManagement_ERPModel.ProjectTimeSheet" />
+    <AssociationSet Name="FK_ProjectTaskDivisionItem_ProjectTaskDivision" Association="ProjectManagement_ERPModel.FK_ProjectTaskDivisionItem_ProjectTaskDivision">
+      <End Role="ProjectTaskDivision" EntitySet="ProjectTaskDivisions" />
+      <End Role="ProjectTaskDivisionItem" EntitySet="ProjectTaskDivisionItems" />
+    </AssociationSet>
+    <EntitySet Name="Materials" EntityType="ProjectManagement_ERPModel.Material" />
+    <EntitySet Name="ProjectDocDetails" EntityType="ProjectManagement_ERPModel.ProjectDocDetail" />
+    <FunctionImport Name="GetTimesheetItems" ReturnType="Collection(ProjectManagement_ERPModel.GetTimesheetItems_Result)">
+      <Parameter Name="projectInfoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getTitle" ReturnType="Collection(ProjectManagement_ERPModel.getTitle_Result)">
+      <Parameter Name="projectInfoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ScheduleEquipment" ReturnType="Collection(ProjectManagement_ERPModel.ScheduleEquipment_Result)">
+      <Parameter Name="projectInfoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ScheduleMaterial" ReturnType="Collection(ProjectManagement_ERPModel.ScheduleMaterial_Result)">
+      <Parameter Name="projectInfoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="ProjectTaskDivisionItemVisualColors" EntityType="ProjectManagement_ERPModel.ProjectTaskDivisionItemVisualColor" />
+    <EntitySet Name="Equipments" EntityType="ProjectManagement_ERPModel.Equipment" />
+    <EntitySet Name="ProjectCostRecords" EntityType="ProjectManagement_ERPModel.ProjectCostRecord" />
+    <EntitySet Name="ProjectCostRecordItems" EntityType="ProjectManagement_ERPModel.ProjectCostRecordItem" />
+    <AssociationSet Name="FK_ProjectCostRecordItem_ProjectCostRecord" Association="ProjectManagement_ERPModel.FK_ProjectCostRecordItem_ProjectCostRecord">
+      <End Role="ProjectCostRecord" EntitySet="ProjectCostRecords" />
+      <End Role="ProjectCostRecordItem" EntitySet="ProjectCostRecordItems" />
+    </AssociationSet>
+    <FunctionImport Name="GetDailyReportDateList" ReturnType="Collection(ProjectManagement_ERPModel.GetDailyReportDateList_Result)">
+      <Parameter Name="ProjectID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetDailyReportData" ReturnType="Collection(ProjectManagement_ERPModel.GetDailyReportData_Result)">
+      <Parameter Name="IdList" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="ProjectInfoes" EntityType="ProjectManagement_ERPModel.ProjectInfo" />
+    <AssociationSet Name="FK_ProjectInfo_CompanyInfo" Association="ProjectManagement_ERPModel.FK_ProjectInfo_CompanyInfo">
+      <End Role="CompanyInfo" EntitySet="CompanyInfoes" />
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipment_ProjectInfo" Association="ProjectManagement_ERPModel.FK_Equipment_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+      <End Role="Equipment" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Material_ProjectInfo" Association="ProjectManagement_ERPModel.FK_Material_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+      <End Role="Material" EntitySet="Materials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDocDetail_ProjectInfo" Association="ProjectManagement_ERPModel.FK_ProjectDocDetail_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+      <End Role="ProjectDocDetail" EntitySet="ProjectDocDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTaskDivision_ProjectInfo" Association="ProjectManagement_ERPModel.FK_ProjectTaskDivision_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+      <End Role="ProjectTaskDivision" EntitySet="ProjectTaskDivisions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTimeSheet_ProjectInfo" Association="ProjectManagement_ERPModel.FK_ProjectTimeSheet_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+      <End Role="ProjectTimeSheet" EntitySet="ProjectTimeSheets" />
+    </AssociationSet>
+    <EntitySet Name="DailyReports" EntityType="ProjectManagement_ERPModel.DailyReport" />
+    <EntitySet Name="DailyReportFieldPersonnelUses" EntityType="ProjectManagement_ERPModel.DailyReportFieldPersonnelUse" />
+    <EntitySet Name="DailyReportIncidenceOfInhibitorActivities" EntityType="ProjectManagement_ERPModel.DailyReportIncidenceOfInhibitorActivity" />
+    <EntitySet Name="DailyReportLaborUses" EntityType="ProjectManagement_ERPModel.DailyReportLaborUse" />
+    <AssociationSet Name="FK_ReportList_ProjectInfo" Association="ProjectManagement_ERPModel.FK_ReportList_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+      <End Role="DailyReport" EntitySet="DailyReports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportListFieldPersonnelUse_ReportList" Association="ProjectManagement_ERPModel.FK_ReportListFieldPersonnelUse_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReports" />
+      <End Role="DailyReportFieldPersonnelUse" EntitySet="DailyReportFieldPersonnelUses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportListIncidenceOfInhibitorActivity_ReportList" Association="ProjectManagement_ERPModel.FK_ReportListIncidenceOfInhibitorActivity_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReports" />
+      <End Role="DailyReportIncidenceOfInhibitorActivity" EntitySet="DailyReportIncidenceOfInhibitorActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportListLaborUse_ReportList" Association="ProjectManagement_ERPModel.FK_ReportListLaborUse_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReports" />
+      <End Role="DailyReportLaborUse" EntitySet="DailyReportLaborUses" />
+    </AssociationSet>
+    <FunctionImport Name="GetWeeklyReportHeaderFooter" ReturnType="Collection(ProjectManagement_ERPModel.GetWeeklyReportHeaderFooter_Result)">
+      <Parameter Name="WeekReportID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMonthlyReportHeaderFooter" ReturnType="Collection(ProjectManagement_ERPModel.GetMonthlyReportHeaderFooter_Result)">
+      <Parameter Name="MonthReportID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetWeeklyReportList" ReturnType="Collection(ProjectManagement_ERPModel.GetWeeklyReportList_Result)">
+      <Parameter Name="ProjectID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="DailyReportTasks" EntityType="ProjectManagement_ERPModel.DailyReportTask" />
+    <AssociationSet Name="FK_ReportListTask_ReportList" Association="ProjectManagement_ERPModel.FK_ReportListTask_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReports" />
+      <End Role="DailyReportTask" EntitySet="DailyReportTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DailyReportTask_ProjectTaskDivisionItem" Association="ProjectManagement_ERPModel.FK_DailyReportTask_ProjectTaskDivisionItem">
+      <End Role="ProjectTaskDivisionItem" EntitySet="ProjectTaskDivisionItems" />
+      <End Role="DailyReportTask" EntitySet="DailyReportTasks" />
+    </AssociationSet>
+    <FunctionImport Name="GetMonthlyReportList" ReturnType="Collection(ProjectManagement_ERPModel.GetMonthlyReportList_Result)">
+      <Parameter Name="ProjectID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="DailyReportEquipmentUses" EntityType="ProjectManagement_ERPModel.DailyReportEquipmentUse" />
+    <AssociationSet Name="FK_ReportListEquipmentUse_ReportList" Association="ProjectManagement_ERPModel.FK_ReportListEquipmentUse_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReports" />
+      <End Role="DailyReportEquipmentUse" EntitySet="DailyReportEquipmentUses" />
+    </AssociationSet>
+    <EntitySet Name="ProjectMutualCheck0Item" EntityType="ProjectManagement_ERPModel.ProjectMutualCheck0Item" />
+    <FunctionImport Name="GetDailyReportFor_G" ReturnType="Collection(ProjectManagement_ERPModel.GetDailyReportFor_G_Result)">
+      <Parameter Name="ProjectInfoID" Mode="In" Type="Int32" />
+      <Parameter Name="DayWork" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="DailyReportBaseConstructionMaterialUses" EntityType="ProjectManagement_ERPModel.DailyReportBaseConstructionMaterialUse" />
+    <AssociationSet Name="FK_ReportListBaseConstructionMaterialUse_ReportList" Association="ProjectManagement_ERPModel.FK_ReportListBaseConstructionMaterialUse_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReports" />
+      <End Role="DailyReportBaseConstructionMaterialUse" EntitySet="DailyReportBaseConstructionMaterialUses" />
+    </AssociationSet>
+    <FunctionImport Name="GetWeeklyReportDetail" ReturnType="Collection(ProjectManagement_ERPModel.GetWeeklyReportDetail_Result)">
+      <Parameter Name="WeekReportID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMonthlyReportDetail" ReturnType="Collection(ProjectManagement_ERPModel.GetMonthlyReportDetail_Result)">
+      <Parameter Name="MonthReportID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="ProjectTaskWeight_MutualCheck0" EntityType="ProjectManagement_ERPModel.ProjectTaskWeight_MutualCheck0" />
+    <EntitySet Name="MonthlyReports" EntityType="ProjectManagement_ERPModel.MonthlyReport" />
+    <EntitySet Name="WeeklyReports" EntityType="ProjectManagement_ERPModel.WeeklyReport" />
+    <AssociationSet Name="FK_MonthlyReport_ProjectInfo" Association="ProjectManagement_ERPModel.FK_MonthlyReport_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+      <End Role="MonthlyReport" EntitySet="MonthlyReports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WeeklyReport_ProjectInfo" Association="ProjectManagement_ERPModel.FK_WeeklyReport_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+      <End Role="WeeklyReport" EntitySet="WeeklyReports" />
+    </AssociationSet>
+    <FunctionImport Name="GetWeeklyReportDetail_withADD" ReturnType="Collection(ProjectManagement_ERPModel.GetWeeklyReportDetail_withADD_Result)">
+      <Parameter Name="WeekReportID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMonthlyReportDetail_withADD" ReturnType="Collection(ProjectManagement_ERPModel.GetMonthlyReportDetail_withADD_Result)">
+      <Parameter Name="MonthReportID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="ProjectMutualCheck0" EntityType="ProjectManagement_ERPModel.ProjectMutualCheck0" />
+    <AssociationSet Name="FK_ProjectMutualCheck0_ProjectInfo" Association="ProjectManagement_ERPModel.FK_ProjectMutualCheck0_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+      <End Role="ProjectMutualCheck0" EntitySet="ProjectMutualCheck0" />
+    </AssociationSet>
+    <EntitySet Name="ReportLayouts" EntityType="ProjectManagement_ERPModel.ReportLayout" />
+    <AssociationSet Name="FK_ReportLayout_ProjectInfo" Association="ProjectManagement_ERPModel.FK_ReportLayout_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+      <End Role="ReportLayout" EntitySet="ReportLayouts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CompanyInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Alias" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Address1" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Address2" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Phone1" Type="String" Nullable="false" MaxLength="18" Unicode="false" FixedLength="false" />
+    <Property Name="Phone2" Type="String" MaxLength="18" Unicode="false" FixedLength="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Annotation" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="ProjectInfoes" Relationship="ProjectManagement_ERPModel.FK_ProjectInfo_CompanyInfo" FromRole="CompanyInfo" ToRole="ProjectInfo" />
+  </EntityType>
+  <EntityType Name="ProjectTaskDivision">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectInfoId" Type="Int32" Nullable="false" />
+    <Property Name="TaskTitle" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Ordinal" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ProjectTaskDivisionItems" Relationship="ProjectManagement_ERPModel.FK_ProjectTaskDivisionItem_ProjectTaskDivision" FromRole="ProjectTaskDivision" ToRole="ProjectTaskDivisionItem" />
+    <Property Type="Int32" Name="DivisionNumber" Nullable="false" />
+    <NavigationProperty Name="ProjectInfo" Relationship="ProjectManagement_ERPModel.FK_ProjectTaskDivision_ProjectInfo" FromRole="ProjectTaskDivision" ToRole="ProjectInfo" />
+  </EntityType>
+  <EntityType Name="ProjectTaskDivisionItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectTaskDivisionId" Type="Int32" Nullable="false" />
+    <Property Name="TaskTitle" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Quantity" Type="Double" Nullable="false" />
+    <Property Name="UnitQuantity" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+    <Property Name="Value" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Ordinal" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ProjectTaskDivision" Relationship="ProjectManagement_ERPModel.FK_ProjectTaskDivisionItem_ProjectTaskDivision" FromRole="ProjectTaskDivisionItem" ToRole="ProjectTaskDivision" />
+    <Property Type="String" Name="PaymentNumber" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="WorkDays" Nullable="false" />
+    <NavigationProperty Name="DailyReportTasks" Relationship="ProjectManagement_ERPModel.FK_DailyReportTask_ProjectTaskDivisionItem" FromRole="ProjectTaskDivisionItem" ToRole="DailyReportTask" />
+  </EntityType>
+  <EntityType Name="ProjectTaskWeight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectTaskDivisionItemId" Type="Int32" Nullable="false" />
+    <Property Name="WeekNumber" Type="Int32" Nullable="false" />
+    <Property Name="Weight" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectTimeSheet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ProjectInfoId" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedByOccupation" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="KnownBy" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="KnownByOccupation" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="ApprovedBy" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="ApprovedByOccupation" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="RevisionNumber" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="RevisionDate" Type="DateTime" />
+    <NavigationProperty Name="ProjectInfo" Relationship="ProjectManagement_ERPModel.FK_ProjectTimeSheet_ProjectInfo" FromRole="ProjectTimeSheet" ToRole="ProjectInfo" />
+  </EntityType>
+  <Association Name="FK_ProjectTaskDivisionItem_ProjectTaskDivision">
+    <End Role="ProjectTaskDivision" Type="ProjectManagement_ERPModel.ProjectTaskDivision" Multiplicity="1" />
+    <End Role="ProjectTaskDivisionItem" Type="ProjectManagement_ERPModel.ProjectTaskDivisionItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTaskDivision">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTaskDivisionItem">
+        <PropertyRef Name="ProjectTaskDivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Materials" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Volume" Nullable="false" Precision="18" Scale="3" />
+    <Property Type="Decimal" Name="V_Lap" Nullable="false" Precision="18" Scale="3" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="BeginDate" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" />
+    <Property Type="Int32" Name="ProjectInfoID" />
+    <NavigationProperty Name="ProjectInfo" Relationship="ProjectManagement_ERPModel.FK_Material_ProjectInfo" FromRole="Material" ToRole="ProjectInfo" />
+  </EntityType>
+  <EntityType Name="ProjectDocDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectInfoID" Nullable="false" />
+    <Property Type="String" Name="DocTitle" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="DocFile" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="DocType" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FileName" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectInfo" Relationship="ProjectManagement_ERPModel.FK_ProjectDocDetail_ProjectInfo" FromRole="ProjectDocDetail" ToRole="ProjectInfo" />
+  </EntityType>
+  <ComplexType Name="GetTimesheetItems_Result">
+    <Property Type="Int32" Name="divisionid" Nullable="true" />
+    <Property Type="String" Name="divisiontitle" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="divisionordinal" Nullable="true" />
+    <Property Type="Int32" Name="divisionnumber" Nullable="true" />
+    <Property Type="Int32" Name="id" Nullable="true" />
+    <Property Type="String" Name="paymentnumber" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="tasktitle" Nullable="true" MaxLength="150" />
+    <Property Type="Decimal" Name="quantity" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="unitquantity" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="value" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="totalitemvalue" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Int32" Name="ordinal" Nullable="true" />
+    <Property Type="Int32" Name="workdays" Nullable="true" />
+    <Property Type="Decimal" Name="taskweight" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="ordinalSort" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="RapSchedule_Result">
+    <Property Type="String" Name="ProjectTitle" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="getTitle_Result">
+    <Property Type="String" Name="ProjectTitle" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ProjectCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Lokasi" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="ScheduleEquipment_Result">
+    <Property Type="Int64" Name="nomor" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Equipments" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="ProjectInfoID" Nullable="true" />
+    <Property Type="Int32" Name="Volume" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="BeginDate" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ScheduleMaterial_Result">
+    <Property Type="Int64" Name="nomor" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Materials" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="ProjectInfoID" Nullable="true" />
+    <Property Type="Decimal" Name="Volume" Nullable="false" Precision="18" Scale="3" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="BeginDate" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" />
+    <Property Type="Decimal" Name="volumeLapangan" Nullable="false" Precision="18" Scale="3" />
+  </ComplexType>
+  <EntityType Name="ProjectTaskDivisionItemVisualColor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectTaskDivisionItemId" Nullable="false" />
+    <Property Type="String" Name="CellBackgroundColor" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CellTextColor" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RowBackgroundColor" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Equipments" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ProjectInfoID" />
+    <Property Type="Int32" Name="Volume" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="BeginDate" Nullable="false" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" />
+    <NavigationProperty Name="ProjectInfo" Relationship="ProjectManagement_ERPModel.FK_Equipment_ProjectInfo" FromRole="Equipment" ToRole="ProjectInfo" />
+  </EntityType>
+  <EntityType Name="ProjectCostRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectInfoId" Nullable="false" />
+    <Property Type="String" Name="TaskGroupTitle" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PacketCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="TransactionDate" Nullable="false" />
+    <Property Type="String" Name="RecordedBy" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Cashier" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectCostRecordItems" Relationship="ProjectManagement_ERPModel.FK_ProjectCostRecordItem_ProjectCostRecord" FromRole="ProjectCostRecord" ToRole="ProjectCostRecordItem" />
+  </EntityType>
+  <EntityType Name="ProjectCostRecordItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectCostRecordId" Nullable="false" />
+    <Property Type="String" Name="PostCategory" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ItemDescription" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Value" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Notes" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectCostRecord" Relationship="ProjectManagement_ERPModel.FK_ProjectCostRecordItem_ProjectCostRecord" FromRole="ProjectCostRecordItem" ToRole="ProjectCostRecord" />
+  </EntityType>
+  <Association Name="FK_ProjectCostRecordItem_ProjectCostRecord">
+    <End Type="ProjectManagement_ERPModel.ProjectCostRecord" Role="ProjectCostRecord" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.ProjectCostRecordItem" Role="ProjectCostRecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectCostRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectCostRecordItem">
+        <PropertyRef Name="ProjectCostRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetDailyReportDateList_Result">
+    <Property Type="DateTime" Name="DateItem" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="ID" Nullable="true" />
+    <Property Type="Int32" Name="DayNum" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetDailyReportData_Result">
+    <Property Type="DateTime" Name="DateReport" Nullable="true" />
+    <Property Type="Int32" Name="GroupData" Nullable="true" />
+    <Property Type="String" Name="Column1" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Column2" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Column3" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Column4" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Column5" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Column6" Nullable="true" MaxLength="200" />
+    <Property Type="Binary" Name="Column7" Nullable="true" MaxLength="Max" />
+    <Property Type="Binary" Name="Column8" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <EntityType Name="ProjectInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ProjectCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ProjectTitle" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DateStart" Nullable="false" />
+    <Property Type="Int32" Name="NumberOfDays" Nullable="false" />
+    <Property Type="String" Name="DayUnit" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContractNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CompanyInfoId" Nullable="false" />
+    <Property Type="Decimal" Name="ContractValue" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="ConsultanName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Location" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Archive" Nullable="false" />
+    <NavigationProperty Name="CompanyInfo" Relationship="ProjectManagement_ERPModel.FK_ProjectInfo_CompanyInfo" FromRole="ProjectInfo" ToRole="CompanyInfo" />
+    <NavigationProperty Name="Equipments" Relationship="ProjectManagement_ERPModel.FK_Equipment_ProjectInfo" FromRole="ProjectInfo" ToRole="Equipment" />
+    <NavigationProperty Name="Materials" Relationship="ProjectManagement_ERPModel.FK_Material_ProjectInfo" FromRole="ProjectInfo" ToRole="Material" />
+    <NavigationProperty Name="ProjectDocDetails" Relationship="ProjectManagement_ERPModel.FK_ProjectDocDetail_ProjectInfo" FromRole="ProjectInfo" ToRole="ProjectDocDetail" />
+    <NavigationProperty Name="ProjectTaskDivisions" Relationship="ProjectManagement_ERPModel.FK_ProjectTaskDivision_ProjectInfo" FromRole="ProjectInfo" ToRole="ProjectTaskDivision" />
+    <NavigationProperty Name="ProjectTimeSheets" Relationship="ProjectManagement_ERPModel.FK_ProjectTimeSheet_ProjectInfo" FromRole="ProjectInfo" ToRole="ProjectTimeSheet" />
+    <NavigationProperty Name="DailyReports" Relationship="ProjectManagement_ERPModel.FK_ReportList_ProjectInfo" FromRole="ProjectInfo" ToRole="DailyReport" />
+    <NavigationProperty Name="MonthlyReports" Relationship="ProjectManagement_ERPModel.FK_MonthlyReport_ProjectInfo" FromRole="ProjectInfo" ToRole="MonthlyReport" />
+    <NavigationProperty Name="WeeklyReports" Relationship="ProjectManagement_ERPModel.FK_WeeklyReport_ProjectInfo" FromRole="ProjectInfo" ToRole="WeeklyReport" />
+    <NavigationProperty Name="ProjectMutualCheck0" Relationship="ProjectManagement_ERPModel.FK_ProjectMutualCheck0_ProjectInfo" FromRole="ProjectInfo" ToRole="ProjectMutualCheck0" />
+    <NavigationProperty Name="ReportLayouts" Relationship="ProjectManagement_ERPModel.FK_ReportLayout_ProjectInfo" FromRole="ProjectInfo" ToRole="ReportLayout" />
+  </EntityType>
+  <Association Name="FK_ProjectInfo_CompanyInfo">
+    <End Type="ProjectManagement_ERPModel.CompanyInfo" Role="CompanyInfo" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectInfo">
+        <PropertyRef Name="CompanyInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipment_ProjectInfo">
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="0..1" />
+    <End Type="ProjectManagement_ERPModel.Equipment" Role="Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="ProjectInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Material_ProjectInfo">
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="0..1" />
+    <End Type="ProjectManagement_ERPModel.Material" Role="Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Material">
+        <PropertyRef Name="ProjectInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDocDetail_ProjectInfo">
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.ProjectDocDetail" Role="ProjectDocDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectDocDetail">
+        <PropertyRef Name="ProjectInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTaskDivision_ProjectInfo">
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.ProjectTaskDivision" Role="ProjectTaskDivision" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTaskDivision">
+        <PropertyRef Name="ProjectInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTimeSheet_ProjectInfo">
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="0..1" />
+    <End Type="ProjectManagement_ERPModel.ProjectTimeSheet" Role="ProjectTimeSheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTimeSheet">
+        <PropertyRef Name="ProjectInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DailyReport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectInfoID" Nullable="false" />
+    <Property Type="Int32" Name="DayWork" />
+    <Property Type="String" Name="FiledContractors" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CheckedConsultants" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovedTechnicalAssistant" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectInfo" Relationship="ProjectManagement_ERPModel.FK_ReportList_ProjectInfo" FromRole="DailyReport" ToRole="ProjectInfo" />
+    <NavigationProperty Name="DailyReportFieldPersonnelUses" Relationship="ProjectManagement_ERPModel.FK_ReportListFieldPersonnelUse_ReportList" FromRole="DailyReport" ToRole="DailyReportFieldPersonnelUse" />
+    <NavigationProperty Name="DailyReportIncidenceOfInhibitorActivities" Relationship="ProjectManagement_ERPModel.FK_ReportListIncidenceOfInhibitorActivity_ReportList" FromRole="DailyReport" ToRole="DailyReportIncidenceOfInhibitorActivity" />
+    <NavigationProperty Name="DailyReportLaborUses" Relationship="ProjectManagement_ERPModel.FK_ReportListLaborUse_ReportList" FromRole="DailyReport" ToRole="DailyReportLaborUse" />
+    <NavigationProperty Name="DailyReportTasks" Relationship="ProjectManagement_ERPModel.FK_ReportListTask_ReportList" FromRole="DailyReport" ToRole="DailyReportTask" />
+    <NavigationProperty Name="DailyReportEquipmentUses" Relationship="ProjectManagement_ERPModel.FK_ReportListEquipmentUse_ReportList" FromRole="DailyReport" ToRole="DailyReportEquipmentUse" />
+    <NavigationProperty Name="DailyReportBaseConstructionMaterialUses" Relationship="ProjectManagement_ERPModel.FK_ReportListBaseConstructionMaterialUse_ReportList" FromRole="DailyReport" ToRole="DailyReportBaseConstructionMaterialUse" />
+  </EntityType>
+  <EntityType Name="DailyReportFieldPersonnelUse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="DailyReportId" Nullable="false" />
+    <Property Type="String" Name="PositionType" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="PositionTypeName" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Byte" Name="Ordinal" Nullable="false" />
+    <Property Type="String" Name="Position" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="Int32" Name="Amount" Nullable="false" />
+    <NavigationProperty Name="DailyReport" Relationship="ProjectManagement_ERPModel.FK_ReportListFieldPersonnelUse_ReportList" FromRole="DailyReportFieldPersonnelUse" ToRole="DailyReport" />
+  </EntityType>
+  <EntityType Name="DailyReportIncidenceOfInhibitorActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="DailyReportId" Nullable="false" />
+    <Property Type="Int32" Name="Number" Nullable="false" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Time" Nullable="false" />
+    <Property Type="String" Name="Location" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsResponsibilityOfContractor" Nullable="false" />
+    <NavigationProperty Name="DailyReport" Relationship="ProjectManagement_ERPModel.FK_ReportListIncidenceOfInhibitorActivity_ReportList" FromRole="DailyReportIncidenceOfInhibitorActivity" ToRole="DailyReport" />
+  </EntityType>
+  <EntityType Name="DailyReportLaborUse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="DailyReportId" Nullable="false" />
+    <Property Type="Int32" Name="Number" Nullable="false" />
+    <Property Type="String" Name="Position" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Amount" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DailyReport" Relationship="ProjectManagement_ERPModel.FK_ReportListLaborUse_ReportList" FromRole="DailyReportLaborUse" ToRole="DailyReport" />
+  </EntityType>
+  <Association Name="FK_ReportList_ProjectInfo">
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.DailyReport" Role="DailyReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DailyReport">
+        <PropertyRef Name="ProjectInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportListFieldPersonnelUse_ReportList">
+    <End Type="ProjectManagement_ERPModel.DailyReport" Role="DailyReport" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.DailyReportFieldPersonnelUse" Role="DailyReportFieldPersonnelUse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportFieldPersonnelUse">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportListIncidenceOfInhibitorActivity_ReportList">
+    <End Type="ProjectManagement_ERPModel.DailyReport" Role="DailyReport" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.DailyReportIncidenceOfInhibitorActivity" Role="DailyReportIncidenceOfInhibitorActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportIncidenceOfInhibitorActivity">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportListLaborUse_ReportList">
+    <End Type="ProjectManagement_ERPModel.DailyReport" Role="DailyReport" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.DailyReportLaborUse" Role="DailyReportLaborUse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportLaborUse">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetWeeklyReportHeaderFooter_Result">
+    <Property Type="String" Name="PelaksanaKegiatan" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="NamaPaket" Nullable="false" MaxLength="268" />
+    <Property Type="String" Name="KonsultanSupervisi" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="MingguKe" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="PeriodeAwal" Nullable="true" />
+    <Property Type="DateTime" Name="PeriodeAkhir" Nullable="true" />
+    <Property Type="String" Name="Kontraktor" Nullable="false" MaxLength="60" />
+    <Property Type="String" Name="NoKontrak" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="TanggalKontrak" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="NilaiKontrak" Nullable="false" Precision="19" />
+    <Property Type="String" Name="NOKONTRAKADDI" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="TANGGALKONTRAKADDI" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="NILAIKONTRAKADD01" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="MasaWaktu" Nullable="false" />
+    <Property Type="String" Name="Place" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="DateApproval" Nullable="true" />
+    <Property Type="String" Name="Approval1Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval1Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval1Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval1Identity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Approval2Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval2Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval2Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval2Identity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Approval3Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval3Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval3Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval3Identity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="JudulAtas" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="JudulBawah" Nullable="true" MaxLength="100" />
+    <Property Type="Binary" Name="LogoKanan" Nullable="true" MaxLength="Max" />
+    <Property Type="Binary" Name="LogoKiri" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="GetMonthlyReportHeaderFooter_Result">
+    <Property Type="String" Name="PelaksanaKegiatan" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="NamaPaket" Nullable="false" MaxLength="268" />
+    <Property Type="String" Name="KonsultanSupervisi" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="BulanKe" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="PeriodeAwal" Nullable="true" />
+    <Property Type="DateTime" Name="PeriodeAkhir" Nullable="true" />
+    <Property Type="String" Name="Kontraktor" Nullable="false" MaxLength="60" />
+    <Property Type="String" Name="NoKontrak" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="TanggalKontrak" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="NilaiKontrak" Nullable="false" Precision="19" />
+    <Property Type="String" Name="NOKONTRAKADDI" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="TANGGALKONTRAKADDI" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="NILAIKONTRAKADD01" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="MasaWaktu" Nullable="false" />
+    <Property Type="String" Name="Place" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="DateApproval" Nullable="true" />
+    <Property Type="String" Name="Approval1Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval1Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval1Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval1Identity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Approval2Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval2Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval2Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval2Identity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Approval3Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval3Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval3Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval3Identity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="JudulAtas" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="JudulBawah" Nullable="true" MaxLength="100" />
+    <Property Type="Binary" Name="LogoKanan" Nullable="true" MaxLength="Max" />
+    <Property Type="Binary" Name="LogoKiri" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="GetWeeklyReportList_Result">
+    <Property Type="Int32" Name="WeekNumber" Nullable="true" />
+    <Property Type="DateTime" Name="BeginDate" Nullable="true" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" />
+    <Property Type="String" Name="ImplementingActivities" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Place" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="DateApproval" Nullable="true" />
+    <Property Type="String" Name="Approval1Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval1Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval1Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval1Identity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Approval2Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval2Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval2Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval2Identity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Approval3Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval3Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval3Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval3Identity" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="DailyReportTask">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="DailyReportId" Nullable="false" />
+    <Property Type="Int32" Name="ProjectTaskDivisionItemId" Nullable="false" />
+    <Property Type="Double" Name="Volume" Nullable="false" />
+    <Property Type="String" Name="Location" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DailyReport" Relationship="ProjectManagement_ERPModel.FK_ReportListTask_ReportList" FromRole="DailyReportTask" ToRole="DailyReport" />
+    <NavigationProperty Name="ProjectTaskDivisionItem" Relationship="ProjectManagement_ERPModel.FK_DailyReportTask_ProjectTaskDivisionItem" FromRole="DailyReportTask" ToRole="ProjectTaskDivisionItem" />
+  </EntityType>
+  <Association Name="FK_ReportListTask_ReportList">
+    <End Type="ProjectManagement_ERPModel.DailyReport" Role="DailyReport" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.DailyReportTask" Role="DailyReportTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportTask">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DailyReportTask_ProjectTaskDivisionItem">
+    <End Type="ProjectManagement_ERPModel.ProjectTaskDivisionItem" Role="ProjectTaskDivisionItem" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.DailyReportTask" Role="DailyReportTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTaskDivisionItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DailyReportTask">
+        <PropertyRef Name="ProjectTaskDivisionItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetMonthlyReportList_Result">
+    <Property Type="Int32" Name="MonthNumber" Nullable="true" />
+    <Property Type="Int32" Name="BeginWeek" Nullable="true" />
+    <Property Type="Int32" Name="EndWeek" Nullable="true" />
+    <Property Type="DateTime" Name="BeginDate" Nullable="true" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" />
+    <Property Type="String" Name="ImplementingActivities" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Place" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="DateApproval" Nullable="true" />
+    <Property Type="String" Name="Approval1Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval1Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval1Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval1Identity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Approval2Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval2Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval2Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval2Identity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Approval3Occupation" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approval3Company" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval3Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Approval3Identity" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="DailyReportEquipmentUse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="DailyReportId" Nullable="false" />
+    <Property Type="String" Name="EquipmentName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Number" Nullable="false" />
+    <Property Type="Int32" Name="Amount" Nullable="false" />
+    <Property Type="String" Name="MeasurementUnit" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Condition" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DailyReport" Relationship="ProjectManagement_ERPModel.FK_ReportListEquipmentUse_ReportList" FromRole="DailyReportEquipmentUse" ToRole="DailyReport" />
+  </EntityType>
+  <Association Name="FK_ReportListEquipmentUse_ReportList">
+    <End Type="ProjectManagement_ERPModel.DailyReport" Role="DailyReport" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.DailyReportEquipmentUse" Role="DailyReportEquipmentUse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportEquipmentUse">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ProjectMutualCheck0Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectMutualCheck0Id" Nullable="false" />
+    <Property Type="Int32" Name="ProjectTaskDivisionItemId" Nullable="false" />
+    <Property Type="Double" Name="Quantity" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="GetDailyReportFor_G_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Value" Nullable="true" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="60" />
+  </ComplexType>
+  <EntityType Name="DailyReportBaseConstructionMaterialUse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="DailyReportId" Nullable="false" />
+    <Property Type="Int32" Name="Number" Nullable="false" />
+    <Property Type="Decimal" Name="QuantityUse" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="QuantityImported" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="DailyReport" Relationship="ProjectManagement_ERPModel.FK_ReportListBaseConstructionMaterialUse_ReportList" FromRole="DailyReportBaseConstructionMaterialUse" ToRole="DailyReport" />
+    <Property Type="String" Name="MaterialName" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="QuantityUnit" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_ReportListBaseConstructionMaterialUse_ReportList">
+    <End Type="ProjectManagement_ERPModel.DailyReport" Role="DailyReport" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.DailyReportBaseConstructionMaterialUse" Role="DailyReportBaseConstructionMaterialUse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportBaseConstructionMaterialUse">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetWeeklyReportDetail_Result">
+    <Property Type="Int32" Name="IDDivision" Nullable="true" />
+    <Property Type="Int32" Name="OrdinalDivision" Nullable="true" />
+    <Property Type="String" Name="Division" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="IDItem" Nullable="true" />
+    <Property Type="Int32" Name="OrdinalItem" Nullable="true" />
+    <Property Type="String" Name="PaymentNumber" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="UraianPekerjaan" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SAT" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="HargaSatuan" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Kuantitas" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="JumlahHarga" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Bobot" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasLalu" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotLalu" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasSekarang" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotSekarang" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotTotal" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="GetMonthlyReportDetail_Result">
+    <Property Type="Int32" Name="IDDivision" Nullable="true" />
+    <Property Type="Int32" Name="OrdinalDivision" Nullable="true" />
+    <Property Type="String" Name="Division" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="IDItem" Nullable="true" />
+    <Property Type="Int32" Name="OrdinalItem" Nullable="true" />
+    <Property Type="String" Name="PaymentNumber" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="UraianPekerjaan" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SAT" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="HargaSatuan" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Kuantitas" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="JumlahHarga" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Decimal" Name="Bobot" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasLalu" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotLalu" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasSekarang" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotSekarang" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotTotal" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <EntityType Name="ProjectTaskWeight_MutualCheck0">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectTaskDivisionItemId" Nullable="false" />
+    <Property Type="Int32" Name="WeekNumber" Nullable="false" />
+    <Property Type="Double" Name="Weight" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MonthlyReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectInfoId" Nullable="false" />
+    <Property Type="String" Name="ImplementingActivities" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MonthNumber" Nullable="false" />
+    <Property Type="String" Name="Place" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DateApproval" />
+    <Property Type="String" Name="Approval1Occupation" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval1Company" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval1Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval1Identity" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval2Occupation" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval2Company" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval2Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval2Identity" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval3Occupation" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval3Company" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval3Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval3Identity" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectInfo" Relationship="ProjectManagement_ERPModel.FK_MonthlyReport_ProjectInfo" FromRole="MonthlyReport" ToRole="ProjectInfo" />
+  </EntityType>
+  <EntityType Name="WeeklyReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectInfoId" Nullable="false" />
+    <Property Type="String" Name="ImplementingActivities" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="WeekNumber" Nullable="false" />
+    <Property Type="String" Name="Place" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DateApproval" />
+    <Property Type="String" Name="Approval1Occupation" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval1Company" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval1Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval1Identity" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval2Occupation" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval2Company" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval2Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval2Identity" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval3Occupation" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval3Company" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval3Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Approval3Identity" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectInfo" Relationship="ProjectManagement_ERPModel.FK_WeeklyReport_ProjectInfo" FromRole="WeeklyReport" ToRole="ProjectInfo" />
+  </EntityType>
+  <Association Name="FK_MonthlyReport_ProjectInfo">
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.MonthlyReport" Role="MonthlyReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MonthlyReport">
+        <PropertyRef Name="ProjectInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WeeklyReport_ProjectInfo">
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.WeeklyReport" Role="WeeklyReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WeeklyReport">
+        <PropertyRef Name="ProjectInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetWeeklyReportDetail_withADD_Result">
+    <Property Type="Int32" Name="IDDivision" Nullable="true" />
+    <Property Type="Int32" Name="OrdinalDivision" Nullable="true" />
+    <Property Type="String" Name="Division" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="IDItem" Nullable="true" />
+    <Property Type="Int32" Name="OrdinalItem" Nullable="true" />
+    <Property Type="String" Name="PaymentNumber" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="UraianPekerjaan" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SAT" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="HargaSatuan" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Kuantitas" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="JumlahHarga" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Bobot" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasLalu" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotLalu" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasSekarang" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotSekarang" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Double" Name="KuantitasMC0" Nullable="true" />
+    <Property Type="Double" Name="JumlahHargaMC0" Nullable="true" />
+    <Property Type="Double" Name="BobotMC0" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetMonthlyReportDetail_withADD_Result">
+    <Property Type="Int32" Name="IDDivision" Nullable="true" />
+    <Property Type="Int32" Name="OrdinalDivision" Nullable="true" />
+    <Property Type="String" Name="Division" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="IDItem" Nullable="true" />
+    <Property Type="Int32" Name="OrdinalItem" Nullable="true" />
+    <Property Type="String" Name="PaymentNumber" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="UraianPekerjaan" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SAT" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="HargaSatuan" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Kuantitas" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="JumlahHarga" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Bobot" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasLalu" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotLalu" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasSekarang" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotSekarang" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="KuantitasTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BobotTotal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Double" Name="KuantitasMC0" Nullable="true" />
+    <Property Type="Double" Name="JumlahHargaMC0" Nullable="true" />
+    <Property Type="Double" Name="BobotMC0" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="ProjectMutualCheck0">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="DocumentDate" Nullable="false" />
+    <Property Type="String" Name="DocumentNumber" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ProjectInfoId" Nullable="false" />
+    <Property Type="String" Name="ProposedByName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ProposedByOccupation" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ProposedByCompany" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CheckedByName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CheckedByOccupation" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CheckedByCompany" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovedByName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovedByOccupation" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovedByCompany" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovedByNIPP" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectInfo" Relationship="ProjectManagement_ERPModel.FK_ProjectMutualCheck0_ProjectInfo" FromRole="ProjectMutualCheck0" ToRole="ProjectInfo" />
+  </EntityType>
+  <Association Name="FK_ProjectMutualCheck0_ProjectInfo">
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.ProjectMutualCheck0" Role="ProjectMutualCheck0" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectMutualCheck0">
+        <PropertyRef Name="ProjectInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ReportLayout">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title1" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Title2" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="RightLogo" MaxLength="Max" FixedLength="false" />
+    <Property Type="Binary" Name="LeftLogo" MaxLength="Max" FixedLength="false" />
+    <Property Type="Int32" Name="IdProjectInfo" Nullable="false" />
+    <NavigationProperty Name="ProjectInfo" Relationship="ProjectManagement_ERPModel.FK_ReportLayout_ProjectInfo" FromRole="ReportLayout" ToRole="ProjectInfo" />
+  </EntityType>
+  <Association Name="FK_ReportLayout_ProjectInfo">
+    <End Type="ProjectManagement_ERPModel.ProjectInfo" Role="ProjectInfo" Multiplicity="1" />
+    <End Type="ProjectManagement_ERPModel.ReportLayout" Role="ReportLayout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportLayout">
+        <PropertyRef Name="IdProjectInfo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,20 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Akhir Periode";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Akhir Periode</h2>
+</div>
+<div class="box-content">
+    @(Html.Telerik().TreeView()
+            .Name("TreeView")
+            .Items(item =>
+            {
+                item.Add()
+                    .Text("A. Tutup Buku").Action("ClosingBook", "EndofPeriod");
+                item.Add()
+                    .Text("B. Pindah Saldo").Action("BalanceMoving", "EndofPeriod");
+            })
+    )
+</div>

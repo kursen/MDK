@@ -1,0 +1,38 @@
+﻿@model SKA.Areas.VoucherKas.Models.ViewModel.BankViewModel
+@{
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+}
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Setting - Kode Perkiraan";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+<div class="box-head">
+    <h2>Kode Perkiraan</h2>
+</div>
+<div class ="box-content">
+@(Html.Telerik().TreeView()
+.Name("TreeViewReport")
+.Items(item =>
+    {
+        item.Add()
+            .Text("Kepala Kode Perkiraan").Action("Index","ParentAccount");
+        item.Add()
+            .Text("Kode Perkiraan Umum").Action("Index", "ChartofAccount");
+        //item.Add()
+        //    .Text("Kodel Perkiraan Umum Per-Bulan").Action("Index", "BeginningBalanceMonth");
+        if (userBranchCode == "00")
+        {
+            item.Add()
+                .Text("Kode Perkiraan Jurnal").Action("Index", "SetupJournalAccount");
+            item.Add()
+                .Text("Setup Laba Ditahan").Action("Index", "SetupLabaDitahan");
+        }
+    })
+    )
+</div>

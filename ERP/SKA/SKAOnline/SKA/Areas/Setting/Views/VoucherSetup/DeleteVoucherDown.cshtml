@@ -1,0 +1,124 @@
+﻿@model SKA.Areas.Setting.Models.ViewModels.VoucherSetupViewModel
+
+@{
+    string thresholdValue = string.Empty;
+
+    if (Session["ThresholdValue"] != null)
+    {
+        thresholdValue = Session["ThresholdValue"].ToString();
+    }
+    ViewBag.Title = "Setting - Hapus Data Setup Voucher < " + thresholdValue;
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Hapus Data Setup Voucher < @thresholdValue</h2>
+</div>
+<div class="box-content">
+    <h3>Apakah Anda yakin untuk menghapus data ini?</h3>
+    <br />
+    <table>
+        <tr>
+            <td>
+                Dibuat Oleh
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MakerName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+               Jabatan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MakerPosition)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Diperiksa Oleh
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ExaminerName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Jabatan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ExaminerPosition)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Diperiksa II Oleh
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ExaminerName2)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Jabatan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ExaminerPosition2)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Disetujui Oleh
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ApproverName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Jabatan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ApproverPostion)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+            @using (Html.BeginForm()) {
+                <p>
+                    <input type="submit" value="Hapus" class="t-button" style ="width:60px" />
+                    &nbsp;
+                    <a class ="t-button" style ="width:60px" href="@Url.Action("IndexVoucherDown", "VoucherSetup", null)">Kembali</a>
+                </p>
+            }
+            
+            </td>
+        </tr>
+    </table>
+</div>

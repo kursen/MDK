@@ -1,0 +1,58 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.RevenueExpenditureViewModel
+
+@{
+    ViewBag.Title = "SKA - Hapus Data Set P & P Operasional";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Hapus Data Set P & P Operasional</h2>
+</div>
+<div class="box-content">
+<h3>Apakah anda yakin untuk menghapus data ini?</h3>
+<br />
+<table>
+    <tr>
+        <td>
+            Kode Perkiraan
+        </td>
+        <td>
+            :
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.AccountCode)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Nama Perkiraan
+        </td>
+        <td>
+            :
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.AccountName)
+        </td>
+    </tr>
+     <tr>
+        <td>
+            Tipe
+        </td>
+        <td>
+            :
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Tipe)
+        </td>
+    </tr>
+</table>
+@using (Html.BeginForm()) {
+    <br />
+    <p>
+        <input type="submit" value="Hapus" class="t-button" style ="width:60px" />
+        &nbsp;
+        <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "RevenueExpenditure", null)">Kembali</a>
+    </p>
+}
+
+</div>

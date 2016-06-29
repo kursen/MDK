@@ -1,0 +1,34 @@
+﻿@using Telerik.Web.Mvc.UI
+
+@(Html.Telerik().Grid<SKA.Areas.VoucherKas.Models.ViewModel.BankViewModel>()
+    .Name("BankGrid").DataBinding(dataBinding =>
+    {
+        dataBinding.Ajax()
+            .Select("GetBankList", "Payment");
+    })
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Id).Hidden();
+        columns.Bound(p => p.BankName);
+        columns.Bound(p => p.ACNumber);
+    })
+    .ClientEvents(events =>
+    {
+        events.OnRowSelect("BankGrid_OnRowSelect");
+    })
+    .Pageable()
+    .Selectable()
+    .Filterable()
+    )
+
+    @Html.Hidden("BankGridSelectedId")
+    @Html.Hidden("BankGridSelectedName")
+
+<script type="text/javascript">
+    function BankGrid_OnRowSelect(e) {
+        var row = e.row;
+
+        $("#BankGridSelectedId").val(row.cells[0].innerHTML);
+        $("#BankGridSelectedName").val(row.cells[1].innerHTML);
+    }
+</script>

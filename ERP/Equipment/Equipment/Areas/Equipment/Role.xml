@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<controllers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <controller name="ConditionMaintenance" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="Create" roles="*" />
+    </actions>
+  </controller>
+  <controller name="DumpTruckActivities" >
+    <actions>
+      <action name="AutocompleteDrivers" roles="*" />
+      <action name="AutocompleteLoadType" roles="*" />
+      <action name="AutocompleteLocation" roles="*" />
+      <action name="AutocompleteNonOperationType" roles="*" />
+      <action name="AutocompleteOilType" roles="*" />
+      <action name="AutocompleteVehicle" roles="*" />
+      <action name="Create" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="loadActivity" roles="*" />
+      <action name="Delete" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="DeleteFuel" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="DeleteNonOperation" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="DeleteOil" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="DeleteOperation" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="Detail" roles="*" />
+      <action name="Edit" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="getFuels" roles="*" />
+      <action name="getListActivity" roles="*" />
+      <action name="getNonOperations" roles="*" />
+      <action name="getOils" roles="*" />
+      <action name="getOperations" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="loadActivity" roles="*" />
+      <action name="SaveItemActivities" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="ValidateFuel" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="ValidateNonOperation" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="ValidateOil" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="ValidateOperation" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+    </actions>
+  </controller>
+  <controller name="EquipmentList" >
+    <actions>
+
+      <action name="Create" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"  />
+      <action name="Delete" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"  />
+      <action name="Detail" roles="*" />
+      <action name="getData" roles="*" />
+      <action name="getOfficeId" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="SavePartial" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+    </actions>
+  </controller>
+  <controller name="GlobalAjax" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator">
+    <actions>
+      <action name="AllUnitQuantity" roles="*" />
+      <action name="AutocompleteGoods" roles="*" />
+      <action name="AutocompleteUnitQuantity" roles="*" />
+      <action name="AutocompleteVehicle" roles="*" />
+    </actions>
+  </controller>
+  <controller name="HeavyEqpActivities">
+    <actions>
+      <action name="AutocompleteLocation" roles="*" />
+      <action name="AutocompleteNonOperationType" roles="*" />
+      <action name="Create"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="Delete" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="DeleteFuel" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="DeleteNonOperation" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="DeleteOil" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="DeleteOperation" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="Detail" roles="*" />
+      <action name="Edit"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="getEqpAutoComplete" roles="*" />
+      <action name="getListActivity" roles="*" />
+      <action name="getOilType" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="loadActivity" roles="*" />
+      <action name="OperatorType" roles="*" />
+      <action name="SaveItemActivities"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="ValidateOperation"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="ValidateNonOperation"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="ValidateOil"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="ValidateFuel"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+    </actions>
+  </controller>
+  <controller name="HeavyEquipment" >
+    <actions>
+      <action name="Create"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="Delete" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="Detail" roles="*" />
+      <action name="getData" roles="*" />
+      <action name="GetOfficeList" roles="*" />
+      <action name="HeavyEqpPicture" roles="*" />
+      <action name="HeavyEquipmentTypes" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="MerkHeavyEquipmentTypes" roles="*" />
+      <action name="SaveImage" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="SavePartial"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+    </actions>
+  </controller>
+  <controller name="HeavyEquipmentPeriodicMaintenance" roles="Equipment.Supervisor, Equipment.Manager">
+    <actions>
+      <action name="DeleteMaintenanceItem" roles="*" />
+      <action name="GetListMaintenanceSchemaItem" roles="Equipment.Supervisor, Equipment.Manager"/>
+      <action name="Index" roles="Equipment.Supervisor, Equipment.Manager"/>
+      <action name="MaintenanceSchema" roles="Equipment.Supervisor, Equipment.Manager" />
+      <action name="SaveHeavyEquipmentMaintenance" roles="Equipment.Supervisor, Equipment.Manager" />
+      <action name="ValidateHeavyEquipmentCheckItem" roles="Equipment.Supervisor, Equipment.Manager" />
+    </actions>
+  </controller>
+  <controller name="Home" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="CompletionUsageReports" roles="*" />
+      <action name="GetNumberOfVehicleNeedToMaintain" roles="*" />
+    </actions>
+  </controller>
+
+  <controller name="MachineMaintenancePeriodic" roles="Equipment.Supervisor, Equipment.Manager">
+    <actions>
+      <action name="DeleteMaintenanceItem" roles="*" />
+      <action name="GetListMaintenanceSchemaItem" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="MaintenanceSchema" roles="*" />
+      <action name="SaveMachineEqpMaintenance" roles="*" />
+      <action name="ValidateMachineEqpCheckItem" roles="*" />
+    </actions>
+  </controller>
+  <controller name="MaintenanceTemplate" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator">
+    <actions>
+      <action name="Delete" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="getListMaintenance" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="Save" roles="*" />
+      <action name="SavePartial" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Report" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="ReportDTActivities" roles="*" />
+      <action name="ReportTradoActivities" roles="*" />
+      <action name="ReportVehicleMaintenance" roles="*" />
+      <action name="RptEmptyDT" roles="*" />
+      <action name="RptEmptyHeavyEqp" roles="*" />
+      <action name="RptEmptyTrado" roles="*" />
+    </actions>
+  </controller>
+  <controller name="TradoActivities">
+    <actions>
+      <action name="AutocompleteLocation" roles="*" />
+      <action name="Create"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="Detail" roles="*" />
+      <action name="Edit"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="getListActivity" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="loadActivity" roles="*" />
+      <action name="SaveItemActivities" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="ValidateFuel"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="ValidateFuelOut"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="ValidateNonOperation"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="ValidateOilAndSparePart"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="ValidateOperation"  roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+    </actions>
+  </controller>
+  <controller name="VehicleArea" roles="Equipment.Supervisor, Equipment.Manager">
+    <actions>
+      <action name="GetDrivers" roles="*" />
+      <action name="GetHeavyEquipmentList" roles="*" />
+      <action name="GetOperators" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="SaveDefaultDriver" roles="*" />
+      <action name="SaveDefaultOperator" roles="*" />
+      <action name="SaveHeavyEquipmentToNewLocation" roles="*" />
+      <action name="SaveVehicleToNewLocation" roles="*" />
+    </actions>
+  </controller>
+  <controller name="VehicleCentral" roles="Equipment.Supervisor, Equipment.Manager">
+    <actions>
+      <action name="GetDrivers" roles="*" />
+      <action name="GetHeavyEquipmentList" roles="*" />
+      <action name="GetOperators" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="SaveDefaultDriver" roles="*" />
+      <action name="SaveDefaultOperator" roles="*" />
+      <action name="SaveHeavyEquipmentToNewLocation" roles="*" />
+      <action name="SaveVehicleToNewLocation" roles="*" />
+    </actions>
+  </controller>
+  <controller name="VehicleMaintenance" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator">
+    <actions>
+      <action name="CreateMaintenanceRecord" roles="*" />
+      <action name="DeleteItemToMaintain" roles="*" />
+      <action name="DeleteMaterialUsed" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="Edit" roles="*" />
+      <action name="GetItemToService" roles="*" />
+      <action name="GetMaintenanceList" roles="*" />
+      <action name="GetMaintenanceOther" roles="*" />
+      <action name="GetMaintenanceTemplateItem" roles="*" />
+      <action name="GetMaterialUsed" roles="*" />
+      <action name="GetProposedVehicleToMaintainList" roles="*" />
+      <action name="GetServicedItems" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="ProposedMaintaenanceList" roles="*" />
+      <action name="SaveMaintenanceRecord" roles="*" />
+      <action name="ValidateItemMaterialUsed" roles="*" />
+      <action name="ValidateItemOther" roles="*" />
+      <action name="ValidateItemToMaintain" roles="*" />
+    </actions>
+  </controller>
+  <controller name="VehiclePeriodicMaintenance" roles="Equipment.Supervisor, Equipment.Manager">
+    <actions>
+      <action name="Create" roles="*" />
+      <action name="DeleteMaintenanceItem" roles="*" />
+      <action name="GetListMaintenanceSchemaItem" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="MaintenanceSchema" roles="*" />
+      <action name="SaveVehicleMaintenance" roles="*" />
+      <action name="ValidateVehicleCheckItem" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Vehicles"  >
+    <actions>
+     <action name="Create" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="Delete" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="Detail" roles="*" />
+      <action name="getData" roles="*" />
+      <action name="GetOfficeList" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="MerkVehiclesTypes" roles="*" />
+      <action name="SaveImage" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="SavePartial" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="VehiclePicture" roles="*" />
+      <action name="VehiclesTypes" roles="*" />
+    </actions>
+  </controller>
+  <controller name="WorkEquipment" >
+    <actions>
+      <action name="Create" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator"/>
+      <action name="Delete" roles="Equipment.Supervisor, Equipment.Manager, Equipment.DataOperator" />
+      <action name="getData" roles="*" />
+      <action name="Index" roles="*" />
+    </actions>
+  </controller>
+</controllers>

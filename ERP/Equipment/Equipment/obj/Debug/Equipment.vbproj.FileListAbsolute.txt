@@ -1,0 +1,15 @@
+D:\New MDK\trunk\ERP\Equipment\Equipment\bin\Equipment.dll
+D:\New MDK\trunk\ERP\Equipment\Equipment\bin\Equipment.pdb
+D:\New MDK\trunk\ERP\Equipment\Equipment\bin\Equipment.xml
+D:\New MDK\trunk\ERP\Equipment\Equipment\bin\EntityFramework.dll
+D:\New MDK\trunk\ERP\Equipment\Equipment\bin\ERPBase.dll
+D:\New MDK\trunk\ERP\Equipment\Equipment\bin\HaloUIHelpers.dll
+D:\New MDK\trunk\ERP\Equipment\Equipment\bin\EntityFramework.xml
+D:\New MDK\trunk\ERP\Equipment\Equipment\obj\Debug\Equipment.vbprojResolveAssemblyReference.cache
+D:\New MDK\trunk\ERP\Equipment\Equipment\obj\Debug\Equipment.Resources.resources
+D:\New MDK\trunk\ERP\Equipment\Equipment\obj\Debug\Equipment.vbproj.GenerateResource.Cache
+D:\New MDK\trunk\ERP\Equipment\Equipment\obj\Debug\RdlCompile.cache
+D:\New MDK\trunk\ERP\Equipment\Equipment\obj\Debug\RdlCompile.compiled
+D:\New MDK\trunk\ERP\Equipment\Equipment\obj\Debug\Equipment.dll
+D:\New MDK\trunk\ERP\Equipment\Equipment\obj\Debug\Equipment.xml
+D:\New MDK\trunk\ERP\Equipment\Equipment\obj\Debug\Equipment.pdb

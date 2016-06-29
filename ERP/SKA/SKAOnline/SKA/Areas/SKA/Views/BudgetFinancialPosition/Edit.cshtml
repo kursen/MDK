@@ -1,0 +1,106 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.SKA.Models.ViewModels.BudgetFinancialPositionViewModel
+
+@{
+    ViewBag.Title = "SKA - Edit Anggaran Posisi Keuangan";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-1.4.2.min.js")" type="text/javascript"></script>
+
+<div class="box-head">
+	<h2>Edit Anggaran Posisi Keuangan</h2>
+</div>
+<div class="box-content">
+    @using (Html.BeginForm())
+    {
+       @Html.ValidationSummary(true)
+        <table>
+                <tr>
+                    <td>Nama</td>
+                    <td>:</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.Name, new { @readonly = "readonly"})
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>:</td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBoxFor(model => model.Amount).Name("Amount").CurrencySymbol("Rp. ")
+                        @Html.ValidationMessageFor(model => model.Amount)
+                    </td>
+                </tr>
+            </table>
+            @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.BudgetFinancialPositionDetailViewModel>()
+            .Name("GridView")
+            
+            .DataKeys(keys =>
+            {
+                keys.Add(p => p.Id);
+            })
+            .ToolBar(toolbar => toolbar.Insert().ButtonType(GridButtonType.ImageAndText).ImageHtmlAttributes(new { style = "margin-left:0" }))
+            .DataBinding(dataBinding =>
+            {
+                dataBinding.Ajax()
+                    .Select("_SelectDetail", "BudgetFinancialPosition")
+                    .Insert("_InsertDetail", "BudgetFinancialPosition")
+                    .Update("_UpdateDetail", "BudgetFinancialPosition")
+                    .Delete("_DeleteDetail", "BudgetFinancialPosition");
+            })
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.Id).Hidden();
+                columns.Bound(p => p.BudgetToFinancialId).Hidden();
+                columns.Bound(p => p.Description).Title("Uraian");
+                columns.Bound(p => p.AccountId1).Hidden();
+                columns.Bound(p => p.AccountId2).Hidden();
+                columns.Bound(p => p.AccountCode1).Title("Kode Perkiraan");
+                columns.Bound(p => p.AccountCode2).Title("Kode Perkiraan");
+                columns.Bound(p => p.Budget).Hidden();
+                columns.Bound(p => p.Budget).Title("Anggaran").Format("Rp. {0:N}");
+                columns.Command(commands =>
+                {
+                    commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                    commands.Delete().ButtonType(GridButtonType.ImageAndText);
+
+                }).Width(220).Title("");
+            })
+            .ClientEvents(events =>
+            {
+                events.OnDataBound("Grid_OnDataBound");
+            })
+            .HtmlAttributes(new { style = "height:100%;" })
+            .Pageable()
+            .Sortable()
+            .Filterable()
+          )
+        <br />
+        <p>
+                <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "BudgetFinancialPosition", new { year = ViewData["Year"]})">Kembali</a>
+        </p>  
+    }
+</div>
+
+<script type="text/javascript">
+    function Grid_OnDataBound(e) {
+        var total = 0;
+
+        $.each($('#GridView').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden amount column.
+                var amount = $($(row).find('td')[7]).text();
+
+                // note: make sure to convert the amount to decimal/float data type.
+                total = total + parseFloat(amount);
+                
+            }
+        });
+        var input = $("#Amount").data("tTextBox");
+        input.value(total);
+    }
+</script>

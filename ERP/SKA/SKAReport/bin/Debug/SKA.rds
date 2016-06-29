@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SKA">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=HALOTECSERVER\SQLSERVER2008R2;Initial Catalog=SKABARU</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>3405c852-7595-4e4a-b3c8-b5d7871f5da7</DataSourceID>
+</RptDataSource>

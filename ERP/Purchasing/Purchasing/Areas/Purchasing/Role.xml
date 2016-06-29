@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<controllers xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <controller name="Common" roles="*">
+    <actions>
+      <action name="UnitQuantityName" roles="*" />
+      <action name="GlobalEmployeeNames" roles="*" />
+    </actions>
+  </controller>
+  <controller name="DeliveryOrder" roles="Purchasing.Staff, Purchasing.Manager">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="Create" roles="*" />
+      <action name="Delete" roles="*" />
+      <action name="Save" roles="*" />
+      <action name="GetDOList" roles="*" />
+    </actions>
+  </controller>
+  <controller name="DepartmentPurchaseRequisition" >
+    <actions>
+      <action name="Index" roles="Purchasing.DepartmentRequester, Purchasing.Staff" />
+      <action name="GetRequisitionList" roles="Purchasing.DepartmentRequester, Purchasing.Staff" />
+      <action name="Create" roles="Purchasing.DepartmentRequester, Purchasing.Staff" />
+      <action name="Edit" roles="Purchasing.DepartmentRequester, Purchasing.Staff" />
+      <action name="Detail" roles="Purchasing.DepartmentRequester, Purchasing.Staff" />
+      <action name="GetRequestItems" roles="*" />
+      <action name="DeleteDocument" roles="Purchasing.DepartmentRequester, Purchasing.Staff" />
+      <action name="Archive" roles="Purchasing.DepartmentRequester, Purchasing.Staff" />
+      <action name="PrintPR" roles="Purchasing.DepartmentRequester, Purchasing.Staff" />
+    </actions>
+  </controller>
+  <controller name="DepartmentPurchasingRequestApproval" roles="Purchasing.Staff, Purchasing.Manager">
+    <actions>
+      <action name="Index" roles="Purchasing.Staff, Purchasing.Manager" />
+      <action name="GetRequisitionList" roles="Purchasing.Staff, Purchasing.Manager" />
+      <action name="Detail" roles="Purchasing.Staff, Purchasing.Manager" />
+      <action name="UpdateDocState" roles="Purchasing.Staff, Purchasing.Manager" />
+    </actions>
+  </controller>
+  <controller name="Home" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+    </actions>
+  </controller>
+  <controller name="ProjectPurchasingRequestApproval" roles="Purchasing.Staff, Purchasing.Manager">
+    <actions>
+      <action name="Index" roles="Purchasing.Staff, Purchasing.Manager" />
+      <action name="GetRequisitionList" roles="Purchasing.Staff, Purchasing.Manager" />
+      <action name="Detail" roles="Purchasing.Staff, Purchasing.Manager" />
+    </actions>
+  </controller>
+  <controller name="ProjectPurchasingRequest" roles="Purchasing.Staff, Purchasing.ProjectRequester">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="GetRequisitionList" roles="*" />
+      <action name="Edit" roles="*" />
+      <action name="ProjectPRDetailValidation" roles="*" />
+      <action name="GetProjectRequestItems" roles="*" />
+      <action name="DeleteRequestItem" roles="*" />
+      <action name="DeleteDocument" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="Archive" roles="*" />
+      <action name="GetProposedGoodList" roles="*" />
+      <action name="PrintPR" roles="*" />
+    </actions>
+  </controller>
+  <controller name="PurchaseOrder" roles="Purchasing.Staff, Purchasing.Manager">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="GetPOList" roles="*" />
+      <action name="Create" roles="*" />
+      <action name="Edit" roles="*" />
+      <action name="Save" roles="*" />
+      <action name="SearchRequisition" roles="*" />
+      <action name="GetRequisitionItem" roles="*" />
+      <action name="PODetailValidation" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="GetVendorInfo" roles="*" />
+      <action name="PrintPO" roles="*" />
+      <action name="Search" roles="*" />
+    </actions>
+  </controller>
+  <controller name="SearchPurchaseRequisition" roles="Purchasing.Staff, Purchasing.DepartmentRequester, Purchasing.ProjectRequester">
+    <actions>
+      <action name="Index" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Vendor" roles="Purchasing.Staff, Purchasing.Manager">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="Create" roles="*" />
+      <action name="Create" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="SavePartial" roles="*" />
+      <action name="Delete" roles="*" />
+    </actions>
+  </controller>
+</controllers>

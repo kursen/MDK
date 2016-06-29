@@ -1,0 +1,145 @@
+﻿@using Telerik.Web.Mvc.UI;
+@{
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+   @{
+       string thresholdValue = string.Empty;
+
+       if (Session["ThresholdValue"] != null)
+       {
+           thresholdValue = Session["ThresholdValue"].ToString();
+       }    
+   }
+    <title>@ViewBag.Title</title>
+    
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/base/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    @(Html.Telerik().StyleSheetRegistrar()
+                    .DefaultGroup(group => group.Add("telerik.common.css")
+                                                .Add("telerik.webblue.css"))
+    )
+    @RenderSection("HeadContent", false)
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Header -->
+        <div id="header">
+	        <div class="shell">
+		        <!-- Logo + Top Nav -->
+		        <div id="top">
+			        <h1 id="header-logo"></h1>
+			        <div id="top-navigation">
+				        @Html.Partial("_LogOnPartial")
+			        </div>
+		        </div>
+		        <!-- End Logo + Top Nav -->
+		
+		        <!-- Main Nav -->
+		        <div id="navigation">
+               <ul> 
+                    <li><a href="@Url.Action("Index", "Home", new { Area = "" })"><span>Home</span></a></li>
+                    <li><a href="@Url.Action("Index", "ListAccount", new { Area = "Setting" })"><span>Kode Perkiraan</span></a></li>
+                    <li><a href="@Url.Action("Index", "SetupValue", new { Area = "Setting" })"><span>Nilai Ambang</span></a></li>
+                    <li><a href="@Url.Action("Index", "VoucherSetup", new { Area = "Setting" })"><span>Pejabat Voucher</span></a></li>
+                    <li><a href="@Url.Action("Index", "Branch", new { Area = "Setting" })"><span>Cabang</span></a></li>
+                    <li><a href="@Url.Action("Index", "Partner", new { Area = "Setting" })"><span>Rekanan</span></a></li>
+                    <li><a href="@Url.Action("Index", "Bank", new { Area = "Setting" })"><span>Bank</span></a></li>
+                    <li><a href="@Url.Action("Index", "Account", new { Area = "" })"><span>Daftar User</span></a></li>
+                    @if (User.IsInRole("User") == false && userBranchCode == "00")
+                    { 
+                        <li><a href="@Url.Action("Detail", "Account", new { Area = "" })"><span>Profile</span></a></li>
+                    }
+                    @if (userBranchCode != "00")
+                    { 
+                        <li><a href="@Url.Action("ShowReport", "UserHistory", new { reportName = "UserHistoryCab" })"><span>History User</span></a></li>
+                    }
+                    else
+                    { 
+                        <li><a href="@Url.Action("ShowReport", "UserHistory", new { reportName = "UserHistory" })"><span>History User</span></a></li>
+                    }
+                    @if (userBranchCode != "00")
+                    { 
+                        <li><a href="@Url.Action("ShowReport", "LoginLogout", new { reportName = "LoginLogoutTimeCab" })"><span>Login & Logout</span></a></li>
+                    }
+                    else
+                    { 
+                        <li><a href="@Url.Action("ShowReport", "LoginLogout", new { reportName = "LoginLogoutTime" })"><span>Login & Logout</span></a></li>
+                    }
+                </ul>
+		        </div>
+		        <!-- End Main Nav -->
+	        </div>
+        </div>
+        <!-- End Header -->
+
+        <!-- Container -->
+        <div id="container">
+	        <div class="shell">
+		
+		        <br />
+		        <!-- Main -->
+		        <div id="main">
+			        <div class="clearBoth">&nbsp;</div>
+			
+			        <!-- Content -->
+			        <div id="content">	
+                        <!-- Box -->
+				        <div class="box">
+                            @if (ViewData["ErrorMessage"] != null)
+                            {
+                            <div id="MessageDialog">@Html.Raw(ViewData["ErrorMessage"].ToString())</div>
+                            }
+					        @RenderBody()
+				        </div>
+				        <!--End Box -->
+			        </div>
+			        <!-- End Content -->
+			
+			        <div class="clearBoth">&nbsp;</div>			
+		        </div>
+		        <!-- Main -->
+	        </div>
+        </div>
+        <!-- End Container -->
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+	    <div class="shell">
+		    <div class="right">
+                <span>
+			    &copy; PDAM Tirtanadi Medan @DateTime.Now.Year All RIghts Reserved
+		        </span>
+            </div>
+	    </div>
+    </div>
+    <!-- End Footer -->
+
+    @Html.Telerik().ScriptRegistrar()
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script>
+    @if (ViewData["Message"] != null)
+    {        
+        <script type="text/javascript">
+            $(function () {
+                $("#MessageDialog").dialog({
+                    buttons: {
+                        "Ok": function () { $(this).dialog("close"); }
+                    },
+                    modal: true
+                });
+            });
+        </script>
+    }
+</body>
+</html>

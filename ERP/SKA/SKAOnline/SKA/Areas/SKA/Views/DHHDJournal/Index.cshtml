@@ -1,0 +1,79 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Jurnal Daftar Utang Harus Dibayar";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class= "box-head">
+<h2>Jurnal Daftar Utang Harus Dibayar</h2>
+</div>
+
+<div class="box-content">
+@using (Html.BeginForm("Index", "DHHDJournal"))
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input class ="t-button" type="submit" value="Cari" style="width:60px"/>
+            </td>
+        </tr>
+    </table>
+}
+
+@(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.DHHDJournalViewModel>()
+            .Name("DHHDJournalTypeGrid")
+            .ToolBar(toolbar =>
+            {
+                toolbar.Custom().Action("Create", "DHHDJournal").Text("Tambah Data").ButtonType(GridButtonType.Text).HtmlAttributes(new { style = "width:90px" });
+            })
+            .Columns(col =>
+            {
+                col.Bound(o => o.Id).ClientTemplate(
+                    "<# if (DateVoucher > ClosingDate) { #>" + Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()
+                    + "<# } #>").Title("").Sortable(false).Width(50);
+                if (User.IsInRole("User") == false)
+                {
+                    col.Bound(o => o.Id).ClientTemplate("<# if (DateVoucher > ClosingDate) { #>" + Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()
+                    + "<# } #>").Title("").Sortable(false).Width(50);
+                }
+
+                col.Bound(o => o.Id).ClientTemplate(
+                    "<# if (DateVoucher <= ClosingDate) { #>" +
+                    Html.ActionLink("Detail", "Detail", new { id = "<#= Id #>" }).ToString() +
+                    "<# } #>").Title("").Sortable(false).Width(50);
+                
+                col.Bound(o => o.VoucherNumber).Title("Nomor Voucher").Width(100);
+                col.Bound(o => o.DateVoucher).Title("Tanggal").Format("{0:dd-MM-yyyy}").Width(100);
+                col.Bound(o => o.Description).Title("Keterangan"); 
+            })
+            .ClientEvents(events =>
+                       events.OnDataBound("onDataBound")
+            )
+                .DataBinding(binding => binding.Ajax().Select("Getlist", "DHHDJournal", new { searchValue = @ViewBag.SearchValue }))
+                .Sortable(sorting =>
+                             sorting.OrderBy(sortOrder => sortOrder.Add(o => o.VoucherNumber).Ascending())
+                    )
+            .Filterable()
+            .Pageable()
+)
+
+</div>
+<script type ="text/javascript">
+    var firstTimeLoad = true;
+    function onDataBound(e) {
+        if (firstTimeLoad) {
+            firstTimeLoad = false;
+            var grid = $('#DHHDJournalTypeGrid').data('tGrid');
+            grid.pageTo(grid.totalPages());
+        }
+    }
+</script>

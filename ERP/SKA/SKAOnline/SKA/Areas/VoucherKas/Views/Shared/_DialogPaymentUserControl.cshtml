@@ -1,0 +1,36 @@
+﻿@using Telerik.Web.Mvc.UI
+
+@(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.ChartofAccountViewModel>()
+    .Name("ChartOfAccountGrid").DataBinding(dataBinding =>
+    {
+        dataBinding.Ajax()
+            .Select("GetAccountCodeList", "Payment");
+    })
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Id).Hidden();
+        columns.Bound(p => p.Code);
+        columns.Bound(p => p.Name);
+    })
+    .ClientEvents(events =>
+    {
+        events.OnRowSelect("AccountCodeGrid_OnRowSelect");
+    })
+    .Pageable()
+    .Selectable()
+    .Filterable()
+    )
+
+    @Html.Hidden("AccountCodeGridSelectedId")
+    @Html.Hidden("AccountCodeGridSelectedCode")
+
+<script type="text/javascript">
+    function AccountCodeGrid_OnRowSelect(e) {
+        var row = e.row;
+
+        $("#AccountCodeGridSelectedId").val(row.cells[0].innerHTML);
+        $("#AccountCodeGridSelectedCode").val(row.cells[1].innerHTML);
+    }
+</script>
+
+

@@ -1,0 +1,64 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Voucher - Laporan";
+    Layout = "~/Areas/VoucherKas/Views/Shared/_VoucherLayout.cshtml";
+}
+
+<div class="box-head">
+    <h2>Laporan</h2>
+</div>
+<div class="box-content">
+    @(Html.Telerik().TreeView()
+            .Name("TreeView")
+            .Items(item =>
+            {
+                if (ViewBag.BranchCode != "00")
+                {
+                    item.Add()
+                        .Text("A. Laporan Voucher Per Priode yang Sudah Diperiksa").Action("ShowReport", "ReportVoucher", new { reportName = "VoucherReportPerPeriodBranch" });
+                    item.Add()
+                        .Text("B. Laporan Voucher yang Belum Dibayar").Action("ShowReport", "ReportVoucher", new { reportName = "UnpaidVoucherReportBranch" });
+                    item.Add()
+                        .Text("C. Laporan Hutang Per Rekanan").Action("ShowReport", "ReportVoucher", new { reportName = "DebtReportPerPartnerBranch" });
+                    item.Add()
+                        .Text("D. Laporan Pembayaran Per Priode ").Action("ShowReport", "ReportVoucher", new { reportName = "PaymentReportPerPeriodBranch" });
+                    item.Add()
+                        .Text("E. Buku Pembantu Hutang Per Rekanan").Action("ShowReport", "ReportVoucher", new { reportName = "PayableLedgerPerPartnerBranch" });
+                    item.Add()
+                        .Text("F. Buku Pembantu Hutang Jenis-2").Action("ShowReport", "ReportVoucher", new { reportName = "PayableLedgerType2Branch" });
+                    item.Add()
+                        .Text("G. Rekap Hutang").Action("ShowReport", "ReportVoucher", new { reportName = "DebtRecapBranch" });
+                    item.Add()
+                        .Text("H. Buku Pembantu PPH").Action("ShowReport", "ReportVoucher", new { reportName = "PPNPayableLedgerBranch" });
+                    item.Add()
+                        .Text("I. Laporan Voucher yang Telah Diperiksa dan Belum Diperiksa").Action("ShowReport", "ReportVoucher", new { reportName = "VoucherReportPerPeriodBranch(All)" });
+                    item.Add()
+                        .Text("J. Laporan Rekapitulasi Voucher yang Telah Diperiksa dan Belum Diperiksa").Action("ShowReport", "ReportVoucher", new { reportName = "RecapitulationVoucherBranch" });
+                }
+                else
+                {
+                    item.Add()
+                        .Text("A. Laporan Voucher Per Priode yang Sudah Diperiksa").Action("ShowReport", "ReportVoucher", new { reportName = "VoucherReportPerPeriodCenter" });
+                    item.Add()
+                        .Text("B. Laporan Voucher yang Belum Dibayar").Action("ShowReport", "ReportVoucher", new { reportName = "UnpaidVoucherReportCenter" });
+                    item.Add()
+                        .Text("C. Laporan Hutang Per Rekanan").Action("ShowReport", "ReportVoucher", new { reportName = "DebtReportPerPartnerCenter" });
+                    item.Add()
+                        .Text("D. Laporan Pembayaran Per Priode ").Action("ShowReport", "ReportVoucher", new { reportName = "PaymentReportPerPeriodCenter" });
+                    item.Add()
+                        .Text("E. Buku Pembantu Hutang Per Rekanan").Action("ShowReport", "ReportVoucher", new { reportName = "PayableLedgerPerPartnerCenter" });
+                    item.Add()
+                        .Text("F. Buku Pembantu Hutang Jenis-2").Action("ShowReport", "ReportVoucher", new { reportName = "PayableLedgerType2Center" });
+                    item.Add()
+                        .Text("G. Rekap Hutang").Action("ShowReport", "ReportVoucher", new { reportName = "DebtRecapCenter" });
+                    item.Add()
+                        .Text("H. Buku Pembantu PPH").Action("ShowReport", "ReportVoucher", new { reportName = "PPNPayableLedgerCenter" });
+                    item.Add()
+                        .Text("I. Laporan Voucher yang Telah Diperiksa dan Belum Diperiksa").Action("ShowReport", "ReportVoucher", new { reportName = "VoucherReportPerPeriodCenter(All)" });
+                    item.Add()
+                        .Text("J. Laporan Rekapitulasi Voucher yang Telah Diperiksa dan Belum Diperiksa").Action("ShowReport", "ReportVoucher", new { reportName = "RecapitulationVoucherCenter" });
+                }
+            })
+    )
+</div>
+

@@ -1,0 +1,37 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Voucher Kas Kecil - Cetak";
+    Layout = "~/Areas/PettyCashes/Views/Shared/_PettyCashesLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Cetak</h2>
+</div>
+<div class="box-content">
+ @if (ViewData["Branch"].Equals("00"))
+ {
+    @(Html.Telerik().TreeView()
+            .Name("TreeView")
+            .Items(item =>
+            {
+                item.Add()
+                    .Text("A. Cetak Voucher Kas Kecil").Action("ShowReport", "Report", new { reportName = "PettyCashReportPusat" });
+                item.Add()
+                    .Text("B. Cetak Form C").Action("ShowReport", "Report", new { reportName = "FormCReportPusat" });
+            })
+    )
+ }
+ else
+ {
+    @(Html.Telerik().TreeView()
+            .Name("TreeView")
+            .Items(item =>
+            {
+                item.Add()
+                    .Text("A. Cetak Voucher Kas Kecil").Action("ShowReport", "Report", new { reportName = "PettyCashReportCab" });
+                item.Add()
+                    .Text("B. Cetak Form C").Action("ShowReport", "Report", new { reportName = "FormCReportCab" });
+            })
+    )     
+ }
+ 
+</div>

@@ -1,0 +1,59 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Index - Laporan Jurnal";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+@{
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+}
+
+<div class="box-head">
+<h2>Laporan Jurnal</h2>
+</div>
+<div class="box-content">
+    @(Html.Telerik().TreeView()
+                .Name("TreeView")
+                .Items(item =>
+                {
+                    if (userBranchCode == "00")
+                    {
+                        item.Add()
+                            .Text("A. Jurnal Daftar Utang Harus Dibayar").Action("ShowReport", "JournalReport", new { reportName = "JournalDHHD" });
+                        //item.Add()
+                        //    .Text("B. Jurnal Rekening").Action("ShowReport", "JournalReport", new { reportName = "JournalAccount" });
+                        //item.Add()
+                        //    .Text("C. Jurnal Penerimaan Kas").Action("ShowReport", "JournalReport", new { reportName = "JournalReceipt" });
+                        item.Add()
+                            .Text("B. Jurnal Pembayaran Kas").Action("ShowReport", "JournalReport", new { reportName = "JournalCashPayment" });
+                        //item.Add()
+                        //    .Text("E. Jurnal PBIK").Action("ShowReport", "JournalReport", new { reportName = "JournalPBIK" });
+                        item.Add()
+                            .Text("C. Jurnal Umum").Action("ShowReport", "JournalReport", new { reportName = "JournalGeneral" });
+                        //item.Add()
+                        //    .Text("G. BPPB").Action("ShowReport", "JournalReport", new { reportName = "BPPBRecapitulation" });
+                    }
+                    else {
+                        item.Add()
+                             .Text("A. Jurnal Daftar Utang Harus Dibayar").Action("ShowReport", "JournalReport", new { reportName = "JournalDHHDBranch" });
+                        //item.Add()
+                        //    .Text("B. Jurnal Rekening").Action("ShowReport", "JournalReport", new { reportName = "JournalAccountBranch" });
+                        //item.Add()
+                        //    .Text("C. Jurnal Penerimaan Kas").Action("ShowReport", "JournalReport", new { reportName = "JournalReceiptBranch" });
+                        item.Add()
+                            .Text("B. Jurnal Pembayaran Kas").Action("ShowReport", "JournalReport", new { reportName = "JournalCashPaymentBranch" });
+                        //item.Add()
+                        //    .Text("E. Jurnal PBIK").Action("ShowReport", "JournalReport", new { reportName = "JournalPBIKBranch" });
+                        item.Add()
+                            .Text("C. Jurnal Umum").Action("ShowReport", "JournalReport", new { reportName = "JournalGeneralBranch" });
+                        //item.Add()
+                        //   .Text("G. BPPB").Action("ShowReport", "JournalReport", new { reportName = "BPPBRecapitulationBranch" });
+                    }
+                })
+        )
+</div>

@@ -1,0 +1,180 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.SKA.Models.ViewModels.VelocityMoneyBudgetsViewModel
+
+@{
+    ViewBag.Title = "SKA - Edit Anggaran Perputaran Uang";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-1.4.2.min.js")" type="text/javascript"></script>
+
+<div class="box-head">
+	<h2>Ubah Anggaran Perputaran Uang</h2>
+</div>
+<div class="box-content">
+    @using (Html.BeginForm())
+    {
+       @Html.ValidationSummary(true)
+        <table>
+                <tr>
+                    <td>Bulan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Month)
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Penerimaan Operasional</td>
+                    <td>:</td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBoxFor(model => model.OperationalAcceptance).Name("OperationalAcceptance").EmptyMessage("").CurrencySymbol("Rp. ").ClientEvents(events => events.OnChange("OperationalAcceptance_OnChange"))
+                        @Html.ValidationMessageFor(model => model.OperationalAcceptance)
+
+                    </td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBox().Name("operationalAcceptanceSum").Value((decimal)ViewData["operationalAccept"]).MinValue((decimal)ViewData["operationalAccept"]).CurrencySymbol("Rp. ").Enable(false)
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Penerimaan Non Operasional</td>
+                    <td>:</td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBoxFor(model => model.NonOperationalAcceptance).Name("NonOperationalAcceptance").EmptyMessage("").CurrencySymbol("Rp. ").ClientEvents(events => events.OnChange("OperationalAcceptance_OnChange"))
+                        @Html.ValidationMessageFor(model => model.NonOperationalAcceptance)
+                    </td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBox().Name("nonOperationalAcceptanceSum").Value((decimal)ViewData["nonOperationalAccept"]).MinValue((decimal)ViewData["nonOperationalAccept"]).CurrencySymbol("Rp. ").Enable(false)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jumlah Penerimaan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBoxFor(model => model.AcceptanceAmount).Name("AcceptanceAmount").EmptyMessage("").CurrencySymbol("Rp. ").ClientEvents(events => events.OnChange("OperationalExpenses_OnChange"))
+                        @Html.ValidationMessageFor(model => model.AcceptanceAmount)
+                    </td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBox().Name("acceptanceSum").Value((decimal)ViewData["acceptance"]).MinValue((decimal)ViewData["acceptance"]).CurrencySymbol("Rp. ").Enable(false)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pengeluaran Operasional</td>
+                    <td>:</td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBoxFor(model => model.OperationalExpenses).Name("OperationalExpenses").EmptyMessage("").CurrencySymbol("Rp. ").ClientEvents(events => events.OnChange("OperationalExpenses_OnChange"))
+                        @Html.ValidationMessageFor(model => model.OperationalExpenses)
+                    </td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBox().Name("operationalExpensesSum").Value((decimal)ViewData["operationalExpenses"]).MinValue((decimal)ViewData["operationalExpenses"]).CurrencySymbol("Rp. ").Enable(false) 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pengeluaran Non Operasional</td>
+                    <td>:</td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBoxFor(model => model.NonOperationalExpenses).Name("NonOperationalExpenses").CurrencySymbol("Rp. ").EmptyMessage("").ClientEvents(events => events.OnChange("OperationalExpenses_OnChange"))
+                        @Html.ValidationMessageFor(model => model.NonOperationalExpenses)
+                    </td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBox().Name("nonoperationalExpensesSum").Value((decimal)ViewData["nonOperationalExpenses"]).MinValue((decimal)ViewData["nonOperationalExpenses"]).CurrencySymbol("Rp. ").Enable(false)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jumlah Pengeluaran</td>
+                    <td>:</td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBoxFor(model => model.ExpensesAmount).Name("ExpensesAmount").EmptyMessage("").CurrencySymbol("Rp. ").ClientEvents(events => events.OnChange("OperationalExpenses_OnChange"))
+                        @Html.ValidationMessageFor(model => model.ExpensesAmount)
+                    </td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBox().Name("expensesSum").Value((decimal)ViewData["expenses"]).MinValue((decimal)ViewData["expenses"]).CurrencySymbol("Rp. ").Enable(false)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Kenaikan/(Penurunan) Kas</td>
+                    <td>:</td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBoxFor(model => model.CashIncrementDecrement).Name("CashIncrementDecrement").EmptyMessage("").CurrencySymbol("Rp. ").ClientEvents(events => events.OnChange("OperationalExpenses_OnChange"))
+                        @Html.ValidationMessageFor(model => model.CashIncrementDecrement)
+                    </td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBox().Name("cashIncrementDecrementSum").Value((decimal)ViewData["cashIncrementDecrement"]).MinValue((decimal)ViewData["cashIncrementDecrement"]).CurrencySymbol("Rp. ").Enable(true)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Saldo Awal Kas</td>
+                    <td>:</td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBoxFor(model => model.FirstBalance).Name("FirstBalance").EmptyMessage("").CurrencySymbol("Rp. ").ClientEvents(events => events.OnChange("Balance_OnChange"))
+                        @Html.ValidationMessageFor(model => model.FirstBalance)
+                    </td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBox().Name("firstBalanceSum").Value((decimal)ViewData["firstBalance"]).MinValue((decimal)ViewData["firstBalance"]).CurrencySymbol("Rp. ").Enable(false)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Saldo Akhir Kas</td>
+                    <td>:</td>
+                    <td>
+                        @Html.Telerik().CurrencyTextBoxFor(model => model.LastBalance).Name("LastBalance").CurrencySymbol("Rp. ")
+                        @Html.ValidationMessageFor(model => model.LastBalance)
+                    </td>
+                     <td>
+                        @Html.Telerik().CurrencyTextBox().Name("lastBalanceSum").Value((decimal)ViewData["lastBalance"]).MinValue((decimal)ViewData["lastBalance"]).CurrencySymbol("Rp. ").Enable(false)
+                    </td>
+                </tr>
+            </table>
+        <br />
+        <p>
+                <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "VelocityMoneyBudgets", new { year = ViewData["Year"]})">Kembali</a>
+        </p>  
+    }
+</div>
+
+<script type="text/javascript">
+
+    function OperationalAcceptance_OnChange(e) {
+        
+        var operationalAcceptance = $("#OperationalAcceptance").data("tTextBox").value();
+        var nonOperarionalAcceptance = $("#NonOperationalAcceptance").data("tTextBox").value();
+        
+        var operationalAcceptanceSum = $("#AcceptanceAmount").data("tTextBox");
+
+        var getOperationalAcceptanceSum = parseInt(operationalAcceptance) + parseInt(nonOperarionalAcceptance);
+
+        operationalAcceptanceSum.value(getOperationalAcceptanceSum);
+    }
+
+    function OperationalExpenses_OnChange(e){
+        
+        var operationalExpenses = $("#OperationalExpenses").data("tTextBox").value();
+        var nonOperationalExpenses = $("#NonOperationalExpenses").data("tTextBox").value();
+        var operationalAcceptanceSum = $("#AcceptanceAmount").data("tTextBox").value();
+
+        var operationalExpensesSum = $("#ExpensesAmount").data("tTextBox");
+        var cashIncrementDecrement = $("#CashIncrementDecrement").data("tTextBox");
+        
+
+        var getOperationalExpensesSum = parseInt(operationalExpenses) + parseInt(nonOperationalExpenses);
+
+        operationalExpensesSum.value(getOperationalExpensesSum);
+
+        var getCashIncrementDecrement = parseInt(operationalAcceptanceSum) - getOperationalExpensesSum;
+
+        cashIncrementDecrement.value(getCashIncrementDecrement);
+    }
+
+    function Balance_OnChange(e) {
+        var getCash = $("#CashIncrementDecrement").data("tTextBox").value();
+        var firstBalance = $("#FirstBalance").data("tTextBox").value();
+        var lastBalance = $("#LastBalance").data("tTextBox");
+
+        var getTotal = parseInt(firstBalance) + parseInt(getCash);
+        lastBalance.value(getTotal);
+    }
+</script>

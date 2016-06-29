@@ -1,0 +1,80 @@
+    Function Import() As ActionResult
+        Dim fileName As String = ""
+        'Dim ofd As New OpenFileDialog
+        'If ofd.ShowDialog = Windows.Forms.DialogResult.OK Then
+        '    fileName = ofd.FileName
+        PerformImportToSql("D:\Abu Rifqi\Project\MDK\gunanda\DBTsi.mdb")
+        'End If
+        MsgBox("Sukses")
+
+        Return RedirectToAction("Index")
+    End Function
+
+    Private Sub PerformImportToSql(ByVal Filename As String)
+        Dim table As DataTable = New DataTable
+        Dim accConnection As New OleDb.OleDbConnection("Provider=Microsoft.JET.OLEDB.4.0;Data Source=" & Filename) '& ";User Id=admin; Password=;")
+        Dim sqlConnection As New SqlClient.SqlConnection("Data Source=HALOTECSERVER\SQLSERVER2008R2; Initial Catalog=MDK; User Id=sa; Password=halotec;")
+        Try
+            'Import the Access data
+            accConnection.Open()
+            Dim accDataAdapter = New OleDb.OleDbDataAdapter("SELECT * FROM TblMst_Barang", accConnection)
+            accDataAdapter.Fill(table)
+            MsgBox(table.Rows(0))
+            accConnection.Close()
+            'Export to MS SQL
+            sqlConnection.Open()
+            Dim sqlDataAdapter As New SqlClient.SqlDataAdapter("SELECT * FROM Imp.MstBarang", sqlConnection)
+            Dim sqlCommandBuilder As New SqlClient.SqlCommandBuilder(sqlDataAdapter)
+            'sqlDataAdapter.InsertCommand = sqlCommandBuilder.GetInsertCommand()
+            'sqlDataAdapter.UpdateCommand = sqlCommandBuilder.GetUpdateCommand()
+            'sqlDataAdapter.DeleteCommand = sqlCommandBuilder.GetDeleteCommand()
+            sqlDataAdapter.Update(table)
+            sqlConnection.Close()
+        Catch ex As Exception
+            If accConnection.State = ConnectionState.Open Then
+                accConnection.Close()
+            End If
+            If sqlConnection.State = ConnectionState.Open Then
+                sqlConnection.Close()
+            End If
+            MsgBox(ex.ToString, vbCritical, "GAGAL")
+            'MsgBox.Show("Import failed with error: " & Environment.NewLine & Environment.NewLine _
+            '& ex.ToString)
+        End Try
+    End Sub
+koding guee
+
+Dim sqlConnection As New SqlClient.SqlConnection("Data Source=HALOTECSERVER\SQLSERVER2008R2; Initial Catalog=MDK; User Id=sa; Password=halotec")
+            Dim sqlBulk As New SqlBulkCopy(sqlConnection, SqlBulkCopyOptions.Default, Nothing)
+            Dim rowsLoaded As Long = 0
+            sqlBulk.ColumnMappings.Add("KodeBrg", 1)
+            sqlBulk.ColumnMappings.Add("NoBrg", 1)
+            sqlBulk.DestinationTableName = "Imp.MstBarang"
+            sqlBulk.BatchSize = table.Rows.Count
+            sqlBulk.BulkCopyTimeout = 0
+            If sqlConnection.State = ConnectionState.Closed Then
+                sqlConnection.Open()
+            End If
+            sqlBulk.WriteToServer(table)
+            rowsLoaded = table.Rows.Count
+            sqlBulk.Close()
+            sqlConnection.Close()
+
+'export data to sql server
+
+            'For Each dr As DataRow In table.Rows
+            '    Dim r As New TestTemplate
+            '    r.ID = dr.Item("ID")
+            '    r.Name = dr.Item("Name")
+            'Next
+
+            'Dim test = (From m In table.AsEnumerable
+            '           Select New TestTemplate With {.ID = m.Item("ID"), .Name = m.Item("Name")}).ToList
+
+
+            '            Select New MstBarang With {.ID = m.Item("ID")}).ToList
+            'For Each t In test
+            '    Using ctx As New MDKEntities
+            '        ctx.MstBarangs.AddObject(t)
+            '    End Using
+            'Next

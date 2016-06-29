@@ -1,0 +1,15 @@
+D:\New MDK\trunk\Service\SyncGui\SyncGui\bin\Debug\SyncServiceController.exe.config
+D:\New MDK\trunk\Service\SyncGui\SyncGui\bin\Debug\SyncServiceController.exe.manifest
+D:\New MDK\trunk\Service\SyncGui\SyncGui\bin\Debug\SyncServiceController.application
+D:\New MDK\trunk\Service\SyncGui\SyncGui\bin\Debug\SyncServiceController.exe
+D:\New MDK\trunk\Service\SyncGui\SyncGui\bin\Debug\SyncServiceController.pdb
+D:\New MDK\trunk\Service\SyncGui\SyncGui\bin\Debug\SyncServiceController.xml
+D:\New MDK\trunk\Service\SyncGui\SyncGui\obj\x86\Debug\SyncGui.Resources.resources
+D:\New MDK\trunk\Service\SyncGui\SyncGui\obj\x86\Debug\SyncGui.frmSettings.resources
+D:\New MDK\trunk\Service\SyncGui\SyncGui\obj\x86\Debug\SyncGui.frmMain.resources
+D:\New MDK\trunk\Service\SyncGui\SyncGui\obj\x86\Debug\SyncGui.vbproj.GenerateResource.Cache
+D:\New MDK\trunk\Service\SyncGui\SyncGui\obj\x86\Debug\SyncServiceController.exe.manifest
+D:\New MDK\trunk\Service\SyncGui\SyncGui\obj\x86\Debug\SyncServiceController.application
+D:\New MDK\trunk\Service\SyncGui\SyncGui\obj\x86\Debug\SyncServiceController.exe
+D:\New MDK\trunk\Service\SyncGui\SyncGui\obj\x86\Debug\SyncServiceController.xml
+D:\New MDK\trunk\Service\SyncGui\SyncGui\obj\x86\Debug\SyncServiceController.pdb

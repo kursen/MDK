@@ -1,0 +1,24 @@
+﻿@using Telerik.Web.Mvc.UI
+
+@{
+    ViewBag.Title = "Setting - Setup Kode Perkiraan Jurnal";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Setup Kode Perkiraan Jurnal</h2>
+</div>
+<div class="box-content">
+@(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.SetupJournalAccountViewModel>()
+    .Name("SetupJournalAccountGrid")
+    .Columns(col =>
+    {
+        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Detail", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+        col.Bound(o => o.JournalName).Title("Jurnal").Width(250);
+    })
+    .DataBinding(binding => binding.Ajax().Select("GetListJournal", "SetupJournalAccount"))
+    .Sortable()
+    .Filterable()
+    .Pageable(paging => paging.PageSize(10))
+    )
+</div>

@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HRDModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="HRDModelStoreContainer">
+          <EntitySet Name="EmployeeOvertime" EntityType="HRDModel.Store.EmployeeOvertime" store:Type="Tables" Schema="HRD" />
+          <EntitySet Name="ManagementLevel" EntityType="HRDModel.Store.ManagementLevel" store:Type="Tables" Schema="HRD" />
+          <EntitySet Name="Master_Personal" EntityType="HRDModel.Store.Master_Personal" store:Type="Tables" Schema="HRD" />
+          <EntitySet Name="Occupation" EntityType="HRDModel.Store.Occupation" store:Type="Tables" Schema="HRD" />
+          <EntitySet Name="vOffice" EntityType="HRDModel.Store.vOffice" store:Type="Views" store:Schema="dbo" store:Name="vOffice">
+            <DefiningQuery>SELECT 
+      [vOffice].[Id] AS [Id], 
+      [vOffice].[Code] AS [Code], 
+      [vOffice].[Name] AS [Name], 
+      [vOffice].[Abbreviation] AS [Abbreviation], 
+      [vOffice].[Parent_ID] AS [Parent_ID], 
+      [vOffice].[Ordinal] AS [Ordinal]
+      FROM [dbo].[vOffice] AS [vOffice]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Master_Personal_Occupation" Association="HRDModel.Store.FK_Master_Personal_Occupation">
+            <End Role="Occupation" EntitySet="Occupation" />
+            <End Role="Master_Personal" EntitySet="Master_Personal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Occupation_ManagementLevel" Association="HRDModel.Store.FK_Occupation_ManagementLevel">
+            <End Role="ManagementLevel" EntitySet="ManagementLevel" />
+            <End Role="Occupation" EntitySet="Occupation" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="EmployeeOvertime">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityDate" Type="date" Nullable="false" />
+          <Property Name="OfficeId" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="Activity" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="BeginOvertime1Morning" Type="datetime" />
+          <Property Name="EndOvertime1Morning" Type="datetime" />
+          <Property Name="BeginOvertime1Afternoon" Type="datetime" />
+          <Property Name="EndOvertime1Afternoon" Type="datetime" />
+          <Property Name="BeginOvertime2" Type="datetime" />
+          <Property Name="EndOvertime2" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ManagementLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="LevelName" Type="varchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Master_Personal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Alias" Type="nvarchar" MaxLength="50" />
+          <Property Name="NIK" Type="nvarchar" MaxLength="30" />
+          <Property Name="Title_Front" Type="nvarchar" MaxLength="10" />
+          <Property Name="Title_Back" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="PlaceOfBirth" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="Religion" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="HomeAddress_Street" Type="nvarchar" MaxLength="255" />
+          <Property Name="HomeAddress_City" Type="nvarchar" MaxLength="50" />
+          <Property Name="HomeAddress_PostCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="HomePhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="MobilePhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaritalStatus" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="LastUpdate" Type="datetime" />
+          <Property Name="WorkStartDate" Type="datetime" />
+          <Property Name="BloodType" Type="varchar" MaxLength="2" />
+          <Property Name="EmergencyCallNumber" Type="varchar" MaxLength="20" />
+          <Property Name="OccupationID" Type="int" Nullable="false" />
+          <Property Name="OfficeId" Type="int" Nullable="false" />
+          <Property Name="WorkerStatus" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Occupation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ManagementLevelId" Type="int" Nullable="false" />
+          <Property Name="Ordinat" Type="int" Nullable="false" />
+          <Property Name="ReportTo" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'MDK_PROJECTSERVER.dbo.vOffice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vOffice">
+          <Key>
+            <PropertyRef Name="Id" />
+            
+            
+            
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="varchar" MaxLength="30" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Abbreviation" Type="varchar" MaxLength="30" />
+          <Property Name="Parent_ID" Type="int" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Master_Personal_Occupation">
+          <End Role="Occupation" Type="HRDModel.Store.Occupation" Multiplicity="1" />
+          <End Role="Master_Personal" Type="HRDModel.Store.Master_Personal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Occupation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Master_Personal">
+              <PropertyRef Name="OccupationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Occupation_ManagementLevel">
+          <End Role="ManagementLevel" Type="HRDModel.Store.ManagementLevel" Multiplicity="1" />
+          <End Role="Occupation" Type="HRDModel.Store.Occupation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ManagementLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Occupation">
+              <PropertyRef Name="ManagementLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="ReportEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="HRD">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HRDModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="HrdEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Master_Personal" EntityType="HRDModel.Master_Personal" />
+          <EntitySet Name="Occupations" EntityType="HRDModel.Occupation" />
+          <AssociationSet Name="FK_Master_Personal_Occupation" Association="HRDModel.FK_Master_Personal_Occupation">
+            <End Role="Occupation" EntitySet="Occupations" />
+            <End Role="Master_Personal" EntitySet="Master_Personal" />
+          </AssociationSet>
+          <EntitySet Name="ManagementLevels" EntityType="HRDModel.ManagementLevel" />
+          <AssociationSet Name="FK_Occupation_ManagementLevel" Association="HRDModel.FK_Occupation_ManagementLevel">
+            <End Role="ManagementLevel" EntitySet="ManagementLevels" />
+            <End Role="Occupation" EntitySet="Occupations" />
+          </AssociationSet>
+          <EntitySet Name="vOffices" EntityType="HRDModel.vOffice" />
+          <AssociationSet Name="vOfficeMaster_Personal" Association="HRDModel.vOfficeMaster_Personal">
+            <End Role="vOffice" EntitySet="vOffices" />
+            <End Role="Master_Personal" EntitySet="Master_Personal" />
+          </AssociationSet>
+          <FunctionImport Name="ReportEmployee" ReturnType="Collection(HRDModel.ReportEmployee_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="EmployeeOvertimes" EntityType="HRDModel.EmployeeOvertime" />
+        </EntityContainer>
+        <EntityType Name="Master_Personal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Alias" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NIK" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Title_Front" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Title_Back" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="PlaceOfBirth" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" />
+          <Property Name="Religion" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HomeAddress_Street" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="HomeAddress_City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HomeAddress_PostCode" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="MobilePhone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="LastUpdate" Type="DateTime" />
+          <Property Name="WorkStartDate" Type="DateTime" />
+          <Property Name="BloodType" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="EmergencyCallNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="OccupationID" Type="Int32" Nullable="false" />
+          <Property Name="OfficeId" Type="Int32" Nullable="false" />
+          <Property Name="WorkerStatus" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Occupation" Relationship="HRDModel.FK_Master_Personal_Occupation" FromRole="Master_Personal" ToRole="Occupation" />
+          <NavigationProperty Name="Office" Relationship="HRDModel.vOfficeMaster_Personal" FromRole="Master_Personal" ToRole="vOffice" />
+        </EntityType>
+        <EntityType Name="Occupation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ManagementLevelId" Type="Int32" Nullable="false" />
+          <Property Name="Ordinat" Type="Int32" Nullable="false" />
+          <Property Name="ReportTo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Master_Personal" Relationship="HRDModel.FK_Master_Personal_Occupation" FromRole="Occupation" ToRole="Master_Personal" />
+          <NavigationProperty Name="ManagementLevel" Relationship="HRDModel.FK_Occupation_ManagementLevel" FromRole="Occupation" ToRole="ManagementLevel" />
+        </EntityType>
+        <Association Name="FK_Master_Personal_Occupation">
+          <End Type="HRDModel.Occupation" Role="Occupation" Multiplicity="1" />
+          <End Type="HRDModel.Master_Personal" Role="Master_Personal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Occupation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Master_Personal">
+              <PropertyRef Name="OccupationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ManagementLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="LevelName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Occupations" Relationship="HRDModel.FK_Occupation_ManagementLevel" FromRole="ManagementLevel" ToRole="Occupation" />
+        </EntityType>
+        <Association Name="FK_Occupation_ManagementLevel">
+          <End Type="HRDModel.ManagementLevel" Role="ManagementLevel" Multiplicity="1" />
+          <End Type="HRDModel.Occupation" Role="Occupation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ManagementLevel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Occupation">
+              <PropertyRef Name="ManagementLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vOffice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Abbreviation" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Parent_ID" Nullable="false" />
+          <Property Type="Int32" Name="Ordinal" Nullable="false" />
+          <NavigationProperty Name="Master_Personal" Relationship="HRDModel.vOfficeMaster_Personal" FromRole="vOffice" ToRole="Master_Personal" />
+        </EntityType>
+        <Association Name="vOfficeMaster_Personal">
+          <End Type="HRDModel.vOffice" Role="vOffice" Multiplicity="1" />
+          <End Type="HRDModel.Master_Personal" Role="Master_Personal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vOffice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Master_Personal">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="ReportEmployee_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="EmployeeID" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="FullName" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="Alias" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NIK" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Title_Front" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Title_Back" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Gender" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="PlaceOfBirth" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Religion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="HomeAddress_Street" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="HomeAddress_City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="HomeAddress_PostCode" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="HomePhone" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaritalStatus" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="255" />
+          <Property Type="Binary" Name="Photo" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="LastUpdate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="WorkStartDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="BloodType" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="EmergencyCallNumber" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Position" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="Area" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="WorkerStatus" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="LevelName" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <EntityType Name="EmployeeOvertime">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+          <Property Type="String" Name="Activity" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="BeginOvertime1Morning" />
+          <Property Type="DateTime" Name="EndOvertime1Morning" />
+          <Property Type="DateTime" Name="BeginOvertime1Afternoon" />
+          <Property Type="DateTime" Name="EndOvertime1Afternoon" />
+          <Property Type="DateTime" Name="BeginOvertime2" />
+          <Property Type="DateTime" Name="EndOvertime2" />
+          <Property Type="DateTime" Name="ActivityDate" Nullable="false" />
+          <Property Type="Int32" Name="OfficeId" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HRDModelStoreContainer" CdmEntityContainer="HrdEntities">
+          <EntitySetMapping Name="Master_Personal">
+            <EntityTypeMapping TypeName="HRDModel.Master_Personal">
+              <MappingFragment StoreEntitySet="Master_Personal">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="NIK" ColumnName="NIK" />
+                <ScalarProperty Name="Title_Front" ColumnName="Title_Front" />
+                <ScalarProperty Name="Title_Back" ColumnName="Title_Back" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="HomeAddress_Street" ColumnName="HomeAddress_Street" />
+                <ScalarProperty Name="HomeAddress_City" ColumnName="HomeAddress_City" />
+                <ScalarProperty Name="HomeAddress_PostCode" ColumnName="HomeAddress_PostCode" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+                <ScalarProperty Name="WorkStartDate" ColumnName="WorkStartDate" />
+                <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+                <ScalarProperty Name="EmergencyCallNumber" ColumnName="EmergencyCallNumber" />
+                <ScalarProperty Name="OccupationID" ColumnName="OccupationID" />
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="WorkerStatus" ColumnName="WorkerStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Occupations">
+            <EntityTypeMapping TypeName="HRDModel.Occupation">
+              <MappingFragment StoreEntitySet="Occupation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ManagementLevelId" ColumnName="ManagementLevelId" />
+                <ScalarProperty Name="Ordinat" ColumnName="Ordinat" />
+                <ScalarProperty Name="ReportTo" ColumnName="ReportTo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ManagementLevels">
+            <EntityTypeMapping TypeName="HRDModel.ManagementLevel">
+              <MappingFragment StoreEntitySet="ManagementLevel">
+                <ScalarProperty Name="LevelName" ColumnName="LevelName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vOffices">
+            <EntityTypeMapping TypeName="HRDModel.vOffice">
+              <MappingFragment StoreEntitySet="vOffice">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ReportEmployee" FunctionName="HRDModel.Store.ReportEmployee">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HRDModel.ReportEmployee_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="NIK" ColumnName="NIK" />
+                <ScalarProperty Name="Title_Front" ColumnName="Title_Front" />
+                <ScalarProperty Name="Title_Back" ColumnName="Title_Back" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="HomeAddress_Street" ColumnName="HomeAddress_Street" />
+                <ScalarProperty Name="HomeAddress_City" ColumnName="HomeAddress_City" />
+                <ScalarProperty Name="HomeAddress_PostCode" ColumnName="HomeAddress_PostCode" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+                <ScalarProperty Name="WorkStartDate" ColumnName="WorkStartDate" />
+                <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+                <ScalarProperty Name="EmergencyCallNumber" ColumnName="EmergencyCallNumber" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="WorkerStatus" ColumnName="WorkerStatus" />
+                <ScalarProperty Name="LevelName" ColumnName="LevelName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="EmployeeOvertimes">
+            <EntityTypeMapping TypeName="HRDModel.EmployeeOvertime">
+              <MappingFragment StoreEntitySet="EmployeeOvertime">
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+                <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+                <ScalarProperty Name="EndOvertime2" ColumnName="EndOvertime2" />
+                <ScalarProperty Name="BeginOvertime2" ColumnName="BeginOvertime2" />
+                <ScalarProperty Name="EndOvertime1Afternoon" ColumnName="EndOvertime1Afternoon" />
+                <ScalarProperty Name="BeginOvertime1Afternoon" ColumnName="BeginOvertime1Afternoon" />
+                <ScalarProperty Name="EndOvertime1Morning" ColumnName="EndOvertime1Morning" />
+                <ScalarProperty Name="BeginOvertime1Morning" ColumnName="BeginOvertime1Morning" />
+                <ScalarProperty Name="Activity" ColumnName="Activity" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="hrd" ZoomLevel="90">
+        <EntityTypeShape EntityType="HRDModel.Master_Personal" Width="1.5" PointX="0.75" PointY="0.75" Height="6.21091796875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRDModel.Occupation" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9802864583333335" IsExpanded="true" />
+        <AssociationConnector Association="HRDModel.FK_Master_Personal_Occupation" >
+          <ConnectorPoint PointX="2.75" PointY="1.9324446614583328" />
+          <ConnectorPoint PointX="2.25" PointY="1.9324446614583328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="HRDModel.ManagementLevel" Width="1.5" PointX="6.5" PointY="4.75" Height="1.5956835937499996" />
+        <AssociationConnector Association="HRDModel.FK_Occupation_ManagementLevel" >
+          <ConnectorPoint PointX="6.5" PointY="4.75" />
+          <ConnectorPoint PointX="6.125" PointY="4.375" />
+          <ConnectorPoint PointX="3.5" PointY="4.375" />
+          <ConnectorPoint PointX="3.5" PointY="3.1148893229166661" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="HRDModel.vOffice" Width="1.5" PointX="3.375" PointY="4.75" Height="2.1725878906250031" />
+        <AssociationConnector Association="HRDModel.vOfficeMaster_Personal">
+          <ConnectorPoint PointX="3.375" PointY="5.9324446614583337" />
+          <ConnectorPoint PointX="2.25" PointY="5.9324446614583337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="HRDModel.EmployeeOvertime" Width="1.5" PointX="5.375" PointY="0.75" Height="2.7494921874999996" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

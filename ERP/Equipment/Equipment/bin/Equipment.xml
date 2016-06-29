@@ -1,0 +1,4415 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Equipment
+</name>
+</assembly>
+<members>
+<member name="M:Equipment.Equipment.Areas.Equipment.Controllers.MachineMaintenanceController.CreateMaintenanceRecord(System.Int32)">
+	<summary>
+	</summary>
+	<param name="Id">Machine Id</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Equipment.Equipment.Areas.Equipment.Controllers.MachineMaintenanceController.GetItemToService(System.Int32)">
+	<summary>
+ Used to load planning item to service.
+ </summary>
+	<param name="id">Machine id</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Equipment.Equipment.Areas.Equipment.Controllers.MachineMaintenanceController.GetServicedItems(System.Int32)">
+	<summary>
+ Used to load items on maintenance
+ </summary>
+	<param name="id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Equipment.Equipment.Areas.Equipment.Controllers.HeavyEquipmentMaintenanceController.GetItemToService(System.Int32)">
+	<summary>
+ Used to load planning item to service.
+ </summary>
+	<param name="id">vehicle id</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Equipment.Equipment.Areas.Equipment.Controllers.HeavyEquipmentMaintenanceController.GetServicedItems(System.Int32)">
+	<summary>
+ Used to load items on maintenance
+ </summary>
+	<param name="id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Equipment.EquipmentEntities.#ctor">
+	<summary>
+ Initializes a new EquipmentEntities object using the connection string found in the 'EquipmentEntities' section of the application configuration file.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.#ctor(System.String)">
+	<summary>
+ Initialize a new EquipmentEntities object.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+	<summary>
+ Initialize a new EquipmentEntities object.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.AllMerks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.AllOils">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.DumpTruckNonOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.DumpTruckOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.FuelUsedDumpTrucks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.FuelUsedHeavyEqps">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.FuelUsedOutTradoes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.FuelUsedTradoes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEqps">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEqpNonOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEqpOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEquipmentTypes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.OilAndSparePartUsedTradoes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.OilUsedDumpTrucks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.OilUsedHeavyEqps">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.OutFitEqps">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.TradoNonOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.TradoOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.TypeNonOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEqpActivities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.DetailMaintenanceHeavyEqps">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.MaintenanceHeavyEquipments">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.VehicleMaintenanceChecks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.VehicleMaintenanceCheckItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.MachineTypes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.MaintenanceTemplateItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEquipmentMaintenanceCheckItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEquipmentMaintenanceChecks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.MachineEqpMaintenanceChecks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.MachineEqpMaintenanceCheckItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.Vehicles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.DumpTruckActivities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.TradoActivities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.VehicleTypes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.VehicleMaintenanceRecordItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.VehicleMaintenanceRecordMaterialUseds">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.VehicleMaintenanceRecordOthers">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.VehicleMaintenanceRecords">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.MachineEqps">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEqpMaintenanceRecords">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEqpMaintenanceRecordItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEqpMaintenanceRecordMaterialUseds">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.HeavyEqpMaintenanceRecordOthers">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.MachineMaintenanceRecords">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.MachineMaintenanceRecordItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.MachineMaintenanceRecordMaterialUseds">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.EquipmentEntities.MachineMaintenanceRecordOthers">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToAllMerks(Equipment.AllMerk)">
+	<summary>
+ Deprecated Method for adding a new object to the AllMerks EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToAllOils(Equipment.AllOil)">
+	<summary>
+ Deprecated Method for adding a new object to the AllOils EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToDumpTruckNonOperations(Equipment.DumpTruckNonOperation)">
+	<summary>
+ Deprecated Method for adding a new object to the DumpTruckNonOperations EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToDumpTruckOperations(Equipment.DumpTruckOperation)">
+	<summary>
+ Deprecated Method for adding a new object to the DumpTruckOperations EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToFuelUsedDumpTrucks(Equipment.FuelUsedDumpTruck)">
+	<summary>
+ Deprecated Method for adding a new object to the FuelUsedDumpTrucks EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToFuelUsedHeavyEqps(Equipment.FuelUsedHeavyEqp)">
+	<summary>
+ Deprecated Method for adding a new object to the FuelUsedHeavyEqps EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToFuelUsedOutTradoes(Equipment.FuelUsedOutTrado)">
+	<summary>
+ Deprecated Method for adding a new object to the FuelUsedOutTradoes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToFuelUsedTradoes(Equipment.FuelUsedTrado)">
+	<summary>
+ Deprecated Method for adding a new object to the FuelUsedTradoes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEqps(Equipment.HeavyEqp)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEqps EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEqpNonOperations(Equipment.HeavyEqpNonOperation)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEqpNonOperations EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEqpOperations(Equipment.HeavyEqpOperation)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEqpOperations EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEquipmentTypes(Equipment.HeavyEquipmentType)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEquipmentTypes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToOilAndSparePartUsedTradoes(Equipment.OilAndSparePartUsedTrado)">
+	<summary>
+ Deprecated Method for adding a new object to the OilAndSparePartUsedTradoes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToOilUsedDumpTrucks(Equipment.OilUsedDumpTruck)">
+	<summary>
+ Deprecated Method for adding a new object to the OilUsedDumpTrucks EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToOilUsedHeavyEqps(Equipment.OilUsedHeavyEqp)">
+	<summary>
+ Deprecated Method for adding a new object to the OilUsedHeavyEqps EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToOutFitEqps(Equipment.OutFitEqp)">
+	<summary>
+ Deprecated Method for adding a new object to the OutFitEqps EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToTradoNonOperations(Equipment.TradoNonOperation)">
+	<summary>
+ Deprecated Method for adding a new object to the TradoNonOperations EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToTradoOperations(Equipment.TradoOperation)">
+	<summary>
+ Deprecated Method for adding a new object to the TradoOperations EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToTypeNonOperations(Equipment.TypeNonOperation)">
+	<summary>
+ Deprecated Method for adding a new object to the TypeNonOperations EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEqpActivities(Equipment.HeavyEqpActivity)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEqpActivities EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToDetailMaintenanceHeavyEqps(Equipment.DetailMaintenanceHeavyEqp)">
+	<summary>
+ Deprecated Method for adding a new object to the DetailMaintenanceHeavyEqps EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToMaintenanceHeavyEquipments(Equipment.MaintenanceHeavyEquipment)">
+	<summary>
+ Deprecated Method for adding a new object to the MaintenanceHeavyEquipments EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToVehicleMaintenanceChecks(Equipment.VehicleMaintenanceCheck)">
+	<summary>
+ Deprecated Method for adding a new object to the VehicleMaintenanceChecks EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToVehicleMaintenanceCheckItems(Equipment.VehicleMaintenanceCheckItem)">
+	<summary>
+ Deprecated Method for adding a new object to the VehicleMaintenanceCheckItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToMachineTypes(Equipment.MachineType)">
+	<summary>
+ Deprecated Method for adding a new object to the MachineTypes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToMaintenanceTemplateItems(Equipment.MaintenanceTemplateItem)">
+	<summary>
+ Deprecated Method for adding a new object to the MaintenanceTemplateItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEquipmentMaintenanceCheckItems(Equipment.HeavyEquipmentMaintenanceCheckItem)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEquipmentMaintenanceCheckItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEquipmentMaintenanceChecks(Equipment.HeavyEquipmentMaintenanceCheck)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEquipmentMaintenanceChecks EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToMachineEqpMaintenanceChecks(Equipment.MachineEqpMaintenanceCheck)">
+	<summary>
+ Deprecated Method for adding a new object to the MachineEqpMaintenanceChecks EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToMachineEqpMaintenanceCheckItems(Equipment.MachineEqpMaintenanceCheckItem)">
+	<summary>
+ Deprecated Method for adding a new object to the MachineEqpMaintenanceCheckItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToVehicles(Equipment.Vehicle)">
+	<summary>
+ Deprecated Method for adding a new object to the Vehicles EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToDumpTruckActivities(Equipment.DumpTruckActivity)">
+	<summary>
+ Deprecated Method for adding a new object to the DumpTruckActivities EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToTradoActivities(Equipment.TradoActivity)">
+	<summary>
+ Deprecated Method for adding a new object to the TradoActivities EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToVehicleTypes(Equipment.VehicleType)">
+	<summary>
+ Deprecated Method for adding a new object to the VehicleTypes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToVehicleMaintenanceRecordItems(Equipment.VehicleMaintenanceRecordItem)">
+	<summary>
+ Deprecated Method for adding a new object to the VehicleMaintenanceRecordItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToVehicleMaintenanceRecordMaterialUseds(Equipment.VehicleMaintenanceRecordMaterialUsed)">
+	<summary>
+ Deprecated Method for adding a new object to the VehicleMaintenanceRecordMaterialUseds EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToVehicleMaintenanceRecordOthers(Equipment.VehicleMaintenanceRecordOther)">
+	<summary>
+ Deprecated Method for adding a new object to the VehicleMaintenanceRecordOthers EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToVehicleMaintenanceRecords(Equipment.VehicleMaintenanceRecord)">
+	<summary>
+ Deprecated Method for adding a new object to the VehicleMaintenanceRecords EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToMachineEqps(Equipment.MachineEqp)">
+	<summary>
+ Deprecated Method for adding a new object to the MachineEqps EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEqpMaintenanceRecords(Equipment.HeavyEqpMaintenanceRecord)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEqpMaintenanceRecords EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEqpMaintenanceRecordItems(Equipment.HeavyEqpMaintenanceRecordItem)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEqpMaintenanceRecordItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEqpMaintenanceRecordMaterialUseds(Equipment.HeavyEqpMaintenanceRecordMaterialUsed)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEqpMaintenanceRecordMaterialUseds EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToHeavyEqpMaintenanceRecordOthers(Equipment.HeavyEqpMaintenanceRecordOther)">
+	<summary>
+ Deprecated Method for adding a new object to the HeavyEqpMaintenanceRecordOthers EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToMachineMaintenanceRecords(Equipment.MachineMaintenanceRecord)">
+	<summary>
+ Deprecated Method for adding a new object to the MachineMaintenanceRecords EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToMachineMaintenanceRecordItems(Equipment.MachineMaintenanceRecordItem)">
+	<summary>
+ Deprecated Method for adding a new object to the MachineMaintenanceRecordItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToMachineMaintenanceRecordMaterialUseds(Equipment.MachineMaintenanceRecordMaterialUsed)">
+	<summary>
+ Deprecated Method for adding a new object to the MachineMaintenanceRecordMaterialUseds EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.AddToMachineMaintenanceRecordOthers(Equipment.MachineMaintenanceRecordOther)">
+	<summary>
+ Deprecated Method for adding a new object to the MachineMaintenanceRecordOthers EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Equipment.EquipmentEntities.DetailFuel(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idactivity">No Metadata Documentation available.</param>
+	<param name="iddumptruckactivity">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.DetailNonOperation(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idactivity">No Metadata Documentation available.</param>
+	<param name="iddumptruckactivity">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.DetailOil(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idactivity">No Metadata Documentation available.</param>
+	<param name="iddumptruckactivity">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.DetailOperation(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportHeavyEqpActivities(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.AutocompleteLoadType(System.String)">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="term">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.AutocompleteLocation(System.String)">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="termlocation">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.DetailDumpTruckOperation(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.NonOpType(System.String)">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="term">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportDumpTruckActivities(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.OperatorType(System.Nullable{System.Int32},System.String)">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="officeId">No Metadata Documentation available.</param>
+	<param name="autocomplete">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportTradoActivities(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ProcTradoOperations(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idactivity">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ProcTradoNonOp(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idactivity">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ProcBBMTradoOut(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idactivity">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ProcBBMTrado(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idactivity">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ProcOil_SparePart(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idactivity">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.AutocompleteItemMaintenance(System.String)">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="term">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportVehicleMaintenance(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportVehicleMaintenanceOther(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportVehicleMaintenanceMaterialUsed(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportVehicleMaintenanceItemWork(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportMachineMaintenance(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportMachineMaintenanceItemWork(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportMachineMaintenanceMaterialUsed(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportMachineMaintenanceOther(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportHeavyEqpMaintenance(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportHeavyEqpMaintenanceMaterialUsed(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportHeavyEqpMaintenanceOther(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="M:Equipment.EquipmentEntities.ReportHeavyEquipmentMaintenanceItemWork(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="T:Equipment.EquipmentEntities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.AllMerk.CreateAllMerk(System.Int32,System.String)">
+	<summary>
+ Create a new AllMerk object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="merkName">Initial value of the MerkName property.</param>
+</member><member name="P:Equipment.AllMerk.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.AllMerk.MerkName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.AllMerk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.AllOil.CreateAllOil(System.Int32,System.String)">
+	<summary>
+ Create a new AllOil object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="oilName">Initial value of the OilName property.</param>
+</member><member name="P:Equipment.AllOil.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.AllOil.OilName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.AllOil">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.DetailMaintenanceHeavyEqp.CreateDetailMaintenanceHeavyEqp(System.Int32,System.String)">
+	<summary>
+ Create a new DetailMaintenanceHeavyEqp object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="mechanic">Initial value of the Mechanic property.</param>
+</member><member name="P:Equipment.DetailMaintenanceHeavyEqp.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailMaintenanceHeavyEqp.IDMaintenanceHeavyEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailMaintenanceHeavyEqp.Mechanic">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailMaintenanceHeavyEqp.MaintenanceHeavyEquipment">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailMaintenanceHeavyEqp.MaintenanceHeavyEquipmentReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.DetailMaintenanceHeavyEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.DumpTruckActivity.CreateDumpTruckActivity(System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.DateTime,System.String,System.Int32)">
+	<summary>
+ Create a new DumpTruckActivity object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="code">Initial value of the Code property.</param>
+	<param name="merk">Initial value of the Merk property.</param>
+	<param name="type">Initial value of the Type property.</param>
+	<param name="operator">Initial value of the Operator property.</param>
+	<param name="iDOp">Initial value of the IDOp property.</param>
+	<param name="date">Initial value of the Date property.</param>
+	<param name="policeNumber">Initial value of the PoliceNumber property.</param>
+	<param name="iDArea">Initial value of the IDArea property.</param>
+</member><member name="P:Equipment.DumpTruckActivity.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.Merk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.Category">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.IDOp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.Date">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.PoliceNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.BeginSecondOverTime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.EndSecondOverTime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.BeginNormalI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.EndNormalI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.BeginBreakI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.EndBreakI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.BeginNormalII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.EndNormalII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.BeginBreakII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.EndBreakII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.BeginFirstOverTime1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.EndFirstOverTime1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.BeginFirstOverTime2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.EndFirstOvertime2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.IDArea">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.CorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.KnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.JabatanCorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.JabatanKnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.DumpTruckNonOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.DumpTruckOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.FuelUsedDumpTrucks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckActivity.OilUsedDumpTrucks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.DumpTruckActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.DumpTruckNonOperation.CreateDumpTruckNonOperation(System.Int32,System.String,System.TimeSpan,System.TimeSpan,System.String)">
+	<summary>
+ Create a new DumpTruckNonOperation object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="nonOperationType">Initial value of the NonOperationType property.</param>
+	<param name="begin">Initial value of the Begin property.</param>
+	<param name="end">Initial value of the End property.</param>
+	<param name="reason">Initial value of the Reason property.</param>
+</member><member name="P:Equipment.DumpTruckNonOperation.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckNonOperation.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckNonOperation.NonOperationType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckNonOperation.Begin">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckNonOperation.End">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckNonOperation.Reason">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckNonOperation.DumpTruckActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckNonOperation.DumpTruckActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.DumpTruckNonOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.DumpTruckOperation.CreateDumpTruckOperation(System.Int32,System.String,System.String,System.TimeSpan,System.TimeSpan,System.String,System.Decimal)">
+	<summary>
+ Create a new DumpTruckOperation object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="loadType">Initial value of the LoadType property.</param>
+	<param name="sourceLocation">Initial value of the SourceLocation property.</param>
+	<param name="departureTime">Initial value of the DepartureTime property.</param>
+	<param name="arrivalTime">Initial value of the ArrivalTime property.</param>
+	<param name="destination">Initial value of the Destination property.</param>
+	<param name="distance">Initial value of the Distance property.</param>
+</member><member name="P:Equipment.DumpTruckOperation.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckOperation.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckOperation.LoadType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckOperation.SourceLocation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckOperation.DepartureTime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckOperation.ArrivalTime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckOperation.Destination">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckOperation.Distance">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckOperation.ReceiverName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckOperation.DumpTruckActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DumpTruckOperation.DumpTruckActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.DumpTruckOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.FuelUsedDumpTruck.CreateFuelUsedDumpTruck(System.Int32,System.Int32,System.Decimal)">
+	<summary>
+ Create a new FuelUsedDumpTruck object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="iDActivity">Initial value of the IDActivity property.</param>
+	<param name="amountFuel">Initial value of the AmountFuel property.</param>
+</member><member name="P:Equipment.FuelUsedDumpTruck.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedDumpTruck.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedDumpTruck.AmountFuel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedDumpTruck.DumpTruckActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedDumpTruck.DumpTruckActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.FuelUsedDumpTruck">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.FuelUsedHeavyEqp.CreateFuelUsedHeavyEqp(System.Int32,System.Decimal)">
+	<summary>
+ Create a new FuelUsedHeavyEqp object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="amountFuel">Initial value of the AmountFuel property.</param>
+</member><member name="P:Equipment.FuelUsedHeavyEqp.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedHeavyEqp.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedHeavyEqp.AmountFuel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedHeavyEqp.HeavyEqpActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedHeavyEqp.HeavyEqpActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.FuelUsedHeavyEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.FuelUsedOutTrado.CreateFuelUsedOutTrado(System.Int32,System.String,System.Decimal,System.String)">
+	<summary>
+ Create a new FuelUsedOutTrado object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="alocation">Initial value of the Alocation property.</param>
+	<param name="amountFuelOut">Initial value of the AmountFuelOut property.</param>
+	<param name="operator">Initial value of the Operator property.</param>
+</member><member name="P:Equipment.FuelUsedOutTrado.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedOutTrado.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedOutTrado.Alocation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedOutTrado.AmountFuelOut">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedOutTrado.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedOutTrado.TradoActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedOutTrado.TradoActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.FuelUsedOutTrado">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.FuelUsedTrado.CreateFuelUsedTrado(System.Int32,System.TimeSpan,System.Decimal,System.String)">
+	<summary>
+ Create a new FuelUsedTrado object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="timeFill">Initial value of the TimeFill property.</param>
+	<param name="amountFuel">Initial value of the AmountFuel property.</param>
+	<param name="location">Initial value of the Location property.</param>
+</member><member name="P:Equipment.FuelUsedTrado.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedTrado.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedTrado.TimeFill">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedTrado.AmountFuel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedTrado.Location">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedTrado.TradoActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.FuelUsedTrado.TradoActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.FuelUsedTrado">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEqp.CreateHeavyEqp(System.Int32,System.Int32,System.String,System.String,System.Decimal,System.Int32)">
+	<summary>
+ Create a new HeavyEqp object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="iDArea">Initial value of the IDArea property.</param>
+	<param name="code">Initial value of the Code property.</param>
+	<param name="merk">Initial value of the Merk property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+	<param name="year">Initial value of the Year property.</param>
+</member><member name="P:Equipment.HeavyEqp.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.IDArea">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.Merk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.Species">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.Year">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.TaxNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.DueDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.SerialNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.Capacity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.Img">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.BuiltYear">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.IDOpr">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.OprName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.MaintenanceHeavyEquipments">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.HeavyEquipmentMaintenanceChecks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqp.HeavyEqpMaintenanceRecords">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEqpActivity.CreateHeavyEqpActivity(System.Int32,System.String,System.String,System.String,System.String,System.String,System.Int32,System.DateTime,System.Int32)">
+	<summary>
+ Create a new HeavyEqpActivity object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="code">Initial value of the Code property.</param>
+	<param name="merk">Initial value of the Merk property.</param>
+	<param name="type">Initial value of the Type property.</param>
+	<param name="category">Initial value of the Category property.</param>
+	<param name="operator">Initial value of the Operator property.</param>
+	<param name="iDOp">Initial value of the IDOp property.</param>
+	<param name="date">Initial value of the Date property.</param>
+	<param name="iDArea">Initial value of the IDArea property.</param>
+</member><member name="P:Equipment.HeavyEqpActivity.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.Merk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.Category">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.IDOp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.Date">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.BeginSecondOverTime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.EndSecondOverTime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.BeginNormalI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.EndNormalI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.BeginBreakI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.EndBreakI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.BeginNormalII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.EndNormalII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.BeginBreakII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.EndBreakII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.BeginFirstOverTime1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.EndFirstOverTime1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.BeginFirstOverTime2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.EndFirstOvertime2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.IDArea">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.CorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.KnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.JabatanCorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.JabatanKnowBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.FuelUsedHeavyEqps">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.HeavyEqpNonOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.HeavyEqpOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpActivity.OilUsedHeavyEqps">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEqpActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEqpMaintenanceRecord.CreateHeavyEqpMaintenanceRecord(System.Int32,System.DateTime,System.DateTime,System.Int32,System.Double,System.Int32)">
+	<summary>
+ Create a new HeavyEqpMaintenanceRecord object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="maintenanceDateStart">Initial value of the MaintenanceDateStart property.</param>
+	<param name="maintenanceDateEnd">Initial value of the MaintenanceDateEnd property.</param>
+	<param name="heavyEqpId">Initial value of the HeavyEqpId property.</param>
+	<param name="hourmeterValue">Initial value of the HourmeterValue property.</param>
+	<param name="maintenanceState">Initial value of the MaintenanceState property.</param>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.MaintenanceDateStart">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.MaintenanceDateEnd">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.HeavyEqpId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.HourmeterValue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.MaintenanceState">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.HeavyEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.HeavyEqpReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.HeavyEqpMaintenanceRecordItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.HeavyEqpMaintenanceRecordMaterialUseds">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecord.HeavyEqpMaintenanceRecordOthers">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEqpMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEqpMaintenanceRecordItem.CreateHeavyEqpMaintenanceRecordItem(System.Int32,System.Int32,System.String,System.Int32)">
+	<summary>
+ Create a new HeavyEqpMaintenanceRecordItem object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="heavyEqpMaintenanceRecordId">Initial value of the HeavyEqpMaintenanceRecordId property.</param>
+	<param name="item">Initial value of the Item property.</param>
+	<param name="heavyEquipmentMaintenanceCheckItemId">Initial value of the HeavyEquipmentMaintenanceCheckItemId property.</param>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordItem.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordItem.HeavyEqpMaintenanceRecordId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordItem.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordItem.HeavyEquipmentMaintenanceCheckItemId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordItem.HeavyEqpMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordItem.HeavyEqpMaintenanceRecordReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordItem.HeavyEquipmentMaintenanceCheckItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordItem.HeavyEquipmentMaintenanceCheckItemReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEqpMaintenanceRecordItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEqpMaintenanceRecordMaterialUsed.CreateHeavyEqpMaintenanceRecordMaterialUsed(System.Int32,System.Int32,System.String,System.Double,System.String)">
+	<summary>
+ Create a new HeavyEqpMaintenanceRecordMaterialUsed object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="heavyEqpMaintenanceRecordId">Initial value of the HeavyEqpMaintenanceRecordId property.</param>
+	<param name="materialUsed">Initial value of the MaterialUsed property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+	<param name="unitQuantity">Initial value of the UnitQuantity property.</param>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordMaterialUsed.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordMaterialUsed.HeavyEqpMaintenanceRecordId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordMaterialUsed.MaterialUsed">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordMaterialUsed.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordMaterialUsed.UnitQuantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordMaterialUsed.HeavyEqpMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordMaterialUsed.HeavyEqpMaintenanceRecordReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEqpMaintenanceRecordMaterialUsed">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEqpMaintenanceRecordOther.CreateHeavyEqpMaintenanceRecordOther(System.Int32,System.Int32,System.String,System.Decimal)">
+	<summary>
+ Create a new HeavyEqpMaintenanceRecordOther object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="heavyEqpMaintenanceRecordId">Initial value of the HeavyEqpMaintenanceRecordId property.</param>
+	<param name="item">Initial value of the Item property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordOther.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordOther.HeavyEqpMaintenanceRecordId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordOther.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordOther.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordOther.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordOther.HeavyEqpMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpMaintenanceRecordOther.HeavyEqpMaintenanceRecordReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEqpMaintenanceRecordOther">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEqpNonOperation.CreateHeavyEqpNonOperation(System.Int32,System.String,System.TimeSpan,System.TimeSpan,System.String)">
+	<summary>
+ Create a new HeavyEqpNonOperation object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="nonOperationType">Initial value of the NonOperationType property.</param>
+	<param name="begin">Initial value of the Begin property.</param>
+	<param name="end">Initial value of the End property.</param>
+	<param name="reason">Initial value of the Reason property.</param>
+</member><member name="P:Equipment.HeavyEqpNonOperation.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpNonOperation.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpNonOperation.NonOperationType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpNonOperation.Begin">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpNonOperation.End">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpNonOperation.Reason">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpNonOperation.HeavyEqpActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpNonOperation.HeavyEqpActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEqpNonOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEqpOperation.CreateHeavyEqpOperation(System.Int32,System.String,System.Decimal,System.String,System.Decimal,System.Decimal,System.String)">
+	<summary>
+ Create a new HeavyEqpOperation object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="operationType">Initial value of the OperationType property.</param>
+	<param name="volumeOperation">Initial value of the VolumeOperation property.</param>
+	<param name="locationOperation">Initial value of the LocationOperation property.</param>
+	<param name="beginHM">Initial value of the BeginHM property.</param>
+	<param name="endHM">Initial value of the EndHM property.</param>
+	<param name="packetOperation">Initial value of the PacketOperation property.</param>
+</member><member name="P:Equipment.HeavyEqpOperation.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpOperation.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpOperation.OperationType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpOperation.VolumeOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpOperation.LocationOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpOperation.BeginHM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpOperation.EndHM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpOperation.PacketOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpOperation.HeavyEqpActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEqpOperation.HeavyEqpActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEqpOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEquipmentMaintenanceCheck.CreateHeavyEquipmentMaintenanceCheck(System.Int32,System.Decimal)">
+	<summary>
+ Create a new HeavyEquipmentMaintenanceCheck object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="averageHourMeter">Initial value of the AverageHourMeter property.</param>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheck.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheck.HeavyEqpId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheck.AverageHourMeter">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheck.HeavyEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheck.HeavyEqpReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheck.HeavyEquipmentMaintenanceCheckItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEquipmentMaintenanceCheck">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEquipmentMaintenanceCheckItem.CreateHeavyEquipmentMaintenanceCheckItem(System.Int32,System.String,System.Decimal,System.String,System.Decimal,System.DateTime)">
+	<summary>
+ Create a new HeavyEquipmentMaintenanceCheckItem object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="itemName">Initial value of the ItemName property.</param>
+	<param name="value">Initial value of the Value property.</param>
+	<param name="unitValue">Initial value of the UnitValue property.</param>
+	<param name="lastCheck_HM">Initial value of the LastCheck_HM property.</param>
+	<param name="lastCheck_Date">Initial value of the LastCheck_Date property.</param>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheckItem.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheckItem.HeavyEquipmentMaintenanceCheckId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheckItem.ItemName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheckItem.Value">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheckItem.UnitValue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheckItem.LastCheck_HM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheckItem.LastCheck_Date">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheckItem.HeavyEquipmentMaintenanceCheck">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheckItem.HeavyEquipmentMaintenanceCheckReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentMaintenanceCheckItem.HeavyEqpMaintenanceRecordItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEquipmentMaintenanceCheckItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.HeavyEquipmentType.CreateHeavyEquipmentType(System.Int32,System.String)">
+	<summary>
+ Create a new HeavyEquipmentType object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="name">Initial value of the Name property.</param>
+</member><member name="P:Equipment.HeavyEquipmentType.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.HeavyEquipmentType.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.HeavyEquipmentType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.MachineEqp.CreateMachineEqp(System.Int32,System.String,System.Decimal)">
+	<summary>
+ Create a new MachineEqp object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="name">Initial value of the Name property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+</member><member name="P:Equipment.MachineEqp.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.Remark">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.Capacity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.SerialNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.Merk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.MadeYear">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.BuyYear">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.IDArea">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.MachineEqpMaintenanceChecks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqp.MachineMaintenanceRecords">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MachineEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.MachineEqpMaintenanceCheck.CreateMachineEqpMaintenanceCheck(System.Int32,System.Decimal)">
+	<summary>
+ Create a new MachineEqpMaintenanceCheck object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="averageHourMeter">Initial value of the AverageHourMeter property.</param>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheck.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheck.MachineEqpId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheck.AverageHourMeter">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheck.MachineEqpMaintenanceCheckItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheck.MachineEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheck.MachineEqpReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MachineEqpMaintenanceCheck">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.MachineEqpMaintenanceCheckItem.CreateMachineEqpMaintenanceCheckItem(System.Int32,System.String,System.Decimal,System.String,System.DateTime)">
+	<summary>
+ Create a new MachineEqpMaintenanceCheckItem object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="itemName">Initial value of the ItemName property.</param>
+	<param name="value">Initial value of the Value property.</param>
+	<param name="unitValue">Initial value of the UnitValue property.</param>
+	<param name="lastCheck_Date">Initial value of the LastCheck_Date property.</param>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheckItem.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheckItem.MachineEqpMaintenanceCheckId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheckItem.ItemName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheckItem.Value">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheckItem.UnitValue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheckItem.LastCheck_Date">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheckItem.MachineEqpMaintenanceCheck">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineEqpMaintenanceCheckItem.MachineEqpMaintenanceCheckReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MachineEqpMaintenanceCheckItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.MachineMaintenanceRecord.CreateMachineMaintenanceRecord(System.Int32,System.DateTime,System.DateTime,System.Int32,System.Int32)">
+	<summary>
+ Create a new MachineMaintenanceRecord object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="maintenanceDateStart">Initial value of the MaintenanceDateStart property.</param>
+	<param name="maintenanceDateEnd">Initial value of the MaintenanceDateEnd property.</param>
+	<param name="machineId">Initial value of the MachineId property.</param>
+	<param name="maintenanceState">Initial value of the MaintenanceState property.</param>
+</member><member name="P:Equipment.MachineMaintenanceRecord.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecord.MaintenanceDateStart">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecord.MaintenanceDateEnd">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecord.MachineId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecord.MaintenanceState">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecord.MachineEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecord.MachineEqpReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecord.MachineMaintenanceRecordItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecord.MachineMaintenanceRecordMaterialUseds">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecord.MachineMaintenanceRecordOthers">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MachineMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.MachineMaintenanceRecordItem.CreateMachineMaintenanceRecordItem(System.Int32,System.Int32,System.String,System.Int32)">
+	<summary>
+ Create a new MachineMaintenanceRecordItem object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="machineMaintenanceRecordId">Initial value of the MachineMaintenanceRecordId property.</param>
+	<param name="item">Initial value of the Item property.</param>
+	<param name="machineMaintenanceCheckItemId">Initial value of the MachineMaintenanceCheckItemId property.</param>
+</member><member name="P:Equipment.MachineMaintenanceRecordItem.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordItem.MachineMaintenanceRecordId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordItem.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordItem.MachineMaintenanceCheckItemId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordItem.MachineMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordItem.MachineMaintenanceRecordReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MachineMaintenanceRecordItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.MachineMaintenanceRecordMaterialUsed.CreateMachineMaintenanceRecordMaterialUsed(System.Int32,System.Int32,System.String,System.Double,System.String)">
+	<summary>
+ Create a new MachineMaintenanceRecordMaterialUsed object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="machineMaintenanceRecordId">Initial value of the MachineMaintenanceRecordId property.</param>
+	<param name="materialUsed">Initial value of the MaterialUsed property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+	<param name="unitQuantity">Initial value of the UnitQuantity property.</param>
+</member><member name="P:Equipment.MachineMaintenanceRecordMaterialUsed.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordMaterialUsed.MachineMaintenanceRecordId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordMaterialUsed.MaterialUsed">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordMaterialUsed.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordMaterialUsed.UnitQuantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordMaterialUsed.MachineMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordMaterialUsed.MachineMaintenanceRecordReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MachineMaintenanceRecordMaterialUsed">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.MachineMaintenanceRecordOther.CreateMachineMaintenanceRecordOther(System.Int32,System.Int32,System.String,System.Decimal)">
+	<summary>
+ Create a new MachineMaintenanceRecordOther object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="machineMaintenanceRecordId">Initial value of the MachineMaintenanceRecordId property.</param>
+	<param name="item">Initial value of the Item property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+</member><member name="P:Equipment.MachineMaintenanceRecordOther.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordOther.MachineMaintenanceRecordId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordOther.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordOther.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordOther.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordOther.MachineMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineMaintenanceRecordOther.MachineMaintenanceRecordReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MachineMaintenanceRecordOther">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.MachineType.CreateMachineType(System.Int32,System.String)">
+	<summary>
+ Create a new MachineType object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="machineTypeName">Initial value of the MachineTypeName property.</param>
+</member><member name="P:Equipment.MachineType.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineType.MachineTypeName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MachineType.MaintenanceTemplateItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MachineType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.MaintenanceHeavyEquipment.CreateMaintenanceHeavyEquipment(System.Int32,System.Decimal,System.String,System.DateTime,System.String,System.Decimal)">
+	<summary>
+ Create a new MaintenanceHeavyEquipment object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="hM">Initial value of the HM property.</param>
+	<param name="operator">Initial value of the Operator property.</param>
+	<param name="dateMaintenance">Initial value of the DateMaintenance property.</param>
+	<param name="trouble">Initial value of the Trouble property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+</member><member name="P:Equipment.MaintenanceHeavyEquipment.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceHeavyEquipment.IDHeavyEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceHeavyEquipment.HM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceHeavyEquipment.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceHeavyEquipment.DateMaintenance">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceHeavyEquipment.Trouble">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceHeavyEquipment.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceHeavyEquipment.DetailMaintenanceHeavyEqps">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceHeavyEquipment.HeavyEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceHeavyEquipment.HeavyEqpReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MaintenanceHeavyEquipment">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.MaintenanceTemplateItem.CreateMaintenanceTemplateItem(System.Int32,System.String,System.Double,System.String,System.Int32)">
+	<summary>
+ Create a new MaintenanceTemplateItem object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="item">Initial value of the Item property.</param>
+	<param name="value">Initial value of the Value property.</param>
+	<param name="unit">Initial value of the Unit property.</param>
+	<param name="machineTypeID">Initial value of the MachineTypeID property.</param>
+</member><member name="P:Equipment.MaintenanceTemplateItem.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceTemplateItem.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceTemplateItem.Value">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceTemplateItem.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceTemplateItem.MachineTypeID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceTemplateItem.MachineType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.MaintenanceTemplateItem.MachineTypeReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MaintenanceTemplateItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.OilAndSparePartUsedTrado.CreateOilAndSparePartUsedTrado(System.Int32,System.String,System.Decimal,System.String)">
+	<summary>
+ Create a new OilAndSparePartUsedTrado object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="oilOrSparePartType">Initial value of the OilOrSparePartType property.</param>
+	<param name="amount">Initial value of the Amount property.</param>
+	<param name="unit">Initial value of the Unit property.</param>
+</member><member name="P:Equipment.OilAndSparePartUsedTrado.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilAndSparePartUsedTrado.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilAndSparePartUsedTrado.OilOrSparePartType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilAndSparePartUsedTrado.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilAndSparePartUsedTrado.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilAndSparePartUsedTrado.TradoActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilAndSparePartUsedTrado.TradoActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.OilAndSparePartUsedTrado">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.OilUsedDumpTruck.CreateOilUsedDumpTruck(System.Int32,System.String,System.Decimal)">
+	<summary>
+ Create a new OilUsedDumpTruck object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="oilType">Initial value of the OilType property.</param>
+	<param name="amount">Initial value of the Amount property.</param>
+</member><member name="P:Equipment.OilUsedDumpTruck.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilUsedDumpTruck.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilUsedDumpTruck.OilType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilUsedDumpTruck.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilUsedDumpTruck.DumpTruckActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilUsedDumpTruck.DumpTruckActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.OilUsedDumpTruck">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.OilUsedHeavyEqp.CreateOilUsedHeavyEqp(System.Int32,System.String,System.Decimal)">
+	<summary>
+ Create a new OilUsedHeavyEqp object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="oilType">Initial value of the OilType property.</param>
+	<param name="amount">Initial value of the Amount property.</param>
+</member><member name="P:Equipment.OilUsedHeavyEqp.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilUsedHeavyEqp.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilUsedHeavyEqp.OilType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilUsedHeavyEqp.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilUsedHeavyEqp.HeavyEqpActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OilUsedHeavyEqp.HeavyEqpActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.OilUsedHeavyEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.OutFitEqp.CreateOutFitEqp(System.Int32,System.String,System.Int32,System.Decimal)">
+	<summary>
+ Create a new OutFitEqp object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="name">Initial value of the Name property.</param>
+	<param name="total">Initial value of the Total property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+</member><member name="P:Equipment.OutFitEqp.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OutFitEqp.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OutFitEqp.Total">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OutFitEqp.Remark">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OutFitEqp.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.OutFitEqp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.TradoActivity.CreateTradoActivity(System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.DateTime,System.String,System.Int32)">
+	<summary>
+ Create a new TradoActivity object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="code">Initial value of the Code property.</param>
+	<param name="merk">Initial value of the Merk property.</param>
+	<param name="type">Initial value of the Type property.</param>
+	<param name="driver">Initial value of the Driver property.</param>
+	<param name="iDDriver">Initial value of the IDDriver property.</param>
+	<param name="date">Initial value of the Date property.</param>
+	<param name="policeNumber">Initial value of the PoliceNumber property.</param>
+	<param name="iDArea">Initial value of the IDArea property.</param>
+</member><member name="P:Equipment.TradoActivity.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.Merk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.Category">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.Driver">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.IDDriver">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.Date">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.PoliceNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.IDArea">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.ApprovalBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.JabatanApproval">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.CorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.JabatanCorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.KnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.JabatanKnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.FuelUsedOutTradoes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.FuelUsedTradoes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.OilAndSparePartUsedTradoes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.TradoNonOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoActivity.TradoOperations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.TradoActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.TradoNonOperation.CreateTradoNonOperation(System.Int32,System.String,System.String)">
+	<summary>
+ Create a new TradoNonOperation object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="nonOperationType">Initial value of the NonOperationType property.</param>
+	<param name="reason">Initial value of the Reason property.</param>
+</member><member name="P:Equipment.TradoNonOperation.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoNonOperation.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoNonOperation.NonOperationType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoNonOperation.Reason">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoNonOperation.TradoActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoNonOperation.TradoActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.TradoNonOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.TradoOperation.CreateTradoOperation(System.Int32,System.String,System.String,System.String,System.TimeSpan,System.TimeSpan,System.String,System.Decimal,System.Decimal,System.Decimal)">
+	<summary>
+ Create a new TradoOperation object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="loadType">Initial value of the LoadType property.</param>
+	<param name="operator">Initial value of the Operator property.</param>
+	<param name="sourceLocation">Initial value of the SourceLocation property.</param>
+	<param name="departureTime">Initial value of the DepartureTime property.</param>
+	<param name="arrivalTime">Initial value of the ArrivalTime property.</param>
+	<param name="destination">Initial value of the Destination property.</param>
+	<param name="beginKM">Initial value of the BeginKM property.</param>
+	<param name="endKM">Initial value of the EndKM property.</param>
+	<param name="distance">Initial value of the Distance property.</param>
+</member><member name="P:Equipment.TradoOperation.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.IDActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.LoadType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.SourceLocation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.DepartureTime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.ArrivalTime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.Destination">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.BeginKM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.EndKM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.Distance">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.TradoActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TradoOperation.TradoActivityReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.TradoOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.TypeNonOperation.CreateTypeNonOperation(System.Int32,System.String)">
+	<summary>
+ Create a new TypeNonOperation object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="nonOpType">Initial value of the NonOpType property.</param>
+</member><member name="P:Equipment.TypeNonOperation.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.TypeNonOperation.NonOpType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.TypeNonOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.Vehicle.CreateVehicle(System.Int32,System.Int32,System.String,System.String,System.Decimal,System.String,System.DateTime)">
+	<summary>
+ Create a new Vehicle object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="iDArea">Initial value of the IDArea property.</param>
+	<param name="code">Initial value of the Code property.</param>
+	<param name="merk">Initial value of the Merk property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+	<param name="year">Initial value of the Year property.</param>
+	<param name="dueDate">Initial value of the DueDate property.</param>
+</member><member name="P:Equipment.Vehicle.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.IDArea">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.Merk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.Species">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.Year">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.PoliceNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.MachineNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.BonesNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.DueDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.Img">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.KeurNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.KeurDueDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.BuiltYear">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.Capacity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.IDDriver">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.DriverName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.VehicleMaintenanceChecks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.Vehicle.VehicleMaintenanceRecords">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.Vehicle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.VehicleMaintenanceCheck.CreateVehicleMaintenanceCheck(System.Int32,System.Int32,System.Decimal)">
+	<summary>
+ Create a new VehicleMaintenanceCheck object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="vehicleId">Initial value of the VehicleId property.</param>
+	<param name="averageUsagePerKilometer">Initial value of the AverageUsagePerKilometer property.</param>
+</member><member name="P:Equipment.VehicleMaintenanceCheck.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheck.VehicleId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheck.AverageUsagePerKilometer">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheck.VehicleMaintenanceCheckItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheck.Vehicle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheck.VehicleReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.VehicleMaintenanceCheck">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.VehicleMaintenanceCheckItem.CreateVehicleMaintenanceCheckItem(System.Int32,System.Int32,System.String,System.Decimal,System.String,System.Decimal,System.DateTime)">
+	<summary>
+ Create a new VehicleMaintenanceCheckItem object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="vehicleMaintenanceCheckId">Initial value of the VehicleMaintenanceCheckId property.</param>
+	<param name="itemName">Initial value of the ItemName property.</param>
+	<param name="value">Initial value of the Value property.</param>
+	<param name="unitValue">Initial value of the UnitValue property.</param>
+	<param name="lastCheck_Kilometer">Initial value of the LastCheck_Kilometer property.</param>
+	<param name="lastCheck_Date">Initial value of the LastCheck_Date property.</param>
+</member><member name="P:Equipment.VehicleMaintenanceCheckItem.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheckItem.VehicleMaintenanceCheckId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheckItem.ItemName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheckItem.Value">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheckItem.UnitValue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheckItem.LastCheck_Kilometer">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheckItem.LastCheck_Date">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheckItem.VehicleMaintenanceCheck">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceCheckItem.VehicleMaintenanceCheckReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.VehicleMaintenanceCheckItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.VehicleMaintenanceRecord.CreateVehicleMaintenanceRecord(System.Int32,System.DateTime,System.DateTime,System.Int32,System.Double,System.Int32)">
+	<summary>
+ Create a new VehicleMaintenanceRecord object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="maintenanceDateStart">Initial value of the MaintenanceDateStart property.</param>
+	<param name="maintenanceDateEnd">Initial value of the MaintenanceDateEnd property.</param>
+	<param name="vehicleId">Initial value of the VehicleId property.</param>
+	<param name="odometerValue">Initial value of the OdometerValue property.</param>
+	<param name="maintenanceState">Initial value of the MaintenanceState property.</param>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.MaintenanceDateStart">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.MaintenanceDateEnd">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.VehicleId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.OdometerValue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.MaintenanceState">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.Vehicle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.VehicleReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.VehicleMaintenanceRecordItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.VehicleMaintenanceRecordMaterialUseds">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecord.VehicleMaintenanceRecordOthers">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.VehicleMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.VehicleMaintenanceRecordItem.CreateVehicleMaintenanceRecordItem(System.Int32,System.Int32,System.String,System.Int32)">
+	<summary>
+ Create a new VehicleMaintenanceRecordItem object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="vehicleMaintenanceRecordId">Initial value of the VehicleMaintenanceRecordId property.</param>
+	<param name="item">Initial value of the Item property.</param>
+	<param name="vehicleMaintenanceCheckItemId">Initial value of the VehicleMaintenanceCheckItemId property.</param>
+</member><member name="P:Equipment.VehicleMaintenanceRecordItem.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordItem.VehicleMaintenanceRecordId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordItem.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordItem.VehicleMaintenanceCheckItemId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordItem.VehicleMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordItem.VehicleMaintenanceRecordReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.VehicleMaintenanceRecordItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.VehicleMaintenanceRecordMaterialUsed.CreateVehicleMaintenanceRecordMaterialUsed(System.Int32,System.Int32,System.String,System.Double,System.String)">
+	<summary>
+ Create a new VehicleMaintenanceRecordMaterialUsed object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="vehicleMaintenanceRecordId">Initial value of the VehicleMaintenanceRecordId property.</param>
+	<param name="materialUsed">Initial value of the MaterialUsed property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+	<param name="unitQuantity">Initial value of the UnitQuantity property.</param>
+</member><member name="P:Equipment.VehicleMaintenanceRecordMaterialUsed.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordMaterialUsed.VehicleMaintenanceRecordId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordMaterialUsed.MaterialUsed">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordMaterialUsed.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordMaterialUsed.UnitQuantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordMaterialUsed.VehicleMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordMaterialUsed.VehicleMaintenanceRecordReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.VehicleMaintenanceRecordMaterialUsed">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.VehicleMaintenanceRecordOther.CreateVehicleMaintenanceRecordOther(System.Int32,System.Int32,System.String,System.Decimal)">
+	<summary>
+ Create a new VehicleMaintenanceRecordOther object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="vehicleMaintenanceRecordId">Initial value of the VehicleMaintenanceRecordId property.</param>
+	<param name="item">Initial value of the Item property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+</member><member name="P:Equipment.VehicleMaintenanceRecordOther.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordOther.VehicleMaintenanceRecordId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordOther.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordOther.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordOther.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordOther.VehicleMaintenanceRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleMaintenanceRecordOther.VehicleMaintenanceRecordReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.VehicleMaintenanceRecordOther">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.VehicleType.CreateVehicleType(System.Int32,System.String)">
+	<summary>
+ Create a new VehicleType object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="name">Initial value of the Name property.</param>
+</member><member name="P:Equipment.VehicleType.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.VehicleType.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.VehicleType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.AutocompleteItemMaintenance_Result.CreateAutocompleteItemMaintenance_Result(System.String)">
+	<summary>
+ Create a new AutocompleteItemMaintenance_Result object.
+ </summary>
+	<param name="item">Initial value of the Item property.</param>
+</member><member name="P:Equipment.AutocompleteItemMaintenance_Result.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.AutocompleteItemMaintenance_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.AutocompleteLoadType_Result.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.AutocompleteLoadType_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.AutocompleteLocation_Result.Location">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.AutocompleteLocation_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.DetailActivities_Result.CreateDetailActivities_Result(System.Int32,System.Int32,System.TimeSpan,System.TimeSpan,System.String,System.String)">
+	<summary>
+ Create a new DetailActivities_Result object.
+ </summary>
+	<param name="iDNonOperation">Initial value of the IDNonOperation property.</param>
+	<param name="iDNonOpActivity">Initial value of the IDNonOpActivity property.</param>
+	<param name="begin">Initial value of the Begin property.</param>
+	<param name="end">Initial value of the End property.</param>
+	<param name="reason">Initial value of the Reason property.</param>
+	<param name="nonOperationType">Initial value of the NonOperationType property.</param>
+</member><member name="P:Equipment.DetailActivities_Result.IDOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.IDOpActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.OperationType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.VolumeOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.LocationOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.BeginHM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.EndHM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.PacketOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.IDNonOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.IDNonOpActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.Begin">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.End">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.Reason">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.IDOil">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.IDOilActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.OilType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.IDFuel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.IDFuelActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.AmountFuel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailActivities_Result.NonOperationType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.DetailActivities_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailDumpTruckOperation_Result.IDOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailDumpTruckOperation_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailDumpTruckOperation_Result.loadtype">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailDumpTruckOperation_Result.sourcelocation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailDumpTruckOperation_Result.destination">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailDumpTruckOperation_Result.departuretime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailDumpTruckOperation_Result.arrivaltime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailDumpTruckOperation_Result.distance">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.DetailDumpTruckOperation_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailFuel_Result.IDFuel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailFuel_Result.AmountFuel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.DetailFuel_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.DetailNonOperation_Result.CreateDetailNonOperation_Result(System.Int32,System.String,System.TimeSpan,System.TimeSpan,System.String)">
+	<summary>
+ Create a new DetailNonOperation_Result object.
+ </summary>
+	<param name="iDNonOperation">Initial value of the IDNonOperation property.</param>
+	<param name="nonOperationType">Initial value of the NonOperationType property.</param>
+	<param name="begin">Initial value of the Begin property.</param>
+	<param name="end">Initial value of the End property.</param>
+	<param name="reason">Initial value of the Reason property.</param>
+</member><member name="P:Equipment.DetailNonOperation_Result.IDNonOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailNonOperation_Result.NonOperationType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailNonOperation_Result.Begin">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailNonOperation_Result.End">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailNonOperation_Result.Reason">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailNonOperation_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.DetailNonOperation_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOil_Result.IDOil">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOil_Result.OilType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOil_Result.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOil_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.DetailOil_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOperation_Result.IDOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOperation_Result.OperationType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOperation_Result.VolumeOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOperation_Result.LocationOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOperation_Result.BeginHM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOperation_Result.EndHM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOperation_Result.PacketOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.DetailOperation_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.DetailOperation_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.NonOperation_Result.CreateNonOperation_Result(System.Int32,System.String,System.TimeSpan,System.TimeSpan,System.String)">
+	<summary>
+ Create a new NonOperation_Result object.
+ </summary>
+	<param name="iDNonOperation">Initial value of the IDNonOperation property.</param>
+	<param name="nonOperationType">Initial value of the NonOperationType property.</param>
+	<param name="begin">Initial value of the Begin property.</param>
+	<param name="end">Initial value of the End property.</param>
+	<param name="reason">Initial value of the Reason property.</param>
+</member><member name="P:Equipment.NonOperation_Result.IDNonOperation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.NonOperation_Result.NonOperationType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.NonOperation_Result.Begin">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.NonOperation_Result.End">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.NonOperation_Result.Reason">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.NonOperation_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.NonOpType_Result.CreateNonOpType_Result(System.String)">
+	<summary>
+ Create a new NonOpType_Result object.
+ </summary>
+	<param name="nonOpType">Initial value of the NonOpType property.</param>
+</member><member name="P:Equipment.NonOpType_Result.NonOpType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.NonOpType_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.OperatorType_Result.CreateOperatorType_Result(System.Int32,System.String)">
+	<summary>
+ Create a new OperatorType_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="fullName">Initial value of the FullName property.</param>
+</member><member name="P:Equipment.OperatorType_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.OperatorType_Result.FullName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.OperatorType_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ProcBBMTrado_Result.CreateProcBBMTrado_Result(System.Decimal,System.String,System.TimeSpan)">
+	<summary>
+ Create a new ProcBBMTrado_Result object.
+ </summary>
+	<param name="amountFuel">Initial value of the AmountFuel property.</param>
+	<param name="location">Initial value of the Location property.</param>
+	<param name="timeFill">Initial value of the TimeFill property.</param>
+</member><member name="P:Equipment.ProcBBMTrado_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcBBMTrado_Result.AmountFuel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcBBMTrado_Result.Location">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcBBMTrado_Result.TimeFill">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ProcBBMTrado_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ProcBBMTradoOut_Result.CreateProcBBMTradoOut_Result(System.Decimal,System.String,System.String)">
+	<summary>
+ Create a new ProcBBMTradoOut_Result object.
+ </summary>
+	<param name="amountFuelOut">Initial value of the AmountFuelOut property.</param>
+	<param name="alocation">Initial value of the Alocation property.</param>
+	<param name="operator">Initial value of the Operator property.</param>
+</member><member name="P:Equipment.ProcBBMTradoOut_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcBBMTradoOut_Result.AmountFuelOut">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcBBMTradoOut_Result.Alocation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcBBMTradoOut_Result.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ProcBBMTradoOut_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ProcOil_SparePart_Result.CreateProcOil_SparePart_Result(System.String,System.Decimal,System.String)">
+	<summary>
+ Create a new ProcOil_SparePart_Result object.
+ </summary>
+	<param name="oilOrSparePartType">Initial value of the OilOrSparePartType property.</param>
+	<param name="amount">Initial value of the Amount property.</param>
+	<param name="unit">Initial value of the Unit property.</param>
+</member><member name="P:Equipment.ProcOil_SparePart_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcOil_SparePart_Result.OilOrSparePartType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcOil_SparePart_Result.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcOil_SparePart_Result.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ProcOil_SparePart_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ProcTradoNonOp_Result.CreateProcTradoNonOp_Result(System.String,System.String)">
+	<summary>
+ Create a new ProcTradoNonOp_Result object.
+ </summary>
+	<param name="nonOperationType">Initial value of the NonOperationType property.</param>
+	<param name="reason">Initial value of the Reason property.</param>
+</member><member name="P:Equipment.ProcTradoNonOp_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoNonOp_Result.NonOperationType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoNonOp_Result.Reason">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ProcTradoNonOp_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ProcTradoOperations_Result.CreateProcTradoOperations_Result(System.String,System.String,System.String,System.String,System.Decimal,System.Decimal,System.Decimal)">
+	<summary>
+ Create a new ProcTradoOperations_Result object.
+ </summary>
+	<param name="loadType">Initial value of the LoadType property.</param>
+	<param name="operator">Initial value of the Operator property.</param>
+	<param name="sourceLocation">Initial value of the SourceLocation property.</param>
+	<param name="destination">Initial value of the Destination property.</param>
+	<param name="beginKM">Initial value of the BeginKM property.</param>
+	<param name="endKM">Initial value of the EndKM property.</param>
+	<param name="distance">Initial value of the Distance property.</param>
+</member><member name="P:Equipment.ProcTradoOperations_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoOperations_Result.LoadType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoOperations_Result.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoOperations_Result.SourceLocation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoOperations_Result.departuretime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoOperations_Result.arrivaltime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoOperations_Result.Destination">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoOperations_Result.BeginKM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoOperations_Result.EndKM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ProcTradoOperations_Result.Distance">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ProcTradoOperations_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportDumpTruckActivities_Result.CreateReportDumpTruckActivities_Result(System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Create a new ReportDumpTruckActivities_Result object.
+ </summary>
+	<param name="code">Initial value of the Code property.</param>
+	<param name="type">Initial value of the Type property.</param>
+	<param name="operator">Initial value of the Operator property.</param>
+	<param name="policeNumber">Initial value of the PoliceNumber property.</param>
+	<param name="day">Initial value of the Day property.</param>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.PoliceNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.Date">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.Day">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.BeginSecondOvertime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.EndSecondOvertime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.BeginNormalI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.EndNormalI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.BeginBreakI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.EndBreakI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.BeginNormalII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.EndNormalII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.BeginBreakII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.EndBreakII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.BeginFirstOverTime1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.BeginFirstOverTime2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.EndFirstOverTime1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.EndFirstOverTime2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.JamNormal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.JamLembur1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.JamLembur2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.CorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.KnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.JabatanCorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportDumpTruckActivities_Result.JabatanKnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportDumpTruckActivities_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportHeavyEqpActivities_Result.CreateReportHeavyEqpActivities_Result(System.String,System.String,System.String,System.String,System.Int32,System.String)">
+	<summary>
+ Create a new ReportHeavyEqpActivities_Result object.
+ </summary>
+	<param name="code">Initial value of the Code property.</param>
+	<param name="merk">Initial value of the Merk property.</param>
+	<param name="type">Initial value of the Type property.</param>
+	<param name="operator">Initial value of the Operator property.</param>
+	<param name="iDOp">Initial value of the IDOp property.</param>
+	<param name="day">Initial value of the Day property.</param>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.Merk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.IDOp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.Date">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.Day">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.BeginSecondOvertime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.EndSecondOvertime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.BeginNormalI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.EndNormalI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.BeginBreakI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.EndBreakI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.BeginNormalII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.EndNormalII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.BeginBreakII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.EndBreakII">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.BeginFirstOverTime1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.BeginFirstOverTime2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.EndFirstOverTime1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.EndFirstOverTime2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.JamNormal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.JamLembur1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.JamLembur2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.CorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.KnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.JabatanCorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpActivities_Result.JabatanKnowBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportHeavyEqpActivities_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportHeavyEqpMaintenance_Result.CreateReportHeavyEqpMaintenance_Result(System.Double,System.Int32,System.String,System.String)">
+	<summary>
+ Create a new ReportHeavyEqpMaintenance_Result object.
+ </summary>
+	<param name="hourMeterValue">Initial value of the HourMeterValue property.</param>
+	<param name="maintenanceState">Initial value of the MaintenanceState property.</param>
+	<param name="code">Initial value of the Code property.</param>
+	<param name="merk">Initial value of the Merk property.</param>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenance_Result.TanggalMulai">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenance_Result.TanggalSelesai">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenance_Result.HourMeterValue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenance_Result.MaintenanceState">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenance_Result.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenance_Result.Merk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenance_Result.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenance_Result.Species">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenance_Result.OprName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportHeavyEqpMaintenance_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportHeavyEqpMaintenanceMaterialUsed_Result.CreateReportHeavyEqpMaintenanceMaterialUsed_Result(System.String,System.Double,System.String)">
+	<summary>
+ Create a new ReportHeavyEqpMaintenanceMaterialUsed_Result object.
+ </summary>
+	<param name="materialUsed">Initial value of the MaterialUsed property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+	<param name="unitQuantity">Initial value of the UnitQuantity property.</param>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenanceMaterialUsed_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenanceMaterialUsed_Result.MaterialUsed">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenanceMaterialUsed_Result.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenanceMaterialUsed_Result.UnitQuantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportHeavyEqpMaintenanceMaterialUsed_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportHeavyEqpMaintenanceOther_Result.CreateReportHeavyEqpMaintenanceOther_Result(System.String,System.Decimal)">
+	<summary>
+ Create a new ReportHeavyEqpMaintenanceOther_Result object.
+ </summary>
+	<param name="item">Initial value of the Item property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenanceOther_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenanceOther_Result.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenanceOther_Result.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEqpMaintenanceOther_Result.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportHeavyEqpMaintenanceOther_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportHeavyEquipmentMaintenanceItemWork_Result.CreateReportHeavyEquipmentMaintenanceItemWork_Result(System.String)">
+	<summary>
+ Create a new ReportHeavyEquipmentMaintenanceItemWork_Result object.
+ </summary>
+	<param name="itemPekerjaan">Initial value of the ItemPekerjaan property.</param>
+</member><member name="P:Equipment.ReportHeavyEquipmentMaintenanceItemWork_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportHeavyEquipmentMaintenanceItemWork_Result.ItemPekerjaan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportHeavyEquipmentMaintenanceItemWork_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportMachineMaintenance_Result.CreateReportMachineMaintenance_Result(System.Int32,System.String)">
+	<summary>
+ Create a new ReportMachineMaintenance_Result object.
+ </summary>
+	<param name="maintenanceState">Initial value of the MaintenanceState property.</param>
+	<param name="name">Initial value of the Name property.</param>
+</member><member name="P:Equipment.ReportMachineMaintenance_Result.TanggalMulai">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenance_Result.TanggalSelesai">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenance_Result.MaintenanceState">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenance_Result.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenance_Result.Merk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenance_Result.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenance_Result.Remark">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenance_Result.SerialNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenance_Result.Capacity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportMachineMaintenance_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportMachineMaintenanceItemWork_Result.CreateReportMachineMaintenanceItemWork_Result(System.String)">
+	<summary>
+ Create a new ReportMachineMaintenanceItemWork_Result object.
+ </summary>
+	<param name="itemPekerjaan">Initial value of the ItemPekerjaan property.</param>
+</member><member name="P:Equipment.ReportMachineMaintenanceItemWork_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenanceItemWork_Result.ItemPekerjaan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportMachineMaintenanceItemWork_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportMachineMaintenanceMaterialUsed_Result.CreateReportMachineMaintenanceMaterialUsed_Result(System.String,System.Double,System.String)">
+	<summary>
+ Create a new ReportMachineMaintenanceMaterialUsed_Result object.
+ </summary>
+	<param name="materialUsed">Initial value of the MaterialUsed property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+	<param name="unitQuantity">Initial value of the UnitQuantity property.</param>
+</member><member name="P:Equipment.ReportMachineMaintenanceMaterialUsed_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenanceMaterialUsed_Result.MaterialUsed">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenanceMaterialUsed_Result.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenanceMaterialUsed_Result.UnitQuantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportMachineMaintenanceMaterialUsed_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportMachineMaintenanceOther_Result.CreateReportMachineMaintenanceOther_Result(System.String,System.Decimal)">
+	<summary>
+ Create a new ReportMachineMaintenanceOther_Result object.
+ </summary>
+	<param name="item">Initial value of the Item property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+</member><member name="P:Equipment.ReportMachineMaintenanceOther_Result.No">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenanceOther_Result.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenanceOther_Result.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportMachineMaintenanceOther_Result.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportMachineMaintenanceOther_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportTradoActivities_Result.CreateReportTradoActivities_Result(System.String,System.String,System.String)">
+	<summary>
+ Create a new ReportTradoActivities_Result object.
+ </summary>
+	<param name="code">Initial value of the Code property.</param>
+	<param name="driver">Initial value of the Driver property.</param>
+	<param name="policeNumber">Initial value of the PoliceNumber property.</param>
+</member><member name="P:Equipment.ReportTradoActivities_Result.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportTradoActivities_Result.Driver">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportTradoActivities_Result.PoliceNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportTradoActivities_Result.Date">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportTradoActivities_Result.Day">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportTradoActivities_Result.ApprovalBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportTradoActivities_Result.JabatanApproval">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportTradoActivities_Result.CorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportTradoActivities_Result.JabatanCorrectBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportTradoActivities_Result.KnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportTradoActivities_Result.JabatanKnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportTradoActivities_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportVehicleMaintenance_Result.CreateReportVehicleMaintenance_Result(System.Double,System.Int32,System.String,System.String,System.DateTime,System.DateTime)">
+	<summary>
+ Create a new ReportVehicleMaintenance_Result object.
+ </summary>
+	<param name="odometerValue">Initial value of the OdometerValue property.</param>
+	<param name="maintenanceState">Initial value of the MaintenanceState property.</param>
+	<param name="code">Initial value of the Code property.</param>
+	<param name="merk">Initial value of the Merk property.</param>
+	<param name="maintenanceDateStart">Initial value of the MaintenanceDateStart property.</param>
+	<param name="maintenanceDateEnd">Initial value of the MaintenanceDateEnd property.</param>
+</member><member name="P:Equipment.ReportVehicleMaintenance_Result.OdometerValue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenance_Result.MaintenanceState">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenance_Result.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenance_Result.Merk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenance_Result.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenance_Result.Species">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenance_Result.PoliceNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenance_Result.DriverName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenance_Result.MaintenanceDateStart">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenance_Result.MaintenanceDateEnd">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportVehicleMaintenance_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportVehicleMaintenanceItemWork_Result.CreateReportVehicleMaintenanceItemWork_Result(System.String)">
+	<summary>
+ Create a new ReportVehicleMaintenanceItemWork_Result object.
+ </summary>
+	<param name="itemPekerjaan">Initial value of the ItemPekerjaan property.</param>
+</member><member name="P:Equipment.ReportVehicleMaintenanceItemWork_Result.ItemPekerjaan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportVehicleMaintenanceItemWork_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportVehicleMaintenanceMaterialUsed_Result.CreateReportVehicleMaintenanceMaterialUsed_Result(System.String,System.Double,System.String)">
+	<summary>
+ Create a new ReportVehicleMaintenanceMaterialUsed_Result object.
+ </summary>
+	<param name="materialUsed">Initial value of the MaterialUsed property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+	<param name="unitQuantity">Initial value of the UnitQuantity property.</param>
+</member><member name="P:Equipment.ReportVehicleMaintenanceMaterialUsed_Result.MaterialUsed">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenanceMaterialUsed_Result.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenanceMaterialUsed_Result.UnitQuantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportVehicleMaintenanceMaterialUsed_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Equipment.ReportVehicleMaintenanceOther_Result.CreateReportVehicleMaintenanceOther_Result(System.String,System.Decimal)">
+	<summary>
+ Create a new ReportVehicleMaintenanceOther_Result object.
+ </summary>
+	<param name="item">Initial value of the Item property.</param>
+	<param name="cost">Initial value of the Cost property.</param>
+</member><member name="P:Equipment.ReportVehicleMaintenanceOther_Result.Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenanceOther_Result.Cost">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Equipment.ReportVehicleMaintenanceOther_Result.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.ReportVehicleMaintenanceOther_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Equipment.MDKDataSet.DetailFuelDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailDumpTruckOperationDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailOilDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailOperationDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailNonOperationDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportTradoActivitiesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportDumpTruckActivitiesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpActivitiesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcBBMTradoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcBBMTradoOutDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcTradoNonOpDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcTradoOperationsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcOil_SparePartDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportDumpTruckActivities1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceItemWorkDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceMaterialUsedDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceOtherDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpMaintenanceDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpMaintenanceMaterialUsedDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpMaintenanceOtherDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEquipmentMaintenanceItemWorkDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailFuelRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailDumpTruckOperationRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailOilRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailOperationRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailNonOperationRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportTradoActivitiesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportDumpTruckActivitiesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpActivitiesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcBBMTradoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcBBMTradoOutRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcTradoNonOpRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcTradoOperationsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcOil_SparePartRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportDumpTruckActivities1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceItemWorkRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceMaterialUsedRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceOtherRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpMaintenanceRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpMaintenanceMaterialUsedRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpMaintenanceOtherRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEquipmentMaintenanceItemWorkRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailFuelRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailDumpTruckOperationRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailOilRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailOperationRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.DetailNonOperationRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportTradoActivitiesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportDumpTruckActivitiesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpActivitiesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcBBMTradoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcBBMTradoOutRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcTradoNonOpRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcTradoOperationsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ProcOil_SparePartRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportDumpTruckActivities1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceItemWorkRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceMaterialUsedRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceOtherRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportVehicleMaintenanceRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpMaintenanceRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpMaintenanceMaterialUsedRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEqpMaintenanceOtherRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet.ReportHeavyEquipmentMaintenanceItemWorkRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Equipment.MDKDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.DetailFuelTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.DetailDumpTruckOperationTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.DetailOilTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.DetailOperationTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.DetailNonOperationTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportTradoActivitiesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportDumpTruckActivitiesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportHeavyEqpActivitiesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ProcBBMTradoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ProcBBMTradoOutTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ProcTradoNonOpTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ProcTradoOperationsTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ProcOil_SparePartTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportDumpTruckActivities1TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportVehicleMaintenanceItemWorkTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportVehicleMaintenanceMaterialUsedTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportVehicleMaintenanceOtherTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportVehicleMaintenanceTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportHeavyEqpMaintenanceTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportHeavyEqpMaintenanceMaterialUsedTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportHeavyEqpMaintenanceOtherTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.ReportHeavyEquipmentMaintenanceItemWorkTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Equipment.MDKDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Equipment.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Equipment.MDKDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Equipment.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Equipment.MDKDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Equipment.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Equipment.MDKDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Equipment.MDKDataSetTableAdapters.TableAdapterManager.UpdateAll(Equipment.MDKDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Equipment.MDKDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="M:Equipment.Equipment.Areas.Equipment.Controllers.VehicleMaintenanceController.CreateMaintenanceRecord(System.Int32)">
+	<summary>
+	</summary>
+	<param name="Id">vehicle Id</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Equipment.Equipment.Areas.Equipment.Controllers.VehicleMaintenanceController.GetItemToService(System.Int32)">
+	<summary>
+ Used to load planning item to service.
+ </summary>
+	<param name="id">vehicle id</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Equipment.Equipment.Areas.Equipment.Controllers.VehicleMaintenanceController.GetServicedItems(System.Int32)">
+	<summary>
+ Used to load items on maintenance
+ </summary>
+	<param name="id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:Equipment.WebForm1.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="P:Equipment.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Equipment.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Equipment.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

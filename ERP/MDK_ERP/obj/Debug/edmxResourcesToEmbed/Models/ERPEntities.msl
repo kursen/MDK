@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ERPModelStoreContainer" CdmEntityContainer="ERPEntities">
+    <FunctionImportMapping FunctionImportName="ListKomposisi" FunctionName="ERPModel.Store.ListKomposisi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.ListKomposisi_Result">
+          <ScalarProperty Name="produk" ColumnName="produk" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="IDMaterialComposition" ColumnName="IDMaterialComposition" />
+          <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Composition" ColumnName="Composition" />
+          <ScalarProperty Name="CompositionUnit" ColumnName="CompositionUnit" />
+          <ScalarProperty Name="ConversionAmount" ColumnName="ConversionAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ListRatio" FunctionName="ERPModel.Store.ListRatio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.ListRatio_Result">
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Satuan" ColumnName="Satuan" />
+          <ScalarProperty Name="Rasio" ColumnName="Rasio" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ListSolar" FunctionName="ERPModel.Store.ListSolar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.ListSolar_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateUse" ColumnName="DateUse" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+          <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ListAspal" FunctionName="ERPModel.Store.ListAspal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.ListAspal_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getListAspal" FunctionName="ERPModel.Store.getListAspal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.getListAspal_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateUse" ColumnName="DateUse" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DropdownAsphal" FunctionName="ERPModel.Store.DropdownAsphal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.DropdownAsphal_Result">
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="jumlah" ColumnName="jumlah" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="produkCompositions" FunctionName="ERPModel.Store.produkCompositions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.produkCompositions_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IDMaterialComposition" ColumnName="IDMaterialComposition" />
+          <ScalarProperty Name="IdMeasurementUnit" ColumnName="IdMeasurementUnit" />
+          <ScalarProperty Name="ASPHAL" ColumnName="ASPHAL" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetInventoryData" FunctionName="ERPModel.Store.GetInventoryData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.GetInventoryData_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tanggal" ColumnName="Tanggal" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+          <ScalarProperty Name="Tambah" ColumnName="Tambah" />
+          <ScalarProperty Name="Kurang" ColumnName="Kurang" />
+          <ScalarProperty Name="Sisa" ColumnName="Sisa" />
+          <ScalarProperty Name="UrutBaris" ColumnName="UrutBaris" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetInventoryDataForDashboard" FunctionName="ERPModel.Store.GetInventoryDataForDashboard">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.GetInventoryDataForDashboard_Result">
+          <ScalarProperty Name="IdMaterial" ColumnName="IdMaterial" />
+          <ScalarProperty Name="NamaMaterial" ColumnName="NamaMaterial" />
+          <ScalarProperty Name="SisaKemarin" ColumnName="SisaKemarin" />
+          <ScalarProperty Name="TambahSekarang" ColumnName="TambahSekarang" />
+          <ScalarProperty Name="KurangSekarang" ColumnName="KurangSekarang" />
+          <ScalarProperty Name="Sisa" ColumnName="Sisa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ListMaterial" FunctionName="ERPModel.Store.ListMaterial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.ListMaterial_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="isInventory" ColumnName="isInventory" />
+          <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ListDataAMP" FunctionName="ERPModel.Store.ListDataAMP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.ListDataAMP_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="Produk" ColumnName="Produk" />
+          <ScalarProperty Name="DateUse" ColumnName="DateUse" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="IdShift" ColumnName="IdShift" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="IDProject" ColumnName="IDProject" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ListTimbangan1" FunctionName="ERPModel.Store.ListTimbangan1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.ListTimbangan1_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JamMasuk" ColumnName="JamMasuk" />
+          <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+          <ScalarProperty Name="Sopir" ColumnName="Sopir" />
+          <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+          <ScalarProperty Name="NamaPeru" ColumnName="NamaPeru" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="IdMaterial" ColumnName="IdMaterial" />
+          <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+          <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+          <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+          <ScalarProperty Name="Copy" ColumnName="Copy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="EditTimbangan" FunctionName="ERPModel.Store.EditTimbangan">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.EditTimbangan_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+          <ScalarProperty Name="Sopir" ColumnName="Sopir" />
+          <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CompInUseJournal" FunctionName="ERPModel.Store.CompInUseJournal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.CompInUseJournal_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IdMeasurementUnit" ColumnName="IdMeasurementUnit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ERPModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblTrans_Penimbangan1">
+      <EntityTypeMapping TypeName="ERPModel.TblTrans_Penimbangan1">
+        <MappingFragment StoreEntitySet="TblTrans_Penimbangan1">
+          <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+          <ScalarProperty Name="Deliverynote" ColumnName="Deliverynote" />
+          <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+          <ScalarProperty Name="KodeBrg" ColumnName="KodeBrg" />
+          <ScalarProperty Name="KodePeru" ColumnName="KodePeru" />
+          <ScalarProperty Name="Sopir" ColumnName="Sopir" />
+          <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+          <ScalarProperty Name="Tgl" ColumnName="Tgl" />
+          <ScalarProperty Name="KodeTimb1" ColumnName="KodeTimb1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblTrans_Penimbangan2">
+      <EntityTypeMapping TypeName="ERPModel.TblTrans_Penimbangan2">
+        <MappingFragment StoreEntitySet="TblTrans_Penimbangan2">
+          <ScalarProperty Name="Copy" ColumnName="Copy" />
+          <ScalarProperty Name="Clerk2" ColumnName="Clerk2" />
+          <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+          <ScalarProperty Name="DeliveryNote" ColumnName="DeliveryNote" />
+          <ScalarProperty Name="Berat2" ColumnName="Berat2" />
+          <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+          <ScalarProperty Name="KodeBrg" ColumnName="KodeBrg" />
+          <ScalarProperty Name="KodePeru" ColumnName="KodePeru" />
+          <ScalarProperty Name="Sopir" ColumnName="Sopir" />
+          <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+          <ScalarProperty Name="TglKeluar" ColumnName="TglKeluar" />
+          <ScalarProperty Name="TglMasuk" ColumnName="TglMasuk" />
+          <ScalarProperty Name="NoRecord" ColumnName="NoRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyLists">
+      <EntityTypeMapping TypeName="ERPModel.CompanyLists">
+        <MappingFragment StoreEntitySet="CompanyLists">
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrusherJournalDetails">
+      <EntityTypeMapping TypeName="ERPModel.CrusherJournalDetails">
+        <MappingFragment StoreEntitySet="CrusherJournalDetails">
+          <ScalarProperty Name="IDMeasurementUnit" ColumnName="IDMeasurementUnit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="OrderProcess" ColumnName="OrderProcess" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="IDCrusherJournal" ColumnName="IDCrusherJournal" />
+          <ScalarProperty Name="IDInventory" ColumnName="IDInventory" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrusherJournals">
+      <EntityTypeMapping TypeName="ERPModel.CrusherJournals">
+        <MappingFragment StoreEntitySet="CrusherJournals">
+          <ScalarProperty Name="Member" ColumnName="Member" />
+          <ScalarProperty Name="IDMaterialUse" ColumnName="IDMaterialUse" />
+          <ScalarProperty Name="IdWorkSchedule" ColumnName="IdWorkSchedule" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistributionJournals">
+      <EntityTypeMapping TypeName="ERPModel.DistributionJournals">
+        <MappingFragment StoreEntitySet="DistributionJournals">
+          <ScalarProperty Name="Copy" ColumnName="Copy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Clerk2" ColumnName="Clerk2" />
+          <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="IdMeasurementUnit" ColumnName="IdMeasurementUnit" />
+          <ScalarProperty Name="Weight2" ColumnName="Weight2" />
+          <ScalarProperty Name="Weight1" ColumnName="Weight1" />
+          <ScalarProperty Name="IdMaterial" ColumnName="IdMaterial" />
+          <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+          <ScalarProperty Name="IdDeliveryStatus" ColumnName="IdDeliveryStatus" />
+          <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+          <ScalarProperty Name="PoliceLicense" ColumnName="PoliceLicense" />
+          <ScalarProperty Name="IdWeigher" ColumnName="IdWeigher" />
+          <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+          <ScalarProperty Name="InTime" ColumnName="InTime" />
+          <ScalarProperty Name="NoRec" ColumnName="NoRec" />
+          <ScalarProperty Name="IDInventory" ColumnName="IDInventory" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaterialInitialStock">
+      <EntityTypeMapping TypeName="ERPModel.MaterialInitialStock">
+        <MappingFragment StoreEntitySet="MaterialInitialStock">
+          <ScalarProperty Name="IDInventory" ColumnName="IDInventory" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IDMeasurementUnit" ColumnName="IDMeasurementUnit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateInput" ColumnName="DateInput" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaterialInventories">
+      <EntityTypeMapping TypeName="ERPModel.MaterialInventories">
+        <MappingFragment StoreEntitySet="MaterialInventories">
+          <ScalarProperty Name="NoRecordWeigher" ColumnName="NoRecordWeigher" />
+          <ScalarProperty Name="IsPlus" ColumnName="IsPlus" />
+          <ScalarProperty Name="IdInventoryStatus" ColumnName="IdInventoryStatus" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaterialUseJournal">
+      <EntityTypeMapping TypeName="ERPModel.MaterialUseJournal">
+        <MappingFragment StoreEntitySet="MaterialUseJournal">
+          <ScalarProperty Name="IDAmp" ColumnName="IDAmp" />
+          <ScalarProperty Name="IDInventory" ColumnName="IDInventory" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IDProject" ColumnName="IDProject" />
+          <ScalarProperty Name="IDMeasurementUnit" ColumnName="IDMeasurementUnit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+          <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+          <ScalarProperty Name="DateUse" ColumnName="DateUse" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstDeliveryStatuses">
+      <EntityTypeMapping TypeName="ERPModel.MstDeliveryStatuses">
+        <MappingFragment StoreEntitySet="MstDeliveryStatuses">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstInventoryStatuses">
+      <EntityTypeMapping TypeName="ERPModel.MstInventoryStatuses">
+        <MappingFragment StoreEntitySet="MstInventoryStatuses">
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstMachines">
+      <EntityTypeMapping TypeName="ERPModel.MstMachines">
+        <MappingFragment StoreEntitySet="MstMachines">
+          <ScalarProperty Name="SeriesNumber" ColumnName="SeriesNumber" />
+          <ScalarProperty Name="IdMachineType" ColumnName="IdMachineType" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstMachineTypes">
+      <EntityTypeMapping TypeName="ERPModel.MstMachineTypes">
+        <MappingFragment StoreEntitySet="MstMachineTypes">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstMaterialCompositions">
+      <EntityTypeMapping TypeName="ERPModel.MstMaterialCompositions">
+        <MappingFragment StoreEntitySet="MstMaterialCompositions">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="IDMaterialComposition" ColumnName="IDMaterialComposition" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstMaterialRatioUnits">
+      <EntityTypeMapping TypeName="ERPModel.MstMaterialRatioUnits">
+        <MappingFragment StoreEntitySet="MstMaterialRatioUnits">
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="IDMeasurementUnit" ColumnName="IDMeasurementUnit" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstMaterials">
+      <EntityTypeMapping TypeName="ERPModel.MstMaterials">
+        <MappingFragment StoreEntitySet="MstMaterials">
+          <ScalarProperty Name="IDMachineType" ColumnName="IDMachineType" />
+          <ScalarProperty Name="DateInitialStock" ColumnName="DateInitialStock" />
+          <ScalarProperty Name="InitialStock" ColumnName="InitialStock" />
+          <ScalarProperty Name="isInventory" ColumnName="isInventory" />
+          <ScalarProperty Name="IdMeasurementUnit" ColumnName="IdMeasurementUnit" />
+          <ScalarProperty Name="IdMaterialType" ColumnName="IdMaterialType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstMaterialTypes">
+      <EntityTypeMapping TypeName="ERPModel.MstMaterialTypes">
+        <MappingFragment StoreEntitySet="MstMaterialTypes">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstWorkSchedule">
+      <EntityTypeMapping TypeName="ERPModel.MstWorkSchedule">
+        <MappingFragment StoreEntitySet="MstWorkSchedule">
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectList">
+      <EntityTypeMapping TypeName="ERPModel.ProjectList">
+        <MappingFragment StoreEntitySet="ProjectList">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AgentName" ColumnName="AgentName" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="NoProject" ColumnName="NoProject" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectRoadList">
+      <EntityTypeMapping TypeName="ERPModel.ProjectRoadList">
+        <MappingFragment StoreEntitySet="ProjectRoadList">
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="RoadName" ColumnName="RoadName" />
+          <ScalarProperty Name="IDProject" ColumnName="IDProject" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetCrusherJournalData" FunctionName="ERPModel.Store.GetCrusherJournalData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.GetCrusherJournalData_Result">
+          <ScalarProperty Name="IDJournal" ColumnName="IDJournal" />
+          <ScalarProperty Name="Tanggal" ColumnName="Tanggal" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="NamaMaterial" ColumnName="NamaMaterial" />
+          <ScalarProperty Name="UrutKolom" ColumnName="UrutKolom" />
+          <ScalarProperty Name="GROGOL" ColumnName="GROGOL" />
+          <ScalarProperty Name="MEDIUM" ColumnName="MEDIUM" />
+          <ScalarProperty Name="SatuanBucket" ColumnName="SatuanBucket" />
+          <ScalarProperty Name="M3" ColumnName="M3" />
+          <ScalarProperty Name="JumlahKubik" ColumnName="JumlahKubik" />
+          <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+          <ScalarProperty Name="ABUBATU" ColumnName="ABUBATU" />
+          <ScalarProperty Name="BASEA" ColumnName="BASEA" />
+          <ScalarProperty Name="BASEB" ColumnName="BASEB" />
+          <ScalarProperty Name="SPLIT12" ColumnName="SPLIT12" />
+          <ScalarProperty Name="SPLIT23" ColumnName="SPLIT23" />
+          <ScalarProperty Name="GRESLEYOut" ColumnName="GRESLEYOut" />
+          <ScalarProperty Name="GRESLEYIn" ColumnName="GRESLEYIn" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LaporanPenimbanganMaterial" FunctionName="ERPModel.Store.LaporanPenimbanganMaterial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.LaporanPenimbanganMaterial_Result">
+          <ScalarProperty Name="NoRecord" ColumnName="NoRecord" />
+          <ScalarProperty Name="Masuk" ColumnName="Masuk" />
+          <ScalarProperty Name="Keluar" ColumnName="Keluar" />
+          <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+          <ScalarProperty Name="Perusahaan" ColumnName="Perusahaan" />
+          <ScalarProperty Name="Barang" ColumnName="Barang" />
+          <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+          <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+          <ScalarProperty Name="Berat2" ColumnName="Berat2" />
+          <ScalarProperty Name="Netto" ColumnName="Netto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAMPDataForDashboard" FunctionName="ERPModel.Store.GetAMPDataForDashboard">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.GetAMPDataForDashboard_Result">
+          <ScalarProperty Name="IDAMP" ColumnName="IDAMP" />
+          <ScalarProperty Name="IdProject" ColumnName="IdProject" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="MaterialProduction" ColumnName="MaterialProduction" />
+          <ScalarProperty Name="AmountProduction" ColumnName="AmountProduction" />
+          <ScalarProperty Name="IDMaterialUse" ColumnName="IDMaterialUse" />
+          <ScalarProperty Name="MaterialUse" ColumnName="MaterialUse" />
+          <ScalarProperty Name="AmountUse" ColumnName="AmountUse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tblMisc_History">
+      <EntityTypeMapping TypeName="ERPModel.tblMisc_History">
+        <MappingFragment StoreEntitySet="tblMisc_History">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="jenis" ColumnName="jenis" />
+          <ScalarProperty Name="norecord" ColumnName="norecord" />
+          <ScalarProperty Name="waktu" ColumnName="waktu" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="historyID" ColumnName="historyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMst_Barang">
+      <EntityTypeMapping TypeName="ERPModel.TblMst_Barang">
+        <MappingFragment StoreEntitySet="TblMst_Barang">
+          <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+          <ScalarProperty Name="NamaBrg" ColumnName="NamaBrg" />
+          <ScalarProperty Name="NoBrg" ColumnName="NoBrg" />
+          <ScalarProperty Name="KodeBrg" ColumnName="KodeBrg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMst_Login">
+      <EntityTypeMapping TypeName="ERPModel.TblMst_Login">
+        <MappingFragment StoreEntitySet="TblMst_Login">
+          <ScalarProperty Name="HA_FMH" ColumnName="HA_FMH" />
+          <ScalarProperty Name="HA_FME" ColumnName="HA_FME" />
+          <ScalarProperty Name="HA_FMI" ColumnName="HA_FMI" />
+          <ScalarProperty Name="HA_FMV" ColumnName="HA_FMV" />
+          <ScalarProperty Name="HA_FPH" ColumnName="HA_FPH" />
+          <ScalarProperty Name="HA_FPE" ColumnName="HA_FPE" />
+          <ScalarProperty Name="HA_FPI" ColumnName="HA_FPI" />
+          <ScalarProperty Name="HA_FPV" ColumnName="HA_FPV" />
+          <ScalarProperty Name="HA_TransCU" ColumnName="HA_TransCU" />
+          <ScalarProperty Name="HA_TransH" ColumnName="HA_TransH" />
+          <ScalarProperty Name="HA_TransE" ColumnName="HA_TransE" />
+          <ScalarProperty Name="HA_TransI" ColumnName="HA_TransI" />
+          <ScalarProperty Name="HA_TransV" ColumnName="HA_TransV" />
+          <ScalarProperty Name="HA_Lap" ColumnName="HA_Lap" />
+          <ScalarProperty Name="HA_TOpt" ColumnName="HA_TOpt" />
+          <ScalarProperty Name="HA_TBD" ColumnName="HA_TBD" />
+          <ScalarProperty Name="HA_THA" ColumnName="HA_THA" />
+          <ScalarProperty Name="Bagian" ColumnName="Bagian" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="Kode" ColumnName="Kode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMst_NoRec">
+      <EntityTypeMapping TypeName="ERPModel.TblMst_NoRec">
+        <MappingFragment StoreEntitySet="TblMst_NoRec">
+          <ScalarProperty Name="NoUrut" ColumnName="NoUrut" />
+          <ScalarProperty Name="NoRecord" ColumnName="NoRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMst_Perusahaan">
+      <EntityTypeMapping TypeName="ERPModel.TblMst_Perusahaan">
+        <MappingFragment StoreEntitySet="TblMst_Perusahaan">
+          <ScalarProperty Name="FaxPeru" ColumnName="FaxPeru" />
+          <ScalarProperty Name="TelpPeru" ColumnName="TelpPeru" />
+          <ScalarProperty Name="KotaPeru" ColumnName="KotaPeru" />
+          <ScalarProperty Name="AlamatPeru2" ColumnName="AlamatPeru2" />
+          <ScalarProperty Name="AlamatPeru1" ColumnName="AlamatPeru1" />
+          <ScalarProperty Name="NamaPeru" ColumnName="NamaPeru" />
+          <ScalarProperty Name="NoPeru" ColumnName="NoPeru" />
+          <ScalarProperty Name="KodePeru" ColumnName="KodePeru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopNavigationMenu">
+      <EntityTypeMapping TypeName="ERPModel.TopNavigationMenu">
+        <MappingFragment StoreEntitySet="TopNavigationMenu">
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstWeighers">
+      <EntityTypeMapping TypeName="ERPModel.MstWeighers">
+        <MappingFragment StoreEntitySet="MstWeighers">
+          <ScalarProperty Name="SeriesNumber" ColumnName="SeriesNumber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AMPJournals">
+      <EntityTypeMapping TypeName="ERPModel.AMPJournals">
+        <MappingFragment StoreEntitySet="AMPJournals">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IDProject" ColumnName="IDProject" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="IdShift" ColumnName="IdShift" />
+          <ScalarProperty Name="DateUse" ColumnName="DateUse" />
+          <ScalarProperty Name="EndProd" ColumnName="EndProd" />
+          <ScalarProperty Name="BeginProd" ColumnName="BeginProd" />
+          <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MstMeasurementUnits">
+      <EntityTypeMapping TypeName="ERPModel.MstMeasurementUnits">
+        <MappingFragment StoreEntitySet="MstMeasurementUnits">
+          <ScalarProperty Name="Ratio" ColumnName="Ratio" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CompositionProductList" FunctionName="ERPModel.Store.CompositionProductList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ERPModel.CompositionProductList_Result">
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="IDMaterialComposition" ColumnName="IDMaterialComposition" />
+          <ScalarProperty Name="MaterialComp" ColumnName="MaterialComp" />
+          <ScalarProperty Name="IdMeasurementUnit" ColumnName="IdMeasurementUnit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="IDMeasurementUnitComp" ColumnName="IDMeasurementUnitComp" />
+          <ScalarProperty Name="AmountComp" ColumnName="AmountComp" />
+          <ScalarProperty Name="idUnitConversion" ColumnName="idUnitConversion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

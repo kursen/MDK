@@ -1,0 +1,95 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.AccountJournalViewModel
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+<h2>Hapus Data Jurnal Rekening</h2>
+</div>
+
+<div class="box-content">
+<h3>Apakah Anda yakin menghapus data ini?</h3>
+
+    <table>
+        <tr>
+            <td>Nomor DRD</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model=>model.DRDNumber)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Tanggal</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.DocumentDate )
+            </td>        
+        </tr>
+
+        <tr>
+            <td>Keterangan</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.Description )
+            </td>      
+        </tr>
+
+        <tr>
+            <td>Rekening Air</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.WaterBill)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Rekening Non Air</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.NonWaterBill)
+            </td>
+        </tr>
+    </table>
+
+    @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.AccountJournalDetailViewModel>()
+        .Name("Grid")
+
+        .DataKeys(keys =>
+        {
+            keys.Add(p => p.Id);
+        })
+        
+        .DataBinding(dataBinding =>
+        {
+            dataBinding.Ajax()
+                .Select("_SelectDetail", "AccountJournal");
+                //.Insert("_InsertDetail", "AccountJournal")
+                //.Update("_UpdateDetail", "AccountJournal")
+                //.Delete("_DeleteDetail", "AccountJournal"); 
+                
+        })
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.AccountCode).Title("Kode Perkiraan");
+            //columns.Bound(p => p.AccountName).Title("Nama Perkiraan").ReadOnly();
+            columns.Bound(p => p.Debet).Format("{0:N}").Width(210);
+            columns.Bound(p => p.Kredit).Format("{0:N}").Width(210);
+            columns.Bound(p => p.Id).Hidden();
+            
+        })
+        .Pageable()
+        .Sortable()
+      )
+@using (Html.BeginForm())
+{
+    <br />
+        <input class ="t-button" style ="width:60px" type="submit" value="Hapus" /> 
+        <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "AccountJournal", null)">Batal</a>
+
+
+}
+</div>
+

@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectManagement_ERPModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ProjectManagement_ERPModelStoreContainer">
+    <EntitySet Name="CompanyInfo" EntityType="ProjectManagement_ERPModel.Store.CompanyInfo" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="DailyReport" EntityType="ProjectManagement_ERPModel.Store.DailyReport" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="DailyReportBaseConstructionMaterialUse" EntityType="ProjectManagement_ERPModel.Store.DailyReportBaseConstructionMaterialUse" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="DailyReportEquipmentUse" EntityType="ProjectManagement_ERPModel.Store.DailyReportEquipmentUse" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="DailyReportFieldPersonnelUse" EntityType="ProjectManagement_ERPModel.Store.DailyReportFieldPersonnelUse" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="DailyReportIncidenceOfInhibitorActivity" EntityType="ProjectManagement_ERPModel.Store.DailyReportIncidenceOfInhibitorActivity" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="DailyReportLaborUse" EntityType="ProjectManagement_ERPModel.Store.DailyReportLaborUse" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="DailyReportTask" EntityType="ProjectManagement_ERPModel.Store.DailyReportTask" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="Equipment" EntityType="ProjectManagement_ERPModel.Store.Equipment" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="Material" EntityType="ProjectManagement_ERPModel.Store.Material" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="MonthlyReport" EntityType="ProjectManagement_ERPModel.Store.MonthlyReport" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectCostRecord" EntityType="ProjectManagement_ERPModel.Store.ProjectCostRecord" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectCostRecordItem" EntityType="ProjectManagement_ERPModel.Store.ProjectCostRecordItem" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectDocDetail" EntityType="ProjectManagement_ERPModel.Store.ProjectDocDetail" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectInfo" EntityType="ProjectManagement_ERPModel.Store.ProjectInfo" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectMutualCheck0" EntityType="ProjectManagement_ERPModel.Store.ProjectMutualCheck0" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectMutualCheck0Item" EntityType="ProjectManagement_ERPModel.Store.ProjectMutualCheck0Item" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectTaskDivision" EntityType="ProjectManagement_ERPModel.Store.ProjectTaskDivision" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectTaskDivisionItem" EntityType="ProjectManagement_ERPModel.Store.ProjectTaskDivisionItem" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectTaskDivisionItemVisualColor" EntityType="ProjectManagement_ERPModel.Store.ProjectTaskDivisionItemVisualColor" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectTaskWeight" EntityType="ProjectManagement_ERPModel.Store.ProjectTaskWeight" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectTaskWeight_MutualCheck0" EntityType="ProjectManagement_ERPModel.Store.ProjectTaskWeight_MutualCheck0" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ProjectTimeSheet" EntityType="ProjectManagement_ERPModel.Store.ProjectTimeSheet" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ReportLayout" EntityType="ProjectManagement_ERPModel.Store.ReportLayout" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="WeeklyReport" EntityType="ProjectManagement_ERPModel.Store.WeeklyReport" store:Type="Tables" Schema="PMn" />
+    <AssociationSet Name="FK_DailyReportTask_ProjectTaskDivisionItem" Association="ProjectManagement_ERPModel.Store.FK_DailyReportTask_ProjectTaskDivisionItem">
+      <End Role="ProjectTaskDivisionItem" EntitySet="ProjectTaskDivisionItem" />
+      <End Role="DailyReportTask" EntitySet="DailyReportTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipment_ProjectInfo" Association="ProjectManagement_ERPModel.Store.FK_Equipment_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+      <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Material_ProjectInfo" Association="ProjectManagement_ERPModel.Store.FK_Material_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+      <End Role="Material" EntitySet="Material" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonthlyReport_ProjectInfo" Association="ProjectManagement_ERPModel.Store.FK_MonthlyReport_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+      <End Role="MonthlyReport" EntitySet="MonthlyReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectCostRecordItem_ProjectCostRecord" Association="ProjectManagement_ERPModel.Store.FK_ProjectCostRecordItem_ProjectCostRecord">
+      <End Role="ProjectCostRecord" EntitySet="ProjectCostRecord" />
+      <End Role="ProjectCostRecordItem" EntitySet="ProjectCostRecordItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectDocDetail_ProjectInfo" Association="ProjectManagement_ERPModel.Store.FK_ProjectDocDetail_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+      <End Role="ProjectDocDetail" EntitySet="ProjectDocDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectInfo_CompanyInfo" Association="ProjectManagement_ERPModel.Store.FK_ProjectInfo_CompanyInfo">
+      <End Role="CompanyInfo" EntitySet="CompanyInfo" />
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectMutualCheck0_ProjectInfo" Association="ProjectManagement_ERPModel.Store.FK_ProjectMutualCheck0_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+      <End Role="ProjectMutualCheck0" EntitySet="ProjectMutualCheck0" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTaskDivision_ProjectInfo" Association="ProjectManagement_ERPModel.Store.FK_ProjectTaskDivision_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+      <End Role="ProjectTaskDivision" EntitySet="ProjectTaskDivision" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTaskDivisionItem_ProjectTaskDivision" Association="ProjectManagement_ERPModel.Store.FK_ProjectTaskDivisionItem_ProjectTaskDivision">
+      <End Role="ProjectTaskDivision" EntitySet="ProjectTaskDivision" />
+      <End Role="ProjectTaskDivisionItem" EntitySet="ProjectTaskDivisionItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectTimeSheet_ProjectInfo" Association="ProjectManagement_ERPModel.Store.FK_ProjectTimeSheet_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+      <End Role="ProjectTimeSheet" EntitySet="ProjectTimeSheet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportLayout_ProjectInfo" Association="ProjectManagement_ERPModel.Store.FK_ReportLayout_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+      <End Role="ReportLayout" EntitySet="ReportLayout" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportList_ProjectInfo" Association="ProjectManagement_ERPModel.Store.FK_ReportList_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+      <End Role="DailyReport" EntitySet="DailyReport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportListBaseConstructionMaterialUse_ReportList" Association="ProjectManagement_ERPModel.Store.FK_ReportListBaseConstructionMaterialUse_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReport" />
+      <End Role="DailyReportBaseConstructionMaterialUse" EntitySet="DailyReportBaseConstructionMaterialUse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportListEquipmentUse_ReportList" Association="ProjectManagement_ERPModel.Store.FK_ReportListEquipmentUse_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReport" />
+      <End Role="DailyReportEquipmentUse" EntitySet="DailyReportEquipmentUse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportListFieldPersonnelUse_ReportList" Association="ProjectManagement_ERPModel.Store.FK_ReportListFieldPersonnelUse_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReport" />
+      <End Role="DailyReportFieldPersonnelUse" EntitySet="DailyReportFieldPersonnelUse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportListIncidenceOfInhibitorActivity_ReportList" Association="ProjectManagement_ERPModel.Store.FK_ReportListIncidenceOfInhibitorActivity_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReport" />
+      <End Role="DailyReportIncidenceOfInhibitorActivity" EntitySet="DailyReportIncidenceOfInhibitorActivity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportListLaborUse_ReportList" Association="ProjectManagement_ERPModel.Store.FK_ReportListLaborUse_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReport" />
+      <End Role="DailyReportLaborUse" EntitySet="DailyReportLaborUse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReportListTask_ReportList" Association="ProjectManagement_ERPModel.Store.FK_ReportListTask_ReportList">
+      <End Role="DailyReport" EntitySet="DailyReport" />
+      <End Role="DailyReportTask" EntitySet="DailyReportTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WeeklyReport_ProjectInfo" Association="ProjectManagement_ERPModel.Store.FK_WeeklyReport_ProjectInfo">
+      <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+      <End Role="WeeklyReport" EntitySet="WeeklyReport" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CompanyInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="Alias" Type="varchar" MaxLength="10" />
+    <Property Name="Address1" Type="varchar" MaxLength="200" />
+    <Property Name="Address2" Type="varchar" MaxLength="255" />
+    <Property Name="City" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="Phone1" Type="varchar" Nullable="false" MaxLength="18" />
+    <Property Name="Phone2" Type="varchar" MaxLength="18" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Annotation" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="DailyReport">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectInfoID" Type="int" Nullable="false" />
+    <Property Name="DayWork" Type="int" />
+    <Property Name="FiledContractors" Type="varchar" MaxLength="250" />
+    <Property Name="CheckedConsultants" Type="varchar" MaxLength="250" />
+    <Property Name="ApprovedTechnicalAssistant" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="DailyReportBaseConstructionMaterialUse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DailyReportId" Type="bigint" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="MaterialName" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="QuantityUnit" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="QuantityUse" Type="decimal" Nullable="false" />
+    <Property Name="QuantityImported" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DailyReportEquipmentUse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DailyReportId" Type="bigint" Nullable="false" />
+    <Property Name="EquipmentName" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="MeasurementUnit" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Condition" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DailyReportFieldPersonnelUse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DailyReportId" Type="bigint" Nullable="false" />
+    <Property Name="PositionType" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="PositionTypeName" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Ordinal" Type="tinyint" Nullable="false" />
+    <Property Name="Position" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DailyReportIncidenceOfInhibitorActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DailyReportId" Type="bigint" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="Type" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Time" Type="datetime" Nullable="false" />
+    <Property Name="Location" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="IsResponsibilityOfContractor" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DailyReportLaborUse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DailyReportId" Type="bigint" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="Position" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="Unit" Type="varchar" Nullable="false" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="DailyReportTask">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DailyReportId" Type="bigint" Nullable="false" />
+    <Property Name="ProjectTaskDivisionItemId" Type="int" Nullable="false" />
+    <Property Name="Volume" Type="float" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Equipments" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProjectInfoID" Type="int" />
+    <Property Name="Volume" Type="int" Nullable="false" />
+    <Property Name="Unit" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="BeginDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectInfoID" Type="int" />
+    <Property Name="Materials" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Volume" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="V.Lap" Type="decimal" Nullable="false" Scale="3" />
+    <Property Name="Unit" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="BeginDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MonthlyReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectInfoId" Type="int" Nullable="false" />
+    <Property Name="ImplementingActivities" Type="varchar(max)" />
+    <Property Name="MonthNumber" Type="int" Nullable="false" />
+    <Property Name="Place" Type="varchar" MaxLength="120" />
+    <Property Name="DateApproval" Type="datetime" />
+    <Property Name="Approval1Occupation" Type="varchar" MaxLength="120" />
+    <Property Name="Approval1Company" Type="varchar" MaxLength="100" />
+    <Property Name="Approval1Name" Type="varchar" MaxLength="100" />
+    <Property Name="Approval1Identity" Type="varchar" MaxLength="30" />
+    <Property Name="Approval2Occupation" Type="varchar" MaxLength="120" />
+    <Property Name="Approval2Company" Type="varchar" MaxLength="100" />
+    <Property Name="Approval2Name" Type="varchar" MaxLength="100" />
+    <Property Name="Approval2Identity" Type="varchar" MaxLength="30" />
+    <Property Name="Approval3Occupation" Type="varchar" MaxLength="120" />
+    <Property Name="Approval3Company" Type="varchar" MaxLength="100" />
+    <Property Name="Approval3Name" Type="varchar" MaxLength="100" />
+    <Property Name="Approval3Identity" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="ProjectCostRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectInfoId" Type="int" Nullable="false" />
+    <Property Name="TaskGroupTitle" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="PacketCode" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="RecordedBy" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Cashier" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProjectCostRecordItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectCostRecordId" Type="int" Nullable="false" />
+    <Property Name="PostCategory" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ItemDescription" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Value" Type="money" Nullable="false" />
+    <Property Name="Notes" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="ProjectDocDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectInfoID" Type="int" Nullable="false" />
+    <Property Name="DocTitle" Type="varchar" Nullable="false" MaxLength="70" />
+    <Property Name="Description" Type="varchar" MaxLength="225" />
+    <Property Name="DocFile" Type="varbinary(max)" />
+    <Property Name="DocType" Type="varchar" MaxLength="200" />
+    <Property Name="FileName" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ProjectInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectCode" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="ProjectTitle" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="DateStart" Type="datetime" Nullable="false" />
+    <Property Name="NumberOfDays" Type="int" Nullable="false" />
+    <Property Name="DayUnit" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="ContractNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyInfoId" Type="int" Nullable="false" />
+    <Property Name="ContractValue" Type="money" Nullable="false" />
+    <Property Name="ConsultanName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Location" Type="varchar" MaxLength="100" />
+    <Property Name="Archive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectMutualCheck0">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentDate" Type="datetime" Nullable="false" />
+    <Property Name="DocumentNumber" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Description" Type="text" Nullable="false" />
+    <Property Name="ProjectInfoId" Type="int" Nullable="false" />
+    <Property Name="ProposedByName" Type="varchar" MaxLength="100" />
+    <Property Name="ProposedByOccupation" Type="varchar" MaxLength="100" />
+    <Property Name="ProposedByCompany" Type="varchar" MaxLength="100" />
+    <Property Name="CheckedByName" Type="varchar" MaxLength="100" />
+    <Property Name="CheckedByOccupation" Type="varchar" MaxLength="100" />
+    <Property Name="CheckedByCompany" Type="varchar" MaxLength="100" />
+    <Property Name="ApprovedByName" Type="varchar" MaxLength="100" />
+    <Property Name="ApprovedByOccupation" Type="varchar" MaxLength="100" />
+    <Property Name="ApprovedByCompany" Type="varchar" MaxLength="100" />
+    <Property Name="ApprovedByNIPP" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProjectMutualCheck0Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectMutualCheck0Id" Type="int" Nullable="false" />
+    <Property Name="ProjectTaskDivisionItemId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectTaskDivision">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectInfoId" Type="int" Nullable="false" />
+    <Property Name="DivisionNumber" Type="int" Nullable="false" />
+    <Property Name="TaskTitle" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Ordinal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectTaskDivisionItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectTaskDivisionId" Type="int" Nullable="false" />
+    <Property Name="PaymentNumber" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TaskTitle" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Quantity" Type="float" Nullable="false" />
+    <Property Name="UnitQuantity" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Value" Type="money" Nullable="false" />
+    <Property Name="Ordinal" Type="int" Nullable="false" />
+    <Property Name="WorkDays" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectTaskDivisionItemVisualColor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectTaskDivisionItemId" Type="int" Nullable="false" />
+    <Property Name="CellBackgroundColor" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="CellTextColor" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="RowBackgroundColor" Type="varchar" Nullable="false" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="ProjectTaskWeight">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectTaskDivisionItemId" Type="int" Nullable="false" />
+    <Property Name="WeekNumber" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectTaskWeight_MutualCheck0">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectTaskDivisionItemId" Type="int" Nullable="false" />
+    <Property Name="WeekNumber" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectTimeSheet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ProjectInfoId" Type="int" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="150" />
+    <Property Name="CreatedByOccupation" Type="varchar" MaxLength="150" />
+    <Property Name="KnownBy" Type="varchar" MaxLength="150" />
+    <Property Name="KnownByOccupation" Type="varchar" MaxLength="150" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="150" />
+    <Property Name="ApprovedByOccupation" Type="varchar" MaxLength="150" />
+    <Property Name="RevisionNumber" Type="varchar" MaxLength="4" />
+    <Property Name="RevisionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReportLayout">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title1" Type="varchar" MaxLength="100" />
+    <Property Name="Title2" Type="varchar" MaxLength="100" />
+    <Property Name="RightLogo" Type="varbinary(max)" />
+    <Property Name="LeftLogo" Type="varbinary(max)" />
+    <Property Name="IdProjectInfo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WeeklyReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectInfoId" Type="int" Nullable="false" />
+    <Property Name="ImplementingActivities" Type="varchar(max)" />
+    <Property Name="WeekNumber" Type="int" Nullable="false" />
+    <Property Name="Place" Type="varchar" MaxLength="20" />
+    <Property Name="DateApproval" Type="datetime" />
+    <Property Name="Approval1Occupation" Type="varchar" MaxLength="120" />
+    <Property Name="Approval1Company" Type="varchar" MaxLength="100" />
+    <Property Name="Approval1Name" Type="varchar" MaxLength="100" />
+    <Property Name="Approval1Identity" Type="varchar" MaxLength="30" />
+    <Property Name="Approval2Occupation" Type="varchar" MaxLength="120" />
+    <Property Name="Approval2Company" Type="varchar" MaxLength="100" />
+    <Property Name="Approval2Name" Type="varchar" MaxLength="100" />
+    <Property Name="Approval2Identity" Type="varchar" MaxLength="120" />
+    <Property Name="Approval3Occupation" Type="varchar" MaxLength="100" />
+    <Property Name="Approval3Company" Type="varchar" MaxLength="100" />
+    <Property Name="Approval3Name" Type="varchar" MaxLength="50" />
+    <Property Name="Approval3Identity" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK_DailyReportTask_ProjectTaskDivisionItem">
+    <End Role="ProjectTaskDivisionItem" Type="ProjectManagement_ERPModel.Store.ProjectTaskDivisionItem" Multiplicity="1" />
+    <End Role="DailyReportTask" Type="ProjectManagement_ERPModel.Store.DailyReportTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTaskDivisionItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DailyReportTask">
+        <PropertyRef Name="ProjectTaskDivisionItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipment_ProjectInfo">
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Equipment" Type="ProjectManagement_ERPModel.Store.Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="ProjectInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Material_ProjectInfo">
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Material" Type="ProjectManagement_ERPModel.Store.Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Material">
+        <PropertyRef Name="ProjectInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonthlyReport_ProjectInfo">
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="1" />
+    <End Role="MonthlyReport" Type="ProjectManagement_ERPModel.Store.MonthlyReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MonthlyReport">
+        <PropertyRef Name="ProjectInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectCostRecordItem_ProjectCostRecord">
+    <End Role="ProjectCostRecord" Type="ProjectManagement_ERPModel.Store.ProjectCostRecord" Multiplicity="1" />
+    <End Role="ProjectCostRecordItem" Type="ProjectManagement_ERPModel.Store.ProjectCostRecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectCostRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectCostRecordItem">
+        <PropertyRef Name="ProjectCostRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectDocDetail_ProjectInfo">
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ProjectDocDetail" Type="ProjectManagement_ERPModel.Store.ProjectDocDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectDocDetail">
+        <PropertyRef Name="ProjectInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectInfo_CompanyInfo">
+    <End Role="CompanyInfo" Type="ProjectManagement_ERPModel.Store.CompanyInfo" Multiplicity="1" />
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectInfo">
+        <PropertyRef Name="CompanyInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectMutualCheck0_ProjectInfo">
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="1" />
+    <End Role="ProjectMutualCheck0" Type="ProjectManagement_ERPModel.Store.ProjectMutualCheck0" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectMutualCheck0">
+        <PropertyRef Name="ProjectInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTaskDivision_ProjectInfo">
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="1" />
+    <End Role="ProjectTaskDivision" Type="ProjectManagement_ERPModel.Store.ProjectTaskDivision" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTaskDivision">
+        <PropertyRef Name="ProjectInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTaskDivisionItem_ProjectTaskDivision">
+    <End Role="ProjectTaskDivision" Type="ProjectManagement_ERPModel.Store.ProjectTaskDivision" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ProjectTaskDivisionItem" Type="ProjectManagement_ERPModel.Store.ProjectTaskDivisionItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTaskDivision">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTaskDivisionItem">
+        <PropertyRef Name="ProjectTaskDivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectTimeSheet_ProjectInfo">
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="0..1" />
+    <End Role="ProjectTimeSheet" Type="ProjectManagement_ERPModel.Store.ProjectTimeSheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTimeSheet">
+        <PropertyRef Name="ProjectInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportLayout_ProjectInfo">
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="1" />
+    <End Role="ReportLayout" Type="ProjectManagement_ERPModel.Store.ReportLayout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ReportLayout">
+        <PropertyRef Name="IdProjectInfo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportList_ProjectInfo">
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="1" />
+    <End Role="DailyReport" Type="ProjectManagement_ERPModel.Store.DailyReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DailyReport">
+        <PropertyRef Name="ProjectInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportListBaseConstructionMaterialUse_ReportList">
+    <End Role="DailyReport" Type="ProjectManagement_ERPModel.Store.DailyReport" Multiplicity="1" />
+    <End Role="DailyReportBaseConstructionMaterialUse" Type="ProjectManagement_ERPModel.Store.DailyReportBaseConstructionMaterialUse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportBaseConstructionMaterialUse">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportListEquipmentUse_ReportList">
+    <End Role="DailyReport" Type="ProjectManagement_ERPModel.Store.DailyReport" Multiplicity="1" />
+    <End Role="DailyReportEquipmentUse" Type="ProjectManagement_ERPModel.Store.DailyReportEquipmentUse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportEquipmentUse">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportListFieldPersonnelUse_ReportList">
+    <End Role="DailyReport" Type="ProjectManagement_ERPModel.Store.DailyReport" Multiplicity="1" />
+    <End Role="DailyReportFieldPersonnelUse" Type="ProjectManagement_ERPModel.Store.DailyReportFieldPersonnelUse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportFieldPersonnelUse">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportListIncidenceOfInhibitorActivity_ReportList">
+    <End Role="DailyReport" Type="ProjectManagement_ERPModel.Store.DailyReport" Multiplicity="1" />
+    <End Role="DailyReportIncidenceOfInhibitorActivity" Type="ProjectManagement_ERPModel.Store.DailyReportIncidenceOfInhibitorActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportIncidenceOfInhibitorActivity">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportListLaborUse_ReportList">
+    <End Role="DailyReport" Type="ProjectManagement_ERPModel.Store.DailyReport" Multiplicity="1" />
+    <End Role="DailyReportLaborUse" Type="ProjectManagement_ERPModel.Store.DailyReportLaborUse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportLaborUse">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReportListTask_ReportList">
+    <End Role="DailyReport" Type="ProjectManagement_ERPModel.Store.DailyReport" Multiplicity="1" />
+    <End Role="DailyReportTask" Type="ProjectManagement_ERPModel.Store.DailyReportTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DailyReport">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DailyReportTask">
+        <PropertyRef Name="DailyReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WeeklyReport_ProjectInfo">
+    <End Role="ProjectInfo" Type="ProjectManagement_ERPModel.Store.ProjectInfo" Multiplicity="1" />
+    <End Role="WeeklyReport" Type="ProjectManagement_ERPModel.Store.WeeklyReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WeeklyReport">
+        <PropertyRef Name="ProjectInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetDailyReportData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="IdList" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="GetDailyReportDateList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="ProjectID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetDailyReportFor_G" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="ProjectInfoID" Type="int" Mode="In" />
+    <Parameter Name="DayWork" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMonthlyReportDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="MonthReportID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMonthlyReportDetail_withADD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="MonthReportID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMonthlyReportHeaderFooter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="MonthReportID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMonthlyReportList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="ProjectID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetTimesheetItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="projectInfoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getTitle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="projectInfoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetWeeklyReportData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetWeeklyReportDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="WeekReportID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetWeeklyReportDetail_withADD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="WeekReportID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetWeeklyReportHeaderFooter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="WeekReportID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetWeeklyReportList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="ProjectID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ScheduleEquipment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="projectInfoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ScheduleMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PMn">
+    <Parameter Name="projectInfoId" Type="int" Mode="In" />
+  </Function>
+</Schema>

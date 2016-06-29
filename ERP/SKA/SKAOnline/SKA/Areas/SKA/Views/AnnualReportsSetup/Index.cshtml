@@ -1,0 +1,46 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Set Up Direktur dan Lainnya - Laporan Tahunan";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Setup Direktur dan Lainnya - Laporan Tahunan</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "AnnualReportsSetup")) 
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input type = "submit" value = "Cari" />
+            </td>
+        </tr>
+    </table>
+    
+}
+@(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.AnnualReportsSetupViewModel>()
+                .Name("AnnualReportSetupGrid")
+                .Columns(col =>
+                    {
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false);
+                        col.Bound(o => o.Name).Title("Nama Laporan");
+                        col.Bound(o => o.ApproverName).Title("Disetujui Oleh");
+                        col.Bound(o => o.ApproverPosition).Title("Jabatan");
+                        col.Bound(o => o.KnownByName).Title("Diketahui Oleh");
+                        col.Bound(o => o.KnownByPosition).Title("Jabatan");
+                    })
+                    .DataBinding(binding => binding.Ajax().Select("GetList", "AnnualReportsSetup", new { searchValue = @ViewBag.SearchValue}))
+                    .Sortable()
+                    .Filterable()
+)
+</div>

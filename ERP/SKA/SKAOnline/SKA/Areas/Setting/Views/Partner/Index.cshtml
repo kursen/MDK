@@ -1,0 +1,72 @@
+﻿@using Telerik.Web.Mvc.UI;
+@model SKA.Areas.Setting.Models.ViewModels.BranchViewModel
+
+@{
+    ViewBag.Title = "Setting - Rekanan";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+}
+
+<div class="box-head">
+	<h2>Rekanan</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "Partner")) 
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input type = "submit" class ="t-button" style ="width:60px" value = "Cari" />
+            </td>
+        </tr>
+    </table>
+    
+}
+    @(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.PartnerViewModel>()
+                .Name("PartnerGrid")
+                .ToolBar(toolbar =>
+                {
+                    if (User.IsInRole("User") == false && userBranchCode == "00")
+                    {
+                        toolbar.Custom().Action("Create", "Partner").Text("Tambah").ButtonType(GridButtonType.ImageAndText).HtmlAttributes(new { style = "width:100px" });
+                    }
+                })
+                .Columns(col =>
+                {
+                    if (User.IsInRole("User") == false && userBranchCode == "00")
+                     {
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(70);
+                    }
+                    col.Bound(o => o.Code).Title("Kode Rekanan").Width(120);
+                    col.Bound(o => o.Name).Title("Nama Rekanan").Width(150);
+                    col.Bound(o => o.Address).Title("Alamat").Width(250);
+                    col.Bound(o => o.PhoneNumber).Title("Telepon").Width(100);
+                    col.Bound(o => o.Remarks).Title("Keterangan").Width(100);
+                    col.Bound(o => o.NPWP).Title("Nomor NPWP").Width(120);
+                    col.Bound(o => o.AccountCode).Title("Kode Perkiraan").Width(150);
+                })
+                .DataBinding(binding => binding.Ajax().Select("GetList", "Partner", new { searchValue = @ViewBag.SearchValue }))
+                        .Sortable(sorting =>
+                                     sorting.OrderBy(sortOrder => sortOrder.Add(o => o.Code).Ascending())
+                            )
+                .Filterable()
+                .Pageable(paging => paging.PageSize(10))
+                .HtmlAttributes(new { style = "width:100%" })
+                .Scrollable()
+    )
+</div>

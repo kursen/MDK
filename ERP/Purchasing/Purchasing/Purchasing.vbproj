@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DA0312F-846E-4D41-A6B7-DC7492D7ECDA}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Purchasing</RootNamespace>
+    <AssemblyName>Purchasing</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Purchasing.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Purchasing.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="ERPBase">
+      <HintPath>..\packages\ErpBase\ERPBase.dll</HintPath>
+    </Reference>
+    <Reference Include="HaloUIHelpers">
+      <HintPath>..\packages\HaloUI\HaloUIHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\itextsharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\packages\itextsharp\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\packages\itextsharp\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Visual Studio 10.0\ReportViewer\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Equipment\Equipment\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Mvc" />
+    <Import Include="System.Web.Mvc.Ajax" />
+    <Import Include="System.Web.Mvc.Html" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Purchasing\Controllers\CommonController.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\DeliveryOrderController.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\DepartmentPurchasingRequestApprovalController.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\DepartmentPurchaseRequisitionController.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\HomeController.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\PriceComparisonController.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\ProjectPurchasingRequestApprovalController.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\PurchaseOrderController.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\SearchPurchaseRequisitionController.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\VendorCategoryController.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\VendorController.vb" />
+    <Compile Include="Areas\Purchasing\Models\DeliveryOrderDetail.vb" />
+    <Compile Include="Areas\Purchasing\Models\DeliveryOrder.vb" />
+    <Compile Include="Areas\Purchasing\Models\DocumentSearchResult.vb" />
+    <Compile Include="Areas\Purchasing\Models\ModelItemPriceComparison.vb" />
+    <Compile Include="Areas\Purchasing\Models\ModelPriceComparison.vb" />
+    <Compile Include="Areas\Purchasing\Models\PdfMerge.vb" />
+    <Compile Include="Areas\Purchasing\Models\PurchaseOrder.vb" />
+    <Compile Include="Areas\Purchasing\Models\PurchaseOrderDetail.vb" />
+    <Compile Include="Areas\Purchasing\Models\GlobalArray.vb" />
+    <Compile Include="Areas\Purchasing\Models\ProjectPurchaseRequisition.vb" />
+    <Compile Include="Areas\Purchasing\Models\ProjectPurchaseRequisitionDetail.vb" />
+    <Compile Include="Areas\Purchasing\Models\PurchasingEntities.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchasingEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Purchasing\Models\Vendor.vb" />
+    <Compile Include="Areas\Purchasing\Models\DepartmentPurchaseRequisition.vb" />
+    <Compile Include="Areas\Purchasing\Models\DepartmentPRDetail.vb" />
+    <Compile Include="Areas\Purchasing\Controllers\ProjectPurchasingRequestController.vb" />
+    <Compile Include="Areas\Purchasing\PurchasingAreaRegistration.vb" />
+    <Compile Include="MDKDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDKDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MDKDataSet.vb">
+      <DependentUpon>MDKDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Areas\Purchasing\Reports\DepartmentPRApproval.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Purchasing\Views\DeliveryOrder\DeliveryOrder.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Purchasing\Views\DepartmentPurchaseRequisition\DepartmentPurchasingRequest.rdlc" />
+    <EmbeddedResource Include="Areas\Purchasing\Views\ProjectPurchasingRequest\ProjectPurchasingRequest.rdlc" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Areas\Purchasing\Models\PurchasingEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PurchasingEntities.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\Purchasing\css\contentTinyMCE.css" />
+    <Content Include="Areas\Purchasing\Role.xml" />
+    <Content Include="Areas\Purchasing\Scripts\PurchaseRequisition\PurchaseRequisitionDetail.js" />
+    <Content Include="Areas\Purchasing\Views\DepartmentPurchaseRequisition\Create.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DepartmentPurchaseRequisition\Detail.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DepartmentPurchaseRequisition\Index.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\PriceComparison\Detail.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\Vendor\Index.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\Vendor\Detail.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\Vendor\Create.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\ProjectPurchasingRequest\Index.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\ProjectPurchasingRequest\Create.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\ProjectPurchasingRequest\Detail.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\ProjectPurchasingRequestApproval\Index.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\ProjectPurchasingRequestApproval\Detail.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DepartmentPurchasingRequestApproval\Detail.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DepartmentPurchasingRequestApproval\Index.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\PurchaseOrder\Index.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\PurchaseOrder\Form.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\PurchaseOrder\Detail.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DeliveryOrder\Index.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DeliveryOrder\Create.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DeliveryOrder\Detail.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DeliveryOrder\DetailPO.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DeliveryOrder\Search.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DeliveryOrder\_ViewStart.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DepartmentPurchaseRequisition\_ViewStart.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\Home\_ViewStart.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\ProjectPurchasingRequest\_ViewStart.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\ProjectPurchasingRequestApproval\_ViewStart.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\PriceComparison\Form.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\PriceComparison\Index.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\PriceComparison\_ViewStart.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\DepartmentPurchasingRequestApproval\_ViewStart.vbhtml" />
+    <None Include="Areas\Purchasing\Views\PurchaseOrder\PORemarks.vbhtml" />
+    <EmbeddedResource Include="Areas\Purchasing\Views\PurchaseOrder\PurchaseOrder.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Areas\Purchasing\Views\PurchaseOrder\Search.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\SearchPurchaseRequisition\Index.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\PurchaseOrder\_ViewStart.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\SearchPurchaseRequisition\_ViewStart.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\Vendor\_ViewStart.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\VendorCategory\Index.vbhtml" />
+    <None Include="MDKDataSet.xsc">
+      <DependentUpon>MDKDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MDKDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MDKDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MDKDataSet.xss">
+      <DependentUpon>MDKDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Areas\Purchasing\Views\Home\Index.vbhtml" />
+    <Content Include="Areas\Purchasing\Views\Web.config" />
+    <Content Include="Areas\Purchasing\Views\_ViewStart.vbhtml" />
+    <Content Include="Areas\Role.xml" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Purchasing\img\" />
+    <Folder Include="Areas\Purchasing\Views\Shared\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>58695</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

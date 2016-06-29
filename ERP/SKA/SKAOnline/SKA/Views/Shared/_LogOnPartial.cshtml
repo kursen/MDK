@@ -1,0 +1,10 @@
+﻿@if(Request.IsAuthenticated) {
+    //Dim pf As Profile.ProfileBase = Profile.ProfileBase.Create(User.Identity.Name)
+    //Dim fullName As String = pf.GetPropertyValue("FullName")
+
+    <text>Welcome <b>@Context.User.Identity.Name</b>!
+    [ @Html.ActionLink("Log Off", "LogOff", "Account", new { Area = "" }, null) ]</text>
+}
+else {
+    @:[ @Html.ActionLink("Log On", "LogOn", "Account", new { Area = "" }, null) ]
+}

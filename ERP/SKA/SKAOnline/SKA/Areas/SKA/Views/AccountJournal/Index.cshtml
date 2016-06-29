@@ -1,0 +1,80 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.AccountJournalViewModel
+@using Telerik.Web.Mvc.UI
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+
+
+<div class="box-head">
+<h2>Jurnal Rekening</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "AccountJournal"))
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input class ="t-button" type="submit" value="Cari" style="width:60px"/>
+            </td>
+        </tr>
+    </table>
+}
+    @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.AccountJournalViewModel>()
+                .Name("AccountJournalGrid")
+                .ToolBar(toolbar =>
+                {
+                    toolbar.Custom().Action("Create", "AccountJournal").ButtonType(GridButtonType.Text).Text("Tambah Data").HtmlAttributes(new { style = "width:100px" });
+                })
+                .Columns(col =>
+                {
+                    col.Bound(o => o.Id).ClientTemplate(
+                    "<# if (DocumentDate > ClosingDate) { #>" + Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()
+                    + "<# } #>").Title("").Sortable(false).Width(50);
+                    if (User.IsInRole("User") == false)
+                    {
+                        col.Bound(o => o.Id).ClientTemplate("<# if (DocumentDate > ClosingDate) { #>" + Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()
+                        + "<# } #>").Title("").Sortable(false).Width(50);
+                    }
+
+                    col.Bound(o => o.Id).ClientTemplate(
+                        "<# if (DocumentDate <= ClosingDate) { #>" +
+                        Html.ActionLink("Detail", "Detail", new { id = "<#= Id #>" }).ToString() +
+                        "<# } #>").Title("").Sortable(false).Width(50);
+
+                    col.Bound(o => o.DRDNumber).Title("Nomor DRD").Width(150);
+                    col.Bound(o => o.DocumentDate).Title("Tanggal").Format("{0:dd-MM-yyyy}").Width(150);
+                    col.Bound(o => o.Description).Title("Keterangan");
+                })
+                .ClientEvents(events =>
+                            events.OnDataBound("onDataBound")    
+                )
+                .DataBinding(binding => binding.Ajax().Select("GetList", "AccountJournal", new { searchValue = @ViewBag.SearchValue }))
+                .Sortable(sorting =>
+                         sorting.OrderBy(sortOrder => sortOrder.Add(o => o.DRDNumber).Ascending())
+                )
+                .Filterable()
+                .Pageable()
+    )
+</div>
+<script type ="text/javascript">
+    var firstTimeLoad = true;
+    function onDataBound(e) {
+        if (firstTimeLoad) {
+            firstTimeLoad = false;
+            var grid = $('#AccountJournalGrid').data('tGrid');
+            grid.pageTo(grid.totalPages());
+        }
+    }
+</script>

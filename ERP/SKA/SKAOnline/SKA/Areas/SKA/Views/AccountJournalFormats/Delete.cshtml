@@ -1,0 +1,73 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.AccountJournalFormatsViewModel
+
+@{
+    ViewBag.Title = "SKA -Hapus Format Jurnal Rekening";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Hapus Format Jurnal Rekening</h2>
+</div>
+<div class="box-content">
+    <h3>Apakah anda yakin untuk menghapus data ini?</h3>
+    <br />
+        <table>
+            <tr>
+                <td>
+                    Kode Perkiraan
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.AccountCode)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nama Perkiraan
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Name)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Status
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Status)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nomor Urut
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.TurnNumber)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    @using (Html.BeginForm()) {
+                        <p>
+                            <input type="submit" value="Hapus" class="t-button" style ="width:60px" />
+                            &nbsp;
+                            <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "AccountJournalFormats", null)">Kembali</a>
+                        </p>
+                    }
+                </td>
+            </tr>
+        </table>
+</div>

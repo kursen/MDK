@@ -1,0 +1,11 @@
+Perubahan Sync Service
+-Table yang dieliminasi adalah penimbangan 1
+-Masukkan Data dari mdb File ke sql server dengan menggunakan datatable update
+-caranya adalah sbb:
+
+1.sql server -> select max id dari table x
+2.mdb access-> ambil data dengan id > max id sql server dari table x di access
+3.update data tersebut dengan datatable update
+
+clear untuk perubahan sync service
+1. buat gui untuk sync service

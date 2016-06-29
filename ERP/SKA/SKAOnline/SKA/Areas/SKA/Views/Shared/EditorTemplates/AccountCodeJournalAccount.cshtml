@@ -1,0 +1,4 @@
+﻿@using Telerik.Web.Mvc.UI
+
+@Html.Telerik().AutoComplete().Name("AccountCode").DataBinding(binding => binding.Ajax().Select("GetAccountCodeSelectList", "AccountJournal").Cache(false)
+    ).HtmlAttributes(new {onKeyPress="javascript:onSelectItem(event);"}).HighlightFirstMatch(false).AutoFill(true).Encode(false)

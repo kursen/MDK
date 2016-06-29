@@ -1,0 +1,73 @@
+﻿@model SKA.Areas.Setting.Models.ViewModels.SetupLabaDitahanViewModel
+           @using Telerik.Web.Mvc.UI
+
+@{
+    ViewBag.Title = "Setting - Saldo Awal";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+<h2>Saldo Awal</h2>
+</div>
+
+<div class ="box-content">
+@using (Html.BeginForm())
+{
+       @Html.ValidationSummary(true)
+        <table>
+                <tr>
+                    <td>Kode Perkiraan</td>
+                    <td>:</td>
+                    <td>
+                        70.07.00
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nama Perkiraan</td>
+                    <td>:</td>
+                    <td>
+                        LABA DITAHAN/(AKUMULASI KERUGIAN)
+                    </td>
+                </tr>
+            </table>
+            @(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.SetupLabaDitahanViewModel>()
+            .Name("GridView")
+            .ToolBar(toolbar =>
+            {
+                
+                    toolbar.Custom().Action("Create", "SetupLabaDitahan").Text("Tambah").ButtonType(GridButtonType.ImageAndText).HtmlAttributes(new { style = "width:100px" });
+               
+            })
+            .DataKeys(keys =>
+            {
+                keys.Add(p => p.Id);
+            })
+            .DataBinding(dataBinding =>
+            {
+                dataBinding.Ajax()
+                    .Select("_SelectLabaDitahan", "SetupLabaDitahan")
+                    .Update("_UpdateLabaDitahan", "SetupLabaDitahan")
+                    .Delete("_DeleteLabaDitahan", "SetupLabaDitahan");
+            })
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.Id).Hidden();
+                columns.Bound(p => p.BranchCode).Hidden();
+                columns.Bound(p => p.AccountCode).Title("Kode Perkiraan").ReadOnly();
+                columns.Bound(p => p.AccountName).Title("Nama Perkiraan").ReadOnly();
+                columns.Bound(p => p.Debet).Format("{0:N}").Title("Debet").HtmlAttributes(new { @class = "money" });
+                columns.Bound(p => p.Credit).Format("{0:N}").Title("Credit").HtmlAttributes(new { @class = "money" });
+                columns.Bound(p => p.Years).Title("Tanggal").Format("{0:dd-MM-yyyy}");
+                columns.Command(commands =>
+                {
+                    commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                    commands.Delete().ButtonType(GridButtonType.ImageAndText);
+                });
+            })
+            .Pageable()
+            .Sortable()
+            .Filterable()
+          ) 
+}
+</div>
+

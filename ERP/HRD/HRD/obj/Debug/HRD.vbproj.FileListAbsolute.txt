@@ -1,0 +1,17 @@
+D:\New MDK\trunk\ERP\HRD\HRD\bin\HRD.dll
+D:\New MDK\trunk\ERP\HRD\HRD\bin\HRD.pdb
+D:\New MDK\trunk\ERP\HRD\HRD\bin\HRD.xml
+D:\New MDK\trunk\ERP\HRD\HRD\bin\EntityFramework.dll
+D:\New MDK\trunk\ERP\HRD\HRD\bin\ERPBase.dll
+D:\New MDK\trunk\ERP\HRD\HRD\bin\HaloUIHelpers.dll
+D:\New MDK\trunk\ERP\HRD\HRD\bin\Newtonsoft.Json.dll
+D:\New MDK\trunk\ERP\HRD\HRD\bin\EntityFramework.xml
+D:\New MDK\trunk\ERP\HRD\HRD\bin\Newtonsoft.Json.xml
+D:\New MDK\trunk\ERP\HRD\HRD\obj\Debug\HRD.vbprojResolveAssemblyReference.cache
+D:\New MDK\trunk\ERP\HRD\HRD\obj\Debug\HRD.Resources.resources
+D:\New MDK\trunk\ERP\HRD\HRD\obj\Debug\HRD.vbproj.GenerateResource.Cache
+D:\New MDK\trunk\ERP\HRD\HRD\obj\Debug\HRD.dll
+D:\New MDK\trunk\ERP\HRD\HRD\obj\Debug\HRD.xml
+D:\New MDK\trunk\ERP\HRD\HRD\obj\Debug\HRD.pdb
+D:\New MDK\trunk\ERP\HRD\HRD\obj\Debug\RdlCompile.cache
+D:\New MDK\trunk\ERP\HRD\HRD\obj\Debug\RdlCompile.compiled

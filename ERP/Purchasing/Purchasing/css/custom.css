@@ -1,0 +1,60 @@
+﻿a.editable {
+    cursor:pointer;
+}
+
+.no-padding {
+    padding:0;
+}
+.no-side-padding {
+    padding-left:0;
+    padding-right:0;
+}
+.table th
+{
+    text-align:center !important;
+}
+.hide{
+    display:none;
+}
+.text-bold {
+    font-weight:bold;
+}
+.fixed-header {
+    position:fixed;
+}
+.no-margin{
+    margin:0 !important;
+}
+.input-none {
+    border: none;
+    background: none !important;
+    box-shadow:none;
+}
+.input-none:focus, .input-none:select, .input-none:active {
+    box-shadow:none !important;
+}
+@media (min-width:992px) {
+    .lg-hide {
+        display:none !important;
+    }
+}
+@media (max-width:991px) {
+    .md-hide {
+        display:none !important;
+    }
+}
+@media (min-width:767px) {
+}
+@media (max-width:767px) {
+    .sm-hide {
+        display:none !important;
+    }
+}
+@media (max-width:778px) {
+    .xs-hide {
+        display:none !important;
+    }
+    .xs-show {
+        display:block !important;
+    }
+}

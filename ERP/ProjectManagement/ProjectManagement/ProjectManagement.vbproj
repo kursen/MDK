@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1F461DA8-9C78-4805-B5F6-EAD53E7922F0}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ProjectManagement</RootNamespace>
+    <AssemblyName>ProjectManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ProjectManagement.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ProjectManagement.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="ERPBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ErpBase\ERPBase.dll</HintPath>
+    </Reference>
+    <Reference Include="HaloUIHelpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HaloUI\HaloUIHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Mvc" />
+    <Import Include="System.Web.Mvc.Ajax" />
+    <Import Include="System.Web.Mvc.Html" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\ProjectManagement\Controllers\BudgetController.vb" />
+    <Compile Include="Areas\ProjectManagement\Controllers\CompanyInfoController.vb" />
+    <Compile Include="Areas\ProjectManagement\Controllers\EquipmentScheduleController.vb" />
+    <Compile Include="Areas\ProjectManagement\Controllers\FinanceController.vb" />
+    <Compile Include="Areas\ProjectManagement\Controllers\HomeController.vb" />
+    <Compile Include="Areas\ProjectManagement\Controllers\MaterialController.vb" />
+    <Compile Include="Areas\ProjectManagement\Controllers\PrintController.vb" />
+    <Compile Include="Areas\ProjectManagement\Controllers\ProjectInfoController.vb" />
+    <Compile Include="Areas\ProjectManagement\Controllers\ReportsController.vb" />
+    <Compile Include="Areas\ProjectManagement\Controllers\TaskSummaryController.vb" />
+    <Compile Include="Areas\ProjectManagement\Controllers\TimesheetController.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ModelDailyReport.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ModelCompanyInfo.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ModelEquipment.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ModelFilterDate.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ModelMaterial.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ModelUploadDoc.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\MutualCheckView.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ProjectCostListView.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ProjectCostRecord.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ProjectCostRecordItem.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ProjectInfo.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ProjectMutualCheck0.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ProjectTaskDivision.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ProjectTaskDivisionItem.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ProjectTaskDoneSummary.vb" />
+    <Compile Include="Areas\ProjectManagement\Models\ProjectTimesheetPrinter.vb" />
+    <Compile Include="Areas\ProjectManagement\ProjectManagementAreaRegistration.vb" />
+    <Compile Include="MDKDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDKDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectManagement.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectManagement.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Areas\ProjectManagement\Reports\WeeklyReportMC0.rdlc" />
+    <EmbeddedResource Include="Areas\ProjectManagement\Reports\MonthlyReportMC0.rdlc" />
+    <EmbeddedResource Include="Areas\ProjectManagement\Reports\MonthlyReport.rdlc" />
+    <EmbeddedResource Include="Areas\ProjectManagement\Reports\WeeklyReport.rdlc" />
+    <EmbeddedResource Include="Areas\ProjectManagement\Reports\DailyReport.rdlc" />
+    <EmbeddedResource Include="Areas\ProjectManagement\Reports\RAP.rdlc" />
+    <EmbeddedResource Include="Areas\ProjectManagement\Reports\Schedule.rdlc" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\ProjectManagement\Role.xml" />
+    <Content Include="Areas\ProjectManagement\Scripts\CompanyInfo.js" />
+    <Content Include="Areas\ProjectManagement\Scripts\DailyReports\DailyReport_G.js" />
+    <Content Include="Areas\ProjectManagement\Scripts\DailyReports\DailyReport_F.js" />
+    <Content Include="Areas\ProjectManagement\Scripts\DailyReports\DailyReport_E.js" />
+    <Content Include="Areas\ProjectManagement\Scripts\DailyReports\DailyReport_D.js" />
+    <Content Include="Areas\ProjectManagement\Scripts\DailyReports\DailyReport_C.js" />
+    <Content Include="Areas\ProjectManagement\Scripts\DailyReports\DailyReport_B.js" />
+    <Content Include="Areas\ProjectManagement\Scripts\DailyReports\DailyReport_A.js" />
+    <Content Include="Areas\ProjectManagement\Scripts\EquipmentSchedule\index.js" />
+    <Content Include="Areas\ProjectManagement\Scripts\Material\index.js" />
+    <Content Include="Areas\ProjectManagement\Scripts\UploadProjectDoc.js" />
+    <Content Include="Areas\ProjectManagement\Views\Home\Index.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Web.config" />
+    <Content Include="Areas\ProjectManagement\Views\CompanyInfo\Index.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\CompanyInfo\Create.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\ProjectInfo\Index.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\ProjectInfo\Create.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\ProjectInfo\Detail.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\_ViewStart.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Shared\ProjectPageMenu.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Timesheet\Index.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Budget\Index.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\EquipmentSchedule\Index.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Material\Index.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\ProjectInfo\UploadDoc.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\CompanyInfo\Details.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Timesheet\Colors.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Print\Index.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Reports\DailyReport.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Finance\Index.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Finance\ProjectFundSummary.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Reports\DailyReport_Form.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Timesheet\TimesheetNotAvailable.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Reports\WeeklyReport.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Reports\WeeklyReport_Form.vbhtml" />
+    <EntityDeploy Include="Models\ProjectManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProjectManagement.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\ProjectManagement\Views\Reports\MonthlyReport.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Budget\MutualCheck0.vbhtml" />
+    <EmbeddedResource Include="Areas\ProjectManagement\Reports\BoQMC0.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Areas\ProjectManagement\Reports\ProjectCostSummary.rdl" />
+    <Content Include="Areas\ProjectManagement\Views\Timesheet\TimesheetMC0.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Reports\MonthlyReport_Form.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Reports\WeeklyReportMC0.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Reports\MonthlyReportMC0.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Budget\MutualCheck0NotAvailable.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Reports\ReportsTemplate.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\TaskSummary\Index.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\TaskSummary\DetailSummary.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Budget\_ViewStart.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\EquipmentSchedule\_ViewStart.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Finance\_ViewStart.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Material\_ViewStart.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\ProjectInfo\_ViewStart.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\TaskSummary\_ViewStart.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Timesheet\_ViewStart.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\CompanyInfo\_ViewStart.vbhtml" />
+    <Content Include="Areas\ProjectManagement\Views\Home\_ViewStart.vbhtml" />
+    <None Include="MDKDataSet.xsc">
+      <DependentUpon>MDKDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MDKDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MDKDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MDKDataSet.xss">
+      <DependentUpon>MDKDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Global.asax" />
+    <Content Include="packages.config" />
+    <Content Include="plugins\bootstrap\modernizr-custom.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\AccessDenied.vbhtml" />
+    <Content Include="Views\Shared\Error.vbhtml" />
+    <Content Include="Views\Shared\PleaseLogin.vbhtml" />
+    <Content Include="Views\Shared\_BaseLayout.vbhtml" />
+    <Content Include="Views\Shared\_Layout.vbhtml" />
+    <Content Include="Views\Shared\_LogonLayout.vbhtml" />
+    <Content Include="Views\Shared\_LogOnPartial.vbhtml" />
+    <Content Include="Views\Shared\_PartialLayout.vbhtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5772</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

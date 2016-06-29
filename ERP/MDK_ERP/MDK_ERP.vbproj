@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D61243BE-ACF1-4B0C-B8A3-944B271F4D22}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MDK_ERP</RootNamespace>
+    <AssemblyName>MDK_ERP</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>MDK_ERP.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>MDK_ERP.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.0.6\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorPDF">
+      <HintPath>..\packages\RazorPDF.1.0.0\lib\net40\RazorPDF.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0,Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL " />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0,Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Mvc" />
+    <Import Include="System.Web.Mvc.Ajax" />
+    <Import Include="System.Web.Mvc.Html" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Production\Controllers\CrusherJournalsController.vb" />
+    <Compile Include="Areas\Production\Controllers\DashboardController.vb" />
+    <Compile Include="Areas\Production\Controllers\DataMasterController.vb" />
+    <Compile Include="Areas\Production\Controllers\ProcessController.vb" />
+    <Compile Include="Areas\Production\Controllers\ProjectController.vb" />
+    <Compile Include="Areas\Production\Controllers\ReportsController.vb" />
+    <Compile Include="Areas\Production\Controllers\ScheduleController.vb" />
+    <Compile Include="Areas\Production\Controllers\StockController.vb" />
+    <Compile Include="Controllers\UserManagementController.vb" />
+    <Compile Include="Areas\Production\Models\ampModel.vb" />
+    <Compile Include="Areas\Production\Models\MachineTypeModel.vb" />
+    <Compile Include="Areas\Production\Models\ModelCrusherJournal.vb" />
+    <Compile Include="Areas\Production\Models\ModelEditAmp.vb" />
+    <Compile Include="Areas\Production\Models\ModelEditCrusher.vb" />
+    <Compile Include="Areas\Production\Models\ModelEditTimbangan.vb" />
+    <Compile Include="Areas\Production\Models\modelMachine.vb" />
+    <Compile Include="Areas\Production\Models\ModelMaterialUseJournal.vb" />
+    <Compile Include="Areas\Production\Models\ModelMeasurementUnit.vb" />
+    <Compile Include="Areas\Production\Models\ModelMstMaterials.vb" />
+    <Compile Include="Areas\Production\Models\ModelTimbangan1.vb" />
+    <Compile Include="Areas\Production\Models\ModelTimbangan2.vb" />
+    <Compile Include="Areas\Production\Models\ModelUserInformation.vb" />
+    <Compile Include="Areas\Production\Models\MstMaterialCompositions.vb" />
+    <Compile Include="Areas\Production\Models\projectList.vb" />
+    <Compile Include="Areas\Production\ProductionAreaRegistration.vb" />
+    <Compile Include="Controllers\AccountController.vb" />
+    <Compile Include="Controllers\BaseController.vb" />
+    <Compile Include="Controllers\ErrorController.vb" />
+    <Compile Include="Controllers\HomeController.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FormHelpers.vb" />
+    <Compile Include="Helpers\Helpers.vb" />
+    <Compile Include="Models\AccountModels.vb" />
+    <Compile Include="Models\ERPEntities.Designer.vb">
+      <DependentUpon>ERPEntities.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Models\TopNavigationBuilder.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WebServices\MDKAccessSync.asmx.vb">
+      <DependentUpon>MDKAccessSync.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\jspdf\jspdf.js" />
+    <Content Include="Content\jspdf\libs\base64.js" />
+    <Content Include="Content\jspdf\libs\sprintf.js" />
+    <Content Include="Content\Plugin\DataTables\js\dataTables.overrides_indo.js" />
+    <Content Include="Scripts\CRUDHelpers.js" />
+    <Content Include="WebServices\MDKAccessSync.asmx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Reports\HasilCrusher.rdlc" />
+    <Content Include="Reports\PenimbanganMaterial.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Production\Scripts\Reports\MaterialDelivery.js" />
+    <Content Include="Areas\Production\Scripts\Reports\MaterialReceived.js" />
+    <Content Include="Areas\Production\Views\DataMaster\Laporan.vbhtml" />
+    <Content Include="Areas\Production\Views\CrusherJournals\EditCrusher.vbhtml" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\fonts\fontawesome-webfontf77b.eot" />
+    <Content Include="Content\fonts\fontawesome-webfontf77b.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfontf77b.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\montserrat-bold-webfont.eot" />
+    <Content Include="Content\fonts\montserrat-bold-webfont.svg" />
+    <Content Include="Content\fonts\montserrat-bold-webfont.ttf" />
+    <Content Include="Content\fonts\montserrat-bold-webfont.woff" />
+    <Content Include="Content\fonts\montserrat-bold-webfontd41d.eot" />
+    <Content Include="Content\fonts\montserrat-regular-webfont.eot" />
+    <Content Include="Content\fonts\montserrat-regular-webfont.svg" />
+    <Content Include="Content\fonts\montserrat-regular-webfont.ttf" />
+    <Content Include="Content\fonts\montserrat-regular-webfont.woff" />
+    <Content Include="Content\fonts\montserrat-regular-webfontd41d.eot" />
+    <Content Include="Areas\Production\Views\Schedule\Index.vbhtml" />
+    <Content Include="Areas\Production\Views\Schedule\RawMaterialRequest.vbhtml" />
+    <Content Include="Areas\Production\Views\Schedule\Delivery.vbhtml" />
+    <Content Include="Areas\Production\Views\_ViewStart.vbhtml" />
+    <None Include="Content\Plugin\DataTables\images\Sorting icons.psd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Areas\Production\Scripts\CrusherJournals\CrusherJournals.js" />
+    <Content Include="Areas\Production\Scripts\Dashboard.js" />
+    <Content Include="Areas\Production\Scripts\DataMaster\InventoryStatus.js" />
+    <Content Include="Areas\Production\Scripts\DataMaster\Machines.js" />
+    <Content Include="Areas\Production\Scripts\DataMaster\MachineTypes.js" />
+    <Content Include="Scripts\ManagementUser.js" />
+    <Content Include="Areas\Production\Scripts\DataMaster\Material.js" />
+    <Content Include="Areas\Production\Scripts\DataMaster\MaterialComposition.js" />
+    <Content Include="Areas\Production\Scripts\DataMaster\MaterialUnit.js" />
+    <Content Include="Areas\Production\Scripts\DataMaster\MaterialWeightRatio.js" />
+    <Content Include="Areas\Production\Scripts\DataMaster\Vehicle.js" />
+    <Content Include="Areas\Production\Scripts\DataMaster\Weigher.js" />
+    <Content Include="Areas\Production\Scripts\Inventory\DataScales.js" />
+    <Content Include="Areas\Production\Scripts\Inventory\Distribution.js" />
+    <Content Include="Areas\Production\Scripts\Inventory\InitialStock.js" />
+    <Content Include="Areas\Production\Scripts\MaterialStock.js" />
+    <Content Include="Areas\Production\Scripts\planProses.js" />
+    <Content Include="Areas\Production\Scripts\Process\AMP.js" />
+    <Content Include="Areas\Production\Scripts\Process\EditAmp.js" />
+    <Content Include="Areas\Production\Scripts\Project\Project.js" />
+    <Content Include="Areas\Production\Scripts\Reports\WeightScales.js" />
+    <Content Include="Areas\Production\Views\CrusherJournals\CreateCrusherJournal.vbhtml" />
+    <Content Include="Areas\Production\Views\CrusherJournals\Index.vbhtml" />
+    <Content Include="Areas\Production\Views\Dashboard\Index.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\Index.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\InventoryStatus.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\MachineType.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\Material.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\MaterialComposition.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\MaterialMachine.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\MaterialUnit.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\MaterialVehicle.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\MaterialWeigher.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\MaterialWeightRatio.vbhtml" />
+    <Content Include="Areas\Production\Views\DataMaster\Material_.vbhtml" />
+    <Content Include="Areas\Production\Views\Process\AMP.vbhtml" />
+    <Content Include="Areas\Production\Views\Process\Asphal.vbhtml" />
+    <Content Include="Areas\Production\Views\Process\EditAmp.vbhtml" />
+    <Content Include="Areas\Production\Views\Process\Index.vbhtml" />
+    <Content Include="Areas\Production\Views\Process\IndexAmp.vbhtml" />
+    <Content Include="Areas\Production\Views\Process\Solar.vbhtml" />
+    <Content Include="Areas\Production\Views\Project\Index.vbhtml" />
+    <Content Include="Areas\Production\Views\Reports\Index.vbhtml" />
+    <Content Include="Areas\Production\Views\Reports\MaterialDelivery.vbhtml" />
+    <Content Include="Areas\Production\Views\Reports\MaterialReceived.vbhtml" />
+    <Content Include="Areas\Production\Views\Reports\WeightScales.vbhtml" />
+    <Content Include="Areas\Production\Views\Shared\_DateScalesFilterPartial.vbhtml" />
+    <Content Include="Areas\Production\Views\Shared\_dataTablePartial.vbhtml" />
+    <Content Include="Areas\Production\Views\Shared\_DoubleDatePickerPartial.vbhtml" />
+    <Content Include="Areas\Production\Views\Stock\DataScales.vbhtml" />
+    <Content Include="Areas\Production\Views\Stock\DataScalesIn_.vbhtml" />
+    <Content Include="Areas\Production\Views\Stock\DataScalesOut_.vbhtml" />
+    <Content Include="Areas\Production\Views\Stock\Distribution.vbhtml" />
+    <Content Include="Areas\Production\Views\Stock\Index.vbhtml" />
+    <Content Include="Areas\Production\Views\Stock\InitialStock.vbhtml" />
+    <Content Include="Views\UserManagement\Create.vbhtml" />
+    <Content Include="Views\UserManagement\Index.vbhtml" />
+    <Content Include="Areas\Production\Views\Web.config" />
+    <Content Include="bin\MDK_ERP.dll" />
+    <Content Include="bin\MDK_ERP.pdb" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\docs.min.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\jquery-ui.css" />
+    <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\uielement.css" />
+    <Content Include="Content\images\bg-login.jpg" />
+    <Content Include="Content\images\shared\details_close.png" />
+    <Content Include="Content\images\shared\details_open.png" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\moment-with-locales.js" />
+    <Content Include="Content\js\moment.min.js" />
+    <Content Include="Content\js\theme.js" />
+    <Content Include="Content\Plugin\DataTables\js\jquery.dataTables.forHelper.js" />
+    <Content Include="Content\Plugin\DataTables\js\jquery.dataTables.rowGrouping.js" />
+    <Content Include="Content\Plugin\DatetimePicker\bootstrap-datetimepicker.css" />
+    <Content Include="Content\Plugin\DatetimePicker\bootstrap-datetimepicker.js" />
+    <Content Include="Content\Plugin\DatetimePicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\Plugin\Select2\select2-spinner.gif" />
+    <Content Include="Content\Plugin\Select2\select2.css" />
+    <Content Include="Content\Plugin\Select2\select2.js" />
+    <Content Include="Content\Plugin\Select2\select2.png" />
+    <Content Include="Content\Plugin\SweetAlert\sweet-alert.css" />
+    <Content Include="Content\Plugin\SweetAlert\sweet-alert.min.js" />
+    <Content Include="Scripts\shared-function.js" />
+    <Content Include="Views\_ViewBlank.vbhtml" />
+    <Content Include="Views\Shared\Error.vbhtml" />
+    <Content Include="Views\Shared\_Layout.vbhtml" />
+    <Content Include="Views\Shared\_LogOnPartial.vbhtml" />
+    <Content Include="Views\Error\Index.vbhtml" />
+    <None Include="Reports\FormulirOperasionalAMP.xls" />
+    <None Include="Reports\FormulirOperasionalAMP.xlsx" />
+    <None Include="Reports\FormulirOperasionalCrusher.xls" />
+    <None Include="Reports\FormulirOperasionalCrusher.xlsx" />
+    <None Include="Reports\LaporanHasilCrusher.xlsx" />
+    <None Include="Reports\LaporanOperasionalAMP.xlsx" />
+    <None Include="Reports\LaporanOperasionalCrusher.xlsx" />
+    <None Include="Reports\LaporanPenerimaanMaterial.xlsx" />
+    <None Include="Reports\LaporanPengirimanMaterial.xlsx" />
+    <None Include="Reports\LaporanStokMaterial.xlsx" />
+    <None Include="Reports\LaporanTimbangan.xls" />
+    <Content Include="Views\Shared\_MenuPartial.vbhtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\jquery-ui-1.9.0.custom.min.css" />
+    <Content Include="Content\css\light-theme.css" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\shared\bglogo.png" />
+    <Content Include="Content\images\shared\content_repeat.jpg" />
+    <Content Include="Content\images\shared\icon_idlogo.jpg" />
+    <Content Include="Content\images\shared\icon_idlogo.png" />
+    <Content Include="Content\images\shared\indicator.gif" />
+    <Content Include="Content\images\shared\logo.png" />
+    <Content Include="Content\images\shared\minus.png" />
+    <Content Include="Content\images\shared\top_bg.jpg" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\jquery-1.11.0.min.js" />
+    <Content Include="Content\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\js\jquery-migrate.min.js" />
+    <Content Include="Content\js\jquery-ui-1.9.0.custom.min.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Content\js\jquery.validate.min.js" />
+    <Content Include="Content\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Plugin\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\Plugin\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\Plugin\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\Plugin\DataTables\images\back_disabled.png" />
+    <Content Include="Content\Plugin\DataTables\images\back_enabled.png" />
+    <Content Include="Content\Plugin\DataTables\images\back_enabled_hover.png" />
+    <Content Include="Content\Plugin\DataTables\images\favicon.ico" />
+    <Content Include="Content\Plugin\DataTables\images\forward_disabled.png" />
+    <Content Include="Content\Plugin\DataTables\images\forward_enabled.png" />
+    <Content Include="Content\Plugin\DataTables\images\forward_enabled_hover.png" />
+    <Content Include="Content\Plugin\DataTables\images\sort_asc.png" />
+    <Content Include="Content\Plugin\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\Plugin\DataTables\images\sort_both.png" />
+    <Content Include="Content\Plugin\DataTables\images\sort_desc.png" />
+    <Content Include="Content\Plugin\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\Plugin\DataTables\js\jquery.dataTables.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Views\_ViewStart.vbhtml" />
+    <Content Include="Views\Account\ChangePassword.vbhtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.vbhtml" />
+    <Content Include="Views\Account\LogOn.vbhtml" />
+    <Content Include="Views\Account\Register.vbhtml" />
+    <Content Include="Views\Home\Index.vbhtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\ERPEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ERPEntities.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52050</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

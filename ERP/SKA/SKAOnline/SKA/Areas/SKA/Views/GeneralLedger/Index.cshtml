@@ -1,0 +1,37 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Buku Besar";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+@{
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }    
+}
+<div class="box-head">
+	<h2>Buku Besar</h2>
+</div>
+<div class="box-content">
+    @(Html.Telerik().TreeView()
+            .Name("TreeView")
+            .Items(item =>
+            {
+                if (userBranchCode == "00")
+                {
+                    item.Add()
+                             .Text(" Buku Besar (Sub-Perkiraan) - Parameter masukan berupa 8 digit kode perkiraan, contoh: 11.01.00.00 ").Action("ShowReport", "GeneralLedger", new { reportName = "GeneralLedger" });
+                }
+                item.Add()
+                    .Text(" Buku Besar (Posting Harian) - Parameter masukan berupa 6 digit kode perkiraan, contoh: 11.01.00 ").Action("ShowReport", "GeneralLedger", new { reportName = "GeneralLedgerDailyPosting" });
+                item.Add()
+                    .Text(" Buku Besar (Posting Bulanan) - Parameter masukan berupa 4 digit kode perkiraan, contoh: 11.01 ").Action("ShowReport", "GeneralLedger", new { reportName = "GeneralLedgerMonthly" });
+                item.Add()
+                    .Text(" Buku Besar (S/D Bulan Berjalan) - Parameter masukan berupa 4 digit kode perkiraan, contoh: 11.01 ").Action("ShowReport", "GeneralLedger", new { reportName = "GeneralLedgerToCurrentMonth" });
+                item.Add()
+                    .Text(" Buku Besar - Parameter masukan berupa 2 digit kode perkiraan, contoh: 11 ").Action("ShowReport", "GeneralLedger", new { reportName = "GeneralLedgerParent" });
+             })
+    )
+</div>

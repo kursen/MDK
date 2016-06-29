@@ -1,0 +1,28 @@
+﻿.hide{
+    display:none;
+}
+@media (min-width:992px) {
+    .lg-hide {
+        display:none !important;
+    }
+}
+@media (max-width:991px) {
+    .md-hide {
+        display:none !important;
+    }
+}
+@media (min-width:767px) {
+}
+@media (max-width:767px) {
+    .sm-hide {
+        display:none !important;
+    }
+}
+@media (max-width:778px) {
+    .xs-hide {
+        display:none !important;
+    }
+    .xs-show {
+        display:block !important;
+    }
+}

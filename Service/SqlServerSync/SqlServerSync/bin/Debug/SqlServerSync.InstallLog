@@ -1,0 +1,198 @@
+﻿Installing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Installing service SyncService...
+Creating EventLog source SyncService in log Application...
+Rolling back assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Restoring event log to previous state for source SyncService.
+Installing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Installing service SyncService...
+Service SyncService has been successfully installed.
+Creating EventLog source SyncService in log Application...
+Committing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Installing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Installing service SyncService...
+Creating EventLog source SyncService in log Application...
+Rolling back assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Restoring event log to previous state for source SyncService.
+Installing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Installing service SyncService...
+Service SyncService has been successfully installed.
+Creating EventLog source SyncService in log Application...
+Committing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Installing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Installing service SyncService...
+Service SyncService has been successfully installed.
+Creating EventLog source SyncService in log Application...
+Committing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Installing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Installing service SyncService...
+Creating EventLog source SyncService in log Application...
+Rolling back assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Restoring event log to previous state for source SyncService.
+Installing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Installing service SyncService...
+Creating EventLog source SyncService in log Application...
+Rolling back assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Restoring event log to previous state for source SyncService.
+Installing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Installing service SyncService...
+Creating EventLog source SyncService in log Application...
+Rolling back assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Restoring event log to previous state for source SyncService.
+Installing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Installing service SyncService...
+Service SyncService has been successfully installed.
+Creating EventLog source SyncService in log Application...
+Committing assembly 'D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Document\GoogleDrive\Halotec Indonesia\Halotec Projects\Project\MDK_ERP\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Installing assembly 'D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Installing service SyncService...
+Service SyncService has been successfully installed.
+Creating EventLog source SyncService in log Application...
+Committing assembly 'D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Installing assembly 'D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Installing service SyncService...
+Service SyncService has been successfully installed.
+Creating EventLog source SyncService in log Application...
+Committing assembly 'D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Uninstalling assembly 'D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Removing EventLog source SyncService.
+Service SyncService is being removed from the system...
+Service SyncService was successfully removed from the system.
+Installing assembly 'D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Installing service SyncService...
+Service SyncService has been successfully installed.
+Creating EventLog source SyncService in log Application...
+Committing assembly 'D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Uninstalling assembly 'D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.InstallLog
+   assemblypath = D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+Removing EventLog source SyncService.
+Service SyncService is being removed from the system...
+Service SyncService was successfully removed from the system.
+Uninstalling assembly 'D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+Removing EventLog source SyncService.
+Warning: The source SyncService is not registered on the local machine.
+Service SyncService is being removed from the system...
+An exception occurred during the uninstallation of the System.ServiceProcess.ServiceInstaller installer.
+System.ComponentModel.Win32Exception: The specified service does not exist as an installed service
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   i = 
+   logfile = D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+   logtoconsole = 
+Installing service SyncService...
+Service SyncService has been successfully installed.
+Creating EventLog source SyncService in log Application...
+Committing assembly 'D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe'.
+Affected parameters are:
+   i = 
+   logfile = D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.InstallLog
+   assemblypath = D:\Halotec File\Project\MDK_ERP\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SqlServerSync.exe
+   logtoconsole = 

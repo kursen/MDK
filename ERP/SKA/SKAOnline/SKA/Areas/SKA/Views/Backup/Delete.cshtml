@@ -1,0 +1,81 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.SKA.Models.ViewModels.AdditionalCorrectionViewModel
+
+@{
+    ViewBag.Title = "Data Tahun Lalu - Hapus Data Cadangan";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Hapus Data Cadangan</h2>
+</div>
+<div class="box-content">
+    <h3>Apakah anda yakin untuk menghapus data ini?</h3>
+    <br />
+    <table>
+        <tr>
+            <td>
+                Jenis
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Keterangan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Description)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tahun
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Year)
+            </td>
+        </tr>
+    </table>
+@(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.AdditionalCorrectionDetailViewModel>()
+                    .Name("Backup")
+
+                .DataKeys(keys =>
+                {
+                    keys.Add(p => p.Id);
+                })
+                .DataBinding(dataBinding =>
+                {
+                    dataBinding.Ajax()
+                        .Select("_SelectDetail", "Backup")
+                        .Insert("_InsertDetail", "Backup")
+                        .Update("_UpdateDetail", "Backup")
+                        .Delete("_DeleteDetail", "Backup");
+                })
+                .Columns(columns =>
+                {
+                    columns.Bound(p => p.AccountCode).Title("Kode Perkiraan");
+                    //columns.Bound(p => p.AccountName).Title("Nama Perkiraan");
+                    columns.Bound(p => p.Amount).Title("Jumlah").Format("Rp. {0:N}").Width(210); ;
+                })
+                .Pageable()
+                .Scrollable()
+                .Sortable()
+              )
+    @using (Html.BeginForm()) {
+        <p>
+                <input type="submit" value="Hapus" class="t-button" style ="width:60px" />
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "Backup", null)">Kembali</a>
+        </p>
+}

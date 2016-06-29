@@ -1,0 +1,45 @@
+﻿@model SKA.Areas.VoucherKas.Models.ViewModel.BankViewModel
+
+@{
+    ViewBag.Title = "Setting Bank - Hapus Bank";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class ="box-head">
+<h2>Hapus Data Bank</h2>
+</div>
+
+<div class="box-content">
+<br />
+<table>
+    <tr>
+        <td>Nama Bank</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(model=>model.BankName)</td>
+    </tr>
+
+    <tr>
+        <td>Nomor AC</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(model=>model.ACNumber)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+            @using (Html.BeginForm()) {
+        <p>
+            <input type="submit" value="Hapus" class="t-button" style ="width:60px" />
+            &nbsp;
+            <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "Bank", null)">Kembali</a>
+        </p>
+            }
+            
+        </td>
+    </tr>
+</table>
+</div>
+
+
+
+

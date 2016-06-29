@@ -1,0 +1,38 @@
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\Purchasing.dll
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\Purchasing.pdb
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\Purchasing.xml
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\EntityFramework.dll
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\ERPBase.dll
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\HaloUIHelpers.dll
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\itextsharp.dll
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\itextsharp.pdfa.dll
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\itextsharp.xtra.dll
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\Newtonsoft.Json.dll
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\bin\EntityFramework.xml
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.vbprojResolveAssemblyReference.cache
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.Resources.resources
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.vbproj.GenerateResource.Cache
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\obj\Debug\RdlCompile.cache
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\obj\Debug\RdlCompile.compiled
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.dll
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.xml
+D:\New MDK\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.pdb
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\Purchasing.dll
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\Purchasing.pdb
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\Purchasing.xml
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\EntityFramework.dll
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\ERPBase.dll
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\HaloUIHelpers.dll
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\itextsharp.dll
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\itextsharp.pdfa.dll
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\itextsharp.xtra.dll
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\Newtonsoft.Json.dll
+J:\mdk\trunk\ERP\Purchasing\Purchasing\bin\EntityFramework.xml
+J:\mdk\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.vbprojResolveAssemblyReference.cache
+J:\mdk\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.Resources.resources
+J:\mdk\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.vbproj.GenerateResource.Cache
+J:\mdk\trunk\ERP\Purchasing\Purchasing\obj\Debug\RdlCompile.cache
+J:\mdk\trunk\ERP\Purchasing\Purchasing\obj\Debug\RdlCompile.compiled
+J:\mdk\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.dll
+J:\mdk\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.xml
+J:\mdk\trunk\ERP\Purchasing\Purchasing\obj\Debug\Purchasing.pdb

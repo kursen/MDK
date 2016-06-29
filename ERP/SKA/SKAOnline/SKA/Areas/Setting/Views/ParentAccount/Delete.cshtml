@@ -1,0 +1,46 @@
+﻿@model SKA.Areas.Setting.Models.ViewModels.ParentAccountViewModel
+
+@{
+    ViewBag.Title = "Setting - Hapus Kepala Kode Perkiraan";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Hapus Kepala Kode Perkiraan</h2>
+</div>
+
+<div class="box-content">
+    <h3>Apakah anda yakin untuk menghapus data ini?</h3>
+    <br />
+    <table>
+        <tr>
+            <td>
+                Kepala Kode Perkiraan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                 @Html.DisplayFor(model => model.Code)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nama Perkiraan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                 @Html.DisplayFor(model => model.Name)
+            </td>
+        </tr>
+    </table>
+    @using (Html.BeginForm()) {
+        <p>
+            <input type="submit" value="Hapus" class="t-button" style ="width:60px" />
+            &nbsp;
+            <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "ParentAccount", null)">Kembali</a>
+        </p>
+    }
+</div>

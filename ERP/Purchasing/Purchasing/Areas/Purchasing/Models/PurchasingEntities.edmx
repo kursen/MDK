@@ -1,0 +1,1413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PurchasingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="PurchasingModelStoreContainer">
+          <EntitySet Name="Office" EntityType="PurchasingModel.Store.Office" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProjectInfo" EntityType="PurchasingModel.Store.ProjectInfo" store:Type="Tables" Schema="PMn" />
+          <EntitySet Name="ApprovalStatus" EntityType="PurchasingModel.Store.ApprovalStatus" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="CurrencyMaster" EntityType="PurchasingModel.Store.CurrencyMaster" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="DeliveryOrder" EntityType="PurchasingModel.Store.DeliveryOrder" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="DeliveryOrderDetail" EntityType="PurchasingModel.Store.DeliveryOrderDetail" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="DepartmentPRDetail" EntityType="PurchasingModel.Store.DepartmentPRDetail" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="DepartmentPurchaseRequisition" EntityType="PurchasingModel.Store.DepartmentPurchaseRequisition" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="Measure" EntityType="PurchasingModel.Store.Measure" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="PriceComparison" EntityType="PurchasingModel.Store.PriceComparison" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="PriceComparisonDetail" EntityType="PurchasingModel.Store.PriceComparisonDetail" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="ProjectPurchaseRequisition" EntityType="PurchasingModel.Store.ProjectPurchaseRequisition" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="ProjectPurchaseRequisitionDetail" EntityType="PurchasingModel.Store.ProjectPurchaseRequisitionDetail" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="PurchaseDocumentStatus" EntityType="PurchasingModel.Store.PurchaseDocumentStatus" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="PurchaseOrder" EntityType="PurchasingModel.Store.PurchaseOrder" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="PurchaseOrderDetail" EntityType="PurchasingModel.Store.PurchaseOrderDetail" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="RequestType" EntityType="PurchasingModel.Store.RequestType" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="Vendor" EntityType="PurchasingModel.Store.Vendor" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="VendorCategory" EntityType="PurchasingModel.Store.VendorCategory" store:Type="Tables" Schema="prc" />
+          <EntitySet Name="CompanyLists" EntityType="PurchasingModel.Store.CompanyLists" store:Type="Tables" Schema="Prod" />
+          <AssociationSet Name="FK_DeliveryOrderDetail_DeliveryOrder" Association="PurchasingModel.Store.FK_DeliveryOrderDetail_DeliveryOrder">
+            <End Role="DeliveryOrder" EntitySet="DeliveryOrder" />
+            <End Role="DeliveryOrderDetail" EntitySet="DeliveryOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeliveryOrderDetail_PurchaseOrderDetail" Association="PurchasingModel.Store.FK_DeliveryOrderDetail_PurchaseOrderDetail">
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetail" />
+            <End Role="DeliveryOrderDetail" EntitySet="DeliveryOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentPRDetail_DepartmentPurchaseRequisition" Association="PurchasingModel.Store.FK_DepartmentPRDetail_DepartmentPurchaseRequisition">
+            <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisition" />
+            <End Role="DepartmentPRDetail" EntitySet="DepartmentPRDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentPurchaseRequisition_Office" Association="PurchasingModel.Store.FK_DepartmentPurchaseRequisition_Office">
+            <End Role="Office" EntitySet="Office" />
+            <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentPurchaseRequisition_RequestType" Association="PurchasingModel.Store.FK_DepartmentPurchaseRequisition_RequestType">
+            <End Role="RequestType" EntitySet="RequestType" />
+            <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PriceComparison_DepartmentPurchaseRequisition" Association="PurchasingModel.Store.FK_PriceComparison_DepartmentPurchaseRequisition">
+            <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisition" />
+            <End Role="PriceComparison" EntitySet="PriceComparison" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PriceComparisonDetail_DepartmentPRDetail" Association="PurchasingModel.Store.FK_PriceComparisonDetail_DepartmentPRDetail">
+            <End Role="DepartmentPRDetail" EntitySet="DepartmentPRDetail" />
+            <End Role="PriceComparisonDetail" EntitySet="PriceComparisonDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PriceComparisonDetail_PriceComparison" Association="PurchasingModel.Store.FK_PriceComparisonDetail_PriceComparison">
+            <End Role="PriceComparison" EntitySet="PriceComparison" />
+            <End Role="PriceComparisonDetail" EntitySet="PriceComparisonDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition" Association="PurchasingModel.Store.FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition">
+            <End Role="ProjectPurchaseRequisition" EntitySet="ProjectPurchaseRequisition" />
+            <End Role="ProjectPurchaseRequisitionDetail" EntitySet="ProjectPurchaseRequisitionDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PurchaseOrderDetail_PurchaseOrder" Association="PurchasingModel.Store.FK_PurchaseOrderDetail_PurchaseOrder">
+            <End Role="PurchaseOrder" EntitySet="PurchaseOrder" />
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vendor_VendorCategory" Association="PurchasingModel.Store.FK_Vendor_VendorCategory">
+            <End Role="VendorCategory" EntitySet="VendorCategory" />
+            <End Role="Vendor" EntitySet="Vendor" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Office">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="varchar" MaxLength="30" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Abbreviation" Type="varchar" MaxLength="30" />
+          <Property Name="Parent_ID" Type="int" Nullable="false" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectCode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ProjectTitle" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="DateStart" Type="datetime" Nullable="false" />
+          <Property Name="NumberOfDays" Type="int" Nullable="false" />
+          <Property Name="DayUnit" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ContractNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CompanyInfoId" Type="int" Nullable="false" />
+          <Property Name="ContractValue" Type="money" Nullable="false" />
+          <Property Name="ConsultanName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Location" Type="varchar" MaxLength="100" />
+          <Property Name="Archive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ApprovalStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="CurrencyMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencyName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DeliveryOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReceiptDate" Type="datetime" Nullable="false" />
+          <Property Name="PurchaseOrderId" Type="int" Nullable="false" />
+          <Property Name="DocNo" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ReceiptBy_Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DeliveryOrderDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeliveryOrderId" Type="int" Nullable="false" />
+          <Property Name="PurchaseOrderDetailId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepartmentPRDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentPurchaseRequisitionId" Type="int" Nullable="false" />
+          <Property Name="ItemName" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Allocation" Type="varchar" MaxLength="150" />
+          <Property Name="Quantity" Type="decimal" Nullable="false" />
+          <Property Name="UnitQuantity" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Currency" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="EstUnitPrice" Type="money" Nullable="false" />
+          <Property Name="TotalEstPrice" Type="money" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="DepartmentPurchaseRequisition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RecordNo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="OfficeID" Type="int" Nullable="false" />
+          <Property Name="RequestTypeId" Type="int" Nullable="false" />
+          <Property Name="RequestDate" Type="date" Nullable="false" />
+          <Property Name="DeliveryDate" Type="date" Nullable="false" />
+          <Property Name="DeliveryTo" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DeliveryAddress" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="RequestedBy_Name" Type="varchar" MaxLength="150" />
+          <Property Name="RequestedBy_Occupation" Type="varchar" MaxLength="150" />
+          <Property Name="ApprovedBy_Name" Type="varchar" MaxLength="150" />
+          <Property Name="ApprovedBy_Occupation" Type="varchar" MaxLength="150" />
+          <Property Name="KnownBy_Name" Type="varchar" MaxLength="150" />
+          <Property Name="KnownBy_Occupation" Type="varchar" MaxLength="150" />
+          <Property Name="DocState" Type="int" Nullable="false" />
+          <Property Name="DocApproveRejectDate" Type="datetime" />
+          <Property Name="Archive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Measure">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MeasureName" Type="varchar" MaxLength="50" />
+          <Property Name="Remarks" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="PriceComparison">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="date" Nullable="false" />
+          <Property Name="PurchaseRequisitionID" Type="int" Nullable="false" />
+          <Property Name="VendorID1" Type="int" Nullable="false" />
+          <Property Name="VendorID2" Type="int" Nullable="false" />
+          <Property Name="VendorID3" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PriceComparisonDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PriceComparisonID" Type="int" Nullable="false" />
+          <Property Name="PRDetailID" Type="int" Nullable="false" />
+          <Property Name="Price1" Type="money" Nullable="false" />
+          <Property Name="Price2" Type="money" Nullable="false" />
+          <Property Name="Price3" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectPurchaseRequisition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RecordNo" Type="varchar" MaxLength="50" />
+          <Property Name="ProjectCode" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="ProjectTitle" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="RequestDate" Type="date" Nullable="false" />
+          <Property Name="DeliveryDate" Type="date" Nullable="false" />
+          <Property Name="DeliveryTo" Type="varchar" MaxLength="50" />
+          <Property Name="DeliveryAddress" Type="varchar" MaxLength="500" />
+          <Property Name="RequestedBy_Name" Type="varchar" MaxLength="150" />
+          <Property Name="RequestedBy_Occupation" Type="varchar" MaxLength="150" />
+          <Property Name="ApprovedBy_Name" Type="varchar" MaxLength="150" />
+          <Property Name="ApprovedBy_Occupation" Type="varchar" MaxLength="150" />
+          <Property Name="KnownBy_Name" Type="varchar" MaxLength="150" />
+          <Property Name="KnownBy_Occupation" Type="varchar" MaxLength="150" />
+          <Property Name="DocState" Type="int" Nullable="false" />
+          <Property Name="DocApproveRejectDate" Type="datetime" />
+          <Property Name="Archive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectPurchaseRequisitionDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectPurchaseRequisitionId" Type="int" Nullable="false" />
+          <Property Name="ItemName" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Brand" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Quantity" Type="decimal" Nullable="false" />
+          <Property Name="UnitQuantity" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Currency" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="EstUnitPrice" Type="money" Nullable="false" />
+          <Property Name="TotalEstPrice" Type="money" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="PurchaseDocumentStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OnCreation" Type="nchar" MaxLength="10" />
+          <Property Name="OnEvaluation" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PurchaseOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="OrderDate" Type="date" Nullable="false" />
+          <Property Name="POType" Type="int" Nullable="false" />
+          <Property Name="RQNumber" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="QuotationRef" Type="varchar" MaxLength="100" />
+          <Property Name="ContactPerson_Name" Type="varchar" MaxLength="150" />
+          <Property Name="ContactPerson_Phone" Type="varchar" MaxLength="150" />
+          <Property Name="TermOfPayment" Type="varchar" MaxLength="50" />
+          <Property Name="DeliveryDate" Type="date" />
+          <Property Name="DeliveryTo" Type="varchar" MaxLength="50" />
+          <Property Name="DeliveryAddress" Type="varchar" MaxLength="500" />
+          <Property Name="PreparedBy_Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ApprovedBy_Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Remarks" Type="varchar" MaxLength="500" />
+          <Property Name="Currency" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="DocState" Type="int" Nullable="false" />
+          <Property Name="Archive" Type="bit" Nullable="false" />
+          <Property Name="Vendor_Id" Type="int" />
+          <Property Name="Vendor_CompanyName" Type="varchar" MaxLength="200" />
+          <Property Name="Vendor_ContactName" Type="varchar" MaxLength="200" />
+          <Property Name="Vendor_Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Vendor_Address" Type="text" />
+          <Property Name="Vendor_City" Type="varchar" MaxLength="100" />
+          <Property Name="Vendor_Province" Type="varchar" MaxLength="100" />
+          <Property Name="PPnAdded" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PurchaseOrderDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseOrderId" Type="int" Nullable="false" />
+          <Property Name="PRDetailId" Type="int" Nullable="false" />
+          <Property Name="ItemName" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Quantity" Type="decimal" Nullable="false" />
+          <Property Name="UnitQuantity" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UnitPrice" Type="money" Nullable="false" />
+          <Property Name="TotalPrice" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RequestType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Number" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContactName" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Suspended" Type="bit" Nullable="false" />
+          <Property Name="Address" Type="text" />
+          <Property Name="City" Type="nchar" MaxLength="100" />
+          <Property Name="Province" Type="nchar" MaxLength="100" />
+          <Property Name="Zip" Type="nchar" MaxLength="100" />
+          <Property Name="Country" Type="nchar" MaxLength="100" />
+          <Property Name="Fax" Type="nchar" MaxLength="100" />
+          <Property Name="Email" Type="nchar" MaxLength="100" />
+          <Property Name="Web" Type="nchar" MaxLength="100" />
+          <Property Name="Currency" Type="nchar" MaxLength="100" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="NPWPNumber" Type="varchar" MaxLength="50" />
+          <Property Name="NPWPAddress" Type="text" />
+        </EntityType>
+        <EntityType Name="VendorCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CompanyLists">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="int" />
+          <Property Name="Symbol" Type="nvarchar" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="200" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_DeliveryOrderDetail_DeliveryOrder">
+          <End Role="DeliveryOrder" Type="PurchasingModel.Store.DeliveryOrder" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DeliveryOrderDetail" Type="PurchasingModel.Store.DeliveryOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryOrder">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DeliveryOrderDetail">
+              <PropertyRef Name="DeliveryOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeliveryOrderDetail_PurchaseOrderDetail">
+          <End Role="PurchaseOrderDetail" Type="PurchasingModel.Store.PurchaseOrderDetail" Multiplicity="1" />
+          <End Role="DeliveryOrderDetail" Type="PurchasingModel.Store.DeliveryOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrderDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DeliveryOrderDetail">
+              <PropertyRef Name="PurchaseOrderDetailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentPRDetail_DepartmentPurchaseRequisition">
+          <End Role="DepartmentPurchaseRequisition" Type="PurchasingModel.Store.DepartmentPurchaseRequisition" Multiplicity="1" />
+          <End Role="DepartmentPRDetail" Type="PurchasingModel.Store.DepartmentPRDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentPurchaseRequisition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DepartmentPRDetail">
+              <PropertyRef Name="DepartmentPurchaseRequisitionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentPurchaseRequisition_Office">
+          <End Role="Office" Type="PurchasingModel.Store.Office" Multiplicity="1" />
+          <End Role="DepartmentPurchaseRequisition" Type="PurchasingModel.Store.DepartmentPurchaseRequisition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Office">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentPurchaseRequisition">
+              <PropertyRef Name="OfficeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentPurchaseRequisition_RequestType">
+          <End Role="RequestType" Type="PurchasingModel.Store.RequestType" Multiplicity="1" />
+          <End Role="DepartmentPurchaseRequisition" Type="PurchasingModel.Store.DepartmentPurchaseRequisition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RequestType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DepartmentPurchaseRequisition">
+              <PropertyRef Name="RequestTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PriceComparison_DepartmentPurchaseRequisition">
+          <End Role="DepartmentPurchaseRequisition" Type="PurchasingModel.Store.DepartmentPurchaseRequisition" Multiplicity="1" />
+          <End Role="PriceComparison" Type="PurchasingModel.Store.PriceComparison" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentPurchaseRequisition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PriceComparison">
+              <PropertyRef Name="PurchaseRequisitionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PriceComparisonDetail_DepartmentPRDetail">
+          <End Role="DepartmentPRDetail" Type="PurchasingModel.Store.DepartmentPRDetail" Multiplicity="1" />
+          <End Role="PriceComparisonDetail" Type="PurchasingModel.Store.PriceComparisonDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentPRDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PriceComparisonDetail">
+              <PropertyRef Name="PRDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PriceComparisonDetail_PriceComparison">
+          <End Role="PriceComparison" Type="PurchasingModel.Store.PriceComparison" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PriceComparisonDetail" Type="PurchasingModel.Store.PriceComparisonDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceComparison">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PriceComparisonDetail">
+              <PropertyRef Name="PriceComparisonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition">
+          <End Role="ProjectPurchaseRequisition" Type="PurchasingModel.Store.ProjectPurchaseRequisition" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectPurchaseRequisitionDetail" Type="PurchasingModel.Store.ProjectPurchaseRequisitionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectPurchaseRequisition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProjectPurchaseRequisitionDetail">
+              <PropertyRef Name="ProjectPurchaseRequisitionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PurchaseOrderDetail_PurchaseOrder">
+          <End Role="PurchaseOrder" Type="PurchasingModel.Store.PurchaseOrder" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PurchaseOrderDetail" Type="PurchasingModel.Store.PurchaseOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrder">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PurchaseOrderDetail">
+              <PropertyRef Name="PurchaseOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vendor_VendorCategory">
+          <End Role="VendorCategory" Type="PurchasingModel.Store.VendorCategory" Multiplicity="0..1" />
+          <End Role="Vendor" Type="PurchasingModel.Store.Vendor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VendorCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vendor">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetDescriptionPurchase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="prc">
+          <Parameter Name="isProject" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="GetNoRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="prc">
+          <Parameter Name="term" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetVendorList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="prc" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PurchasingModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="PurchasingEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="GetDescriptionPurchase" ReturnType="Collection(PurchasingModel.GetDescriptionPurchase_Result)">
+          <Parameter Name="isProject" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="GetVendorList" ReturnType="Collection(PurchasingModel.GetVendorList_Result)" />
+          <EntitySet Name="ApprovalStatus" EntityType="PurchasingModel.ApprovalStatus" />
+          <EntitySet Name="CurrencyMaster" EntityType="PurchasingModel.CurrencyMaster" />
+          <EntitySet Name="Measure" EntityType="PurchasingModel.Measure" />
+          <EntitySet Name="ProjectInfo" EntityType="PurchasingModel.ProjectInfo" />
+          <EntitySet Name="CompanyLists" EntityType="PurchasingModel.CompanyLists" />
+          <EntitySet Name="ProjectPurchaseRequisitions" EntityType="PurchasingModel.ProjectPurchaseRequisition" />
+          <EntitySet Name="ProjectPurchaseRequisitionDetails" EntityType="PurchasingModel.ProjectPurchaseRequisitionDetail" />
+          <AssociationSet Name="FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition" Association="PurchasingModel.FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition">
+            <End Role="ProjectPurchaseRequisition" EntitySet="ProjectPurchaseRequisitions" />
+            <End Role="ProjectPurchaseRequisitionDetail" EntitySet="ProjectPurchaseRequisitionDetails" />
+          </AssociationSet>
+          <EntitySet Name="DeliveryOrderDetails" EntityType="PurchasingModel.DeliveryOrderDetail" />
+          <EntitySet Name="DeliveryOrders" EntityType="PurchasingModel.DeliveryOrder" />
+          <AssociationSet Name="FK_DeliveryOrderDetail_DeliveryOrder" Association="PurchasingModel.FK_DeliveryOrderDetail_DeliveryOrder">
+            <End Role="DeliveryOrder" EntitySet="DeliveryOrders" />
+            <End Role="DeliveryOrderDetail" EntitySet="DeliveryOrderDetails" />
+          </AssociationSet>
+          <EntitySet Name="Vendor" EntityType="PurchasingModel.Vendor" />
+          <EntitySet Name="VendorCategory" EntityType="PurchasingModel.VendorCategory" />
+          <AssociationSet Name="FK_Vendor_VendorCategory" Association="PurchasingModel.FK_Vendor_VendorCategory">
+            <End Role="VendorCategory" EntitySet="VendorCategory" />
+            <End Role="Vendor" EntitySet="Vendor" />
+          </AssociationSet>
+          <FunctionImport Name="GetNoRecord" ReturnType="Collection(PurchasingModel.GetNoRecord_Result)">
+          <Parameter Name="term" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="PurchaseOrderDetails" EntityType="PurchasingModel.PurchaseOrderDetail" />
+          <AssociationSet Name="FK_DeliveryOrderDetail_PurchaseOrderDetail" Association="PurchasingModel.FK_DeliveryOrderDetail_PurchaseOrderDetail">
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+            <End Role="DeliveryOrderDetail" EntitySet="DeliveryOrderDetails" />
+          </AssociationSet>
+          <EntitySet Name="PurchaseOrders" EntityType="PurchasingModel.PurchaseOrder" />
+          <AssociationSet Name="FK_PurchaseOrderDetail_PurchaseOrder" Association="PurchasingModel.FK_PurchaseOrderDetail_PurchaseOrder">
+            <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+            <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+          </AssociationSet>
+          <EntitySet Name="DepartmentPRDetails" EntityType="PurchasingModel.DepartmentPRDetail" />
+          <EntitySet Name="DepartmentPurchaseRequisitions" EntityType="PurchasingModel.DepartmentPurchaseRequisition" />
+          <EntitySet Name="PriceComparisonDetails" EntityType="PurchasingModel.PriceComparisonDetail" />
+          <EntitySet Name="PurchaseDocumentStatus" EntityType="PurchasingModel.PurchaseDocumentStatu" />
+          <EntitySet Name="RequestTypes" EntityType="PurchasingModel.RequestType" />
+          <AssociationSet Name="FK_DepartmentPRDetail_DepartmentPurchaseRequisition" Association="PurchasingModel.FK_DepartmentPRDetail_DepartmentPurchaseRequisition">
+            <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisitions" />
+            <End Role="DepartmentPRDetail" EntitySet="DepartmentPRDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PriceComparisonDetail_DepartmentPRDetail" Association="PurchasingModel.FK_PriceComparisonDetail_DepartmentPRDetail">
+            <End Role="DepartmentPRDetail" EntitySet="DepartmentPRDetails" />
+            <End Role="PriceComparisonDetail" EntitySet="PriceComparisonDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentPurchaseRequisition_RequestType" Association="PurchasingModel.FK_DepartmentPurchaseRequisition_RequestType">
+            <End Role="RequestType" EntitySet="RequestTypes" />
+            <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisitions" />
+          </AssociationSet>
+          <EntitySet Name="Office" EntityType="PurchasingModel.Office" />
+          <AssociationSet Name="FK_DepartmentPurchaseRequisition_Office" Association="PurchasingModel.FK_DepartmentPurchaseRequisition_Office">
+            <End Role="Office" EntitySet="Office" />
+            <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisitions" />
+          </AssociationSet>
+          <EntitySet Name="PriceComparison" EntityType="PurchasingModel.PriceComparison" />
+          <AssociationSet Name="FK_PriceComparison_DepartmentPurchaseRequisition" Association="PurchasingModel.FK_PriceComparison_DepartmentPurchaseRequisition">
+            <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisitions" />
+            <End Role="PriceComparison" EntitySet="PriceComparison" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PriceComparisonDetail_PriceComparison" Association="PurchasingModel.FK_PriceComparisonDetail_PriceComparison">
+            <End Role="PriceComparison" EntitySet="PriceComparison" />
+            <End Role="PriceComparisonDetail" EntitySet="PriceComparisonDetails" />
+          </AssociationSet>
+          </EntityContainer>
+        <ComplexType Name="GetDescriptionPurchase_Result">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <ComplexType Name="GetVendorList_Result">
+          <Property Type="Int32" Name="ID" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+        </ComplexType>
+        <EntityType Name="ApprovalStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Status" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CurrencyMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CurrencyName" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Measure">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MeasureName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Remarks" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ProjectInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ProjectCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ProjectTitle" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DateStart" Nullable="false" />
+          <Property Type="Int32" Name="NumberOfDays" Nullable="false" />
+          <Property Type="String" Name="DayUnit" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContractNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CompanyInfoId" Nullable="false" />
+          <Property Type="Decimal" Name="ContractValue" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="ConsultanName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Location" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Archive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CompanyLists">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Code" />
+          <Property Type="String" Name="Symbol" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address1" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address2" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProjectPurchaseRequisition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RecordNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ProjectCode" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ProjectTitle" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="RequestDate" Nullable="false" />
+          <Property Type="DateTime" Name="DeliveryDate" Nullable="false" />
+          <Property Type="String" Name="DeliveryTo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DeliveryAddress" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RequestedBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RequestedBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApprovedBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApprovedBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KnownBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KnownBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="DocState" Nullable="false" />
+          <Property Type="DateTime" Name="DocApproveRejectDate" />
+          <Property Type="Boolean" Name="Archive" Nullable="false" />
+          <NavigationProperty Name="ProjectPurchaseRequisitionDetails" Relationship="PurchasingModel.FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition" FromRole="ProjectPurchaseRequisition" ToRole="ProjectPurchaseRequisitionDetail" />
+        </EntityType>
+        <EntityType Name="ProjectPurchaseRequisitionDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ProjectPurchaseRequisitionId" Nullable="false" />
+          <Property Type="String" Name="ItemName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Brand" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Quantity" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Currency" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="EstUnitPrice" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TotalEstPrice" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Remarks" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProjectPurchaseRequisition" Relationship="PurchasingModel.FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition" FromRole="ProjectPurchaseRequisitionDetail" ToRole="ProjectPurchaseRequisition" />
+        </EntityType>
+        <Association Name="FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition">
+          <End Type="PurchasingModel.ProjectPurchaseRequisition" Role="ProjectPurchaseRequisition" Multiplicity="1" />
+          <End Type="PurchasingModel.ProjectPurchaseRequisitionDetail" Role="ProjectPurchaseRequisitionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectPurchaseRequisition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProjectPurchaseRequisitionDetail">
+              <PropertyRef Name="ProjectPurchaseRequisitionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DeliveryOrderDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DeliveryOrderId" Nullable="false" />
+          <Property Type="Int32" Name="PurchaseOrderDetailId" Nullable="false" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <NavigationProperty Name="DeliveryOrder" Relationship="PurchasingModel.FK_DeliveryOrderDetail_DeliveryOrder" FromRole="DeliveryOrderDetail" ToRole="DeliveryOrder" />
+          <NavigationProperty Name="PurchaseOrderDetail" Relationship="PurchasingModel.FK_DeliveryOrderDetail_PurchaseOrderDetail" FromRole="DeliveryOrderDetail" ToRole="PurchaseOrderDetail" />
+        </EntityType>
+        <EntityType Name="DeliveryOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="ReceiptDate" Nullable="false" />
+          <Property Type="Int32" Name="PurchaseOrderId" Nullable="false" />
+          <Property Type="String" Name="DocNo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReceiptBy_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DeliveryOrderDetails" Relationship="PurchasingModel.FK_DeliveryOrderDetail_DeliveryOrder" FromRole="DeliveryOrder" ToRole="DeliveryOrderDetail" />
+        </EntityType>
+        <Association Name="FK_DeliveryOrderDetail_DeliveryOrder">
+          <End Type="PurchasingModel.DeliveryOrder" Role="DeliveryOrder" Multiplicity="1" />
+          <End Type="PurchasingModel.DeliveryOrderDetail" Role="DeliveryOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryOrder">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DeliveryOrderDetail">
+              <PropertyRef Name="DeliveryOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Number" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContactName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Suspended" Nullable="false" />
+          <Property Type="String" Name="Address" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Province" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Zip" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Web" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Currency" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="CategoryId" />
+          <Property Type="String" Name="NPWPNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NPWPAddress" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="VendorCategory" Relationship="PurchasingModel.FK_Vendor_VendorCategory" FromRole="Vendor" ToRole="VendorCategory" />
+        </EntityType>
+        <EntityType Name="VendorCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Vendor" Relationship="PurchasingModel.FK_Vendor_VendorCategory" FromRole="VendorCategory" ToRole="Vendor" />
+        </EntityType>
+        <Association Name="FK_Vendor_VendorCategory">
+          <End Type="PurchasingModel.VendorCategory" Role="VendorCategory" Multiplicity="0..1" />
+          <End Type="PurchasingModel.Vendor" Role="Vendor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VendorCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vendor">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetNoRecord_Result">
+          <Property Type="Int32" Name="ID" Nullable="true" />
+          <Property Type="String" Name="Norecord" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="officeId" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="PurchaseOrderDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PurchaseOrderId" Nullable="false" />
+          <Property Type="Int32" Name="PRDetailId" Nullable="false" />
+          <Property Type="String" Name="ItemName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Quantity" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TotalPrice" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="DeliveryOrderDetails" Relationship="PurchasingModel.FK_DeliveryOrderDetail_PurchaseOrderDetail" FromRole="PurchaseOrderDetail" ToRole="DeliveryOrderDetail" />
+          <NavigationProperty Name="PurchaseOrder" Relationship="PurchasingModel.FK_PurchaseOrderDetail_PurchaseOrder" FromRole="PurchaseOrderDetail" ToRole="PurchaseOrder" />
+        </EntityType>
+        <Association Name="FK_DeliveryOrderDetail_PurchaseOrderDetail">
+          <End Type="PurchasingModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="1" />
+          <End Type="PurchasingModel.DeliveryOrderDetail" Role="DeliveryOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrderDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DeliveryOrderDetail">
+              <PropertyRef Name="PurchaseOrderDetailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PurchaseOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="OrderNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="OrderDate" Nullable="false" />
+          <Property Type="Int32" Name="POType" Nullable="false" />
+          <Property Type="String" Name="RQNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="QuotationRef" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContactPerson_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContactPerson_Phone" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TermOfPayment" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DeliveryDate" />
+          <Property Type="String" Name="DeliveryTo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DeliveryAddress" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PreparedBy_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApprovedBy_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Remarks" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Currency" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="DocState" Nullable="false" />
+          <Property Type="Boolean" Name="Archive" Nullable="false" />
+          <Property Type="Int32" Name="Vendor_Id" />
+          <Property Type="String" Name="Vendor_CompanyName" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Vendor_ContactName" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Vendor_Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Vendor_Address" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Vendor_City" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Vendor_Province" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="PPnAdded" Nullable="false" />
+          <NavigationProperty Name="PurchaseOrderDetails" Relationship="PurchasingModel.FK_PurchaseOrderDetail_PurchaseOrder" FromRole="PurchaseOrder" ToRole="PurchaseOrderDetail" />
+        </EntityType>
+        <Association Name="FK_PurchaseOrderDetail_PurchaseOrder">
+          <End Type="PurchasingModel.PurchaseOrder" Role="PurchaseOrder" Multiplicity="1" />
+          <End Type="PurchasingModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrder">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PurchaseOrderDetail">
+              <PropertyRef Name="PurchaseOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DepartmentPRDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="DepartmentPurchaseRequisitionId" Nullable="false" />
+          <Property Type="String" Name="ItemName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Allocation" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Quantity" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Currency" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="EstUnitPrice" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TotalEstPrice" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Remarks" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DepartmentPurchaseRequisition" Relationship="PurchasingModel.FK_DepartmentPRDetail_DepartmentPurchaseRequisition" FromRole="DepartmentPRDetail" ToRole="DepartmentPurchaseRequisition" />
+          <NavigationProperty Name="PriceComparisonDetails" Relationship="PurchasingModel.FK_PriceComparisonDetail_DepartmentPRDetail" FromRole="DepartmentPRDetail" ToRole="PriceComparisonDetail" />
+        </EntityType>
+        <EntityType Name="DepartmentPurchaseRequisition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RecordNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="OfficeID" Nullable="false" />
+          <Property Type="Int32" Name="RequestTypeId" Nullable="false" />
+          <Property Type="DateTime" Name="RequestDate" Nullable="false" />
+          <Property Type="DateTime" Name="DeliveryDate" Nullable="false" />
+          <Property Type="String" Name="DeliveryTo" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DeliveryAddress" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RequestedBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RequestedBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApprovedBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApprovedBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KnownBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KnownBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="DocState" Nullable="false" />
+          <Property Type="DateTime" Name="DocApproveRejectDate" />
+          <Property Type="Boolean" Name="Archive" Nullable="false" />
+          <NavigationProperty Name="DepartmentPRDetails" Relationship="PurchasingModel.FK_DepartmentPRDetail_DepartmentPurchaseRequisition" FromRole="DepartmentPurchaseRequisition" ToRole="DepartmentPRDetail" />
+          <NavigationProperty Name="RequestType" Relationship="PurchasingModel.FK_DepartmentPurchaseRequisition_RequestType" FromRole="DepartmentPurchaseRequisition" ToRole="RequestType" />
+          <NavigationProperty Name="Office" Relationship="PurchasingModel.FK_DepartmentPurchaseRequisition_Office" FromRole="DepartmentPurchaseRequisition" ToRole="Office" />
+          <NavigationProperty Name="PriceComparison" Relationship="PurchasingModel.FK_PriceComparison_DepartmentPurchaseRequisition" FromRole="DepartmentPurchaseRequisition" ToRole="PriceComparison" />
+        </EntityType>
+        <EntityType Name="PriceComparisonDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PriceComparisonID" Nullable="false" />
+          <Property Type="Int32" Name="PRDetailID" Nullable="false" />
+          <Property Type="Decimal" Name="Price1" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Price2" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Price3" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="DepartmentPRDetail" Relationship="PurchasingModel.FK_PriceComparisonDetail_DepartmentPRDetail" FromRole="PriceComparisonDetail" ToRole="DepartmentPRDetail" />
+          <NavigationProperty Name="PriceComparison" Relationship="PurchasingModel.FK_PriceComparisonDetail_PriceComparison" FromRole="PriceComparisonDetail" ToRole="PriceComparison" />
+        </EntityType>
+        <EntityType Name="PurchaseDocumentStatu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="OnCreation" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="OnEvaluation" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RequestType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DepartmentPurchaseRequisitions" Relationship="PurchasingModel.FK_DepartmentPurchaseRequisition_RequestType" FromRole="RequestType" ToRole="DepartmentPurchaseRequisition" />
+        </EntityType>
+        <Association Name="FK_DepartmentPRDetail_DepartmentPurchaseRequisition">
+          <End Type="PurchasingModel.DepartmentPurchaseRequisition" Role="DepartmentPurchaseRequisition" Multiplicity="1" />
+          <End Type="PurchasingModel.DepartmentPRDetail" Role="DepartmentPRDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentPurchaseRequisition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DepartmentPRDetail">
+              <PropertyRef Name="DepartmentPurchaseRequisitionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PriceComparisonDetail_DepartmentPRDetail">
+          <End Type="PurchasingModel.DepartmentPRDetail" Role="DepartmentPRDetail" Multiplicity="1" />
+          <End Type="PurchasingModel.PriceComparisonDetail" Role="PriceComparisonDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentPRDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PriceComparisonDetail">
+              <PropertyRef Name="PRDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentPurchaseRequisition_RequestType">
+          <End Type="PurchasingModel.RequestType" Role="RequestType" Multiplicity="1" />
+          <End Type="PurchasingModel.DepartmentPurchaseRequisition" Role="DepartmentPurchaseRequisition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RequestType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DepartmentPurchaseRequisition">
+              <PropertyRef Name="RequestTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Office">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Abbreviation" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Parent_ID" Nullable="false" />
+          <Property Type="Int32" Name="Ordinal" Nullable="false" />
+          <NavigationProperty Name="DepartmentPurchaseRequisition" Relationship="PurchasingModel.FK_DepartmentPurchaseRequisition_Office" FromRole="Office" ToRole="DepartmentPurchaseRequisition" />
+        </EntityType>
+        <Association Name="FK_DepartmentPurchaseRequisition_Office">
+          <End Type="PurchasingModel.Office" Role="Office" Multiplicity="1" />
+          <End Type="PurchasingModel.DepartmentPurchaseRequisition" Role="DepartmentPurchaseRequisition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Office">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DepartmentPurchaseRequisition">
+              <PropertyRef Name="OfficeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PriceComparison">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="Int32" Name="PurchaseRequisitionID" Nullable="false" />
+          <Property Type="Int32" Name="VendorID1" Nullable="false" />
+          <Property Type="Int32" Name="VendorID2" Nullable="false" />
+          <Property Type="Int32" Name="VendorID3" Nullable="false" />
+          <NavigationProperty Name="DepartmentPurchaseRequisition" Relationship="PurchasingModel.FK_PriceComparison_DepartmentPurchaseRequisition" FromRole="PriceComparison" ToRole="DepartmentPurchaseRequisition" />
+          <NavigationProperty Name="PriceComparisonDetail" Relationship="PurchasingModel.FK_PriceComparisonDetail_PriceComparison" FromRole="PriceComparison" ToRole="PriceComparisonDetail" />
+        </EntityType>
+        <Association Name="FK_PriceComparison_DepartmentPurchaseRequisition">
+          <End Type="PurchasingModel.DepartmentPurchaseRequisition" Role="DepartmentPurchaseRequisition" Multiplicity="1" />
+          <End Type="PurchasingModel.PriceComparison" Role="PriceComparison" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentPurchaseRequisition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PriceComparison">
+              <PropertyRef Name="PurchaseRequisitionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PriceComparisonDetail_PriceComparison">
+          <End Type="PurchasingModel.PriceComparison" Role="PriceComparison" Multiplicity="1" />
+          <End Type="PurchasingModel.PriceComparisonDetail" Role="PriceComparisonDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriceComparison">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PriceComparisonDetail">
+              <PropertyRef Name="PriceComparisonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PurchasingModelStoreContainer" CdmEntityContainer="PurchasingEntities">
+          <FunctionImportMapping FunctionImportName="GetDescriptionPurchase" FunctionName="PurchasingModel.Store.GetDescriptionPurchase">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PurchasingModel.GetDescriptionPurchase_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetVendorList" FunctionName="PurchasingModel.Store.GetVendorList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PurchasingModel.GetVendorList_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ApprovalStatus">
+            <EntityTypeMapping TypeName="PurchasingModel.ApprovalStatus">
+              <MappingFragment StoreEntitySet="ApprovalStatus">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurrencyMaster">
+            <EntityTypeMapping TypeName="PurchasingModel.CurrencyMaster">
+              <MappingFragment StoreEntitySet="CurrencyMaster">
+                <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Measure">
+            <EntityTypeMapping TypeName="PurchasingModel.Measure">
+              <MappingFragment StoreEntitySet="Measure">
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="MeasureName" ColumnName="MeasureName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectInfo">
+            <EntityTypeMapping TypeName="PurchasingModel.ProjectInfo">
+              <MappingFragment StoreEntitySet="ProjectInfo">
+                <ScalarProperty Name="Archive" ColumnName="Archive" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="ConsultanName" ColumnName="ConsultanName" />
+                <ScalarProperty Name="ContractValue" ColumnName="ContractValue" />
+                <ScalarProperty Name="CompanyInfoId" ColumnName="CompanyInfoId" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="DayUnit" ColumnName="DayUnit" />
+                <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+                <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+                <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyLists">
+            <EntityTypeMapping TypeName="PurchasingModel.CompanyLists">
+              <MappingFragment StoreEntitySet="CompanyLists">
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectPurchaseRequisitions">
+            <EntityTypeMapping TypeName="PurchasingModel.ProjectPurchaseRequisition">
+              <MappingFragment StoreEntitySet="ProjectPurchaseRequisition">
+                <ScalarProperty Name="Archive" ColumnName="Archive" />
+                <ScalarProperty Name="DocApproveRejectDate" ColumnName="DocApproveRejectDate" />
+                <ScalarProperty Name="DocState" ColumnName="DocState" />
+                <ScalarProperty Name="KnownBy_Occupation" ColumnName="KnownBy_Occupation" />
+                <ScalarProperty Name="KnownBy_Name" ColumnName="KnownBy_Name" />
+                <ScalarProperty Name="ApprovedBy_Occupation" ColumnName="ApprovedBy_Occupation" />
+                <ScalarProperty Name="ApprovedBy_Name" ColumnName="ApprovedBy_Name" />
+                <ScalarProperty Name="RequestedBy_Occupation" ColumnName="RequestedBy_Occupation" />
+                <ScalarProperty Name="RequestedBy_Name" ColumnName="RequestedBy_Name" />
+                <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+                <ScalarProperty Name="DeliveryTo" ColumnName="DeliveryTo" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+                <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+                <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectPurchaseRequisitionDetails">
+            <EntityTypeMapping TypeName="PurchasingModel.ProjectPurchaseRequisitionDetail">
+              <MappingFragment StoreEntitySet="ProjectPurchaseRequisitionDetail">
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="TotalEstPrice" ColumnName="TotalEstPrice" />
+                <ScalarProperty Name="EstUnitPrice" ColumnName="EstUnitPrice" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ProjectPurchaseRequisitionId" ColumnName="ProjectPurchaseRequisitionId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryOrderDetails">
+            <EntityTypeMapping TypeName="PurchasingModel.DeliveryOrderDetail">
+              <MappingFragment StoreEntitySet="DeliveryOrderDetail">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="PurchaseOrderDetailId" ColumnName="PurchaseOrderDetailId" />
+                <ScalarProperty Name="DeliveryOrderId" ColumnName="DeliveryOrderId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryOrders">
+            <EntityTypeMapping TypeName="PurchasingModel.DeliveryOrder">
+              <MappingFragment StoreEntitySet="DeliveryOrder">
+                <ScalarProperty Name="ReceiptBy_Name" ColumnName="ReceiptBy_Name" />
+                <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+                <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+                <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vendor">
+            <EntityTypeMapping TypeName="PurchasingModel.Vendor">
+              <MappingFragment StoreEntitySet="Vendor">
+                <ScalarProperty Name="NPWPAddress" ColumnName="NPWPAddress" />
+                <ScalarProperty Name="NPWPNumber" ColumnName="NPWPNumber" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Web" ColumnName="Web" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Suspended" ColumnName="Suspended" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VendorCategory">
+            <EntityTypeMapping TypeName="PurchasingModel.VendorCategory">
+              <MappingFragment StoreEntitySet="VendorCategory">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetNoRecord" FunctionName="PurchasingModel.Store.GetNoRecord">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PurchasingModel.GetNoRecord_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Norecord" ColumnName="Norecord" />
+                <ScalarProperty Name="officeId" ColumnName="officeId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="PurchaseOrderDetails">
+            <EntityTypeMapping TypeName="PurchasingModel.PurchaseOrderDetail">
+              <MappingFragment StoreEntitySet="PurchaseOrderDetail">
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="PRDetailId" ColumnName="PRDetailId" />
+                <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOrders">
+            <EntityTypeMapping TypeName="PurchasingModel.PurchaseOrder">
+              <MappingFragment StoreEntitySet="PurchaseOrder">
+                <ScalarProperty Name="PPnAdded" ColumnName="PPnAdded" />
+                <ScalarProperty Name="Vendor_Province" ColumnName="Vendor_Province" />
+                <ScalarProperty Name="Vendor_City" ColumnName="Vendor_City" />
+                <ScalarProperty Name="Vendor_Address" ColumnName="Vendor_Address" />
+                <ScalarProperty Name="Vendor_Phone" ColumnName="Vendor_Phone" />
+                <ScalarProperty Name="Vendor_ContactName" ColumnName="Vendor_ContactName" />
+                <ScalarProperty Name="Vendor_CompanyName" ColumnName="Vendor_CompanyName" />
+                <ScalarProperty Name="Vendor_Id" ColumnName="Vendor_Id" />
+                <ScalarProperty Name="Archive" ColumnName="Archive" />
+                <ScalarProperty Name="DocState" ColumnName="DocState" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="ApprovedBy_Name" ColumnName="ApprovedBy_Name" />
+                <ScalarProperty Name="PreparedBy_Name" ColumnName="PreparedBy_Name" />
+                <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+                <ScalarProperty Name="DeliveryTo" ColumnName="DeliveryTo" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="TermOfPayment" ColumnName="TermOfPayment" />
+                <ScalarProperty Name="ContactPerson_Phone" ColumnName="ContactPerson_Phone" />
+                <ScalarProperty Name="ContactPerson_Name" ColumnName="ContactPerson_Name" />
+                <ScalarProperty Name="QuotationRef" ColumnName="QuotationRef" />
+                <ScalarProperty Name="RQNumber" ColumnName="RQNumber" />
+                <ScalarProperty Name="POType" ColumnName="POType" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepartmentPRDetails">
+            <EntityTypeMapping TypeName="PurchasingModel.DepartmentPRDetail">
+              <MappingFragment StoreEntitySet="DepartmentPRDetail">
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="TotalEstPrice" ColumnName="TotalEstPrice" />
+                <ScalarProperty Name="EstUnitPrice" ColumnName="EstUnitPrice" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Allocation" ColumnName="Allocation" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="DepartmentPurchaseRequisitionId" ColumnName="DepartmentPurchaseRequisitionId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepartmentPurchaseRequisitions">
+            <EntityTypeMapping TypeName="PurchasingModel.DepartmentPurchaseRequisition">
+              <MappingFragment StoreEntitySet="DepartmentPurchaseRequisition">
+                <ScalarProperty Name="Archive" ColumnName="Archive" />
+                <ScalarProperty Name="DocApproveRejectDate" ColumnName="DocApproveRejectDate" />
+                <ScalarProperty Name="DocState" ColumnName="DocState" />
+                <ScalarProperty Name="KnownBy_Occupation" ColumnName="KnownBy_Occupation" />
+                <ScalarProperty Name="KnownBy_Name" ColumnName="KnownBy_Name" />
+                <ScalarProperty Name="ApprovedBy_Occupation" ColumnName="ApprovedBy_Occupation" />
+                <ScalarProperty Name="ApprovedBy_Name" ColumnName="ApprovedBy_Name" />
+                <ScalarProperty Name="RequestedBy_Occupation" ColumnName="RequestedBy_Occupation" />
+                <ScalarProperty Name="RequestedBy_Name" ColumnName="RequestedBy_Name" />
+                <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+                <ScalarProperty Name="DeliveryTo" ColumnName="DeliveryTo" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="RequestTypeId" ColumnName="RequestTypeId" />
+                <ScalarProperty Name="OfficeID" ColumnName="OfficeID" />
+                <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriceComparisonDetails">
+            <EntityTypeMapping TypeName="PurchasingModel.PriceComparisonDetail">
+              <MappingFragment StoreEntitySet="PriceComparisonDetail">
+                <ScalarProperty Name="Price3" ColumnName="Price3" />
+                <ScalarProperty Name="Price2" ColumnName="Price2" />
+                <ScalarProperty Name="Price1" ColumnName="Price1" />
+                <ScalarProperty Name="PRDetailID" ColumnName="PRDetailID" />
+                <ScalarProperty Name="PriceComparisonID" ColumnName="PriceComparisonID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseDocumentStatus">
+            <EntityTypeMapping TypeName="PurchasingModel.PurchaseDocumentStatu">
+              <MappingFragment StoreEntitySet="PurchaseDocumentStatus">
+                <ScalarProperty Name="OnEvaluation" ColumnName="OnEvaluation" />
+                <ScalarProperty Name="OnCreation" ColumnName="OnCreation" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequestTypes">
+            <EntityTypeMapping TypeName="PurchasingModel.RequestType">
+              <MappingFragment StoreEntitySet="RequestType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Office">
+            <EntityTypeMapping TypeName="PurchasingModel.Office">
+              <MappingFragment StoreEntitySet="Office">
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriceComparison">
+            <EntityTypeMapping TypeName="PurchasingModel.PriceComparison">
+              <MappingFragment StoreEntitySet="PriceComparison">
+                <ScalarProperty Name="VendorID3" ColumnName="VendorID3" />
+                <ScalarProperty Name="VendorID2" ColumnName="VendorID2" />
+                <ScalarProperty Name="VendorID1" ColumnName="VendorID1" />
+                <ScalarProperty Name="PurchaseRequisitionID" ColumnName="PurchaseRequisitionID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="PurchasingEntities" ZoomLevel="73">
+        <EntityTypeShape EntityType="PurchasingModel.ApprovalStatus" Width="1.5" PointX="7.75" PointY="0.875" Height="1.4033821614583353" />
+        <EntityTypeShape EntityType="PurchasingModel.CurrencyMaster" Width="1.5" PointX="9.75" PointY="0.875" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="PurchasingModel.Measure" Width="1.5" PointX="9.75" PointY="12.875" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="PurchasingModel.ProjectInfo" Width="1.5" PointX="11.75" PointY="12.875" Height="3.3263964843750031" />
+        <EntityTypeShape EntityType="PurchasingModel.CompanyLists" Width="1.5" PointX="13.75" PointY="12.875" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="PurchasingModel.ProjectPurchaseRequisition" Width="1.5" PointX="12.75" PointY="1.125" Height="4.4802050781250031" />
+        <EntityTypeShape EntityType="PurchasingModel.ProjectPurchaseRequisitionDetail" Width="1.5" PointX="15" PointY="1.75" Height="3.1340950520833393" />
+        <AssociationConnector Association="PurchasingModel.FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition" >
+          <ConnectorPoint PointX="14.25" PointY="3.3170475260416694" />
+          <ConnectorPoint PointX="15" PointY="3.3170475260416694" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="PurchasingModel.DeliveryOrderDetail" Width="1.5" PointX="12.25" PointY="9.125" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="PurchasingModel.DeliveryOrder" Width="1.5" PointX="10" PointY="5.125" Height="2.1725878906249996" />
+        <AssociationConnector Association="PurchasingModel.FK_DeliveryOrderDetail_DeliveryOrder" >
+          <ConnectorPoint PointX="11.5" PointY="6.4826464843750014" />
+          <ConnectorPoint PointX="12.46875" PointY="6.4826464843750014" />
+          <ConnectorPoint PointX="12.46875" PointY="9.125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="PurchasingModel.Vendor" Width="1.5" PointX="3" PointY="9.125" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="PurchasingModel.VendorCategory" Width="1.5" PointX="0.75" PointY="10.625" Height="1.5956835937500031" />
+        <AssociationConnector Association="PurchasingModel.FK_Vendor_VendorCategory" >
+          <ConnectorPoint PointX="2.25" PointY="11.3389794921875" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="11.3389794921875" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="11.3389794921875" />
+          <ConnectorPoint PointX="3" PointY="11.3389794921875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="PurchasingModel.PurchaseOrderDetail" Width="1.5" PointX="10" PointY="8.875" Height="2.9417936197916674" />
+        <AssociationConnector Association="PurchasingModel.FK_DeliveryOrderDetail_PurchaseOrderDetail" >
+          <ConnectorPoint PointX="11.5" PointY="10.08550048828125" />
+          <ConnectorPoint PointX="12.25" PointY="10.08550048828125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="PurchasingModel.PurchaseOrder" Width="1.5" PointX="7.75" PointY="6.5" Height="5.372294921874996" />
+        <AssociationConnector Association="PurchasingModel.FK_PurchaseOrderDetail_PurchaseOrder" >
+          <ConnectorPoint PointX="9.25" PointY="10.164195149739584" />
+          <ConnectorPoint PointX="10" PointY="10.164195149739584" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="PurchasingModel.DepartmentPRDetail" Width="1.5" PointX="5.25" PointY="16.125" Height="2.9070849609375031" />
+        <EntityTypeShape EntityType="PurchasingModel.DepartmentPurchaseRequisition" Width="1.5" PointX="3" PointY="17" Height="4.2218636067708246" />
+        <EntityTypeShape EntityType="PurchasingModel.PriceComparisonDetail" Width="1.5" PointX="7.5" PointY="18" Height="2.2496956380208388" />
+        <EntityTypeShape EntityType="PurchasingModel.PurchaseDocumentStatu" Width="1.5" PointX="0.75" PointY="0.75" Height="1.4279589843750102" />
+        <EntityTypeShape EntityType="PurchasingModel.RequestType" Width="1.5" PointX="0.75" PointY="18.375" Height="1.427958984374996" />
+        <AssociationConnector Association="PurchasingModel.FK_DepartmentPRDetail_DepartmentPurchaseRequisition" >
+          <ConnectorPoint PointX="4.5" PointY="18.016042480468752" />
+          <ConnectorPoint PointX="5.25" PointY="18.016042480468752" />
+        </AssociationConnector>
+        <AssociationConnector Association="PurchasingModel.FK_PriceComparisonDetail_DepartmentPRDetail" >
+          <ConnectorPoint PointX="6.75" PointY="18.516042480468752" />
+          <ConnectorPoint PointX="7.5" PointY="18.516042480468752" />
+        </AssociationConnector>
+        <AssociationConnector Association="PurchasingModel.FK_DepartmentPurchaseRequisition_RequestType" >
+          <ConnectorPoint PointX="2.25" PointY="19.088979492187498" />
+          <ConnectorPoint PointX="3" PointY="19.088979492187498" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="PurchasingModel.Office" Width="1.5" PointX="3.375" PointY="0.875" Height="2.0853483072916674" />
+        <AssociationConnector Association="PurchasingModel.FK_DepartmentPurchaseRequisition_Office" >
+          <ConnectorPoint PointX="3.375" PointY="2.9603483072916674" />
+          <ConnectorPoint PointX="3" PointY="3.3353483072916674" />
+          <ConnectorPoint PointX="2.625" PointY="3.3353483072916674" />
+          <ConnectorPoint PointX="2.625" PointY="16.623847153846153" />
+          <ConnectorPoint PointX="3.0011528461538459" PointY="17" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="PurchasingModel.PriceComparison" Width="1.5" PointX="5.25" PointY="20.125" Height="2.2496956380208388" />
+        <AssociationConnector Association="PurchasingModel.FK_PriceComparison_DepartmentPurchaseRequisition" >
+          <ConnectorPoint PointX="4.5" PointY="20.75560546875" />
+          <ConnectorPoint PointX="5.25" PointY="20.75560546875" />
+        </AssociationConnector>
+        <AssociationConnector Association="PurchasingModel.FK_PriceComparisonDetail_PriceComparison" >
+          <ConnectorPoint PointX="6.75" PointY="21.312196138020838" />
+          <ConnectorPoint PointX="8.25" PointY="21.312196138020838" />
+          <ConnectorPoint PointX="8.25" PointY="20.249695638020835" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

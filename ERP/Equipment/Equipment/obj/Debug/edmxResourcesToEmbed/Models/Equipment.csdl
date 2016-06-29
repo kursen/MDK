@@ -1,0 +1,1593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EquipmentModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="EquipmentEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="DetailFuel" ReturnType="Collection(EquipmentModel.DetailFuel_Result)">
+      <Parameter Name="idactivity" Mode="In" Type="Int32" />
+      <Parameter Name="iddumptruckactivity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DetailNonOperation" ReturnType="Collection(EquipmentModel.DetailNonOperation_Result)">
+      <Parameter Name="idactivity" Mode="In" Type="Int32" />
+      <Parameter Name="iddumptruckactivity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DetailOil" ReturnType="Collection(EquipmentModel.DetailOil_Result)">
+      <Parameter Name="idactivity" Mode="In" Type="Int32" />
+      <Parameter Name="iddumptruckactivity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DetailOperation" ReturnType="Collection(EquipmentModel.DetailOperation_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportHeavyEqpActivities" ReturnType="Collection(EquipmentModel.ReportHeavyEqpActivities_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AutocompleteLoadType" ReturnType="Collection(EquipmentModel.AutocompleteLoadType_Result)">
+      <Parameter Name="term" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AutocompleteLocation" ReturnType="Collection(EquipmentModel.AutocompleteLocation_Result)">
+      <Parameter Name="termlocation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DetailDumpTruckOperation" ReturnType="Collection(EquipmentModel.DetailDumpTruckOperation_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NonOpType" ReturnType="Collection(EquipmentModel.NonOpType_Result)">
+      <Parameter Name="term" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ReportDumpTruckActivities" ReturnType="Collection(EquipmentModel.ReportDumpTruckActivities_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="OperatorType" ReturnType="Collection(EquipmentModel.OperatorType_Result)">
+      <Parameter Name="officeId" Mode="In" Type="Int32" />
+      <Parameter Name="autocomplete" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="AllMerks" EntityType="EquipmentModel.AllMerk" />
+    <EntitySet Name="AllOils" EntityType="EquipmentModel.AllOil" />
+    <EntitySet Name="DumpTruckNonOperations" EntityType="EquipmentModel.DumpTruckNonOperation" />
+    <EntitySet Name="DumpTruckOperations" EntityType="EquipmentModel.DumpTruckOperation" />
+    <EntitySet Name="FuelUsedDumpTrucks" EntityType="EquipmentModel.FuelUsedDumpTruck" />
+    <EntitySet Name="FuelUsedHeavyEqps" EntityType="EquipmentModel.FuelUsedHeavyEqp" />
+    <EntitySet Name="FuelUsedOutTradoes" EntityType="EquipmentModel.FuelUsedOutTrado" />
+    <EntitySet Name="FuelUsedTradoes" EntityType="EquipmentModel.FuelUsedTrado" />
+    <EntitySet Name="HeavyEqps" EntityType="EquipmentModel.HeavyEqp" />
+    <EntitySet Name="HeavyEqpNonOperations" EntityType="EquipmentModel.HeavyEqpNonOperation" />
+    <EntitySet Name="HeavyEqpOperations" EntityType="EquipmentModel.HeavyEqpOperation" />
+    <EntitySet Name="HeavyEquipmentTypes" EntityType="EquipmentModel.HeavyEquipmentType" />
+    <EntitySet Name="OilAndSparePartUsedTradoes" EntityType="EquipmentModel.OilAndSparePartUsedTrado" />
+    <EntitySet Name="OilUsedDumpTrucks" EntityType="EquipmentModel.OilUsedDumpTruck" />
+    <EntitySet Name="OilUsedHeavyEqps" EntityType="EquipmentModel.OilUsedHeavyEqp" />
+    <EntitySet Name="OutFitEqps" EntityType="EquipmentModel.OutFitEqp" />
+    <EntitySet Name="TradoNonOperations" EntityType="EquipmentModel.TradoNonOperation" />
+    <EntitySet Name="TradoOperations" EntityType="EquipmentModel.TradoOperation" />
+    <EntitySet Name="TypeNonOperations" EntityType="EquipmentModel.TypeNonOperation" />
+    <EntitySet Name="HeavyEqpActivities" EntityType="EquipmentModel.HeavyEqpActivity" />
+    <AssociationSet Name="FK_FuelUsedHeavyEqp_HeavyEqpActivity" Association="EquipmentModel.FK_FuelUsedHeavyEqp_HeavyEqpActivity">
+      <End Role="HeavyEqpActivity" EntitySet="HeavyEqpActivities" />
+      <End Role="FuelUsedHeavyEqp" EntitySet="FuelUsedHeavyEqps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpNonOperation_HeavyEqpActivity" Association="EquipmentModel.FK_HeavyEqpNonOperation_HeavyEqpActivity">
+      <End Role="HeavyEqpActivity" EntitySet="HeavyEqpActivities" />
+      <End Role="HeavyEqpNonOperation" EntitySet="HeavyEqpNonOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpOperation_HeavyEqpActivity" Association="EquipmentModel.FK_HeavyEqpOperation_HeavyEqpActivity">
+      <End Role="HeavyEqpActivity" EntitySet="HeavyEqpActivities" />
+      <End Role="HeavyEqpOperation" EntitySet="HeavyEqpOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OilUsedHeavyEqp_HeavyEqpActivity" Association="EquipmentModel.FK_OilUsedHeavyEqp_HeavyEqpActivity">
+      <End Role="HeavyEqpActivity" EntitySet="HeavyEqpActivities" />
+      <End Role="OilUsedHeavyEqp" EntitySet="OilUsedHeavyEqps" />
+    </AssociationSet>
+    <FunctionImport Name="ReportTradoActivities" ReturnType="Collection(EquipmentModel.ReportTradoActivities_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcTradoOperations" ReturnType="Collection(EquipmentModel.ProcTradoOperations_Result)">
+      <Parameter Name="idactivity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcTradoNonOp" ReturnType="Collection(EquipmentModel.ProcTradoNonOp_Result)">
+      <Parameter Name="idactivity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcBBMTradoOut" ReturnType="Collection(EquipmentModel.ProcBBMTradoOut_Result)">
+      <Parameter Name="idactivity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcBBMTrado" ReturnType="Collection(EquipmentModel.ProcBBMTrado_Result)">
+      <Parameter Name="idactivity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcOil_SparePart" ReturnType="Collection(EquipmentModel.ProcOil_SparePart_Result)">
+      <Parameter Name="idactivity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="DetailMaintenanceHeavyEqps" EntityType="EquipmentModel.DetailMaintenanceHeavyEqp" />
+    <EntitySet Name="MaintenanceHeavyEquipments" EntityType="EquipmentModel.MaintenanceHeavyEquipment" />
+    <AssociationSet Name="FK_DetailMaintenanceHeavyEqp_DetailMaintenanceHeavyEqp" Association="EquipmentModel.FK_DetailMaintenanceHeavyEqp_DetailMaintenanceHeavyEqp">
+      <End Role="MaintenanceHeavyEquipment" EntitySet="MaintenanceHeavyEquipments" />
+      <End Role="DetailMaintenanceHeavyEqp" EntitySet="DetailMaintenanceHeavyEqps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceHeavyEquipment_HeavyEqp" Association="EquipmentModel.FK_MaintenanceHeavyEquipment_HeavyEqp">
+      <End Role="HeavyEqp" EntitySet="HeavyEqps" />
+      <End Role="MaintenanceHeavyEquipment" EntitySet="MaintenanceHeavyEquipments" />
+    </AssociationSet>
+    <EntitySet Name="VehicleMaintenanceChecks" EntityType="EquipmentModel.VehicleMaintenanceCheck" />
+    <EntitySet Name="VehicleMaintenanceCheckItems" EntityType="EquipmentModel.VehicleMaintenanceCheckItem" />
+    <AssociationSet Name="FK_VehicleMaintenanceCheckItem_VehicleMaintenanceCheckItem" Association="EquipmentModel.FK_VehicleMaintenanceCheckItem_VehicleMaintenanceCheckItem">
+      <End Role="VehicleMaintenanceCheck" EntitySet="VehicleMaintenanceChecks" />
+      <End Role="VehicleMaintenanceCheckItem" EntitySet="VehicleMaintenanceCheckItems" />
+    </AssociationSet>
+    <EntitySet Name="MachineTypes" EntityType="EquipmentModel.MachineType" />
+    <EntitySet Name="MaintenanceTemplateItems" EntityType="EquipmentModel.MaintenanceTemplateItem" />
+    <AssociationSet Name="FK_MaintenanceTemplateItem_MachineType" Association="EquipmentModel.FK_MaintenanceTemplateItem_MachineType">
+      <End Role="MachineType" EntitySet="MachineTypes" />
+      <End Role="MaintenanceTemplateItem" EntitySet="MaintenanceTemplateItems" />
+    </AssociationSet>
+    <EntitySet Name="HeavyEquipmentMaintenanceCheckItems" EntityType="EquipmentModel.HeavyEquipmentMaintenanceCheckItem" />
+    <EntitySet Name="HeavyEquipmentMaintenanceChecks" EntityType="EquipmentModel.HeavyEquipmentMaintenanceCheck" />
+    <AssociationSet Name="FK_HeavyEquipmentMaintenanceCheck_HeavyEqp" Association="EquipmentModel.FK_HeavyEquipmentMaintenanceCheck_HeavyEqp">
+      <End Role="HeavyEqp" EntitySet="HeavyEqps" />
+      <End Role="HeavyEquipmentMaintenanceCheck" EntitySet="HeavyEquipmentMaintenanceChecks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEquipmentMaintenanceCheckItem_HeavyEquipmentMaintenanceCheck" Association="EquipmentModel.FK_HeavyEquipmentMaintenanceCheckItem_HeavyEquipmentMaintenanceCheck">
+      <End Role="HeavyEquipmentMaintenanceCheck" EntitySet="HeavyEquipmentMaintenanceChecks" />
+      <End Role="HeavyEquipmentMaintenanceCheckItem" EntitySet="HeavyEquipmentMaintenanceCheckItems" />
+    </AssociationSet>
+    <EntitySet Name="MachineEqpMaintenanceChecks" EntityType="EquipmentModel.MachineEqpMaintenanceCheck" />
+    <EntitySet Name="MachineEqpMaintenanceCheckItems" EntityType="EquipmentModel.MachineEqpMaintenanceCheckItem" />
+    <AssociationSet Name="FK_MachineEqpMaintenanceCheckItem_MachineEqpMaintenanceCheck" Association="EquipmentModel.FK_MachineEqpMaintenanceCheckItem_MachineEqpMaintenanceCheck">
+      <End Role="MachineEqpMaintenanceCheck" EntitySet="MachineEqpMaintenanceChecks" />
+      <End Role="MachineEqpMaintenanceCheckItem" EntitySet="MachineEqpMaintenanceCheckItems" />
+    </AssociationSet>
+    <EntitySet Name="Vehicles" EntityType="EquipmentModel.Vehicle" />
+    <AssociationSet Name="FK_VehicleMaintenanceCheck_Vehicle" Association="EquipmentModel.FK_VehicleMaintenanceCheck_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicles" />
+      <End Role="VehicleMaintenanceCheck" EntitySet="VehicleMaintenanceChecks" />
+    </AssociationSet>
+    <EntitySet Name="DumpTruckActivities" EntityType="EquipmentModel.DumpTruckActivity" />
+    <EntitySet Name="TradoActivities" EntityType="EquipmentModel.TradoActivity" />
+    <AssociationSet Name="FK_DumpTruckNonOperation_DumpTruckActivity" Association="EquipmentModel.FK_DumpTruckNonOperation_DumpTruckActivity">
+      <End Role="DumpTruckActivity" EntitySet="DumpTruckActivities" />
+      <End Role="DumpTruckNonOperation" EntitySet="DumpTruckNonOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DumpTruckOperation_DumpTruckActivity" Association="EquipmentModel.FK_DumpTruckOperation_DumpTruckActivity">
+      <End Role="DumpTruckActivity" EntitySet="DumpTruckActivities" />
+      <End Role="DumpTruckOperation" EntitySet="DumpTruckOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuelUsedDumpTruck_DumpTruckActivity" Association="EquipmentModel.FK_FuelUsedDumpTruck_DumpTruckActivity">
+      <End Role="DumpTruckActivity" EntitySet="DumpTruckActivities" />
+      <End Role="FuelUsedDumpTruck" EntitySet="FuelUsedDumpTrucks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OilUsedDumpTruck_DumpTruckActivity" Association="EquipmentModel.FK_OilUsedDumpTruck_DumpTruckActivity">
+      <End Role="DumpTruckActivity" EntitySet="DumpTruckActivities" />
+      <End Role="OilUsedDumpTruck" EntitySet="OilUsedDumpTrucks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuelUsedOutTrado_TradoActivity" Association="EquipmentModel.FK_FuelUsedOutTrado_TradoActivity">
+      <End Role="TradoActivity" EntitySet="TradoActivities" />
+      <End Role="FuelUsedOutTrado" EntitySet="FuelUsedOutTradoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuelUsedTrado_TradoActivity" Association="EquipmentModel.FK_FuelUsedTrado_TradoActivity">
+      <End Role="TradoActivity" EntitySet="TradoActivities" />
+      <End Role="FuelUsedTrado" EntitySet="FuelUsedTradoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OilAndSparePartUsedTrado_TradoActivity" Association="EquipmentModel.FK_OilAndSparePartUsedTrado_TradoActivity">
+      <End Role="TradoActivity" EntitySet="TradoActivities" />
+      <End Role="OilAndSparePartUsedTrado" EntitySet="OilAndSparePartUsedTradoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TradoNonOperation_TradoActivity" Association="EquipmentModel.FK_TradoNonOperation_TradoActivity">
+      <End Role="TradoActivity" EntitySet="TradoActivities" />
+      <End Role="TradoNonOperation" EntitySet="TradoNonOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TradoOperation_TradoActivity" Association="EquipmentModel.FK_TradoOperation_TradoActivity">
+      <End Role="TradoActivity" EntitySet="TradoActivities" />
+      <End Role="TradoOperation" EntitySet="TradoOperations" />
+    </AssociationSet>
+    <FunctionImport Name="AutocompleteItemMaintenance" ReturnType="Collection(EquipmentModel.AutocompleteItemMaintenance_Result)">
+      <Parameter Name="term" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="VehicleTypes" EntityType="EquipmentModel.VehicleType" />
+    <EntitySet Name="VehicleMaintenanceRecordItems" EntityType="EquipmentModel.VehicleMaintenanceRecordItem" />
+    <EntitySet Name="VehicleMaintenanceRecordMaterialUseds" EntityType="EquipmentModel.VehicleMaintenanceRecordMaterialUsed" />
+    <EntitySet Name="VehicleMaintenanceRecordOthers" EntityType="EquipmentModel.VehicleMaintenanceRecordOther" />
+    <EntitySet Name="VehicleMaintenanceRecords" EntityType="EquipmentModel.VehicleMaintenanceRecord" />
+    <AssociationSet Name="FK_VehicleMaintenanceRecord_Vehicle" Association="EquipmentModel.FK_VehicleMaintenanceRecord_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicles" />
+      <End Role="VehicleMaintenanceRecord" EntitySet="VehicleMaintenanceRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleMaintenanceRecordItem_VehicleMaintenanceRecord" Association="EquipmentModel.FK_VehicleMaintenanceRecordItem_VehicleMaintenanceRecord">
+      <End Role="VehicleMaintenanceRecord" EntitySet="VehicleMaintenanceRecords" />
+      <End Role="VehicleMaintenanceRecordItem" EntitySet="VehicleMaintenanceRecordItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleMaintenanceRecordMaterialUsed_VehicleMaintenanceRecord" Association="EquipmentModel.FK_VehicleMaintenanceRecordMaterialUsed_VehicleMaintenanceRecord">
+      <End Role="VehicleMaintenanceRecord" EntitySet="VehicleMaintenanceRecords" />
+      <End Role="VehicleMaintenanceRecordMaterialUsed" EntitySet="VehicleMaintenanceRecordMaterialUseds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleMaintenanceRecordOther_VehicleMaintenanceRecord" Association="EquipmentModel.FK_VehicleMaintenanceRecordOther_VehicleMaintenanceRecord">
+      <End Role="VehicleMaintenanceRecord" EntitySet="VehicleMaintenanceRecords" />
+      <End Role="VehicleMaintenanceRecordOther" EntitySet="VehicleMaintenanceRecordOthers" />
+    </AssociationSet>
+    <FunctionImport Name="ReportVehicleMaintenance" ReturnType="Collection(EquipmentModel.ReportVehicleMaintenance_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportVehicleMaintenanceOther" ReturnType="Collection(EquipmentModel.ReportVehicleMaintenanceOther_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportVehicleMaintenanceMaterialUsed" ReturnType="Collection(EquipmentModel.ReportVehicleMaintenanceMaterialUsed_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportVehicleMaintenanceItemWork" ReturnType="Collection(EquipmentModel.ReportVehicleMaintenanceItemWork_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="MachineEqps" EntityType="EquipmentModel.MachineEqp" />
+    <AssociationSet Name="FK_MachineEqpMaintenanceCheck_MachineEqp" Association="EquipmentModel.FK_MachineEqpMaintenanceCheck_MachineEqp">
+      <End Role="MachineEqp" EntitySet="MachineEqps" />
+      <End Role="MachineEqpMaintenanceCheck" EntitySet="MachineEqpMaintenanceChecks" />
+    </AssociationSet>
+    <EntitySet Name="HeavyEqpMaintenanceRecords" EntityType="EquipmentModel.HeavyEqpMaintenanceRecord" />
+    <EntitySet Name="HeavyEqpMaintenanceRecordItems" EntityType="EquipmentModel.HeavyEqpMaintenanceRecordItem" />
+    <EntitySet Name="HeavyEqpMaintenanceRecordMaterialUseds" EntityType="EquipmentModel.HeavyEqpMaintenanceRecordMaterialUsed" />
+    <EntitySet Name="HeavyEqpMaintenanceRecordOthers" EntityType="EquipmentModel.HeavyEqpMaintenanceRecordOther" />
+    <AssociationSet Name="FK_HeavyEqpMaintenanceRecord_HeavyEqp" Association="EquipmentModel.FK_HeavyEqpMaintenanceRecord_HeavyEqp">
+      <End Role="HeavyEqp" EntitySet="HeavyEqps" />
+      <End Role="HeavyEqpMaintenanceRecord" EntitySet="HeavyEqpMaintenanceRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpMaintenanceRecordItem_HeavyEqpMaintenanceRecord" Association="EquipmentModel.FK_HeavyEqpMaintenanceRecordItem_HeavyEqpMaintenanceRecord">
+      <End Role="HeavyEqpMaintenanceRecord" EntitySet="HeavyEqpMaintenanceRecords" />
+      <End Role="HeavyEqpMaintenanceRecordItem" EntitySet="HeavyEqpMaintenanceRecordItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpMaintenanceRecordMaterialUsed_HeavyEqpMaintenanceRecord" Association="EquipmentModel.FK_HeavyEqpMaintenanceRecordMaterialUsed_HeavyEqpMaintenanceRecord">
+      <End Role="HeavyEqpMaintenanceRecord" EntitySet="HeavyEqpMaintenanceRecords" />
+      <End Role="HeavyEqpMaintenanceRecordMaterialUsed" EntitySet="HeavyEqpMaintenanceRecordMaterialUseds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpMaintenanceRecordOther_HeavyEqpMaintenanceRecord" Association="EquipmentModel.FK_HeavyEqpMaintenanceRecordOther_HeavyEqpMaintenanceRecord">
+      <End Role="HeavyEqpMaintenanceRecord" EntitySet="HeavyEqpMaintenanceRecords" />
+      <End Role="HeavyEqpMaintenanceRecordOther" EntitySet="HeavyEqpMaintenanceRecordOthers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpMaintenanceRecordItem_HeavyEquipmentMaintenanceCheckItem" Association="EquipmentModel.FK_HeavyEqpMaintenanceRecordItem_HeavyEquipmentMaintenanceCheckItem">
+      <End Role="HeavyEquipmentMaintenanceCheckItem" EntitySet="HeavyEquipmentMaintenanceCheckItems" />
+      <End Role="HeavyEqpMaintenanceRecordItem" EntitySet="HeavyEqpMaintenanceRecordItems" />
+    </AssociationSet>
+    <EntitySet Name="MachineMaintenanceRecords" EntityType="EquipmentModel.MachineMaintenanceRecord" />
+    <EntitySet Name="MachineMaintenanceRecordItems" EntityType="EquipmentModel.MachineMaintenanceRecordItem" />
+    <EntitySet Name="MachineMaintenanceRecordMaterialUseds" EntityType="EquipmentModel.MachineMaintenanceRecordMaterialUsed" />
+    <EntitySet Name="MachineMaintenanceRecordOthers" EntityType="EquipmentModel.MachineMaintenanceRecordOther" />
+    <AssociationSet Name="FK_MachineMaintenanceRecord_Machine" Association="EquipmentModel.FK_MachineMaintenanceRecord_Machine">
+      <End Role="MachineEqp" EntitySet="MachineEqps" />
+      <End Role="MachineMaintenanceRecord" EntitySet="MachineMaintenanceRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MachineMaintenanceRecordItem_MachineMaintenanceRecord" Association="EquipmentModel.FK_MachineMaintenanceRecordItem_MachineMaintenanceRecord">
+      <End Role="MachineMaintenanceRecord" EntitySet="MachineMaintenanceRecords" />
+      <End Role="MachineMaintenanceRecordItem" EntitySet="MachineMaintenanceRecordItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MachineMaintenanceRecordMaterialUsed_MachineMaintenanceRecord" Association="EquipmentModel.FK_MachineMaintenanceRecordMaterialUsed_MachineMaintenanceRecord">
+      <End Role="MachineMaintenanceRecord" EntitySet="MachineMaintenanceRecords" />
+      <End Role="MachineMaintenanceRecordMaterialUsed" EntitySet="MachineMaintenanceRecordMaterialUseds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MachineMaintenanceRecordOther_MachineMaintenanceRecord" Association="EquipmentModel.FK_MachineMaintenanceRecordOther_MachineMaintenanceRecord">
+      <End Role="MachineMaintenanceRecord" EntitySet="MachineMaintenanceRecords" />
+      <End Role="MachineMaintenanceRecordOther" EntitySet="MachineMaintenanceRecordOthers" />
+    </AssociationSet>
+    <FunctionImport Name="ReportMachineMaintenance" ReturnType="Collection(EquipmentModel.ReportMachineMaintenance_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportMachineMaintenanceItemWork" ReturnType="Collection(EquipmentModel.ReportMachineMaintenanceItemWork_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportMachineMaintenanceMaterialUsed" ReturnType="Collection(EquipmentModel.ReportMachineMaintenanceMaterialUsed_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportMachineMaintenanceOther" ReturnType="Collection(EquipmentModel.ReportMachineMaintenanceOther_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportHeavyEqpMaintenance" ReturnType="Collection(EquipmentModel.ReportHeavyEqpMaintenance_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportHeavyEqpMaintenanceMaterialUsed" ReturnType="Collection(EquipmentModel.ReportHeavyEqpMaintenanceMaterialUsed_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportHeavyEqpMaintenanceOther" ReturnType="Collection(EquipmentModel.ReportHeavyEqpMaintenanceOther_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportHeavyEquipmentMaintenanceItemWork" ReturnType="Collection(EquipmentModel.ReportHeavyEquipmentMaintenanceItemWork_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="OperatorType_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="DetailActivities_Result">
+    <Property Type="Int32" Name="IDOperation" Nullable="true" />
+    <Property Type="Int32" Name="IDOpActivity" Nullable="true" />
+    <Property Type="String" Name="OperationType" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="VolumeOperation" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="LocationOperation" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="BeginHM" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="EndHM" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="PacketOperation" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IDNonOperation" Nullable="false" />
+    <Property Type="Int32" Name="IDNonOpActivity" Nullable="false" />
+    <Property Type="Time" Name="Begin" Nullable="false" />
+    <Property Type="Time" Name="End" Nullable="false" />
+    <Property Type="String" Name="Reason" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="IDOil" Nullable="true" />
+    <Property Type="Int32" Name="IDOilActivity" Nullable="true" />
+    <Property Type="String" Name="OilType" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="IDFuel" Nullable="true" />
+    <Property Type="Int32" Name="IDFuelActivity" Nullable="true" />
+    <Property Type="Decimal" Name="AmountFuel" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="NonOperationType" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="DetailFuel_Result">
+    <Property Type="Int32" Name="IDFuel" Nullable="true" />
+    <Property Type="Decimal" Name="AmountFuel" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="DetailNonOperation_Result">
+    <Property Type="Int32" Name="IDNonOperation" Nullable="false" />
+    <Property Type="String" Name="NonOperationType" Nullable="false" MaxLength="50" />
+    <Property Type="Time" Name="Begin" Nullable="false" />
+    <Property Type="Time" Name="End" Nullable="false" />
+    <Property Type="String" Name="Reason" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="No" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DetailOil_Result">
+    <Property Type="Int32" Name="IDOil" Nullable="true" />
+    <Property Type="String" Name="OilType" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="No" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DetailOperation_Result">
+    <Property Type="Int32" Name="IDOperation" Nullable="true" />
+    <Property Type="String" Name="OperationType" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="VolumeOperation" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="LocationOperation" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="BeginHM" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="EndHM" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="PacketOperation" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="No" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ReportHeavyEqpActivities_Result">
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Merk" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Operator" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="IDOp" Nullable="false" />
+    <Property Type="String" Name="Date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Day" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BeginSecondOvertime" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndSecondOvertime" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginNormalI" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndNormalI" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginBreakI" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndBreakI" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginNormalII" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndNormalII" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginBreakII" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndBreakII" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginFirstOverTime1" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginFirstOverTime2" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndFirstOverTime1" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndFirstOverTime2" Nullable="true" MaxLength="5" />
+    <Property Type="Decimal" Name="JamNormal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="JamLembur1" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="JamLembur2" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="CorrectBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="KnownBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JabatanCorrectBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JabatanKnowBy" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="AutocompleteLoadType_Result">
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="AutocompleteLocation_Result">
+    <Property Type="String" Name="Location" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="NonOpType_Result">
+    <Property Type="String" Name="NonOpType" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ReportDumpTruckActivities_Result">
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Operator" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PoliceNumber" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Day" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BeginSecondOvertime" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndSecondOvertime" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginNormalI" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndNormalI" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginBreakI" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndBreakI" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginNormalII" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndNormalII" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginBreakII" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndBreakII" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginFirstOverTime1" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="BeginFirstOverTime2" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndFirstOverTime1" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="EndFirstOverTime2" Nullable="true" MaxLength="5" />
+    <Property Type="Decimal" Name="JamNormal" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="JamLembur1" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="JamLembur2" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="CorrectBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="KnownBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JabatanCorrectBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JabatanKnownBy" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="NonOperation_Result">
+    <Property Type="Int32" Name="IDNonOperation" Nullable="false" />
+    <Property Type="String" Name="NonOperationType" Nullable="false" MaxLength="50" />
+    <Property Type="Time" Name="Begin" Nullable="false" />
+    <Property Type="Time" Name="End" Nullable="false" />
+    <Property Type="String" Name="Reason" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="DetailDumpTruckOperation_Result">
+    <Property Type="Int32" Name="IDOperation" Nullable="true" />
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="String" Name="loadtype" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="sourcelocation" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="destination" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="departuretime" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="arrivaltime" Nullable="true" MaxLength="5" />
+    <Property Type="Decimal" Name="distance" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <EntityType Name="AllMerk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MerkName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AllOil">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="OilName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DumpTruckNonOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="String" Name="NonOperationType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Time" Name="Begin" Nullable="false" />
+    <Property Type="Time" Name="End" Nullable="false" />
+    <Property Type="String" Name="Reason" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DumpTruckActivity" Relationship="EquipmentModel.FK_DumpTruckNonOperation_DumpTruckActivity" FromRole="DumpTruckNonOperation" ToRole="DumpTruckActivity" />
+  </EntityType>
+  <EntityType Name="DumpTruckOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="String" Name="LoadType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SourceLocation" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Time" Name="DepartureTime" Nullable="false" />
+    <Property Type="Time" Name="ArrivalTime" Nullable="false" />
+    <Property Type="String" Name="Destination" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Distance" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="ReceiverName" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DumpTruckActivity" Relationship="EquipmentModel.FK_DumpTruckOperation_DumpTruckActivity" FromRole="DumpTruckOperation" ToRole="DumpTruckActivity" />
+  </EntityType>
+  <EntityType Name="FuelUsedDumpTruck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" Nullable="false" />
+    <Property Type="Decimal" Name="AmountFuel" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="DumpTruckActivity" Relationship="EquipmentModel.FK_FuelUsedDumpTruck_DumpTruckActivity" FromRole="FuelUsedDumpTruck" ToRole="DumpTruckActivity" />
+  </EntityType>
+  <EntityType Name="FuelUsedHeavyEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="Decimal" Name="AmountFuel" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="HeavyEqpActivity" Relationship="EquipmentModel.FK_FuelUsedHeavyEqp_HeavyEqpActivity" FromRole="FuelUsedHeavyEqp" ToRole="HeavyEqpActivity" />
+  </EntityType>
+  <EntityType Name="FuelUsedOutTrado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="String" Name="Alocation" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="AmountFuelOut" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Operator" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TradoActivity" Relationship="EquipmentModel.FK_FuelUsedOutTrado_TradoActivity" FromRole="FuelUsedOutTrado" ToRole="TradoActivity" />
+  </EntityType>
+  <EntityType Name="FuelUsedTrado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="Time" Name="TimeFill" Nullable="false" />
+    <Property Type="Decimal" Name="AmountFuel" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Location" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TradoActivity" Relationship="EquipmentModel.FK_FuelUsedTrado_TradoActivity" FromRole="FuelUsedTrado" ToRole="TradoActivity" />
+  </EntityType>
+  <EntityType Name="HeavyEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDArea" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Merk" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Species" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="Int32" Name="Year" Nullable="false" />
+    <Property Type="String" Name="TaxNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DueDate" />
+    <Property Type="String" Name="SerialNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Capacity" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remarks" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="Img" MaxLength="Max" FixedLength="false" />
+    <Property Type="Int32" Name="BuiltYear" />
+    <Property Type="Int32" Name="IDOpr" />
+    <Property Type="String" Name="OprName" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MaintenanceHeavyEquipments" Relationship="EquipmentModel.FK_MaintenanceHeavyEquipment_HeavyEqp" FromRole="HeavyEqp" ToRole="MaintenanceHeavyEquipment" />
+    <NavigationProperty Name="HeavyEquipmentMaintenanceChecks" Relationship="EquipmentModel.FK_HeavyEquipmentMaintenanceCheck_HeavyEqp" FromRole="HeavyEqp" ToRole="HeavyEquipmentMaintenanceCheck" />
+    <NavigationProperty Name="HeavyEqpMaintenanceRecords" Relationship="EquipmentModel.FK_HeavyEqpMaintenanceRecord_HeavyEqp" FromRole="HeavyEqp" ToRole="HeavyEqpMaintenanceRecord" />
+  </EntityType>
+  <EntityType Name="HeavyEqpNonOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="String" Name="NonOperationType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Time" Name="Begin" Nullable="false" />
+    <Property Type="Time" Name="End" Nullable="false" />
+    <Property Type="String" Name="Reason" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HeavyEqpActivity" Relationship="EquipmentModel.FK_HeavyEqpNonOperation_HeavyEqpActivity" FromRole="HeavyEqpNonOperation" ToRole="HeavyEqpActivity" />
+  </EntityType>
+  <EntityType Name="HeavyEqpOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="String" Name="OperationType" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="VolumeOperation" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="LocationOperation" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="BeginHM" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="EndHM" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="PacketOperation" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HeavyEqpActivity" Relationship="EquipmentModel.FK_HeavyEqpOperation_HeavyEqpActivity" FromRole="HeavyEqpOperation" ToRole="HeavyEqpActivity" />
+  </EntityType>
+  <EntityType Name="HeavyEquipmentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OilAndSparePartUsedTrado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="String" Name="OilOrSparePartType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TradoActivity" Relationship="EquipmentModel.FK_OilAndSparePartUsedTrado_TradoActivity" FromRole="OilAndSparePartUsedTrado" ToRole="TradoActivity" />
+  </EntityType>
+  <EntityType Name="OilUsedDumpTruck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="String" Name="OilType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="DumpTruckActivity" Relationship="EquipmentModel.FK_OilUsedDumpTruck_DumpTruckActivity" FromRole="OilUsedDumpTruck" ToRole="DumpTruckActivity" />
+  </EntityType>
+  <EntityType Name="OilUsedHeavyEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="String" Name="OilType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="HeavyEqpActivity" Relationship="EquipmentModel.FK_OilUsedHeavyEqp_HeavyEqpActivity" FromRole="OilUsedHeavyEqp" ToRole="HeavyEqpActivity" />
+  </EntityType>
+  <EntityType Name="OutFitEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Total" Nullable="false" />
+    <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="TradoNonOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="String" Name="NonOperationType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Reason" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TradoActivity" Relationship="EquipmentModel.FK_TradoNonOperation_TradoActivity" FromRole="TradoNonOperation" ToRole="TradoActivity" />
+  </EntityType>
+  <EntityType Name="TradoOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDActivity" />
+    <Property Type="String" Name="LoadType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Operator" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SourceLocation" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Time" Name="DepartureTime" Nullable="false" />
+    <Property Type="Time" Name="ArrivalTime" Nullable="false" />
+    <Property Type="String" Name="Destination" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="BeginKM" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="EndKM" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Distance" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="TradoActivity" Relationship="EquipmentModel.FK_TradoOperation_TradoActivity" FromRole="TradoOperation" ToRole="TradoActivity" />
+  </EntityType>
+  <EntityType Name="TypeNonOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="NonOpType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HeavyEqpActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Merk" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Operator" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IDOp" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+    <Property Type="Time" Name="BeginSecondOverTime" />
+    <Property Type="Time" Name="EndSecondOverTime" />
+    <Property Type="Time" Name="BeginNormalI" />
+    <Property Type="Time" Name="EndNormalI" />
+    <Property Type="Time" Name="BeginBreakI" />
+    <Property Type="Time" Name="EndBreakI" />
+    <Property Type="Time" Name="BeginNormalII" />
+    <Property Type="Time" Name="EndNormalII" />
+    <Property Type="Time" Name="BeginBreakII" />
+    <Property Type="Time" Name="EndBreakII" />
+    <Property Type="Time" Name="BeginFirstOverTime1" />
+    <Property Type="Time" Name="EndFirstOverTime1" />
+    <Property Type="Time" Name="BeginFirstOverTime2" />
+    <Property Type="Time" Name="EndFirstOvertime2" />
+    <Property Type="Int32" Name="IDArea" Nullable="false" />
+    <Property Type="String" Name="CorrectBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="KnownBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="JabatanCorrectBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="JabatanKnowBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FuelUsedHeavyEqps" Relationship="EquipmentModel.FK_FuelUsedHeavyEqp_HeavyEqpActivity" FromRole="HeavyEqpActivity" ToRole="FuelUsedHeavyEqp" />
+    <NavigationProperty Name="HeavyEqpNonOperations" Relationship="EquipmentModel.FK_HeavyEqpNonOperation_HeavyEqpActivity" FromRole="HeavyEqpActivity" ToRole="HeavyEqpNonOperation" />
+    <NavigationProperty Name="HeavyEqpOperations" Relationship="EquipmentModel.FK_HeavyEqpOperation_HeavyEqpActivity" FromRole="HeavyEqpActivity" ToRole="HeavyEqpOperation" />
+    <NavigationProperty Name="OilUsedHeavyEqps" Relationship="EquipmentModel.FK_OilUsedHeavyEqp_HeavyEqpActivity" FromRole="HeavyEqpActivity" ToRole="OilUsedHeavyEqp" />
+  </EntityType>
+  <Association Name="FK_FuelUsedHeavyEqp_HeavyEqpActivity">
+    <End Type="EquipmentModel.HeavyEqpActivity" Role="HeavyEqpActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.FuelUsedHeavyEqp" Role="FuelUsedHeavyEqp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FuelUsedHeavyEqp">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpNonOperation_HeavyEqpActivity">
+    <End Type="EquipmentModel.HeavyEqpActivity" Role="HeavyEqpActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.HeavyEqpNonOperation" Role="HeavyEqpNonOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEqpNonOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpOperation_HeavyEqpActivity">
+    <End Type="EquipmentModel.HeavyEqpActivity" Role="HeavyEqpActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.HeavyEqpOperation" Role="HeavyEqpOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEqpOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OilUsedHeavyEqp_HeavyEqpActivity">
+    <End Type="EquipmentModel.HeavyEqpActivity" Role="HeavyEqpActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.OilUsedHeavyEqp" Role="OilUsedHeavyEqp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OilUsedHeavyEqp">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="ReportTradoActivities_Result">
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Driver" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PoliceNumber" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Date" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Day" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="ApprovalBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JabatanApproval" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CorrectBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JabatanCorrectBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="KnownBy" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JabatanKnownBy" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ProcTradoOperations_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="String" Name="LoadType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Operator" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SourceLocation" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="departuretime" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="arrivaltime" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Destination" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="BeginKM" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="EndKM" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Distance" Nullable="false" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="ProcTradoNonOp_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="String" Name="NonOperationType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Reason" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ProcBBMTradoOut_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="Decimal" Name="AmountFuelOut" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Alocation" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Operator" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ProcBBMTrado_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="Decimal" Name="AmountFuel" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Location" Nullable="false" MaxLength="50" />
+    <Property Type="Time" Name="TimeFill" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ProcOil_SparePart_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="String" Name="OilOrSparePartType" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="DetailMaintenanceHeavyEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDMaintenanceHeavyEqp" />
+    <Property Type="String" Name="Mechanic" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MaintenanceHeavyEquipment" Relationship="EquipmentModel.FK_DetailMaintenanceHeavyEqp_DetailMaintenanceHeavyEqp" FromRole="DetailMaintenanceHeavyEqp" ToRole="MaintenanceHeavyEquipment" />
+  </EntityType>
+  <EntityType Name="MaintenanceHeavyEquipment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDHeavyEqp" />
+    <Property Type="Decimal" Name="HM" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Operator" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DateMaintenance" Nullable="false" />
+    <Property Type="String" Name="Trouble" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="DetailMaintenanceHeavyEqps" Relationship="EquipmentModel.FK_DetailMaintenanceHeavyEqp_DetailMaintenanceHeavyEqp" FromRole="MaintenanceHeavyEquipment" ToRole="DetailMaintenanceHeavyEqp" />
+    <NavigationProperty Name="HeavyEqp" Relationship="EquipmentModel.FK_MaintenanceHeavyEquipment_HeavyEqp" FromRole="MaintenanceHeavyEquipment" ToRole="HeavyEqp" />
+  </EntityType>
+  <Association Name="FK_DetailMaintenanceHeavyEqp_DetailMaintenanceHeavyEqp">
+    <End Type="EquipmentModel.MaintenanceHeavyEquipment" Role="MaintenanceHeavyEquipment" Multiplicity="0..1" />
+    <End Type="EquipmentModel.DetailMaintenanceHeavyEqp" Role="DetailMaintenanceHeavyEqp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaintenanceHeavyEquipment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DetailMaintenanceHeavyEqp">
+        <PropertyRef Name="IDMaintenanceHeavyEqp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceHeavyEquipment_HeavyEqp">
+    <End Type="EquipmentModel.HeavyEqp" Role="HeavyEqp" Multiplicity="0..1" />
+    <End Type="EquipmentModel.MaintenanceHeavyEquipment" Role="MaintenanceHeavyEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MaintenanceHeavyEquipment">
+        <PropertyRef Name="IDHeavyEqp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="VehicleMaintenanceCheck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="VehicleId" Nullable="false" />
+    <Property Type="Decimal" Name="AverageUsagePerKilometer" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="VehicleMaintenanceCheckItems" Relationship="EquipmentModel.FK_VehicleMaintenanceCheckItem_VehicleMaintenanceCheckItem" FromRole="VehicleMaintenanceCheck" ToRole="VehicleMaintenanceCheckItem" />
+    <NavigationProperty Name="Vehicle" Relationship="EquipmentModel.FK_VehicleMaintenanceCheck_Vehicle" FromRole="VehicleMaintenanceCheck" ToRole="Vehicle" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceCheckItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="VehicleMaintenanceCheckId" Nullable="false" />
+    <Property Type="String" Name="ItemName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Value" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="UnitValue" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="LastCheck_Kilometer" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="LastCheck_Date" Nullable="false" />
+    <NavigationProperty Name="VehicleMaintenanceCheck" Relationship="EquipmentModel.FK_VehicleMaintenanceCheckItem_VehicleMaintenanceCheckItem" FromRole="VehicleMaintenanceCheckItem" ToRole="VehicleMaintenanceCheck" />
+  </EntityType>
+  <Association Name="FK_VehicleMaintenanceCheckItem_VehicleMaintenanceCheckItem">
+    <End Type="EquipmentModel.VehicleMaintenanceCheck" Role="VehicleMaintenanceCheck" Multiplicity="1" />
+    <End Type="EquipmentModel.VehicleMaintenanceCheckItem" Role="VehicleMaintenanceCheckItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleMaintenanceCheck">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceCheckItem">
+        <PropertyRef Name="VehicleMaintenanceCheckId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MachineType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="MachineTypeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MaintenanceTemplateItems" Relationship="EquipmentModel.FK_MaintenanceTemplateItem_MachineType" FromRole="MachineType" ToRole="MaintenanceTemplateItem" />
+  </EntityType>
+  <EntityType Name="MaintenanceTemplateItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="Value" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MachineTypeID" Nullable="false" />
+    <NavigationProperty Name="MachineType" Relationship="EquipmentModel.FK_MaintenanceTemplateItem_MachineType" FromRole="MaintenanceTemplateItem" ToRole="MachineType" />
+  </EntityType>
+  <Association Name="FK_MaintenanceTemplateItem_MachineType">
+    <End Type="EquipmentModel.MachineType" Role="MachineType" Multiplicity="1" />
+    <End Type="EquipmentModel.MaintenanceTemplateItem" Role="MaintenanceTemplateItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MaintenanceTemplateItem">
+        <PropertyRef Name="MachineTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="HeavyEquipmentMaintenanceCheckItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="HeavyEquipmentMaintenanceCheckId" />
+    <Property Type="String" Name="ItemName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Value" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="UnitValue" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="LastCheck_HM" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="LastCheck_Date" Nullable="false" />
+    <NavigationProperty Name="HeavyEquipmentMaintenanceCheck" Relationship="EquipmentModel.FK_HeavyEquipmentMaintenanceCheckItem_HeavyEquipmentMaintenanceCheck" FromRole="HeavyEquipmentMaintenanceCheckItem" ToRole="HeavyEquipmentMaintenanceCheck" />
+    <NavigationProperty Name="HeavyEqpMaintenanceRecordItems" Relationship="EquipmentModel.FK_HeavyEqpMaintenanceRecordItem_HeavyEquipmentMaintenanceCheckItem" FromRole="HeavyEquipmentMaintenanceCheckItem" ToRole="HeavyEqpMaintenanceRecordItem" />
+  </EntityType>
+  <EntityType Name="HeavyEquipmentMaintenanceCheck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="HeavyEqpId" />
+    <Property Type="Decimal" Name="AverageHourMeter" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="HeavyEqp" Relationship="EquipmentModel.FK_HeavyEquipmentMaintenanceCheck_HeavyEqp" FromRole="HeavyEquipmentMaintenanceCheck" ToRole="HeavyEqp" />
+    <NavigationProperty Name="HeavyEquipmentMaintenanceCheckItems" Relationship="EquipmentModel.FK_HeavyEquipmentMaintenanceCheckItem_HeavyEquipmentMaintenanceCheck" FromRole="HeavyEquipmentMaintenanceCheck" ToRole="HeavyEquipmentMaintenanceCheckItem" />
+  </EntityType>
+  <Association Name="FK_HeavyEquipmentMaintenanceCheck_HeavyEqp">
+    <End Type="EquipmentModel.HeavyEqp" Role="HeavyEqp" Multiplicity="0..1" />
+    <End Type="EquipmentModel.HeavyEquipmentMaintenanceCheck" Role="HeavyEquipmentMaintenanceCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEquipmentMaintenanceCheck">
+        <PropertyRef Name="HeavyEqpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEquipmentMaintenanceCheckItem_HeavyEquipmentMaintenanceCheck">
+    <End Type="EquipmentModel.HeavyEquipmentMaintenanceCheck" Role="HeavyEquipmentMaintenanceCheck" Multiplicity="0..1" />
+    <End Type="EquipmentModel.HeavyEquipmentMaintenanceCheckItem" Role="HeavyEquipmentMaintenanceCheckItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEquipmentMaintenanceCheck">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEquipmentMaintenanceCheckItem">
+        <PropertyRef Name="HeavyEquipmentMaintenanceCheckId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MachineEqpMaintenanceCheck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MachineEqpId" />
+    <Property Type="Decimal" Name="AverageHourMeter" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="MachineEqpMaintenanceCheckItems" Relationship="EquipmentModel.FK_MachineEqpMaintenanceCheckItem_MachineEqpMaintenanceCheck" FromRole="MachineEqpMaintenanceCheck" ToRole="MachineEqpMaintenanceCheckItem" />
+    <NavigationProperty Name="MachineEqp" Relationship="EquipmentModel.FK_MachineEqpMaintenanceCheck_MachineEqp" FromRole="MachineEqpMaintenanceCheck" ToRole="MachineEqp" />
+  </EntityType>
+  <EntityType Name="MachineEqpMaintenanceCheckItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MachineEqpMaintenanceCheckId" />
+    <Property Type="String" Name="ItemName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Value" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="UnitValue" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="LastCheck_Date" Nullable="false" />
+    <NavigationProperty Name="MachineEqpMaintenanceCheck" Relationship="EquipmentModel.FK_MachineEqpMaintenanceCheckItem_MachineEqpMaintenanceCheck" FromRole="MachineEqpMaintenanceCheckItem" ToRole="MachineEqpMaintenanceCheck" />
+  </EntityType>
+  <Association Name="FK_MachineEqpMaintenanceCheckItem_MachineEqpMaintenanceCheck">
+    <End Type="EquipmentModel.MachineEqpMaintenanceCheck" Role="MachineEqpMaintenanceCheck" Multiplicity="0..1" />
+    <End Type="EquipmentModel.MachineEqpMaintenanceCheckItem" Role="MachineEqpMaintenanceCheckItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineEqpMaintenanceCheck">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MachineEqpMaintenanceCheckItem">
+        <PropertyRef Name="MachineEqpMaintenanceCheckId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IDArea" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Merk" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Species" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Year" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PoliceNumber" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MachineNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BonesNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DueDate" Nullable="false" />
+    <Property Type="String" Name="Remarks" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="Img" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="KeurNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="KeurDueDate" />
+    <Property Type="String" Name="BuiltYear" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Capacity" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IDDriver" />
+    <Property Type="String" Name="DriverName" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="VehicleMaintenanceChecks" Relationship="EquipmentModel.FK_VehicleMaintenanceCheck_Vehicle" FromRole="Vehicle" ToRole="VehicleMaintenanceCheck" />
+    <NavigationProperty Name="VehicleMaintenanceRecords" Relationship="EquipmentModel.FK_VehicleMaintenanceRecord_Vehicle" FromRole="Vehicle" ToRole="VehicleMaintenanceRecord" />
+  </EntityType>
+  <Association Name="FK_VehicleMaintenanceCheck_Vehicle">
+    <End Type="EquipmentModel.Vehicle" Role="Vehicle" Multiplicity="1" />
+    <End Type="EquipmentModel.VehicleMaintenanceCheck" Role="VehicleMaintenanceCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceCheck">
+        <PropertyRef Name="VehicleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DumpTruckActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Merk" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Category" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Operator" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IDOp" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+    <Property Type="String" Name="PoliceNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Time" Name="BeginSecondOverTime" />
+    <Property Type="Time" Name="EndSecondOverTime" />
+    <Property Type="Time" Name="BeginNormalI" />
+    <Property Type="Time" Name="EndNormalI" />
+    <Property Type="Time" Name="BeginBreakI" />
+    <Property Type="Time" Name="EndBreakI" />
+    <Property Type="Time" Name="BeginNormalII" />
+    <Property Type="Time" Name="EndNormalII" />
+    <Property Type="Time" Name="BeginBreakII" />
+    <Property Type="Time" Name="EndBreakII" />
+    <Property Type="Time" Name="BeginFirstOverTime1" />
+    <Property Type="Time" Name="EndFirstOverTime1" />
+    <Property Type="Time" Name="BeginFirstOverTime2" />
+    <Property Type="Time" Name="EndFirstOvertime2" />
+    <Property Type="Int32" Name="IDArea" Nullable="false" />
+    <Property Type="String" Name="CorrectBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="KnownBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="JabatanCorrectBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="JabatanKnownBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DumpTruckNonOperations" Relationship="EquipmentModel.FK_DumpTruckNonOperation_DumpTruckActivity" FromRole="DumpTruckActivity" ToRole="DumpTruckNonOperation" />
+    <NavigationProperty Name="DumpTruckOperations" Relationship="EquipmentModel.FK_DumpTruckOperation_DumpTruckActivity" FromRole="DumpTruckActivity" ToRole="DumpTruckOperation" />
+    <NavigationProperty Name="FuelUsedDumpTrucks" Relationship="EquipmentModel.FK_FuelUsedDumpTruck_DumpTruckActivity" FromRole="DumpTruckActivity" ToRole="FuelUsedDumpTruck" />
+    <NavigationProperty Name="OilUsedDumpTrucks" Relationship="EquipmentModel.FK_OilUsedDumpTruck_DumpTruckActivity" FromRole="DumpTruckActivity" ToRole="OilUsedDumpTruck" />
+  </EntityType>
+  <EntityType Name="TradoActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Merk" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Category" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Driver" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IDDriver" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+    <Property Type="String" Name="PoliceNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IDArea" Nullable="false" />
+    <Property Type="String" Name="ApprovalBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="JabatanApproval" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CorrectBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="JabatanCorrectBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="KnownBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="JabatanKnownBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FuelUsedOutTradoes" Relationship="EquipmentModel.FK_FuelUsedOutTrado_TradoActivity" FromRole="TradoActivity" ToRole="FuelUsedOutTrado" />
+    <NavigationProperty Name="FuelUsedTradoes" Relationship="EquipmentModel.FK_FuelUsedTrado_TradoActivity" FromRole="TradoActivity" ToRole="FuelUsedTrado" />
+    <NavigationProperty Name="OilAndSparePartUsedTradoes" Relationship="EquipmentModel.FK_OilAndSparePartUsedTrado_TradoActivity" FromRole="TradoActivity" ToRole="OilAndSparePartUsedTrado" />
+    <NavigationProperty Name="TradoNonOperations" Relationship="EquipmentModel.FK_TradoNonOperation_TradoActivity" FromRole="TradoActivity" ToRole="TradoNonOperation" />
+    <NavigationProperty Name="TradoOperations" Relationship="EquipmentModel.FK_TradoOperation_TradoActivity" FromRole="TradoActivity" ToRole="TradoOperation" />
+  </EntityType>
+  <Association Name="FK_DumpTruckNonOperation_DumpTruckActivity">
+    <End Type="EquipmentModel.DumpTruckActivity" Role="DumpTruckActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.DumpTruckNonOperation" Role="DumpTruckNonOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DumpTruckActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DumpTruckNonOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DumpTruckOperation_DumpTruckActivity">
+    <End Type="EquipmentModel.DumpTruckActivity" Role="DumpTruckActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.DumpTruckOperation" Role="DumpTruckOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DumpTruckActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DumpTruckOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuelUsedDumpTruck_DumpTruckActivity">
+    <End Type="EquipmentModel.DumpTruckActivity" Role="DumpTruckActivity" Multiplicity="1" />
+    <End Type="EquipmentModel.FuelUsedDumpTruck" Role="FuelUsedDumpTruck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DumpTruckActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FuelUsedDumpTruck">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OilUsedDumpTruck_DumpTruckActivity">
+    <End Type="EquipmentModel.DumpTruckActivity" Role="DumpTruckActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.OilUsedDumpTruck" Role="OilUsedDumpTruck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DumpTruckActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OilUsedDumpTruck">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuelUsedOutTrado_TradoActivity">
+    <End Type="EquipmentModel.TradoActivity" Role="TradoActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.FuelUsedOutTrado" Role="FuelUsedOutTrado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TradoActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FuelUsedOutTrado">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuelUsedTrado_TradoActivity">
+    <End Type="EquipmentModel.TradoActivity" Role="TradoActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.FuelUsedTrado" Role="FuelUsedTrado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TradoActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FuelUsedTrado">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OilAndSparePartUsedTrado_TradoActivity">
+    <End Type="EquipmentModel.TradoActivity" Role="TradoActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.OilAndSparePartUsedTrado" Role="OilAndSparePartUsedTrado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TradoActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OilAndSparePartUsedTrado">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TradoNonOperation_TradoActivity">
+    <End Type="EquipmentModel.TradoActivity" Role="TradoActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.TradoNonOperation" Role="TradoNonOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TradoActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TradoNonOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TradoOperation_TradoActivity">
+    <End Type="EquipmentModel.TradoActivity" Role="TradoActivity" Multiplicity="0..1" />
+    <End Type="EquipmentModel.TradoOperation" Role="TradoOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TradoActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TradoOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="AutocompleteItemMaintenance_Result">
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceRecordItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="VehicleMaintenanceRecordId" Nullable="false" />
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="VehicleMaintenanceCheckItemId" Nullable="false" />
+    <NavigationProperty Name="VehicleMaintenanceRecord" Relationship="EquipmentModel.FK_VehicleMaintenanceRecordItem_VehicleMaintenanceRecord" FromRole="VehicleMaintenanceRecordItem" ToRole="VehicleMaintenanceRecord" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceRecordMaterialUsed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="VehicleMaintenanceRecordId" Nullable="false" />
+    <Property Type="String" Name="MaterialUsed" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="Quantity" Nullable="false" />
+    <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="VehicleMaintenanceRecord" Relationship="EquipmentModel.FK_VehicleMaintenanceRecordMaterialUsed_VehicleMaintenanceRecord" FromRole="VehicleMaintenanceRecordMaterialUsed" ToRole="VehicleMaintenanceRecord" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceRecordOther">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="VehicleMaintenanceRecordId" Nullable="false" />
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Remarks" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="VehicleMaintenanceRecord" Relationship="EquipmentModel.FK_VehicleMaintenanceRecordOther_VehicleMaintenanceRecord" FromRole="VehicleMaintenanceRecordOther" ToRole="VehicleMaintenanceRecord" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="MaintenanceDateStart" Nullable="false" />
+    <Property Type="DateTime" Name="MaintenanceDateEnd" Nullable="false" />
+    <Property Type="Int32" Name="VehicleId" Nullable="false" />
+    <Property Type="Double" Name="OdometerValue" Nullable="false" />
+    <Property Type="Int32" Name="MaintenanceState" Nullable="false" />
+    <NavigationProperty Name="Vehicle" Relationship="EquipmentModel.FK_VehicleMaintenanceRecord_Vehicle" FromRole="VehicleMaintenanceRecord" ToRole="Vehicle" />
+    <NavigationProperty Name="VehicleMaintenanceRecordItems" Relationship="EquipmentModel.FK_VehicleMaintenanceRecordItem_VehicleMaintenanceRecord" FromRole="VehicleMaintenanceRecord" ToRole="VehicleMaintenanceRecordItem" />
+    <NavigationProperty Name="VehicleMaintenanceRecordMaterialUseds" Relationship="EquipmentModel.FK_VehicleMaintenanceRecordMaterialUsed_VehicleMaintenanceRecord" FromRole="VehicleMaintenanceRecord" ToRole="VehicleMaintenanceRecordMaterialUsed" />
+    <NavigationProperty Name="VehicleMaintenanceRecordOthers" Relationship="EquipmentModel.FK_VehicleMaintenanceRecordOther_VehicleMaintenanceRecord" FromRole="VehicleMaintenanceRecord" ToRole="VehicleMaintenanceRecordOther" />
+  </EntityType>
+  <Association Name="FK_VehicleMaintenanceRecord_Vehicle">
+    <End Type="EquipmentModel.Vehicle" Role="Vehicle" Multiplicity="1" />
+    <End Type="EquipmentModel.VehicleMaintenanceRecord" Role="VehicleMaintenanceRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceRecord">
+        <PropertyRef Name="VehicleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleMaintenanceRecordItem_VehicleMaintenanceRecord">
+    <End Type="EquipmentModel.VehicleMaintenanceRecord" Role="VehicleMaintenanceRecord" Multiplicity="1" />
+    <End Type="EquipmentModel.VehicleMaintenanceRecordItem" Role="VehicleMaintenanceRecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceRecordItem">
+        <PropertyRef Name="VehicleMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleMaintenanceRecordMaterialUsed_VehicleMaintenanceRecord">
+    <End Type="EquipmentModel.VehicleMaintenanceRecord" Role="VehicleMaintenanceRecord" Multiplicity="1" />
+    <End Type="EquipmentModel.VehicleMaintenanceRecordMaterialUsed" Role="VehicleMaintenanceRecordMaterialUsed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceRecordMaterialUsed">
+        <PropertyRef Name="VehicleMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleMaintenanceRecordOther_VehicleMaintenanceRecord">
+    <End Type="EquipmentModel.VehicleMaintenanceRecord" Role="VehicleMaintenanceRecord" Multiplicity="1" />
+    <End Type="EquipmentModel.VehicleMaintenanceRecordOther" Role="VehicleMaintenanceRecordOther" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceRecordOther">
+        <PropertyRef Name="VehicleMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="ReportVehicleMaintenance_Result">
+    <Property Type="Double" Name="OdometerValue" Nullable="false" />
+    <Property Type="Int32" Name="MaintenanceState" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Merk" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Species" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PoliceNumber" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="DriverName" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="MaintenanceDateStart" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="MaintenanceDateEnd" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="ReportVehicleMaintenanceOther_Result">
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="150" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="ReportVehicleMaintenanceMaterialUsed_Result">
+    <Property Type="String" Name="MaterialUsed" Nullable="false" MaxLength="150" />
+    <Property Type="Double" Name="Quantity" Nullable="false" />
+    <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="ReportVehicleMaintenanceItemWork_Result">
+    <Property Type="String" Name="ItemPekerjaan" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <EntityType Name="MachineEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Capacity" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SerialNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Merk" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MadeYear" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BuyYear" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IDArea" />
+    <NavigationProperty Name="MachineEqpMaintenanceChecks" Relationship="EquipmentModel.FK_MachineEqpMaintenanceCheck_MachineEqp" FromRole="MachineEqp" ToRole="MachineEqpMaintenanceCheck" />
+    <NavigationProperty Name="MachineMaintenanceRecords" Relationship="EquipmentModel.FK_MachineMaintenanceRecord_Machine" FromRole="MachineEqp" ToRole="MachineMaintenanceRecord" />
+  </EntityType>
+  <Association Name="FK_MachineEqpMaintenanceCheck_MachineEqp">
+    <End Type="EquipmentModel.MachineEqp" Role="MachineEqp" Multiplicity="0..1" />
+    <End Type="EquipmentModel.MachineEqpMaintenanceCheck" Role="MachineEqpMaintenanceCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineEqp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MachineEqpMaintenanceCheck">
+        <PropertyRef Name="MachineEqpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="HeavyEqpMaintenanceRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="MaintenanceDateStart" Nullable="false" />
+    <Property Type="DateTime" Name="MaintenanceDateEnd" Nullable="false" />
+    <Property Type="Int32" Name="HeavyEqpId" Nullable="false" />
+    <Property Type="Double" Name="HourmeterValue" Nullable="false" />
+    <Property Type="Int32" Name="MaintenanceState" Nullable="false" />
+    <NavigationProperty Name="HeavyEqp" Relationship="EquipmentModel.FK_HeavyEqpMaintenanceRecord_HeavyEqp" FromRole="HeavyEqpMaintenanceRecord" ToRole="HeavyEqp" />
+    <NavigationProperty Name="HeavyEqpMaintenanceRecordItems" Relationship="EquipmentModel.FK_HeavyEqpMaintenanceRecordItem_HeavyEqpMaintenanceRecord" FromRole="HeavyEqpMaintenanceRecord" ToRole="HeavyEqpMaintenanceRecordItem" />
+    <NavigationProperty Name="HeavyEqpMaintenanceRecordMaterialUseds" Relationship="EquipmentModel.FK_HeavyEqpMaintenanceRecordMaterialUsed_HeavyEqpMaintenanceRecord" FromRole="HeavyEqpMaintenanceRecord" ToRole="HeavyEqpMaintenanceRecordMaterialUsed" />
+    <NavigationProperty Name="HeavyEqpMaintenanceRecordOthers" Relationship="EquipmentModel.FK_HeavyEqpMaintenanceRecordOther_HeavyEqpMaintenanceRecord" FromRole="HeavyEqpMaintenanceRecord" ToRole="HeavyEqpMaintenanceRecordOther" />
+  </EntityType>
+  <EntityType Name="HeavyEqpMaintenanceRecordItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="HeavyEqpMaintenanceRecordId" Nullable="false" />
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="HeavyEquipmentMaintenanceCheckItemId" Nullable="false" />
+    <NavigationProperty Name="HeavyEqpMaintenanceRecord" Relationship="EquipmentModel.FK_HeavyEqpMaintenanceRecordItem_HeavyEqpMaintenanceRecord" FromRole="HeavyEqpMaintenanceRecordItem" ToRole="HeavyEqpMaintenanceRecord" />
+    <NavigationProperty Name="HeavyEquipmentMaintenanceCheckItem" Relationship="EquipmentModel.FK_HeavyEqpMaintenanceRecordItem_HeavyEquipmentMaintenanceCheckItem" FromRole="HeavyEqpMaintenanceRecordItem" ToRole="HeavyEquipmentMaintenanceCheckItem" />
+  </EntityType>
+  <EntityType Name="HeavyEqpMaintenanceRecordMaterialUsed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="HeavyEqpMaintenanceRecordId" Nullable="false" />
+    <Property Type="String" Name="MaterialUsed" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="Quantity" Nullable="false" />
+    <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HeavyEqpMaintenanceRecord" Relationship="EquipmentModel.FK_HeavyEqpMaintenanceRecordMaterialUsed_HeavyEqpMaintenanceRecord" FromRole="HeavyEqpMaintenanceRecordMaterialUsed" ToRole="HeavyEqpMaintenanceRecord" />
+  </EntityType>
+  <EntityType Name="HeavyEqpMaintenanceRecordOther">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="HeavyEqpMaintenanceRecordId" Nullable="false" />
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Remarks" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HeavyEqpMaintenanceRecord" Relationship="EquipmentModel.FK_HeavyEqpMaintenanceRecordOther_HeavyEqpMaintenanceRecord" FromRole="HeavyEqpMaintenanceRecordOther" ToRole="HeavyEqpMaintenanceRecord" />
+  </EntityType>
+  <Association Name="FK_HeavyEqpMaintenanceRecord_HeavyEqp">
+    <End Type="EquipmentModel.HeavyEqp" Role="HeavyEqp" Multiplicity="1" />
+    <End Type="EquipmentModel.HeavyEqpMaintenanceRecord" Role="HeavyEqpMaintenanceRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEqpMaintenanceRecord">
+        <PropertyRef Name="HeavyEqpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpMaintenanceRecordItem_HeavyEqpMaintenanceRecord">
+    <End Type="EquipmentModel.HeavyEqpMaintenanceRecord" Role="HeavyEqpMaintenanceRecord" Multiplicity="1" />
+    <End Type="EquipmentModel.HeavyEqpMaintenanceRecordItem" Role="HeavyEqpMaintenanceRecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HeavyEqpMaintenanceRecordItem">
+        <PropertyRef Name="HeavyEqpMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpMaintenanceRecordMaterialUsed_HeavyEqpMaintenanceRecord">
+    <End Type="EquipmentModel.HeavyEqpMaintenanceRecord" Role="HeavyEqpMaintenanceRecord" Multiplicity="1" />
+    <End Type="EquipmentModel.HeavyEqpMaintenanceRecordMaterialUsed" Role="HeavyEqpMaintenanceRecordMaterialUsed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HeavyEqpMaintenanceRecordMaterialUsed">
+        <PropertyRef Name="HeavyEqpMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpMaintenanceRecordOther_HeavyEqpMaintenanceRecord">
+    <End Type="EquipmentModel.HeavyEqpMaintenanceRecord" Role="HeavyEqpMaintenanceRecord" Multiplicity="1" />
+    <End Type="EquipmentModel.HeavyEqpMaintenanceRecordOther" Role="HeavyEqpMaintenanceRecordOther" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HeavyEqpMaintenanceRecordOther">
+        <PropertyRef Name="HeavyEqpMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpMaintenanceRecordItem_HeavyEquipmentMaintenanceCheckItem">
+    <End Type="EquipmentModel.HeavyEquipmentMaintenanceCheckItem" Role="HeavyEquipmentMaintenanceCheckItem" Multiplicity="1" />
+    <End Type="EquipmentModel.HeavyEqpMaintenanceRecordItem" Role="HeavyEqpMaintenanceRecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEquipmentMaintenanceCheckItem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEqpMaintenanceRecordItem">
+        <PropertyRef Name="HeavyEquipmentMaintenanceCheckItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MachineMaintenanceRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="MaintenanceDateStart" Nullable="false" />
+    <Property Type="DateTime" Name="MaintenanceDateEnd" Nullable="false" />
+    <Property Type="Int32" Name="MachineId" Nullable="false" />
+    <Property Type="Int32" Name="MaintenanceState" Nullable="false" />
+    <NavigationProperty Name="MachineEqp" Relationship="EquipmentModel.FK_MachineMaintenanceRecord_Machine" FromRole="MachineMaintenanceRecord" ToRole="MachineEqp" />
+    <NavigationProperty Name="MachineMaintenanceRecordItems" Relationship="EquipmentModel.FK_MachineMaintenanceRecordItem_MachineMaintenanceRecord" FromRole="MachineMaintenanceRecord" ToRole="MachineMaintenanceRecordItem" />
+    <NavigationProperty Name="MachineMaintenanceRecordMaterialUseds" Relationship="EquipmentModel.FK_MachineMaintenanceRecordMaterialUsed_MachineMaintenanceRecord" FromRole="MachineMaintenanceRecord" ToRole="MachineMaintenanceRecordMaterialUsed" />
+    <NavigationProperty Name="MachineMaintenanceRecordOthers" Relationship="EquipmentModel.FK_MachineMaintenanceRecordOther_MachineMaintenanceRecord" FromRole="MachineMaintenanceRecord" ToRole="MachineMaintenanceRecordOther" />
+  </EntityType>
+  <EntityType Name="MachineMaintenanceRecordItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MachineMaintenanceRecordId" Nullable="false" />
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MachineMaintenanceCheckItemId" Nullable="false" />
+    <NavigationProperty Name="MachineMaintenanceRecord" Relationship="EquipmentModel.FK_MachineMaintenanceRecordItem_MachineMaintenanceRecord" FromRole="MachineMaintenanceRecordItem" ToRole="MachineMaintenanceRecord" />
+  </EntityType>
+  <EntityType Name="MachineMaintenanceRecordMaterialUsed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MachineMaintenanceRecordId" Nullable="false" />
+    <Property Type="String" Name="MaterialUsed" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="Quantity" Nullable="false" />
+    <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MachineMaintenanceRecord" Relationship="EquipmentModel.FK_MachineMaintenanceRecordMaterialUsed_MachineMaintenanceRecord" FromRole="MachineMaintenanceRecordMaterialUsed" ToRole="MachineMaintenanceRecord" />
+  </EntityType>
+  <EntityType Name="MachineMaintenanceRecordOther">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="MachineMaintenanceRecordId" Nullable="false" />
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Remarks" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MachineMaintenanceRecord" Relationship="EquipmentModel.FK_MachineMaintenanceRecordOther_MachineMaintenanceRecord" FromRole="MachineMaintenanceRecordOther" ToRole="MachineMaintenanceRecord" />
+  </EntityType>
+  <Association Name="FK_MachineMaintenanceRecord_Machine">
+    <End Type="EquipmentModel.MachineEqp" Role="MachineEqp" Multiplicity="1" />
+    <End Type="EquipmentModel.MachineMaintenanceRecord" Role="MachineMaintenanceRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineEqp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MachineMaintenanceRecord">
+        <PropertyRef Name="MachineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MachineMaintenanceRecordItem_MachineMaintenanceRecord">
+    <End Type="EquipmentModel.MachineMaintenanceRecord" Role="MachineMaintenanceRecord" Multiplicity="1" />
+    <End Type="EquipmentModel.MachineMaintenanceRecordItem" Role="MachineMaintenanceRecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MachineMaintenanceRecordItem">
+        <PropertyRef Name="MachineMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MachineMaintenanceRecordMaterialUsed_MachineMaintenanceRecord">
+    <End Type="EquipmentModel.MachineMaintenanceRecord" Role="MachineMaintenanceRecord" Multiplicity="1" />
+    <End Type="EquipmentModel.MachineMaintenanceRecordMaterialUsed" Role="MachineMaintenanceRecordMaterialUsed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MachineMaintenanceRecordMaterialUsed">
+        <PropertyRef Name="MachineMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MachineMaintenanceRecordOther_MachineMaintenanceRecord">
+    <End Type="EquipmentModel.MachineMaintenanceRecord" Role="MachineMaintenanceRecord" Multiplicity="1" />
+    <End Type="EquipmentModel.MachineMaintenanceRecordOther" Role="MachineMaintenanceRecordOther" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MachineMaintenanceRecordOther">
+        <PropertyRef Name="MachineMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="ReportMachineMaintenance_Result">
+    <Property Type="String" Name="TanggalMulai" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="TanggalSelesai" Nullable="true" MaxLength="64" />
+    <Property Type="Int32" Name="MaintenanceState" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Merk" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="SerialNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Capacity" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ReportMachineMaintenanceItemWork_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="String" Name="ItemPekerjaan" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="ReportMachineMaintenanceMaterialUsed_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="String" Name="MaterialUsed" Nullable="false" MaxLength="150" />
+    <Property Type="Double" Name="Quantity" Nullable="false" />
+    <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="ReportMachineMaintenanceOther_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="150" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="ReportHeavyEqpMaintenance_Result">
+    <Property Type="String" Name="TanggalMulai" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="TanggalSelesai" Nullable="true" MaxLength="64" />
+    <Property Type="Double" Name="HourMeterValue" Nullable="false" />
+    <Property Type="Int32" Name="MaintenanceState" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Merk" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Species" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="OprName" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="ReportHeavyEqpMaintenanceMaterialUsed_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="String" Name="MaterialUsed" Nullable="false" MaxLength="150" />
+    <Property Type="Double" Name="Quantity" Nullable="false" />
+    <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="ReportHeavyEqpMaintenanceOther_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="String" Name="Item" Nullable="false" MaxLength="150" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="ReportHeavyEquipmentMaintenanceItemWork_Result">
+    <Property Type="Int64" Name="No" Nullable="true" />
+    <Property Type="String" Name="ItemPekerjaan" Nullable="false" MaxLength="150" />
+  </ComplexType>
+</Schema>

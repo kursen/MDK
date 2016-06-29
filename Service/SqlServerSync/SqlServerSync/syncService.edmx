@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MDKModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MDKModelStoreContainer">
+          <EntitySet Name="tblMisc_History" EntityType="MDKModel.Store.tblMisc_History" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblMst_Barang" EntityType="MDKModel.Store.TblMst_Barang" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblMst_Login" EntityType="MDKModel.Store.TblMst_Login" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblMst_NoRec" EntityType="MDKModel.Store.TblMst_NoRec" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblMst_Perusahaan" EntityType="MDKModel.Store.TblMst_Perusahaan" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblTrans_Penimbangan1" EntityType="MDKModel.Store.TblTrans_Penimbangan1" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblTrans_Penimbangan2" EntityType="MDKModel.Store.TblTrans_Penimbangan2" store:Type="Tables" Schema="Imp" />
+        </EntityContainer>
+        <EntityType Name="tblMisc_History">
+          <Key>
+            <PropertyRef Name="historyID" />
+          </Key>
+          <Property Name="historyID" Type="int" Nullable="false" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+          <Property Name="waktu" Type="datetime" />
+          <Property Name="norecord" Type="nvarchar" MaxLength="50" />
+          <Property Name="jenis" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TblMst_Barang">
+          <Key>
+            <PropertyRef Name="KodeBrg" />
+          </Key>
+          <Property Name="KodeBrg" Type="int" Nullable="false" />
+          <Property Name="NoBrg" Type="nvarchar" MaxLength="20" />
+          <Property Name="NamaBrg" Type="nvarchar" MaxLength="50" />
+          <Property Name="Keterangan" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblMst_Login">
+          <Key>
+            <PropertyRef Name="Kode" />
+          </Key>
+          <Property Name="Kode" Type="int" Nullable="false" />
+          <Property Name="Nama" Type="nvarchar" MaxLength="25" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="20" />
+          <Property Name="Bagian" Type="nvarchar" MaxLength="25" />
+          <Property Name="HA_THA" Type="bit" Nullable="false" />
+          <Property Name="HA_TBD" Type="bit" Nullable="false" />
+          <Property Name="HA_TOpt" Type="bit" Nullable="false" />
+          <Property Name="HA_Lap" Type="bit" Nullable="false" />
+          <Property Name="HA_TransV" Type="bit" Nullable="false" />
+          <Property Name="HA_TransI" Type="bit" Nullable="false" />
+          <Property Name="HA_TransE" Type="bit" Nullable="false" />
+          <Property Name="HA_TransH" Type="bit" Nullable="false" />
+          <Property Name="HA_TransCU" Type="bit" Nullable="false" />
+          <Property Name="HA_FPV" Type="bit" Nullable="false" />
+          <Property Name="HA_FPI" Type="bit" Nullable="false" />
+          <Property Name="HA_FPE" Type="bit" Nullable="false" />
+          <Property Name="HA_FPH" Type="bit" Nullable="false" />
+          <Property Name="HA_FMV" Type="bit" Nullable="false" />
+          <Property Name="HA_FMI" Type="bit" Nullable="false" />
+          <Property Name="HA_FME" Type="bit" Nullable="false" />
+          <Property Name="HA_FMH" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblMst_NoRec">
+          <Key>
+            <PropertyRef Name="NoUrut" />
+          </Key>
+          <Property Name="NoRecord" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoUrut" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblMst_Perusahaan">
+          <Key>
+            <PropertyRef Name="KodePeru" />
+          </Key>
+          <Property Name="KodePeru" Type="int" Nullable="false" />
+          <Property Name="NoPeru" Type="nvarchar" MaxLength="20" />
+          <Property Name="NamaPeru" Type="nvarchar" MaxLength="50" />
+          <Property Name="AlamatPeru1" Type="nvarchar" MaxLength="200" />
+          <Property Name="AlamatPeru2" Type="nvarchar" MaxLength="200" />
+          <Property Name="KotaPeru" Type="nvarchar" MaxLength="100" />
+          <Property Name="TelpPeru" Type="nvarchar" MaxLength="50" />
+          <Property Name="FaxPeru" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblTrans_Penimbangan1">
+          <Key>
+            <PropertyRef Name="KodeTimb1" />
+          </Key>
+          <Property Name="KodeTimb1" Type="int" Nullable="false" />
+          <Property Name="Tgl" Type="datetime" Nullable="false" />
+          <Property Name="NoPolisi" Type="nvarchar" MaxLength="11" />
+          <Property Name="Sopir" Type="nvarchar" MaxLength="150" />
+          <Property Name="KodePeru" Type="int" />
+          <Property Name="KodeBrg" Type="int" />
+          <Property Name="Berat1" Type="int" />
+          <Property Name="Deliverynote" Type="nvarchar" MaxLength="50" />
+          <Property Name="Clerk1" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TblTrans_Penimbangan2">
+          <Key>
+            <PropertyRef Name="NoRecord" />
+          </Key>
+          <Property Name="NoRecord" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="TglMasuk" Type="datetime" />
+          <Property Name="TglKeluar" Type="datetime" />
+          <Property Name="NoPolisi" Type="nvarchar" MaxLength="11" />
+          <Property Name="Sopir" Type="nvarchar" MaxLength="150" />
+          <Property Name="KodePeru" Type="int" />
+          <Property Name="KodeBrg" Type="int" />
+          <Property Name="Berat1" Type="int" />
+          <Property Name="Berat2" Type="int" />
+          <Property Name="DeliveryNote" Type="nvarchar" MaxLength="50" />
+          <Property Name="Clerk1" Type="nvarchar" MaxLength="20" />
+          <Property Name="Clerk2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Copy" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'MDK_ERP.Imp.TblMisc_logo' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TblMisc_logo">
+        <Property Name="Logo" Type="image" />
+        <Property Name="LogoSize" Type="int" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'MDK_ERP.Imp.TblMst_Customer' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="TblMst_Customer">
+        <Property Name="KodeCust" Type="int" />
+        <Property Name="NoCust" Type="nvarchar" MaxLength="50" />
+        <Property Name="NamaCust" Type="nvarchar" MaxLength="200" />
+        <Property Name="AlamatCust1" Type="nvarchar" MaxLength="200" />
+        <Property Name="AlamatCust2" Type="nvarchar" MaxLength="200" />
+        <Property Name="KotaCust" Type="nvarchar" MaxLength="100" />
+        <Property Name="TelpCust" Type="nvarchar" MaxLength="50" />
+        <Property Name="FaxCust" Type="nvarchar" MaxLength="50" />
+      </EntityType>-->
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MDKModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MDKEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblMisc_History" EntityType="MDKModel.tblMisc_History" />
+          <EntitySet Name="TblMst_Barang" EntityType="MDKModel.TblMst_Barang" />
+          <EntitySet Name="TblMst_Login" EntityType="MDKModel.TblMst_Login" />
+          <EntitySet Name="TblMst_NoRec" EntityType="MDKModel.TblMst_NoRec" />
+          <EntitySet Name="TblMst_Perusahaan" EntityType="MDKModel.TblMst_Perusahaan" />
+          <EntitySet Name="TblTrans_Penimbangan1" EntityType="MDKModel.TblTrans_Penimbangan1" />
+          <EntitySet Name="TblTrans_Penimbangan2" EntityType="MDKModel.TblTrans_Penimbangan2" />
+        </EntityContainer>
+        <EntityType Name="tblMisc_History">
+          <Key>
+            <PropertyRef Name="historyID" />
+          </Key>
+          <Property Type="Int32" Name="historyID" Nullable="false" />
+          <Property Type="String" Name="Operator" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="waktu" />
+          <Property Type="String" Name="norecord" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="jenis" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="description" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblMst_Barang">
+          <Key>
+            <PropertyRef Name="KodeBrg" />
+          </Key>
+          <Property Type="Int32" Name="KodeBrg" Nullable="false" />
+          <Property Type="String" Name="NoBrg" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NamaBrg" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Keterangan" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblMst_Login">
+          <Key>
+            <PropertyRef Name="Kode" />
+          </Key>
+          <Property Type="Int32" Name="Kode" Nullable="false" />
+          <Property Type="String" Name="Nama" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pwd" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Bagian" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="HA_THA" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TBD" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TOpt" Nullable="false" />
+          <Property Type="Boolean" Name="HA_Lap" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TransV" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TransI" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TransE" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TransH" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TransCU" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FPV" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FPI" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FPE" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FPH" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FMV" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FMI" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FME" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FMH" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblMst_NoRec">
+          <Key>
+            <PropertyRef Name="NoUrut" />
+          </Key>
+          <Property Type="String" Name="NoRecord" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NoUrut" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblMst_Perusahaan">
+          <Key>
+            <PropertyRef Name="KodePeru" />
+          </Key>
+          <Property Type="Int32" Name="KodePeru" Nullable="false" />
+          <Property Type="String" Name="NoPeru" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NamaPeru" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AlamatPeru1" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AlamatPeru2" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KotaPeru" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelpPeru" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FaxPeru" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblTrans_Penimbangan1">
+          <Key>
+            <PropertyRef Name="KodeTimb1" />
+          </Key>
+          <Property Type="Int32" Name="KodeTimb1" Nullable="false" />
+          <Property Type="DateTime" Name="Tgl" Nullable="false" />
+          <Property Type="String" Name="NoPolisi" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sopir" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KodePeru" />
+          <Property Type="Int32" Name="KodeBrg" />
+          <Property Type="Int32" Name="Berat1" />
+          <Property Type="String" Name="Deliverynote" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Clerk1" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblTrans_Penimbangan2">
+          <Key>
+            <PropertyRef Name="NoRecord" />
+          </Key>
+          <Property Type="String" Name="NoRecord" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="TglMasuk" />
+          <Property Type="DateTime" Name="TglKeluar" />
+          <Property Type="String" Name="NoPolisi" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sopir" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KodePeru" />
+          <Property Type="Int32" Name="KodeBrg" />
+          <Property Type="Int32" Name="Berat1" />
+          <Property Type="Int32" Name="Berat2" />
+          <Property Type="String" Name="DeliveryNote" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Clerk1" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Clerk2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Copy" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MDKModelStoreContainer" CdmEntityContainer="MDKEntities1">
+          <EntitySetMapping Name="tblMisc_History">
+            <EntityTypeMapping TypeName="MDKModel.tblMisc_History">
+              <MappingFragment StoreEntitySet="tblMisc_History">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="jenis" ColumnName="jenis" />
+                <ScalarProperty Name="norecord" ColumnName="norecord" />
+                <ScalarProperty Name="waktu" ColumnName="waktu" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="historyID" ColumnName="historyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMst_Barang">
+            <EntityTypeMapping TypeName="MDKModel.TblMst_Barang">
+              <MappingFragment StoreEntitySet="TblMst_Barang">
+                <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+                <ScalarProperty Name="NamaBrg" ColumnName="NamaBrg" />
+                <ScalarProperty Name="NoBrg" ColumnName="NoBrg" />
+                <ScalarProperty Name="KodeBrg" ColumnName="KodeBrg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMst_Login">
+            <EntityTypeMapping TypeName="MDKModel.TblMst_Login">
+              <MappingFragment StoreEntitySet="TblMst_Login">
+                <ScalarProperty Name="HA_FMH" ColumnName="HA_FMH" />
+                <ScalarProperty Name="HA_FME" ColumnName="HA_FME" />
+                <ScalarProperty Name="HA_FMI" ColumnName="HA_FMI" />
+                <ScalarProperty Name="HA_FMV" ColumnName="HA_FMV" />
+                <ScalarProperty Name="HA_FPH" ColumnName="HA_FPH" />
+                <ScalarProperty Name="HA_FPE" ColumnName="HA_FPE" />
+                <ScalarProperty Name="HA_FPI" ColumnName="HA_FPI" />
+                <ScalarProperty Name="HA_FPV" ColumnName="HA_FPV" />
+                <ScalarProperty Name="HA_TransCU" ColumnName="HA_TransCU" />
+                <ScalarProperty Name="HA_TransH" ColumnName="HA_TransH" />
+                <ScalarProperty Name="HA_TransE" ColumnName="HA_TransE" />
+                <ScalarProperty Name="HA_TransI" ColumnName="HA_TransI" />
+                <ScalarProperty Name="HA_TransV" ColumnName="HA_TransV" />
+                <ScalarProperty Name="HA_Lap" ColumnName="HA_Lap" />
+                <ScalarProperty Name="HA_TOpt" ColumnName="HA_TOpt" />
+                <ScalarProperty Name="HA_TBD" ColumnName="HA_TBD" />
+                <ScalarProperty Name="HA_THA" ColumnName="HA_THA" />
+                <ScalarProperty Name="Bagian" ColumnName="Bagian" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="Nama" ColumnName="Nama" />
+                <ScalarProperty Name="Kode" ColumnName="Kode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMst_NoRec">
+            <EntityTypeMapping TypeName="MDKModel.TblMst_NoRec">
+              <MappingFragment StoreEntitySet="TblMst_NoRec">
+                <ScalarProperty Name="NoUrut" ColumnName="NoUrut" />
+                <ScalarProperty Name="NoRecord" ColumnName="NoRecord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMst_Perusahaan">
+            <EntityTypeMapping TypeName="MDKModel.TblMst_Perusahaan">
+              <MappingFragment StoreEntitySet="TblMst_Perusahaan">
+                <ScalarProperty Name="FaxPeru" ColumnName="FaxPeru" />
+                <ScalarProperty Name="TelpPeru" ColumnName="TelpPeru" />
+                <ScalarProperty Name="KotaPeru" ColumnName="KotaPeru" />
+                <ScalarProperty Name="AlamatPeru2" ColumnName="AlamatPeru2" />
+                <ScalarProperty Name="AlamatPeru1" ColumnName="AlamatPeru1" />
+                <ScalarProperty Name="NamaPeru" ColumnName="NamaPeru" />
+                <ScalarProperty Name="NoPeru" ColumnName="NoPeru" />
+                <ScalarProperty Name="KodePeru" ColumnName="KodePeru" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTrans_Penimbangan1">
+            <EntityTypeMapping TypeName="MDKModel.TblTrans_Penimbangan1">
+              <MappingFragment StoreEntitySet="TblTrans_Penimbangan1">
+                <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+                <ScalarProperty Name="Deliverynote" ColumnName="Deliverynote" />
+                <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+                <ScalarProperty Name="KodeBrg" ColumnName="KodeBrg" />
+                <ScalarProperty Name="KodePeru" ColumnName="KodePeru" />
+                <ScalarProperty Name="Sopir" ColumnName="Sopir" />
+                <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+                <ScalarProperty Name="Tgl" ColumnName="Tgl" />
+                <ScalarProperty Name="KodeTimb1" ColumnName="KodeTimb1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTrans_Penimbangan2">
+            <EntityTypeMapping TypeName="MDKModel.TblTrans_Penimbangan2">
+              <MappingFragment StoreEntitySet="TblTrans_Penimbangan2">
+                <ScalarProperty Name="Copy" ColumnName="Copy" />
+                <ScalarProperty Name="Clerk2" ColumnName="Clerk2" />
+                <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+                <ScalarProperty Name="DeliveryNote" ColumnName="DeliveryNote" />
+                <ScalarProperty Name="Berat2" ColumnName="Berat2" />
+                <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+                <ScalarProperty Name="KodeBrg" ColumnName="KodeBrg" />
+                <ScalarProperty Name="KodePeru" ColumnName="KodePeru" />
+                <ScalarProperty Name="Sopir" ColumnName="Sopir" />
+                <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+                <ScalarProperty Name="TglKeluar" ColumnName="TglKeluar" />
+                <ScalarProperty Name="TglMasuk" ColumnName="TglMasuk" />
+                <ScalarProperty Name="NoRecord" ColumnName="NoRecord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="syncService" ZoomLevel="84">
+        <EntityTypeShape EntityType="MDKModel.tblMisc_History" Width="1.5" PointX="0.75" PointY="0.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="MDKModel.TblMst_Barang" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="MDKModel.TblMst_Login" Width="1.5" PointX="0.75" PointY="3.75" Height="5.0571093750000031" />
+        <EntityTypeShape EntityType="MDKModel.TblMst_NoRec" Width="1.5" PointX="2.75" PointY="3.75" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="MDKModel.TblMst_Perusahaan" Width="1.5" PointX="4.75" PointY="0.75" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="MDKModel.TblTrans_Penimbangan1" Width="1.5" PointX="4.75" PointY="4.75" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="MDKModel.TblTrans_Penimbangan2" Width="1.5" PointX="6.75" PointY="0.75" Height="3.5186979166666674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

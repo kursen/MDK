@@ -1,0 +1,77 @@
+﻿@model SKA.Areas.VoucherKas.Models.ViewModel.VoucherViewModel
+@using Telerik.Web.Mvc.UI
+
+@{
+    ViewBag.Title = "Konfirmasi Voucher";
+    Layout = "~/Areas/VoucherKas/Views/Shared/_VoucherLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Konfirmasi Voucher Kas</h2>
+</div>
+<div class="box-content">
+    <table>
+                <tr>
+                    <td>Nomor Kas</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Number)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tanggal Transaksi</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.TransactionDate)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nama Rekanan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.PartnerName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Keterangan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Description)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lampiran</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Attachment)
+                    </td>
+                </tr>
+            </table>
+    @(Html.Telerik().Grid<SKA.Areas.VoucherKas.Models.ViewModel.VoucherDetailViewModel>()
+            .Name("Grid")
+
+            .DataKeys(keys =>
+            {
+                keys.Add(p => p.Id);
+            })
+            .DataBinding(dataBinding =>
+            {
+                dataBinding.Ajax()
+                    .Select("_SelectDetail", "VoucherKas");
+            })
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.AccountCode).Title("Perkiraan").Width(300);
+                columns.Bound(p => p.Debet).Title("Debet").Format("Rp. {0:N}").Width(120);
+                columns.Bound(p => p.Kredit).Title("Kredit").Format("Rp. {0:N}").Width(120);
+            })
+            .Filterable()
+            .Pageable()
+            .Sortable()
+          )
+          <br />
+        <p>
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Edit", "VoucherKas", new { id = ViewData["Id"]})">Edit</a>
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "VoucherKas", null)">Kembali</a>
+        </p>
+</div>

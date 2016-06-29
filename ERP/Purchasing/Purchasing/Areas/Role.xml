@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<controllers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <controller name="Account" roles="*">
+    <actions>
+      <action name="LogOn" roles="*" />
+      <action name="LogOn" roles="*" />
+      <action name="LogOff" roles="*" />
+      <action name="Register" roles="*" />
+      <action name="Register" roles="*" />
+      <action name="ChangePassword" roles="*" />
+      <action name="ChangePassword" roles="*" />
+      <action name="ChangePasswordSuccess" roles="*" />
+      <action name="Profile" roles="*" />
+      <action name="UpdateUserProfile" roles="*" />
+      <action name="UserList" roles="*" />
+      <action name="GetUserList" roles="*" />
+      <action name="LockAccount" roles="*" />
+      <action name="DeleteUser" roles="*" />
+      <action name="UserDetail" roles="*" />
+      <action name="SaveUserWorkUnit" roles="*" />
+      <action name="GetUserRole" roles="*" />
+      <action name="ResetPassword" roles="*" />
+      <action name="EditPhoto" roles="*" />
+      <action name="UploadPhotoProfile" roles="*" />
+      <action name="CropPhoto" roles="*" />
+      <action name="UserPhoto" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Error" roles="*">
+    <actions>
+      <action name="NotFound" roles="*" />
+      <action name="UnAuthenticated" roles="*" />
+      <action name="AccessDenied" roles="*" />
+      <action name="ServerError" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Home" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="setDisplayState" roles="*" />
+      <action name="UpdateLastActivity" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Playground" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="SaveData" roles="*" />
+      <action name="TestSaveData" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Roles" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="GetRoles" roles="*" />
+      <action name="SaveRole" roles="*" />
+      <action name="DeleteRole" roles="*" />
+      <action name="UserInRole" roles="*" />
+      <action name="GetUserInRole" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Setup" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="TestDataStructur" roles="*" />
+    </actions>
+  </controller>
+  <controller name="SystemSetting" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="GetSideMenus" roles="*" />
+      <action name="EditMenu" roles="*" />
+      <action name="CreateMenu" roles="*" />
+      <action name="reOrder" roles="*" />
+      <action name="SaveMenu" roles="*" />
+      <action name="DeleteMenu" roles="*" />
+      <action name="SecurityCache" roles="*" />
+      <action name="SecurityCache" roles="*" />
+      <action name="GetAvailabelLinks" roles="*" />
+      <action name="GetAssemblyLinks" roles="*" />
+    </actions>
+  </controller>
+  <controller name="WorkUnit" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="GetOfficeList" roles="*" />
+      <action name="SaveWorkUnit" roles="*" />
+      <action name="DeleteOffice" roles="*" />
+    </actions>
+  </controller>
+</controllers>

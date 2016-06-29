@@ -1,0 +1,1297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EquipmentModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EquipmentModelStoreContainer">
+    <EntitySet Name="AllMerk" EntityType="EquipmentModel.Store.AllMerk" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="AllOil" EntityType="EquipmentModel.Store.AllOil" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="DetailMaintenanceHeavyEqp" EntityType="EquipmentModel.Store.DetailMaintenanceHeavyEqp" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="DumpTruckActivity" EntityType="EquipmentModel.Store.DumpTruckActivity" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="DumpTruckNonOperation" EntityType="EquipmentModel.Store.DumpTruckNonOperation" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="DumpTruckOperation" EntityType="EquipmentModel.Store.DumpTruckOperation" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="FuelUsedDumpTruck" EntityType="EquipmentModel.Store.FuelUsedDumpTruck" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="FuelUsedHeavyEqp" EntityType="EquipmentModel.Store.FuelUsedHeavyEqp" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="FuelUsedOutTrado" EntityType="EquipmentModel.Store.FuelUsedOutTrado" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="FuelUsedTrado" EntityType="EquipmentModel.Store.FuelUsedTrado" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEqp" EntityType="EquipmentModel.Store.HeavyEqp" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEqpActivity" EntityType="EquipmentModel.Store.HeavyEqpActivity" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEqpMaintenanceRecord" EntityType="EquipmentModel.Store.HeavyEqpMaintenanceRecord" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEqpMaintenanceRecordItem" EntityType="EquipmentModel.Store.HeavyEqpMaintenanceRecordItem" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEqpMaintenanceRecordMaterialUsed" EntityType="EquipmentModel.Store.HeavyEqpMaintenanceRecordMaterialUsed" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEqpMaintenanceRecordOther" EntityType="EquipmentModel.Store.HeavyEqpMaintenanceRecordOther" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEqpNonOperation" EntityType="EquipmentModel.Store.HeavyEqpNonOperation" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEqpOperation" EntityType="EquipmentModel.Store.HeavyEqpOperation" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEquipmentMaintenanceCheck" EntityType="EquipmentModel.Store.HeavyEquipmentMaintenanceCheck" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEquipmentMaintenanceCheckItem" EntityType="EquipmentModel.Store.HeavyEquipmentMaintenanceCheckItem" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="HeavyEquipmentType" EntityType="EquipmentModel.Store.HeavyEquipmentType" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="MachineEqp" EntityType="EquipmentModel.Store.MachineEqp" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="MachineEqpMaintenanceCheck" EntityType="EquipmentModel.Store.MachineEqpMaintenanceCheck" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="MachineEqpMaintenanceCheckItem" EntityType="EquipmentModel.Store.MachineEqpMaintenanceCheckItem" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="MachineMaintenanceRecord" EntityType="EquipmentModel.Store.MachineMaintenanceRecord" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="MachineMaintenanceRecordItem" EntityType="EquipmentModel.Store.MachineMaintenanceRecordItem" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="MachineMaintenanceRecordMaterialUsed" EntityType="EquipmentModel.Store.MachineMaintenanceRecordMaterialUsed" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="MachineMaintenanceRecordOther" EntityType="EquipmentModel.Store.MachineMaintenanceRecordOther" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="MachineType" EntityType="EquipmentModel.Store.MachineType" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="MaintenanceHeavyEquipment" EntityType="EquipmentModel.Store.MaintenanceHeavyEquipment" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="MaintenanceTemplateItem" EntityType="EquipmentModel.Store.MaintenanceTemplateItem" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="OilAndSparePartUsedTrado" EntityType="EquipmentModel.Store.OilAndSparePartUsedTrado" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="OilUsedDumpTruck" EntityType="EquipmentModel.Store.OilUsedDumpTruck" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="OilUsedHeavyEqp" EntityType="EquipmentModel.Store.OilUsedHeavyEqp" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="OutFitEqp" EntityType="EquipmentModel.Store.OutFitEqp" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="TradoActivity" EntityType="EquipmentModel.Store.TradoActivity" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="TradoNonOperation" EntityType="EquipmentModel.Store.TradoNonOperation" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="TradoOperation" EntityType="EquipmentModel.Store.TradoOperation" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="TypeNonOperation" EntityType="EquipmentModel.Store.TypeNonOperation" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="Vehicle" EntityType="EquipmentModel.Store.Vehicle" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="VehicleMaintenanceCheck" EntityType="EquipmentModel.Store.VehicleMaintenanceCheck" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="VehicleMaintenanceCheckItem" EntityType="EquipmentModel.Store.VehicleMaintenanceCheckItem" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="VehicleMaintenanceRecord" EntityType="EquipmentModel.Store.VehicleMaintenanceRecord" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="VehicleMaintenanceRecordItem" EntityType="EquipmentModel.Store.VehicleMaintenanceRecordItem" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="VehicleMaintenanceRecordMaterialUsed" EntityType="EquipmentModel.Store.VehicleMaintenanceRecordMaterialUsed" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="VehicleMaintenanceRecordOther" EntityType="EquipmentModel.Store.VehicleMaintenanceRecordOther" store:Type="Tables" Schema="Eqp" />
+    <EntitySet Name="VehicleType" EntityType="EquipmentModel.Store.VehicleType" store:Type="Tables" Schema="Eqp" />
+    <AssociationSet Name="FK_DetailMaintenanceHeavyEqp_DetailMaintenanceHeavyEqp" Association="EquipmentModel.Store.FK_DetailMaintenanceHeavyEqp_DetailMaintenanceHeavyEqp">
+      <End Role="MaintenanceHeavyEquipment" EntitySet="MaintenanceHeavyEquipment" />
+      <End Role="DetailMaintenanceHeavyEqp" EntitySet="DetailMaintenanceHeavyEqp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DumpTruckNonOperation_DumpTruckActivity" Association="EquipmentModel.Store.FK_DumpTruckNonOperation_DumpTruckActivity">
+      <End Role="DumpTruckActivity" EntitySet="DumpTruckActivity" />
+      <End Role="DumpTruckNonOperation" EntitySet="DumpTruckNonOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DumpTruckOperation_DumpTruckActivity" Association="EquipmentModel.Store.FK_DumpTruckOperation_DumpTruckActivity">
+      <End Role="DumpTruckActivity" EntitySet="DumpTruckActivity" />
+      <End Role="DumpTruckOperation" EntitySet="DumpTruckOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuelUsedDumpTruck_DumpTruckActivity" Association="EquipmentModel.Store.FK_FuelUsedDumpTruck_DumpTruckActivity">
+      <End Role="DumpTruckActivity" EntitySet="DumpTruckActivity" />
+      <End Role="FuelUsedDumpTruck" EntitySet="FuelUsedDumpTruck" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuelUsedHeavyEqp_HeavyEqpActivity" Association="EquipmentModel.Store.FK_FuelUsedHeavyEqp_HeavyEqpActivity">
+      <End Role="HeavyEqpActivity" EntitySet="HeavyEqpActivity" />
+      <End Role="FuelUsedHeavyEqp" EntitySet="FuelUsedHeavyEqp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuelUsedOutTrado_TradoActivity" Association="EquipmentModel.Store.FK_FuelUsedOutTrado_TradoActivity">
+      <End Role="TradoActivity" EntitySet="TradoActivity" />
+      <End Role="FuelUsedOutTrado" EntitySet="FuelUsedOutTrado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FuelUsedTrado_TradoActivity" Association="EquipmentModel.Store.FK_FuelUsedTrado_TradoActivity">
+      <End Role="TradoActivity" EntitySet="TradoActivity" />
+      <End Role="FuelUsedTrado" EntitySet="FuelUsedTrado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpMaintenanceRecord_HeavyEqp" Association="EquipmentModel.Store.FK_HeavyEqpMaintenanceRecord_HeavyEqp">
+      <End Role="HeavyEqp" EntitySet="HeavyEqp" />
+      <End Role="HeavyEqpMaintenanceRecord" EntitySet="HeavyEqpMaintenanceRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpMaintenanceRecordItem_HeavyEqpMaintenanceRecord" Association="EquipmentModel.Store.FK_HeavyEqpMaintenanceRecordItem_HeavyEqpMaintenanceRecord">
+      <End Role="HeavyEqpMaintenanceRecord" EntitySet="HeavyEqpMaintenanceRecord" />
+      <End Role="HeavyEqpMaintenanceRecordItem" EntitySet="HeavyEqpMaintenanceRecordItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpMaintenanceRecordItem_HeavyEquipmentMaintenanceCheckItem" Association="EquipmentModel.Store.FK_HeavyEqpMaintenanceRecordItem_HeavyEquipmentMaintenanceCheckItem">
+      <End Role="HeavyEquipmentMaintenanceCheckItem" EntitySet="HeavyEquipmentMaintenanceCheckItem" />
+      <End Role="HeavyEqpMaintenanceRecordItem" EntitySet="HeavyEqpMaintenanceRecordItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpMaintenanceRecordMaterialUsed_HeavyEqpMaintenanceRecord" Association="EquipmentModel.Store.FK_HeavyEqpMaintenanceRecordMaterialUsed_HeavyEqpMaintenanceRecord">
+      <End Role="HeavyEqpMaintenanceRecord" EntitySet="HeavyEqpMaintenanceRecord" />
+      <End Role="HeavyEqpMaintenanceRecordMaterialUsed" EntitySet="HeavyEqpMaintenanceRecordMaterialUsed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpMaintenanceRecordOther_HeavyEqpMaintenanceRecord" Association="EquipmentModel.Store.FK_HeavyEqpMaintenanceRecordOther_HeavyEqpMaintenanceRecord">
+      <End Role="HeavyEqpMaintenanceRecord" EntitySet="HeavyEqpMaintenanceRecord" />
+      <End Role="HeavyEqpMaintenanceRecordOther" EntitySet="HeavyEqpMaintenanceRecordOther" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpNonOperation_HeavyEqpActivity" Association="EquipmentModel.Store.FK_HeavyEqpNonOperation_HeavyEqpActivity">
+      <End Role="HeavyEqpActivity" EntitySet="HeavyEqpActivity" />
+      <End Role="HeavyEqpNonOperation" EntitySet="HeavyEqpNonOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEqpOperation_HeavyEqpActivity" Association="EquipmentModel.Store.FK_HeavyEqpOperation_HeavyEqpActivity">
+      <End Role="HeavyEqpActivity" EntitySet="HeavyEqpActivity" />
+      <End Role="HeavyEqpOperation" EntitySet="HeavyEqpOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEquipmentMaintenanceCheck_HeavyEqp" Association="EquipmentModel.Store.FK_HeavyEquipmentMaintenanceCheck_HeavyEqp">
+      <End Role="HeavyEqp" EntitySet="HeavyEqp" />
+      <End Role="HeavyEquipmentMaintenanceCheck" EntitySet="HeavyEquipmentMaintenanceCheck" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HeavyEquipmentMaintenanceCheckItem_HeavyEquipmentMaintenanceCheck" Association="EquipmentModel.Store.FK_HeavyEquipmentMaintenanceCheckItem_HeavyEquipmentMaintenanceCheck">
+      <End Role="HeavyEquipmentMaintenanceCheck" EntitySet="HeavyEquipmentMaintenanceCheck" />
+      <End Role="HeavyEquipmentMaintenanceCheckItem" EntitySet="HeavyEquipmentMaintenanceCheckItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MachineEqpMaintenanceCheck_MachineEqp" Association="EquipmentModel.Store.FK_MachineEqpMaintenanceCheck_MachineEqp">
+      <End Role="MachineEqp" EntitySet="MachineEqp" />
+      <End Role="MachineEqpMaintenanceCheck" EntitySet="MachineEqpMaintenanceCheck" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MachineEqpMaintenanceCheckItem_MachineEqpMaintenanceCheck" Association="EquipmentModel.Store.FK_MachineEqpMaintenanceCheckItem_MachineEqpMaintenanceCheck">
+      <End Role="MachineEqpMaintenanceCheck" EntitySet="MachineEqpMaintenanceCheck" />
+      <End Role="MachineEqpMaintenanceCheckItem" EntitySet="MachineEqpMaintenanceCheckItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MachineMaintenanceRecord_Machine" Association="EquipmentModel.Store.FK_MachineMaintenanceRecord_Machine">
+      <End Role="MachineEqp" EntitySet="MachineEqp" />
+      <End Role="MachineMaintenanceRecord" EntitySet="MachineMaintenanceRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MachineMaintenanceRecordItem_MachineMaintenanceRecord" Association="EquipmentModel.Store.FK_MachineMaintenanceRecordItem_MachineMaintenanceRecord">
+      <End Role="MachineMaintenanceRecord" EntitySet="MachineMaintenanceRecord" />
+      <End Role="MachineMaintenanceRecordItem" EntitySet="MachineMaintenanceRecordItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MachineMaintenanceRecordMaterialUsed_MachineMaintenanceRecord" Association="EquipmentModel.Store.FK_MachineMaintenanceRecordMaterialUsed_MachineMaintenanceRecord">
+      <End Role="MachineMaintenanceRecord" EntitySet="MachineMaintenanceRecord" />
+      <End Role="MachineMaintenanceRecordMaterialUsed" EntitySet="MachineMaintenanceRecordMaterialUsed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MachineMaintenanceRecordOther_MachineMaintenanceRecord" Association="EquipmentModel.Store.FK_MachineMaintenanceRecordOther_MachineMaintenanceRecord">
+      <End Role="MachineMaintenanceRecord" EntitySet="MachineMaintenanceRecord" />
+      <End Role="MachineMaintenanceRecordOther" EntitySet="MachineMaintenanceRecordOther" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceHeavyEquipment_HeavyEqp" Association="EquipmentModel.Store.FK_MaintenanceHeavyEquipment_HeavyEqp">
+      <End Role="HeavyEqp" EntitySet="HeavyEqp" />
+      <End Role="MaintenanceHeavyEquipment" EntitySet="MaintenanceHeavyEquipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MaintenanceTemplateItem_MachineType" Association="EquipmentModel.Store.FK_MaintenanceTemplateItem_MachineType">
+      <End Role="MachineType" EntitySet="MachineType" />
+      <End Role="MaintenanceTemplateItem" EntitySet="MaintenanceTemplateItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OilAndSparePartUsedTrado_TradoActivity" Association="EquipmentModel.Store.FK_OilAndSparePartUsedTrado_TradoActivity">
+      <End Role="TradoActivity" EntitySet="TradoActivity" />
+      <End Role="OilAndSparePartUsedTrado" EntitySet="OilAndSparePartUsedTrado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OilUsedDumpTruck_DumpTruckActivity" Association="EquipmentModel.Store.FK_OilUsedDumpTruck_DumpTruckActivity">
+      <End Role="DumpTruckActivity" EntitySet="DumpTruckActivity" />
+      <End Role="OilUsedDumpTruck" EntitySet="OilUsedDumpTruck" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OilUsedHeavyEqp_HeavyEqpActivity" Association="EquipmentModel.Store.FK_OilUsedHeavyEqp_HeavyEqpActivity">
+      <End Role="HeavyEqpActivity" EntitySet="HeavyEqpActivity" />
+      <End Role="OilUsedHeavyEqp" EntitySet="OilUsedHeavyEqp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TradoNonOperation_TradoActivity" Association="EquipmentModel.Store.FK_TradoNonOperation_TradoActivity">
+      <End Role="TradoActivity" EntitySet="TradoActivity" />
+      <End Role="TradoNonOperation" EntitySet="TradoNonOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TradoOperation_TradoActivity" Association="EquipmentModel.Store.FK_TradoOperation_TradoActivity">
+      <End Role="TradoActivity" EntitySet="TradoActivity" />
+      <End Role="TradoOperation" EntitySet="TradoOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleMaintenanceCheck_Vehicle" Association="EquipmentModel.Store.FK_VehicleMaintenanceCheck_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="VehicleMaintenanceCheck" EntitySet="VehicleMaintenanceCheck" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleMaintenanceCheckItem_VehicleMaintenanceCheckItem" Association="EquipmentModel.Store.FK_VehicleMaintenanceCheckItem_VehicleMaintenanceCheckItem">
+      <End Role="VehicleMaintenanceCheck" EntitySet="VehicleMaintenanceCheck" />
+      <End Role="VehicleMaintenanceCheckItem" EntitySet="VehicleMaintenanceCheckItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleMaintenanceRecord_Vehicle" Association="EquipmentModel.Store.FK_VehicleMaintenanceRecord_Vehicle">
+      <End Role="Vehicle" EntitySet="Vehicle" />
+      <End Role="VehicleMaintenanceRecord" EntitySet="VehicleMaintenanceRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleMaintenanceRecordItem_VehicleMaintenanceRecord" Association="EquipmentModel.Store.FK_VehicleMaintenanceRecordItem_VehicleMaintenanceRecord">
+      <End Role="VehicleMaintenanceRecord" EntitySet="VehicleMaintenanceRecord" />
+      <End Role="VehicleMaintenanceRecordItem" EntitySet="VehicleMaintenanceRecordItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleMaintenanceRecordMaterialUsed_VehicleMaintenanceRecord" Association="EquipmentModel.Store.FK_VehicleMaintenanceRecordMaterialUsed_VehicleMaintenanceRecord">
+      <End Role="VehicleMaintenanceRecord" EntitySet="VehicleMaintenanceRecord" />
+      <End Role="VehicleMaintenanceRecordMaterialUsed" EntitySet="VehicleMaintenanceRecordMaterialUsed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VehicleMaintenanceRecordOther_VehicleMaintenanceRecord" Association="EquipmentModel.Store.FK_VehicleMaintenanceRecordOther_VehicleMaintenanceRecord">
+      <End Role="VehicleMaintenanceRecord" EntitySet="VehicleMaintenanceRecord" />
+      <End Role="VehicleMaintenanceRecordOther" EntitySet="VehicleMaintenanceRecordOther" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AllMerk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MerkName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AllOil">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OilName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DetailMaintenanceHeavyEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDMaintenanceHeavyEqp" Type="int" />
+    <Property Name="Mechanic" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DumpTruckActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Merk" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Type" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Operator" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IDOp" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="PoliceNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="BeginSecondOverTime" Type="time" />
+    <Property Name="EndSecondOverTime" Type="time" />
+    <Property Name="BeginNormalI" Type="time" />
+    <Property Name="EndNormalI" Type="time" />
+    <Property Name="BeginBreakI" Type="time" />
+    <Property Name="EndBreakI" Type="time" />
+    <Property Name="BeginNormalII" Type="time" />
+    <Property Name="EndNormalII" Type="time" />
+    <Property Name="BeginBreakII" Type="time" />
+    <Property Name="EndBreakII" Type="time" />
+    <Property Name="BeginFirstOverTime1" Type="time" />
+    <Property Name="EndFirstOverTime1" Type="time" />
+    <Property Name="BeginFirstOverTime2" Type="time" />
+    <Property Name="EndFirstOvertime2" Type="time" />
+    <Property Name="IDArea" Type="int" />
+    <Property Name="CorrectBy" Type="varchar" MaxLength="50" />
+    <Property Name="KnownBy" Type="varchar" MaxLength="50" />
+    <Property Name="JabatanCorrectBy" Type="varchar" MaxLength="50" />
+    <Property Name="JabatanKnownBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DumpTruckNonOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="NonOperationType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Begin" Type="time" Nullable="false" />
+    <Property Name="End" Type="time" Nullable="false" />
+    <Property Name="Reason" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DumpTruckOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="LoadType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SourceLocation" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DepartureTime" Type="time" Nullable="false" />
+    <Property Name="ArrivalTime" Type="time" Nullable="false" />
+    <Property Name="Destination" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Distance" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="ReceiverName" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="FuelUsedDumpTruck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" Nullable="false" />
+    <Property Name="AmountFuel" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="FuelUsedHeavyEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="AmountFuel" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="FuelUsedOutTrado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="Alocation" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="AmountFuelOut" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Operator" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FuelUsedTrado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="TimeFill" Type="time" Nullable="false" />
+    <Property Name="AmountFuel" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Location" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HeavyEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDArea" Type="int" Nullable="false" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Merk" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Species" Type="varchar" MaxLength="50" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="Cost" Type="money" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="TaxNumber" Type="varchar" MaxLength="50" />
+    <Property Name="DueDate" Type="date" />
+    <Property Name="SerialNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Capacity" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="text" />
+    <Property Name="Img" Type="image" />
+    <Property Name="BuiltYear" Type="int" />
+    <Property Name="IDOpr" Type="int" />
+    <Property Name="OprName" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="HeavyEqpActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Merk" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Type" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Operator" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IDOp" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="BeginSecondOverTime" Type="time" />
+    <Property Name="EndSecondOverTime" Type="time" />
+    <Property Name="BeginNormalI" Type="time" />
+    <Property Name="EndNormalI" Type="time" />
+    <Property Name="BeginBreakI" Type="time" />
+    <Property Name="EndBreakI" Type="time" />
+    <Property Name="BeginNormalII" Type="time" />
+    <Property Name="EndNormalII" Type="time" />
+    <Property Name="BeginBreakII" Type="time" />
+    <Property Name="EndBreakII" Type="time" />
+    <Property Name="BeginFirstOverTime1" Type="time" />
+    <Property Name="EndFirstOverTime1" Type="time" />
+    <Property Name="BeginFirstOverTime2" Type="time" />
+    <Property Name="EndFirstOvertime2" Type="time" />
+    <Property Name="IDArea" Type="int" Nullable="false" />
+    <Property Name="CorrectBy" Type="varchar" MaxLength="50" />
+    <Property Name="KnownBy" Type="varchar" MaxLength="50" />
+    <Property Name="JabatanCorrectBy" Type="varchar" MaxLength="50" />
+    <Property Name="JabatanKnowBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HeavyEqpMaintenanceRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaintenanceDateStart" Type="datetime" Nullable="false" />
+    <Property Name="MaintenanceDateEnd" Type="datetime" Nullable="false" />
+    <Property Name="HeavyEqpId" Type="int" Nullable="false" />
+    <Property Name="HourmeterValue" Type="float" Nullable="false" />
+    <Property Name="MaintenanceState" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HeavyEqpMaintenanceRecordItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="HeavyEqpMaintenanceRecordId" Type="int" Nullable="false" />
+    <Property Name="Item" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="HeavyEquipmentMaintenanceCheckItemId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HeavyEqpMaintenanceRecordMaterialUsed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="HeavyEqpMaintenanceRecordId" Type="int" Nullable="false" />
+    <Property Name="MaterialUsed" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Quantity" Type="float" Nullable="false" />
+    <Property Name="UnitQuantity" Type="varchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="HeavyEqpMaintenanceRecordOther">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="HeavyEqpMaintenanceRecordId" Type="int" Nullable="false" />
+    <Property Name="Item" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Cost" Type="money" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="HeavyEqpNonOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="NonOperationType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Begin" Type="time" Nullable="false" />
+    <Property Name="End" Type="time" Nullable="false" />
+    <Property Name="Reason" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HeavyEqpOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="OperationType" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="VolumeOperation" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="LocationOperation" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="BeginHM" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="EndHM" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="PacketOperation" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HeavyEquipmentMaintenanceCheck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="HeavyEqpId" Type="int" />
+    <Property Name="AverageHourMeter" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="HeavyEquipmentMaintenanceCheckItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="HeavyEquipmentMaintenanceCheckId" Type="int" />
+    <Property Name="ItemName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="decimal" Nullable="false" />
+    <Property Name="UnitValue" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastCheck_HM" Type="decimal" Nullable="false" />
+    <Property Name="LastCheck_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HeavyEquipmentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MachineEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Remark" Type="text" />
+    <Property Name="Cost" Type="money" Nullable="false" />
+    <Property Name="Capacity" Type="varchar" MaxLength="50" />
+    <Property Name="SerialNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Merk" Type="varchar" MaxLength="50" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="MadeYear" Type="varchar" MaxLength="4" />
+    <Property Name="BuyYear" Type="varchar" MaxLength="4" />
+    <Property Name="IDArea" Type="int" />
+  </EntityType>
+  <EntityType Name="MachineEqpMaintenanceCheck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MachineEqpId" Type="int" />
+    <Property Name="AverageHourMeter" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="MachineEqpMaintenanceCheckItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MachineEqpMaintenanceCheckId" Type="int" />
+    <Property Name="ItemName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="decimal" Nullable="false" />
+    <Property Name="UnitValue" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastCheck_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MachineMaintenanceRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaintenanceDateStart" Type="datetime" Nullable="false" />
+    <Property Name="MaintenanceDateEnd" Type="datetime" Nullable="false" />
+    <Property Name="MachineId" Type="int" Nullable="false" />
+    <Property Name="MaintenanceState" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MachineMaintenanceRecordItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MachineMaintenanceRecordId" Type="int" Nullable="false" />
+    <Property Name="Item" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="MachineMaintenanceCheckItemId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MachineMaintenanceRecordMaterialUsed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MachineMaintenanceRecordId" Type="int" Nullable="false" />
+    <Property Name="MaterialUsed" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Quantity" Type="float" Nullable="false" />
+    <Property Name="UnitQuantity" Type="varchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="MachineMaintenanceRecordOther">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MachineMaintenanceRecordId" Type="int" Nullable="false" />
+    <Property Name="Item" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Cost" Type="money" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="MachineType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="MachineTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MaintenanceHeavyEquipment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDHeavyEqp" Type="int" />
+    <Property Name="HM" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Operator" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DateMaintenance" Type="date" Nullable="false" />
+    <Property Name="Trouble" Type="text" Nullable="false" />
+    <Property Name="Cost" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MaintenanceTemplateItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Item" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="Value" Type="float" Nullable="false" />
+    <Property Name="Unit" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="MachineTypeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OilAndSparePartUsedTrado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="OilOrSparePartType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Unit" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OilUsedDumpTruck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="OilType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="OilUsedHeavyEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="OilType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Amount" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="OutFitEqp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Total" Type="int" Nullable="false" />
+    <Property Name="Remark" Type="text" />
+    <Property Name="Cost" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TradoActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Merk" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Type" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="Driver" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IDDriver" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="PoliceNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IDArea" Type="int" />
+    <Property Name="ApprovalBy" Type="varchar" MaxLength="50" />
+    <Property Name="JabatanApproval" Type="varchar" MaxLength="50" />
+    <Property Name="CorrectBy" Type="varchar" MaxLength="50" />
+    <Property Name="JabatanCorrectBy" Type="varchar" MaxLength="50" />
+    <Property Name="KnownBy" Type="varchar" MaxLength="50" />
+    <Property Name="JabatanKnownBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TradoNonOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="NonOperationType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Reason" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TradoOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDActivity" Type="int" />
+    <Property Name="LoadType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Operator" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SourceLocation" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DepartureTime" Type="time" Nullable="false" />
+    <Property Name="ArrivalTime" Type="time" Nullable="false" />
+    <Property Name="Destination" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="BeginKM" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="EndKM" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Distance" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="TypeNonOperation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NonOpType" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vehicle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IDArea" Type="int" Nullable="false" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Merk" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Species" Type="varchar" MaxLength="50" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="Cost" Type="money" Nullable="false" />
+    <Property Name="Year" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="PoliceNumber" Type="varchar" MaxLength="15" />
+    <Property Name="MachineNumber" Type="varchar" MaxLength="50" />
+    <Property Name="BonesNumber" Type="varchar" MaxLength="50" />
+    <Property Name="DueDate" Type="date" Nullable="false" />
+    <Property Name="Remarks" Type="text" />
+    <Property Name="Img" Type="image" />
+    <Property Name="KeurNumber" Type="varchar" MaxLength="50" />
+    <Property Name="KeurDueDate" Type="date" />
+    <Property Name="BuiltYear" Type="varchar" MaxLength="4" />
+    <Property Name="Capacity" Type="varchar" MaxLength="50" />
+    <Property Name="IDDriver" Type="int" />
+    <Property Name="DriverName" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceCheck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleId" Type="int" Nullable="false" />
+    <Property Name="AverageUsagePerKilometer" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceCheckItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleMaintenanceCheckId" Type="int" Nullable="false" />
+    <Property Name="ItemName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="decimal" Nullable="false" />
+    <Property Name="UnitValue" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastCheck_Kilometer" Type="decimal" Nullable="false" />
+    <Property Name="LastCheck_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MaintenanceDateStart" Type="datetime" Nullable="false" />
+    <Property Name="MaintenanceDateEnd" Type="datetime" Nullable="false" />
+    <Property Name="VehicleId" Type="int" Nullable="false" />
+    <Property Name="OdometerValue" Type="float" Nullable="false" />
+    <Property Name="MaintenanceState" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceRecordItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleMaintenanceRecordId" Type="int" Nullable="false" />
+    <Property Name="Item" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="VehicleMaintenanceCheckItemId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceRecordMaterialUsed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleMaintenanceRecordId" Type="int" Nullable="false" />
+    <Property Name="MaterialUsed" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Quantity" Type="float" Nullable="false" />
+    <Property Name="UnitQuantity" Type="varchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="VehicleMaintenanceRecordOther">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleMaintenanceRecordId" Type="int" Nullable="false" />
+    <Property Name="Item" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Cost" Type="money" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_DetailMaintenanceHeavyEqp_DetailMaintenanceHeavyEqp">
+    <End Role="MaintenanceHeavyEquipment" Type="EquipmentModel.Store.MaintenanceHeavyEquipment" Multiplicity="0..1" />
+    <End Role="DetailMaintenanceHeavyEqp" Type="EquipmentModel.Store.DetailMaintenanceHeavyEqp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MaintenanceHeavyEquipment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DetailMaintenanceHeavyEqp">
+        <PropertyRef Name="IDMaintenanceHeavyEqp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DumpTruckNonOperation_DumpTruckActivity">
+    <End Role="DumpTruckActivity" Type="EquipmentModel.Store.DumpTruckActivity" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DumpTruckNonOperation" Type="EquipmentModel.Store.DumpTruckNonOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DumpTruckActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DumpTruckNonOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DumpTruckOperation_DumpTruckActivity">
+    <End Role="DumpTruckActivity" Type="EquipmentModel.Store.DumpTruckActivity" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DumpTruckOperation" Type="EquipmentModel.Store.DumpTruckOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DumpTruckActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DumpTruckOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuelUsedDumpTruck_DumpTruckActivity">
+    <End Role="DumpTruckActivity" Type="EquipmentModel.Store.DumpTruckActivity" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FuelUsedDumpTruck" Type="EquipmentModel.Store.FuelUsedDumpTruck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DumpTruckActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FuelUsedDumpTruck">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuelUsedHeavyEqp_HeavyEqpActivity">
+    <End Role="HeavyEqpActivity" Type="EquipmentModel.Store.HeavyEqpActivity" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FuelUsedHeavyEqp" Type="EquipmentModel.Store.FuelUsedHeavyEqp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FuelUsedHeavyEqp">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuelUsedOutTrado_TradoActivity">
+    <End Role="TradoActivity" Type="EquipmentModel.Store.TradoActivity" Multiplicity="0..1" />
+    <End Role="FuelUsedOutTrado" Type="EquipmentModel.Store.FuelUsedOutTrado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TradoActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FuelUsedOutTrado">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FuelUsedTrado_TradoActivity">
+    <End Role="TradoActivity" Type="EquipmentModel.Store.TradoActivity" Multiplicity="0..1" />
+    <End Role="FuelUsedTrado" Type="EquipmentModel.Store.FuelUsedTrado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TradoActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FuelUsedTrado">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpMaintenanceRecord_HeavyEqp">
+    <End Role="HeavyEqp" Type="EquipmentModel.Store.HeavyEqp" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HeavyEqpMaintenanceRecord" Type="EquipmentModel.Store.HeavyEqpMaintenanceRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEqpMaintenanceRecord">
+        <PropertyRef Name="HeavyEqpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpMaintenanceRecordItem_HeavyEqpMaintenanceRecord">
+    <End Role="HeavyEqpMaintenanceRecord" Type="EquipmentModel.Store.HeavyEqpMaintenanceRecord" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HeavyEqpMaintenanceRecordItem" Type="EquipmentModel.Store.HeavyEqpMaintenanceRecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HeavyEqpMaintenanceRecordItem">
+        <PropertyRef Name="HeavyEqpMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpMaintenanceRecordItem_HeavyEquipmentMaintenanceCheckItem">
+    <End Role="HeavyEquipmentMaintenanceCheckItem" Type="EquipmentModel.Store.HeavyEquipmentMaintenanceCheckItem" Multiplicity="1" />
+    <End Role="HeavyEqpMaintenanceRecordItem" Type="EquipmentModel.Store.HeavyEqpMaintenanceRecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEquipmentMaintenanceCheckItem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEqpMaintenanceRecordItem">
+        <PropertyRef Name="HeavyEquipmentMaintenanceCheckItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpMaintenanceRecordMaterialUsed_HeavyEqpMaintenanceRecord">
+    <End Role="HeavyEqpMaintenanceRecord" Type="EquipmentModel.Store.HeavyEqpMaintenanceRecord" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HeavyEqpMaintenanceRecordMaterialUsed" Type="EquipmentModel.Store.HeavyEqpMaintenanceRecordMaterialUsed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HeavyEqpMaintenanceRecordMaterialUsed">
+        <PropertyRef Name="HeavyEqpMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpMaintenanceRecordOther_HeavyEqpMaintenanceRecord">
+    <End Role="HeavyEqpMaintenanceRecord" Type="EquipmentModel.Store.HeavyEqpMaintenanceRecord" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HeavyEqpMaintenanceRecordOther" Type="EquipmentModel.Store.HeavyEqpMaintenanceRecordOther" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HeavyEqpMaintenanceRecordOther">
+        <PropertyRef Name="HeavyEqpMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpNonOperation_HeavyEqpActivity">
+    <End Role="HeavyEqpActivity" Type="EquipmentModel.Store.HeavyEqpActivity" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HeavyEqpNonOperation" Type="EquipmentModel.Store.HeavyEqpNonOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEqpNonOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEqpOperation_HeavyEqpActivity">
+    <End Role="HeavyEqpActivity" Type="EquipmentModel.Store.HeavyEqpActivity" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HeavyEqpOperation" Type="EquipmentModel.Store.HeavyEqpOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEqpOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEquipmentMaintenanceCheck_HeavyEqp">
+    <End Role="HeavyEqp" Type="EquipmentModel.Store.HeavyEqp" Multiplicity="0..1" />
+    <End Role="HeavyEquipmentMaintenanceCheck" Type="EquipmentModel.Store.HeavyEquipmentMaintenanceCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEquipmentMaintenanceCheck">
+        <PropertyRef Name="HeavyEqpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HeavyEquipmentMaintenanceCheckItem_HeavyEquipmentMaintenanceCheck">
+    <End Role="HeavyEquipmentMaintenanceCheck" Type="EquipmentModel.Store.HeavyEquipmentMaintenanceCheck" Multiplicity="0..1" />
+    <End Role="HeavyEquipmentMaintenanceCheckItem" Type="EquipmentModel.Store.HeavyEquipmentMaintenanceCheckItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEquipmentMaintenanceCheck">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HeavyEquipmentMaintenanceCheckItem">
+        <PropertyRef Name="HeavyEquipmentMaintenanceCheckId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MachineEqpMaintenanceCheck_MachineEqp">
+    <End Role="MachineEqp" Type="EquipmentModel.Store.MachineEqp" Multiplicity="0..1" />
+    <End Role="MachineEqpMaintenanceCheck" Type="EquipmentModel.Store.MachineEqpMaintenanceCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineEqp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MachineEqpMaintenanceCheck">
+        <PropertyRef Name="MachineEqpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MachineEqpMaintenanceCheckItem_MachineEqpMaintenanceCheck">
+    <End Role="MachineEqpMaintenanceCheck" Type="EquipmentModel.Store.MachineEqpMaintenanceCheck" Multiplicity="0..1" />
+    <End Role="MachineEqpMaintenanceCheckItem" Type="EquipmentModel.Store.MachineEqpMaintenanceCheckItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineEqpMaintenanceCheck">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MachineEqpMaintenanceCheckItem">
+        <PropertyRef Name="MachineEqpMaintenanceCheckId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MachineMaintenanceRecord_Machine">
+    <End Role="MachineEqp" Type="EquipmentModel.Store.MachineEqp" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MachineMaintenanceRecord" Type="EquipmentModel.Store.MachineMaintenanceRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineEqp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MachineMaintenanceRecord">
+        <PropertyRef Name="MachineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MachineMaintenanceRecordItem_MachineMaintenanceRecord">
+    <End Role="MachineMaintenanceRecord" Type="EquipmentModel.Store.MachineMaintenanceRecord" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MachineMaintenanceRecordItem" Type="EquipmentModel.Store.MachineMaintenanceRecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MachineMaintenanceRecordItem">
+        <PropertyRef Name="MachineMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MachineMaintenanceRecordMaterialUsed_MachineMaintenanceRecord">
+    <End Role="MachineMaintenanceRecord" Type="EquipmentModel.Store.MachineMaintenanceRecord" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MachineMaintenanceRecordMaterialUsed" Type="EquipmentModel.Store.MachineMaintenanceRecordMaterialUsed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MachineMaintenanceRecordMaterialUsed">
+        <PropertyRef Name="MachineMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MachineMaintenanceRecordOther_MachineMaintenanceRecord">
+    <End Role="MachineMaintenanceRecord" Type="EquipmentModel.Store.MachineMaintenanceRecord" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MachineMaintenanceRecordOther" Type="EquipmentModel.Store.MachineMaintenanceRecordOther" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MachineMaintenanceRecordOther">
+        <PropertyRef Name="MachineMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceHeavyEquipment_HeavyEqp">
+    <End Role="HeavyEqp" Type="EquipmentModel.Store.HeavyEqp" Multiplicity="0..1" />
+    <End Role="MaintenanceHeavyEquipment" Type="EquipmentModel.Store.MaintenanceHeavyEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MaintenanceHeavyEquipment">
+        <PropertyRef Name="IDHeavyEqp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MaintenanceTemplateItem_MachineType">
+    <End Role="MachineType" Type="EquipmentModel.Store.MachineType" Multiplicity="1" />
+    <End Role="MaintenanceTemplateItem" Type="EquipmentModel.Store.MaintenanceTemplateItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MachineType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MaintenanceTemplateItem">
+        <PropertyRef Name="MachineTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OilAndSparePartUsedTrado_TradoActivity">
+    <End Role="TradoActivity" Type="EquipmentModel.Store.TradoActivity" Multiplicity="0..1" />
+    <End Role="OilAndSparePartUsedTrado" Type="EquipmentModel.Store.OilAndSparePartUsedTrado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TradoActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OilAndSparePartUsedTrado">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OilUsedDumpTruck_DumpTruckActivity">
+    <End Role="DumpTruckActivity" Type="EquipmentModel.Store.DumpTruckActivity" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OilUsedDumpTruck" Type="EquipmentModel.Store.OilUsedDumpTruck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DumpTruckActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OilUsedDumpTruck">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OilUsedHeavyEqp_HeavyEqpActivity">
+    <End Role="HeavyEqpActivity" Type="EquipmentModel.Store.HeavyEqpActivity" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OilUsedHeavyEqp" Type="EquipmentModel.Store.OilUsedHeavyEqp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HeavyEqpActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OilUsedHeavyEqp">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TradoNonOperation_TradoActivity">
+    <End Role="TradoActivity" Type="EquipmentModel.Store.TradoActivity" Multiplicity="0..1" />
+    <End Role="TradoNonOperation" Type="EquipmentModel.Store.TradoNonOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TradoActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TradoNonOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TradoOperation_TradoActivity">
+    <End Role="TradoActivity" Type="EquipmentModel.Store.TradoActivity" Multiplicity="0..1" />
+    <End Role="TradoOperation" Type="EquipmentModel.Store.TradoOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TradoActivity">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TradoOperation">
+        <PropertyRef Name="IDActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleMaintenanceCheck_Vehicle">
+    <End Role="Vehicle" Type="EquipmentModel.Store.Vehicle" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VehicleMaintenanceCheck" Type="EquipmentModel.Store.VehicleMaintenanceCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceCheck">
+        <PropertyRef Name="VehicleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleMaintenanceCheckItem_VehicleMaintenanceCheckItem">
+    <End Role="VehicleMaintenanceCheck" Type="EquipmentModel.Store.VehicleMaintenanceCheck" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VehicleMaintenanceCheckItem" Type="EquipmentModel.Store.VehicleMaintenanceCheckItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleMaintenanceCheck">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceCheckItem">
+        <PropertyRef Name="VehicleMaintenanceCheckId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleMaintenanceRecord_Vehicle">
+    <End Role="Vehicle" Type="EquipmentModel.Store.Vehicle" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VehicleMaintenanceRecord" Type="EquipmentModel.Store.VehicleMaintenanceRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceRecord">
+        <PropertyRef Name="VehicleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleMaintenanceRecordItem_VehicleMaintenanceRecord">
+    <End Role="VehicleMaintenanceRecord" Type="EquipmentModel.Store.VehicleMaintenanceRecord" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VehicleMaintenanceRecordItem" Type="EquipmentModel.Store.VehicleMaintenanceRecordItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceRecordItem">
+        <PropertyRef Name="VehicleMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleMaintenanceRecordMaterialUsed_VehicleMaintenanceRecord">
+    <End Role="VehicleMaintenanceRecord" Type="EquipmentModel.Store.VehicleMaintenanceRecord" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VehicleMaintenanceRecordMaterialUsed" Type="EquipmentModel.Store.VehicleMaintenanceRecordMaterialUsed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceRecordMaterialUsed">
+        <PropertyRef Name="VehicleMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VehicleMaintenanceRecordOther_VehicleMaintenanceRecord">
+    <End Role="VehicleMaintenanceRecord" Type="EquipmentModel.Store.VehicleMaintenanceRecord" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VehicleMaintenanceRecordOther" Type="EquipmentModel.Store.VehicleMaintenanceRecordOther" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleMaintenanceRecord">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VehicleMaintenanceRecordOther">
+        <PropertyRef Name="VehicleMaintenanceRecordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AutocompleteItemMaintenance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="term" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AutocompleteLoadType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="term" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="AutocompleteLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="termlocation" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="DetailDumpTruckOperation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DetailFuel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="idactivity" Type="int" Mode="In" />
+    <Parameter Name="iddumptruckactivity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DetailNonOperation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="idactivity" Type="int" Mode="In" />
+    <Parameter Name="iddumptruckactivity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DetailOil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="idactivity" Type="int" Mode="In" />
+    <Parameter Name="iddumptruckactivity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DetailOperation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NonOpType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="term" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="OperatorType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="officeId" Type="int" Mode="In" />
+    <Parameter Name="autocomplete" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="ProcBBMTrado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="idactivity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProcBBMTradoOut" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="idactivity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProcOil_SparePart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="idactivity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProcTradoNonOp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="idactivity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProcTradoOperations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="idactivity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportDumpTruckActivities" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportHeavyEqpActivities" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportHeavyEqpMaintenance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportHeavyEqpMaintenanceMaterialUsed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportHeavyEqpMaintenanceOther" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportHeavyEquipmentMaintenanceItemWork" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportMachineMaintenance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportMachineMaintenanceItemWork" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportMachineMaintenanceMaterialUsed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportMachineMaintenanceOther" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportTradoActivities" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportVehicleMaintenance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportVehicleMaintenanceItemWork" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportVehicleMaintenanceMaterialUsed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ReportVehicleMaintenanceOther" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Eqp">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+</Schema>

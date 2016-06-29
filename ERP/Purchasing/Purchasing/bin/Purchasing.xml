@@ -1,0 +1,1436 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Purchasing
+</name>
+</assembly>
+<members>
+<member name="T:Purchasing.MDKDataSet.DPRApprovalDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalMasterDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalMaterialCriteriaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalDetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.ProjectPurchaseRequisitionDetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DepartmentPRDetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DeliveryOrderDetailsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalMasterRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalMaterialCriteriaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalDetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.ProjectPurchaseRequisitionDetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DepartmentPRDetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DeliveryOrderDetailsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalMasterRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalMaterialCriteriaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DPRApprovalDetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.ProjectPurchaseRequisitionDetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DepartmentPRDetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Purchasing.MDKDataSet.DeliveryOrderDetailsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Purchasing.MDKDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Purchasing.MDKDataSetTableAdapters.DPRApprovalTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Purchasing.MDKDataSetTableAdapters.DPRApprovalMasterTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Purchasing.MDKDataSetTableAdapters.DPRApprovalMaterialCriteriaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Purchasing.MDKDataSetTableAdapters.DPRApprovalDetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Purchasing.MDKDataSetTableAdapters.ProjectPurchaseRequisitionDetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Purchasing.MDKDataSetTableAdapters.DepartmentPRDetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Purchasing.MDKDataSetTableAdapters.DeliveryOrderDetailsTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Purchasing.MDKDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Purchasing.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Purchasing.MDKDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Purchasing.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Purchasing.MDKDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Purchasing.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Purchasing.MDKDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Purchasing.MDKDataSetTableAdapters.TableAdapterManager.UpdateAll(Purchasing.MDKDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Purchasing.MDKDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Purchasing.MDKDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Purchasing.MDKDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="M:Purchasing.PurchasingEntities.#ctor">
+	<summary>
+ Initializes a new PurchasingEntities object using the connection string found in the 'PurchasingEntities' section of the application configuration file.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.#ctor(System.String)">
+	<summary>
+ Initialize a new PurchasingEntities object.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+	<summary>
+ Initialize a new PurchasingEntities object.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.ApprovalStatus">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.CurrencyMaster">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.Measure">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.Office">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.CompanyLists">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.DepartmentPRDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.DepartmentPurchaseRequisitions">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.ProjectPurchaseRequisitions">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.ProjectPurchaseRequisitionDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.RequestTypes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.PurchaseOrders">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.DeliveryOrderDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.DeliveryOrders">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.Vendor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.VendorCategory">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.PriceComparisonDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.PriceComparison">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchasingEntities.PurchaseOrderDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToApprovalStatus(Purchasing.ApprovalStatus)">
+	<summary>
+ Deprecated Method for adding a new object to the ApprovalStatus EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToCurrencyMaster(Purchasing.CurrencyMaster)">
+	<summary>
+ Deprecated Method for adding a new object to the CurrencyMaster EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToMeasure(Purchasing.Measure)">
+	<summary>
+ Deprecated Method for adding a new object to the Measure EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToOffice(Purchasing.Office)">
+	<summary>
+ Deprecated Method for adding a new object to the Office EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToProjectInfo(Purchasing.ProjectInfo)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectInfo EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToCompanyLists(Purchasing.CompanyLists)">
+	<summary>
+ Deprecated Method for adding a new object to the CompanyLists EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToDepartmentPRDetails(Purchasing.DepartmentPRDetail)">
+	<summary>
+ Deprecated Method for adding a new object to the DepartmentPRDetails EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToDepartmentPurchaseRequisitions(Purchasing.DepartmentPurchaseRequisition)">
+	<summary>
+ Deprecated Method for adding a new object to the DepartmentPurchaseRequisitions EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToProjectPurchaseRequisitions(Purchasing.ProjectPurchaseRequisition)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectPurchaseRequisitions EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToProjectPurchaseRequisitionDetails(Purchasing.ProjectPurchaseRequisitionDetail)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectPurchaseRequisitionDetails EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToRequestTypes(Purchasing.RequestType)">
+	<summary>
+ Deprecated Method for adding a new object to the RequestTypes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToPurchaseOrders(Purchasing.PurchaseOrder)">
+	<summary>
+ Deprecated Method for adding a new object to the PurchaseOrders EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToDeliveryOrderDetails(Purchasing.DeliveryOrderDetail)">
+	<summary>
+ Deprecated Method for adding a new object to the DeliveryOrderDetails EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToDeliveryOrders(Purchasing.DeliveryOrder)">
+	<summary>
+ Deprecated Method for adding a new object to the DeliveryOrders EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToVendor(Purchasing.Vendor)">
+	<summary>
+ Deprecated Method for adding a new object to the Vendor EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToVendorCategory(Purchasing.VendorCategory)">
+	<summary>
+ Deprecated Method for adding a new object to the VendorCategory EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToPriceComparisonDetail(Purchasing.PriceComparisonDetail)">
+	<summary>
+ Deprecated Method for adding a new object to the PriceComparisonDetail EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToPriceComparison(Purchasing.PriceComparison)">
+	<summary>
+ Deprecated Method for adding a new object to the PriceComparison EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.AddToPurchaseOrderDetails(Purchasing.PurchaseOrderDetail)">
+	<summary>
+ Deprecated Method for adding a new object to the PurchaseOrderDetails EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.GetDescriptionPurchase(System.Nullable{System.Boolean})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="isProject">No Metadata Documentation available.</param>
+</member><member name="M:Purchasing.PurchasingEntities.GetVendorList">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.PurchasingEntities.GetNoRecord(System.String)">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="term">No Metadata Documentation available.</param>
+</member><member name="T:Purchasing.PurchasingEntities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.ApprovalStatus.CreateApprovalStatus(System.Int32)">
+	<summary>
+ Create a new ApprovalStatus object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:Purchasing.ApprovalStatus.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ApprovalStatus.Status">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.ApprovalStatus">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.CompanyLists.CreateCompanyLists(System.Int32)">
+	<summary>
+ Create a new CompanyLists object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:Purchasing.CompanyLists.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.CompanyLists.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.CompanyLists.Symbol">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.CompanyLists.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.CompanyLists.Address1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.CompanyLists.Address2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.CompanyLists.City">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.CompanyLists.Phone">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.CompanyLists.Fax">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.CompanyLists">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.CurrencyMaster.CreateCurrencyMaster(System.Int32)">
+	<summary>
+ Create a new CurrencyMaster object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+</member><member name="P:Purchasing.CurrencyMaster.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.CurrencyMaster.CurrencyName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.CurrencyMaster">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.DeliveryOrder.CreateDeliveryOrder(System.Int32,System.DateTime,System.Int32,System.String)">
+	<summary>
+ Create a new DeliveryOrder object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="receiptDate">Initial value of the ReceiptDate property.</param>
+	<param name="purchaseOrderId">Initial value of the PurchaseOrderId property.</param>
+	<param name="docNo">Initial value of the DocNo property.</param>
+</member><member name="P:Purchasing.DeliveryOrder.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrder.ReceiptDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrder.PurchaseOrderId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrder.DocNo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrder.ReceiptBy_Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrder.DeliveryOrderDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.DeliveryOrder">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.DeliveryOrderDetail.CreateDeliveryOrderDetail(System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Create a new DeliveryOrderDetail object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="deliveryOrderId">Initial value of the DeliveryOrderId property.</param>
+	<param name="purchaseOrderDetailId">Initial value of the PurchaseOrderDetailId property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+</member><member name="P:Purchasing.DeliveryOrderDetail.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrderDetail.DeliveryOrderId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrderDetail.PurchaseOrderDetailId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrderDetail.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrderDetail.DeliveryOrder">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrderDetail.DeliveryOrderReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrderDetail.PurchaseOrderDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DeliveryOrderDetail.PurchaseOrderDetailReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.DeliveryOrderDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.DepartmentPRDetail.CreateDepartmentPRDetail(System.Int32,System.Int32,System.String,System.Decimal,System.String,System.String,System.Decimal,System.Decimal)">
+	<summary>
+ Create a new DepartmentPRDetail object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="departmentPurchaseRequisitionId">Initial value of the DepartmentPurchaseRequisitionId property.</param>
+	<param name="itemName">Initial value of the ItemName property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+	<param name="unitQuantity">Initial value of the UnitQuantity property.</param>
+	<param name="currency">Initial value of the Currency property.</param>
+	<param name="estUnitPrice">Initial value of the EstUnitPrice property.</param>
+	<param name="totalEstPrice">Initial value of the TotalEstPrice property.</param>
+</member><member name="P:Purchasing.DepartmentPRDetail.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.DepartmentPurchaseRequisitionId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.ItemName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.UnitQuantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.Currency">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.EstUnitPrice">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.TotalEstPrice">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.Allocation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.DepartmentPurchaseRequisition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.DepartmentPurchaseRequisitionReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPRDetail.PriceComparisonDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.DepartmentPRDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.DepartmentPurchaseRequisition.CreateDepartmentPurchaseRequisition(System.Int32,System.String,System.Int32,System.DateTime,System.DateTime,System.String,System.String,System.Int32,System.Boolean,System.Int32)">
+	<summary>
+ Create a new DepartmentPurchaseRequisition object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="recordNo">Initial value of the RecordNo property.</param>
+	<param name="officeID">Initial value of the OfficeID property.</param>
+	<param name="requestDate">Initial value of the RequestDate property.</param>
+	<param name="deliveryDate">Initial value of the DeliveryDate property.</param>
+	<param name="deliveryTo">Initial value of the DeliveryTo property.</param>
+	<param name="deliveryAddress">Initial value of the DeliveryAddress property.</param>
+	<param name="docState">Initial value of the DocState property.</param>
+	<param name="archive">Initial value of the Archive property.</param>
+	<param name="requestTypeId">Initial value of the RequestTypeId property.</param>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.RecordNo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.OfficeID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.RequestDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.DeliveryDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.DeliveryTo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.DeliveryAddress">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.RequestedBy_Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.RequestedBy_Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.ApprovedBy_Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.ApprovedBy_Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.KnownBy_Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.KnownBy_Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.DocState">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.DocApproveRejectDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.Archive">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.RequestTypeId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.Office">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.OfficeReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.DepartmentPRDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.RequestType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.RequestTypeReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.DepartmentPurchaseRequisition.PriceComparison">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.DepartmentPurchaseRequisition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.Measure.CreateMeasure(System.Int32)">
+	<summary>
+ Create a new Measure object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+</member><member name="P:Purchasing.Measure.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Measure.MeasureName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Measure.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.Measure">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.Office.CreateOffice(System.Int32,System.String,System.Int32,System.Int32)">
+	<summary>
+ Create a new Office object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="name">Initial value of the Name property.</param>
+	<param name="parent_ID">Initial value of the Parent_ID property.</param>
+	<param name="ordinal">Initial value of the Ordinal property.</param>
+</member><member name="P:Purchasing.Office.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Office.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Office.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Office.Abbreviation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Office.Parent_ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Office.Ordinal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Office.DepartmentPurchaseRequisitions">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.Office">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.PriceComparison.CreatePriceComparison(System.Int32,System.DateTime,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Create a new PriceComparison object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="createDate">Initial value of the CreateDate property.</param>
+	<param name="purchaseRequisitionID">Initial value of the PurchaseRequisitionID property.</param>
+	<param name="vendorID1">Initial value of the VendorID1 property.</param>
+	<param name="vendorID2">Initial value of the VendorID2 property.</param>
+	<param name="vendorID3">Initial value of the VendorID3 property.</param>
+</member><member name="P:Purchasing.PriceComparison.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparison.CreateDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparison.PurchaseRequisitionID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparison.VendorID1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparison.VendorID2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparison.VendorID3">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparison.DepartmentPurchaseRequisition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparison.DepartmentPurchaseRequisitionReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparison.PriceComparisonDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.PriceComparison">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.PriceComparisonDetail.CreatePriceComparisonDetail(System.Int32,System.Int32,System.Int32,System.Decimal,System.Decimal,System.Decimal)">
+	<summary>
+ Create a new PriceComparisonDetail object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="priceComparisonID">Initial value of the PriceComparisonID property.</param>
+	<param name="pRDetailID">Initial value of the PRDetailID property.</param>
+	<param name="price1">Initial value of the Price1 property.</param>
+	<param name="price2">Initial value of the Price2 property.</param>
+	<param name="price3">Initial value of the Price3 property.</param>
+</member><member name="P:Purchasing.PriceComparisonDetail.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparisonDetail.PriceComparisonID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparisonDetail.PRDetailID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparisonDetail.Price1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparisonDetail.Price2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparisonDetail.Price3">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparisonDetail.DepartmentPRDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparisonDetail.DepartmentPRDetailReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparisonDetail.PriceComparison">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PriceComparisonDetail.PriceComparisonReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.PriceComparisonDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.ProjectInfo.CreateProjectInfo(System.Int32,System.String,System.String,System.DateTime,System.Int32,System.String,System.String,System.Int32,System.Decimal,System.String,System.Boolean)">
+	<summary>
+ Create a new ProjectInfo object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectCode">Initial value of the ProjectCode property.</param>
+	<param name="projectTitle">Initial value of the ProjectTitle property.</param>
+	<param name="dateStart">Initial value of the DateStart property.</param>
+	<param name="numberOfDays">Initial value of the NumberOfDays property.</param>
+	<param name="dayUnit">Initial value of the DayUnit property.</param>
+	<param name="contractNumber">Initial value of the ContractNumber property.</param>
+	<param name="companyInfoId">Initial value of the CompanyInfoId property.</param>
+	<param name="contractValue">Initial value of the ContractValue property.</param>
+	<param name="consultanName">Initial value of the ConsultanName property.</param>
+	<param name="archive">Initial value of the Archive property.</param>
+</member><member name="P:Purchasing.ProjectInfo.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.ProjectCode">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.ProjectTitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.DateStart">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.NumberOfDays">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.DayUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.ContractNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.CompanyInfoId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.ContractValue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.ConsultanName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.Location">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectInfo.Archive">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.ProjectPurchaseRequisition.CreateProjectPurchaseRequisition(System.Int32,System.String,System.String,System.DateTime,System.DateTime,System.Int32,System.Boolean)">
+	<summary>
+ Create a new ProjectPurchaseRequisition object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="projectCode">Initial value of the ProjectCode property.</param>
+	<param name="projectTitle">Initial value of the ProjectTitle property.</param>
+	<param name="requestDate">Initial value of the RequestDate property.</param>
+	<param name="deliveryDate">Initial value of the DeliveryDate property.</param>
+	<param name="docState">Initial value of the DocState property.</param>
+	<param name="archive">Initial value of the Archive property.</param>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.RecordNo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.ProjectCode">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.ProjectTitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.RequestDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.DeliveryDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.DeliveryTo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.DeliveryAddress">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.RequestedBy_Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.RequestedBy_Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.ApprovedBy_Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.ApprovedBy_Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.KnownBy_Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.KnownBy_Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.DocState">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.DocApproveRejectDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.Archive">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisition.ProjectPurchaseRequisitionDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.ProjectPurchaseRequisition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.ProjectPurchaseRequisitionDetail.CreateProjectPurchaseRequisitionDetail(System.Int32,System.Int32,System.String,System.String,System.Decimal,System.String,System.String,System.Decimal,System.Decimal)">
+	<summary>
+ Create a new ProjectPurchaseRequisitionDetail object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="projectPurchaseRequisitionId">Initial value of the ProjectPurchaseRequisitionId property.</param>
+	<param name="itemName">Initial value of the ItemName property.</param>
+	<param name="brand">Initial value of the Brand property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+	<param name="unitQuantity">Initial value of the UnitQuantity property.</param>
+	<param name="currency">Initial value of the Currency property.</param>
+	<param name="estUnitPrice">Initial value of the EstUnitPrice property.</param>
+	<param name="totalEstPrice">Initial value of the TotalEstPrice property.</param>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.ProjectPurchaseRequisitionId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.ItemName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.Brand">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.UnitQuantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.Currency">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.EstUnitPrice">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.TotalEstPrice">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.ProjectPurchaseRequisition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.ProjectPurchaseRequisitionDetail.ProjectPurchaseRequisitionReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.ProjectPurchaseRequisitionDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.PurchaseOrder.CreatePurchaseOrder(System.Int32,System.String,System.DateTime,System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.Boolean,System.Boolean)">
+	<summary>
+ Create a new PurchaseOrder object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="orderNumber">Initial value of the OrderNumber property.</param>
+	<param name="orderDate">Initial value of the OrderDate property.</param>
+	<param name="pOType">Initial value of the POType property.</param>
+	<param name="rQNumber">Initial value of the RQNumber property.</param>
+	<param name="preparedBy_Name">Initial value of the PreparedBy_Name property.</param>
+	<param name="approvedBy_Name">Initial value of the ApprovedBy_Name property.</param>
+	<param name="currency">Initial value of the Currency property.</param>
+	<param name="docState">Initial value of the DocState property.</param>
+	<param name="archive">Initial value of the Archive property.</param>
+	<param name="pPnAdded">Initial value of the PPnAdded property.</param>
+</member><member name="P:Purchasing.PurchaseOrder.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.OrderNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.OrderDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.POType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.RQNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.QuotationRef">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.ContactPerson_Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.ContactPerson_Phone">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.TermOfPayment">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.DeliveryDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.DeliveryTo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.DeliveryAddress">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.PreparedBy_Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.ApprovedBy_Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.Remarks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.Currency">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.DocState">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.Archive">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.Vendor_CompanyName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.Vendor_ContactName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.Vendor_Phone">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.Vendor_Address">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.Vendor_City">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.Vendor_Province">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.PPnAdded">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.Vendor_Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrder.PurchaseOrderDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.PurchaseOrder">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.PurchaseOrderDetail.CreatePurchaseOrderDetail(System.Int32,System.Int32,System.Int32,System.String,System.Decimal,System.String,System.Decimal,System.Decimal)">
+	<summary>
+ Create a new PurchaseOrderDetail object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="purchaseOrderId">Initial value of the PurchaseOrderId property.</param>
+	<param name="pRDetailId">Initial value of the PRDetailId property.</param>
+	<param name="itemName">Initial value of the ItemName property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+	<param name="unitQuantity">Initial value of the UnitQuantity property.</param>
+	<param name="unitPrice">Initial value of the UnitPrice property.</param>
+	<param name="totalPrice">Initial value of the TotalPrice property.</param>
+</member><member name="P:Purchasing.PurchaseOrderDetail.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrderDetail.PurchaseOrderId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrderDetail.PRDetailId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrderDetail.ItemName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrderDetail.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrderDetail.UnitQuantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrderDetail.UnitPrice">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrderDetail.TotalPrice">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrderDetail.DeliveryOrderDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrderDetail.PurchaseOrder">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.PurchaseOrderDetail.PurchaseOrderReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.PurchaseOrderDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.RequestType.CreateRequestType(System.Int32,System.String)">
+	<summary>
+ Create a new RequestType object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="name">Initial value of the Name property.</param>
+</member><member name="P:Purchasing.RequestType.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.RequestType.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.RequestType.DepartmentPurchaseRequisitions">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.RequestType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.Vendor.CreateVendor(System.Int32,System.String,System.String,System.String,System.String,System.Boolean)">
+	<summary>
+ Create a new Vendor object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="name">Initial value of the Name property.</param>
+	<param name="number">Initial value of the Number property.</param>
+	<param name="phone">Initial value of the Phone property.</param>
+	<param name="contactName">Initial value of the ContactName property.</param>
+	<param name="suspended">Initial value of the Suspended property.</param>
+</member><member name="P:Purchasing.Vendor.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Number">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Phone">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.ContactName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Suspended">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Address">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.City">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Province">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Zip">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Country">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Fax">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Email">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Web">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.Currency">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.CategoryId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.NPWPNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.NPWPAddress">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.VendorCategory">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.Vendor.VendorCategoryReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.Vendor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.VendorCategory.CreateVendorCategory(System.Int32,System.String)">
+	<summary>
+ Create a new VendorCategory object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="name">Initial value of the Name property.</param>
+</member><member name="P:Purchasing.VendorCategory.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.VendorCategory.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.VendorCategory.Vendor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.VendorCategory">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.GetDescriptionPurchase_Result.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.GetDescriptionPurchase_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.GetNoRecord_Result.CreateGetNoRecord_Result(System.Int32)">
+	<summary>
+ Create a new GetNoRecord_Result object.
+ </summary>
+	<param name="officeId">Initial value of the officeId property.</param>
+</member><member name="P:Purchasing.GetNoRecord_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.GetNoRecord_Result.Norecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.GetNoRecord_Result.officeId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.GetNoRecord_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.GetVendorList_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:Purchasing.GetVendorList_Result.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:Purchasing.GetVendorList_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:Purchasing.Purchasing.Areas.Purchasing.Controllers.PurchaseOrderController.GetVendorPriceComparison(System.String,System.Int32)">
+	<summary>
+ Get vendor price based on the purchase requisition
+ </summary>
+	<param name="rqnumber">purchase requistionid</param>
+	<param name="VendorId">vendorid</param>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,81 @@
+﻿@model SKA.Areas.Setting.Models.ViewModels.PartnerViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+
+<div class="box-head">
+	<h2>Hapus Rekanan</h2>
+</div>
+<div class="box-content">
+    <h3>Apakah anda yakin menghapus data ini?</h3>
+    <br />
+     <table>
+            <tr>
+                <td>Kode Rekanan</td>
+                <td>:</td>
+                <td>
+                @Model.Code
+                </td>
+            </tr>
+    
+            <tr>
+                <td>Nama Rekanan</td>
+                <td>:</td>
+                <td>
+                @Model.Name 
+                </td>
+            </tr>
+
+             <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td>
+                @Model.Address
+                </td>
+            </tr>
+    
+             <tr>
+                <td>NPWP</td>
+                <td>:</td>
+                <td>
+                @Model.NPWP
+                </td>
+            </tr>
+
+            <tr>
+                <td>Kode Perkiraan</td>
+                <td>:</td>
+                <td>
+                @Model.AccountCode
+                </td>
+            </tr>
+    
+             <tr>
+                <td>Nomor Telepon</td>
+                <td>:</td>
+                <td>
+                @Model.PhoneNumber
+                </td>
+            </tr>
+
+             <tr>
+                <td>Keterangan</td>
+                <td>:</td>
+                <td>
+                @Model.Remarks
+                </td>
+            </tr>
+         </table>
+         <br />
+         @using (Html.BeginForm())
+                {
+                <input type="submit" class ="t-button" value="Hapus" style ="width:60px"/> 
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index","Partner",null )">Batal</a>   
+                }
+</div>
+
+
+

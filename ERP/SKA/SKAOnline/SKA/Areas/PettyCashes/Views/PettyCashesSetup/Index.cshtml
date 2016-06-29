@@ -1,0 +1,56 @@
+﻿@model SKA.Models.PettyCashSetup
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Voucher Kas Kecil - Setup";
+    Layout = "~/Areas/PettyCashes/Views/Shared/_PettyCashesLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Setup</h2>
+</div>
+<div class="box-content">
+    <table class="basic-table">
+        <tr>
+            <td>Disetujui</td>
+            <td>:</td>
+            <td>
+                @Model.ApproverName
+            </td>
+        </tr>
+        <tr>
+            <td>Jabatan</td>
+            <td>:</td>
+            <td>
+                @Model.ApproverPosition
+            </td>
+        </tr>
+        <tr>
+            <td>Dibuat</td>
+            <td>:</td>
+            <td>
+                @Model.MakerName
+            </td>
+        </tr>
+        <tr>
+            <td>Jabatan</td>
+            <td>:</td>
+            <td>
+                @Model.MakerPosition
+            </td>
+        </tr>
+        <tr>
+            <td>Pembuat Rekap</td>
+            <td>:</td>
+            <td>
+                @Model.RecapitulationMaker
+            </td>
+        </tr>
+        <tr>
+            <td>Jabatan</td>
+            <td>:</td>
+            <td>
+                @Model.RecapitulationMakerPosition
+            </td>
+        </tr>
+        <tr><td colspan="3" align="right"><br /><a class="t-button" style="width:60px" href="@Url.Action("Edit/" + @Model.Id, "PettyCashesSetup", null)">Ubah</a></td></tr>
+    </table>
+</div>

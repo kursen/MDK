@@ -1,0 +1,38 @@
+﻿@model SKA.Areas.VoucherKas.Models.ViewModel.BankViewModel
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Setting -  Pejabat Voucher";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+    
+    string thresholdValue = string.Empty;
+
+    if (Session["ThresholdValue"] != null)
+    {
+        thresholdValue = Session["ThresholdValue"].ToString();
+    }
+
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }    
+}
+<div class="box-head">
+    <h2>Pejabat Voucher</h2>
+</div>
+<div class ="box-content">
+@(Html.Telerik().TreeView()
+.Name("TreeViewReport")
+.Items(item =>
+    {
+        if (userBranchCode == "00")
+        {
+            item.Add()
+                .Text("Pejabat Voucher > " + thresholdValue).Action("IndexVoucherUp", "VoucherSetup");
+        }
+        item.Add()
+            .Text("Pejabat Voucher < " + thresholdValue).Action("IndexVoucherDown", "VoucherSetup");   
+    })
+    )
+</div>

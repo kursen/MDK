@@ -1,0 +1,79 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.PettyCashes.Models.ViewModels.PettyCashesViewModel
+
+@{
+    ViewBag.Title = "Voucher Kas Kecil - Konfirmasi";
+    Layout = "~/Areas/PettyCashes/Views/Shared/_PettyCashesLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Konfirmasi Voucher Kas Kecil</h2>
+</div>
+<div class="box-content">
+    <h3>Voucher Kas Kecil baru telah dibuat</h3>
+    <br />
+    <table>
+                <tr>
+                    <td>Nomor Kas</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Number)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tanggal</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.TransactionDate, new { Format = "dd-MM-yyyy"})
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dibayar Kepada</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.PaidTo)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Untuk Keperluan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Necessity)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Diterima Oleh</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.ReceiverName)
+                    </td>
+                </tr>
+            </table>
+    @(Html.Telerik().Grid<SKA.Areas.PettyCashes.Models.ViewModels.PettyCashesDetailViewModel>()
+            .Name("Grid")
+
+            .DataKeys(keys =>
+            {
+                keys.Add(p => p.Id);
+            })
+            .DataBinding(dataBinding =>
+            {
+                dataBinding.Ajax()
+                    .Select("_SelectDetail", "PettyCashes");
+            })
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.AccountCode).Title("Kode Perkiraan");
+                columns.Bound(p => p.Debet).Title("Jumlah").Format("Rp. {0:N}").Width(210); ;
+            })
+            .HtmlAttributes(new { style = "height:100%"})
+            .Filterable()
+            .Pageable()
+            .Sortable()
+          )
+          <br />
+        <p>
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Edit", "PettyCashes", new { id = ViewData["Id"]})">Edit</a>
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "PettyCashes", null)">Kembali</a>
+        </p>
+</div>

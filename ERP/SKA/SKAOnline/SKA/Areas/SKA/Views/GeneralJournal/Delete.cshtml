@@ -1,0 +1,79 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.GeneralJournalViewModel
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class ="box-head">
+<h2>Hapus Data Jurnal Umum</h2>
+</div>
+
+<div class ="box-content">
+<h3>Apakah anda yakin untuk menghapus data ini?</h3>
+
+<table>
+        <tr>
+            <td>Nomor Bukti</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.EvidenceNumber)
+               
+            </td>
+        </tr>
+
+        <tr>
+            <td>Tanggal</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model=>model.DocumentDate)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Keterangan</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model=>model.Description)
+            </td>
+        </tr>
+    </table>
+
+    @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.GeneralJournalDetailViewModel>()
+        .Name("Grid")
+
+        .DataKeys(keys =>
+        {
+            keys.Add(p => p.Id);
+        })
+        
+        .DataBinding(dataBinding =>
+        {
+            dataBinding.Ajax()
+                .Select("_SelectDetail", "GeneralJournal");
+        })
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.AccountCode).Title("Perkiraan").Width(300);
+            columns.Bound(p => p.Debet).Format("{0:N}").Width(120);
+            columns.Bound(p => p.Kredit).Format("{0:N}").Width(120);
+            columns.Bound(p => p.Id).Hidden();
+            
+        })
+        .Pageable()
+        .Sortable()
+      )
+
+@using (Html.BeginForm()) {
+   
+         <br />
+            <input class ="t-button" style ="width:60px"  type="submit" value="Hapus" />
+            <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "GeneralJournal", null)">Batal</a>
+        
+    
+}
+
+</div>
+
+
+

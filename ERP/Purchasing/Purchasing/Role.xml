@@ -1,0 +1,80 @@
+﻿<?xml version="1.0"?>
+<controllers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <controller name="Account">
+    <actions>
+      <action name="ChangePassword" roles="*" />
+      <action name="ChangePasswordSuccess" roles="*" />
+      <action name="CropPhoto" roles="*" />
+      <action name="DeleteUser" roles="Home.Administrator" />
+      <action name="EditPhoto" roles="*" />
+      <action name="GetUserList" roles="Home.Administrator" />
+      <action name="GetUserRole" roles="Home.Administrator" />
+      <action name="LockAccount" roles="Home.Administrator" />
+      <action name="LogOff" />
+      <action name="LogOn" />
+      <action name="Profile" roles="*" />
+      <action name="Register" roles="Home.Administrator" />
+      <action name="ResetPassword" roles="Home.Administrator" />
+      <action name="SaveUserWorkUnit" roles="Home.Administrator" />
+      <action name="UpdateUserProfile" roles="*" />
+      <action name="UploadPhotoProfile" roles="*" />
+      <action name="UserDetail" roles="Home.Administrator" />
+      <action name="UserList" roles="Home.Administrator" />
+      <action name="UserPhoto" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Error" >
+    <actions>
+      <action name="AccessDenied"  />
+      <action name="NotFound" />
+      <action name="ServerError" />
+      <action name="UnAuthenticated"  />
+    </actions>
+  </controller>
+  <controller name="Home" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="setDisplayState" roles="*" />
+      <action name="UpdateLastActivity" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Playground" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="SaveData" roles="*" />
+      <action name="TestSaveData" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Roles" roles="Home.SystemDeveloper">
+    <actions>
+      <action name="DeleteRole" />
+      <action name="GetRoles"  />
+      <action name="GetUserInRole"  />
+      <action name="Index"  />
+      <action name="SaveRole"  />
+      <action name="UserInRole"  />
+    </actions>
+  </controller>
+  <controller name="SystemSetting" roles="Home.SystemDeveloper">
+    <actions>
+      <action name="CreateMenu" roles="*" />
+      <action name="DeleteMenu" roles="*" />
+      <action name="EditMenu" roles="*" />
+      <action name="GetAssemblyLinks" roles="*" />
+      <action name="GetAvailabelLinks" roles="*" />
+      <action name="GetSideMenus" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="reOrder" roles="*" />
+      <action name="SaveMenu" roles="*" />
+      <action name="SecurityCache" roles="*" />
+    </actions>
+  </controller>
+  <controller name="WorkUnit" roles="Home.Administrator">
+    <actions>
+      <action name="DeleteOffice" roles="Home.Administrator" />
+      <action name="GetOfficeList" roles="Home.Administrator" />
+      <action name="Index" roles="Home.Administrator" />
+      <action name="SaveWorkUnit" roles="Home.Administrator" />
+    </actions>
+  </controller>
+</controllers>

@@ -1,0 +1,68 @@
+﻿@model SKA.Areas.Setting.Models.ViewModels.ChartofAccountViewModel
+
+@{
+    ViewBag.Title = "Setting - Hapus Data Kode Perkiraan";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Hapus Data Perkiraan</h2>
+</div>
+
+<div class="box-content">
+    <h3>Apakah anda yakin untuk menghapus data ini?</h3>
+    <br />
+    <table>
+        <tr>
+            <td>
+                Kode Perkiraan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                 @Html.DisplayFor(model => model.Code)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nama Perkiraan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                 @Html.DisplayFor(model => model.Name)
+            </td>
+        </tr>
+        @*<tr>
+            <td>
+                Debet
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                 @Html.DisplayFor(model => model.DebitBeginningBalance)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Kredit
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                 @Html.DisplayFor(model => model.CreditBeginningBalance)
+            </td>
+        </tr>*@
+    </table>
+    @using (Html.BeginForm()) {
+        <p>
+            <input type="submit" value="Hapus" class="t-button" style ="width:60px" />
+            &nbsp;
+            <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "ChartofAccount", null)">Kembali</a>
+        </p>
+    }
+</div>

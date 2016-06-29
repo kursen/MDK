@@ -1,0 +1,117 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+}
+@{
+    ViewBag.Title = "SKA - Laporan Manajemen";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Laporan Manajemen</h2>
+</div>
+<div class="box-content">
+    @(Html.Telerik().TreeView()
+            .Name("TreeView")
+            .Items(item =>
+            {
+                item.Add()
+                    .Text("A. Laporan Bulanan")
+                    .Items((subItem) =>
+                    {
+                        if (userBranchCode == "00")
+                        {
+                            subItem.Add()
+                                .Text("Laporan Laba Rugi").Action("ShowReport", "ManagementReport", new { reportName = "ProfitAndLossMonthly" });
+                            subItem.Add()
+                                    .Text("Neraca").Action("ShowReport", "ManagementReport", new { reportName = "BalanceMonthlyReport" });
+                            subItem.Add()
+                                    .Text("Laporan Rincian Biaya").Action("ShowReport", "ManagementReport", new { reportName = "CostMonthlyReport" });
+                        }
+                        else {
+                            subItem.Add()
+                                .Text("Laporan Laba Rugi").Action("ShowReport", "ManagementReport", new { reportName = "ProfitAndLossMonthlyBranch" });
+                            subItem.Add()
+                                    .Text("Neraca").Action("ShowReport", "ManagementReport", new { reportName = "BalanceMonthlyReportCab" });
+                            subItem.Add()
+                                    .Text("Laporan Rincian Biaya").Action("ShowReport", "ManagementReport", new { reportName = "CostMonthlyReportCab" });    
+                        }
+
+                        subItem.Add()
+                                .Text("Laporan Perputaran Uang");
+                        subItem.Add()
+                                .Text("Laporan Utang Jangka Pendek").Action("ShowReport", "ManagementReport", new { reportName = "ShortTermReport" });
+                        if(userBranchCode == "00")
+                        {
+                            subItem.Add()
+                                .Text("Ikhtisar Utang Jangka Panjang").Action("GetYear", "OverviewLongTermDebt");
+                        }
+                        subItem.Add()
+                                .Text("Laporan Utang Jangka Panjang").Action("ShowReport", "ManagementReport", new { reportName = "OverviewLongTermReport" });
+                        if (userBranchCode == "00")
+                        {
+                            subItem.Add()
+                                    .Text("Laporan Rekapitulasi Biaya").Action("ShowReport", "ManagementReport", new { reportName = "RecapitulationCost" });
+                        }
+                        else {
+                            subItem.Add()
+                                      .Text("Laporan Rekapitulasi Biaya").Action("ShowReport", "ManagementReport", new { reportName = "RecapitulationCost" });  
+                        }
+                    });
+                item.Add()
+                    .Text("B. Laporan Tahunan")
+                    .Items((subItem) =>
+                    {
+                        if (userBranchCode == "00")
+                        {
+                            subItem.Add()
+                                    .Text("Perhitungan Laba Rugi").Action("ShowReport", "ManagementReport", new { reportName = "ProfitAndLossAnnualy" });
+                            subItem.Add()
+                                    .Text("Neraca").Action("ShowReport", "ManagementReport", new { reportName = "NeracaAnnuallyReport" });
+                        }
+                        else
+                        {
+                            subItem.Add()
+                                    .Text("Perhitungan Laba Rugi").Action("ShowReport", "ManagementReport", new { reportName = "ProfitAndLossAnnualyBranch" });
+                            subItem.Add()
+                                    .Text("Neraca").Action("ShowReport", "ManagementReport", new { reportName = "NeracaAnnuallyReportCab" });
+                        }
+                        subItem.Add()
+                                .Text("Daftar Laba Yang Tidak Dibagikan")
+                                .Items((subsItem) =>
+                                    {
+                                        subsItem.Add()
+                                            .Text("Lihat Laporan").Action("ShowReport", "ManagementReport", new { reportName = "UndistributedProfitReport" });
+                                        if (userBranchCode == "00")
+                                        {
+                                            subsItem.Add()
+                                                .Text("Data Daftar Laba Yang Tidak Dibagikan").Action("Index", "UndistributedProfits");
+                                            subsItem.Add()
+                                                .Text("Data Tahun Lalu")
+                                                .Items((subsItems) =>
+                                                {
+                                                    subsItems.Add()
+                                                        .Text("Laba Bersih").Action("Index", "NetIncomes");
+                                                    subsItems.Add()
+                                                        .Text("Cadangan").Action("Index", "Backup");
+                                                    subsItems.Add()
+                                                        .Text("Saldo Laba/Awal").Action("Index", "BeginningBalances");
+                                                    subsItems.Add()
+                                                        .Text("Koreksi Penambahan").Action("Index", "AdditionalCorrection");
+                                                    subsItems.Add()
+                                                        .Text("Koreksi Pengurangan").Action("Index", "ReductionCorrection");
+                                                });
+                                        }
+                                    });
+                        subItem.Add()
+                                .Text("Daftar Perubahan Posisi Keuangan").Action("ShowReport", "ManagementReport", new { reportName = "ChangesFincancialPosition" });
+                        subItem.Add()
+                                .Text("Laporan Perputaran Kas").Action("ShowReport", "ManagementReport", new { reportName = "VelocityReport" });
+                    });
+            })
+    )
+</div>    

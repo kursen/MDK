@@ -1,0 +1,71 @@
+﻿@using Telerik.Web.Mvc.UI
+
+@{
+    ViewBag.Title = "Voucher Kas Kecil";
+    Layout = "~/Areas/PettyCashes/Views/Shared/_PettyCashesLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Voucher Kas Kecil</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "PettyCashes")) { 
+        <table>
+            <tr>
+                <td>
+                    Cari
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextBox("searchValue")
+                </td>
+                <td>
+                    <input type = "submit" value = "Cari"/>
+                </td>
+            </tr>
+        </table>
+}
+                
+@(Html.Telerik().Grid<SKA.Areas.PettyCashes.Models.ViewModels.PettyCashesViewModel>()
+                .Name("PettyCashesGrid")
+                .ToolBar(toolbar =>
+                {
+                    toolbar.Custom().Action("Create", "PettyCashes").Text("Tambah").ButtonType(GridButtonType.ImageAndText).HtmlAttributes(new { style = "width:100px" });
+                })
+                .Columns(col =>
+                {
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Ubah", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                    //if (User.IsInRole("User") == false)
+                    //{ 
+                    //    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                    //}
+                    col.Bound(o => o.Number).Title("Nomor Kas").Width(160);
+                    col.Bound(o => o.TransactionDate).Title("Tanggal").Format("{0:dd/MM/yyyy}").Width(80);
+                    col.Bound(o => o.PaidTo).Title("Dibayar Kepada").Width(150);
+                    col.Bound(o => o.Necessity).Title("Untuk Keperluan");
+                    col.Bound(o => o.ReceiverName).Title("Diterima Oleh");
+                })
+                .ClientEvents(events=>
+                        events.OnDataBound("onDataBound")
+                    
+                )
+                    .DataBinding(binding => binding.Ajax().Select("GetList", "PettyCashes", new { searchValue = @ViewBag.SearchValue}))
+                .Sortable(sorting =>
+                        sorting.OrderBy(sortOrder => sortOrder.Add(o => o.Number).Ascending())
+                )
+                .Filterable()
+                .Pageable()
+)
+</div>
+<script type ="text/javascript">
+    var firstTimeLoad = true;
+    function onDataBound(e) {
+        if (firstTimeLoad) {
+            firstTimeLoad = false;
+            var grid = $('#PettyCashesGrid').data('tGrid');
+            grid.pageTo(grid.totalPages());
+        }
+    }
+</script>

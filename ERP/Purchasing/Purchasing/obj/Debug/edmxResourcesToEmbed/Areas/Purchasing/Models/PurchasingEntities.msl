@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PurchasingModelStoreContainer" CdmEntityContainer="PurchasingEntities">
+    <FunctionImportMapping FunctionImportName="GetDescriptionPurchase" FunctionName="PurchasingModel.Store.GetDescriptionPurchase">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PurchasingModel.GetDescriptionPurchase_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetVendorList" FunctionName="PurchasingModel.Store.GetVendorList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PurchasingModel.GetVendorList_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ApprovalStatus">
+      <EntityTypeMapping TypeName="PurchasingModel.ApprovalStatus">
+        <MappingFragment StoreEntitySet="ApprovalStatus">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CurrencyMaster">
+      <EntityTypeMapping TypeName="PurchasingModel.CurrencyMaster">
+        <MappingFragment StoreEntitySet="CurrencyMaster">
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Measure">
+      <EntityTypeMapping TypeName="PurchasingModel.Measure">
+        <MappingFragment StoreEntitySet="Measure">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="MeasureName" ColumnName="MeasureName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Office">
+      <EntityTypeMapping TypeName="PurchasingModel.Office">
+        <MappingFragment StoreEntitySet="Office">
+          <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectInfo">
+      <EntityTypeMapping TypeName="PurchasingModel.ProjectInfo">
+        <MappingFragment StoreEntitySet="ProjectInfo">
+          <ScalarProperty Name="Archive" ColumnName="Archive" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ConsultanName" ColumnName="ConsultanName" />
+          <ScalarProperty Name="ContractValue" ColumnName="ContractValue" />
+          <ScalarProperty Name="CompanyInfoId" ColumnName="CompanyInfoId" />
+          <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+          <ScalarProperty Name="DayUnit" ColumnName="DayUnit" />
+          <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+          <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+          <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyLists">
+      <EntityTypeMapping TypeName="PurchasingModel.CompanyLists">
+        <MappingFragment StoreEntitySet="CompanyLists">
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentPRDetails">
+      <EntityTypeMapping TypeName="PurchasingModel.DepartmentPRDetail">
+        <MappingFragment StoreEntitySet="DepartmentPRDetail">
+          <ScalarProperty Name="Allocation" ColumnName="Allocation" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TotalEstPrice" ColumnName="TotalEstPrice" />
+          <ScalarProperty Name="EstUnitPrice" ColumnName="EstUnitPrice" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="DepartmentPurchaseRequisitionId" ColumnName="DepartmentPurchaseRequisitionId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentPurchaseRequisitions">
+      <EntityTypeMapping TypeName="PurchasingModel.DepartmentPurchaseRequisition">
+        <MappingFragment StoreEntitySet="DepartmentPurchaseRequisition">
+          <ScalarProperty Name="RequestTypeId" ColumnName="RequestTypeId" />
+          <ScalarProperty Name="Archive" ColumnName="Archive" />
+          <ScalarProperty Name="DocApproveRejectDate" ColumnName="DocApproveRejectDate" />
+          <ScalarProperty Name="DocState" ColumnName="DocState" />
+          <ScalarProperty Name="KnownBy_Occupation" ColumnName="KnownBy_Occupation" />
+          <ScalarProperty Name="KnownBy_Name" ColumnName="KnownBy_Name" />
+          <ScalarProperty Name="ApprovedBy_Occupation" ColumnName="ApprovedBy_Occupation" />
+          <ScalarProperty Name="ApprovedBy_Name" ColumnName="ApprovedBy_Name" />
+          <ScalarProperty Name="RequestedBy_Occupation" ColumnName="RequestedBy_Occupation" />
+          <ScalarProperty Name="RequestedBy_Name" ColumnName="RequestedBy_Name" />
+          <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+          <ScalarProperty Name="DeliveryTo" ColumnName="DeliveryTo" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="OfficeID" ColumnName="OfficeID" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectPurchaseRequisitions">
+      <EntityTypeMapping TypeName="PurchasingModel.ProjectPurchaseRequisition">
+        <MappingFragment StoreEntitySet="ProjectPurchaseRequisition">
+          <ScalarProperty Name="Archive" ColumnName="Archive" />
+          <ScalarProperty Name="DocApproveRejectDate" ColumnName="DocApproveRejectDate" />
+          <ScalarProperty Name="DocState" ColumnName="DocState" />
+          <ScalarProperty Name="KnownBy_Occupation" ColumnName="KnownBy_Occupation" />
+          <ScalarProperty Name="KnownBy_Name" ColumnName="KnownBy_Name" />
+          <ScalarProperty Name="ApprovedBy_Occupation" ColumnName="ApprovedBy_Occupation" />
+          <ScalarProperty Name="ApprovedBy_Name" ColumnName="ApprovedBy_Name" />
+          <ScalarProperty Name="RequestedBy_Occupation" ColumnName="RequestedBy_Occupation" />
+          <ScalarProperty Name="RequestedBy_Name" ColumnName="RequestedBy_Name" />
+          <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+          <ScalarProperty Name="DeliveryTo" ColumnName="DeliveryTo" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="RecordNo" ColumnName="RecordNo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectPurchaseRequisitionDetails">
+      <EntityTypeMapping TypeName="PurchasingModel.ProjectPurchaseRequisitionDetail">
+        <MappingFragment StoreEntitySet="ProjectPurchaseRequisitionDetail">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TotalEstPrice" ColumnName="TotalEstPrice" />
+          <ScalarProperty Name="EstUnitPrice" ColumnName="EstUnitPrice" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ProjectPurchaseRequisitionId" ColumnName="ProjectPurchaseRequisitionId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestTypes">
+      <EntityTypeMapping TypeName="PurchasingModel.RequestType">
+        <MappingFragment StoreEntitySet="RequestType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseOrders">
+      <EntityTypeMapping TypeName="PurchasingModel.PurchaseOrder">
+        <MappingFragment StoreEntitySet="PurchaseOrder">
+          <ScalarProperty Name="Vendor_Id" ColumnName="Vendor_Id" />
+          <ScalarProperty Name="PPnAdded" ColumnName="PPnAdded" />
+          <ScalarProperty Name="Vendor_Province" ColumnName="Vendor_Province" />
+          <ScalarProperty Name="Vendor_City" ColumnName="Vendor_City" />
+          <ScalarProperty Name="Vendor_Address" ColumnName="Vendor_Address" />
+          <ScalarProperty Name="Vendor_Phone" ColumnName="Vendor_Phone" />
+          <ScalarProperty Name="Vendor_ContactName" ColumnName="Vendor_ContactName" />
+          <ScalarProperty Name="Vendor_CompanyName" ColumnName="Vendor_CompanyName" />
+          <ScalarProperty Name="Archive" ColumnName="Archive" />
+          <ScalarProperty Name="DocState" ColumnName="DocState" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ApprovedBy_Name" ColumnName="ApprovedBy_Name" />
+          <ScalarProperty Name="PreparedBy_Name" ColumnName="PreparedBy_Name" />
+          <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+          <ScalarProperty Name="DeliveryTo" ColumnName="DeliveryTo" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="TermOfPayment" ColumnName="TermOfPayment" />
+          <ScalarProperty Name="ContactPerson_Phone" ColumnName="ContactPerson_Phone" />
+          <ScalarProperty Name="ContactPerson_Name" ColumnName="ContactPerson_Name" />
+          <ScalarProperty Name="QuotationRef" ColumnName="QuotationRef" />
+          <ScalarProperty Name="RQNumber" ColumnName="RQNumber" />
+          <ScalarProperty Name="POType" ColumnName="POType" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeliveryOrderDetails">
+      <EntityTypeMapping TypeName="PurchasingModel.DeliveryOrderDetail">
+        <MappingFragment StoreEntitySet="DeliveryOrderDetail">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PurchaseOrderDetailId" ColumnName="PurchaseOrderDetailId" />
+          <ScalarProperty Name="DeliveryOrderId" ColumnName="DeliveryOrderId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeliveryOrders">
+      <EntityTypeMapping TypeName="PurchasingModel.DeliveryOrder">
+        <MappingFragment StoreEntitySet="DeliveryOrder">
+          <ScalarProperty Name="ReceiptBy_Name" ColumnName="ReceiptBy_Name" />
+          <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+          <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendor">
+      <EntityTypeMapping TypeName="PurchasingModel.Vendor">
+        <MappingFragment StoreEntitySet="Vendor">
+          <ScalarProperty Name="NPWPAddress" ColumnName="NPWPAddress" />
+          <ScalarProperty Name="NPWPNumber" ColumnName="NPWPNumber" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Suspended" ColumnName="Suspended" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorCategory">
+      <EntityTypeMapping TypeName="PurchasingModel.VendorCategory">
+        <MappingFragment StoreEntitySet="VendorCategory">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetNoRecord" FunctionName="PurchasingModel.Store.GetNoRecord">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PurchasingModel.GetNoRecord_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Norecord" ColumnName="Norecord" />
+          <ScalarProperty Name="officeId" ColumnName="officeId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="PriceComparisonDetail">
+      <EntityTypeMapping TypeName="PurchasingModel.PriceComparisonDetail">
+        <MappingFragment StoreEntitySet="PriceComparisonDetail">
+          <ScalarProperty Name="Price3" ColumnName="Price3" />
+          <ScalarProperty Name="Price2" ColumnName="Price2" />
+          <ScalarProperty Name="Price1" ColumnName="Price1" />
+          <ScalarProperty Name="PRDetailID" ColumnName="PRDetailID" />
+          <ScalarProperty Name="PriceComparisonID" ColumnName="PriceComparisonID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceComparison">
+      <EntityTypeMapping TypeName="PurchasingModel.PriceComparison">
+        <MappingFragment StoreEntitySet="PriceComparison">
+          <ScalarProperty Name="VendorID3" ColumnName="VendorID3" />
+          <ScalarProperty Name="VendorID2" ColumnName="VendorID2" />
+          <ScalarProperty Name="VendorID1" ColumnName="VendorID1" />
+          <ScalarProperty Name="PurchaseRequisitionID" ColumnName="PurchaseRequisitionID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseOrderDetails">
+      <EntityTypeMapping TypeName="PurchasingModel.PurchaseOrderDetail">
+        <MappingFragment StoreEntitySet="PurchaseOrderDetail">
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="PRDetailId" ColumnName="PRDetailId" />
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

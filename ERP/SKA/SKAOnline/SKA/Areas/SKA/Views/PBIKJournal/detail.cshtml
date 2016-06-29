@@ -1,0 +1,61 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.PBIKJournalViewModel
+           @using Telerik.Web.Mvc.UI
+
+@{
+    ViewBag.Title = "Jurnal PBIK - Detail ";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+
+<div class="box-head">
+	<h2>Detail Jurnal PBIK</h2>
+</div>
+<div class="box-content">
+    <table>
+                <tr>
+                    <td>Nomor Bukti</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.EvidenceNumber)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tanggal</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.DocumentDate)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Keterangan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Description)
+                    </td>
+                </tr>
+            </table>
+    @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.PBIKJournalDetailViewModel>()
+            .Name("Grid")
+
+            .DataKeys(keys =>
+            {
+                keys.Add(p => p.Id);
+            })
+            .DataBinding(dataBinding =>
+            {
+                dataBinding.Ajax()
+                    .Select("_SelectDetail", "PBIKJournal");
+            })
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.AccountCode).Title("Perkiraan").Width(300);
+                columns.Bound(p => p.Debet).Title("Debet").Format("Rp. {0:N}").Width(120);
+                columns.Bound(p => p.Kredit).Title("Kredit").Format("Rp. {0:N}").Width(120);
+            })
+            .Filterable()
+            .Pageable()
+            .Sortable()
+          )
+          <br />
+        <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "PBIKJournal", null)">Kembali</a>
+</div>

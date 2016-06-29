@@ -1,0 +1,41 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Voucher Kas Kecil - Laporan";
+    Layout = "~/Areas/PettyCashes/Views/Shared/_PettyCashesLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Laporan</h2>
+</div>
+<div class="box-content">
+    @if (ViewData["Branch"].Equals("00"))
+    {
+        @(Html.Telerik().TreeView()
+                .Name("TreeView")
+                .Items(item =>
+                {
+                    item.Add()
+                        .Text("A. Laporan Voucher Pertanggal").Action("ShowReport", "Report", new { reportName = "PettyCashReportByDatePusat" });
+                    item.Add()
+                        .Text("B. Rekapitulasi Voucher Pertanggal").Action("ShowReport", "Report", new { reportName = "PettyCashRecapitulationPusat" });
+                    item.Add()
+                        .Text("C. Rekapitulasi Per-Perkiraan").Action("ShowReport", "Report", new { reportName = "RecapitulationByChartPusat" });
+                })
+        )        
+    }
+    else
+    {
+        @(Html.Telerik().TreeView()
+                .Name("TreeView")
+                .Items(item =>
+                {
+                    item.Add()
+                        .Text("A. Laporan Voucher Pertanggal").Action("ShowReport", "Report", new { reportName = "PettyCashReportByDateCab" });
+                    item.Add()
+                        .Text("B. Rekapitulasi Voucher Pertanggal").Action("ShowReport", "Report", new { reportName = "PettyCashRecapitulationCab" });
+                    item.Add()
+                        .Text("C. Rekapitulasi Per-Perkiraan").Action("ShowReport", "Report", new { reportName = "RecapitulationByChartCab" });
+                })
+        )            
+    }        
+
+</div>

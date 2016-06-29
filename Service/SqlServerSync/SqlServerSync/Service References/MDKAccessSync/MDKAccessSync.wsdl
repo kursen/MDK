@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://halotec-indonesia.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://halotec-indonesia.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://halotec-indonesia.com/">
+      <s:element name="TestConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestConnectionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_MaxIDHistory">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_MaxIDHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_MaxIDHistoryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_History">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:tblMisc_History" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="tblMisc_History">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="historyID" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Operator" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="waktu" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="norecord" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="jenis" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityObject" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:StructuralObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EntityKey" type="tns:EntityKey" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="StructuralObject" abstract="true" />
+      <s:complexType name="EntityKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EntitySetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityContainerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityKeyValues" type="tns:ArrayOfEntityKeyMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntityKeyMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntityKeyMember" nillable="true" type="tns:EntityKeyMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityKeyMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StatusMessage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insert_HistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insert_HistoryResult" type="tns:StatusMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_MaxKodePeru">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_MaxKodePeruResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_MaxKodePeruResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_Perusahaan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:TblMst_Perusahaan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TblMst_Perusahaan">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="KodePeru" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="NoPeru" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NamaPeru" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AlamatPeru1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AlamatPeru2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="KotaPeru" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TelpPeru" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FaxPeru" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="insert_PerusahaanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insert_PerusahaanResult" type="tns:StatusMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_maxNoRec">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_maxNoRecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_maxNoRecResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_NoRec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:TblMst_NoRec" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TblMst_NoRec">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="NoRecord" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="NoUrut" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="insert_NoRecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insert_NoRecResult" type="tns:StatusMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_KodeBarang">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_KodeBarangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_KodeBarangResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_Barang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:TblMst_Barang" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TblMst_Barang">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="KodeBrg" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="NoBrg" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NamaBrg" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Keterangan" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="insert_BarangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insert_BarangResult" type="tns:StatusMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_NoPenimbangan2">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_NoPenimbangan2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_NoPenimbangan2Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_Penimbangan2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="tns:TblTrans_Penimbangan2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TblTrans_Penimbangan2">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="NoRecord" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="TglMasuk" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="TglKeluar" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="NoPolisi" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Sopir" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="KodePeru" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="KodeBrg" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Berat1" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Berat2" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeliveryNote" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Clerk1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Clerk2" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Copy" nillable="true" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="insert_Penimbangan2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insert_Penimbangan2Result" type="tns:StatusMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TestConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:TestConnection" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:TestConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_MaxIDHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:get_MaxIDHistory" />
+  </wsdl:message>
+  <wsdl:message name="get_MaxIDHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:get_MaxIDHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_HistorySoapIn">
+    <wsdl:part name="parameters" element="tns:insert_History" />
+  </wsdl:message>
+  <wsdl:message name="insert_HistorySoapOut">
+    <wsdl:part name="parameters" element="tns:insert_HistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_MaxKodePeruSoapIn">
+    <wsdl:part name="parameters" element="tns:get_MaxKodePeru" />
+  </wsdl:message>
+  <wsdl:message name="get_MaxKodePeruSoapOut">
+    <wsdl:part name="parameters" element="tns:get_MaxKodePeruResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_PerusahaanSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_Perusahaan" />
+  </wsdl:message>
+  <wsdl:message name="insert_PerusahaanSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_PerusahaanResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_maxNoRecSoapIn">
+    <wsdl:part name="parameters" element="tns:get_maxNoRec" />
+  </wsdl:message>
+  <wsdl:message name="get_maxNoRecSoapOut">
+    <wsdl:part name="parameters" element="tns:get_maxNoRecResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_NoRecSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_NoRec" />
+  </wsdl:message>
+  <wsdl:message name="insert_NoRecSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_NoRecResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_KodeBarangSoapIn">
+    <wsdl:part name="parameters" element="tns:get_KodeBarang" />
+  </wsdl:message>
+  <wsdl:message name="get_KodeBarangSoapOut">
+    <wsdl:part name="parameters" element="tns:get_KodeBarangResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_BarangSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_Barang" />
+  </wsdl:message>
+  <wsdl:message name="insert_BarangSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_BarangResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_NoPenimbangan2SoapIn">
+    <wsdl:part name="parameters" element="tns:get_NoPenimbangan2" />
+  </wsdl:message>
+  <wsdl:message name="get_NoPenimbangan2SoapOut">
+    <wsdl:part name="parameters" element="tns:get_NoPenimbangan2Response" />
+  </wsdl:message>
+  <wsdl:message name="insert_Penimbangan2SoapIn">
+    <wsdl:part name="parameters" element="tns:insert_Penimbangan2" />
+  </wsdl:message>
+  <wsdl:message name="insert_Penimbangan2SoapOut">
+    <wsdl:part name="parameters" element="tns:insert_Penimbangan2Response" />
+  </wsdl:message>
+  <wsdl:portType name="MDKAccessSyncSoap">
+    <wsdl:operation name="TestConnection">
+      <wsdl:input message="tns:TestConnectionSoapIn" />
+      <wsdl:output message="tns:TestConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_MaxIDHistory">
+      <wsdl:input message="tns:get_MaxIDHistorySoapIn" />
+      <wsdl:output message="tns:get_MaxIDHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_History">
+      <wsdl:input message="tns:insert_HistorySoapIn" />
+      <wsdl:output message="tns:insert_HistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_MaxKodePeru">
+      <wsdl:input message="tns:get_MaxKodePeruSoapIn" />
+      <wsdl:output message="tns:get_MaxKodePeruSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_Perusahaan">
+      <wsdl:input message="tns:insert_PerusahaanSoapIn" />
+      <wsdl:output message="tns:insert_PerusahaanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_maxNoRec">
+      <wsdl:input message="tns:get_maxNoRecSoapIn" />
+      <wsdl:output message="tns:get_maxNoRecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_NoRec">
+      <wsdl:input message="tns:insert_NoRecSoapIn" />
+      <wsdl:output message="tns:insert_NoRecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_KodeBarang">
+      <wsdl:input message="tns:get_KodeBarangSoapIn" />
+      <wsdl:output message="tns:get_KodeBarangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_Barang">
+      <wsdl:input message="tns:insert_BarangSoapIn" />
+      <wsdl:output message="tns:insert_BarangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_NoPenimbangan2">
+      <wsdl:input message="tns:get_NoPenimbangan2SoapIn" />
+      <wsdl:output message="tns:get_NoPenimbangan2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_Penimbangan2">
+      <wsdl:input message="tns:insert_Penimbangan2SoapIn" />
+      <wsdl:output message="tns:insert_Penimbangan2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MDKAccessSyncSoap" type="tns:MDKAccessSyncSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestConnection">
+      <soap:operation soapAction="http://halotec-indonesia.com/TestConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_MaxIDHistory">
+      <soap:operation soapAction="http://halotec-indonesia.com/get_MaxIDHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_History">
+      <soap:operation soapAction="http://halotec-indonesia.com/insert_History" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_MaxKodePeru">
+      <soap:operation soapAction="http://halotec-indonesia.com/get_MaxKodePeru" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_Perusahaan">
+      <soap:operation soapAction="http://halotec-indonesia.com/insert_Perusahaan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_maxNoRec">
+      <soap:operation soapAction="http://halotec-indonesia.com/get_maxNoRec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_NoRec">
+      <soap:operation soapAction="http://halotec-indonesia.com/insert_NoRec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_KodeBarang">
+      <soap:operation soapAction="http://halotec-indonesia.com/get_KodeBarang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_Barang">
+      <soap:operation soapAction="http://halotec-indonesia.com/insert_Barang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_NoPenimbangan2">
+      <soap:operation soapAction="http://halotec-indonesia.com/get_NoPenimbangan2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_Penimbangan2">
+      <soap:operation soapAction="http://halotec-indonesia.com/insert_Penimbangan2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MDKAccessSyncSoap12" type="tns:MDKAccessSyncSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestConnection">
+      <soap12:operation soapAction="http://halotec-indonesia.com/TestConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_MaxIDHistory">
+      <soap12:operation soapAction="http://halotec-indonesia.com/get_MaxIDHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_History">
+      <soap12:operation soapAction="http://halotec-indonesia.com/insert_History" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_MaxKodePeru">
+      <soap12:operation soapAction="http://halotec-indonesia.com/get_MaxKodePeru" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_Perusahaan">
+      <soap12:operation soapAction="http://halotec-indonesia.com/insert_Perusahaan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_maxNoRec">
+      <soap12:operation soapAction="http://halotec-indonesia.com/get_maxNoRec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_NoRec">
+      <soap12:operation soapAction="http://halotec-indonesia.com/insert_NoRec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_KodeBarang">
+      <soap12:operation soapAction="http://halotec-indonesia.com/get_KodeBarang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_Barang">
+      <soap12:operation soapAction="http://halotec-indonesia.com/insert_Barang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_NoPenimbangan2">
+      <soap12:operation soapAction="http://halotec-indonesia.com/get_NoPenimbangan2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_Penimbangan2">
+      <soap12:operation soapAction="http://halotec-indonesia.com/insert_Penimbangan2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MDKAccessSync">
+    <wsdl:port name="MDKAccessSyncSoap" binding="tns:MDKAccessSyncSoap">
+      <soap:address location="http://localhost:54148/WebServices/MDKAccessSync.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MDKAccessSyncSoap12" binding="tns:MDKAccessSyncSoap12">
+      <soap12:address location="http://localhost:54148/WebServices/MDKAccessSync.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

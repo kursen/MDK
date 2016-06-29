@@ -1,0 +1,49 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.EndofPeriodViewModel
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Pindah Saldo";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Pindah Saldo</h2>
+</div>
+<div class="box-content">
+ @using (Html.BeginForm())
+    {   
+        <p>
+        <b>PERHATIAN!!!</b>
+        <br /><br />
+            Program ini akan memindahkan saldo akhir ke <b>Buku Besar</b> periode berikutnya, dan sekaligus melakukan
+            <b>REVERSING ENTRY</b> terhadap data yang memerlukan untuk itu. Selain itu progam ini juga akan menghapus
+            data transaksi periode ini, agar dapat dimulai lagi dengan data yang baru.
+            <br />
+            <br />
+            Sangat dianjurkan untuk membuat <b>COPY</b> data sebelum memproses tahap ini.
+    </p>
+    
+    <br />
+    <table>
+        <tr>
+            <td>
+                Tanggal Periode Baru
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.Telerik().DatePickerFor(model => model.NewPeriodDate).Format("dd-MM-yyyy");
+                @Html.ValidationMessageFor(model => model.NewPeriodDate)
+            </td>
+        </tr>
+    </table>
+    
+    <br />
+    
+    <p>
+        <input type="submit" value="Lanjutkan" class="t-button" style ="width:100px"/>
+        &nbsp;
+        <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "EndofPeriod", null)">Kembali</a>
+    </p>
+    }
+</div>

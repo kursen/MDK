@@ -1,0 +1,59 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Setting - Hapus User";
+    Layout = "~/Areas/PettyCashes/Views/Shared/_PettyCashesLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Hapus User</h2>
+</div>
+<div class="box-content">
+    <h3>Apakah anda yakin untuk menghapus data ini?</h3>
+    <br />
+    <table>
+                <tr>
+                    <td>Nama Pengguna</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.UserName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Address)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Status)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cabang</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.BranchName)
+                    </td>
+                </tr>
+            </table>
+   <br />
+    @using (Html.BeginForm()) {
+        <p>
+                <input type="submit" value="Hapus" class="t-button" style ="width:60px" />
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "Account", new { Areas = ""})">Kembali</a>
+        </p>
+    }
+</div>

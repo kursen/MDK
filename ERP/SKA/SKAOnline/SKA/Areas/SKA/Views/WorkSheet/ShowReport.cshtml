@@ -1,0 +1,22 @@
+﻿@using Microsoft.ReportingServices
+@{
+    ViewBag.Title = "SKA - Neraca Lajur";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Lihat Laporan</h2>
+</div>
+<div class="box-content">
+    @if (ViewData["Branch"].Equals("00"))
+    {
+        <div class="t-widget t-grid">
+            <iframe src='/ska/ReportPages/ShowReport.aspx?name=@ViewData["ReportName"]' style="border-style:none;border-width:0;background-color:White" width="100%" height="675px" frameborder="0"></iframe>
+        </div>        
+    }
+    else
+    {
+        <div class="t-widget t-grid">
+            <iframe src='/ska/ReportPages/ShowReport.aspx?name=@ViewData["ReportName"]&parametername=@ViewData["ParameterName"]&parametervalue=@ViewData["ParameterValue"]' style="border-style:none;border-width:0;background-color:White" width="100%" height="675px" frameborder="0"></iframe>
+        </div>        
+    }     
+ </div>

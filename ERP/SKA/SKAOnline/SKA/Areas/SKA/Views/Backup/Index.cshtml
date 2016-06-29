@@ -1,0 +1,35 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Data Tahun Lalu - Cadangan";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Cadangan</h2>
+</div>
+<div class="box-content">
+@(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.AdditionalCorrectionViewModel>()
+                .Name("BackupGrid")
+                .ToolBar(toolbar =>
+                    {
+                        toolbar.Custom().Action("Create", "Backup").Text("Tambah").ButtonType(GridButtonType.ImageAndText).HtmlAttributes(new { style = "width:100px" });
+                    }
+                )
+                .Columns(col =>
+                    {
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>"}).ToString()).Title("").Sortable(false);
+                        if (User.IsInRole("User") == false)
+                        {
+                            col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false);
+                        }
+                        col.Bound(o => o.Name).Title("Jenis");
+                        col.Bound(o => o.Year).Title("Tahun");
+                    }
+                )
+                    .DataBinding(binding => binding.Ajax().Select("GetList", "Backup"))
+                .Sortable()
+                .Filterable()
+                .Pageable()
+
+)
+</div>

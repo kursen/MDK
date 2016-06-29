@@ -1,0 +1,114 @@
+﻿@using Telerik.Web.Mvc.UI 
+
+@{
+    ViewBag.Title = "Approve Kas";
+    Layout = "~/Areas/VoucherKas/Views/Shared/_VoucherLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Approve Kas</h2>
+</div>
+<div class="box-content">
+
+    <table>
+        <tr>
+            <td>Cari</td>
+            <td>:</td>
+            <td>@Html.TextBox("searchValueApprove")</td>
+            <td>
+                <input type = "submit" value ="Cari" onclick="filterGridData()" />
+            </td>
+        </tr>
+    </table>
+
+    @(Html.Telerik().Grid<SKA.Areas.VoucherKas.Models.ViewModel.VoucherViewModel>()
+        .Name("ApproveGrid")
+        .Resizable(resizing => resizing.Columns(true))
+        .DataKeys(keys =>
+        {
+            keys.Add(p => p.Id);
+        })
+        .DataBinding(dataBinding =>
+        {
+            dataBinding.Ajax()
+                .Select("GetApproveList", "VoucherKas")
+                .Update("_UpdateApprove", "VoucherKas");
+        })
+        .Columns(col =>
+        {
+            col.Bound(o => o.Id).Hidden();
+            col.Bound(o => o.Number).Title("No. Voucher").Width(90).ReadOnly();
+            col.Bound(o => o.TransactionDate).Title("Tgl Voucher").Format("{0:dd-MM-yyyy}").Width(100).ReadOnly();
+            col.Bound(o => o.ApproveDate).Title("Tgl Periksa").Format("{0:dd-MM-yyyy}").Width(100);
+            col.Bound(o => o.PartnerName).Title("Nama Rekanan").Format("{0:d}").Width(100).ReadOnly();
+            col.Bound(o => o.Description).Title("Keterangan").Width(100).ReadOnly();
+            col.Bound(o => o.Attachment).Title("Lampiran").Width(100).ReadOnly();
+            col.Command(commands =>
+            {
+                commands.Edit().ButtonType(GridButtonType.ImageAndText);
+            }).Width(80);
+        })
+        .Pageable(paging => paging.PageSize(10))
+        .Scrollable(scrolling => scrolling.Height(500))
+        .Sortable(sorting =>
+                        sorting.OrderBy(sortOrder => sortOrder.Add(o => o.Number).Ascending())
+                )
+        
+        .ClientEvents(events => events.OnRowDataBound("approve_onRowDataBound"))
+        .DetailView(details => details.ClientTemplate(
+            Html.Telerik().Grid<SKA.Areas.VoucherKas.Models.ViewModel.VoucherDetailViewModel>()
+                .Name("Grid<#= Id#>")
+                .Columns(columns =>
+                {
+                    columns.Bound(o => o.AccountCode).Width(300).Title("Kode Perkiraan");
+                    columns.Bound(o => o.Debet).Width(120).Format("{0:N}");
+                    columns.Bound(o => o.Kredit).Width(120).Format("{0:N}");
+                })
+                .DataBinding(bindings =>
+                            {
+                                bindings.Ajax().Select("_SelectApprove", "VoucherKas", new { id = "<#= Id #>"});
+                                //bindings.Ajax().Select("GetApproveList", "VoucherKas", new { searchValueApprove = @ViewBag.SearchValueApprove });
+                    })
+                .ToHtmlString()
+                )
+
+            )
+    )
+    <br />
+    <script type="text/javascript">
+
+        function expandFirstRow(grid, row) {
+            if (grid.$rows().index(row) == 0) {
+                grid.expandRow(row);
+            }
+        }
+
+        function approve_onRowDataBound(e) {
+            var grid = $(this).data('tGrid');
+            expandFirstRow(grid, e.row);
+        }
+
+        function orders_onRowDataBound(e) {
+            var grid = $(this).data('tGrid');
+            expandFirstRow(grid, e.row);
+        }
+
+        function getParamUrl()
+        {
+            search = $("#searchValueApprove").val();
+            return "/?searchValueApprove=" + search;
+        }
+
+        function getAjaxUrl() {
+            var selectUrl = "/VoucherKas/VoucherKas/GetApproveList" + getParamUrl();
+            return selectUrl;
+        }
+
+        function filterGridData() {
+            var grid = $("#ApproveGrid").data('tGrid');
+            grid.ajax.selectUrl = getAjaxUrl();
+            grid.rebind();
+            return false;
+        }
+</script> 
+</div>
+

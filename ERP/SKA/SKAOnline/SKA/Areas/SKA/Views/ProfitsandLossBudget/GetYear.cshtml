@@ -1,0 +1,26 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.SKA.Models.ViewModels.ProfitsandLossBudgetViewModel
+@{
+    ViewBag.Title = "Data";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Pilih Tahun</h2>
+</div>
+<div class="box-content">
+<br />
+<table>
+    <tr>
+        <td>
+            Tahun
+        </td>
+        <td>
+            :
+        </td>
+        <td>
+        @Html.DropDownListFor(model => model.FiscalYear, (SelectList)ViewBag.Year, new { onchange = "document.location.href = '/SKA/ProfitsandLossBudget/Index?year=' + this.options[this.selectedIndex].value;" })
+        </td>
+    </tr>
+</table>
+</div>

@@ -1,0 +1,224 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.PettyCashes.Models.ViewModels.PettyCashesViewModel
+
+@*<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>*@
+@*<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>*@
+<script src="@Url.Content("~/Scripts/NumberToText.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+
+<div class="box-content">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>
+                Nomor Kas
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.Number, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Number)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tanggal
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.Telerik().DatePicker().Name("TransactionDate").Format("dd-MM-yyyy").HtmlAttributes(new { style = "width:140px" })
+                @Html.ValidationMessageFor(model => model.TransactionDate)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Dibayar Kepada
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.EditorFor(model => model.PaidTo)
+                @Html.ValidationMessageFor(model => model.PaidTo)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Untuk Keperluan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextAreaFor(model => model.Necessity, new { @cols = 20, @rows = 4 })
+                @Html.ValidationMessageFor(model => model.Necessity)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Diterima Oleh
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.EditorFor(model => model.ReceiverName)
+                @Html.ValidationMessageFor(model => model.ReceiverName)
+                @Html.HiddenFor(model=> model.BranchId )
+            </td>
+        </tr>
+    </table>
+     
+    
+    @(Html.Telerik().Grid<SKA.Areas.PettyCashes.Models.ViewModels.PettyCashesDetailViewModel>()
+                    .Name("Grid")
+                    .DataKeys(keys =>
+                    {
+                        keys.Add(p => p.Id);
+                    }
+                    )
+                    .ToolBar(toolbar => toolbar.Insert().ButtonType(GridButtonType.ImageAndText).ImageHtmlAttributes(new { style = "margin-left:0" }))
+                    .DataBinding(databinding =>
+                    {
+                        databinding.Ajax()
+                            .Select("_SelectDetail", "PettyCashes")
+                            .Insert("_InsertDetail", "PettyCashes")
+                            .Update("_UpdateDetail", "PettyCashes")
+                            .Delete("_DeleteDetail", "PettyCashes");
+                    }
+                    )
+                    .Columns(col =>
+                    {
+                        col.Bound(p => p.AccountCode).Width(300).Title("Kode Perkiraan");
+                        col.Bound(p => p.Debet).Hidden();
+                        col.Bound(p => p.Debet).Title("Jumlah").Format("Rp. {0:N}");
+                        //col.Bound(p => p.Id).Hidden();
+                        col.Command(commands =>
+                        {
+                            commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                            commands.Delete().ButtonType(GridButtonType.ImageAndText);
+                        }
+                        );
+                    }
+                    )
+                    .ClientEvents(events =>
+                    {
+                        events.OnDataBound("Grid_OnDataBound");
+                        events.OnEdit("onEdit");
+                        events.OnError("onError");
+                    }
+                    )
+    )
+    <br />
+    
+    <table>
+        
+        <tr>
+            <td>
+                @Html.TextBoxFor(model => model.AccountCodePettyCash, new { @readonly = "readonly", style = "width:80px" })
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.Telerik().CurrencyTextBoxFor(model => model.Amount).Name("Amount").EmptyMessage("").CurrencySymbol("Rp. ")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total Debet
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.Telerik().CurrencyTextBox().Name("DebetTextBox").EmptyMessage("").CurrencySymbol("Rp. ")
+            </td>
+            <td>
+                Total Kredit
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.Telerik().CurrencyTextBox().Name("KreditTextBox").EmptyMessage("").CurrencySymbol("Rp. ")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Terbilang
+            </td>
+            <td>
+                :
+            </td>
+            <td colspan = "5">
+                <textarea id="AmountInText" name="AmountInText" readonly="readonly" cols="70" rows="4"></textarea>
+            </td>
+        </tr>
+    </table>
+    <p>
+        <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+        &nbsp;
+        <input type="reset" value="Reset" class="t-button" style ="width:60px" />
+        &nbsp;
+        <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "PettyCashes", null)">Kembali</a>
+     </p>
+}
+</div>
+<script type="text/javascript">
+
+//    $(function () {
+//        $("#MyForm").submit(function () {
+//            $.getJSON("../PettyCashes/GetNumber", function (data) {
+//                var check = confirm("Apakah data " + data + " mau disimpan?");
+//                if (check != true) {
+//                    window.location = "../PettyCashes";
+//                }
+//                else {
+//                    window.location = "../PettyCashes/Create";
+//                }
+//            });
+//        });
+//    });
+    
+    function onError(e) {
+        if (e.textStatus == "modelstateerror") {
+            alert(e.modelState.AccountCode.errors[0]);
+        }
+    }
+
+    function onEdit(e) {
+        $("#AccountCode").select();
+    }
+    function Grid_OnDataBound(e) {
+        totalDebet = 0;
+
+        $.each($('#Grid').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden amount column.
+                var debet = $($(row).find('td')[1]).text();
+
+                // note: make sure to convert the amount to decimal/float data type.
+                if (debet) {
+                    totalDebet = totalDebet + parseFloat(debet);
+                }
+            }
+        });
+
+        var inputDebet = $("#DebetTextBox").data("tTextBox");
+        inputDebet.value(totalDebet);
+        var inputKredit = $("#Amount").data("tTextBox");
+        inputKredit.value(totalDebet);
+        var input = $("#KreditTextBox").data("tTextBox");
+        input.value(totalDebet);
+
+        var text = GetNumberText(totalDebet) + " rupiah";
+        $("#AmountInText").val(text);
+    }
+</script>

@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PurchasingModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="PurchasingEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GetDescriptionPurchase" ReturnType="Collection(PurchasingModel.GetDescriptionPurchase_Result)">
+      <Parameter Name="isProject" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="GetVendorList" ReturnType="Collection(PurchasingModel.GetVendorList_Result)" />
+    <EntitySet Name="ApprovalStatus" EntityType="PurchasingModel.ApprovalStatus" />
+    <EntitySet Name="CurrencyMaster" EntityType="PurchasingModel.CurrencyMaster" />
+    <EntitySet Name="Measure" EntityType="PurchasingModel.Measure" />
+    <EntitySet Name="Office" EntityType="PurchasingModel.Office" />
+    <EntitySet Name="ProjectInfo" EntityType="PurchasingModel.ProjectInfo" />
+    <EntitySet Name="CompanyLists" EntityType="PurchasingModel.CompanyLists" />
+    <EntitySet Name="DepartmentPRDetails" EntityType="PurchasingModel.DepartmentPRDetail" />
+    <EntitySet Name="DepartmentPurchaseRequisitions" EntityType="PurchasingModel.DepartmentPurchaseRequisition" />
+    <AssociationSet Name="FK_DepartmentPurchaseRequisition_Office" Association="PurchasingModel.FK_DepartmentPurchaseRequisition_Office">
+      <End Role="Office" EntitySet="Office" />
+      <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisitions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentPRDetail_DepartmentPurchaseRequisition" Association="PurchasingModel.FK_DepartmentPRDetail_DepartmentPurchaseRequisition">
+      <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisitions" />
+      <End Role="DepartmentPRDetail" EntitySet="DepartmentPRDetails" />
+    </AssociationSet>
+    <EntitySet Name="ProjectPurchaseRequisitions" EntityType="PurchasingModel.ProjectPurchaseRequisition" />
+    <EntitySet Name="ProjectPurchaseRequisitionDetails" EntityType="PurchasingModel.ProjectPurchaseRequisitionDetail" />
+    <AssociationSet Name="FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition" Association="PurchasingModel.FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition">
+      <End Role="ProjectPurchaseRequisition" EntitySet="ProjectPurchaseRequisitions" />
+      <End Role="ProjectPurchaseRequisitionDetail" EntitySet="ProjectPurchaseRequisitionDetails" />
+    </AssociationSet>
+    <EntitySet Name="RequestTypes" EntityType="PurchasingModel.RequestType" />
+    <AssociationSet Name="FK_DepartmentPurchaseRequisition_RequestType" Association="PurchasingModel.FK_DepartmentPurchaseRequisition_RequestType">
+      <End Role="RequestType" EntitySet="RequestTypes" />
+      <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisitions" />
+    </AssociationSet>
+    <EntitySet Name="PurchaseOrders" EntityType="PurchasingModel.PurchaseOrder" />
+    <EntitySet Name="DeliveryOrderDetails" EntityType="PurchasingModel.DeliveryOrderDetail" />
+    <EntitySet Name="DeliveryOrders" EntityType="PurchasingModel.DeliveryOrder" />
+    <AssociationSet Name="FK_DeliveryOrderDetail_DeliveryOrder" Association="PurchasingModel.FK_DeliveryOrderDetail_DeliveryOrder">
+      <End Role="DeliveryOrder" EntitySet="DeliveryOrders" />
+      <End Role="DeliveryOrderDetail" EntitySet="DeliveryOrderDetails" />
+    </AssociationSet>
+    <EntitySet Name="Vendor" EntityType="PurchasingModel.Vendor" />
+    <EntitySet Name="VendorCategory" EntityType="PurchasingModel.VendorCategory" />
+    <AssociationSet Name="FK_Vendor_VendorCategory" Association="PurchasingModel.FK_Vendor_VendorCategory">
+      <End Role="VendorCategory" EntitySet="VendorCategory" />
+      <End Role="Vendor" EntitySet="Vendor" />
+    </AssociationSet>
+    <FunctionImport Name="GetNoRecord" ReturnType="Collection(PurchasingModel.GetNoRecord_Result)">
+      <Parameter Name="term" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="PriceComparisonDetail" EntityType="PurchasingModel.PriceComparisonDetail" />
+    <AssociationSet Name="FK_PriceComparisonDetail_DepartmentPRDetail" Association="PurchasingModel.FK_PriceComparisonDetail_DepartmentPRDetail">
+      <End Role="DepartmentPRDetail" EntitySet="DepartmentPRDetails" />
+      <End Role="PriceComparisonDetail" EntitySet="PriceComparisonDetail" />
+    </AssociationSet>
+    <EntitySet Name="PriceComparison" EntityType="PurchasingModel.PriceComparison" />
+    <AssociationSet Name="FK_PriceComparison_DepartmentPurchaseRequisition" Association="PurchasingModel.FK_PriceComparison_DepartmentPurchaseRequisition">
+      <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisitions" />
+      <End Role="PriceComparison" EntitySet="PriceComparison" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriceComparisonDetail_PriceComparison" Association="PurchasingModel.FK_PriceComparisonDetail_PriceComparison">
+      <End Role="PriceComparison" EntitySet="PriceComparison" />
+      <End Role="PriceComparisonDetail" EntitySet="PriceComparisonDetail" />
+    </AssociationSet>
+    <EntitySet Name="PurchaseOrderDetails" EntityType="PurchasingModel.PurchaseOrderDetail" />
+    <AssociationSet Name="FK_DeliveryOrderDetail_PurchaseOrderDetail" Association="PurchasingModel.FK_DeliveryOrderDetail_PurchaseOrderDetail">
+      <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+      <End Role="DeliveryOrderDetail" EntitySet="DeliveryOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrderDetail_PurchaseOrder" Association="PurchasingModel.FK_PurchaseOrderDetail_PurchaseOrder">
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+      <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="GetDescriptionPurchase_Result">
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="GetVendorList_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <EntityType Name="ApprovalStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Status" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CurrencyMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CurrencyName" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Measure">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="MeasureName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remarks" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Office">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Code" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Abbreviation" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Parent_ID" Nullable="false" />
+    <Property Type="Int32" Name="Ordinal" Nullable="false" />
+    <NavigationProperty Name="DepartmentPurchaseRequisitions" Relationship="PurchasingModel.FK_DepartmentPurchaseRequisition_Office" FromRole="Office" ToRole="DepartmentPurchaseRequisition" />
+  </EntityType>
+  <EntityType Name="ProjectInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ProjectCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ProjectTitle" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DateStart" Nullable="false" />
+    <Property Type="Int32" Name="NumberOfDays" Nullable="false" />
+    <Property Type="String" Name="DayUnit" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContractNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CompanyInfoId" Nullable="false" />
+    <Property Type="Decimal" Name="ContractValue" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="ConsultanName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Location" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Archive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyLists">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Code" />
+    <Property Type="String" Name="Symbol" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address1" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address2" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DepartmentPRDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="DepartmentPurchaseRequisitionId" Nullable="false" />
+    <Property Type="String" Name="ItemName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Quantity" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Currency" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="EstUnitPrice" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="TotalEstPrice" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Remarks" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DepartmentPurchaseRequisition" Relationship="PurchasingModel.FK_DepartmentPRDetail_DepartmentPurchaseRequisition" FromRole="DepartmentPRDetail" ToRole="DepartmentPurchaseRequisition" />
+    <Property Type="String" Name="Allocation" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PriceComparisonDetail" Relationship="PurchasingModel.FK_PriceComparisonDetail_DepartmentPRDetail" FromRole="DepartmentPRDetail" ToRole="PriceComparisonDetail" />
+  </EntityType>
+  <EntityType Name="DepartmentPurchaseRequisition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="RecordNo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="OfficeID" Nullable="false" />
+    <Property Type="DateTime" Name="RequestDate" Nullable="false" />
+    <Property Type="DateTime" Name="DeliveryDate" Nullable="false" />
+    <Property Type="String" Name="DeliveryTo" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DeliveryAddress" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RequestedBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RequestedBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovedBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovedBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="KnownBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="KnownBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DocState" Nullable="false" />
+    <Property Type="DateTime" Name="DocApproveRejectDate" />
+    <Property Type="Boolean" Name="Archive" Nullable="false" />
+    <NavigationProperty Name="Office" Relationship="PurchasingModel.FK_DepartmentPurchaseRequisition_Office" FromRole="DepartmentPurchaseRequisition" ToRole="Office" />
+    <NavigationProperty Name="DepartmentPRDetails" Relationship="PurchasingModel.FK_DepartmentPRDetail_DepartmentPurchaseRequisition" FromRole="DepartmentPurchaseRequisition" ToRole="DepartmentPRDetail" />
+    <Property Type="Int32" Name="RequestTypeId" Nullable="false" />
+    <NavigationProperty Name="RequestType" Relationship="PurchasingModel.FK_DepartmentPurchaseRequisition_RequestType" FromRole="DepartmentPurchaseRequisition" ToRole="RequestType" />
+    <NavigationProperty Name="PriceComparison" Relationship="PurchasingModel.FK_PriceComparison_DepartmentPurchaseRequisition" FromRole="DepartmentPurchaseRequisition" ToRole="PriceComparison" />
+  </EntityType>
+  <Association Name="FK_DepartmentPurchaseRequisition_Office">
+    <End Type="PurchasingModel.Office" Role="Office" Multiplicity="1" />
+    <End Type="PurchasingModel.DepartmentPurchaseRequisition" Role="DepartmentPurchaseRequisition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Office">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DepartmentPurchaseRequisition">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartmentPRDetail_DepartmentPurchaseRequisition">
+    <End Type="PurchasingModel.DepartmentPurchaseRequisition" Role="DepartmentPurchaseRequisition" Multiplicity="1" />
+    <End Type="PurchasingModel.DepartmentPRDetail" Role="DepartmentPRDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentPurchaseRequisition">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DepartmentPRDetail">
+        <PropertyRef Name="DepartmentPurchaseRequisitionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ProjectPurchaseRequisition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="RecordNo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ProjectCode" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ProjectTitle" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="RequestDate" Nullable="false" />
+    <Property Type="DateTime" Name="DeliveryDate" Nullable="false" />
+    <Property Type="String" Name="DeliveryTo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DeliveryAddress" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RequestedBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RequestedBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovedBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovedBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="KnownBy_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="KnownBy_Occupation" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DocState" Nullable="false" />
+    <Property Type="DateTime" Name="DocApproveRejectDate" />
+    <Property Type="Boolean" Name="Archive" Nullable="false" />
+    <NavigationProperty Name="ProjectPurchaseRequisitionDetails" Relationship="PurchasingModel.FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition" FromRole="ProjectPurchaseRequisition" ToRole="ProjectPurchaseRequisitionDetail" />
+  </EntityType>
+  <EntityType Name="ProjectPurchaseRequisitionDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectPurchaseRequisitionId" Nullable="false" />
+    <Property Type="String" Name="ItemName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Brand" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Quantity" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Currency" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="EstUnitPrice" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="TotalEstPrice" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Remarks" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProjectPurchaseRequisition" Relationship="PurchasingModel.FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition" FromRole="ProjectPurchaseRequisitionDetail" ToRole="ProjectPurchaseRequisition" />
+  </EntityType>
+  <Association Name="FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition">
+    <End Type="PurchasingModel.ProjectPurchaseRequisition" Role="ProjectPurchaseRequisition" Multiplicity="1" />
+    <End Type="PurchasingModel.ProjectPurchaseRequisitionDetail" Role="ProjectPurchaseRequisitionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectPurchaseRequisition">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectPurchaseRequisitionDetail">
+        <PropertyRef Name="ProjectPurchaseRequisitionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RequestType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DepartmentPurchaseRequisitions" Relationship="PurchasingModel.FK_DepartmentPurchaseRequisition_RequestType" FromRole="RequestType" ToRole="DepartmentPurchaseRequisition" />
+  </EntityType>
+  <Association Name="FK_DepartmentPurchaseRequisition_RequestType">
+    <End Type="PurchasingModel.RequestType" Role="RequestType" Multiplicity="1" />
+    <End Type="PurchasingModel.DepartmentPurchaseRequisition" Role="DepartmentPurchaseRequisition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DepartmentPurchaseRequisition">
+        <PropertyRef Name="RequestTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PurchaseOrder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="OrderNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" />
+    <Property Type="Int32" Name="POType" Nullable="false" />
+    <Property Type="String" Name="RQNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="QuotationRef" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactPerson_Name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactPerson_Phone" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TermOfPayment" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DeliveryDate" />
+    <Property Type="String" Name="DeliveryTo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DeliveryAddress" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PreparedBy_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApprovedBy_Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remarks" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Currency" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DocState" Nullable="false" />
+    <Property Type="Boolean" Name="Archive" Nullable="false" />
+    <Property Type="String" Name="Vendor_CompanyName" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Vendor_ContactName" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Vendor_Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Vendor_Address" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Vendor_City" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Vendor_Province" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="PPnAdded" Nullable="false" />
+    <Property Type="Int32" Name="Vendor_Id" />
+    <NavigationProperty Name="PurchaseOrderDetails" Relationship="PurchasingModel.FK_PurchaseOrderDetail_PurchaseOrder" FromRole="PurchaseOrder" ToRole="PurchaseOrderDetail" />
+  </EntityType>
+  <EntityType Name="DeliveryOrderDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="DeliveryOrderId" Nullable="false" />
+    <Property Type="Int32" Name="PurchaseOrderDetailId" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <NavigationProperty Name="DeliveryOrder" Relationship="PurchasingModel.FK_DeliveryOrderDetail_DeliveryOrder" FromRole="DeliveryOrderDetail" ToRole="DeliveryOrder" />
+    <NavigationProperty Name="PurchaseOrderDetail" Relationship="PurchasingModel.FK_DeliveryOrderDetail_PurchaseOrderDetail" FromRole="DeliveryOrderDetail" ToRole="PurchaseOrderDetail" />
+  </EntityType>
+  <EntityType Name="DeliveryOrder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="ReceiptDate" Nullable="false" />
+    <Property Type="Int32" Name="PurchaseOrderId" Nullable="false" />
+    <Property Type="String" Name="DocNo" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ReceiptBy_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DeliveryOrderDetails" Relationship="PurchasingModel.FK_DeliveryOrderDetail_DeliveryOrder" FromRole="DeliveryOrder" ToRole="DeliveryOrderDetail" />
+  </EntityType>
+  <Association Name="FK_DeliveryOrderDetail_DeliveryOrder">
+    <End Type="PurchasingModel.DeliveryOrder" Role="DeliveryOrder" Multiplicity="1" />
+    <End Type="PurchasingModel.DeliveryOrderDetail" Role="DeliveryOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeliveryOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DeliveryOrderDetail">
+        <PropertyRef Name="DeliveryOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Number" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Suspended" Nullable="false" />
+    <Property Type="String" Name="Address" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="City" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Province" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Zip" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Country" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Fax" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Web" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Currency" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="CategoryId" />
+    <Property Type="String" Name="NPWPNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NPWPAddress" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="VendorCategory" Relationship="PurchasingModel.FK_Vendor_VendorCategory" FromRole="Vendor" ToRole="VendorCategory" />
+  </EntityType>
+  <EntityType Name="VendorCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Vendor" Relationship="PurchasingModel.FK_Vendor_VendorCategory" FromRole="VendorCategory" ToRole="Vendor" />
+  </EntityType>
+  <Association Name="FK_Vendor_VendorCategory">
+    <End Type="PurchasingModel.VendorCategory" Role="VendorCategory" Multiplicity="0..1" />
+    <End Type="PurchasingModel.Vendor" Role="Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VendorCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendor">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetNoRecord_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="Norecord" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="officeId" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="PriceComparisonDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PriceComparisonID" Nullable="false" />
+    <Property Type="Int32" Name="PRDetailID" Nullable="false" />
+    <Property Type="Decimal" Name="Price1" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="Price2" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="Price3" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="DepartmentPRDetail" Relationship="PurchasingModel.FK_PriceComparisonDetail_DepartmentPRDetail" FromRole="PriceComparisonDetail" ToRole="DepartmentPRDetail" />
+    <NavigationProperty Name="PriceComparison" Relationship="PurchasingModel.FK_PriceComparisonDetail_PriceComparison" FromRole="PriceComparisonDetail" ToRole="PriceComparison" />
+  </EntityType>
+  <Association Name="FK_PriceComparisonDetail_DepartmentPRDetail">
+    <End Type="PurchasingModel.DepartmentPRDetail" Role="DepartmentPRDetail" Multiplicity="1" />
+    <End Type="PurchasingModel.PriceComparisonDetail" Role="PriceComparisonDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentPRDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PriceComparisonDetail">
+        <PropertyRef Name="PRDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PriceComparison">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+    <Property Type="Int32" Name="PurchaseRequisitionID" Nullable="false" />
+    <Property Type="Int32" Name="VendorID1" Nullable="false" />
+    <Property Type="Int32" Name="VendorID2" Nullable="false" />
+    <Property Type="Int32" Name="VendorID3" Nullable="false" />
+    <NavigationProperty Name="DepartmentPurchaseRequisition" Relationship="PurchasingModel.FK_PriceComparison_DepartmentPurchaseRequisition" FromRole="PriceComparison" ToRole="DepartmentPurchaseRequisition" />
+    <NavigationProperty Name="PriceComparisonDetail" Relationship="PurchasingModel.FK_PriceComparisonDetail_PriceComparison" FromRole="PriceComparison" ToRole="PriceComparisonDetail" />
+  </EntityType>
+  <Association Name="FK_PriceComparison_DepartmentPurchaseRequisition">
+    <End Type="PurchasingModel.DepartmentPurchaseRequisition" Role="DepartmentPurchaseRequisition" Multiplicity="1" />
+    <End Type="PurchasingModel.PriceComparison" Role="PriceComparison" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentPurchaseRequisition">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PriceComparison">
+        <PropertyRef Name="PurchaseRequisitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriceComparisonDetail_PriceComparison">
+    <End Type="PurchasingModel.PriceComparison" Role="PriceComparison" Multiplicity="1" />
+    <End Type="PurchasingModel.PriceComparisonDetail" Role="PriceComparisonDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PriceComparison">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PriceComparisonDetail">
+        <PropertyRef Name="PriceComparisonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PurchaseOrderDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PurchaseOrderId" Nullable="false" />
+    <Property Type="Int32" Name="PRDetailId" Nullable="false" />
+    <Property Type="String" Name="ItemName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Quantity" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="UnitQuantity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="TotalPrice" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="DeliveryOrderDetails" Relationship="PurchasingModel.FK_DeliveryOrderDetail_PurchaseOrderDetail" FromRole="PurchaseOrderDetail" ToRole="DeliveryOrderDetail" />
+    <NavigationProperty Name="PurchaseOrder" Relationship="PurchasingModel.FK_PurchaseOrderDetail_PurchaseOrder" FromRole="PurchaseOrderDetail" ToRole="PurchaseOrder" />
+  </EntityType>
+  <Association Name="FK_DeliveryOrderDetail_PurchaseOrderDetail">
+    <End Type="PurchasingModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="1" />
+    <End Type="PurchasingModel.DeliveryOrderDetail" Role="DeliveryOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrderDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DeliveryOrderDetail">
+        <PropertyRef Name="PurchaseOrderDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrderDetail_PurchaseOrder">
+    <End Type="PurchasingModel.PurchaseOrder" Role="PurchaseOrder" Multiplicity="1" />
+    <End Type="PurchasingModel.PurchaseOrderDetail" Role="PurchaseOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetail">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

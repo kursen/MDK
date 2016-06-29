@@ -1,0 +1,88 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.CashPaymentJournalViewModel
+           @using Telerik.Web.Mvc.UI
+
+@{
+    ViewBag.Title = "Jurnal Pembayaran Kas - Hapus";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Hapus Data Jurnal Pembayaran Kas</h2>
+</div>
+<div class="box-content">
+    <h3>Apakah anda yakin untuk menghapus Data ini?</h3>
+
+    <table>
+        <tr>
+            <td>Nomor Voucher</td>
+            <td>:</td>
+            <td>
+            @Html.DisplayFor(model=>model.VoucherNumber)
+            </td>
+        </tr>
+
+          <tr>
+            <td>Tanggal Pembayaran</td>
+            <td>:</td>
+            <td>
+            @Html.DisplayFor(model=>model.JBKDate)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Keterangan</td>
+            <td>:</td>
+            <td>
+            @Html.DisplayFor(model => model.Description)
+          
+            </td>
+        </tr>
+
+        <tr>
+            <td>Tanggal Cek</td>
+            <td>:</td>
+            <td>
+            @Html.DisplayFor(model=>model.PaymentDate)
+            </td>
+        </tr>
+
+        
+        <tr>
+            <td>Nomor Cek/Giro</td>
+            <td>:</td>
+            <td>
+            @Html.DisplayFor(model=>model.CheckNumber)
+            </td>
+        </tr>
+        
+    </table>
+    
+     @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.CashPaymentDetailViewModel>()
+            .Name("Grid")
+
+            .DataKeys(keys =>
+            {
+                keys.Add(p => p.Id);
+            })
+            .DataBinding(dataBinding =>
+            {
+                dataBinding.Ajax()
+                    .Select("_SelectDetail", "CashPaymentJournal");
+            })
+
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.AccountCode).Title("Perkiraan").Width(300);
+                columns.Bound(p => p.Debet).Format("{0:N}").Width(120);
+                columns.Bound(p => p.Kredit).Format("{0:N}").Width(120); 
+            })
+            .Pageable()
+            .Sortable()
+          )
+    @using (Html.BeginForm()) {
+        <br />
+            <input class ="t-button" style ="width:60px" type="submit" value="Hapus" /> 
+            <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "CashPaymentJournal", null)">Batal</a>
+    }
+    
+    </div>

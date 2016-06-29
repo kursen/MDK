@@ -1,0 +1,341 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.SKA.Models.ViewModels.UndistributedProfitsViewModel
+@{
+    ViewBag.Title = "SKA - Data Laba Yang Tidak Dibagikan";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-1.4.2.min.js")" type="text/javascript"></script>
+<div class="box-head">
+    <h2>
+        Data Laba Yang Tidak Dibagikan</h2>
+</div>
+<div class="box-content">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <table>
+            <tr>
+                <td>
+                    Tahun
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Year)
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Laba/(Rugi) Setelah Pajak
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.Telerik().CurrencyTextBoxFor(model => model.ProfitAmountTax).Name("ProfitAmountTax").CurrencySymbol("Rp. ").ClientEvents(events => events.OnChange("ProfitAmountTax_OnChange"))
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <label>
+            <b><font size="3">Dikurangi :</font></b>
+        </label>
+        <br />
+        <br />
+        @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.UndistributedProfitsDetailViewModel>()
+            .Name("DecrementGrid")
+            .DataKeys(keys =>
+            {
+                keys.Add(p => p.Id);
+            }
+            )
+            .ToolBar(toolbar => toolbar.Insert().ButtonType(GridButtonType.ImageAndText).ImageHtmlAttributes(new { style = "margin-left:0" }))
+            .DataBinding(databinding =>
+            {
+                databinding.Ajax()
+                    .Select("_SelectDetailIncrease", "UndistributedProfits")
+                    .Insert("_InsertDetailIncrement", "UndistributedProfits")
+                    .Update("_UpdateDetailIncrement", "UndistributedProfits")
+                    .Delete("_DeleteDetailIncrement", "UndistributedProfits");
+            }
+            )
+            .Columns(col =>
+            {
+                col.Bound(p => p.Date).Title("Tanggal");
+                col.Bound(p => p.Description).Width(300).Title("Uraian");
+                col.Bound(p => p.Amount).Hidden();
+                col.Bound(p => p.Amount).Title("Jumlah").Format("Rp. {0:N}");
+                col.Bound(p => p.Id).Hidden();
+                col.Command(commands =>
+                {
+                    commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                    commands.Delete().ButtonType(GridButtonType.ImageAndText);
+                }).Width(140).Title("");
+            }
+            )
+            .ClientEvents(events =>
+                {
+                    events.OnDataBound("DecrementGrid_OnDataBound");
+                }
+
+            )
+        )
+        <br />
+        <label>
+            <font size="3"><b>Ditambah :</b></font>
+        </label>
+        <br />
+        <br />
+        @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.UndistributedProfitsDetailViewModel>()
+            .Name("IncrementGrid")
+            .DataKeys(keys =>
+                {
+                    keys.Add(p => p.Id);
+                }
+            )
+            .ToolBar(toolbar => toolbar.Insert().ButtonType(GridButtonType.ImageAndText).ImageHtmlAttributes(new { style = "margin-left:0" }))
+            .DataBinding(databinding =>
+                {
+                    databinding.Ajax()
+                        .Select("_SelectDetailDecrease", "UndistributedProfits")
+                        .Insert("_InsertDetailDecrement", "UndistributedProfits")
+                        .Update("_UpdateDetailDecrement", "UndistributedProfits")
+                        .Delete("_DeleteDetailDecrement", "UndistributedProfits");
+                }
+            )
+            .Columns(col =>
+                {
+                    col.Bound(p => p.Date).Title("Tanggal");
+                    col.Bound(p => p.Description).Width(300).Title("Uraian");
+                    col.Bound(p => p.Amount).Hidden();
+                    col.Bound(p => p.Amount).Title("Jumlah").Format("Rp. {0:N}");
+                    col.Bound(p => p.Id).Hidden();
+                    col.Command(commands =>
+                    {
+                        commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                        commands.Delete().ButtonType(GridButtonType.ImageAndText);
+                    }
+                    );
+                }
+            )
+            .ClientEvents(events =>
+                {
+                    events.OnDataBound("IncrementGrid_OnDataBound");
+                }
+            )
+        )
+        <br />
+        <label>
+            <font size="3"><b>Dikurangi :</b></font>
+        </label>
+        <br />
+        <br />
+        @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.UndistributedProfitsDetailViewModel>()
+            .Name("SecondDecrementGrid")
+            .DataKeys(keys =>
+                {
+                    keys.Add(p => p.Id);
+                }
+            )
+            .ToolBar(toolbar => toolbar.Insert().ButtonType(GridButtonType.ImageAndText).ImageHtmlAttributes(new { style = "margin-left:0" }))
+            .DataBinding(databinding =>
+                {
+                    databinding.Ajax()
+                        .Select("_SelectDetailSecondIncrease", "UndistributedProfits")
+                        .Insert("_InsertDetailSecondIncrement", "UndistributedProfits")
+                        .Update("_UpdateDetailSecondIncrement", "UndistributedProfits")
+                        .Delete("_DeleteDetailSecondIncrement", "UndistributedProfits");
+                }
+            )
+            .Columns(col =>
+                {
+                    col.Bound(p => p.Date).Title("Tanggal");
+                    col.Bound(p => p.Description).Width(300).Title("Uraian");
+                    col.Bound(p => p.Amount).Hidden();
+                    col.Bound(p => p.Amount).Title("Jumlah").Format("Rp. {0:N}");
+                    col.Bound(p => p.Id).Hidden();
+                    col.Command(commands =>
+                    {
+                        commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                        commands.Delete().ButtonType(GridButtonType.ImageAndText);
+                    }
+                    );
+                }
+            )
+            .ClientEvents(events =>
+                {
+                    events.OnDataBound("SecondDecrementGrid_OnDataBound");
+                }
+            )
+        )
+        <br />
+        <table>
+            <tr>
+                <td>
+                    Saldo Laba Yang Belum Dibagi
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.Telerik().CurrencyTextBoxFor(model => model.ProfitAmount).Name("ProfitAmount").CurrencySymbol("Rp. ")
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <input type="submit" value="Simpan" class="t-button" style="width: 60px" />
+            &nbsp; <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "UndistributedProfits")">
+                Kembali</a>
+        </p>  
+    }
+</div>
+<script type="text/javascript">
+    var profitAmountTax = @Model.ProfitAmountTax;
+    var decrementValue = 0;
+    var incrementValue = 0;
+    var secondDecrementValue = 0;
+
+    function ProfitAmountTax_OnChange(e) {
+        var value = e.newValue;
+
+        if (value != null) {
+            profitAmountTax = parseFloat(value);
+        }
+        else {
+            profitAmountTax = 0;
+        }
+        //alert(profitAmountTax);
+        FillProfitAmount();
+    }
+
+    function DecrementGrid_OnDataBound(e) {
+        var total = 0;
+
+        $.each($('#DecrementGrid').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden amount column.
+                var amount = $($(row).find('td')[2]).text();
+
+                // note: make sure to convert the amount to decimal/float data type.
+                if (amount != null || amount != '') {
+                    total = total + parseFloat(amount);
+                }
+            }
+        });
+
+        decrementValue = total;
+        //alert(decrementValue);
+        FillProfitAmount();
+    }
+
+    function IncrementGrid_OnDataBound(e) {
+        var total = 0;
+
+        $.each($('#IncrementGrid').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden amount column.
+                var amount = $($(row).find('td')[2]).text();
+                
+                // note: make sure to convert the amount to decimal/float data type.
+                if (amount != null || amount != '') {
+                    total = total + parseFloat(amount);
+                }
+            }
+        });
+
+        incrementValue = total;
+        //alert(incrementValue);
+        FillProfitAmount();
+    }
+
+    function SecondDecrementGrid_OnDataBound(e) {
+        var total = 0;
+
+        $.each($('#SecondDecrementGrid').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden amount column.
+                var amount = $($(row).find('td')[2]).text();
+
+                // note: make sure to convert the amount to decimal/float data type.
+                if (amount != null || amount != '') {
+                    total = total + parseFloat(amount);
+                }
+            }
+        });
+
+        secondDecrementValue = total;
+        //alert(secondDecrementValue);
+        FillProfitAmount();
+    }
+
+    function FillProfitAmount() {
+        var total = profitAmountTax - decrementValue + incrementValue - secondDecrementValue;
+
+        //alert(total);
+                var data = $("#ProfitAmount").data("tTextBox");
+                data.value(total);
+
+        //alert(total);
+        //        total1 = 0;
+        //        total2 = 0;
+        //        total3 = 0;
+
+        //        $.each($('#DecrementGrid').find('tbody tr'), function (idx, row) {
+        //            // check for the row is header or not. Index 0 means header row.
+        //            if (idx >= 0) {
+        //                // get hidden amount column.
+        //                var amount = $($(row).find('td')[2]).text();
+
+        //                // note: make sure to convert the amount to decimal/float data type.
+        //                if (amount != null || amount != '') {
+        //                    total1 = total1 + parseFloat(amount);
+        //                }
+        //            }
+        //        });
+
+        //        $.each($('#IncrementGrid').find('tbody tr'), function (idx, row) {
+        //            // check for the row is header or not. Index 0 means header row.
+        //            if (idx >= 0) {
+        //                // get hidden amount column.
+        //                var amount = $($(row).find('td')[2]).text();
+        //                alert(amount);
+        //                // note: make sure to convert the amount to decimal/float data type.
+        //                if (amount != null || amount != '') {
+        //                    total2 = total2 + parseFloat(amount);
+        //                }
+        //            }
+        //        });
+
+        //        alert(total2);
+        //        $.each($('#SecondDecrementGrid').find('tbody tr'), function (idx, row) {
+        //            // check for the row is header or not. Index 0 means header row.
+        //            if (idx >= 0) {
+        //                // get hidden amount column.
+        //                var amount = $($(row).find('td')[2]).text();
+
+        //                // note: make sure to convert the amount to decimal/float data type.
+        //                if (amount) {
+        //                    total3 = total3 + parseFloat(amount);
+        //                }
+        //            }
+        //        });
+
+        //        var profit = $("#ProfitAmountTax").data("tTextBox").value();
+
+        //        var totalAmount = parseFloat(profit) - total1 + total2 - total3;
+        //        var data = $("#ProfitAmount").data("tTextBox").value();
+        //        $("#ProfitAmount").val(totalAmount);
+    }
+</script>

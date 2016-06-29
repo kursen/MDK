@@ -1,0 +1,120 @@
+﻿@model SKA.Areas.Setting.Models.ViewModels.BranchViewModel
+
+@{
+    ViewBag.Title = "Setting - Hapus Cabang";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Hapus Cabang</h2>
+</div>
+<div class="box-content">
+    <h3>Apakah Anda yakin untuk menghapus data ini?</h3>
+    <br />
+    <table>
+
+        <tr>
+            <td>Kode Cabang</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.Code)
+            </td>
+        </tr>
+        <tr>
+            <td>Insial Cabang</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.ShortName)
+            </td>
+        </tr>
+        <tr>
+            <td>Nama Cabang</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>Alamat</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.Address)
+            </td>
+        </tr>
+        <tr>
+            <td>Disetujui Oleh</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.ApproverName)
+            </td>
+        </tr>
+        <tr>
+            <td>Jabatan</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.ApproverPosition)
+            </td>
+        </tr>
+        <tr>
+            <td>Dibuat Oleh</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.MakerName)
+            </td>
+        </tr>
+        <tr>
+            <td>Jabatan</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.MakerPosition)
+            </td>
+        </tr>
+        <tr>
+            <td>Diperiksa I Oleh</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.FirstExaminerName)
+            </td>
+        </tr>
+        <tr>
+            <td>Jabatan</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.FirstExaminerPosition)
+            </td>
+        </tr>
+        <tr>
+            <td>Diperiksa II Oleh</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.SecondExaminerName)
+            </td>
+        </tr>
+        <tr>
+            <td>Jabatan</td>
+            <td>:</td>
+            <td>
+                @Html.DisplayFor(model => model.SecondExaminerPosition)
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+            @using (Html.BeginForm()) {
+        <p>
+            <input type="submit" value="Hapus" class="t-button" style ="width:60px" />
+            &nbsp;
+            <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "Branch", null)">Kembali</a>
+        </p>
+            }
+            
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+

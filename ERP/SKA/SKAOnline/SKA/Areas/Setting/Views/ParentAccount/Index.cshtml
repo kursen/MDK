@@ -1,0 +1,64 @@
+﻿@using Telerik.Web.Mvc.UI;
+@{
+    ViewBag.Title = "Setting - Kepala Kode Perkiraan";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+    
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+}
+<div class="box-head">
+	<h2>Kepala Kode Perkiraan</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "ParentAccount")) 
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input type = "submit" value = "Cari" />
+            </td>
+        </tr>
+    </table>
+    
+}
+@(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.ParentAccountViewModel>()
+            .Name("ParentAccountTypeGrid")
+            .ToolBar(toolbar =>
+            {
+                if (userBranchCode == "00" && User.IsInRole("User") == false)
+                { 
+                    toolbar.Custom().Action("Create", "ParentAccount").Text("Tambah").ButtonType(GridButtonType.ImageAndText).HtmlAttributes(new { style = "width:100px" });
+                    //toolbar.Custom().Action("Index", "BeginningBalance").Text("Saldo Awal").ButtonType(GridButtonType.Text).HtmlAttributes(new { style = "width:120px" });
+                }
+            })
+            .Columns(col =>
+            {
+                if (userBranchCode == "00" && User.IsInRole("User") == false)
+                {
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(10);
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(10);
+                    //col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Saldo Awal", "BeginningBalance", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(10);
+                }
+                col.Bound(o => o.Code).Title("Kode Perkiraan").Width(100);
+                col.Bound(o => o.Name).Title("Nama Perkiraan").Width(350);
+            })
+            .DataBinding(binding => binding.Ajax().Select("GetList", "ParentAccount", new { searchValue = @ViewBag.SearchValue}))
+                .Sortable(sorting =>
+                                 sorting.OrderBy(sortOrder => sortOrder.Add(o => o.Code).Ascending())
+                        )
+            .Pageable(paging => paging.PageSize(10))
+)
+</div>

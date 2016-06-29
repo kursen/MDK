@@ -1,0 +1,20 @@
+﻿@model SKA.Areas.Setting.Models.ViewModels.VoucherSetupViewModel
+
+@{
+    string thresholdValue = string.Empty;
+
+    if (Session["ThresholdValue"] != null)
+    {
+        thresholdValue = Session["ThresholdValue"].ToString();
+    }
+
+    ViewBag.Title = "Setting - Edit Setup Voucher < " + thresholdValue;
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Edit Data Setup Voucher < @thresholdValue</h2>
+</div>
+<div class="box-content">
+    @Html.Partial("_CreateOrEditVoucherDown")
+</div>

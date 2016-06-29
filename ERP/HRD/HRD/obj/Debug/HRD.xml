@@ -1,0 +1,484 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+HRD
+</name>
+</assembly>
+<members>
+<member name="T:HRD.MDKDataSet.ReportEmployeeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:HRD.MDKDataSet.ReportEmployeeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:HRD.MDKDataSet.ReportEmployeeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:HRD.MDKDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:HRD.MDKDataSetTableAdapters.ReportEmployeeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:HRD.MDKDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(HRD.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:HRD.MDKDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(HRD.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:HRD.MDKDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(HRD.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:HRD.MDKDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:HRD.MDKDataSetTableAdapters.TableAdapterManager.UpdateAll(HRD.MDKDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:HRD.MDKDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:HRD.MDKDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:HRD.MDKDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="M:HRD.HrdEntities.#ctor">
+	<summary>
+ Initializes a new HrdEntities object using the connection string found in the 'HrdEntities' section of the application configuration file.
+ </summary>
+</member><member name="M:HRD.HrdEntities.#ctor(System.String)">
+	<summary>
+ Initialize a new HrdEntities object.
+ </summary>
+</member><member name="M:HRD.HrdEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+	<summary>
+ Initialize a new HrdEntities object.
+ </summary>
+</member><member name="P:HRD.HrdEntities.Master_Personal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.HrdEntities.Occupations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.HrdEntities.ManagementLevels">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.HrdEntities.vOffices">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:HRD.HrdEntities.AddToMaster_Personal(HRD.Master_Personal)">
+	<summary>
+ Deprecated Method for adding a new object to the Master_Personal EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:HRD.HrdEntities.AddToOccupations(HRD.Occupation)">
+	<summary>
+ Deprecated Method for adding a new object to the Occupations EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:HRD.HrdEntities.AddToManagementLevels(HRD.ManagementLevel)">
+	<summary>
+ Deprecated Method for adding a new object to the ManagementLevels EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:HRD.HrdEntities.AddTovOffices(HRD.vOffice)">
+	<summary>
+ Deprecated Method for adding a new object to the vOffices EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:HRD.HrdEntities.ReportEmployee(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="id">No Metadata Documentation available.</param>
+</member><member name="T:HRD.HrdEntities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:HRD.ManagementLevel.CreateManagementLevel(System.Int32,System.String)">
+	<summary>
+ Create a new ManagementLevel object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="levelName">Initial value of the LevelName property.</param>
+</member><member name="P:HRD.ManagementLevel.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ManagementLevel.LevelName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ManagementLevel.Occupations">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:HRD.ManagementLevel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:HRD.Master_Personal.CreateMaster_Personal(System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.String)">
+	<summary>
+ Create a new Master_Personal object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="employeeID">Initial value of the EmployeeID property.</param>
+	<param name="fullName">Initial value of the FullName property.</param>
+	<param name="gender">Initial value of the Gender property.</param>
+	<param name="religion">Initial value of the Religion property.</param>
+	<param name="occupationID">Initial value of the OccupationID property.</param>
+	<param name="officeId">Initial value of the OfficeId property.</param>
+	<param name="workerStatus">Initial value of the WorkerStatus property.</param>
+</member><member name="P:HRD.Master_Personal.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.EmployeeID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.FullName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.Alias">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.NIK">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.Title_Front">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.Title_Back">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.Gender">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.PlaceOfBirth">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.DateOfBirth">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.Religion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.HomeAddress_Street">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.HomeAddress_City">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.HomeAddress_PostCode">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.HomePhone">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.MobilePhone">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.MaritalStatus">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.Email">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.Photo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.LastUpdate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.WorkStartDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.BloodType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.EmergencyCallNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.OccupationID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.OfficeId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.WorkerStatus">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.OccupationReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.Office">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Master_Personal.OfficeReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:HRD.Master_Personal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:HRD.Occupation.CreateOccupation(System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Create a new Occupation object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="name">Initial value of the Name property.</param>
+	<param name="managementLevelId">Initial value of the ManagementLevelId property.</param>
+	<param name="ordinat">Initial value of the Ordinat property.</param>
+	<param name="reportTo">Initial value of the ReportTo property.</param>
+</member><member name="P:HRD.Occupation.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Occupation.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Occupation.ManagementLevelId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Occupation.Ordinat">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Occupation.ReportTo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Occupation.Master_Personal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Occupation.ManagementLevel">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.Occupation.ManagementLevelReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:HRD.Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:HRD.vOffice.CreatevOffice(System.Int32,System.String,System.Int32,System.Int32)">
+	<summary>
+ Create a new vOffice object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="name">Initial value of the Name property.</param>
+	<param name="parent_ID">Initial value of the Parent_ID property.</param>
+	<param name="ordinal">Initial value of the Ordinal property.</param>
+</member><member name="P:HRD.vOffice.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.vOffice.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.vOffice.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.vOffice.Abbreviation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.vOffice.Parent_ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.vOffice.Ordinal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.vOffice.Master_Personal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:HRD.vOffice">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:HRD.ReportEmployee_Result.CreateReportEmployee_Result(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Create a new ReportEmployee_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="employeeID">Initial value of the EmployeeID property.</param>
+	<param name="fullName">Initial value of the FullName property.</param>
+	<param name="gender">Initial value of the Gender property.</param>
+	<param name="religion">Initial value of the Religion property.</param>
+	<param name="position">Initial value of the Position property.</param>
+	<param name="area">Initial value of the Area property.</param>
+	<param name="workerStatus">Initial value of the WorkerStatus property.</param>
+	<param name="levelName">Initial value of the LevelName property.</param>
+</member><member name="P:HRD.ReportEmployee_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.EmployeeID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.FullName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.Alias">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.NIK">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.Title_Front">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.Title_Back">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.Gender">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.PlaceOfBirth">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.DateOfBirth">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.Religion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.HomeAddress_Street">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.HomeAddress_City">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.HomeAddress_PostCode">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.HomePhone">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.MobilePhone">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.MaritalStatus">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.Email">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.Photo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.LastUpdate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.WorkStartDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.BloodType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.EmergencyCallNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.Position">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.Area">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.WorkerStatus">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:HRD.ReportEmployee_Result.LevelName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:HRD.ReportEmployee_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member>
+</members>
+</doc>

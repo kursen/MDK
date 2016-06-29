@@ -1,0 +1,3 @@
+﻿@using Telerik.Web.Mvc.UI
+
+@Html.Telerik().DropDownList().Name("Month").DataBinding(binding => binding.Ajax().Select("GetMonthSelectList","ProfitsandLossBudget"))

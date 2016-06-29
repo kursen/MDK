@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MainModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MainModelStoreContainer">
+          <EntitySet Name="SideBarMenu" EntityType="MainModel.Store.SideBarMenu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SideBarRole" EntityType="MainModel.Store.SideBarRole" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_SideBarRole_SideBarMenu" Association="MainModel.Store.FK_SideBarRole_SideBarMenu">
+            <End Role="SideBarMenu" EntitySet="SideBarMenu" />
+            <End Role="SideBarRole" EntitySet="SideBarRole" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="SideBarMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="ActionLink" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Label" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Icon" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+          <Property Name="Module" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SideBarRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SideBarMenuId" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_SideBarRole_SideBarMenu">
+          <End Role="SideBarMenu" Type="MainModel.Store.SideBarMenu" Multiplicity="1" />
+          <End Role="SideBarRole" Type="MainModel.Store.SideBarRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SideBarMenu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SideBarRole">
+              <PropertyRef Name="SideBarMenuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MainModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MainEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SideBarMenus" EntityType="MainModel.SideBarMenu" />
+          <EntitySet Name="SideBarRoles" EntityType="MainModel.SideBarRole" />
+          <AssociationSet Name="FK_SideBarRole_SideBarMenu" Association="MainModel.FK_SideBarRole_SideBarMenu">
+            <End Role="SideBarMenu" EntitySet="SideBarMenus" />
+            <End Role="SideBarRole" EntitySet="SideBarRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="SideBarMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <Property Name="ActionLink" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Label" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Icon" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Ordinal" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SideBarRoles" Relationship="MainModel.FK_SideBarRole_SideBarMenu" FromRole="SideBarMenu" ToRole="SideBarRole" />
+          <Property Type="String" Name="Module" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SideBarRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SideBarMenuId" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SideBarMenu" Relationship="MainModel.FK_SideBarRole_SideBarMenu" FromRole="SideBarRole" ToRole="SideBarMenu" />
+        </EntityType>
+        <Association Name="FK_SideBarRole_SideBarMenu">
+          <End Type="MainModel.SideBarMenu" Role="SideBarMenu" Multiplicity="1" />
+          <End Type="MainModel.SideBarRole" Role="SideBarRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SideBarMenu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SideBarRole">
+              <PropertyRef Name="SideBarMenuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MainModelStoreContainer" CdmEntityContainer="MainEntities">
+          <EntitySetMapping Name="SideBarMenus">
+            <EntityTypeMapping TypeName="MainModel.SideBarMenu">
+              <MappingFragment StoreEntitySet="SideBarMenu">
+                <ScalarProperty Name="Module" ColumnName="Module" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ActionLink" ColumnName="ActionLink" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SideBarRoles">
+            <EntityTypeMapping TypeName="MainModel.SideBarRole">
+              <MappingFragment StoreEntitySet="SideBarRole">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SideBarMenuId" ColumnName="SideBarMenuId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="MainEntity">
+        <EntityTypeShape EntityType="MainModel.SideBarMenu" Width="1.5" PointX="0.75" PointY="0.75" Height="2.364889322916667" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainModel.SideBarRole" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <AssociationConnector Association="MainModel.FK_SideBarRole_SideBarMenu" >
+          <ConnectorPoint PointX="2.25" PointY="1.6439925130208335" />
+          <ConnectorPoint PointX="2.75" PointY="1.6439925130208335" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

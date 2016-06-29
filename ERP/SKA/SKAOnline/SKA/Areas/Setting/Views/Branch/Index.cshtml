@@ -1,0 +1,63 @@
+﻿@using Telerik.Web.Mvc.UI;
+@{
+    ViewBag.Title = "Setting - Cabang";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+}
+
+<div class="box-head">
+	<h2>Cabang</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "Branch")) 
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input type = "submit" value = "Cari" />
+            </td>
+        </tr>
+    </table>
+}
+@(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.BranchViewModel>()
+            .Name("BranchGrid")
+            .ToolBar(toolbar =>
+            {
+                if (userBranchCode == "00")
+                {
+                    toolbar.Custom().Action("Create", "Branch").Text("Tambah").ButtonType(GridButtonType.Text).HtmlAttributes(new { style = "width:100px" });
+                }
+            })
+            .Columns(col =>
+            {
+                col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                if (User.IsInRole("User") == false)
+                {
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                }
+                col.Bound(o => o.Code).Title("Kode Cabang").Width(250);
+                col.Bound(o => o.ShortName).Title("Inisial Cabang").Width(250);
+                col.Bound(o => o.Name).Title("Nama Cabang");
+                col.Bound(o => o.Address).Title("Alamat Cabang");
+            })
+            .DataBinding(binding => binding.Ajax().Select("GetList", "Branch", new { searchValue = @ViewBag.SearchValue}))
+                .Sortable(sorting =>
+                             sorting.OrderBy(sortOrder => sortOrder.Add(o => o.Code).Ascending())
+                    )
+            .Filterable()
+)
+</div>

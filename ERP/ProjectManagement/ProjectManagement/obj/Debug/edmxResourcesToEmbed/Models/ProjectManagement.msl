@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectManagement_ERPModelStoreContainer" CdmEntityContainer="ProjectManagement_ERPEntities">
+    <EntitySetMapping Name="CompanyInfoes">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.CompanyInfo">
+        <MappingFragment StoreEntitySet="CompanyInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Annotation" ColumnName="Annotation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTaskDivisions">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectTaskDivision">
+        <MappingFragment StoreEntitySet="ProjectTaskDivision">
+          <ScalarProperty Name="DivisionNumber" ColumnName="DivisionNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectInfoId" ColumnName="ProjectInfoId" />
+          <ScalarProperty Name="TaskTitle" ColumnName="TaskTitle" />
+          <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTaskDivisionItems">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectTaskDivisionItem">
+        <MappingFragment StoreEntitySet="ProjectTaskDivisionItem">
+          <ScalarProperty Name="WorkDays" ColumnName="WorkDays" />
+          <ScalarProperty Name="PaymentNumber" ColumnName="PaymentNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectTaskDivisionId" ColumnName="ProjectTaskDivisionId" />
+          <ScalarProperty Name="TaskTitle" ColumnName="TaskTitle" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitQuantity" ColumnName="UnitQuantity" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTaskWeights">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectTaskWeight">
+        <MappingFragment StoreEntitySet="ProjectTaskWeight">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectTaskDivisionItemId" ColumnName="ProjectTaskDivisionItemId" />
+          <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTimeSheets">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectTimeSheet">
+        <MappingFragment StoreEntitySet="ProjectTimeSheet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectInfoId" ColumnName="ProjectInfoId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedByOccupation" ColumnName="CreatedByOccupation" />
+          <ScalarProperty Name="KnownBy" ColumnName="KnownBy" />
+          <ScalarProperty Name="KnownByOccupation" ColumnName="KnownByOccupation" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="ApprovedByOccupation" ColumnName="ApprovedByOccupation" />
+          <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+          <ScalarProperty Name="RevisionDate" ColumnName="RevisionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materials">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="ProjectInfoID" ColumnName="ProjectInfoID" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="V_Lap" ColumnName="V.Lap" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Materials" ColumnName="Materials" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectDocDetails">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectDocDetail">
+        <MappingFragment StoreEntitySet="ProjectDocDetail">
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="DocType" ColumnName="DocType" />
+          <ScalarProperty Name="DocFile" ColumnName="DocFile" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DocTitle" ColumnName="DocTitle" />
+          <ScalarProperty Name="ProjectInfoID" ColumnName="ProjectInfoID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetTimesheetItems" FunctionName="ProjectManagement_ERPModel.Store.GetTimesheetItems">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetTimesheetItems_Result">
+          <ScalarProperty Name="divisionid" ColumnName="divisionid" />
+          <ScalarProperty Name="divisiontitle" ColumnName="divisiontitle" />
+          <ScalarProperty Name="divisionordinal" ColumnName="divisionordinal" />
+          <ScalarProperty Name="divisionnumber" ColumnName="divisionnumber" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="paymentnumber" ColumnName="paymentnumber" />
+          <ScalarProperty Name="tasktitle" ColumnName="tasktitle" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unitquantity" ColumnName="unitquantity" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="totalitemvalue" ColumnName="totalitemvalue" />
+          <ScalarProperty Name="ordinal" ColumnName="ordinal" />
+          <ScalarProperty Name="workdays" ColumnName="workdays" />
+          <ScalarProperty Name="taskweight" ColumnName="taskweight" />
+          <ScalarProperty Name="ordinalSort" ColumnName="ordinalSort" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getTitle" FunctionName="ProjectManagement_ERPModel.Store.getTitle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.getTitle_Result">
+          <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="Lokasi" ColumnName="Lokasi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ScheduleEquipment" FunctionName="ProjectManagement_ERPModel.Store.ScheduleEquipment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.ScheduleEquipment_Result">
+          <ScalarProperty Name="nomor" ColumnName="nomor" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Equipments" ColumnName="Equipments" />
+          <ScalarProperty Name="ProjectInfoID" ColumnName="ProjectInfoID" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ScheduleMaterial" FunctionName="ProjectManagement_ERPModel.Store.ScheduleMaterial">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.ScheduleMaterial_Result">
+          <ScalarProperty Name="nomor" ColumnName="nomor" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Materials" ColumnName="Materials" />
+          <ScalarProperty Name="ProjectInfoID" ColumnName="ProjectInfoID" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="volumeLapangan" ColumnName="volumeLapangan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ProjectTaskDivisionItemVisualColors">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectTaskDivisionItemVisualColor">
+        <MappingFragment StoreEntitySet="ProjectTaskDivisionItemVisualColor">
+          <ScalarProperty Name="RowBackgroundColor" ColumnName="RowBackgroundColor" />
+          <ScalarProperty Name="CellTextColor" ColumnName="CellTextColor" />
+          <ScalarProperty Name="CellBackgroundColor" ColumnName="CellBackgroundColor" />
+          <ScalarProperty Name="ProjectTaskDivisionItemId" ColumnName="ProjectTaskDivisionItemId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipments">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.Equipment">
+        <MappingFragment StoreEntitySet="Equipment">
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="ProjectInfoID" ColumnName="ProjectInfoID" />
+          <ScalarProperty Name="Equipments" ColumnName="Equipments" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectCostRecords">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectCostRecord">
+        <MappingFragment StoreEntitySet="ProjectCostRecord">
+          <ScalarProperty Name="Cashier" ColumnName="Cashier" />
+          <ScalarProperty Name="RecordedBy" ColumnName="RecordedBy" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="PacketCode" ColumnName="PacketCode" />
+          <ScalarProperty Name="TaskGroupTitle" ColumnName="TaskGroupTitle" />
+          <ScalarProperty Name="ProjectInfoId" ColumnName="ProjectInfoId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectCostRecordItems">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectCostRecordItem">
+        <MappingFragment StoreEntitySet="ProjectCostRecordItem">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+          <ScalarProperty Name="PostCategory" ColumnName="PostCategory" />
+          <ScalarProperty Name="ProjectCostRecordId" ColumnName="ProjectCostRecordId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetDailyReportDateList" FunctionName="ProjectManagement_ERPModel.Store.GetDailyReportDateList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetDailyReportDateList_Result">
+          <ScalarProperty Name="DateItem" ColumnName="DateItem" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DayNum" ColumnName="DayNum" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDailyReportData" FunctionName="ProjectManagement_ERPModel.Store.GetDailyReportData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetDailyReportData_Result">
+          <ScalarProperty Name="DateReport" ColumnName="DateReport" />
+          <ScalarProperty Name="GroupData" ColumnName="GroupData" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column8" ColumnName="Column8" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ProjectInfoes">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectInfo">
+        <MappingFragment StoreEntitySet="ProjectInfo">
+          <ScalarProperty Name="Archive" ColumnName="Archive" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ConsultanName" ColumnName="ConsultanName" />
+          <ScalarProperty Name="ContractValue" ColumnName="ContractValue" />
+          <ScalarProperty Name="CompanyInfoId" ColumnName="CompanyInfoId" />
+          <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+          <ScalarProperty Name="DayUnit" ColumnName="DayUnit" />
+          <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+          <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+          <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyReports">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.DailyReport">
+        <MappingFragment StoreEntitySet="DailyReport">
+          <ScalarProperty Name="ApprovedTechnicalAssistant" ColumnName="ApprovedTechnicalAssistant" />
+          <ScalarProperty Name="CheckedConsultants" ColumnName="CheckedConsultants" />
+          <ScalarProperty Name="FiledContractors" ColumnName="FiledContractors" />
+          <ScalarProperty Name="DayWork" ColumnName="DayWork" />
+          <ScalarProperty Name="ProjectInfoID" ColumnName="ProjectInfoID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyReportFieldPersonnelUses">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.DailyReportFieldPersonnelUse">
+        <MappingFragment StoreEntitySet="DailyReportFieldPersonnelUse">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+          <ScalarProperty Name="PositionTypeName" ColumnName="PositionTypeName" />
+          <ScalarProperty Name="PositionType" ColumnName="PositionType" />
+          <ScalarProperty Name="DailyReportId" ColumnName="DailyReportId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyReportIncidenceOfInhibitorActivities">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.DailyReportIncidenceOfInhibitorActivity">
+        <MappingFragment StoreEntitySet="DailyReportIncidenceOfInhibitorActivity">
+          <ScalarProperty Name="IsResponsibilityOfContractor" ColumnName="IsResponsibilityOfContractor" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="DailyReportId" ColumnName="DailyReportId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyReportLaborUses">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.DailyReportLaborUse">
+        <MappingFragment StoreEntitySet="DailyReportLaborUse">
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="DailyReportId" ColumnName="DailyReportId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetWeeklyReportHeaderFooter" FunctionName="ProjectManagement_ERPModel.Store.GetWeeklyReportHeaderFooter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetWeeklyReportHeaderFooter_Result">
+          <ScalarProperty Name="PelaksanaKegiatan" ColumnName="PelaksanaKegiatan" />
+          <ScalarProperty Name="NamaPaket" ColumnName="NamaPaket" />
+          <ScalarProperty Name="KonsultanSupervisi" ColumnName="KonsultanSupervisi" />
+          <ScalarProperty Name="MingguKe" ColumnName="MingguKe" />
+          <ScalarProperty Name="PeriodeAwal" ColumnName="PeriodeAwal" />
+          <ScalarProperty Name="PeriodeAkhir" ColumnName="PeriodeAkhir" />
+          <ScalarProperty Name="Kontraktor" ColumnName="Kontraktor" />
+          <ScalarProperty Name="NoKontrak" ColumnName="NoKontrak" />
+          <ScalarProperty Name="TanggalKontrak" ColumnName="TanggalKontrak" />
+          <ScalarProperty Name="NilaiKontrak" ColumnName="NilaiKontrak" />
+          <ScalarProperty Name="NOKONTRAKADDI" ColumnName="NOKONTRAKADDI" />
+          <ScalarProperty Name="TANGGALKONTRAKADDI" ColumnName="TANGGALKONTRAKADDI" />
+          <ScalarProperty Name="NILAIKONTRAKADD01" ColumnName="NILAIKONTRAKADD01" />
+          <ScalarProperty Name="MasaWaktu" ColumnName="MasaWaktu" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="DateApproval" ColumnName="DateApproval" />
+          <ScalarProperty Name="Approval1Occupation" ColumnName="Approval1Occupation" />
+          <ScalarProperty Name="Approval1Company" ColumnName="Approval1Company" />
+          <ScalarProperty Name="Approval1Name" ColumnName="Approval1Name" />
+          <ScalarProperty Name="Approval1Identity" ColumnName="Approval1Identity" />
+          <ScalarProperty Name="Approval2Occupation" ColumnName="Approval2Occupation" />
+          <ScalarProperty Name="Approval2Company" ColumnName="Approval2Company" />
+          <ScalarProperty Name="Approval2Name" ColumnName="Approval2Name" />
+          <ScalarProperty Name="Approval2Identity" ColumnName="Approval2Identity" />
+          <ScalarProperty Name="Approval3Occupation" ColumnName="Approval3Occupation" />
+          <ScalarProperty Name="Approval3Company" ColumnName="Approval3Company" />
+          <ScalarProperty Name="Approval3Name" ColumnName="Approval3Name" />
+          <ScalarProperty Name="Approval3Identity" ColumnName="Approval3Identity" />
+          <ScalarProperty Name="JudulAtas" ColumnName="JudulAtas" />
+          <ScalarProperty Name="JudulBawah" ColumnName="JudulBawah" />
+          <ScalarProperty Name="LogoKanan" ColumnName="LogoKanan" />
+          <ScalarProperty Name="LogoKiri" ColumnName="LogoKiri" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMonthlyReportHeaderFooter" FunctionName="ProjectManagement_ERPModel.Store.GetMonthlyReportHeaderFooter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetMonthlyReportHeaderFooter_Result">
+          <ScalarProperty Name="PelaksanaKegiatan" ColumnName="PelaksanaKegiatan" />
+          <ScalarProperty Name="NamaPaket" ColumnName="NamaPaket" />
+          <ScalarProperty Name="KonsultanSupervisi" ColumnName="KonsultanSupervisi" />
+          <ScalarProperty Name="BulanKe" ColumnName="BulanKe" />
+          <ScalarProperty Name="PeriodeAwal" ColumnName="PeriodeAwal" />
+          <ScalarProperty Name="PeriodeAkhir" ColumnName="PeriodeAkhir" />
+          <ScalarProperty Name="Kontraktor" ColumnName="Kontraktor" />
+          <ScalarProperty Name="NoKontrak" ColumnName="NoKontrak" />
+          <ScalarProperty Name="TanggalKontrak" ColumnName="TanggalKontrak" />
+          <ScalarProperty Name="NilaiKontrak" ColumnName="NilaiKontrak" />
+          <ScalarProperty Name="NOKONTRAKADDI" ColumnName="NOKONTRAKADDI" />
+          <ScalarProperty Name="TANGGALKONTRAKADDI" ColumnName="TANGGALKONTRAKADDI" />
+          <ScalarProperty Name="NILAIKONTRAKADD01" ColumnName="NILAIKONTRAKADD01" />
+          <ScalarProperty Name="MasaWaktu" ColumnName="MasaWaktu" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="DateApproval" ColumnName="DateApproval" />
+          <ScalarProperty Name="Approval1Occupation" ColumnName="Approval1Occupation" />
+          <ScalarProperty Name="Approval1Company" ColumnName="Approval1Company" />
+          <ScalarProperty Name="Approval1Name" ColumnName="Approval1Name" />
+          <ScalarProperty Name="Approval1Identity" ColumnName="Approval1Identity" />
+          <ScalarProperty Name="Approval2Occupation" ColumnName="Approval2Occupation" />
+          <ScalarProperty Name="Approval2Company" ColumnName="Approval2Company" />
+          <ScalarProperty Name="Approval2Name" ColumnName="Approval2Name" />
+          <ScalarProperty Name="Approval2Identity" ColumnName="Approval2Identity" />
+          <ScalarProperty Name="Approval3Occupation" ColumnName="Approval3Occupation" />
+          <ScalarProperty Name="Approval3Company" ColumnName="Approval3Company" />
+          <ScalarProperty Name="Approval3Name" ColumnName="Approval3Name" />
+          <ScalarProperty Name="Approval3Identity" ColumnName="Approval3Identity" />
+          <ScalarProperty Name="JudulAtas" ColumnName="JudulAtas" />
+          <ScalarProperty Name="JudulBawah" ColumnName="JudulBawah" />
+          <ScalarProperty Name="LogoKanan" ColumnName="LogoKanan" />
+          <ScalarProperty Name="LogoKiri" ColumnName="LogoKiri" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetWeeklyReportList" FunctionName="ProjectManagement_ERPModel.Store.GetWeeklyReportList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetWeeklyReportList_Result">
+          <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="ImplementingActivities" ColumnName="ImplementingActivities" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="DateApproval" ColumnName="DateApproval" />
+          <ScalarProperty Name="Approval1Occupation" ColumnName="Approval1Occupation" />
+          <ScalarProperty Name="Approval1Company" ColumnName="Approval1Company" />
+          <ScalarProperty Name="Approval1Name" ColumnName="Approval1Name" />
+          <ScalarProperty Name="Approval1Identity" ColumnName="Approval1Identity" />
+          <ScalarProperty Name="Approval2Occupation" ColumnName="Approval2Occupation" />
+          <ScalarProperty Name="Approval2Company" ColumnName="Approval2Company" />
+          <ScalarProperty Name="Approval2Name" ColumnName="Approval2Name" />
+          <ScalarProperty Name="Approval2Identity" ColumnName="Approval2Identity" />
+          <ScalarProperty Name="Approval3Occupation" ColumnName="Approval3Occupation" />
+          <ScalarProperty Name="Approval3Company" ColumnName="Approval3Company" />
+          <ScalarProperty Name="Approval3Name" ColumnName="Approval3Name" />
+          <ScalarProperty Name="Approval3Identity" ColumnName="Approval3Identity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="DailyReportTasks">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.DailyReportTask">
+        <MappingFragment StoreEntitySet="DailyReportTask">
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+          <ScalarProperty Name="ProjectTaskDivisionItemId" ColumnName="ProjectTaskDivisionItemId" />
+          <ScalarProperty Name="DailyReportId" ColumnName="DailyReportId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetMonthlyReportList" FunctionName="ProjectManagement_ERPModel.Store.GetMonthlyReportList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetMonthlyReportList_Result">
+          <ScalarProperty Name="MonthNumber" ColumnName="MonthNumber" />
+          <ScalarProperty Name="BeginWeek" ColumnName="BeginWeek" />
+          <ScalarProperty Name="EndWeek" ColumnName="EndWeek" />
+          <ScalarProperty Name="BeginDate" ColumnName="BeginDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="ImplementingActivities" ColumnName="ImplementingActivities" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="DateApproval" ColumnName="DateApproval" />
+          <ScalarProperty Name="Approval1Occupation" ColumnName="Approval1Occupation" />
+          <ScalarProperty Name="Approval1Company" ColumnName="Approval1Company" />
+          <ScalarProperty Name="Approval1Name" ColumnName="Approval1Name" />
+          <ScalarProperty Name="Approval1Identity" ColumnName="Approval1Identity" />
+          <ScalarProperty Name="Approval2Occupation" ColumnName="Approval2Occupation" />
+          <ScalarProperty Name="Approval2Company" ColumnName="Approval2Company" />
+          <ScalarProperty Name="Approval2Name" ColumnName="Approval2Name" />
+          <ScalarProperty Name="Approval2Identity" ColumnName="Approval2Identity" />
+          <ScalarProperty Name="Approval3Occupation" ColumnName="Approval3Occupation" />
+          <ScalarProperty Name="Approval3Company" ColumnName="Approval3Company" />
+          <ScalarProperty Name="Approval3Name" ColumnName="Approval3Name" />
+          <ScalarProperty Name="Approval3Identity" ColumnName="Approval3Identity" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="DailyReportEquipmentUses">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.DailyReportEquipmentUse">
+        <MappingFragment StoreEntitySet="DailyReportEquipmentUse">
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
+          <ScalarProperty Name="MeasurementUnit" ColumnName="MeasurementUnit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+          <ScalarProperty Name="DailyReportId" ColumnName="DailyReportId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectMutualCheck0Item">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectMutualCheck0Item">
+        <MappingFragment StoreEntitySet="ProjectMutualCheck0Item">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProjectTaskDivisionItemId" ColumnName="ProjectTaskDivisionItemId" />
+          <ScalarProperty Name="ProjectMutualCheck0Id" ColumnName="ProjectMutualCheck0Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetDailyReportFor_G" FunctionName="ProjectManagement_ERPModel.Store.GetDailyReportFor_G">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetDailyReportFor_G_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="DailyReportBaseConstructionMaterialUses">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.DailyReportBaseConstructionMaterialUse">
+        <MappingFragment StoreEntitySet="DailyReportBaseConstructionMaterialUse">
+          <ScalarProperty Name="QuantityUnit" ColumnName="QuantityUnit" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+          <ScalarProperty Name="QuantityImported" ColumnName="QuantityImported" />
+          <ScalarProperty Name="QuantityUse" ColumnName="QuantityUse" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="DailyReportId" ColumnName="DailyReportId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetWeeklyReportDetail" FunctionName="ProjectManagement_ERPModel.Store.GetWeeklyReportDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetWeeklyReportDetail_Result">
+          <ScalarProperty Name="IDDivision" ColumnName="IDDivision" />
+          <ScalarProperty Name="OrdinalDivision" ColumnName="OrdinalDivision" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+          <ScalarProperty Name="OrdinalItem" ColumnName="OrdinalItem" />
+          <ScalarProperty Name="PaymentNumber" ColumnName="PaymentNumber" />
+          <ScalarProperty Name="UraianPekerjaan" ColumnName="UraianPekerjaan" />
+          <ScalarProperty Name="SAT" ColumnName="SAT" />
+          <ScalarProperty Name="HargaSatuan" ColumnName="HargaSatuan" />
+          <ScalarProperty Name="Kuantitas" ColumnName="Kuantitas" />
+          <ScalarProperty Name="JumlahHarga" ColumnName="JumlahHarga" />
+          <ScalarProperty Name="Bobot" ColumnName="Bobot" />
+          <ScalarProperty Name="KuantitasLalu" ColumnName="KuantitasLalu" />
+          <ScalarProperty Name="BobotLalu" ColumnName="BobotLalu" />
+          <ScalarProperty Name="KuantitasSekarang" ColumnName="KuantitasSekarang" />
+          <ScalarProperty Name="BobotSekarang" ColumnName="BobotSekarang" />
+          <ScalarProperty Name="KuantitasTotal" ColumnName="KuantitasTotal" />
+          <ScalarProperty Name="BobotTotal" ColumnName="BobotTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMonthlyReportDetail" FunctionName="ProjectManagement_ERPModel.Store.GetMonthlyReportDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetMonthlyReportDetail_Result">
+          <ScalarProperty Name="IDDivision" ColumnName="IDDivision" />
+          <ScalarProperty Name="OrdinalDivision" ColumnName="OrdinalDivision" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+          <ScalarProperty Name="OrdinalItem" ColumnName="OrdinalItem" />
+          <ScalarProperty Name="PaymentNumber" ColumnName="PaymentNumber" />
+          <ScalarProperty Name="UraianPekerjaan" ColumnName="UraianPekerjaan" />
+          <ScalarProperty Name="SAT" ColumnName="SAT" />
+          <ScalarProperty Name="HargaSatuan" ColumnName="HargaSatuan" />
+          <ScalarProperty Name="Kuantitas" ColumnName="Kuantitas" />
+          <ScalarProperty Name="JumlahHarga" ColumnName="JumlahHarga" />
+          <ScalarProperty Name="Bobot" ColumnName="Bobot" />
+          <ScalarProperty Name="KuantitasLalu" ColumnName="KuantitasLalu" />
+          <ScalarProperty Name="BobotLalu" ColumnName="BobotLalu" />
+          <ScalarProperty Name="KuantitasSekarang" ColumnName="KuantitasSekarang" />
+          <ScalarProperty Name="BobotSekarang" ColumnName="BobotSekarang" />
+          <ScalarProperty Name="KuantitasTotal" ColumnName="KuantitasTotal" />
+          <ScalarProperty Name="BobotTotal" ColumnName="BobotTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ProjectTaskWeight_MutualCheck0">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectTaskWeight_MutualCheck0">
+        <MappingFragment StoreEntitySet="ProjectTaskWeight_MutualCheck0">
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+          <ScalarProperty Name="ProjectTaskDivisionItemId" ColumnName="ProjectTaskDivisionItemId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MonthlyReports">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.MonthlyReport">
+        <MappingFragment StoreEntitySet="MonthlyReport">
+          <ScalarProperty Name="Approval3Identity" ColumnName="Approval3Identity" />
+          <ScalarProperty Name="Approval3Name" ColumnName="Approval3Name" />
+          <ScalarProperty Name="Approval3Company" ColumnName="Approval3Company" />
+          <ScalarProperty Name="Approval3Occupation" ColumnName="Approval3Occupation" />
+          <ScalarProperty Name="Approval2Identity" ColumnName="Approval2Identity" />
+          <ScalarProperty Name="Approval2Name" ColumnName="Approval2Name" />
+          <ScalarProperty Name="Approval2Company" ColumnName="Approval2Company" />
+          <ScalarProperty Name="Approval2Occupation" ColumnName="Approval2Occupation" />
+          <ScalarProperty Name="Approval1Identity" ColumnName="Approval1Identity" />
+          <ScalarProperty Name="Approval1Name" ColumnName="Approval1Name" />
+          <ScalarProperty Name="Approval1Company" ColumnName="Approval1Company" />
+          <ScalarProperty Name="Approval1Occupation" ColumnName="Approval1Occupation" />
+          <ScalarProperty Name="DateApproval" ColumnName="DateApproval" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="MonthNumber" ColumnName="MonthNumber" />
+          <ScalarProperty Name="ImplementingActivities" ColumnName="ImplementingActivities" />
+          <ScalarProperty Name="ProjectInfoId" ColumnName="ProjectInfoId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeeklyReports">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.WeeklyReport">
+        <MappingFragment StoreEntitySet="WeeklyReport">
+          <ScalarProperty Name="Approval3Identity" ColumnName="Approval3Identity" />
+          <ScalarProperty Name="Approval3Name" ColumnName="Approval3Name" />
+          <ScalarProperty Name="Approval3Company" ColumnName="Approval3Company" />
+          <ScalarProperty Name="Approval3Occupation" ColumnName="Approval3Occupation" />
+          <ScalarProperty Name="Approval2Identity" ColumnName="Approval2Identity" />
+          <ScalarProperty Name="Approval2Name" ColumnName="Approval2Name" />
+          <ScalarProperty Name="Approval2Company" ColumnName="Approval2Company" />
+          <ScalarProperty Name="Approval2Occupation" ColumnName="Approval2Occupation" />
+          <ScalarProperty Name="Approval1Identity" ColumnName="Approval1Identity" />
+          <ScalarProperty Name="Approval1Name" ColumnName="Approval1Name" />
+          <ScalarProperty Name="Approval1Company" ColumnName="Approval1Company" />
+          <ScalarProperty Name="Approval1Occupation" ColumnName="Approval1Occupation" />
+          <ScalarProperty Name="DateApproval" ColumnName="DateApproval" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+          <ScalarProperty Name="ImplementingActivities" ColumnName="ImplementingActivities" />
+          <ScalarProperty Name="ProjectInfoId" ColumnName="ProjectInfoId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetWeeklyReportDetail_withADD" FunctionName="ProjectManagement_ERPModel.Store.GetWeeklyReportDetail_withADD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetWeeklyReportDetail_withADD_Result">
+          <ScalarProperty Name="IDDivision" ColumnName="IDDivision" />
+          <ScalarProperty Name="OrdinalDivision" ColumnName="OrdinalDivision" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+          <ScalarProperty Name="OrdinalItem" ColumnName="OrdinalItem" />
+          <ScalarProperty Name="PaymentNumber" ColumnName="PaymentNumber" />
+          <ScalarProperty Name="UraianPekerjaan" ColumnName="UraianPekerjaan" />
+          <ScalarProperty Name="SAT" ColumnName="SAT" />
+          <ScalarProperty Name="HargaSatuan" ColumnName="HargaSatuan" />
+          <ScalarProperty Name="Kuantitas" ColumnName="Kuantitas" />
+          <ScalarProperty Name="JumlahHarga" ColumnName="JumlahHarga" />
+          <ScalarProperty Name="Bobot" ColumnName="Bobot" />
+          <ScalarProperty Name="KuantitasLalu" ColumnName="KuantitasLalu" />
+          <ScalarProperty Name="BobotLalu" ColumnName="BobotLalu" />
+          <ScalarProperty Name="KuantitasSekarang" ColumnName="KuantitasSekarang" />
+          <ScalarProperty Name="BobotSekarang" ColumnName="BobotSekarang" />
+          <ScalarProperty Name="KuantitasTotal" ColumnName="KuantitasTotal" />
+          <ScalarProperty Name="BobotTotal" ColumnName="BobotTotal" />
+          <ScalarProperty Name="KuantitasMC0" ColumnName="KuantitasMC0" />
+          <ScalarProperty Name="JumlahHargaMC0" ColumnName="JumlahHargaMC0" />
+          <ScalarProperty Name="BobotMC0" ColumnName="BobotMC0" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMonthlyReportDetail_withADD" FunctionName="ProjectManagement_ERPModel.Store.GetMonthlyReportDetail_withADD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagement_ERPModel.GetMonthlyReportDetail_withADD_Result">
+          <ScalarProperty Name="IDDivision" ColumnName="IDDivision" />
+          <ScalarProperty Name="OrdinalDivision" ColumnName="OrdinalDivision" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+          <ScalarProperty Name="OrdinalItem" ColumnName="OrdinalItem" />
+          <ScalarProperty Name="PaymentNumber" ColumnName="PaymentNumber" />
+          <ScalarProperty Name="UraianPekerjaan" ColumnName="UraianPekerjaan" />
+          <ScalarProperty Name="SAT" ColumnName="SAT" />
+          <ScalarProperty Name="HargaSatuan" ColumnName="HargaSatuan" />
+          <ScalarProperty Name="Kuantitas" ColumnName="Kuantitas" />
+          <ScalarProperty Name="JumlahHarga" ColumnName="JumlahHarga" />
+          <ScalarProperty Name="Bobot" ColumnName="Bobot" />
+          <ScalarProperty Name="KuantitasLalu" ColumnName="KuantitasLalu" />
+          <ScalarProperty Name="BobotLalu" ColumnName="BobotLalu" />
+          <ScalarProperty Name="KuantitasSekarang" ColumnName="KuantitasSekarang" />
+          <ScalarProperty Name="BobotSekarang" ColumnName="BobotSekarang" />
+          <ScalarProperty Name="KuantitasTotal" ColumnName="KuantitasTotal" />
+          <ScalarProperty Name="BobotTotal" ColumnName="BobotTotal" />
+          <ScalarProperty Name="KuantitasMC0" ColumnName="KuantitasMC0" />
+          <ScalarProperty Name="JumlahHargaMC0" ColumnName="JumlahHargaMC0" />
+          <ScalarProperty Name="BobotMC0" ColumnName="BobotMC0" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ProjectMutualCheck0">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ProjectMutualCheck0">
+        <MappingFragment StoreEntitySet="ProjectMutualCheck0">
+          <ScalarProperty Name="ApprovedByNIPP" ColumnName="ApprovedByNIPP" />
+          <ScalarProperty Name="ApprovedByCompany" ColumnName="ApprovedByCompany" />
+          <ScalarProperty Name="ApprovedByOccupation" ColumnName="ApprovedByOccupation" />
+          <ScalarProperty Name="ApprovedByName" ColumnName="ApprovedByName" />
+          <ScalarProperty Name="CheckedByCompany" ColumnName="CheckedByCompany" />
+          <ScalarProperty Name="CheckedByOccupation" ColumnName="CheckedByOccupation" />
+          <ScalarProperty Name="CheckedByName" ColumnName="CheckedByName" />
+          <ScalarProperty Name="ProposedByCompany" ColumnName="ProposedByCompany" />
+          <ScalarProperty Name="ProposedByOccupation" ColumnName="ProposedByOccupation" />
+          <ScalarProperty Name="ProposedByName" ColumnName="ProposedByName" />
+          <ScalarProperty Name="ProjectInfoId" ColumnName="ProjectInfoId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="DocumentDate" ColumnName="DocumentDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportLayouts">
+      <EntityTypeMapping TypeName="ProjectManagement_ERPModel.ReportLayout">
+        <MappingFragment StoreEntitySet="ReportLayout">
+          <ScalarProperty Name="IdProjectInfo" ColumnName="IdProjectInfo" />
+          <ScalarProperty Name="LeftLogo" ColumnName="LeftLogo" />
+          <ScalarProperty Name="RightLogo" ColumnName="RightLogo" />
+          <ScalarProperty Name="Title2" ColumnName="Title2" />
+          <ScalarProperty Name="Title1" ColumnName="Title1" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

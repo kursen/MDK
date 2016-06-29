@@ -1,0 +1,57 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.Setting.Models.ViewModels.BeginningBalanceViewModel
+
+<script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div class="box-content">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table>
+           <tr>
+                <td>Cabang</td>
+                <td>:</td>
+                <td>@Html.HiddenFor(model => model.AccountId)
+                    @Html.DropDownList("BranchId", (SelectList)ViewBag.Branch)
+                    @Html.ValidationMessageFor(m => m.BranchId)
+                </td>
+            </tr>
+            <tr>
+                <td>Tanggal Transaksi</td>
+                <td>:</td>
+                <td>
+                  @(Html.Telerik().DatePickerFor(model => model.TransactionDate).Format("dd-MM-yyyy").Name("TransactionDate").HtmlAttributes(new { style = "width:140px" }))
+                  @Html.ValidationMessageFor(model => model.TransactionDate)
+                </td>
+            </tr>
+             <tr>
+                <td>Debet</td>
+                <td>:</td>
+                <td>
+                    @Html.TextBoxFor(model => model.Debet, new { @class = "money" })
+                    @Html.ValidationMessageFor(model => model.Debet) 
+                </td>
+            </tr>
+             <tr>
+                <td>Kredit</td>
+                <td>:</td>
+                <td>
+                    @Html.TextBoxFor(model => model.Kredit, new { @class = "money" })
+                    @Html.ValidationMessageFor(model => model.Kredit) 
+                </td>
+            </tr>
+            </table><br />
+     <p>
+     @{
+        // var accountid = Model.Id;
+         }
+        <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+        &nbsp;
+        <input type="reset" value="Reset" class="t-button" style ="width:60px" />
+        &nbsp;
+        <a class ="t-button" style ="width:60px" href="@Url.Action("BeginningBalanceMonth", "BeginningBalanceMonth", new { id = Model.AccountId })">Kembali</a>
+    </p>
+}
+</div>

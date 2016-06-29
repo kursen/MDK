@@ -1,0 +1,73 @@
+﻿@model SKA.Models.UserDetailModel
+
+@{
+    ViewBag.Title = "Setting - Profile User";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Setting - Profile User</h2>
+</div>
+<div class="box-content">
+    <table>
+        <tr>
+            <td>
+                Nama Pengguna
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Model.Username
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Model.Email
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Alamat
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Model.Address
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Cabang
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Model.BranchName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Status
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                 @Model.Status
+            </td>
+        </tr>
+    </table>
+    <p>
+        <a class ="t-button" style ="width:110px;margin-top:10px" href="@Url.Action("ChangePassword", "Account", new { Area = "" })">Ubah Password</a>
+     </p>
+</div>
+

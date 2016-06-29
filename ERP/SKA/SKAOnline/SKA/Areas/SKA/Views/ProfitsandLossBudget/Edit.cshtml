@@ -1,0 +1,171 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.SKA.Models.ViewModels.ProfitsandLossBudgetViewModel
+
+@{
+    ViewBag.Title = "SKA - Edit Anggaran Laba Rugi";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-1.4.2.min.js")" type="text/javascript"></script>
+
+<div class="box-head">
+	<h2>Ubah Anggaran Laba Rugi</h2>
+</div>
+<div class="box-content">
+    @using (Html.BeginForm())
+    {
+       @Html.ValidationSummary(true)
+        <table>
+                <tr>
+                    <td>Nama</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Name)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>:</td>
+                    <td>
+                        @{
+                            if (!Model.Amount.HasValue)
+                            {
+                                Model.Amount = 0;
+                            }
+                        }
+                        Rp. <span id="TotalLabel">@Model.Amount.Value.ToString("N2")</span>
+                    </td>
+                </tr>
+            </table>
+            @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.ProfitsandLossBudgetDetailViewModel>()
+            .Name("GridView")
+            .DataKeys(keys =>
+            {
+                keys.Add(p => p.Id);
+            })
+            .DataBinding(dataBinding =>
+            {
+                dataBinding.Ajax()
+                    .Select("_SelectDetail", "ProfitsandLossBudget")
+                    .Insert("_InsertDetail", "ProfitsandLossBudget")
+                    .Update("_UpdateDetail", "ProfitsandLossBudget")
+                    .Delete("_DeleteDetail", "ProfitsandLossBudget");
+            })
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.ProfitandLossBudgetId).Hidden();
+                columns.Bound(p => p.AccountId).Hidden();
+                columns.Bound(p => p.AccountCode).Title("Kode Perkiraan").ReadOnly();
+                columns.Bound(p => p.AccountName).Title("Nama Perkiraan").ReadOnly().Width(400);
+                columns.Bound(p => p.Amount).Hidden();
+                columns.Bound(p => p.Amount).Title("Jumlah").Format("Rp. {0:N}");
+                columns.Bound(p => p.BranchId).Hidden();
+                columns.Bound(p => p.Id).Hidden();
+                columns.Command(commands =>
+                {
+                    commands.Edit().ButtonType(GridButtonType.ImageAndText);
+
+                }).Width(220).Title("");
+            })
+            .DetailView(details => details.ClientTemplate(
+            Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.ProfitsandLossBudgetDetailViewModel>()
+                .Name("Detail<#=Id#>")
+                .Columns(columns =>
+                {
+                    columns.Bound(o => o.January).Title("Januari").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.February).Title("Februari").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.March).Title("Maret").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.April).Title("April").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.May).Title("Mei").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.June).Title("Juni").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.July).Title("Juli").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.August).Title("Agustus").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.September).Title("September").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.October).Title("Oktober").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.November).Title("November").Format("Rp. {0:N}").Width(150);
+                    columns.Bound(o => o.December).Title("Desember").Format("Rp. {0:N}").Width(150);
+                })
+                .DataBinding(dataBinding => dataBinding.Ajax()
+                    .Select("_SelectDetailAmount", "ProfitsandLossBudget", new { accountid = "<#= AccountId #>", branchId = "<#= BranchId #>" }))
+                    .HtmlAttributes(new { style = "width:100%;height:20%;"})
+                    .Scrollable()
+                .ToHtmlString()
+            ))
+            .ClientEvents(events =>
+            {
+                events.OnEdit("Grid_OnEdit");
+                events.OnSave("Grid_OnSave");
+            })
+            .HtmlAttributes(new { style = "width:100%;" })
+            .Pageable()
+            .Sortable()
+            .Filterable()
+            .Scrollable()
+          )
+        <br />
+        <p>
+                <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "ProfitsandLossBudget", new { year = ViewData["Year"]})">Kembali</a>
+        </p>  
+    }
+</div>
+
+<script type="text/javascript">
+    var selectedId = 0;
+
+//    function Grid_OnDataBound(e) {
+//        var total = 0;
+
+//        $.each($('#GridView').find('tbody tr'), function (idx, row) {
+//            // check for the row is header or not. Index 0 means header row.
+//            var id = $($(row).find('td')[7]).text();
+
+//            if (idx >= 0) {
+//                // get hidden amount column.
+//                var amount = $($(row).find('td')[5]).text();
+
+//                // note: make sure to convert the amount to decimal/float data type.
+//                if (amount != '') {
+//                    total = total + parseFloat(amount);
+//                }
+//            }
+
+//            if (selectedId == id) {
+//                var grid = $('#GridView').data('tGrid');
+//                grid.expandRow(row);
+//            }
+//        });
+
+//        var input = $("#Amount").data("tTextBox");
+//        input.value(total);
+    //    }
+
+    var totalAmount = @Model.Amount;
+    var tempTotal = 0;
+
+    function Grid_OnEdit(e) {
+        var id = e.dataItem.Id;
+        var dataValue = e.dataItem.Amount;
+
+        if (dataValue != "")
+            tempTotal = parseFloat(dataValue);
+
+        selectedId = id;
+    }
+
+    function Grid_OnSave(e) {
+        var dataValue = e.values.Amount;
+        var amount = 0;
+
+        if (dataValue != "")
+            amount = parseFloat(dataValue);
+        //alert(amount);
+
+        totalAmount = totalAmount - tempTotal + amount;
+//        alert(totalAmount);
+        $("#TotalLabel").text(totalAmount);
+    }
+
+</script>

@@ -1,0 +1,2479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ERPModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ERPModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="ERPModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TopNavigationMenu" EntityType="ERPModel.Store.TopNavigationMenu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblMisc_History" EntityType="ERPModel.Store.tblMisc_History" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblMst_Barang" EntityType="ERPModel.Store.TblMst_Barang" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblMst_Login" EntityType="ERPModel.Store.TblMst_Login" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblMst_NoRec" EntityType="ERPModel.Store.TblMst_NoRec" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblMst_Perusahaan" EntityType="ERPModel.Store.TblMst_Perusahaan" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblTrans_Penimbangan1" EntityType="ERPModel.Store.TblTrans_Penimbangan1" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="TblTrans_Penimbangan2" EntityType="ERPModel.Store.TblTrans_Penimbangan2" store:Type="Tables" Schema="Imp" />
+          <EntitySet Name="AMPJournals" EntityType="ERPModel.Store.AMPJournals" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="CompanyLists" EntityType="ERPModel.Store.CompanyLists" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="CrusherJournalDetails" EntityType="ERPModel.Store.CrusherJournalDetails" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="CrusherJournals" EntityType="ERPModel.Store.CrusherJournals" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="DistributionJournals" EntityType="ERPModel.Store.DistributionJournals" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MaterialInitialStock" EntityType="ERPModel.Store.MaterialInitialStock" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MaterialInventories" EntityType="ERPModel.Store.MaterialInventories" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MaterialUseJournal" EntityType="ERPModel.Store.MaterialUseJournal" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MstDeliveryStatuses" EntityType="ERPModel.Store.MstDeliveryStatuses" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MstInventoryStatuses" EntityType="ERPModel.Store.MstInventoryStatuses" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MstMachines" EntityType="ERPModel.Store.MstMachines" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MstMachineTypes" EntityType="ERPModel.Store.MstMachineTypes" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MstMaterialCompositions" EntityType="ERPModel.Store.MstMaterialCompositions" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MstMaterialRatioUnits" EntityType="ERPModel.Store.MstMaterialRatioUnits" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MstMaterials" EntityType="ERPModel.Store.MstMaterials" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MstMaterialTypes" EntityType="ERPModel.Store.MstMaterialTypes" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MstMeasurementUnits" EntityType="ERPModel.Store.MstMeasurementUnits" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="MstWeighers" EntityType="ERPModel.Store.MstWeighers" store:Type="Tables" store:Schema="Prod" store:Name="MstWeighers">
+            <DefiningQuery>SELECT 
+      [MstWeighers].[ID] AS [ID], 
+      [MstWeighers].[Name] AS [Name], 
+      [MstWeighers].[SeriesNumber] AS [SeriesNumber]
+      FROM [Prod].[MstWeighers] AS [MstWeighers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MstWorkSchedule" EntityType="ERPModel.Store.MstWorkSchedule" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="ProjectList" EntityType="ERPModel.Store.ProjectList" store:Type="Tables" Schema="Prod" />
+          <EntitySet Name="ProjectRoadList" EntityType="ERPModel.Store.ProjectRoadList" store:Type="Tables" Schema="Prod" />
+          <AssociationSet Name="FK_AMPJournals_MstWorkSchedule" Association="ERPModel.Store.FK_AMPJournals_MstWorkSchedule">
+            <End Role="MstWorkSchedule" EntitySet="MstWorkSchedule" />
+            <End Role="AMPJournals" EntitySet="AMPJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CrusherJournalDetails_CrusherJournals" Association="ERPModel.Store.FK_CrusherJournalDetails_CrusherJournals">
+            <End Role="CrusherJournals" EntitySet="CrusherJournals" />
+            <End Role="CrusherJournalDetails" EntitySet="CrusherJournalDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CrusherJournalDetails_MstMeasurementUnits" Association="ERPModel.Store.FK_CrusherJournalDetails_MstMeasurementUnits">
+            <End Role="MstMeasurementUnits" EntitySet="MstMeasurementUnits" />
+            <End Role="CrusherJournalDetails" EntitySet="CrusherJournalDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CrusherJournals_MaterialUseJournal" Association="ERPModel.Store.FK_CrusherJournals_MaterialUseJournal">
+            <End Role="MaterialUseJournal" EntitySet="MaterialUseJournal" />
+            <End Role="CrusherJournals" EntitySet="CrusherJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DistributionJournals_CompanyLists" Association="ERPModel.Store.FK_DistributionJournals_CompanyLists">
+            <End Role="CompanyLists" EntitySet="CompanyLists" />
+            <End Role="DistributionJournals" EntitySet="DistributionJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DistributionJournals_MaterialInventories" Association="ERPModel.Store.FK_DistributionJournals_MaterialInventories">
+            <End Role="MaterialInventories" EntitySet="MaterialInventories" />
+            <End Role="DistributionJournals" EntitySet="DistributionJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DistributionJournals_MstDeliveryStatuses" Association="ERPModel.Store.FK_DistributionJournals_MstDeliveryStatuses">
+            <End Role="MstDeliveryStatuses" EntitySet="MstDeliveryStatuses" />
+            <End Role="DistributionJournals" EntitySet="DistributionJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialInitialStock_MaterialInventories" Association="ERPModel.Store.FK_MaterialInitialStock_MaterialInventories">
+            <End Role="MaterialInventories" EntitySet="MaterialInventories" />
+            <End Role="MaterialInitialStock" EntitySet="MaterialInitialStock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialInitialStock_MstMeasurementUnits" Association="ERPModel.Store.FK_MaterialInitialStock_MstMeasurementUnits">
+            <End Role="MstMeasurementUnits" EntitySet="MstMeasurementUnits" />
+            <End Role="MaterialInitialStock" EntitySet="MaterialInitialStock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialInventories_MstInventoryStatuses" Association="ERPModel.Store.FK_MaterialInventories_MstInventoryStatuses">
+            <End Role="MstInventoryStatuses" EntitySet="MstInventoryStatuses" />
+            <End Role="MaterialInventories" EntitySet="MaterialInventories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialUseJournal_MaterialInventories" Association="ERPModel.Store.FK_MaterialUseJournal_MaterialInventories">
+            <End Role="MaterialInventories" EntitySet="MaterialInventories" />
+            <End Role="MaterialUseJournal" EntitySet="MaterialUseJournal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialUseJournal_MstMachines" Association="ERPModel.Store.FK_MaterialUseJournal_MstMachines">
+            <End Role="MstMachines" EntitySet="MstMachines" />
+            <End Role="MaterialUseJournal" EntitySet="MaterialUseJournal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialUseJournal_MstMeasurementUnits" Association="ERPModel.Store.FK_MaterialUseJournal_MstMeasurementUnits">
+            <End Role="MstMeasurementUnits" EntitySet="MstMeasurementUnits" />
+            <End Role="MaterialUseJournal" EntitySet="MaterialUseJournal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialUseJournal_ProjectList" Association="ERPModel.Store.FK_MaterialUseJournal_ProjectList">
+            <End Role="ProjectList" EntitySet="ProjectList" />
+            <End Role="MaterialUseJournal" EntitySet="MaterialUseJournal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionJournalDetails_MaterialInventories" Association="ERPModel.Store.FK_ProductionJournalDetails_MaterialInventories">
+            <End Role="MaterialInventories" EntitySet="MaterialInventories" />
+            <End Role="CrusherJournalDetails" EntitySet="CrusherJournalDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionJournalDetails_ProductionJournals" Association="ERPModel.Store.FK_ProductionJournalDetails_ProductionJournals">
+            <End Role="CrusherJournals" EntitySet="CrusherJournals" />
+            <End Role="CrusherJournalDetails" EntitySet="CrusherJournalDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionJournals_MstWorkSchedule" Association="ERPModel.Store.FK_ProductionJournals_MstWorkSchedule">
+            <End Role="MstWorkSchedule" EntitySet="MstWorkSchedule" />
+            <End Role="CrusherJournals" EntitySet="CrusherJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectRoadList_ProjectList" Association="ERPModel.Store.FK_ProjectRoadList_ProjectList">
+            <End Role="ProjectList" EntitySet="ProjectList" />
+            <End Role="ProjectRoadList" EntitySet="ProjectRoadList" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TopNavigationMenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="Label" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Link" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Ordinal" Type="int" Nullable="false" />
+          <Property Name="ModuleName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblMisc_History">
+          <Key>
+            <PropertyRef Name="historyID" />
+          </Key>
+          <Property Name="historyID" Type="int" Nullable="false" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+          <Property Name="waktu" Type="datetime" />
+          <Property Name="norecord" Type="nvarchar" MaxLength="50" />
+          <Property Name="jenis" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TblMst_Barang">
+          <Key>
+            <PropertyRef Name="KodeBrg" />
+          </Key>
+          <Property Name="KodeBrg" Type="int" Nullable="false" />
+          <Property Name="NoBrg" Type="nvarchar" MaxLength="20" />
+          <Property Name="NamaBrg" Type="nvarchar" MaxLength="50" />
+          <Property Name="Keterangan" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblMst_Login">
+          <Key>
+            <PropertyRef Name="Kode" />
+          </Key>
+          <Property Name="Kode" Type="int" Nullable="false" />
+          <Property Name="Nama" Type="nvarchar" MaxLength="25" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="20" />
+          <Property Name="Bagian" Type="nvarchar" MaxLength="25" />
+          <Property Name="HA_THA" Type="bit" Nullable="false" />
+          <Property Name="HA_TBD" Type="bit" Nullable="false" />
+          <Property Name="HA_TOpt" Type="bit" Nullable="false" />
+          <Property Name="HA_Lap" Type="bit" Nullable="false" />
+          <Property Name="HA_TransV" Type="bit" Nullable="false" />
+          <Property Name="HA_TransI" Type="bit" Nullable="false" />
+          <Property Name="HA_TransE" Type="bit" Nullable="false" />
+          <Property Name="HA_TransH" Type="bit" Nullable="false" />
+          <Property Name="HA_TransCU" Type="bit" Nullable="false" />
+          <Property Name="HA_FPV" Type="bit" Nullable="false" />
+          <Property Name="HA_FPI" Type="bit" Nullable="false" />
+          <Property Name="HA_FPE" Type="bit" Nullable="false" />
+          <Property Name="HA_FPH" Type="bit" Nullable="false" />
+          <Property Name="HA_FMV" Type="bit" Nullable="false" />
+          <Property Name="HA_FMI" Type="bit" Nullable="false" />
+          <Property Name="HA_FME" Type="bit" Nullable="false" />
+          <Property Name="HA_FMH" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblMst_NoRec">
+          <Key>
+            <PropertyRef Name="NoUrut" />
+          </Key>
+          <Property Name="NoRecord" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoUrut" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblMst_Perusahaan">
+          <Key>
+            <PropertyRef Name="KodePeru" />
+          </Key>
+          <Property Name="KodePeru" Type="int" Nullable="false" />
+          <Property Name="NoPeru" Type="nvarchar" MaxLength="20" />
+          <Property Name="NamaPeru" Type="nvarchar" MaxLength="50" />
+          <Property Name="AlamatPeru1" Type="nvarchar" MaxLength="200" />
+          <Property Name="AlamatPeru2" Type="nvarchar" MaxLength="200" />
+          <Property Name="KotaPeru" Type="nvarchar" MaxLength="100" />
+          <Property Name="TelpPeru" Type="nvarchar" MaxLength="50" />
+          <Property Name="FaxPeru" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblTrans_Penimbangan1">
+          <Key>
+            <PropertyRef Name="KodeTimb1" />
+          </Key>
+          <Property Name="KodeTimb1" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Tgl" Type="datetime" Nullable="false" />
+          <Property Name="NoPolisi" Type="nvarchar" MaxLength="11" />
+          <Property Name="Sopir" Type="nvarchar" MaxLength="150" />
+          <Property Name="KodePeru" Type="int" />
+          <Property Name="KodeBrg" Type="int" />
+          <Property Name="Berat1" Type="int" />
+          <Property Name="Deliverynote" Type="nvarchar" MaxLength="50" />
+          <Property Name="Clerk1" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TblTrans_Penimbangan2">
+          <Key>
+            <PropertyRef Name="NoRecord" />
+          </Key>
+          <Property Name="NoRecord" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="TglMasuk" Type="datetime" />
+          <Property Name="TglKeluar" Type="datetime" />
+          <Property Name="NoPolisi" Type="nvarchar" MaxLength="11" />
+          <Property Name="Sopir" Type="nvarchar" MaxLength="150" />
+          <Property Name="KodePeru" Type="int" />
+          <Property Name="KodeBrg" Type="int" />
+          <Property Name="Berat1" Type="int" />
+          <Property Name="Berat2" Type="int" />
+          <Property Name="DeliveryNote" Type="nvarchar" MaxLength="50" />
+          <Property Name="Clerk1" Type="nvarchar" MaxLength="20" />
+          <Property Name="Clerk2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Copy" Type="int" />
+        </EntityType>
+        <EntityType Name="AMPJournals">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdMachine" Type="tinyint" />
+          <Property Name="BeginProd" Type="time" />
+          <Property Name="EndProd" Type="time" />
+          <Property Name="DateUse" Type="datetime" />
+          <Property Name="IdShift" Type="int" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDMaterial" Type="int" />
+          <Property Name="IDProject" Type="bigint" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CompanyLists">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="int" />
+          <Property Name="Symbol" Type="nvarchar" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="200" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CrusherJournalDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDInventory" Type="bigint" />
+          <Property Name="IDCrusherJournal" Type="bigint" />
+          <Property Name="IDMaterial" Type="int" />
+          <Property Name="OrderProcess" Type="tinyint" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="IDMeasurementUnit" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="CrusherJournals">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdWorkSchedule" Type="int" />
+          <Property Name="IDMaterialUse" Type="bigint" />
+          <Property Name="Member" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DistributionJournals">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDInventory" Type="bigint" />
+          <Property Name="NoRec" Type="varchar" MaxLength="50" />
+          <Property Name="InTime" Type="datetime" />
+          <Property Name="OutTime" Type="datetime" />
+          <Property Name="IdWeigher" Type="tinyint" />
+          <Property Name="PoliceLicense" Type="varchar" MaxLength="50" />
+          <Property Name="DriverName" Type="varchar" MaxLength="150" />
+          <Property Name="IdDeliveryStatus" Type="tinyint" />
+          <Property Name="IdCompany" Type="int" />
+          <Property Name="IdMaterial" Type="int" />
+          <Property Name="Weight1" Type="float" />
+          <Property Name="Weight2" Type="float" />
+          <Property Name="IdMeasurementUnit" Type="tinyint" />
+          <Property Name="Place" Type="varchar" MaxLength="100" />
+          <Property Name="Clerk1" Type="varchar" MaxLength="50" />
+          <Property Name="Clerk2" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="200" />
+          <Property Name="Copy" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="MaterialInitialStock">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDMaterial" Type="int" />
+          <Property Name="DateInput" Type="datetime" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="IDMeasurementUnit" Type="tinyint" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDInventory" Type="bigint" />
+        </EntityType>
+        <EntityType Name="MaterialInventories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdInventoryStatus" Type="tinyint" />
+          <Property Name="IsPlus" Type="bit" />
+          <Property Name="NoRecordWeigher" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MaterialUseJournal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDMaterial" Type="int" />
+          <Property Name="DateUse" Type="datetime" />
+          <Property Name="IdMachine" Type="tinyint" />
+          <Property Name="OperatorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="IDMeasurementUnit" Type="tinyint" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDProject" Type="bigint" />
+          <Property Name="IDInventory" Type="bigint" />
+          <Property Name="IDAmp" Type="bigint" />
+        </EntityType>
+        <EntityType Name="MstDeliveryStatuses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MstInventoryStatuses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MstMachines">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MachineName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdMachineType" Type="int" />
+          <Property Name="SeriesNumber" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MstMachineTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MachineType" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="MstMaterialCompositions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDMaterial" Type="int" />
+          <Property Name="IDMaterialComposition" Type="int" />
+          <Property Name="Amount" Type="float" />
+        </EntityType>
+        <EntityType Name="MstMaterialRatioUnits">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDMaterial" Type="int" />
+          <Property Name="IDMeasurementUnit" Type="int" />
+          <Property Name="Weight" Type="float" />
+        </EntityType>
+        <EntityType Name="MstMaterials">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Symbol" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IdMaterialType" Type="tinyint" />
+          <Property Name="IdMeasurementUnit" Type="tinyint" />
+          <Property Name="isInventory" Type="bit" />
+          <Property Name="InitialStock" Type="float" />
+          <Property Name="DateInitialStock" Type="date" />
+          <Property Name="IDMachineType" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="MstMaterialTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MstMeasurementUnits">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Symbol" Type="nvarchar" MaxLength="50" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ratio" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'MDKSite1.Prod.MstWeighers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="MstWeighers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="SeriesNumber" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MstWorkSchedule">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Shift" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProjectList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NoProject" Type="varchar" MaxLength="100" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="PackageName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AgentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ProjectRoadList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDProject" Type="bigint" />
+          <Property Name="RoadName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Length" Type="int" />
+        </EntityType>
+        <Association Name="FK_AMPJournals_MstWorkSchedule">
+          <End Role="MstWorkSchedule" Type="ERPModel.Store.MstWorkSchedule" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AMPJournals" Type="ERPModel.Store.AMPJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstWorkSchedule">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AMPJournals">
+              <PropertyRef Name="IdShift" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CrusherJournalDetails_CrusherJournals">
+          <End Role="CrusherJournals" Type="ERPModel.Store.CrusherJournals" Multiplicity="0..1" />
+          <End Role="CrusherJournalDetails" Type="ERPModel.Store.CrusherJournalDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CrusherJournals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournalDetails">
+              <PropertyRef Name="IDCrusherJournal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CrusherJournalDetails_MstMeasurementUnits">
+          <End Role="MstMeasurementUnits" Type="ERPModel.Store.MstMeasurementUnits" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CrusherJournalDetails" Type="ERPModel.Store.CrusherJournalDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstMeasurementUnits">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournalDetails">
+              <PropertyRef Name="IDMeasurementUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CrusherJournals_MaterialUseJournal">
+          <End Role="MaterialUseJournal" Type="ERPModel.Store.MaterialUseJournal" Multiplicity="0..1" />
+          <End Role="CrusherJournals" Type="ERPModel.Store.CrusherJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialUseJournal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournals">
+              <PropertyRef Name="IDMaterialUse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DistributionJournals_CompanyLists">
+          <End Role="CompanyLists" Type="ERPModel.Store.CompanyLists" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DistributionJournals" Type="ERPModel.Store.DistributionJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompanyLists">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DistributionJournals">
+              <PropertyRef Name="IdCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DistributionJournals_MaterialInventories">
+          <End Role="MaterialInventories" Type="ERPModel.Store.MaterialInventories" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DistributionJournals" Type="ERPModel.Store.DistributionJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialInventories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DistributionJournals">
+              <PropertyRef Name="IDInventory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DistributionJournals_MstDeliveryStatuses">
+          <End Role="MstDeliveryStatuses" Type="ERPModel.Store.MstDeliveryStatuses" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DistributionJournals" Type="ERPModel.Store.DistributionJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstDeliveryStatuses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DistributionJournals">
+              <PropertyRef Name="IdDeliveryStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialInitialStock_MaterialInventories">
+          <End Role="MaterialInventories" Type="ERPModel.Store.MaterialInventories" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MaterialInitialStock" Type="ERPModel.Store.MaterialInitialStock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialInventories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialInitialStock">
+              <PropertyRef Name="IDInventory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialInitialStock_MstMeasurementUnits">
+          <End Role="MstMeasurementUnits" Type="ERPModel.Store.MstMeasurementUnits" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MaterialInitialStock" Type="ERPModel.Store.MaterialInitialStock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstMeasurementUnits">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialInitialStock">
+              <PropertyRef Name="IDMeasurementUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialInventories_MstInventoryStatuses">
+          <End Role="MstInventoryStatuses" Type="ERPModel.Store.MstInventoryStatuses" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MaterialInventories" Type="ERPModel.Store.MaterialInventories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstInventoryStatuses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialInventories">
+              <PropertyRef Name="IdInventoryStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialUseJournal_MaterialInventories">
+          <End Role="MaterialInventories" Type="ERPModel.Store.MaterialInventories" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MaterialUseJournal" Type="ERPModel.Store.MaterialUseJournal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialInventories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialUseJournal">
+              <PropertyRef Name="IDInventory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialUseJournal_MstMachines">
+          <End Role="MstMachines" Type="ERPModel.Store.MstMachines" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MaterialUseJournal" Type="ERPModel.Store.MaterialUseJournal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstMachines">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialUseJournal">
+              <PropertyRef Name="IdMachine" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialUseJournal_MstMeasurementUnits">
+          <End Role="MstMeasurementUnits" Type="ERPModel.Store.MstMeasurementUnits" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MaterialUseJournal" Type="ERPModel.Store.MaterialUseJournal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstMeasurementUnits">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialUseJournal">
+              <PropertyRef Name="IDMeasurementUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialUseJournal_ProjectList">
+          <End Role="ProjectList" Type="ERPModel.Store.ProjectList" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MaterialUseJournal" Type="ERPModel.Store.MaterialUseJournal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectList">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialUseJournal">
+              <PropertyRef Name="IDProject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionJournalDetails_MaterialInventories">
+          <End Role="MaterialInventories" Type="ERPModel.Store.MaterialInventories" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CrusherJournalDetails" Type="ERPModel.Store.CrusherJournalDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialInventories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournalDetails">
+              <PropertyRef Name="IDInventory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionJournalDetails_ProductionJournals">
+          <End Role="CrusherJournals" Type="ERPModel.Store.CrusherJournals" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CrusherJournalDetails" Type="ERPModel.Store.CrusherJournalDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CrusherJournals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournalDetails">
+              <PropertyRef Name="IDCrusherJournal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionJournals_MstWorkSchedule">
+          <End Role="MstWorkSchedule" Type="ERPModel.Store.MstWorkSchedule" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CrusherJournals" Type="ERPModel.Store.CrusherJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstWorkSchedule">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournals">
+              <PropertyRef Name="IdWorkSchedule" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectRoadList_ProjectList">
+          <End Role="ProjectList" Type="ERPModel.Store.ProjectList" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectRoadList" Type="ERPModel.Store.ProjectRoadList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectList">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProjectRoadList">
+              <PropertyRef Name="IDProject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CompInUseJournal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="IDAmp" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="CompositionProductList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="idProduk" Type="int" Mode="In" />
+          <Parameter Name="idMeasurementUnitConversion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DropdownAsphal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod" />
+        <Function Name="EditTimbangan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetAMPDataForDashboard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="curDate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="GetCrusherJournalData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="month" Type="tinyint" Mode="In" />
+          <Parameter Name="year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetDataFromMDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod" />
+        <Function Name="GetInventoryData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="IDMaterial" Type="int" Mode="In" />
+          <Parameter Name="Month" Type="tinyint" Mode="In" />
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetInventoryDataForDashboard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="curDate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="getListAspal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="Month" Type="tinyint" Mode="In" />
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="LaporanHasilCrusher" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="PeriodeAwal" Type="date" Mode="In" />
+          <Parameter Name="PeriodeAkhir" Type="date" Mode="In" />
+        </Function>
+        <Function Name="LaporanPenimbanganMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="PeriodeAwal" Type="date" Mode="In" />
+          <Parameter Name="PeriodeAkhir" Type="date" Mode="In" />
+        </Function>
+        <Function Name="ListAspal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod" />
+        <Function Name="ListDataAMP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod" />
+        <Function Name="ListKomposisi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod" />
+        <Function Name="ListMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod" />
+        <Function Name="ListRatio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod" />
+        <Function Name="ListSolar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="Month" Type="tinyint" Mode="In" />
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ListTimbangan1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod" />
+        <Function Name="produkCompositions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Prod">
+          <Parameter Name="idProduk" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ERPModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ERPEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="ListKomposisi" ReturnType="Collection(ERPModel.ListKomposisi_Result)" />
+          <FunctionImport Name="ListRatio" ReturnType="Collection(ERPModel.ListRatio_Result)" />
+          <FunctionImport Name="ListSolar" ReturnType="Collection(ERPModel.ListSolar_Result)" >
+            <Parameter Name="Month" Mode="In" Type="Byte" />
+            <Parameter Name="Year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ListAspal" ReturnType="Collection(ERPModel.ListAspal_Result)" />
+          <FunctionImport Name="getListAspal" ReturnType="Collection(ERPModel.getListAspal_Result)" >
+            <Parameter Name="Month" Mode="In" Type="Byte" />
+            <Parameter Name="Year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DropdownAsphal" ReturnType="Collection(ERPModel.DropdownAsphal_Result)" />
+          <FunctionImport Name="produkCompositions" ReturnType="Collection(ERPModel.produkCompositions_Result)">
+          <Parameter Name="idProduk" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetInventoryData" ReturnType="Collection(ERPModel.GetInventoryData_Result)">
+            <Parameter Name="IDMaterial" Mode="In" Type="Int32" />
+            <Parameter Name="Month" Mode="In" Type="Byte" />
+            <Parameter Name="Year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetInventoryDataForDashboard" ReturnType="Collection(ERPModel.GetInventoryDataForDashboard_Result)">
+          <Parameter Name="curDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="ListMaterial" ReturnType="Collection(ERPModel.ListMaterial_Result)" />
+          <FunctionImport Name="ListDataAMP" ReturnType="Collection(ERPModel.ListDataAMP_Result)" />
+          <FunctionImport Name="ListTimbangan1" ReturnType="Collection(ERPModel.ListTimbangan1_Result)" />
+          <FunctionImport Name="EditTimbangan" ReturnType="Collection(ERPModel.EditTimbangan_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CompInUseJournal" ReturnType="Collection(ERPModel.CompInUseJournal_Result)">
+          <Parameter Name="IDAmp" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="sysdiagrams" EntityType="ERPModel.sysdiagrams" />
+          <EntitySet Name="TblTrans_Penimbangan1" EntityType="ERPModel.TblTrans_Penimbangan1" />
+          <EntitySet Name="TblTrans_Penimbangan2" EntityType="ERPModel.TblTrans_Penimbangan2" />
+          <EntitySet Name="CompanyLists" EntityType="ERPModel.CompanyLists" />
+          <EntitySet Name="CrusherJournalDetails" EntityType="ERPModel.CrusherJournalDetails" />
+          <EntitySet Name="CrusherJournals" EntityType="ERPModel.CrusherJournals" />
+          <EntitySet Name="DistributionJournals" EntityType="ERPModel.DistributionJournals" />
+          <EntitySet Name="MaterialInitialStock" EntityType="ERPModel.MaterialInitialStock" />
+          <EntitySet Name="MaterialInventories" EntityType="ERPModel.MaterialInventories" />
+          <EntitySet Name="MaterialUseJournal" EntityType="ERPModel.MaterialUseJournal" />
+          <EntitySet Name="MstDeliveryStatuses" EntityType="ERPModel.MstDeliveryStatuses" />
+          <EntitySet Name="MstInventoryStatuses" EntityType="ERPModel.MstInventoryStatuses" />
+          <EntitySet Name="MstMachines" EntityType="ERPModel.MstMachines" />
+          <EntitySet Name="MstMachineTypes" EntityType="ERPModel.MstMachineTypes" />
+          <EntitySet Name="MstMaterialCompositions" EntityType="ERPModel.MstMaterialCompositions" />
+          <EntitySet Name="MstMaterialRatioUnits" EntityType="ERPModel.MstMaterialRatioUnits" />
+          <EntitySet Name="MstMaterials" EntityType="ERPModel.MstMaterials" />
+          <EntitySet Name="MstMaterialTypes" EntityType="ERPModel.MstMaterialTypes" />
+          <EntitySet Name="MstWorkSchedule" EntityType="ERPModel.MstWorkSchedule" />
+          <EntitySet Name="ProjectList" EntityType="ERPModel.ProjectList" />
+          <EntitySet Name="ProjectRoadList" EntityType="ERPModel.ProjectRoadList" />
+          <AssociationSet Name="FK_DistributionJournals_CompanyLists" Association="ERPModel.FK_DistributionJournals_CompanyLists">
+            <End Role="CompanyLists" EntitySet="CompanyLists" />
+            <End Role="DistributionJournals" EntitySet="DistributionJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionJournalDetails_MaterialInventories" Association="ERPModel.FK_ProductionJournalDetails_MaterialInventories">
+            <End Role="MaterialInventories" EntitySet="MaterialInventories" />
+            <End Role="CrusherJournalDetails" EntitySet="CrusherJournalDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionJournalDetails_ProductionJournals" Association="ERPModel.FK_ProductionJournalDetails_ProductionJournals">
+            <End Role="CrusherJournals" EntitySet="CrusherJournals" />
+            <End Role="CrusherJournalDetails" EntitySet="CrusherJournalDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CrusherJournals_MaterialUseJournal" Association="ERPModel.FK_CrusherJournals_MaterialUseJournal">
+            <End Role="MaterialUseJournal" EntitySet="MaterialUseJournal" />
+            <End Role="CrusherJournals" EntitySet="CrusherJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductionJournals_MstWorkSchedule" Association="ERPModel.FK_ProductionJournals_MstWorkSchedule">
+            <End Role="MstWorkSchedule" EntitySet="MstWorkSchedule" />
+            <End Role="CrusherJournals" EntitySet="CrusherJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DistributionJournals_MaterialInventories" Association="ERPModel.FK_DistributionJournals_MaterialInventories">
+            <End Role="MaterialInventories" EntitySet="MaterialInventories" />
+            <End Role="DistributionJournals" EntitySet="DistributionJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DistributionJournals_MstDeliveryStatuses" Association="ERPModel.FK_DistributionJournals_MstDeliveryStatuses">
+            <End Role="MstDeliveryStatuses" EntitySet="MstDeliveryStatuses" />
+            <End Role="DistributionJournals" EntitySet="DistributionJournals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialInitialStock_MaterialInventories" Association="ERPModel.FK_MaterialInitialStock_MaterialInventories">
+            <End Role="MaterialInventories" EntitySet="MaterialInventories" />
+            <End Role="MaterialInitialStock" EntitySet="MaterialInitialStock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialInventories_MstInventoryStatuses" Association="ERPModel.FK_MaterialInventories_MstInventoryStatuses">
+            <End Role="MstInventoryStatuses" EntitySet="MstInventoryStatuses" />
+            <End Role="MaterialInventories" EntitySet="MaterialInventories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialUseJournal_MaterialInventories" Association="ERPModel.FK_MaterialUseJournal_MaterialInventories">
+            <End Role="MaterialInventories" EntitySet="MaterialInventories" />
+            <End Role="MaterialUseJournal" EntitySet="MaterialUseJournal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialUseJournal_MstMachines" Association="ERPModel.FK_MaterialUseJournal_MstMachines">
+            <End Role="MstMachines" EntitySet="MstMachines" />
+            <End Role="MaterialUseJournal" EntitySet="MaterialUseJournal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialUseJournal_ProjectList" Association="ERPModel.FK_MaterialUseJournal_ProjectList">
+            <End Role="ProjectList" EntitySet="ProjectList" />
+            <End Role="MaterialUseJournal" EntitySet="MaterialUseJournal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectRoadList_ProjectList" Association="ERPModel.FK_ProjectRoadList_ProjectList">
+            <End Role="ProjectList" EntitySet="ProjectList" />
+            <End Role="ProjectRoadList" EntitySet="ProjectRoadList" />
+          </AssociationSet>
+          <FunctionImport Name="GetCrusherJournalData" ReturnType="Collection(ERPModel.GetCrusherJournalData_Result)">
+            <Parameter Name="month" Mode="In" Type="Byte" />
+            <Parameter Name="year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="LaporanPenimbanganMaterial" ReturnType="Collection(ERPModel.LaporanPenimbanganMaterial_Result)">
+            <Parameter Name="PeriodeAwal" Mode="In" Type="DateTime" />
+            <Parameter Name="PeriodeAkhir" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GetAMPDataForDashboard" ReturnType="Collection(ERPModel.GetAMPDataForDashboard_Result)">
+          <Parameter Name="curDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="tblMisc_History" EntityType="ERPModel.tblMisc_History" />
+          <EntitySet Name="TblMst_Barang" EntityType="ERPModel.TblMst_Barang" />
+          <EntitySet Name="TblMst_Login" EntityType="ERPModel.TblMst_Login" />
+          <EntitySet Name="TblMst_NoRec" EntityType="ERPModel.TblMst_NoRec" />
+          <EntitySet Name="TblMst_Perusahaan" EntityType="ERPModel.TblMst_Perusahaan" />
+          <EntitySet Name="TopNavigationMenu" EntityType="ERPModel.TopNavigationMenu" />
+          <EntitySet Name="MstWeighers" EntityType="ERPModel.MstWeighers" />
+          <EntitySet Name="AMPJournals" EntityType="ERPModel.AMPJournals" />
+          <AssociationSet Name="FK_AMPJournals_MstWorkSchedule" Association="ERPModel.FK_AMPJournals_MstWorkSchedule">
+            <End Role="MstWorkSchedule" EntitySet="MstWorkSchedule" />
+            <End Role="AMPJournals" EntitySet="AMPJournals" />
+          </AssociationSet>
+          <EntitySet Name="MstMeasurementUnits" EntityType="ERPModel.MstMeasurementUnits" />
+          <AssociationSet Name="FK_CrusherJournalDetails_MstMeasurementUnits" Association="ERPModel.FK_CrusherJournalDetails_MstMeasurementUnits">
+            <End Role="MstMeasurementUnits" EntitySet="MstMeasurementUnits" />
+            <End Role="CrusherJournalDetails" EntitySet="CrusherJournalDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialInitialStock_MstMeasurementUnits" Association="ERPModel.FK_MaterialInitialStock_MstMeasurementUnits">
+            <End Role="MstMeasurementUnits" EntitySet="MstMeasurementUnits" />
+            <End Role="MaterialInitialStock" EntitySet="MaterialInitialStock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialUseJournal_MstMeasurementUnits" Association="ERPModel.FK_MaterialUseJournal_MstMeasurementUnits">
+            <End Role="MstMeasurementUnits" EntitySet="MstMeasurementUnits" />
+            <End Role="MaterialUseJournal" EntitySet="MaterialUseJournal" />
+          </AssociationSet>
+          <FunctionImport Name="CompositionProductList" ReturnType="Collection(ERPModel.CompositionProductList_Result)">
+            <Parameter Name="idProduk" Mode="In" Type="Int32" />
+            <Parameter Name="idMeasurementUnitConversion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          </EntityContainer>
+        <ComplexType Name="ListKomposisi_Result">
+          <Property Type="String" Name="produk" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Amount" Nullable="true" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="IDMaterial" Nullable="true" />
+          <Property Type="Int32" Name="IDMaterialComposition" Nullable="true" />
+          <Property Type="String" Name="MachineType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Composition" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompositionUnit" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="ConversionAmount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ListRatio_Result">
+          <Property Type="String" Name="Material" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Satuan" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Rasio" Nullable="true" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ListSolar_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="DateTime" Name="DateUse" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Amount" Nullable="true" />
+          <Property Type="String" Name="MachineName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OperatorName" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="IdMachine" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ListAspal_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="getListAspal_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="DateTime" Name="DateUse" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Amount" Nullable="true" />
+          <Property Type="String" Name="OperatorName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="DropdownAsphal_Result">
+          <Property Type="Int32" Name="IDMaterial" Nullable="true" />
+          <Property Type="Int32" Name="jumlah" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="produkCompositions_Result">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IDMaterialComposition" Nullable="true" />
+          <Property Type="Byte" Name="IdMeasurementUnit" Nullable="true" />
+          <Property Type="String" Name="ASPHAL" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Amount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetInventoryData_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="DateTime" Name="Tanggal" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Keterangan" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Tambah" Nullable="true" />
+          <Property Type="Double" Name="Kurang" Nullable="true" />
+          <Property Type="Double" Name="Sisa" Nullable="true" />
+          <Property Type="Byte" Name="UrutBaris" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetInventoryDataForDashboard_Result">
+          <Property Type="Int32" Name="IdMaterial" Nullable="true" />
+          <Property Type="String" Name="NamaMaterial" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="SisaKemarin" Nullable="true" />
+          <Property Type="Double" Name="TambahSekarang" Nullable="true" />
+          <Property Type="Double" Name="KurangSekarang" Nullable="true" />
+          <Property Type="Double" Name="Sisa" Nullable="true" />
+          </ComplexType>
+        <ComplexType Name="ListMaterial_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Code" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="isInventory" Nullable="true" />
+          <Property Type="String" Name="MachineType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ListDataAMP_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="IDMaterial" Nullable="true" />
+          <Property Type="String" Name="Produk" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateUse" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Operator" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IdShift" Nullable="false" />
+          <Property Type="String" Name="Shift" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IDProject" Nullable="false" />
+          <Property Type="String" Name="PackageName" Nullable="false" MaxLength="1" />
+          </ComplexType>
+        <ComplexType Name="ListTimbangan1_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="DateTime" Name="JamMasuk" Nullable="true" Precision="23" />
+          <Property Type="String" Name="NoPolisi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sopir" Nullable="true" MaxLength="150" />
+          <Property Type="Int32" Name="IdCompany" Nullable="true" />
+          <Property Type="String" Name="NamaPeru" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Material" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IdMaterial" Nullable="true" />
+          <Property Type="Double" Name="Berat1" Nullable="true" />
+          <Property Type="String" Name="Keterangan" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Clerk1" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="Copy" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="EditTimbangan_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NoPolisi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Sopir" Nullable="true" MaxLength="150" />
+          <Property Type="Double" Name="Berat1" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Clerk1" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="CompInUseJournal_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="IDMaterial" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="IdMeasurementUnit" Nullable="true" />
+          <Property Type="Int32" Name="Amount" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TblTrans_Penimbangan1">
+          <Key>
+            <PropertyRef Name="KodeTimb1" />
+          </Key>
+          <Property Type="Int32" Name="KodeTimb1" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Tgl" Nullable="false" />
+          <Property Type="String" Name="NoPolisi" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sopir" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KodePeru" />
+          <Property Type="Int32" Name="KodeBrg" />
+          <Property Type="Int32" Name="Berat1" />
+          <Property Type="String" Name="Deliverynote" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Clerk1" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblTrans_Penimbangan2">
+          <Key>
+            <PropertyRef Name="NoRecord" />
+          </Key>
+          <Property Type="String" Name="NoRecord" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="TglMasuk" />
+          <Property Type="DateTime" Name="TglKeluar" />
+          <Property Type="String" Name="NoPolisi" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sopir" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KodePeru" />
+          <Property Type="Int32" Name="KodeBrg" />
+          <Property Type="Int32" Name="Berat1" />
+          <Property Type="Int32" Name="Berat2" />
+          <Property Type="String" Name="DeliveryNote" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Clerk1" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Clerk2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Copy" />
+        </EntityType>
+        <EntityType Name="CompanyLists">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Code" />
+          <Property Type="String" Name="Symbol" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address1" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address2" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DistributionJournals" Relationship="ERPModel.FK_DistributionJournals_CompanyLists" FromRole="CompanyLists" ToRole="DistributionJournals" />
+        </EntityType>
+        <EntityType Name="CrusherJournalDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="IDInventory" />
+          <Property Type="Int64" Name="IDCrusherJournal" />
+          <Property Type="Int32" Name="IDMaterial" />
+          <Property Type="Byte" Name="OrderProcess" />
+          <Property Type="Double" Name="Amount" />
+          <Property Type="Byte" Name="IDMeasurementUnit" />
+          <NavigationProperty Name="MaterialInventories" Relationship="ERPModel.FK_ProductionJournalDetails_MaterialInventories" FromRole="CrusherJournalDetails" ToRole="MaterialInventories" />
+          <NavigationProperty Name="CrusherJournals" Relationship="ERPModel.FK_ProductionJournalDetails_ProductionJournals" FromRole="CrusherJournalDetails" ToRole="CrusherJournals" />
+          <NavigationProperty Name="MstMeasurementUnits" Relationship="ERPModel.FK_CrusherJournalDetails_MstMeasurementUnits" FromRole="CrusherJournalDetails" ToRole="MstMeasurementUnits" />
+        </EntityType>
+        <EntityType Name="CrusherJournals">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdWorkSchedule" />
+          <Property Type="Int64" Name="IDMaterialUse" />
+          <Property Type="String" Name="Member" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CrusherJournalDetails" Relationship="ERPModel.FK_ProductionJournalDetails_ProductionJournals" FromRole="CrusherJournals" ToRole="CrusherJournalDetails" />
+          <NavigationProperty Name="MaterialUseJournal" Relationship="ERPModel.FK_CrusherJournals_MaterialUseJournal" FromRole="CrusherJournals" ToRole="MaterialUseJournal" />
+          <NavigationProperty Name="MstWorkSchedule" Relationship="ERPModel.FK_ProductionJournals_MstWorkSchedule" FromRole="CrusherJournals" ToRole="MstWorkSchedule" />
+        </EntityType>
+        <EntityType Name="DistributionJournals">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="IDInventory" />
+          <Property Type="String" Name="NoRec" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="InTime" />
+          <Property Type="DateTime" Name="OutTime" />
+          <Property Type="Byte" Name="IdWeigher" />
+          <Property Type="String" Name="PoliceLicense" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DriverName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="IdDeliveryStatus" />
+          <Property Type="Int32" Name="IdCompany" />
+          <Property Type="Int32" Name="IdMaterial" />
+          <Property Type="Double" Name="Weight1" />
+          <Property Type="Double" Name="Weight2" />
+          <Property Type="Byte" Name="IdMeasurementUnit" />
+          <Property Type="String" Name="Place" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Clerk1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Clerk2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="Copy" />
+          <NavigationProperty Name="CompanyLists" Relationship="ERPModel.FK_DistributionJournals_CompanyLists" FromRole="DistributionJournals" ToRole="CompanyLists" />
+          <NavigationProperty Name="MaterialInventories" Relationship="ERPModel.FK_DistributionJournals_MaterialInventories" FromRole="DistributionJournals" ToRole="MaterialInventories" />
+          <NavigationProperty Name="MstDeliveryStatuses" Relationship="ERPModel.FK_DistributionJournals_MstDeliveryStatuses" FromRole="DistributionJournals" ToRole="MstDeliveryStatuses" />
+        </EntityType>
+        <EntityType Name="MaterialInitialStock">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IDMaterial" />
+          <Property Type="DateTime" Name="DateInput" />
+          <Property Type="Int32" Name="Amount" />
+          <Property Type="Byte" Name="IDMeasurementUnit" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="IDInventory" />
+          <NavigationProperty Name="MaterialInventories" Relationship="ERPModel.FK_MaterialInitialStock_MaterialInventories" FromRole="MaterialInitialStock" ToRole="MaterialInventories" />
+          <NavigationProperty Name="MstMeasurementUnits" Relationship="ERPModel.FK_MaterialInitialStock_MstMeasurementUnits" FromRole="MaterialInitialStock" ToRole="MstMeasurementUnits" />
+        </EntityType>
+        <EntityType Name="MaterialInventories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Byte" Name="IdInventoryStatus" />
+          <Property Type="Boolean" Name="IsPlus" />
+          <Property Type="String" Name="NoRecordWeigher" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CrusherJournalDetails" Relationship="ERPModel.FK_ProductionJournalDetails_MaterialInventories" FromRole="MaterialInventories" ToRole="CrusherJournalDetails" />
+          <NavigationProperty Name="DistributionJournals" Relationship="ERPModel.FK_DistributionJournals_MaterialInventories" FromRole="MaterialInventories" ToRole="DistributionJournals" />
+          <NavigationProperty Name="MaterialInitialStock" Relationship="ERPModel.FK_MaterialInitialStock_MaterialInventories" FromRole="MaterialInventories" ToRole="MaterialInitialStock" />
+          <NavigationProperty Name="MstInventoryStatuses" Relationship="ERPModel.FK_MaterialInventories_MstInventoryStatuses" FromRole="MaterialInventories" ToRole="MstInventoryStatuses" />
+          <NavigationProperty Name="MaterialUseJournal" Relationship="ERPModel.FK_MaterialUseJournal_MaterialInventories" FromRole="MaterialInventories" ToRole="MaterialUseJournal" />
+        </EntityType>
+        <EntityType Name="MaterialUseJournal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IDMaterial" />
+          <Property Type="DateTime" Name="DateUse" />
+          <Property Type="Byte" Name="IdMachine" />
+          <Property Type="String" Name="OperatorName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Amount" />
+          <Property Type="Byte" Name="IDMeasurementUnit" />
+          <Property Type="Int64" Name="IDProject" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="IDInventory" />
+          <NavigationProperty Name="CrusherJournals" Relationship="ERPModel.FK_CrusherJournals_MaterialUseJournal" FromRole="MaterialUseJournal" ToRole="CrusherJournals" />
+          <NavigationProperty Name="MaterialInventories" Relationship="ERPModel.FK_MaterialUseJournal_MaterialInventories" FromRole="MaterialUseJournal" ToRole="MaterialInventories" />
+          <NavigationProperty Name="MstMachines" Relationship="ERPModel.FK_MaterialUseJournal_MstMachines" FromRole="MaterialUseJournal" ToRole="MstMachines" />
+          <NavigationProperty Name="ProjectList" Relationship="ERPModel.FK_MaterialUseJournal_ProjectList" FromRole="MaterialUseJournal" ToRole="ProjectList" />
+          <Property Type="Int64" Name="IDAmp" />
+          <NavigationProperty Name="MstMeasurementUnits" Relationship="ERPModel.FK_MaterialUseJournal_MstMeasurementUnits" FromRole="MaterialUseJournal" ToRole="MstMeasurementUnits" />
+        </EntityType>
+        <EntityType Name="MstDeliveryStatuses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Byte" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Status" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="DistributionJournals" Relationship="ERPModel.FK_DistributionJournals_MstDeliveryStatuses" FromRole="MstDeliveryStatuses" ToRole="DistributionJournals" />
+        </EntityType>
+        <EntityType Name="MstInventoryStatuses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Byte" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StatusName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MaterialInventories" Relationship="ERPModel.FK_MaterialInventories_MstInventoryStatuses" FromRole="MstInventoryStatuses" ToRole="MaterialInventories" />
+        </EntityType>
+        <EntityType Name="MstMachines">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Byte" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MachineName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="IdMachineType" />
+          <Property Type="String" Name="SeriesNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MaterialUseJournal" Relationship="ERPModel.FK_MaterialUseJournal_MstMachines" FromRole="MstMachines" ToRole="MaterialUseJournal" />
+        </EntityType>
+        <EntityType Name="MstMachineTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Byte" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MachineType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MstMaterialCompositions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IDMaterial" />
+          <Property Type="Int32" Name="IDMaterialComposition" />
+          <Property Type="Double" Name="Amount" />
+        </EntityType>
+        <EntityType Name="MstMaterialRatioUnits">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IDMaterial" />
+          <Property Type="Int32" Name="IDMeasurementUnit" />
+          <Property Type="Double" Name="Weight" />
+        </EntityType>
+        <EntityType Name="MstMaterials">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Symbol" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="IdMaterialType" />
+          <Property Type="Byte" Name="IdMeasurementUnit" />
+          <Property Type="Boolean" Name="isInventory" />
+          <Property Type="Double" Name="InitialStock" />
+          <Property Type="DateTime" Name="DateInitialStock" />
+          <Property Type="Byte" Name="IDMachineType" />
+        </EntityType>
+        <EntityType Name="MstMaterialTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Byte" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MstWorkSchedule">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Shift" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CrusherJournals" Relationship="ERPModel.FK_ProductionJournals_MstWorkSchedule" FromRole="MstWorkSchedule" ToRole="CrusherJournals" />
+          <NavigationProperty Name="AMPJournals" Relationship="ERPModel.FK_AMPJournals_MstWorkSchedule" FromRole="MstWorkSchedule" ToRole="AMPJournals" />
+        </EntityType>
+        <EntityType Name="ProjectList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="NoProject" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="StartDate" />
+          <Property Type="DateTime" Name="EndDate" />
+          <Property Type="String" Name="PackageName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AgentName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MaterialUseJournal" Relationship="ERPModel.FK_MaterialUseJournal_ProjectList" FromRole="ProjectList" ToRole="MaterialUseJournal" />
+          <NavigationProperty Name="ProjectRoadList" Relationship="ERPModel.FK_ProjectRoadList_ProjectList" FromRole="ProjectList" ToRole="ProjectRoadList" />
+        </EntityType>
+        <EntityType Name="ProjectRoadList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="IDProject" />
+          <Property Type="String" Name="RoadName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Length" />
+          <NavigationProperty Name="ProjectList" Relationship="ERPModel.FK_ProjectRoadList_ProjectList" FromRole="ProjectRoadList" ToRole="ProjectList" />
+        </EntityType>
+        <Association Name="FK_DistributionJournals_CompanyLists">
+          <End Type="ERPModel.CompanyLists" Role="CompanyLists" Multiplicity="0..1" />
+          <End Type="ERPModel.DistributionJournals" Role="DistributionJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompanyLists">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DistributionJournals">
+              <PropertyRef Name="IdCompany" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionJournalDetails_MaterialInventories">
+          <End Type="ERPModel.MaterialInventories" Role="MaterialInventories" Multiplicity="0..1" />
+          <End Type="ERPModel.CrusherJournalDetails" Role="CrusherJournalDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialInventories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournalDetails">
+              <PropertyRef Name="IDInventory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionJournalDetails_ProductionJournals">
+          <End Type="ERPModel.CrusherJournals" Role="CrusherJournals" Multiplicity="0..1" />
+          <End Type="ERPModel.CrusherJournalDetails" Role="CrusherJournalDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CrusherJournals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournalDetails">
+              <PropertyRef Name="IDCrusherJournal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CrusherJournals_MaterialUseJournal">
+          <End Type="ERPModel.MaterialUseJournal" Role="MaterialUseJournal" Multiplicity="0..1" />
+          <End Type="ERPModel.CrusherJournals" Role="CrusherJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialUseJournal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournals">
+              <PropertyRef Name="IDMaterialUse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductionJournals_MstWorkSchedule">
+          <End Type="ERPModel.MstWorkSchedule" Role="MstWorkSchedule" Multiplicity="0..1" />
+          <End Type="ERPModel.CrusherJournals" Role="CrusherJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstWorkSchedule">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournals">
+              <PropertyRef Name="IdWorkSchedule" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DistributionJournals_MaterialInventories">
+          <End Type="ERPModel.MaterialInventories" Role="MaterialInventories" Multiplicity="0..1" />
+          <End Type="ERPModel.DistributionJournals" Role="DistributionJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialInventories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DistributionJournals">
+              <PropertyRef Name="IDInventory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DistributionJournals_MstDeliveryStatuses">
+          <End Type="ERPModel.MstDeliveryStatuses" Role="MstDeliveryStatuses" Multiplicity="0..1" />
+          <End Type="ERPModel.DistributionJournals" Role="DistributionJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstDeliveryStatuses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DistributionJournals">
+              <PropertyRef Name="IdDeliveryStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialInitialStock_MaterialInventories">
+          <End Type="ERPModel.MaterialInventories" Role="MaterialInventories" Multiplicity="0..1" />
+          <End Type="ERPModel.MaterialInitialStock" Role="MaterialInitialStock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialInventories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialInitialStock">
+              <PropertyRef Name="IDInventory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialInventories_MstInventoryStatuses">
+          <End Type="ERPModel.MstInventoryStatuses" Role="MstInventoryStatuses" Multiplicity="0..1" />
+          <End Type="ERPModel.MaterialInventories" Role="MaterialInventories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstInventoryStatuses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialInventories">
+              <PropertyRef Name="IdInventoryStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialUseJournal_MaterialInventories">
+          <End Type="ERPModel.MaterialInventories" Role="MaterialInventories" Multiplicity="0..1" />
+          <End Type="ERPModel.MaterialUseJournal" Role="MaterialUseJournal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialInventories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialUseJournal">
+              <PropertyRef Name="IDInventory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialUseJournal_MstMachines">
+          <End Type="ERPModel.MstMachines" Role="MstMachines" Multiplicity="0..1" />
+          <End Type="ERPModel.MaterialUseJournal" Role="MaterialUseJournal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstMachines">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialUseJournal">
+              <PropertyRef Name="IdMachine" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialUseJournal_ProjectList">
+          <End Type="ERPModel.ProjectList" Role="ProjectList" Multiplicity="0..1" />
+          <End Type="ERPModel.MaterialUseJournal" Role="MaterialUseJournal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectList">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialUseJournal">
+              <PropertyRef Name="IDProject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectRoadList_ProjectList">
+          <End Type="ERPModel.ProjectList" Role="ProjectList" Multiplicity="0..1" />
+          <End Type="ERPModel.ProjectRoadList" Role="ProjectRoadList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectList">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProjectRoadList">
+              <PropertyRef Name="IDProject" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetCrusherJournalData_Result">
+          <Property Type="Int64" Name="IDJournal" Nullable="true" />
+          <Property Type="DateTime" Name="Tanggal" Nullable="true" />
+          <Property Type="Int32" Name="Shift" Nullable="true" />
+          <Property Type="String" Name="NamaMaterial" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="UrutKolom" Nullable="true" />
+          <Property Type="Double" Name="GROGOL" Nullable="false" />
+          <Property Type="Double" Name="MEDIUM" Nullable="false" />
+          <Property Type="String" Name="SatuanBucket" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="M3" Nullable="false" MaxLength="1" />
+          <Property Type="Double" Name="JumlahKubik" Nullable="true" />
+          <Property Type="String" Name="Keterangan" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="ABUBATU" Nullable="false" />
+          <Property Type="Double" Name="BASEA" Nullable="false" />
+          <Property Type="Double" Name="BASEB" Nullable="false" />
+          <Property Type="Double" Name="SPLIT12" Nullable="false" />
+          <Property Type="Double" Name="SPLIT23" Nullable="false" />
+          <Property Type="Double" Name="GRESLEYOut" Nullable="false" />
+          <Property Type="Double" Name="GRESLEYIn" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="LaporanPenimbanganMaterial_Result">
+          <Property Type="String" Name="NoRecord" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="Masuk" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Keluar" Nullable="true" Precision="23" />
+          <Property Type="String" Name="NoPolisi" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Perusahaan" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Barang" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Keterangan" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Berat1" Nullable="true" />
+          <Property Type="Int32" Name="Berat2" Nullable="true" />
+          <Property Type="Int32" Name="Netto" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetAMPDataForDashboard_Result">
+          <Property Type="Int64" Name="IDAMP" Nullable="true" />
+          <Property Type="Int64" Name="IdProject" Nullable="true" />
+          <Property Type="Int32" Name="IDMaterial" Nullable="true" />
+          <Property Type="String" Name="MaterialProduction" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="AmountProduction" Nullable="true" />
+          <Property Type="Int32" Name="IDMaterialUse" Nullable="true" />
+          <Property Type="String" Name="MaterialUse" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="AmountUse" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="tblMisc_History">
+          <Key>
+            <PropertyRef Name="historyID" />
+          </Key>
+          <Property Type="Int32" Name="historyID" Nullable="false" />
+          <Property Type="String" Name="Operator" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="waktu" />
+          <Property Type="String" Name="norecord" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="jenis" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="description" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblMst_Barang">
+          <Key>
+            <PropertyRef Name="KodeBrg" />
+          </Key>
+          <Property Type="Int32" Name="KodeBrg" Nullable="false" />
+          <Property Type="String" Name="NoBrg" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NamaBrg" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Keterangan" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblMst_Login">
+          <Key>
+            <PropertyRef Name="Kode" />
+          </Key>
+          <Property Type="Int32" Name="Kode" Nullable="false" />
+          <Property Type="String" Name="Nama" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pwd" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Bagian" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="HA_THA" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TBD" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TOpt" Nullable="false" />
+          <Property Type="Boolean" Name="HA_Lap" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TransV" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TransI" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TransE" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TransH" Nullable="false" />
+          <Property Type="Boolean" Name="HA_TransCU" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FPV" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FPI" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FPE" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FPH" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FMV" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FMI" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FME" Nullable="false" />
+          <Property Type="Boolean" Name="HA_FMH" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblMst_NoRec">
+          <Key>
+            <PropertyRef Name="NoUrut" />
+          </Key>
+          <Property Type="String" Name="NoRecord" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NoUrut" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblMst_Perusahaan">
+          <Key>
+            <PropertyRef Name="KodePeru" />
+          </Key>
+          <Property Type="Int32" Name="KodePeru" Nullable="false" />
+          <Property Type="String" Name="NoPeru" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NamaPeru" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AlamatPeru1" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AlamatPeru2" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KotaPeru" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelpPeru" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FaxPeru" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TopNavigationMenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ParentId" Nullable="false" />
+          <Property Type="String" Name="Label" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Link" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Ordinal" Nullable="false" />
+          <Property Type="String" Name="ModuleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MstWeighers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Byte" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SeriesNumber" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AMPJournals">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Byte" Name="IdMachine" />
+          <Property Type="Time" Name="BeginProd" />
+          <Property Type="Time" Name="EndProd" />
+          <Property Type="DateTime" Name="DateUse" />
+          <Property Type="Int32" Name="IdShift" />
+          <Property Type="String" Name="Operator" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="IDMaterial" />
+          <Property Type="Int64" Name="IDProject" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MstWorkSchedule" Relationship="ERPModel.FK_AMPJournals_MstWorkSchedule" FromRole="AMPJournals" ToRole="MstWorkSchedule" />
+        </EntityType>
+        <Association Name="FK_AMPJournals_MstWorkSchedule">
+          <End Type="ERPModel.MstWorkSchedule" Role="MstWorkSchedule" Multiplicity="0..1" />
+          <End Type="ERPModel.AMPJournals" Role="AMPJournals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstWorkSchedule">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AMPJournals">
+              <PropertyRef Name="IdShift" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MstMeasurementUnits">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Byte" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Symbol" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Unit" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Ratio" />
+          <NavigationProperty Name="CrusherJournalDetails" Relationship="ERPModel.FK_CrusherJournalDetails_MstMeasurementUnits" FromRole="MstMeasurementUnits" ToRole="CrusherJournalDetails" />
+          <NavigationProperty Name="MaterialInitialStock" Relationship="ERPModel.FK_MaterialInitialStock_MstMeasurementUnits" FromRole="MstMeasurementUnits" ToRole="MaterialInitialStock" />
+          <NavigationProperty Name="MaterialUseJournal" Relationship="ERPModel.FK_MaterialUseJournal_MstMeasurementUnits" FromRole="MstMeasurementUnits" ToRole="MaterialUseJournal" />
+        </EntityType>
+        <Association Name="FK_CrusherJournalDetails_MstMeasurementUnits">
+          <End Type="ERPModel.MstMeasurementUnits" Role="MstMeasurementUnits" Multiplicity="0..1" />
+          <End Type="ERPModel.CrusherJournalDetails" Role="CrusherJournalDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstMeasurementUnits">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CrusherJournalDetails">
+              <PropertyRef Name="IDMeasurementUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialInitialStock_MstMeasurementUnits">
+          <End Type="ERPModel.MstMeasurementUnits" Role="MstMeasurementUnits" Multiplicity="0..1" />
+          <End Type="ERPModel.MaterialInitialStock" Role="MaterialInitialStock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstMeasurementUnits">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialInitialStock">
+              <PropertyRef Name="IDMeasurementUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialUseJournal_MstMeasurementUnits">
+          <End Type="ERPModel.MstMeasurementUnits" Role="MstMeasurementUnits" Multiplicity="0..1" />
+          <End Type="ERPModel.MaterialUseJournal" Role="MaterialUseJournal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MstMeasurementUnits">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialUseJournal">
+              <PropertyRef Name="IDMeasurementUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="CompositionProductList_Result">
+          <Property Type="Int32" Name="IDMaterial" Nullable="true" />
+          <Property Type="String" Name="Material" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="IDMaterialComposition" Nullable="true" />
+          <Property Type="String" Name="MaterialComp" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="IdMeasurementUnit" Nullable="true" />
+          <Property Type="Double" Name="Amount" Nullable="true" />
+          <Property Type="Byte" Name="IDMeasurementUnitComp" Nullable="true" />
+          <Property Type="Double" Name="AmountComp" Nullable="true" />
+          <Property Type="Int32" Name="idUnitConversion" Nullable="true" />
+        </ComplexType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ERPModelStoreContainer" CdmEntityContainer="ERPEntities" >
+          <FunctionImportMapping FunctionImportName="ListKomposisi" FunctionName="ERPModel.Store.ListKomposisi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.ListKomposisi_Result">
+                <ScalarProperty Name="produk" ColumnName="produk" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="IDMaterialComposition" ColumnName="IDMaterialComposition" />
+                <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="CompositionUnit" ColumnName="CompositionUnit" />
+                <ScalarProperty Name="ConversionAmount" ColumnName="ConversionAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ListRatio" FunctionName="ERPModel.Store.ListRatio">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.ListRatio_Result">
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="Satuan" ColumnName="Satuan" />
+                <ScalarProperty Name="Rasio" ColumnName="Rasio" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ListSolar" FunctionName="ERPModel.Store.ListSolar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.ListSolar_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DateUse" ColumnName="DateUse" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+                <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ListAspal" FunctionName="ERPModel.Store.ListAspal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.ListAspal_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getListAspal" FunctionName="ERPModel.Store.getListAspal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.getListAspal_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DateUse" ColumnName="DateUse" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DropdownAsphal" FunctionName="ERPModel.Store.DropdownAsphal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.DropdownAsphal_Result">
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="jumlah" ColumnName="jumlah" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="produkCompositions" FunctionName="ERPModel.Store.produkCompositions">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.produkCompositions_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IDMaterialComposition" ColumnName="IDMaterialComposition" />
+                <ScalarProperty Name="IdMeasurementUnit" ColumnName="IdMeasurementUnit" />
+                <ScalarProperty Name="ASPHAL" ColumnName="ASPHAL" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetInventoryData" FunctionName="ERPModel.Store.GetInventoryData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.GetInventoryData_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Tanggal" ColumnName="Tanggal" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+                <ScalarProperty Name="Tambah" ColumnName="Tambah" />
+                <ScalarProperty Name="Kurang" ColumnName="Kurang" />
+                <ScalarProperty Name="Sisa" ColumnName="Sisa" />
+                <ScalarProperty Name="UrutBaris" ColumnName="UrutBaris" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetInventoryDataForDashboard" FunctionName="ERPModel.Store.GetInventoryDataForDashboard">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.GetInventoryDataForDashboard_Result">
+                <ScalarProperty Name="IdMaterial" ColumnName="IdMaterial" />
+                <ScalarProperty Name="NamaMaterial" ColumnName="NamaMaterial" />
+                <ScalarProperty Name="SisaKemarin" ColumnName="SisaKemarin" />
+                <ScalarProperty Name="TambahSekarang" ColumnName="TambahSekarang" />
+                <ScalarProperty Name="KurangSekarang" ColumnName="KurangSekarang" />
+                <ScalarProperty Name="Sisa" ColumnName="Sisa" />
+                </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ListMaterial" FunctionName="ERPModel.Store.ListMaterial">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.ListMaterial_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="isInventory" ColumnName="isInventory" />
+                <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ListDataAMP" FunctionName="ERPModel.Store.ListDataAMP">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.ListDataAMP_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="Produk" ColumnName="Produk" />
+                <ScalarProperty Name="DateUse" ColumnName="DateUse" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="IdShift" ColumnName="IdShift" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="IDProject" ColumnName="IDProject" />
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ListTimbangan1" FunctionName="ERPModel.Store.ListTimbangan1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.ListTimbangan1_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="JamMasuk" ColumnName="JamMasuk" />
+                <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+                <ScalarProperty Name="Sopir" ColumnName="Sopir" />
+                <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+                <ScalarProperty Name="NamaPeru" ColumnName="NamaPeru" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="IdMaterial" ColumnName="IdMaterial" />
+                <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+                <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+                <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+                <ScalarProperty Name="Copy" ColumnName="Copy" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="EditTimbangan" FunctionName="ERPModel.Store.EditTimbangan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.EditTimbangan_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+                <ScalarProperty Name="Sopir" ColumnName="Sopir" />
+                <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CompInUseJournal" FunctionName="ERPModel.Store.CompInUseJournal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.CompInUseJournal_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdMeasurementUnit" ColumnName="IdMeasurementUnit" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ERPModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTrans_Penimbangan1">
+            <EntityTypeMapping TypeName="ERPModel.TblTrans_Penimbangan1">
+              <MappingFragment StoreEntitySet="TblTrans_Penimbangan1">
+                <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+                <ScalarProperty Name="Deliverynote" ColumnName="Deliverynote" />
+                <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+                <ScalarProperty Name="KodeBrg" ColumnName="KodeBrg" />
+                <ScalarProperty Name="KodePeru" ColumnName="KodePeru" />
+                <ScalarProperty Name="Sopir" ColumnName="Sopir" />
+                <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+                <ScalarProperty Name="Tgl" ColumnName="Tgl" />
+                <ScalarProperty Name="KodeTimb1" ColumnName="KodeTimb1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTrans_Penimbangan2">
+            <EntityTypeMapping TypeName="ERPModel.TblTrans_Penimbangan2">
+              <MappingFragment StoreEntitySet="TblTrans_Penimbangan2">
+                <ScalarProperty Name="Copy" ColumnName="Copy" />
+                <ScalarProperty Name="Clerk2" ColumnName="Clerk2" />
+                <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+                <ScalarProperty Name="DeliveryNote" ColumnName="DeliveryNote" />
+                <ScalarProperty Name="Berat2" ColumnName="Berat2" />
+                <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+                <ScalarProperty Name="KodeBrg" ColumnName="KodeBrg" />
+                <ScalarProperty Name="KodePeru" ColumnName="KodePeru" />
+                <ScalarProperty Name="Sopir" ColumnName="Sopir" />
+                <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+                <ScalarProperty Name="TglKeluar" ColumnName="TglKeluar" />
+                <ScalarProperty Name="TglMasuk" ColumnName="TglMasuk" />
+                <ScalarProperty Name="NoRecord" ColumnName="NoRecord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyLists">
+            <EntityTypeMapping TypeName="ERPModel.CompanyLists">
+              <MappingFragment StoreEntitySet="CompanyLists">
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CrusherJournalDetails">
+            <EntityTypeMapping TypeName="ERPModel.CrusherJournalDetails">
+              <MappingFragment StoreEntitySet="CrusherJournalDetails">
+                <ScalarProperty Name="IDMeasurementUnit" ColumnName="IDMeasurementUnit" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OrderProcess" ColumnName="OrderProcess" />
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="IDCrusherJournal" ColumnName="IDCrusherJournal" />
+                <ScalarProperty Name="IDInventory" ColumnName="IDInventory" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CrusherJournals">
+            <EntityTypeMapping TypeName="ERPModel.CrusherJournals">
+              <MappingFragment StoreEntitySet="CrusherJournals">
+                <ScalarProperty Name="Member" ColumnName="Member" />
+                <ScalarProperty Name="IDMaterialUse" ColumnName="IDMaterialUse" />
+                <ScalarProperty Name="IdWorkSchedule" ColumnName="IdWorkSchedule" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DistributionJournals">
+            <EntityTypeMapping TypeName="ERPModel.DistributionJournals">
+              <MappingFragment StoreEntitySet="DistributionJournals">
+                <ScalarProperty Name="Copy" ColumnName="Copy" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Clerk2" ColumnName="Clerk2" />
+                <ScalarProperty Name="Clerk1" ColumnName="Clerk1" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="IdMeasurementUnit" ColumnName="IdMeasurementUnit" />
+                <ScalarProperty Name="Weight2" ColumnName="Weight2" />
+                <ScalarProperty Name="Weight1" ColumnName="Weight1" />
+                <ScalarProperty Name="IdMaterial" ColumnName="IdMaterial" />
+                <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+                <ScalarProperty Name="IdDeliveryStatus" ColumnName="IdDeliveryStatus" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="PoliceLicense" ColumnName="PoliceLicense" />
+                <ScalarProperty Name="IdWeigher" ColumnName="IdWeigher" />
+                <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+                <ScalarProperty Name="InTime" ColumnName="InTime" />
+                <ScalarProperty Name="NoRec" ColumnName="NoRec" />
+                <ScalarProperty Name="IDInventory" ColumnName="IDInventory" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialInitialStock">
+            <EntityTypeMapping TypeName="ERPModel.MaterialInitialStock">
+              <MappingFragment StoreEntitySet="MaterialInitialStock">
+                <ScalarProperty Name="IDInventory" ColumnName="IDInventory" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IDMeasurementUnit" ColumnName="IDMeasurementUnit" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="DateInput" ColumnName="DateInput" />
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialInventories">
+            <EntityTypeMapping TypeName="ERPModel.MaterialInventories">
+              <MappingFragment StoreEntitySet="MaterialInventories">
+                <ScalarProperty Name="NoRecordWeigher" ColumnName="NoRecordWeigher" />
+                <ScalarProperty Name="IsPlus" ColumnName="IsPlus" />
+                <ScalarProperty Name="IdInventoryStatus" ColumnName="IdInventoryStatus" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialUseJournal">
+            <EntityTypeMapping TypeName="ERPModel.MaterialUseJournal">
+              <MappingFragment StoreEntitySet="MaterialUseJournal">
+                <ScalarProperty Name="IDAmp" ColumnName="IDAmp" />
+                <ScalarProperty Name="IDInventory" ColumnName="IDInventory" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IDProject" ColumnName="IDProject" />
+                <ScalarProperty Name="IDMeasurementUnit" ColumnName="IDMeasurementUnit" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+                <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+                <ScalarProperty Name="DateUse" ColumnName="DateUse" />
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstDeliveryStatuses">
+            <EntityTypeMapping TypeName="ERPModel.MstDeliveryStatuses">
+              <MappingFragment StoreEntitySet="MstDeliveryStatuses">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstInventoryStatuses">
+            <EntityTypeMapping TypeName="ERPModel.MstInventoryStatuses">
+              <MappingFragment StoreEntitySet="MstInventoryStatuses">
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstMachines">
+            <EntityTypeMapping TypeName="ERPModel.MstMachines">
+              <MappingFragment StoreEntitySet="MstMachines">
+                <ScalarProperty Name="SeriesNumber" ColumnName="SeriesNumber" />
+                <ScalarProperty Name="IdMachineType" ColumnName="IdMachineType" />
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstMachineTypes">
+            <EntityTypeMapping TypeName="ERPModel.MstMachineTypes">
+              <MappingFragment StoreEntitySet="MstMachineTypes">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstMaterialCompositions">
+            <EntityTypeMapping TypeName="ERPModel.MstMaterialCompositions">
+              <MappingFragment StoreEntitySet="MstMaterialCompositions">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="IDMaterialComposition" ColumnName="IDMaterialComposition" />
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstMaterialRatioUnits">
+            <EntityTypeMapping TypeName="ERPModel.MstMaterialRatioUnits">
+              <MappingFragment StoreEntitySet="MstMaterialRatioUnits">
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="IDMeasurementUnit" ColumnName="IDMeasurementUnit" />
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstMaterials">
+            <EntityTypeMapping TypeName="ERPModel.MstMaterials">
+              <MappingFragment StoreEntitySet="MstMaterials">
+                <ScalarProperty Name="IDMachineType" ColumnName="IDMachineType" />
+                <ScalarProperty Name="DateInitialStock" ColumnName="DateInitialStock" />
+                <ScalarProperty Name="InitialStock" ColumnName="InitialStock" />
+                <ScalarProperty Name="isInventory" ColumnName="isInventory" />
+                <ScalarProperty Name="IdMeasurementUnit" ColumnName="IdMeasurementUnit" />
+                <ScalarProperty Name="IdMaterialType" ColumnName="IdMaterialType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstMaterialTypes">
+            <EntityTypeMapping TypeName="ERPModel.MstMaterialTypes">
+              <MappingFragment StoreEntitySet="MstMaterialTypes">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstWorkSchedule">
+            <EntityTypeMapping TypeName="ERPModel.MstWorkSchedule">
+              <MappingFragment StoreEntitySet="MstWorkSchedule">
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectList">
+            <EntityTypeMapping TypeName="ERPModel.ProjectList">
+              <MappingFragment StoreEntitySet="ProjectList">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AgentName" ColumnName="AgentName" />
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="NoProject" ColumnName="NoProject" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectRoadList">
+            <EntityTypeMapping TypeName="ERPModel.ProjectRoadList">
+              <MappingFragment StoreEntitySet="ProjectRoadList">
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="RoadName" ColumnName="RoadName" />
+                <ScalarProperty Name="IDProject" ColumnName="IDProject" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetCrusherJournalData" FunctionName="ERPModel.Store.GetCrusherJournalData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.GetCrusherJournalData_Result">
+                <ScalarProperty Name="IDJournal" ColumnName="IDJournal" />
+                <ScalarProperty Name="Tanggal" ColumnName="Tanggal" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="NamaMaterial" ColumnName="NamaMaterial" />
+                <ScalarProperty Name="UrutKolom" ColumnName="UrutKolom" />
+                <ScalarProperty Name="GROGOL" ColumnName="GROGOL" />
+                <ScalarProperty Name="MEDIUM" ColumnName="MEDIUM" />
+                <ScalarProperty Name="SatuanBucket" ColumnName="SatuanBucket" />
+                <ScalarProperty Name="M3" ColumnName="M3" />
+                <ScalarProperty Name="JumlahKubik" ColumnName="JumlahKubik" />
+                <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+                <ScalarProperty Name="ABUBATU" ColumnName="ABUBATU" />
+                <ScalarProperty Name="BASEA" ColumnName="BASEA" />
+                <ScalarProperty Name="BASEB" ColumnName="BASEB" />
+                <ScalarProperty Name="SPLIT12" ColumnName="SPLIT12" />
+                <ScalarProperty Name="SPLIT23" ColumnName="SPLIT23" />
+                <ScalarProperty Name="GRESLEYOut" ColumnName="GRESLEYOut" />
+                <ScalarProperty Name="GRESLEYIn" ColumnName="GRESLEYIn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="LaporanPenimbanganMaterial" FunctionName="ERPModel.Store.LaporanPenimbanganMaterial">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.LaporanPenimbanganMaterial_Result">
+                <ScalarProperty Name="NoRecord" ColumnName="NoRecord" />
+                <ScalarProperty Name="Masuk" ColumnName="Masuk" />
+                <ScalarProperty Name="Keluar" ColumnName="Keluar" />
+                <ScalarProperty Name="NoPolisi" ColumnName="NoPolisi" />
+                <ScalarProperty Name="Perusahaan" ColumnName="Perusahaan" />
+                <ScalarProperty Name="Barang" ColumnName="Barang" />
+                <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+                <ScalarProperty Name="Berat1" ColumnName="Berat1" />
+                <ScalarProperty Name="Berat2" ColumnName="Berat2" />
+                <ScalarProperty Name="Netto" ColumnName="Netto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAMPDataForDashboard" FunctionName="ERPModel.Store.GetAMPDataForDashboard">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.GetAMPDataForDashboard_Result">
+                <ScalarProperty Name="IDAMP" ColumnName="IDAMP" />
+                <ScalarProperty Name="IdProject" ColumnName="IdProject" />
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="MaterialProduction" ColumnName="MaterialProduction" />
+                <ScalarProperty Name="AmountProduction" ColumnName="AmountProduction" />
+                <ScalarProperty Name="IDMaterialUse" ColumnName="IDMaterialUse" />
+                <ScalarProperty Name="MaterialUse" ColumnName="MaterialUse" />
+                <ScalarProperty Name="AmountUse" ColumnName="AmountUse" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tblMisc_History">
+            <EntityTypeMapping TypeName="ERPModel.tblMisc_History">
+              <MappingFragment StoreEntitySet="tblMisc_History">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="jenis" ColumnName="jenis" />
+                <ScalarProperty Name="norecord" ColumnName="norecord" />
+                <ScalarProperty Name="waktu" ColumnName="waktu" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="historyID" ColumnName="historyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMst_Barang">
+            <EntityTypeMapping TypeName="ERPModel.TblMst_Barang">
+              <MappingFragment StoreEntitySet="TblMst_Barang">
+                <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+                <ScalarProperty Name="NamaBrg" ColumnName="NamaBrg" />
+                <ScalarProperty Name="NoBrg" ColumnName="NoBrg" />
+                <ScalarProperty Name="KodeBrg" ColumnName="KodeBrg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMst_Login">
+            <EntityTypeMapping TypeName="ERPModel.TblMst_Login">
+              <MappingFragment StoreEntitySet="TblMst_Login">
+                <ScalarProperty Name="HA_FMH" ColumnName="HA_FMH" />
+                <ScalarProperty Name="HA_FME" ColumnName="HA_FME" />
+                <ScalarProperty Name="HA_FMI" ColumnName="HA_FMI" />
+                <ScalarProperty Name="HA_FMV" ColumnName="HA_FMV" />
+                <ScalarProperty Name="HA_FPH" ColumnName="HA_FPH" />
+                <ScalarProperty Name="HA_FPE" ColumnName="HA_FPE" />
+                <ScalarProperty Name="HA_FPI" ColumnName="HA_FPI" />
+                <ScalarProperty Name="HA_FPV" ColumnName="HA_FPV" />
+                <ScalarProperty Name="HA_TransCU" ColumnName="HA_TransCU" />
+                <ScalarProperty Name="HA_TransH" ColumnName="HA_TransH" />
+                <ScalarProperty Name="HA_TransE" ColumnName="HA_TransE" />
+                <ScalarProperty Name="HA_TransI" ColumnName="HA_TransI" />
+                <ScalarProperty Name="HA_TransV" ColumnName="HA_TransV" />
+                <ScalarProperty Name="HA_Lap" ColumnName="HA_Lap" />
+                <ScalarProperty Name="HA_TOpt" ColumnName="HA_TOpt" />
+                <ScalarProperty Name="HA_TBD" ColumnName="HA_TBD" />
+                <ScalarProperty Name="HA_THA" ColumnName="HA_THA" />
+                <ScalarProperty Name="Bagian" ColumnName="Bagian" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="Nama" ColumnName="Nama" />
+                <ScalarProperty Name="Kode" ColumnName="Kode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMst_NoRec">
+            <EntityTypeMapping TypeName="ERPModel.TblMst_NoRec">
+              <MappingFragment StoreEntitySet="TblMst_NoRec">
+                <ScalarProperty Name="NoUrut" ColumnName="NoUrut" />
+                <ScalarProperty Name="NoRecord" ColumnName="NoRecord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMst_Perusahaan">
+            <EntityTypeMapping TypeName="ERPModel.TblMst_Perusahaan">
+              <MappingFragment StoreEntitySet="TblMst_Perusahaan">
+                <ScalarProperty Name="FaxPeru" ColumnName="FaxPeru" />
+                <ScalarProperty Name="TelpPeru" ColumnName="TelpPeru" />
+                <ScalarProperty Name="KotaPeru" ColumnName="KotaPeru" />
+                <ScalarProperty Name="AlamatPeru2" ColumnName="AlamatPeru2" />
+                <ScalarProperty Name="AlamatPeru1" ColumnName="AlamatPeru1" />
+                <ScalarProperty Name="NamaPeru" ColumnName="NamaPeru" />
+                <ScalarProperty Name="NoPeru" ColumnName="NoPeru" />
+                <ScalarProperty Name="KodePeru" ColumnName="KodePeru" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TopNavigationMenu">
+            <EntityTypeMapping TypeName="ERPModel.TopNavigationMenu">
+              <MappingFragment StoreEntitySet="TopNavigationMenu">
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="Ordinal" ColumnName="Ordinal" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstWeighers">
+            <EntityTypeMapping TypeName="ERPModel.MstWeighers">
+              <MappingFragment StoreEntitySet="MstWeighers">
+                <ScalarProperty Name="SeriesNumber" ColumnName="SeriesNumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AMPJournals">
+            <EntityTypeMapping TypeName="ERPModel.AMPJournals">
+              <MappingFragment StoreEntitySet="AMPJournals">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IDProject" ColumnName="IDProject" />
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="IdShift" ColumnName="IdShift" />
+                <ScalarProperty Name="DateUse" ColumnName="DateUse" />
+                <ScalarProperty Name="EndProd" ColumnName="EndProd" />
+                <ScalarProperty Name="BeginProd" ColumnName="BeginProd" />
+                <ScalarProperty Name="IdMachine" ColumnName="IdMachine" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MstMeasurementUnits">
+            <EntityTypeMapping TypeName="ERPModel.MstMeasurementUnits">
+              <MappingFragment StoreEntitySet="MstMeasurementUnits">
+                <ScalarProperty Name="Ratio" ColumnName="Ratio" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CompositionProductList" FunctionName="ERPModel.Store.CompositionProductList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERPModel.CompositionProductList_Result">
+                <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="IDMaterialComposition" ColumnName="IDMaterialComposition" />
+                <ScalarProperty Name="MaterialComp" ColumnName="MaterialComp" />
+                <ScalarProperty Name="IdMeasurementUnit" ColumnName="IdMeasurementUnit" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="IDMeasurementUnitComp" ColumnName="IDMeasurementUnitComp" />
+                <ScalarProperty Name="AmountComp" ColumnName="AmountComp" />
+                <ScalarProperty Name="idUnitConversion" ColumnName="idUnitConversion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ERPEntities" >
+        <EntityTypeShape EntityType="ERPModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.875" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="ERPModel.TblTrans_Penimbangan1" Width="1.5" PointX="8.75" PointY="3.875" Height="2.4140429687500102" />
+        <EntityTypeShape EntityType="ERPModel.TblTrans_Penimbangan2" Width="1.5" PointX="8.75" PointY="7.875" Height="3.0714322916666674" />
+        <EntityTypeShape EntityType="ERPModel.CompanyLists" Width="1.5" PointX="3.75" PointY="11.5" Height="2.5783902994791674" />
+        <EntityTypeShape EntityType="ERPModel.CrusherJournalDetails" Width="2" PointX="3" PointY="5.25" Height="2.9417936197916656" />
+        <EntityTypeShape EntityType="ERPModel.CrusherJournals" Width="1.5" PointX="5.25" PointY="1.375" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="ERPModel.DistributionJournals" Width="1.5" PointX="6" PointY="8.5" Height="4.5505582682291674" />
+        <EntityTypeShape EntityType="ERPModel.MaterialInitialStock" Width="1.5" PointX="6" PointY="5.25" Height="2.4140429687500102" />
+        <EntityTypeShape EntityType="ERPModel.MaterialInventories" Width="1.5" PointX="0.75" PointY="8.625" Height="2.4140429687500102" />
+        <EntityTypeShape EntityType="ERPModel.MaterialUseJournal" Width="1.5" PointX="3" PointY="0.75" Height="3.4001269531250102" />
+        <EntityTypeShape EntityType="ERPModel.MstDeliveryStatuses" Width="1.5" PointX="3.75" PointY="14.75" Height="1.427958984374996" />
+        <EntityTypeShape EntityType="ERPModel.MstInventoryStatuses" Width="1.5" PointX="1.5" PointY="12.125" Height="1.427958984374996" />
+        <EntityTypeShape EntityType="ERPModel.MstMachines" Width="1.5" PointX="0.75" PointY="2.75" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="ERPModel.MstMachineTypes" Width="1.5" PointX="9.75" PointY="0.875" Height="1.4279589843750102" />
+        <EntityTypeShape EntityType="ERPModel.MstMaterialCompositions" Width="1.5" PointX="10.75" PointY="3.875" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="ERPModel.MstMaterialRatioUnits" Width="1.5" PointX="10.75" PointY="6.875" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="ERPModel.MstMaterials" Width="1.5" PointX="10.75" PointY="9.875" Height="2.5783902994791674" />
+        <EntityTypeShape EntityType="ERPModel.MstMaterialTypes" Width="1.5" PointX="11.75" PointY="0.875" Height="1.2636116536458246" />
+        <EntityTypeShape EntityType="ERPModel.MstWorkSchedule" Width="1.5" PointX="3" PointY="8.625" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="ERPModel.ProjectList" Width="1.5" PointX="0.75" PointY="15.25" Height="2.4140429687499818" />
+        <EntityTypeShape EntityType="ERPModel.ProjectRoadList" Width="1.5" PointX="3" PointY="17.625" Height="1.756653645833353" />
+        <AssociationConnector Association="ERPModel.FK_DistributionJournals_CompanyLists" >
+          <ConnectorPoint PointX="5.25" PointY="12.624705403645834" />
+          <ConnectorPoint PointX="5.666666666666667" PointY="12.624705403645834" />
+          <ConnectorPoint PointX="5.833333333333333" PointY="12.624705403645834" />
+          <ConnectorPoint PointX="6" PointY="12.624705403645834" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_ProductionJournalDetails_MaterialInventories" >
+          <ConnectorPoint PointX="2.25" PointY="10.897416477515476" />
+          <ConnectorPoint PointX="3.4166666666666665" PointY="10.897416477515476" />
+          <ConnectorPoint PointX="3.5833333333333335" PointY="10.897416477515476" />
+          <ConnectorPoint PointX="4.78125" PointY="10.897416477515476" />
+          <ConnectorPoint PointX="4.78125" PointY="8.1917936197916656" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_ProductionJournalDetails_ProductionJournals" >
+          <ConnectorPoint PointX="5.4375" PointY="3.739889322916667" />
+          <ConnectorPoint PointX="5.4375" PointY="8.1268929036458317" />
+          <ConnectorPoint PointX="5" PointY="8.1268929036458317" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_CrusherJournals_MaterialUseJournal" >
+          <ConnectorPoint PointX="4.5" PointY="2.5574446614583337" />
+          <ConnectorPoint PointX="5.25" PointY="2.5574446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_ProductionJournals_MstWorkSchedule" >
+          <ConnectorPoint PointX="4.5" PointY="9.2289367870278234" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="9.2289367870278234" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="9.2289367870278234" />
+          <ConnectorPoint PointX="5.75" PointY="9.2289367870278234" />
+          <ConnectorPoint PointX="5.75" PointY="4.1148893229166674" />
+          <ConnectorPoint PointX="6.203127" PointY="4.1148893229166674" />
+          <ConnectorPoint PointX="6.203127" PointY="3.739889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_DistributionJournals_MaterialInventories" >
+          <ConnectorPoint PointX="2.25" PointY="11.194352928989286" />
+          <ConnectorPoint PointX="3.4166666666666665" PointY="11.194352928989286" />
+          <ConnectorPoint PointX="3.5833333333333335" PointY="11.194352928989286" />
+          <ConnectorPoint PointX="5.666666666666667" PointY="11.194352928989286" />
+          <ConnectorPoint PointX="5.833333333333333" PointY="11.194352928989286" />
+          <ConnectorPoint PointX="6" PointY="11.194352928989286" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_DistributionJournals_MstDeliveryStatuses" >
+          <ConnectorPoint PointX="5.25" PointY="15.547841796875002" />
+          <ConnectorPoint PointX="5.9479186666666672" PointY="15.547841796875002" />
+          <ConnectorPoint PointX="6.1145853333333333" PointY="15.547841796875002" />
+          <ConnectorPoint PointX="6.75" PointY="15.547841796875002" />
+          <ConnectorPoint PointX="6.75" PointY="13.749410807291666" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_MaterialInitialStock_MaterialInventories" >
+          <ConnectorPoint PointX="1.4566326153846152" PointY="8.625" />
+          <ConnectorPoint PointX="1.4566326153846152" PointY="6.62474609375" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="6.6247460937499989" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="6.62474609375" />
+          <ConnectorPoint PointX="2.875" PointY="6.62474609375" />
+          <ConnectorPoint PointX="2.875" PointY="4.9375" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="4.9374999999999991" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="4.9375" />
+          <ConnectorPoint PointX="5.354166666666667" PointY="4.9374999999999991" />
+          <ConnectorPoint PointX="5.520833333333333" PointY="4.9375" />
+          <ConnectorPoint PointX="5.625" PointY="4.9375" />
+          <ConnectorPoint PointX="5.625" PointY="6.62474609375" />
+          <ConnectorPoint PointX="5.666666666666667" PointY="6.6247460937499989" />
+          <ConnectorPoint PointX="5.833333333333333" PointY="6.62474609375" />
+          <ConnectorPoint PointX="6" PointY="6.62474609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_MaterialInventories_MstInventoryStatuses" >
+          <ConnectorPoint PointX="1.875" PointY="12.125" />
+          <ConnectorPoint PointX="1.875" PointY="11.03904296875001" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_MaterialUseJournal_MaterialInventories" >
+          <ConnectorPoint PointX="2.25" PointY="8.6261528461538468" />
+          <ConnectorPoint PointX="2.625" PointY="8.2511528461538468" />
+          <ConnectorPoint PointX="2.625" PointY="2.2258256953125" />
+          <ConnectorPoint PointX="3" PointY="2.2258256953125" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_MaterialUseJournal_MstMachines" >
+          <ConnectorPoint PointX="2.25" PointY="3.7401432291666667" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="3.7401432291666663" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="3.7401432291666667" />
+          <ConnectorPoint PointX="3" PointY="3.7401432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_MaterialUseJournal_ProjectList" >
+          <ConnectorPoint PointX="2.25" PointY="16.437499499999998" />
+          <ConnectorPoint PointX="3.5" PointY="16.437499499999998" />
+          <ConnectorPoint PointX="3.5" PointY="10.662985026041667" />
+          <ConnectorPoint PointX="2.75" PointY="10.662985026041667" />
+          <ConnectorPoint PointX="2.75" PointY="5.2206022135416656" />
+          <ConnectorPoint PointX="2.7916666666666665" PointY="5.2206022135416648" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="5.2206022135416656" />
+          <ConnectorPoint PointX="3.75" PointY="5.2206022135416656" />
+          <ConnectorPoint PointX="3.75" PointY="4.8456022135416656" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_ProjectRoadList_ProjectList" >
+          <ConnectorPoint PointX="2.25" PointY="16.9327289921875" />
+          <ConnectorPoint PointX="3.34375" PointY="16.9327289921875" />
+          <ConnectorPoint PointX="3.34375" PointY="17.625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ERPModel.tblMisc_History" Width="1.5" PointX="13.375" PointY="6.75" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="ERPModel.TblMst_Barang" Width="1.5" PointX="8.375" PointY="13.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="ERPModel.TblMst_Login" Width="1.5" PointX="13.375" PointY="9.75" Height="5.05710937500001" />
+        <EntityTypeShape EntityType="ERPModel.TblMst_NoRec" Width="1.5" PointX="10.375" PointY="13.75" Height="1.4033821614583246" />
+        <EntityTypeShape EntityType="ERPModel.TblMst_Perusahaan" Width="1.5" PointX="15.375" PointY="0.75" Height="2.5571907552083246" />
+        <EntityTypeShape EntityType="ERPModel.TopNavigationMenu" Width="1.5" PointX="15.375" PointY="4.75" Height="2.1725878906250102" />
+        <EntityTypeShape EntityType="ERPModel.MstWeighers" Width="1.5" PointX="15.375" PointY="11.75" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="ERPModel.AMPJournals" Width="1.5" PointX="5.25" PointY="18" Height="3.1340950520833246" />
+        <AssociationConnector Association="ERPModel.FK_AMPJournals_MstWorkSchedule" >
+          <ConnectorPoint PointX="4.5" PointY="9.89537757405565" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="9.89537757405565" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="9.89537757405565" />
+          <ConnectorPoint PointX="5.75" PointY="9.89537757405565" />
+          <ConnectorPoint PointX="5.75" PointY="13.999410807291667" />
+          <ConnectorPoint PointX="6.031252" PointY="13.999410807291667" />
+          <ConnectorPoint PointX="6.031252" PointY="18" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ERPModel.MstMeasurementUnits" Width="1.5" PointX="0.75" PointY="3.25" Height="2.3648893229166674" />
+        <AssociationConnector Association="ERPModel.FK_CrusherJournalDetails_MstMeasurementUnits" >
+          <ConnectorPoint PointX="2.25" PointY="5.4324446614583337" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="5.4324446614583319" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="5.4324446614583337" />
+          <ConnectorPoint PointX="3" PointY="5.4324446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_MaterialInitialStock_MstMeasurementUnits" >
+          <ConnectorPoint PointX="2.25" PointY="4.5116252213541674" />
+          <ConnectorPoint PointX="2.5" PointY="4.5116252213541674" />
+          <ConnectorPoint PointX="2.5" PointY="5" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="4.9999999999999991" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="5" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="4.9999999999999991" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="5" />
+          <ConnectorPoint PointX="5.354166666666667" PointY="4.9999999999999991" />
+          <ConnectorPoint PointX="5.520833333333333" PointY="5" />
+          <ConnectorPoint PointX="5.666666666666667" PointY="4.9999999999999991" />
+          <ConnectorPoint PointX="5.833333333333333" PointY="5" />
+          <ConnectorPoint PointX="6.75" PointY="5" />
+          <ConnectorPoint PointX="6.75" PointY="5.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="ERPModel.FK_MaterialUseJournal_MstMeasurementUnits" >
+          <ConnectorPoint PointX="2.25" PointY="4.1258842252604175" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="4.1258842252604166" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="4.1258842252604175" />
+          <ConnectorPoint PointX="3" PointY="4.1258842252604175" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

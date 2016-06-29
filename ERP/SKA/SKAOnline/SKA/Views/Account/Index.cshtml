@@ -1,0 +1,38 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Setting - Data User";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Data User</h2>
+</div>
+<div class="box-content">
+@(Html.Telerik().Grid<SKA.Models.RegisterModel>()
+                .Name("UserGrid")
+                .ToolBar(toolbar =>
+                {
+                    if (User.IsInRole("Administrator") == true)
+                    {
+                        toolbar.Custom().Action("Register", "Account").Text("Tambah").ButtonType(GridButtonType.ImageAndText).HtmlAttributes(new { style = "width:100px" });
+                    }
+                })
+                .Columns(col =>
+                {   
+                    if (User.IsInRole("Administrator") == true)
+                    {
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                    }
+                    col.Bound(o => o.UserName).Title("Nama Pengguna").Width(250);
+                    col.Bound(o => o.Email).Title("Email").Width(250);
+                    col.Bound(o => o.Address).Title("Alamat");
+                    col.Bound(o => o.BranchName).Title("Cabang");
+                    col.Bound(o => o.Status).Title("Status");
+                })
+                .DataBinding(binding => binding.Ajax().Select("GetListUser", "Account"))
+                .Sortable()
+                .Filterable()
+                .Pageable()    
+                )
+</div>

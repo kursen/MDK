@@ -1,0 +1,55 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+<div class="box-head">
+<h2>Saldo Awal</h2>
+</div>
+
+<div class="box-content">
+@using (Html.BeginForm("Index", "BeginningBalance")) 
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input type = "submit" value = "Cari" />
+            </td>
+        </tr>
+    </table>
+    
+}
+@(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.BeginningBalanceViewModel>()
+            .Name("BeginningBalanceGrid")
+            //.ToolBar(toolbar =>
+            //{
+            //    //if (userBranchCode == "00" && User.IsInRole("User") == false)
+            //    { 
+            //        //toolbar.Custom().Action("Create", "ChartofAccount").Text("Tambah").ButtonType(GridButtonType.ImageAndText).HtmlAttributes(new { style = "width:100px" });
+            //    }
+            //})
+            .Columns(col =>
+            {
+                //if (userBranchCode == "00" && User.IsInRole("User") == false)
+                {
+                    //col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Ubah", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(10);
+                    //col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(10);
+                }
+                col.Bound(o => o.AccountCode).Title("Kode Perkiraan").Width(100);
+                col.Bound(o => o.AccountName).Title("Nama Perkiraan").Width(350);
+            })
+            .DataBinding(binding => binding.Ajax().Select("GetList", "BeginningBalance", new { searchValue = @ViewBag.SearchValue}))
+            .Sortable()
+            .Pageable(paging => paging.PageSize(10))
+)
+</div>
+

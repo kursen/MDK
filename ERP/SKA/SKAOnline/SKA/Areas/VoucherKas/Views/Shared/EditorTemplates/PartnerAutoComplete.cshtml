@@ -1,0 +1,4 @@
+﻿@using Telerik.Web.Mvc.UI
+
+@Html.Telerik().AutoComplete().Name("PartnerName").DataBinding(binding => binding.Ajax().Select("GetPartnerNameSelectList", "VoucherKas").Cache(false))
+@*@Html.Telerik().AutoComplete().Name("PartnerName").Filterable(filtering => filtering.FilterMode(AutoCompleteFilterMode.Contains))*@

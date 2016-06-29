@@ -1,0 +1,68 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.CashPaymentJournalFormatsViewModel
+@using Telerik.Web.Mvc.UI
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div class="box-content">
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>
+                Kode Perkiraan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                 @Html.Telerik().AutoCompleteFor(model => model.AccountCode).Name("AccountCode").DataBinding(binding => binding.Ajax().Select("GetAccountCodeSelectList", "AccountJournalFormats").Cache(false))
+                @Html.ValidationMessageFor(model => model.AccountCode)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nama Perkiraan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Status (D)ebet/(K)redit
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.Status, new { maxlength = "1"})
+                @Html.ValidationMessageFor(model => model.Status)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nomor Urut
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.TurnNumber, new { maxlength = "1" })
+                @Html.ValidationMessageFor(model => model.TurnNumber)
+            </td>
+        </tr>
+    </table>
+
+        <p>
+        <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+        &nbsp;
+        <input type="reset" value="Reset" class="t-button" style ="width:60px" />
+        &nbsp;
+        <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "CashPaymentJournalFormats", null)">Kembali</a>
+     </p>
+}
+</div>

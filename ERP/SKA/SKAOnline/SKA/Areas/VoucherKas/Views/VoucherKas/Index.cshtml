@@ -1,0 +1,76 @@
+﻿@using Telerik.Web.Mvc.UI 
+
+@{
+    ViewBag.Title = "Voucher Kas";
+    Layout = "~/Areas/VoucherKas/Views/Shared/_VoucherLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Voucher Kas</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "VoucherKas"))
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input type = "submit" value = "Cari" />
+            </td>
+        </tr>
+    </table>
+}
+    @(Html.Telerik().Grid<SKA.Areas.VoucherKas.Models.ViewModel.VoucherViewModel>()
+                .Name("VoucherTypeGrid")
+                .ToolBar(toolbar =>
+                {
+                    toolbar.Custom().Action("Create", "VoucherKas").Text("Tambah").ButtonType(GridButtonType.Text).HtmlAttributes(new { style = "width:60px" });
+
+                    if (User.IsInRole("User") == false)
+                    { 
+                        toolbar.Custom().Action("ApproveVoucher", "VoucherKas").Text("Periksa").ButtonType(GridButtonType.Text).HtmlAttributes(new { style = "width:60px" });
+                    }
+                    toolbar.Custom().Action("IndexApprove", "VoucherKas").Text("Lihat Voucher").ButtonType(GridButtonType.Text).HtmlAttributes(new { style = "width:100px" });
+                })
+                .Columns(col =>
+                {
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Ubah", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(30);
+                    //if (User.IsInRole("User") == false)
+                    //{ 
+                    //    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(30);
+                    //}
+                    col.Bound(o => o.Number).Title("Nomor Voucher").Width(50);
+                    col.Bound(o => o.TransactionDate).Title("Tanggal Transaksi").Format("{0:dd-MM-yyyy}").Width(50);
+                    col.Bound(o => o.ApproveDate).Title("Tanggal Periksa").Format("{0:dd-MM-yyyy}").Width(50);
+                    col.Bound(o => o.PartnerName).Title("Nama Rekanan").Width(150);
+
+                })
+                .ClientEvents(events =>
+                            events.OnDataBound("onDataBound")
+                )
+                .DataBinding(binding => binding.Ajax().Select("GetList", "VoucherKas", new { searchValue = @ViewBag.SearchValue}))
+                .Sortable(sorting =>
+                        sorting.OrderBy(sortOrder => sortOrder.Add(o => o.Number).Ascending())
+                )
+                .Filterable()
+                .Pageable(paging => paging.PageSize(10))
+    )
+</div>
+<script type ="text/javascript">
+    var firstTimeLoad = true;
+    function onDataBound(e) {
+        if (firstTimeLoad) {
+            firstTimeLoad = false;
+            var grid = $('#VoucherTypeGrid').data('tGrid');
+            grid.pageTo(grid.totalPages());
+        }
+    }
+</script>
+

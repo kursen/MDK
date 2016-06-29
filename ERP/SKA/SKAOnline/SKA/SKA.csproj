@@ -1,0 +1,1212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28E70691-A95D-4B90-87A3-58D64804C2C4}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SKA</RootNamespace>
+    <AssemblyName>SKA</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Report.Viewer.10.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Report.Viewer.10.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Report.Viewer.10.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.Mvc, Version=2011.3.1115.340, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\PettyCashes\Controllers\FormController.cs" />
+    <Compile Include="Areas\PettyCashes\Controllers\PettyCashesController.cs" />
+    <Compile Include="Areas\PettyCashes\Controllers\PettyCashesSetupController.cs" />
+    <Compile Include="Areas\PettyCashes\Controllers\PettyCashPostingController.cs" />
+    <Compile Include="Areas\PettyCashes\Controllers\ReportController.cs" />
+    <Compile Include="Areas\PettyCashes\Models\Repositories\PettyCashesRepository.cs" />
+    <Compile Include="Areas\PettyCashes\Models\ViewModels\PettyCashesDetailViewModel.cs" />
+    <Compile Include="Areas\PettyCashes\Models\ViewModels\PettyCashesSetupViewModel.cs" />
+    <Compile Include="Areas\PettyCashes\Models\ViewModels\PettyCashesViewModel.cs" />
+    <Compile Include="Areas\PettyCashes\Models\ViewModels\PettyCashPostingViewModel.cs" />
+    <Compile Include="Areas\PettyCashes\PettyCashesAreaRegistration.cs" />
+    <Compile Include="Areas\Setting\Controllers\BankController.cs" />
+    <Compile Include="Areas\Setting\Controllers\BeginningBalanceMonthController.cs" />
+    <Compile Include="Areas\Setting\Controllers\BranchController.cs" />
+    <Compile Include="Areas\Setting\Controllers\ChartofAccountController.cs" />
+    <Compile Include="Areas\Setting\Controllers\ListAccountController.cs" />
+    <Compile Include="Areas\Setting\Controllers\LoginLogoutController.cs" />
+    <Compile Include="Areas\Setting\Controllers\ParentAccountController.cs" />
+    <Compile Include="Areas\Setting\Controllers\PartnerController.cs" />
+    <Compile Include="Areas\Setting\Controllers\SetupJournalAccountController.cs" />
+    <Compile Include="Areas\Setting\Controllers\SetupLabaDitahanController.cs" />
+    <Compile Include="Areas\Setting\Controllers\SetupValueController.cs" />
+    <Compile Include="Areas\Setting\Controllers\UserHistoryController.cs" />
+    <Compile Include="Areas\Setting\Controllers\VoucherSetupController.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\BeginningBalanceViewModel.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\BranchViewModel.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\ChartofAccountViewModel.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\ParentAccountViewModel.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\PartnerViewModel.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\PettyCashesRepository.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\SetupJournalAccountDetailViewModel.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\SetupJournalAccountViewModel.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\SetupLabaDitahanViewModel.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\SetupValueViewModel.cs" />
+    <Compile Include="Areas\Setting\Models\ViewModels\VoucherSetupViewModel.cs" />
+    <Compile Include="Areas\Setting\SettingAreaRegistration.cs" />
+    <Compile Include="Areas\SKA\Controllers\AccountJournalController.cs" />
+    <Compile Include="Areas\SKA\Controllers\AccountJournalFormatsController.cs" />
+    <Compile Include="Areas\SKA\Controllers\AdditionalCorrectionController.cs" />
+    <Compile Include="Areas\SKA\Controllers\AnnualReportsSetupController.cs" />
+    <Compile Include="Areas\SKA\Controllers\AnotherListController.cs" />
+    <Compile Include="Areas\SKA\Controllers\BackupController.cs" />
+    <Compile Include="Areas\SKA\Controllers\BackupDatabaseController.cs" />
+    <Compile Include="Areas\SKA\Controllers\BeginningBalancesController.cs" />
+    <Compile Include="Areas\SKA\Controllers\BudgetFinancialPositionController.cs" />
+    <Compile Include="Areas\SKA\Controllers\CashPaymentJournalController.cs" />
+    <Compile Include="Areas\SKA\Controllers\CashPaymentJournalFormatsController.cs" />
+    <Compile Include="Areas\SKA\Controllers\CashReceiptJournalController.cs" />
+    <Compile Include="Areas\SKA\Controllers\CashReceiptJournalFormatsController.cs" />
+    <Compile Include="Areas\SKA\Controllers\DHHDJournalController.cs" />
+    <Compile Include="Areas\SKA\Controllers\DHHDJournalFormatsController.cs" />
+    <Compile Include="Areas\SKA\Controllers\EndofPeriodController.cs" />
+    <Compile Include="Areas\SKA\Controllers\JournalReportController.cs" />
+    <Compile Include="Areas\SKA\Controllers\NetIncomesController.cs" />
+    <Compile Include="Areas\SKA\Controllers\OverviewLongTermDebtController.cs" />
+    <Compile Include="Areas\SKA\Controllers\ReductionCorrectionController.cs" />
+    <Compile Include="Areas\SKA\Controllers\RevenueExpenditureController.cs" />
+    <Compile Include="Areas\SKA\Controllers\GeneralJournalController.cs" />
+    <Compile Include="Areas\SKA\Controllers\GeneralLedgerController.cs" />
+    <Compile Include="Areas\SKA\Controllers\JournalController.cs" />
+    <Compile Include="Areas\SKA\Controllers\ManagementReportController.cs" />
+    <Compile Include="Areas\SKA\Controllers\MonthlyReportsSetupController.cs" />
+    <Compile Include="Areas\SKA\Controllers\PBIKJournalController.cs" />
+    <Compile Include="Areas\SKA\Controllers\PBIKJournalFormatsController.cs" />
+    <Compile Include="Areas\SKA\Controllers\ProfitsandLossBudgetController.cs" />
+    <Compile Include="Areas\SKA\Controllers\UndistributedProfitsController.cs" />
+    <Compile Include="Areas\SKA\Controllers\VelocityMoneyBudgetsController.cs" />
+    <Compile Include="Areas\SKA\Controllers\WorkSheetController.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\AccountJournalDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\AccountJournalFormatsViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\AccountJournalViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\AdditionalCorrectionDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\AdditionalCorrectionViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\AnnualReportsSetupViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\BeginningBalancesViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\BudgetFinancialPositionDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\BudgetFinancialPositionViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\CashPaymentDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\CashPaymentJournalFormatsViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\CashPaymentJournalViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\CashReceiptJournalDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\CashReceiptJournalFormatsViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\CashReceiptJournalViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\DHHDJournalDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\DHHDJournalFormatsViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\DHHDJournalViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\EndofPeriodViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\GeneralJournalDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\GeneralJournalViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\MonthlyReportsSetupViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\NetIncomesViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\OverviewLongTermDebtViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\PBIKJournalDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\PBIKJournalFormatsViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\PBIKJournalViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\ProfitsandLossBudgetDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\ProfitsandLossBudgetViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\RevenueExpenditureViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\UndistributedProfitsDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\UndistributedProfitsViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\VelocityMoneyBudgetDetailViewModel.cs" />
+    <Compile Include="Areas\SKA\Models\ViewModels\VelocityMoneyBudgetsViewModel.cs" />
+    <Compile Include="Areas\SKA\SKAAreaRegistration.cs" />
+    <Compile Include="Areas\VoucherKas\Controllers\PaymentController.cs" />
+    <Compile Include="Areas\VoucherKas\Controllers\ReportVoucherController.cs" />
+    <Compile Include="Areas\VoucherKas\Controllers\VoucherKasController.cs" />
+    <Compile Include="Areas\VoucherKas\Models\Repositories\VoucherRepository.cs" />
+    <Compile Include="Areas\VoucherKas\Models\ViewModel\BankViewModel.cs" />
+    <Compile Include="Areas\VoucherKas\Models\ViewModel\VoucherDetailViewModel.cs" />
+    <Compile Include="Areas\VoucherKas\Models\ViewModel\VoucherPaymentViewModel.cs" />
+    <Compile Include="Areas\VoucherKas\Models\ViewModel\VoucherViewModel.cs" />
+    <Compile Include="Areas\VoucherKas\VoucherKasAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\BranchCodeFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ReportCredential.cs" />
+    <Compile Include="Models\AccountModels.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\SkaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SkaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\FileLogger.cs" />
+    <Compile Include="Utils\ILogger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Telerik.Web.Mvc.dll" />
+    <Content Include="Content\2011.3.1115\Black\editor.png" />
+    <Content Include="Content\2011.3.1115\Black\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Black\loading.gif" />
+    <Content Include="Content\2011.3.1115\Black\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Black\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Black\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Black\sprite.png" />
+    <Content Include="Content\2011.3.1115\Black\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Black\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Black\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Default\editor.png" />
+    <Content Include="Content\2011.3.1115\Default\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Default\loading.gif" />
+    <Content Include="Content\2011.3.1115\Default\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Default\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Default\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Default\sprite.png" />
+    <Content Include="Content\2011.3.1115\Default\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Default\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Default\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Forest\editor.png" />
+    <Content Include="Content\2011.3.1115\Forest\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Forest\loading.gif" />
+    <Content Include="Content\2011.3.1115\Forest\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Forest\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Forest\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Forest\sprite.png" />
+    <Content Include="Content\2011.3.1115\Forest\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Forest\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Forest\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Hay\editor.png" />
+    <Content Include="Content\2011.3.1115\Hay\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Hay\loading.gif" />
+    <Content Include="Content\2011.3.1115\Hay\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Hay\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Hay\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Hay\sprite.png" />
+    <Content Include="Content\2011.3.1115\Hay\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Hay\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Hay\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Metro\editor.png" />
+    <Content Include="Content\2011.3.1115\Metro\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Metro\loading.gif" />
+    <Content Include="Content\2011.3.1115\Metro\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Metro\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Metro\sprite.png" />
+    <Content Include="Content\2011.3.1115\Office2007\editor.png" />
+    <Content Include="Content\2011.3.1115\Office2007\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Office2007\loading.gif" />
+    <Content Include="Content\2011.3.1115\Office2007\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Office2007\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Office2007\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Office2007\sprite.png" />
+    <Content Include="Content\2011.3.1115\Office2007\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Office2007\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Office2007\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Office2010Black\editor.png" />
+    <Content Include="Content\2011.3.1115\Office2010Black\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Office2010Black\loading.gif" />
+    <Content Include="Content\2011.3.1115\Office2010Black\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Office2010Black\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Office2010Black\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Office2010Black\sprite.png" />
+    <Content Include="Content\2011.3.1115\Office2010Black\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Office2010Black\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Office2010Black\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Office2010Blue\editor.png" />
+    <Content Include="Content\2011.3.1115\Office2010Blue\gradient.png" />
+    <Content Include="Content\2011.3.1115\Office2010Blue\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Office2010Blue\loading.gif" />
+    <Content Include="Content\2011.3.1115\Office2010Blue\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Office2010Blue\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Office2010Blue\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Office2010Blue\sprite.png" />
+    <Content Include="Content\2011.3.1115\Office2010Silver\editor.png" />
+    <Content Include="Content\2011.3.1115\Office2010Silver\gradient.png" />
+    <Content Include="Content\2011.3.1115\Office2010Silver\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Office2010Silver\loading.gif" />
+    <Content Include="Content\2011.3.1115\Office2010Silver\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Office2010Silver\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Office2010Silver\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Office2010Silver\sprite.png" />
+    <Content Include="Content\2011.3.1115\Outlook\editor.png" />
+    <Content Include="Content\2011.3.1115\Outlook\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Outlook\loading.gif" />
+    <Content Include="Content\2011.3.1115\Outlook\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Outlook\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Outlook\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Outlook\sprite.png" />
+    <Content Include="Content\2011.3.1115\Outlook\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Outlook\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Outlook\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Simple\editor.png" />
+    <Content Include="Content\2011.3.1115\Simple\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Simple\loading.gif" />
+    <Content Include="Content\2011.3.1115\Simple\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Simple\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Simple\sprite.png" />
+    <Content Include="Content\2011.3.1115\Simple\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Simple\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Simple\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Sitefinity\editor.png" />
+    <Content Include="Content\2011.3.1115\Sitefinity\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Sitefinity\loading.gif" />
+    <Content Include="Content\2011.3.1115\Sitefinity\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Sitefinity\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Sitefinity\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Sitefinity\sprite.png" />
+    <Content Include="Content\2011.3.1115\Sitefinity\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Sitefinity\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Sitefinity\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Sunset\editor.png" />
+    <Content Include="Content\2011.3.1115\Sunset\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Sunset\loading.gif" />
+    <Content Include="Content\2011.3.1115\Sunset\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Sunset\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Sunset\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Sunset\sprite.png" />
+    <Content Include="Content\2011.3.1115\Sunset\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Sunset\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Sunset\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\telerik.black.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.common.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.default.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.forest.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.hay.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.metro.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.office2007.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.office2010black.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.office2010blue.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.office2010silver.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.outlook.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.rtl.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.simple.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.sitefinity.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.sunset.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.telerik.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.transparent.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.vista.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.web20.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.webblue.min.css" />
+    <Content Include="Content\2011.3.1115\telerik.windows7.min.css" />
+    <Content Include="Content\2011.3.1115\Telerik\editor.png" />
+    <Content Include="Content\2011.3.1115\Telerik\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Telerik\loading.gif" />
+    <Content Include="Content\2011.3.1115\Telerik\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Telerik\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Telerik\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Telerik\sprite.png" />
+    <Content Include="Content\2011.3.1115\Telerik\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Telerik\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Telerik\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Transparent\active.png" />
+    <Content Include="Content\2011.3.1115\Transparent\editor.png" />
+    <Content Include="Content\2011.3.1115\Transparent\gradient.png" />
+    <Content Include="Content\2011.3.1115\Transparent\group.png" />
+    <Content Include="Content\2011.3.1115\Transparent\hover.png" />
+    <Content Include="Content\2011.3.1115\Transparent\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Transparent\loading.gif" />
+    <Content Include="Content\2011.3.1115\Transparent\selected.png" />
+    <Content Include="Content\2011.3.1115\Transparent\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Transparent\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Transparent\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Transparent\sprite.png" />
+    <Content Include="Content\2011.3.1115\Transparent\toolbar.png" />
+    <Content Include="Content\2011.3.1115\Transparent\widget.png" />
+    <Content Include="Content\2011.3.1115\Vista\editor.png" />
+    <Content Include="Content\2011.3.1115\Vista\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Vista\loading.gif" />
+    <Content Include="Content\2011.3.1115\Vista\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Vista\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Vista\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Vista\sprite.png" />
+    <Content Include="Content\2011.3.1115\Web20\editor.png" />
+    <Content Include="Content\2011.3.1115\Web20\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Web20\loading.gif" />
+    <Content Include="Content\2011.3.1115\Web20\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Web20\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Web20\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Web20\sprite.png" />
+    <Content Include="Content\2011.3.1115\Web20\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\Web20\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\Web20\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\WebBlue\editor.png" />
+    <Content Include="Content\2011.3.1115\WebBlue\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\WebBlue\loading.gif" />
+    <Content Include="Content\2011.3.1115\WebBlue\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\WebBlue\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\WebBlue\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\WebBlue\sprite.png" />
+    <Content Include="Content\2011.3.1115\WebBlue\treeview-line.png" />
+    <Content Include="Content\2011.3.1115\WebBlue\treeview-nodes-rtl.png" />
+    <Content Include="Content\2011.3.1115\WebBlue\treeview-nodes.png" />
+    <Content Include="Content\2011.3.1115\Windows7\editor.png" />
+    <Content Include="Content\2011.3.1115\Windows7\imagebrowser.png" />
+    <Content Include="Content\2011.3.1115\Windows7\loading.gif" />
+    <Content Include="Content\2011.3.1115\Windows7\slider-h.gif" />
+    <Content Include="Content\2011.3.1115\Windows7\slider-v.gif" />
+    <Content Include="Content\2011.3.1115\Windows7\sprite-vertical.png" />
+    <Content Include="Content\2011.3.1115\Windows7\sprite.png" />
+    <Content Include="Content\images\add-button.gif" />
+    <Content Include="Content\images\button.gif" />
+    <Content Include="Content\images\check.png" />
+    <Content Include="Content\images\close.gif" />
+    <Content Include="Content\images\cross.png" />
+    <Content Include="Content\images\del.gif" />
+    <Content Include="Content\images\delete.png" />
+    <Content Include="Content\images\edit.gif" />
+    <Content Include="Content\images\edit.png" />
+    <Content Include="Content\images\footer.gif" />
+    <Content Include="Content\images\hapus.gif" />
+    <Content Include="Content\images\hapus.png" />
+    <Content Include="Content\images\header.gif" />
+    <Content Include="Content\images\list.png" />
+    <Content Include="Content\images\login-bg.gif" />
+    <Content Include="Content\images\login-box.png" />
+    <Content Include="Content\images\logo-login.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\msg-error.gif" />
+    <Content Include="Content\images\msg-ok.gif" />
+    <Content Include="Content\images\pagging.gif" />
+    <Content Include="Content\images\splash.png" />
+    <Content Include="Content\images\tab - Copy.bmp" />
+    <Content Include="Content\images\tab - Copy.gif" />
+    <Content Include="Content\images\tab.gif" />
+    <Content Include="Content\images\th.gif" />
+    <Content Include="Content\images\ubah.gif" />
+    <Content Include="Content\images\ubah.png" />
+    <Content Include="Content\images\water.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\2011.3.1115\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\2011.3.1115\jquery.validate.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.autocomplete.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.calendar.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.chart.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.combobox.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.common.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.datepicker.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.datetimepicker.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.draganddrop.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.editor.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.grid.editing.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.grid.filtering.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.grid.grouping.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.grid.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.grid.reordering.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.grid.resizing.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.imagebrowser.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.list.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.menu.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.panelbar.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.slider.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.splitter.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.tabstrip.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.textbox.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.timepicker.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.treeview.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.upload.min.js" />
+    <Content Include="Scripts\2011.3.1115\telerik.window.min.js" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-dialogbox.js" />
+    <Content Include="Scripts\jquery.calculation.js" />
+    <Content Include="Scripts\jquery.calculation.min.js" />
+    <Content Include="Scripts\jquery.maskedinput.js" />
+    <Content Include="Scripts\jTerbilang.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\NumberToText.js" />
+    <Content Include="Scripts\ska.observation.js" />
+    <Content Include="Scripts\terbilang.js" />
+    <Content Include="ska\ReportPages\ShowReport.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\Shared\_SettingLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ChartofAccount\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ChartofAccount\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ChartofAccount\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ChartofAccount\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ChartofAccount\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\Shared\_VoucherLayout.cshtml" />
+    <Content Include="Areas\VoucherKas\Views\VoucherKas\Create.cshtml" />
+    <Content Include="Areas\VoucherKas\Views\VoucherKas\Index.cshtml" />
+    <Content Include="Areas\VoucherKas\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\Branch\Create.cshtml" />
+    <Content Include="Areas\Setting\Views\Branch\Delete.cshtml" />
+    <Content Include="Areas\Setting\Views\Branch\Edit.cshtml" />
+    <Content Include="Areas\Setting\Views\Branch\Index.cshtml" />
+    <Content Include="Areas\Setting\Views\Branch\_CreateOrEdit.cshtml" />
+    <Content Include="Areas\Setting\Views\Partner\Create.cshtml" />
+    <Content Include="Areas\Setting\Views\Partner\Delete.cshtml" />
+    <Content Include="Areas\Setting\Views\Partner\Edit.cshtml" />
+    <Content Include="Areas\Setting\Views\Partner\Index.cshtml" />
+    <Content Include="Areas\Setting\Views\Partner\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\PettyCashes\Views\Form\Index.cshtml" />
+    <Content Include="Areas\PettyCashes\Views\PettyCashesSetup\Edit.cshtml" />
+    <Content Include="Areas\PettyCashes\Views\PettyCashes\Create.cshtml" />
+    <Content Include="Areas\PettyCashes\Views\PettyCashes\Delete.cshtml" />
+    <Content Include="Areas\PettyCashes\Views\PettyCashes\Edit.cshtml" />
+    <Content Include="Areas\PettyCashes\Views\PettyCashes\Index.cshtml" />
+    <Content Include="Areas\PettyCashes\Views\Report\Index.cshtml" />
+    <Content Include="Areas\PettyCashes\Views\Report\ShowReport.cshtml" />
+    <Content Include="Areas\PettyCashes\Views\Shared\EditorTemplates\AccountCode.cshtml" />
+    <Content Include="Areas\PettyCashes\Views\Shared\_PettyCashesLayout.cshtml" />
+    <Content Include="Areas\PettyCashes\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AnotherList\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\EndofPeriod\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\GeneralLedger\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\Journal\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\ManagementReport\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\ProfitsandLossBudget\Edit.cshtml" />
+    <Content Include="Areas\SKA\Views\ProfitsandLossBudget\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCode.cshtml" />
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\Month.cshtml" />
+    <Content Include="Areas\SKA\Views\Shared\_SkaLayout.cshtml" />
+    <Content Include="Areas\SKA\Views\Web.config" />
+    <Content Include="Areas\SKA\Views\WorkSheet\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\SkaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SkaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\Payment\Edit.cshtml" />
+    <Content Include="Areas\VoucherKas\Views\Payment\Index.cshtml" />
+    <Content Include="Areas\VoucherKas\Views\Payment\Paid.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\VoucherKas\Delete.cshtml" />
+    <Content Include="Areas\VoucherKas\Views\Shared\EditorTemplates\AccountCode.cshtml" />
+    <Content Include="Areas\VoucherKas\Views\VoucherKas\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LogOnLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\VelocityMoneyBudgets\Edit.cshtml" />
+    <Content Include="Areas\SKA\Views\VelocityMoneyBudgets\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\BudgetFinancialPosition\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\BudgetFinancialPosition\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\PettyCashes\Views\PettyCashesSetup\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\VoucherKas\ApproveVoucher.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\VoucherKas\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournalFormats\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AccountJournalFormats\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AccountJournalFormats\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashReceiptJournalFormats\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournalFormats\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\PBIKJournalFormats\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\MonthlyReportsSetup\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AnnualReportsSetup\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\MonthlyReportsSetup\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournalFormats\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AccountJournal\Create.cshtml" />
+    <Content Include="Areas\SKA\Views\AccountJournal\Delete.cshtml" />
+    <Content Include="Areas\SKA\Views\AccountJournal\Edit.cshtml" />
+    <Content Include="Areas\SKA\Views\AccountJournal\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\AccountJournal\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashReceiptJournal\Create.cshtml" />
+    <Content Include="Areas\SKA\Views\CashReceiptJournal\Delete.cshtml" />
+    <Content Include="Areas\SKA\Views\CashReceiptJournal\Edit.cshtml" />
+    <Content Include="Areas\SKA\Views\CashReceiptJournal\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\CashReceiptJournal\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\GeneralJournal\Create.cshtml" />
+    <Content Include="Areas\SKA\Views\GeneralJournal\Delete.cshtml" />
+    <Content Include="Areas\SKA\Views\GeneralJournal\Edit.cshtml" />
+    <Content Include="Areas\SKA\Views\GeneralJournal\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\GeneralJournal\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\PBIKJournal\Create.cshtml" />
+    <Content Include="Areas\SKA\Views\PBIKJournal\Delete.cshtml" />
+    <Content Include="Areas\SKA\Views\PBIKJournal\Edit.cshtml" />
+    <Content Include="Areas\SKA\Views\PBIKJournal\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\PBIKJournal\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AnnualReportsSetup\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\RevenueExpenditure\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\RevenueExpenditure\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\RevenueExpenditure\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\RevenueExpenditure\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\RevenueExpenditure\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\RevenueExpenditure\ShowReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\EndofPeriod\ClosingBook.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\EndofPeriod\BalanceMoving.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\OverviewLongTermDebt\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournal\Create.cshtml" />
+    <Content Include="Areas\SKA\Views\DHHDJournal\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\DHHDJournal\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournal\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\OverviewLongTermDebt\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\OverviewLongTermDebt\ShowReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\NetIncomes\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\NetIncomes\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\NetIncomes\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\NetIncomes\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\NetIncomes\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\BeginningBalances\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\BeginningBalances\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\BeginningBalances\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\BeginningBalances\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\BeginningBalances\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AdditionalCorrection\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AdditionalCorrection\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AdditionalCorrection\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AdditionalCorrection\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AdditionalCorrection\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\ReductionCorrection\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\ReductionCorrection\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\ReductionCorrection\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\ReductionCorrection\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Backup\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Backup\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Backup\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Backup\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Backup\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\ReductionCorrection\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\Shared\_DialogPartnerUserControl.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCodeSKA.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournalFormats\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashReceiptJournalFormats\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\PBIKJournalFormats\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCode1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCode2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\PettyCashes\Views\PettyCashes\Confirmation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\PettyCashes\Views\PettyCashes\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\ProfitsandLossBudget\GetYear.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\VelocityMoneyBudgets\GetYear.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\BudgetFinancialPosition\GetYear.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\OverviewLongTermDebt\GetYear.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCodeJournalFormat.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AccountJournalFormats\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AccountJournalFormats\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournalFormats\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournalFormats\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AccountJournalFormats\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournalFormats\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashReceiptJournalFormats\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashReceiptJournalFormats\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashReceiptJournalFormats\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournalFormats\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournalFormats\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournalFormats\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\PBIKJournalFormats\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\PBIKJournalFormats\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\PBIKJournalFormats\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\IndexVoucherUp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\CreateVoucherUp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\EditVoucherUp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\DeleteVoucherUp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\_CreateOrEditVoucherUp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\_CreateOrEditVoucherDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\IndexVoucherDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\CreateVoucherDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\EditVoucherDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\DeleteVoucherDown.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCodeCashAccountReceipt.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCodeCashPayment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCodeGeneralJournal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCodeJournalAccount.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCodeJournalDHHD.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCodePBIKJournal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\Shared\_DialogAccountCodeUserControl.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AnotherList\ShowReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\Shared\_DialogBankUserControl.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\Shared\_DialogPaymentUserControl.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\VoucherKas\Confirmation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\SetupValue\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\SetupValue\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\SetupJournalAccount\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\Shared\EditorTemplates\AccountCode.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\SetupJournalAccount\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\Shared\EditorTemplates\AccountSide.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournal\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournal\Confirmation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournal\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournal\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournal\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournal\Confirmation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournal\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournal\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournal\PaymentJournal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\UndistributedProfits\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\UndistributedProfits\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\DatePicker.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\Shared\EditorTemplates\DatePicker.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\ReportVoucher\Index.cshtml" />
+    <Content Include="Areas\VoucherKas\Views\ReportVoucher\ShowReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\PettyCashes\Views\PettyCashPosting\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\VoucherKas\detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\VoucherKas\IndexApprove.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\JournalReport\Index.cshtml" />
+    <Content Include="Areas\SKA\Views\JournalReport\ShowReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\Shared\EditorTemplates\AccountCodeExpenditure.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\Bank\Create.cshtml" />
+    <Content Include="Areas\Setting\Views\Bank\Delete.cshtml" />
+    <Content Include="Areas\Setting\Views\Bank\Edit.cshtml" />
+    <Content Include="Areas\Setting\Views\Bank\Index.cshtml" />
+    <Content Include="Areas\Setting\Views\Bank\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\ReportVoucher\IndexReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ListAccount\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\VoucherSetup\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ChartofAccount\BeginningBalance.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\GeneralLedger\ShowReport.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\PettyCashes\Views\Form\ShowReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\ManagementReport\ShowReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\BeginningBalance\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ParentAccount\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ParentAccount\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ParentAccount\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ParentAccount\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\ParentAccount\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\WorkSheet\ShowReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashPaymentJournal\detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\Shared\EditorTemplates\PartnerNameVoucher.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\LoginLogout\Index.cshtml" />
+    <Content Include="Areas\Setting\Views\LoginLogout\ShowReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\UserHistory\Index.cshtml" />
+    <Content Include="Areas\Setting\Views\UserHistory\ShowReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\VoucherKas\Views\Shared\EditorTemplates\PartnerAutoComplete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\BackupDatabase\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\AccountJournal\detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\GeneralJournal\detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\PBIKJournal\detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\CashReceiptJournal\detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SKA\Views\DHHDJournal\detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\LogOn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\SetupLabaDitahan\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\SetupLabaDitahan\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\SetupLabaDitahan\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\BeginningBalanceMonth\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\BeginningBalanceMonth\BeginningBalanceMonth.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\BeginningBalanceMonth\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Setting\Views\BeginningBalanceMonth\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55700</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

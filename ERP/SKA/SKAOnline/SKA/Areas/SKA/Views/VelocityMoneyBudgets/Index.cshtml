@@ -1,0 +1,42 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Anggaran Perputaran Uang";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Anggaran Perputaran Uang</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "VelocityMoneyBudgets"))
+{ 
+        <table>
+            <tr>
+                <td>
+                    Cari
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextBox("searchValue")
+                </td>
+                <td>
+                    <input type = "submit" value = "Cari"/>
+                </td>
+            </tr>
+        </table>
+}
+    @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.VelocityMoneyBudgetsViewModel>()
+                    .Name("VelocityMoneyBudgetsGrid")
+                    .Columns(col =>
+                    {
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                        col.Bound(o => o.Month).Title("Bulan").Width(250);
+                        col.Bound(o => o.LastBalance).Title("Saldo Akhir").Format("Rp. {0:N}");
+                    })
+                    .DataBinding(binding => binding.Ajax().Select("GetList", "VelocityMoneyBudgets", new { searchValue = @ViewBag.SearchValue}))
+                    .Sortable()
+                    .Filterable()
+    )
+</div>

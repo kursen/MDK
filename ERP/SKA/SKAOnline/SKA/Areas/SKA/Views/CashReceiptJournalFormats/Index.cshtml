@@ -1,0 +1,53 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Format Jurnal Penerimaan Kas ";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Format Jurnal Penerimaan Kas</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "CashReceiptFormats"))
+{ 
+        <table>
+            <tr>
+                <td>
+                    Cari
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextBox("searchValue")
+                </td>
+                <td>
+                    <input type = "submit" value = "Cari"/>
+                </td>
+            </tr>
+        </table>
+}
+   @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.CashReceiptJournalFormatsViewModel>()
+                              .Name("CashReceiptJournalFormatsGrid")
+                .ToolBar(toolbar =>
+                {
+                    toolbar.Custom().Action("Create", "CashReceiptJournalFormats").Text("Tambah").ButtonType(GridButtonType.Text).HtmlAttributes(new { style = "width:100px" });
+                })
+                .Columns(col =>
+                {
+                    col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                    if (User.IsInRole("User") == false)
+                    {
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                    }
+                    col.Bound(o => o.Id).Hidden();
+                    col.Bound(o => o.AccountCode).Title("Kode Perkiraan");
+                    col.Bound(o => o.Name).Title("Nama Perkiraan");
+                    col.Bound(o => o.Status).Title("Status");
+                    col.Bound(o => o.TurnNumber).Title("Nomor Urut");
+
+                })
+                .DataBinding(binding => binding.Ajax().Select("_SelectDetail", "CashReceiptJournalFormats", new { searchValue = @ViewBag.SearchValue}))
+                .Sortable()
+)
+</div>

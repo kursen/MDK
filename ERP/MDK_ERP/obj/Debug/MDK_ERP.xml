@@ -1,0 +1,2318 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MDK_ERP
+</name>
+</assembly>
+<members>
+<member name="M:MDK_ERP.ERPEntities.#ctor">
+	<summary>
+ Initializes a new ERPEntities object using the connection string found in the 'ERPEntities' section of the application configuration file.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.#ctor(System.String)">
+	<summary>
+ Initialize a new ERPEntities object.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+	<summary>
+ Initialize a new ERPEntities object.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.sysdiagrams">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.TblTrans_Penimbangan1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.TblTrans_Penimbangan2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.CompanyLists">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.CrusherJournalDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.CrusherJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.DistributionJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MaterialInitialStock">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MaterialInventories">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MaterialUseJournal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstDeliveryStatuses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstInventoryStatuses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstMachines">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstMachineTypes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstMaterialCompositions">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstMaterialRatioUnits">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstMaterials">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstMaterialTypes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstWorkSchedule">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.ProjectList">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.ProjectRoadList">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.tblMisc_History">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.TblMst_Barang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.TblMst_Login">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.TblMst_NoRec">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.TblMst_Perusahaan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.TopNavigationMenu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstWeighers">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.AMPJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ERPEntities.MstMeasurementUnits">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddTosysdiagrams(MDK_ERP.sysdiagrams)">
+	<summary>
+ Deprecated Method for adding a new object to the sysdiagrams EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToTblTrans_Penimbangan1(MDK_ERP.TblTrans_Penimbangan1)">
+	<summary>
+ Deprecated Method for adding a new object to the TblTrans_Penimbangan1 EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToTblTrans_Penimbangan2(MDK_ERP.TblTrans_Penimbangan2)">
+	<summary>
+ Deprecated Method for adding a new object to the TblTrans_Penimbangan2 EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToCompanyLists(MDK_ERP.CompanyLists)">
+	<summary>
+ Deprecated Method for adding a new object to the CompanyLists EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToCrusherJournalDetails(MDK_ERP.CrusherJournalDetails)">
+	<summary>
+ Deprecated Method for adding a new object to the CrusherJournalDetails EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToCrusherJournals(MDK_ERP.CrusherJournals)">
+	<summary>
+ Deprecated Method for adding a new object to the CrusherJournals EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToDistributionJournals(MDK_ERP.DistributionJournals)">
+	<summary>
+ Deprecated Method for adding a new object to the DistributionJournals EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMaterialInitialStock(MDK_ERP.MaterialInitialStock)">
+	<summary>
+ Deprecated Method for adding a new object to the MaterialInitialStock EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMaterialInventories(MDK_ERP.MaterialInventories)">
+	<summary>
+ Deprecated Method for adding a new object to the MaterialInventories EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMaterialUseJournal(MDK_ERP.MaterialUseJournal)">
+	<summary>
+ Deprecated Method for adding a new object to the MaterialUseJournal EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstDeliveryStatuses(MDK_ERP.MstDeliveryStatuses)">
+	<summary>
+ Deprecated Method for adding a new object to the MstDeliveryStatuses EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstInventoryStatuses(MDK_ERP.MstInventoryStatuses)">
+	<summary>
+ Deprecated Method for adding a new object to the MstInventoryStatuses EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstMachines(MDK_ERP.MstMachines)">
+	<summary>
+ Deprecated Method for adding a new object to the MstMachines EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstMachineTypes(MDK_ERP.MstMachineTypes)">
+	<summary>
+ Deprecated Method for adding a new object to the MstMachineTypes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstMaterialCompositions(MDK_ERP.MstMaterialCompositions)">
+	<summary>
+ Deprecated Method for adding a new object to the MstMaterialCompositions EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstMaterialRatioUnits(MDK_ERP.MstMaterialRatioUnits)">
+	<summary>
+ Deprecated Method for adding a new object to the MstMaterialRatioUnits EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstMaterials(MDK_ERP.MstMaterials)">
+	<summary>
+ Deprecated Method for adding a new object to the MstMaterials EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstMaterialTypes(MDK_ERP.MstMaterialTypes)">
+	<summary>
+ Deprecated Method for adding a new object to the MstMaterialTypes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstWorkSchedule(MDK_ERP.MstWorkSchedule)">
+	<summary>
+ Deprecated Method for adding a new object to the MstWorkSchedule EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToProjectList(MDK_ERP.ProjectList)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectList EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToProjectRoadList(MDK_ERP.ProjectRoadList)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectRoadList EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddTotblMisc_History(MDK_ERP.tblMisc_History)">
+	<summary>
+ Deprecated Method for adding a new object to the tblMisc_History EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToTblMst_Barang(MDK_ERP.TblMst_Barang)">
+	<summary>
+ Deprecated Method for adding a new object to the TblMst_Barang EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToTblMst_Login(MDK_ERP.TblMst_Login)">
+	<summary>
+ Deprecated Method for adding a new object to the TblMst_Login EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToTblMst_NoRec(MDK_ERP.TblMst_NoRec)">
+	<summary>
+ Deprecated Method for adding a new object to the TblMst_NoRec EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToTblMst_Perusahaan(MDK_ERP.TblMst_Perusahaan)">
+	<summary>
+ Deprecated Method for adding a new object to the TblMst_Perusahaan EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToTopNavigationMenu(MDK_ERP.TopNavigationMenu)">
+	<summary>
+ Deprecated Method for adding a new object to the TopNavigationMenu EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstWeighers(MDK_ERP.MstWeighers)">
+	<summary>
+ Deprecated Method for adding a new object to the MstWeighers EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToAMPJournals(MDK_ERP.AMPJournals)">
+	<summary>
+ Deprecated Method for adding a new object to the AMPJournals EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.AddToMstMeasurementUnits(MDK_ERP.MstMeasurementUnits)">
+	<summary>
+ Deprecated Method for adding a new object to the MstMeasurementUnits EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.ListKomposisi">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.ListRatio">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.ListSolar(System.Nullable{System.Byte},System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="month">No Metadata Documentation available.</param>
+	<param name="year">No Metadata Documentation available.</param>
+</member><member name="M:MDK_ERP.ERPEntities.ListAspal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.getListAspal(System.Nullable{System.Byte},System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="month">No Metadata Documentation available.</param>
+	<param name="year">No Metadata Documentation available.</param>
+</member><member name="M:MDK_ERP.ERPEntities.DropdownAsphal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.produkCompositions(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idProduk">No Metadata Documentation available.</param>
+</member><member name="M:MDK_ERP.ERPEntities.GetInventoryData(System.Nullable{System.Int32},System.Nullable{System.Byte},System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="iDMaterial">No Metadata Documentation available.</param>
+	<param name="month">No Metadata Documentation available.</param>
+	<param name="year">No Metadata Documentation available.</param>
+</member><member name="M:MDK_ERP.ERPEntities.GetInventoryDataForDashboard(System.Nullable{System.DateTime})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="curDate">No Metadata Documentation available.</param>
+</member><member name="M:MDK_ERP.ERPEntities.ListMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.ListDataAMP">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.ListTimbangan1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ERPEntities.EditTimbangan(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="iD">No Metadata Documentation available.</param>
+</member><member name="M:MDK_ERP.ERPEntities.CompInUseJournal(System.Nullable{System.Int64})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="iDAmp">No Metadata Documentation available.</param>
+</member><member name="M:MDK_ERP.ERPEntities.GetCrusherJournalData(System.Nullable{System.Byte},System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="month">No Metadata Documentation available.</param>
+	<param name="year">No Metadata Documentation available.</param>
+</member><member name="M:MDK_ERP.ERPEntities.LaporanPenimbanganMaterial(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="periodeAwal">No Metadata Documentation available.</param>
+	<param name="periodeAkhir">No Metadata Documentation available.</param>
+</member><member name="M:MDK_ERP.ERPEntities.GetAMPDataForDashboard(System.Nullable{System.DateTime})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="curDate">No Metadata Documentation available.</param>
+</member><member name="M:MDK_ERP.ERPEntities.CompositionProductList(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idProduk">No Metadata Documentation available.</param>
+	<param name="idMeasurementUnitConversion">No Metadata Documentation available.</param>
+</member><member name="T:MDK_ERP.ERPEntities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.AMPJournals.CreateAMPJournals(System.Int64)">
+	<summary>
+ Create a new AMPJournals object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.AMPJournals.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.IdMachine">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.BeginProd">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.EndProd">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.DateUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.IdShift">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.IDProject">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.Description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.MstWorkSchedule">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.AMPJournals.MstWorkScheduleReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.AMPJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.CompanyLists.CreateCompanyLists(System.Int32)">
+	<summary>
+ Create a new CompanyLists object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.CompanyLists.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompanyLists.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompanyLists.Symbol">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompanyLists.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompanyLists.Address1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompanyLists.Address2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompanyLists.City">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompanyLists.Phone">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompanyLists.Fax">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompanyLists.DistributionJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.CompanyLists">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.CrusherJournalDetails.CreateCrusherJournalDetails(System.Int64)">
+	<summary>
+ Create a new CrusherJournalDetails object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.IDInventory">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.IDCrusherJournal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.OrderProcess">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.IDMeasurementUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.MaterialInventories">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.MaterialInventoriesReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.CrusherJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.CrusherJournalsReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.MstMeasurementUnits">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournalDetails.MstMeasurementUnitsReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.CrusherJournalDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.CrusherJournals.CreateCrusherJournals(System.Int64)">
+	<summary>
+ Create a new CrusherJournals object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.CrusherJournals.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournals.IdWorkSchedule">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournals.IDMaterialUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournals.Member">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournals.CrusherJournalDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournals.MaterialUseJournal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournals.MaterialUseJournalReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournals.MstWorkSchedule">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CrusherJournals.MstWorkScheduleReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.CrusherJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.DistributionJournals.CreateDistributionJournals(System.Int64)">
+	<summary>
+ Create a new DistributionJournals object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.DistributionJournals.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.IDInventory">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.NoRec">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.InTime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.OutTime">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.IdWeigher">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.PoliceLicense">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.DriverName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.IdDeliveryStatus">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.IdCompany">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.IdMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.Weight1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.Weight2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.IdMeasurementUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.Place">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.Clerk1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.Clerk2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.Description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.Copy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.CompanyLists">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.CompanyListsReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.MaterialInventories">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.MaterialInventoriesReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.MstDeliveryStatuses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DistributionJournals.MstDeliveryStatusesReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.DistributionJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MaterialInitialStock.CreateMaterialInitialStock(System.Int32)">
+	<summary>
+ Create a new MaterialInitialStock object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MaterialInitialStock.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInitialStock.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInitialStock.DateInput">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInitialStock.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInitialStock.IDMeasurementUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInitialStock.Description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInitialStock.IDInventory">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInitialStock.MaterialInventories">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInitialStock.MaterialInventoriesReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInitialStock.MstMeasurementUnits">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInitialStock.MstMeasurementUnitsReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MaterialInitialStock">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MaterialInventories.CreateMaterialInventories(System.Int64)">
+	<summary>
+ Create a new MaterialInventories object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MaterialInventories.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInventories.IdInventoryStatus">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInventories.IsPlus">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInventories.NoRecordWeigher">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInventories.CrusherJournalDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInventories.DistributionJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInventories.MaterialInitialStock">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInventories.MstInventoryStatuses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInventories.MstInventoryStatusesReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialInventories.MaterialUseJournal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MaterialInventories">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MaterialUseJournal.CreateMaterialUseJournal(System.Int64)">
+	<summary>
+ Create a new MaterialUseJournal object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MaterialUseJournal.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.DateUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.IdMachine">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.OperatorName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.IDMeasurementUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.IDProject">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.Description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.IDInventory">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.IDAmp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.CrusherJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.MaterialInventories">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.MaterialInventoriesReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.MstMachines">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.MstMachinesReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.ProjectList">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.ProjectListReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.MstMeasurementUnits">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MaterialUseJournal.MstMeasurementUnitsReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MaterialUseJournal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstDeliveryStatuses.CreateMstDeliveryStatuses(System.Byte)">
+	<summary>
+ Create a new MstDeliveryStatuses object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstDeliveryStatuses.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstDeliveryStatuses.Status">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstDeliveryStatuses.DistributionJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstDeliveryStatuses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstInventoryStatuses.CreateMstInventoryStatuses(System.Byte)">
+	<summary>
+ Create a new MstInventoryStatuses object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstInventoryStatuses.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstInventoryStatuses.StatusName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstInventoryStatuses.MaterialInventories">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstInventoryStatuses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstMachines.CreateMstMachines(System.Byte)">
+	<summary>
+ Create a new MstMachines object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstMachines.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMachines.MachineName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMachines.IdMachineType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMachines.SeriesNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMachines.MaterialUseJournal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstMachines">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstMachineTypes.CreateMstMachineTypes(System.Byte)">
+	<summary>
+ Create a new MstMachineTypes object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstMachineTypes.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMachineTypes.MachineType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMachineTypes.Description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstMachineTypes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstMaterialCompositions.CreateMstMaterialCompositions(System.Int32)">
+	<summary>
+ Create a new MstMaterialCompositions object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstMaterialCompositions.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterialCompositions.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterialCompositions.IDMaterialComposition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterialCompositions.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstMaterialCompositions">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstMaterialRatioUnits.CreateMstMaterialRatioUnits(System.Int32)">
+	<summary>
+ Create a new MstMaterialRatioUnits object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstMaterialRatioUnits.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterialRatioUnits.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterialRatioUnits.IDMeasurementUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterialRatioUnits.Weight">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstMaterialRatioUnits">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstMaterials.CreateMstMaterials(System.Int32)">
+	<summary>
+ Create a new MstMaterials object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstMaterials.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterials.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterials.Symbol">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterials.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterials.IdMaterialType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterials.IdMeasurementUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterials.isInventory">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterials.InitialStock">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterials.DateInitialStock">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterials.IDMachineType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstMaterials">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstMaterialTypes.CreateMstMaterialTypes(System.Byte)">
+	<summary>
+ Create a new MstMaterialTypes object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstMaterialTypes.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMaterialTypes.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstMaterialTypes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstMeasurementUnits.CreateMstMeasurementUnits(System.Byte)">
+	<summary>
+ Create a new MstMeasurementUnits object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstMeasurementUnits.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMeasurementUnits.Symbol">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMeasurementUnits.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMeasurementUnits.Ratio">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMeasurementUnits.CrusherJournalDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMeasurementUnits.MaterialInitialStock">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstMeasurementUnits.MaterialUseJournal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstMeasurementUnits">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstWeighers.CreateMstWeighers(System.Byte)">
+	<summary>
+ Create a new MstWeighers object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstWeighers.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstWeighers.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstWeighers.SeriesNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstWeighers">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.MstWorkSchedule.CreateMstWorkSchedule(System.Int32)">
+	<summary>
+ Create a new MstWorkSchedule object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.MstWorkSchedule.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstWorkSchedule.Shift">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstWorkSchedule.CrusherJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.MstWorkSchedule.AMPJournals">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.MstWorkSchedule">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ProjectList.CreateProjectList(System.Int64)">
+	<summary>
+ Create a new ProjectList object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.ProjectList.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectList.NoProject">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectList.StartDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectList.EndDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectList.PackageName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectList.AgentName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectList.Description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectList.MaterialUseJournal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectList.ProjectRoadList">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.ProjectList">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ProjectRoadList.CreateProjectRoadList(System.Int64)">
+	<summary>
+ Create a new ProjectRoadList object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.ProjectRoadList.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectRoadList.IDProject">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectRoadList.RoadName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectRoadList.Length">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectRoadList.ProjectList">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ProjectRoadList.ProjectListReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.ProjectRoadList">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.sysdiagrams.Createsysdiagrams(System.String,System.Int32,System.Int32)">
+	<summary>
+ Create a new sysdiagrams object.
+ </summary>
+	<param name="name">Initial value of the name property.</param>
+	<param name="principal_id">Initial value of the principal_id property.</param>
+	<param name="diagram_id">Initial value of the diagram_id property.</param>
+</member><member name="P:MDK_ERP.sysdiagrams.name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.sysdiagrams.principal_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.sysdiagrams.diagram_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.sysdiagrams.version">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.sysdiagrams.definition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.sysdiagrams">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.tblMisc_History.CreatetblMisc_History(System.Int32)">
+	<summary>
+ Create a new tblMisc_History object.
+ </summary>
+	<param name="historyID">Initial value of the historyID property.</param>
+</member><member name="P:MDK_ERP.tblMisc_History.historyID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.tblMisc_History.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.tblMisc_History.waktu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.tblMisc_History.norecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.tblMisc_History.jenis">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.tblMisc_History.description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.tblMisc_History">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.TblMst_Barang.CreateTblMst_Barang(System.Int32)">
+	<summary>
+ Create a new TblMst_Barang object.
+ </summary>
+	<param name="kodeBrg">Initial value of the KodeBrg property.</param>
+</member><member name="P:MDK_ERP.TblMst_Barang.KodeBrg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Barang.NoBrg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Barang.NamaBrg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Barang.Keterangan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.TblMst_Barang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.TblMst_Login.CreateTblMst_Login(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+	<summary>
+ Create a new TblMst_Login object.
+ </summary>
+	<param name="kode">Initial value of the Kode property.</param>
+	<param name="hA_THA">Initial value of the HA_THA property.</param>
+	<param name="hA_TBD">Initial value of the HA_TBD property.</param>
+	<param name="hA_TOpt">Initial value of the HA_TOpt property.</param>
+	<param name="hA_Lap">Initial value of the HA_Lap property.</param>
+	<param name="hA_TransV">Initial value of the HA_TransV property.</param>
+	<param name="hA_TransI">Initial value of the HA_TransI property.</param>
+	<param name="hA_TransE">Initial value of the HA_TransE property.</param>
+	<param name="hA_TransH">Initial value of the HA_TransH property.</param>
+	<param name="hA_TransCU">Initial value of the HA_TransCU property.</param>
+	<param name="hA_FPV">Initial value of the HA_FPV property.</param>
+	<param name="hA_FPI">Initial value of the HA_FPI property.</param>
+	<param name="hA_FPE">Initial value of the HA_FPE property.</param>
+	<param name="hA_FPH">Initial value of the HA_FPH property.</param>
+	<param name="hA_FMV">Initial value of the HA_FMV property.</param>
+	<param name="hA_FMI">Initial value of the HA_FMI property.</param>
+	<param name="hA_FME">Initial value of the HA_FME property.</param>
+	<param name="hA_FMH">Initial value of the HA_FMH property.</param>
+</member><member name="P:MDK_ERP.TblMst_Login.Kode">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.Nama">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.pwd">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.Bagian">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_THA">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_TBD">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_TOpt">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_Lap">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_TransV">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_TransI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_TransE">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_TransH">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_TransCU">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_FPV">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_FPI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_FPE">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_FPH">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_FMV">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_FMI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_FME">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Login.HA_FMH">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.TblMst_Login">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.TblMst_NoRec.CreateTblMst_NoRec(System.Int32)">
+	<summary>
+ Create a new TblMst_NoRec object.
+ </summary>
+	<param name="noUrut">Initial value of the NoUrut property.</param>
+</member><member name="P:MDK_ERP.TblMst_NoRec.NoRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_NoRec.NoUrut">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.TblMst_NoRec">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.TblMst_Perusahaan.CreateTblMst_Perusahaan(System.Int32)">
+	<summary>
+ Create a new TblMst_Perusahaan object.
+ </summary>
+	<param name="kodePeru">Initial value of the KodePeru property.</param>
+</member><member name="P:MDK_ERP.TblMst_Perusahaan.KodePeru">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Perusahaan.NoPeru">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Perusahaan.NamaPeru">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Perusahaan.AlamatPeru1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Perusahaan.AlamatPeru2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Perusahaan.KotaPeru">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Perusahaan.TelpPeru">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblMst_Perusahaan.FaxPeru">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.TblMst_Perusahaan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.TblTrans_Penimbangan1.CreateTblTrans_Penimbangan1(System.Int32,System.DateTime)">
+	<summary>
+ Create a new TblTrans_Penimbangan1 object.
+ </summary>
+	<param name="kodeTimb1">Initial value of the KodeTimb1 property.</param>
+	<param name="tgl">Initial value of the Tgl property.</param>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan1.KodeTimb1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan1.Tgl">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan1.NoPolisi">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan1.Sopir">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan1.KodePeru">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan1.KodeBrg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan1.Berat1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan1.Deliverynote">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan1.Clerk1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.TblTrans_Penimbangan1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.TblTrans_Penimbangan2.CreateTblTrans_Penimbangan2(System.String)">
+	<summary>
+ Create a new TblTrans_Penimbangan2 object.
+ </summary>
+	<param name="noRecord">Initial value of the NoRecord property.</param>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.NoRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.TglMasuk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.TglKeluar">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.NoPolisi">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.Sopir">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.KodePeru">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.KodeBrg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.Berat1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.Berat2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.DeliveryNote">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.Clerk1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.Clerk2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TblTrans_Penimbangan2.Copy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.TblTrans_Penimbangan2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.TopNavigationMenu.CreateTopNavigationMenu(System.Int32,System.Int32,System.String,System.String,System.Int32,System.String)">
+	<summary>
+ Create a new TopNavigationMenu object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="parentId">Initial value of the ParentId property.</param>
+	<param name="label">Initial value of the Label property.</param>
+	<param name="link">Initial value of the Link property.</param>
+	<param name="ordinal">Initial value of the Ordinal property.</param>
+	<param name="moduleName">Initial value of the ModuleName property.</param>
+</member><member name="P:MDK_ERP.TopNavigationMenu.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TopNavigationMenu.ParentId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TopNavigationMenu.Label">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TopNavigationMenu.Link">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TopNavigationMenu.Ordinal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.TopNavigationMenu.ModuleName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.TopNavigationMenu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.CompInUseJournal_Result.CreateCompInUseJournal_Result(System.Int64)">
+	<summary>
+ Create a new CompInUseJournal_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.CompInUseJournal_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompInUseJournal_Result.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompInUseJournal_Result.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompInUseJournal_Result.IdMeasurementUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompInUseJournal_Result.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.CompInUseJournal_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompositionProductList_Result.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompositionProductList_Result.Material">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompositionProductList_Result.IDMaterialComposition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompositionProductList_Result.MaterialComp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompositionProductList_Result.IdMeasurementUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompositionProductList_Result.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompositionProductList_Result.IDMeasurementUnitComp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompositionProductList_Result.AmountComp">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.CompositionProductList_Result.idUnitConversion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.CompositionProductList_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DropdownAsphal_Result.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DropdownAsphal_Result.jumlah">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.DropdownAsphal_Result.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.DropdownAsphal_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.EditTimbangan_Result.CreateEditTimbangan_Result(System.Int64)">
+	<summary>
+ Create a new EditTimbangan_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.EditTimbangan_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.EditTimbangan_Result.NoPolisi">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.EditTimbangan_Result.Sopir">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.EditTimbangan_Result.Berat1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.EditTimbangan_Result.Description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.EditTimbangan_Result.Clerk1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.EditTimbangan_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetAMPDataForDashboard_Result.IDAMP">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetAMPDataForDashboard_Result.IdProject">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetAMPDataForDashboard_Result.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetAMPDataForDashboard_Result.MaterialProduction">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetAMPDataForDashboard_Result.AmountProduction">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetAMPDataForDashboard_Result.IDMaterialUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetAMPDataForDashboard_Result.MaterialUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetAMPDataForDashboard_Result.AmountUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.GetAMPDataForDashboard_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.GetCrusherJournalData_Result.CreateGetCrusherJournalData_Result(System.Double,System.Double,System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+	<summary>
+ Create a new GetCrusherJournalData_Result object.
+ </summary>
+	<param name="gROGOL">Initial value of the GROGOL property.</param>
+	<param name="mEDIUM">Initial value of the MEDIUM property.</param>
+	<param name="satuanBucket">Initial value of the SatuanBucket property.</param>
+	<param name="m3">Initial value of the M3 property.</param>
+	<param name="aBUBATU">Initial value of the ABUBATU property.</param>
+	<param name="bASEA">Initial value of the BASEA property.</param>
+	<param name="bASEB">Initial value of the BASEB property.</param>
+	<param name="sPLIT12">Initial value of the SPLIT12 property.</param>
+	<param name="sPLIT23">Initial value of the SPLIT23 property.</param>
+	<param name="gRESLEYOut">Initial value of the GRESLEYOut property.</param>
+	<param name="gRESLEYIn">Initial value of the GRESLEYIn property.</param>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.IDJournal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.Tanggal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.Shift">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.NamaMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.UrutKolom">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.GROGOL">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.MEDIUM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.SatuanBucket">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.M3">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.JumlahKubik">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.Keterangan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.ABUBATU">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.BASEA">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.BASEB">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.SPLIT12">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.SPLIT23">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.GRESLEYOut">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetCrusherJournalData_Result.GRESLEYIn">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.GetCrusherJournalData_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.GetInventoryData_Result.CreateGetInventoryData_Result(System.Int32)">
+	<summary>
+ Create a new GetInventoryData_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.GetInventoryData_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryData_Result.Tanggal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryData_Result.Status">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryData_Result.Keterangan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryData_Result.Tambah">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryData_Result.Kurang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryData_Result.Sisa">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryData_Result.UrutBaris">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.GetInventoryData_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryDataForDashboard_Result.IdMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryDataForDashboard_Result.NamaMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryDataForDashboard_Result.SisaKemarin">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryDataForDashboard_Result.TambahSekarang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryDataForDashboard_Result.KurangSekarang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.GetInventoryDataForDashboard_Result.Sisa">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.GetInventoryDataForDashboard_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.getListAspal_Result.CreategetListAspal_Result(System.Int64)">
+	<summary>
+ Create a new getListAspal_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.getListAspal_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.getListAspal_Result.DateUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.getListAspal_Result.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.getListAspal_Result.OperatorName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.getListAspal_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.LaporanPenimbanganMaterial_Result.NoRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.LaporanPenimbanganMaterial_Result.Masuk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.LaporanPenimbanganMaterial_Result.Keluar">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.LaporanPenimbanganMaterial_Result.NoPolisi">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.LaporanPenimbanganMaterial_Result.Perusahaan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.LaporanPenimbanganMaterial_Result.Barang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.LaporanPenimbanganMaterial_Result.Keterangan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.LaporanPenimbanganMaterial_Result.Berat1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.LaporanPenimbanganMaterial_Result.Berat2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.LaporanPenimbanganMaterial_Result.Netto">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.LaporanPenimbanganMaterial_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ListAspal_Result.CreateListAspal_Result(System.Int32)">
+	<summary>
+ Create a new ListAspal_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.ListAspal_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListAspal_Result.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.ListAspal_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ListDataAMP_Result.CreateListDataAMP_Result(System.Int64,System.Int32,System.Int32,System.String)">
+	<summary>
+ Create a new ListDataAMP_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="idShift">Initial value of the IdShift property.</param>
+	<param name="iDProject">Initial value of the IDProject property.</param>
+	<param name="packageName">Initial value of the PackageName property.</param>
+</member><member name="P:MDK_ERP.ListDataAMP_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListDataAMP_Result.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListDataAMP_Result.Produk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListDataAMP_Result.DateUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListDataAMP_Result.Operator">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListDataAMP_Result.IdShift">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListDataAMP_Result.Shift">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListDataAMP_Result.IDProject">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListDataAMP_Result.PackageName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.ListDataAMP_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ListKomposisi_Result.CreateListKomposisi_Result(System.Int32)">
+	<summary>
+ Create a new ListKomposisi_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.ListKomposisi_Result.produk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListKomposisi_Result.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListKomposisi_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListKomposisi_Result.IDMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListKomposisi_Result.IDMaterialComposition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListKomposisi_Result.MachineType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListKomposisi_Result.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListKomposisi_Result.Composition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListKomposisi_Result.CompositionUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListKomposisi_Result.ConversionAmount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.ListKomposisi_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ListMaterial_Result.CreateListMaterial_Result(System.Int32,System.Double)">
+	<summary>
+ Create a new ListMaterial_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="stock">Initial value of the Stock property.</param>
+</member><member name="P:MDK_ERP.ListMaterial_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListMaterial_Result.Code">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListMaterial_Result.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListMaterial_Result.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListMaterial_Result.isInventory">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListMaterial_Result.MachineType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListMaterial_Result.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListMaterial_Result.Stock">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.ListMaterial_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ListRatio_Result.CreateListRatio_Result(System.Int32)">
+	<summary>
+ Create a new ListRatio_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.ListRatio_Result.Material">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListRatio_Result.Satuan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListRatio_Result.Rasio">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListRatio_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.ListRatio_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ListSolar_Result.CreateListSolar_Result(System.Int64)">
+	<summary>
+ Create a new ListSolar_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.ListSolar_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListSolar_Result.DateUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListSolar_Result.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListSolar_Result.MachineName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListSolar_Result.OperatorName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListSolar_Result.IdMachine">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.ListSolar_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:MDK_ERP.ListTimbangan1_Result.CreateListTimbangan1_Result(System.Int64)">
+	<summary>
+ Create a new ListTimbangan1_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.JamMasuk">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.NoPolisi">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.Sopir">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.IdCompany">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.NamaPeru">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.Material">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.IdMaterial">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.Berat1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.Keterangan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.Clerk1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.ListTimbangan1_Result.Copy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.ListTimbangan1_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.produkCompositions_Result.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.produkCompositions_Result.IDMaterialComposition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.produkCompositions_Result.IdMeasurementUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.produkCompositions_Result.ASPHAL">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:MDK_ERP.produkCompositions_Result.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:MDK_ERP.produkCompositions_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member>
+</members>
+</doc>

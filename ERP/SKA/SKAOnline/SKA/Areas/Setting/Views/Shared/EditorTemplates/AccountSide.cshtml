@@ -1,0 +1,3 @@
+﻿@using Telerik.Web.Mvc.UI
+
+@Html.Telerik().DropDownList().Name("AccountSide").DataBinding(binding => binding.Ajax().Select("GetAccountSide", "SetupJournalAccount"))

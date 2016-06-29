@@ -1,0 +1,74 @@
+﻿@model SKA.Areas.Setting.Models.ViewModels.BeginningBalanceViewModel
+           @using Telerik.Web.Mvc.UI
+
+@{
+    ViewBag.Title = "Setting - Saldo Awal";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+}
+
+<div class="box-head">
+<h2>Saldo Awal</h2>
+</div>
+
+<div class ="box-content">
+@using (Html.BeginForm())
+{
+       @Html.ValidationSummary(true)
+        <table>
+                <tr>
+                    <td>Kode Perkiraan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.AccountCode)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nama Perkiraan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.DisplayFor(model => model.AccountName)
+                    </td>
+                </tr>
+            </table>
+            @(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.BeginningBalanceViewModel>()
+            .Name("GridView")
+
+            .DataKeys(keys =>
+            {
+                keys.Add(p => p.Id);
+            })
+            .DataBinding(dataBinding =>
+            {
+                dataBinding.Ajax()
+                    .Select("_SelectBeginningBalance", "ChartofAccount")
+                    .Update("_UpdateDetail", "ChartofAccount");
+            })
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.AccountId).Hidden();
+                columns.Bound(p => p.AccountCode).Title("Kode Perkiraan").ReadOnly();
+                columns.Bound(p => p.AccountName).Title("Nama Perkiraan").ReadOnly();
+                columns.Bound(p => p.Debet).Format("Rp. {0:N}");
+                columns.Bound(p => p.Kredit).Format("Rp. {0:N}");
+                columns.Bound(p => p.TransactionDate).Title("Tanggal").Format("{0:dd-MM-yyyy}");
+                columns.Bound(p => p.BranchId).Hidden();
+                columns.Bound(p => p.BeginningBalanceBranchId).Hidden();
+                columns.Command(commands =>
+                {
+                    commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                });
+            })
+            
+            .Pageable()
+            .Sortable()
+            .Filterable()
+          )
+    
+    <br />
+        <p>
+                <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "ChartofAccount", null)">Kembali</a>
+        </p> 
+}
+</div>

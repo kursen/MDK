@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DsMDK">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=HALOTECSERVER\SQLSERVER2008R2;Initial Catalog=MDK</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>a8f46a72-6874-4cab-bfe0-53ae33a7443f</DataSourceID>
+</RptDataSource>

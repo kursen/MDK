@@ -1,0 +1,3 @@
+﻿@using Telerik.Web.Mvc.UI
+
+@Html.Telerik().AutoComplete().Name("AccountCode").DataBinding(binding => binding.Ajax().Select("GetAccountCodeSelectList", "SetupJournalAccount").Cache(false))

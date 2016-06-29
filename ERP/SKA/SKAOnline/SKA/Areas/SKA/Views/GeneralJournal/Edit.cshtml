@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+<h2>Ubah Data Jurnal Umum</h2>
+</div>
+
+@Html.Partial("_CreateOrEdit")
+@section HeadContent{
+    <style type = "text/css">
+    .t-autocomplete, .text-box-single-line{
+        width: 300px;
+    }
+    </style>

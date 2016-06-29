@@ -1,0 +1,28 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Jurnal";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Jurnal</h2>
+</div>
+<div class="box-content">
+    @(Html.Telerik().TreeView()
+            .Name("TreeView")
+            .Items(item =>
+            {
+                item.Add()
+                    .Text("A. Daftar Utang Harus Dibayar").Action("Index","DHHDJournal");
+                /*item.Add()
+                    .Text("B. Rekening").Action("Index","AccountJournal");*/
+                /*item.Add()
+                    .Text("C. Penerimaan Kas").Action("Index", "CashReceiptJournal");*/
+                item.Add()
+                    .Text("B. Pembayaran Kas").Action("Index","CashPaymentJournal");
+                /*item.Add()
+                    .Text("E. Pengeluaran Bahan Instalasi dan Kimia").Action("Index","PBIKJournal");*/
+                item.Add()
+                    .Text("C. Umum").Action("Index","GeneralJournal");
+            })
+    )
+</div>

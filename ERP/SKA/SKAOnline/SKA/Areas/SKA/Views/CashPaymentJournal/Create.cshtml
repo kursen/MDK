@@ -1,0 +1,309 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.CashPaymentJournalViewModel
+@using Telerik.Web.Mvc.UI
+<script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@{
+    ViewBag.Title = "Jurnal Pembayaran Kas - Tambah Data ";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+
+<div class ="box-head">
+<h2>Tambah Data Jurnal Pembayaran Kas</h2>
+</div>
+<div class="box-content">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <table>
+            <tr>
+                <td>
+                    Nomor Voucher
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.VoucherNumber, new { maxlength = "50", style = "width:100px ", onBlur = "javascript:onChanges();" })
+                    @Html.ValidationMessageFor(model => model.VoucherNumber)
+                    <img src = "@Url.Content("~/Content/images/check.png")" id = "valid" style ="display:none"/>
+                    <img src = "@Url.Content("~/Content/images/cross.png")" id = "invalid" style = "display:none"/>
+                    <label id = "message"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Keterangan
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextAreaFor(model => model.Description, new { maxlength = "255", style = "width:250px" })
+                    @Html.ValidationMessageFor(model => model.Description)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nomor Cek
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.CheckNumber, new { maxlength = "10", style = "120px" })
+                    @Html.ValidationMessageFor(model => model.CheckNumber)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tanggal Cek
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @(Html.Telerik().DatePickerFor(model => model.PaymentDate).Name("PaymentDate").Format("dd-MM-yyyy").HtmlAttributes(new { style = "width:160px" }))
+                    @Html.ValidationMessageFor(model => model.PaymentDate)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tanggal Pembayaran
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @(Html.Telerik().DatePickerFor(model => model.JBKDate).Name("JBKDate").Format("dd-MM-yyyy").HtmlAttributes(new { style = "width:160px" }))
+                    @Html.ValidationMessageFor(model => model.JBKDate)
+                </td>
+            </tr>
+        </table>
+        
+        @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.CashPaymentDetailViewModel>()
+        .Name("Grid")
+
+        .DataKeys(keys =>
+        {
+            keys.Add(p => p.Id);
+        })
+        .ToolBar(commands => commands.Insert().ButtonType(GridButtonType.Text).ImageHtmlAttributes(new { style = "margin-left:0" }))
+
+        .DataBinding(dataBinding =>
+        {
+            dataBinding.Ajax()
+                .Select("_SelectDetail", "CashPaymentJournal")
+                .Insert("_InsertDetail", "CashPaymentJournal")
+                .Update("_UpdateDetail", "CashPaymentJournal")
+                .Delete("_DeleteDetail", "CashPaymentJournal");
+        })
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.AccountCode).Title("Perkiraan").Width(300);
+            columns.Bound(p => p.Debet).Format("{0:N}").Width(150);
+            columns.Bound(p => p.Kredit).Format("{0:N}").Width(150);
+            columns.Bound(p => p.Id).Hidden();
+            columns.Command(commands =>
+            {
+                commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                commands.Delete().ButtonType(GridButtonType.ImageAndText);
+            }).Width(220).Title("");
+        })
+        .ClientEvents(events =>
+        {
+            events.OnDataBound("Grid_OnDataBound");
+            events.OnEdit("onEdit");
+            events.OnError("onError");
+        }
+        )
+        .Pageable()
+        .Sortable()
+        .Filterable()
+      )
+       <br />
+         <table>
+            <tr>
+                <td>Total Debet</td>
+                <td>@Html.Telerik().CurrencyTextBoxFor(model => model.AmountDebet).Name("AmountDebet").EmptyMessage("").CurrencySymbol("Rp. ")</td>
+                <td>Total Kredit</td>
+                <td>@Html.Telerik().CurrencyTextBoxFor(model => model.AmountKredit).Name("AmountKredit").EmptyMessage("").CurrencySymbol("Rp. ")</td>
+            </tr>
+        </table>
+        <br />
+        <input class="t-button" style="width: 60px" type="submit" value="Simpan" />
+        <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "CashPaymentJournal", null)">
+            Batal</a>
+    }
+</div>
+@Html.HiddenFor(model => model.Id)
+@Html.Hidden("urlCheckKreditDebet", Url.Action("CheckDebetKredit", "CashPaymentJournal"))
+@Html.Hidden("StatusBalance")
+@Html.Hidden("urlCheckNumber", Url.Action("CheckNumber", "CashPaymentJournal"))
+<script type="text/javascript">
+    function onChanges(e) {
+        var urlNumber = $("#urlCheckNumber").val();
+        var vouchernumber = $("#VoucherNumber").val();
+        var id = $("#Id").val();
+        $.post(urlNumber,
+                    { VoucherNumber: vouchernumber,
+                    Id : id },
+                function (data) {
+                    if (data != "") {
+                        $("#valid").hide();
+                        $("#invalid").show();
+                        $("#message").html("Nomor sudah ada, silahkan masukkan nomor yang lain.");
+                    }
+                    else {
+                        $("#valid").show();
+                        $("#invalid").hide();
+                        $("#message").html("Nomor diterima.");
+                    }
+                });
+    }
+    function onError(e) {
+        if (e.textStatus == "modelstateerror") {
+            alert(e.modelState.AccountCode.errors[0]);
+        }
+    }
+
+    function onEdit(e) {
+        $("#AccountCode").select();
+        $("#Debet").hide();
+        $("#Kredit").hide();
+    }
+
+    function onSelectItem(e) {
+        if (e.keyCode == 9 || e.keyCode == 13) {
+            var url = $("#urlCheckKreditDebet").val();
+            var accountCode = $("#AccountCode").val();
+            //alert(accountCode);
+            $.post(url,
+                    { AccountCode: accountCode },
+                    function (data) {
+                        if (data == "D") {
+                            $("#Debet").show();
+                            $("#Kredit").hide();
+                            $("#Debet").focus();
+
+                            //get current balance
+                            var balance = Math.abs(CountBalance(data));
+                            $("#Debet").val(balance);
+                            $("#Debet").select();
+                            //set new balance status    
+                            $("#StatusBalance").val("D");
+                        } else {
+                            $("#Kredit").show();
+                            $("#Debet").hide();
+                            $("#Kredit").focus();
+                            //get current balance
+                            var balance = Math.abs(CountBalance(data));
+                            $("#Kredit").val(balance);
+                            $("#Kredit").select();
+                            //set new balance status
+                            $("#StatusBalance").val("K");
+                        }
+                    });
+
+        }
+    }
+
+
+    //function for count balance from debet and credit.
+    function CountBalance(status) {
+        var balance = 0;
+        var totalDebet = 0;
+        var totalKredit = 0;
+
+        $.each($('#Grid').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden column.
+                var debet = $($(row).find('td')[1]).text();
+                debet = debet.replace(/,/gi, "");
+                var kredit = $($(row).find('td')[2]).text();
+                kredit = kredit.replace(/,/gi, "");
+
+                // note: make sure to convert the amount to decimal/float data type.
+                if (debet) {
+                    totalDebet = totalDebet + parseFloat(debet);
+                }
+                if (kredit) {
+                    totalKredit = totalKredit + parseFloat(kredit);
+                }
+
+                balance = totalDebet - totalKredit;
+
+
+
+            }
+        });
+
+        var oldstatus = $("#StatusBalance").val();
+
+        //clear balance if new status is larger than 0 and the balance will be entry on this event
+        if ((status == "D") && (status == oldstatus)) {
+            if (balance > 0) {
+                balance = 0;
+            }
+        }
+        else if ((status == "D") && (status != oldstatus)) {
+            if (balance > 0) {
+                balance = 0;
+            }
+        }
+        else if ((status == "K") && (status == oldstatus)) {
+            if (balance < 0) {
+                balance = 0;
+            }
+        }
+        else if ((status == "K") && (status != oldstatus)) {
+            if (balance < 0) {
+                balance = 0;
+            }
+        }
+
+        return balance;
+    }
+
+    function Grid_OnDataBound(e) {
+        total = 0;
+        totalDebet = 0;
+        totalKredit = 0;
+
+        $.each($('#Grid').find('tbody tr'), function (idx, row) {
+            // check for the row is header or not. Index 0 means header row.
+            if (idx >= 0) {
+                // get hidden column.
+                var debet = $($(row).find('td')[1]).text();
+                debet = debet.replace(/,/gi, "");
+                var kredit = $($(row).find('td')[2]).text();
+                kredit = kredit.replace(/,/gi, "");
+
+                // note: make sure to convert the amount to decimal/float data type.
+                if (debet) {
+                    totalDebet = totalDebet + parseFloat(debet);
+                }
+                if (kredit) {
+                    totalKredit = totalKredit + parseFloat(kredit);
+                }
+                total = totalDebet - totalKredit
+
+            }
+        });
+
+        var input = $("#AmountDebet").data("tTextBox");
+        input.value(totalDebet);
+        var input2 = $("#AmountKredit").data("tTextBox");
+        input2.value(totalKredit);
+    }
+</script>
+
+
+@section HeadContent{
+    <style type = "text/css">
+    .t-autocomplete, .text-box-single-line{
+        width: 300px;
+    }
+    </style>

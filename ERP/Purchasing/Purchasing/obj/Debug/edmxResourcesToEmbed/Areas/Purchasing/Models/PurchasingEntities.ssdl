@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PurchasingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PurchasingModelStoreContainer">
+    <EntitySet Name="Office" EntityType="PurchasingModel.Store.Office" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProjectInfo" EntityType="PurchasingModel.Store.ProjectInfo" store:Type="Tables" Schema="PMn" />
+    <EntitySet Name="ApprovalStatus" EntityType="PurchasingModel.Store.ApprovalStatus" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="CurrencyMaster" EntityType="PurchasingModel.Store.CurrencyMaster" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="DeliveryOrder" EntityType="PurchasingModel.Store.DeliveryOrder" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="DeliveryOrderDetail" EntityType="PurchasingModel.Store.DeliveryOrderDetail" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="DepartmentPRDetail" EntityType="PurchasingModel.Store.DepartmentPRDetail" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="DepartmentPurchaseRequisition" EntityType="PurchasingModel.Store.DepartmentPurchaseRequisition" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="Measure" EntityType="PurchasingModel.Store.Measure" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="PriceComparison" EntityType="PurchasingModel.Store.PriceComparison" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="PriceComparisonDetail" EntityType="PurchasingModel.Store.PriceComparisonDetail" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="ProjectPurchaseRequisition" EntityType="PurchasingModel.Store.ProjectPurchaseRequisition" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="ProjectPurchaseRequisitionDetail" EntityType="PurchasingModel.Store.ProjectPurchaseRequisitionDetail" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="PurchaseOrder" EntityType="PurchasingModel.Store.PurchaseOrder" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="PurchaseOrderDetail" EntityType="PurchasingModel.Store.PurchaseOrderDetail" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="RequestType" EntityType="PurchasingModel.Store.RequestType" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="Vendor" EntityType="PurchasingModel.Store.Vendor" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="VendorCategory" EntityType="PurchasingModel.Store.VendorCategory" store:Type="Tables" Schema="prc" />
+    <EntitySet Name="CompanyLists" EntityType="PurchasingModel.Store.CompanyLists" store:Type="Tables" Schema="Prod" />
+    <AssociationSet Name="FK_DeliveryOrderDetail_DeliveryOrder" Association="PurchasingModel.Store.FK_DeliveryOrderDetail_DeliveryOrder">
+      <End Role="DeliveryOrder" EntitySet="DeliveryOrder" />
+      <End Role="DeliveryOrderDetail" EntitySet="DeliveryOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeliveryOrderDetail_PurchaseOrderDetail" Association="PurchasingModel.Store.FK_DeliveryOrderDetail_PurchaseOrderDetail">
+      <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetail" />
+      <End Role="DeliveryOrderDetail" EntitySet="DeliveryOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentPRDetail_DepartmentPurchaseRequisition" Association="PurchasingModel.Store.FK_DepartmentPRDetail_DepartmentPurchaseRequisition">
+      <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisition" />
+      <End Role="DepartmentPRDetail" EntitySet="DepartmentPRDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentPurchaseRequisition_Office" Association="PurchasingModel.Store.FK_DepartmentPurchaseRequisition_Office">
+      <End Role="Office" EntitySet="Office" />
+      <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepartmentPurchaseRequisition_RequestType" Association="PurchasingModel.Store.FK_DepartmentPurchaseRequisition_RequestType">
+      <End Role="RequestType" EntitySet="RequestType" />
+      <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriceComparison_DepartmentPurchaseRequisition" Association="PurchasingModel.Store.FK_PriceComparison_DepartmentPurchaseRequisition">
+      <End Role="DepartmentPurchaseRequisition" EntitySet="DepartmentPurchaseRequisition" />
+      <End Role="PriceComparison" EntitySet="PriceComparison" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriceComparisonDetail_DepartmentPRDetail" Association="PurchasingModel.Store.FK_PriceComparisonDetail_DepartmentPRDetail">
+      <End Role="DepartmentPRDetail" EntitySet="DepartmentPRDetail" />
+      <End Role="PriceComparisonDetail" EntitySet="PriceComparisonDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriceComparisonDetail_PriceComparison" Association="PurchasingModel.Store.FK_PriceComparisonDetail_PriceComparison">
+      <End Role="PriceComparison" EntitySet="PriceComparison" />
+      <End Role="PriceComparisonDetail" EntitySet="PriceComparisonDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition" Association="PurchasingModel.Store.FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition">
+      <End Role="ProjectPurchaseRequisition" EntitySet="ProjectPurchaseRequisition" />
+      <End Role="ProjectPurchaseRequisitionDetail" EntitySet="ProjectPurchaseRequisitionDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrderDetail_PurchaseOrder" Association="PurchasingModel.Store.FK_PurchaseOrderDetail_PurchaseOrder">
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrder" />
+      <End Role="PurchaseOrderDetail" EntitySet="PurchaseOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendor_VendorCategory" Association="PurchasingModel.Store.FK_Vendor_VendorCategory">
+      <End Role="VendorCategory" EntitySet="VendorCategory" />
+      <End Role="Vendor" EntitySet="Vendor" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Office">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="varchar" MaxLength="30" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Abbreviation" Type="varchar" MaxLength="30" />
+    <Property Name="Parent_ID" Type="int" Nullable="false" />
+    <Property Name="Ordinal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectCode" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="ProjectTitle" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="DateStart" Type="datetime" Nullable="false" />
+    <Property Name="NumberOfDays" Type="int" Nullable="false" />
+    <Property Name="DayUnit" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="ContractNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyInfoId" Type="int" Nullable="false" />
+    <Property Name="ContractValue" Type="money" Nullable="false" />
+    <Property Name="ConsultanName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Location" Type="varchar" MaxLength="100" />
+    <Property Name="Archive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApprovalStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CurrencyMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CurrencyName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DeliveryOrder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReceiptDate" Type="datetime" Nullable="false" />
+    <Property Name="PurchaseOrderId" Type="int" Nullable="false" />
+    <Property Name="DocNo" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="ReceiptBy_Name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="DeliveryOrderDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DeliveryOrderId" Type="int" Nullable="false" />
+    <Property Name="PurchaseOrderDetailId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepartmentPRDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentPurchaseRequisitionId" Type="int" Nullable="false" />
+    <Property Name="ItemName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Allocation" Type="varchar" MaxLength="150" />
+    <Property Name="Quantity" Type="decimal" Nullable="false" />
+    <Property Name="UnitQuantity" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Currency" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="EstUnitPrice" Type="money" Nullable="false" />
+    <Property Name="TotalEstPrice" Type="money" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="DepartmentPurchaseRequisition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RecordNo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="OfficeID" Type="int" Nullable="false" />
+    <Property Name="RequestTypeId" Type="int" Nullable="false" />
+    <Property Name="RequestDate" Type="date" Nullable="false" />
+    <Property Name="DeliveryDate" Type="date" Nullable="false" />
+    <Property Name="DeliveryTo" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="DeliveryAddress" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="RequestedBy_Name" Type="varchar" MaxLength="150" />
+    <Property Name="RequestedBy_Occupation" Type="varchar" MaxLength="150" />
+    <Property Name="ApprovedBy_Name" Type="varchar" MaxLength="150" />
+    <Property Name="ApprovedBy_Occupation" Type="varchar" MaxLength="150" />
+    <Property Name="KnownBy_Name" Type="varchar" MaxLength="150" />
+    <Property Name="KnownBy_Occupation" Type="varchar" MaxLength="150" />
+    <Property Name="DocState" Type="int" Nullable="false" />
+    <Property Name="DocApproveRejectDate" Type="datetime" />
+    <Property Name="Archive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Measure">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MeasureName" Type="varchar" MaxLength="50" />
+    <Property Name="Remarks" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="PriceComparison">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="PurchaseRequisitionID" Type="int" Nullable="false" />
+    <Property Name="VendorID1" Type="int" Nullable="false" />
+    <Property Name="VendorID2" Type="int" Nullable="false" />
+    <Property Name="VendorID3" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PriceComparisonDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PriceComparisonID" Type="int" Nullable="false" />
+    <Property Name="PRDetailID" Type="int" Nullable="false" />
+    <Property Name="Price1" Type="money" Nullable="false" />
+    <Property Name="Price2" Type="money" Nullable="false" />
+    <Property Name="Price3" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectPurchaseRequisition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RecordNo" Type="varchar" MaxLength="50" />
+    <Property Name="ProjectCode" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="ProjectTitle" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="RequestDate" Type="date" Nullable="false" />
+    <Property Name="DeliveryDate" Type="date" Nullable="false" />
+    <Property Name="DeliveryTo" Type="varchar" MaxLength="50" />
+    <Property Name="DeliveryAddress" Type="varchar" MaxLength="500" />
+    <Property Name="RequestedBy_Name" Type="varchar" MaxLength="150" />
+    <Property Name="RequestedBy_Occupation" Type="varchar" MaxLength="150" />
+    <Property Name="ApprovedBy_Name" Type="varchar" MaxLength="150" />
+    <Property Name="ApprovedBy_Occupation" Type="varchar" MaxLength="150" />
+    <Property Name="KnownBy_Name" Type="varchar" MaxLength="150" />
+    <Property Name="KnownBy_Occupation" Type="varchar" MaxLength="150" />
+    <Property Name="DocState" Type="int" Nullable="false" />
+    <Property Name="DocApproveRejectDate" Type="datetime" />
+    <Property Name="Archive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectPurchaseRequisitionDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectPurchaseRequisitionId" Type="int" Nullable="false" />
+    <Property Name="ItemName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Brand" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Quantity" Type="decimal" Nullable="false" />
+    <Property Name="UnitQuantity" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Currency" Type="nvarchar" Nullable="false" MaxLength="3" />
+    <Property Name="EstUnitPrice" Type="money" Nullable="false" />
+    <Property Name="TotalEstPrice" Type="money" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="PurchaseOrder">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="OrderDate" Type="date" Nullable="false" />
+    <Property Name="POType" Type="int" Nullable="false" />
+    <Property Name="RQNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="QuotationRef" Type="varchar" MaxLength="100" />
+    <Property Name="ContactPerson_Name" Type="varchar" MaxLength="150" />
+    <Property Name="ContactPerson_Phone" Type="varchar" MaxLength="150" />
+    <Property Name="TermOfPayment" Type="varchar" MaxLength="50" />
+    <Property Name="DeliveryDate" Type="date" />
+    <Property Name="DeliveryTo" Type="varchar" MaxLength="50" />
+    <Property Name="DeliveryAddress" Type="varchar" MaxLength="500" />
+    <Property Name="PreparedBy_Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="ApprovedBy_Name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Remarks" Type="varchar" MaxLength="500" />
+    <Property Name="Currency" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="DocState" Type="int" Nullable="false" />
+    <Property Name="Archive" Type="bit" Nullable="false" />
+    <Property Name="Vendor_Id" Type="int" />
+    <Property Name="Vendor_CompanyName" Type="varchar" MaxLength="200" />
+    <Property Name="Vendor_ContactName" Type="varchar" MaxLength="200" />
+    <Property Name="Vendor_Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Vendor_Address" Type="text" />
+    <Property Name="Vendor_City" Type="varchar" MaxLength="100" />
+    <Property Name="Vendor_Province" Type="varchar" MaxLength="100" />
+    <Property Name="PPnAdded" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PurchaseOrderDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseOrderId" Type="int" Nullable="false" />
+    <Property Name="PRDetailId" Type="int" Nullable="false" />
+    <Property Name="ItemName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Quantity" Type="decimal" Nullable="false" />
+    <Property Name="UnitQuantity" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="UnitPrice" Type="money" Nullable="false" />
+    <Property Name="TotalPrice" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RequestType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Number" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContactName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Suspended" Type="bit" Nullable="false" />
+    <Property Name="Address" Type="text" />
+    <Property Name="City" Type="nchar" MaxLength="100" />
+    <Property Name="Province" Type="nchar" MaxLength="100" />
+    <Property Name="Zip" Type="nchar" MaxLength="100" />
+    <Property Name="Country" Type="nchar" MaxLength="100" />
+    <Property Name="Fax" Type="nchar" MaxLength="100" />
+    <Property Name="Email" Type="nchar" MaxLength="100" />
+    <Property Name="Web" Type="nchar" MaxLength="100" />
+    <Property Name="Currency" Type="nchar" MaxLength="100" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="NPWPNumber" Type="varchar" MaxLength="50" />
+    <Property Name="NPWPAddress" Type="text" />
+  </EntityType>
+  <EntityType Name="VendorCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CompanyLists">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="int" />
+    <Property Name="Symbol" Type="nvarchar" MaxLength="20" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_DeliveryOrderDetail_DeliveryOrder">
+    <End Role="DeliveryOrder" Type="PurchasingModel.Store.DeliveryOrder" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DeliveryOrderDetail" Type="PurchasingModel.Store.DeliveryOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeliveryOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DeliveryOrderDetail">
+        <PropertyRef Name="DeliveryOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeliveryOrderDetail_PurchaseOrderDetail">
+    <End Role="PurchaseOrderDetail" Type="PurchasingModel.Store.PurchaseOrderDetail" Multiplicity="1" />
+    <End Role="DeliveryOrderDetail" Type="PurchasingModel.Store.DeliveryOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrderDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DeliveryOrderDetail">
+        <PropertyRef Name="PurchaseOrderDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartmentPRDetail_DepartmentPurchaseRequisition">
+    <End Role="DepartmentPurchaseRequisition" Type="PurchasingModel.Store.DepartmentPurchaseRequisition" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DepartmentPRDetail" Type="PurchasingModel.Store.DepartmentPRDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentPurchaseRequisition">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DepartmentPRDetail">
+        <PropertyRef Name="DepartmentPurchaseRequisitionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartmentPurchaseRequisition_Office">
+    <End Role="Office" Type="PurchasingModel.Store.Office" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DepartmentPurchaseRequisition" Type="PurchasingModel.Store.DepartmentPurchaseRequisition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Office">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DepartmentPurchaseRequisition">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepartmentPurchaseRequisition_RequestType">
+    <End Role="RequestType" Type="PurchasingModel.Store.RequestType" Multiplicity="1" />
+    <End Role="DepartmentPurchaseRequisition" Type="PurchasingModel.Store.DepartmentPurchaseRequisition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DepartmentPurchaseRequisition">
+        <PropertyRef Name="RequestTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriceComparison_DepartmentPurchaseRequisition">
+    <End Role="DepartmentPurchaseRequisition" Type="PurchasingModel.Store.DepartmentPurchaseRequisition" Multiplicity="1" />
+    <End Role="PriceComparison" Type="PurchasingModel.Store.PriceComparison" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentPurchaseRequisition">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PriceComparison">
+        <PropertyRef Name="PurchaseRequisitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriceComparisonDetail_DepartmentPRDetail">
+    <End Role="DepartmentPRDetail" Type="PurchasingModel.Store.DepartmentPRDetail" Multiplicity="1" />
+    <End Role="PriceComparisonDetail" Type="PurchasingModel.Store.PriceComparisonDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentPRDetail">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PriceComparisonDetail">
+        <PropertyRef Name="PRDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriceComparisonDetail_PriceComparison">
+    <End Role="PriceComparison" Type="PurchasingModel.Store.PriceComparison" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PriceComparisonDetail" Type="PurchasingModel.Store.PriceComparisonDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PriceComparison">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PriceComparisonDetail">
+        <PropertyRef Name="PriceComparisonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectPurchaseRequisitionDetail_ProjectPurchaseRequisition">
+    <End Role="ProjectPurchaseRequisition" Type="PurchasingModel.Store.ProjectPurchaseRequisition" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ProjectPurchaseRequisitionDetail" Type="PurchasingModel.Store.ProjectPurchaseRequisitionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectPurchaseRequisition">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProjectPurchaseRequisitionDetail">
+        <PropertyRef Name="ProjectPurchaseRequisitionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrderDetail_PurchaseOrder">
+    <End Role="PurchaseOrder" Type="PurchasingModel.Store.PurchaseOrder" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PurchaseOrderDetail" Type="PurchasingModel.Store.PurchaseOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrder">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchaseOrderDetail">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendor_VendorCategory">
+    <End Role="VendorCategory" Type="PurchasingModel.Store.VendorCategory" Multiplicity="0..1" />
+    <End Role="Vendor" Type="PurchasingModel.Store.Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VendorCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vendor">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetDescriptionPurchase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="prc">
+    <Parameter Name="isProject" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="GetNoRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="prc">
+    <Parameter Name="term" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="GetVendorList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="prc" />
+</Schema>

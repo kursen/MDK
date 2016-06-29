@@ -1,0 +1,102 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.SKA.Models.ViewModels.AdditionalCorrectionViewModel
+
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>
+                Jenis
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.Name, new {@readonly = "readonly"})
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Keterangan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tahun
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.Year, new {@readonly = "readonly"})
+            </td>
+        </tr>
+    </table>
+    @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.AdditionalCorrectionDetailViewModel>()
+                .Name("BackupGrid")
+
+            .DataKeys(keys =>
+            {
+                keys.Add(p => p.Id);
+            })
+            .ToolBar(commands => commands.Insert().ButtonType(GridButtonType.ImageAndText).ImageHtmlAttributes(new { style = "margin-left:0" }))
+            .DataBinding(dataBinding =>
+            {
+                dataBinding.Ajax()
+                    .Select("_SelectDetail", "Backup")
+                    .Insert("_InsertDetail", "Backup")
+                    .Update("_UpdateDetail", "Backup")
+                    .Delete("_DeleteDetail", "Backup");
+            })
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.AccountCode).Title("Kode Perkiraan");
+                //columns.Bound(p => p.AccountName).Title("Nama Perkiraan").ReadOnly();
+                columns.Bound(p => p.Amount).Hidden();
+                columns.Bound(p => p.Amount).Title("Jumlah").Format("Rp. {0:N}").Width(210);
+                columns.Bound(p => p.Id).Hidden();
+                columns.Command(commands =>
+                {
+                    commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                    commands.Delete().ButtonType(GridButtonType.ImageAndText);
+                }).Width(220).Title("");
+            })
+            .ClientEvents(events =>
+                {
+                    events.OnEdit("onEdit");
+                })
+            .HtmlAttributes(new { style = "height:50%;" })
+            .Pageable()
+            .Scrollable()
+            .Sortable()
+            .Filterable()
+          )
+
+    <table>
+       <tr>
+            <td></td>
+            <td></td>
+            <td><input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+                &nbsp;
+                <input type="reset" value="Reset" class="t-button" style ="width:60px" />
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "Backup", null)">Kembali</a></td>
+        </tr>
+    </table>
+}
+<script type = "text/javascript">
+    function onEdit(e) {
+        $("#AccountCode").select();
+    }
+</script>

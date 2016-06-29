@@ -1,0 +1,130 @@
+﻿@using Telerik.Web.Mvc.UI;
+@{
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/base/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    @(Html.Telerik().StyleSheetRegistrar()
+                    .DefaultGroup(group => group.Add("telerik.common.css")
+                                                .Add("telerik.webblue.css"))
+    )
+    @RenderSection("HeadContent", false)
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Header -->
+        <div id="header">
+	        <div class="shell">
+		        <!-- Logo + Top Nav -->
+		        <div id="top">
+			        <h1 id="header-logo"></h1>
+			        <div id="top-navigation">
+				        @Html.Partial("_LogOnPartial")
+			        </div>
+		        </div>
+		        <!-- End Logo + Top Nav -->
+		
+		        <!-- Main Nav -->
+		        <div id="navigation">
+			        <ul>
+                        <li><a href="@Url.Action("Index","Home", new { Area = "" })"><span>Home</span></a></li>
+                        @if (userBranchCode == "00")
+                        { 
+                            <li><a href="@Url.Action("Index", "Journal", null)"><span>Jurnal</span></a></li>
+                        }
+                        <li><a href="@Url.Action("Index", "JournalReport", null)"><span>Laporan Jurnal</span></a></li>
+                        <li><a href="@Url.Action("Index", "GeneralLedger", null)"><span>Buku Besar</span></a></li>
+                        @if (userBranchCode != "00")
+                        { 
+                            <li><a href="@Url.Action("ShowReport", "WorkSheet", new { reportName = "WorkSheetCab" })"><span>Neraca Lajur</span></a></li>
+                        }
+                        else
+                        { 
+                            <li><a href="@Url.Action("ShowReport", "WorkSheet", new { reportName = "WorkSheet" })"><span>Neraca Lajur</span></a></li>
+                        }
+                        <li><a href="@Url.Action("Index", "ManagementReport", null)"><span>Laporan Manajemen</span></a></li>
+                        @if (userBranchCode == "00")
+                        {
+                            <li><a href="@Url.Action("Index", "EndofPeriod", null)"><span>Akhir Periode</span></a></li>
+                            @*<li><a href="@Url.Action("Index", "AnotherList", null)"><span>Daftar Lainnya</span></a></li>*@
+                        }
+                        <li><a href="@Url.Action("Index", "BackupDatabase", null)"><span>Backup</span></a></li>
+                        
+                        
+                    </ul>
+		        </div>
+		        <!-- End Main Nav -->
+	        </div>
+        </div>
+        <!-- End Header -->
+
+        <!-- Container -->
+        <div id="container">
+	        <div class="shell">		
+		        <br />
+		        <!-- Main -->
+		        <div id="main">
+			        <div class="clearBoth">&nbsp;</div>
+			
+			        <!-- Content -->
+			        <div id="content">	
+                        <!-- Box -->
+				        <div class="box">
+                            @if (ViewData["ErrorMessage"] != null)
+                            {
+                            <div id="MessageDialog"><font color = "red" size = 2><b>@Html.Raw(ViewData["ErrorMessage"].ToString())</b></font></div>
+                            }
+					        @RenderBody()
+				        </div>
+				        <!--End Box -->
+			        </div>
+			        <!-- End Content -->
+			
+			        <div class="clearBoth">&nbsp;</div>			
+		        </div>
+		        <!-- Main -->
+	        </div>
+        </div>
+        <!-- End Container -->
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+	    <div class="shell">
+		    <div class="right">
+			    <span>&copy; PDAM Tirtanadi Medan @DateTime.Now.Year All RIghts Reserved
+		        </span>
+	    </div>
+    </div>
+    <!-- End Footer -->
+
+    @Html.Telerik().ScriptRegistrar()
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script>
+    @if (ViewData["Message"] != null)
+    {        
+        <script type="text/javascript">
+            $(function () {
+                $("#MessageDialog").dialog({
+                    buttons: {
+                        "Ok": function () { $(this).dialog("close"); }
+                    },
+                    modal: true
+                });
+            });
+        </script>
+    }
+</body>
+</html>

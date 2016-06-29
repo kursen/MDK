@@ -1,0 +1,76 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+<div class="box-head">
+    <h2>Jurnal Pembayaran Kas</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "CashPaymentJournal"))
+{ 
+    <table>
+        <tr>
+            <td>
+                Cari
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBox("searchValue")
+            </td>
+            <td>
+                <input class ="t-button" type="submit" value="Cari" style="width:60px"/>
+            </td>
+        </tr>
+    </table>
+}
+    @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.CashPaymentJournalViewModel>()
+            .Name("CashPaymentJournalTypeGrid")
+            .ToolBar(toolbar =>
+            {
+                toolbar.Custom().Action("Create", "CashPaymentJournal").Text("Tambah Data").ButtonType(GridButtonType.Text).HtmlAttributes(new { style = "width:100px" });
+            })
+            .Columns(col =>
+            {
+                col.Bound(o => o.Id).ClientTemplate(
+                    "<# if (PaymentDate > ClosingDate) { #>" + Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()
+                    + "<# } #>").Title("").Sortable(false).Width(50);
+                if (User.IsInRole("User") == false)
+                {
+                    col.Bound(o => o.Id).ClientTemplate("<# if (PaymentDate > ClosingDate) { #>" + Html.ActionLink("Hapus", "Delete", new { id = "<#= Id #>" }).ToString()
+                    + "<# } #>").Title("").Sortable(false).Width(50);
+                }
+
+                col.Bound(o => o.Id).ClientTemplate(
+                    "<# if (PaymentDate <= ClosingDate) { #>" +
+                    Html.ActionLink("Detail", "Detail", new { id = "<#= Id #>" }).ToString() +
+                    "<# } #>").Title("").Sortable(false).Width(50);
+                
+                col.Bound(o => o.VoucherNumber).Title("Nomor Voucher").Width(100);
+                col.Bound(o => o.JBKDate).Title("Tgl Pembayaran").Format("{0:dd-MM-yyyy}").Width(120);
+                col.Bound(o => o.PaymentDate).Format("{0:dd-MM-yyyy}").Title("Tgl Cek").Width(100);
+                col.Bound(o => o.Description).Title("Keterangan");
+            })
+            .ClientEvents(events =>
+                            events.OnDataBound("onDataBound")
+                )
+                        .DataBinding(binding => binding.Ajax().Select("Getlist", "CashPaymentJournal", new { searchValue = @ViewBag.SearchValue }))
+            .Sortable(sorting =>
+                            sorting.OrderBy(sortOrder => sortOrder.Add(o => o.VoucherNumber).Ascending())
+                )
+            .Filterable()
+            .Pageable()
+)
+</div>
+<script type ="text/javascript">
+    var firstTimeLoad = true;
+    function onDataBound(e) {
+        if (firstTimeLoad) {
+            firstTimeLoad = false;
+            var grid = $('#CashPaymentJournalTypeGrid').data('tGrid');
+            grid.pageTo(grid.totalPages());
+        }
+    }
+</script>

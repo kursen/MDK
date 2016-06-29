@@ -1,0 +1,66 @@
+﻿@model SKA.Areas.VoucherKas.Models.ViewModel.BankViewModel
+@using Telerik.Web.Mvc.UI
+
+<script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div class ="box-content">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>Nama Bank</td>
+            <td>:</td>
+            <td>
+                @Html.TextBoxFor(model => model.BankName, new { maxlength = "50" })
+                @Html.ValidationMessageFor(model => model.BankName)
+            </td>
+        </tr>
+        <tr>
+            <td>Nomor AC</td>
+            <td>:</td>
+            <td>
+                @Html.TextBoxFor(model => model.ACNumber, new { maxlength = "20", style = "width:100px ", onBlur = "javascript:onChanges();" })
+                @Html.ValidationMessageFor(model => model.ACNumber)
+                <img src = "@Url.Content("~/Content/images/check.png")" id = "valid" style ="display:none" alt = "home"/>
+                <img src = "@Url.Content("~/Content/images/cross.png")" id = "invalid" style = "display:none" alt = "home"/>
+                <label id = "message"></label>
+            </td>
+        </tr>
+    </table>
+    <br />
+        <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+        <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "Bank", null)">Kembali</a>
+}
+</div>
+@Html.Hidden("urlCheckACNumber", Url.Action("CheckACNumber", "Bank"))
+@Html.HiddenFor(model => model.Id)
+<script type="text/javascript">
+    function onChanges(e) {
+        var urlNumber = $("#urlCheckACNumber").val();
+        var acnumber = $("#ACNumber").val();
+        var id = $("#Id").val();
+        $.post(urlNumber,
+                    { ACNumber: acnumber,
+                        Id: id
+                    },
+                function (data) {
+                    if (data != "") {
+                        $("#valid").hide();
+                        $("#invalid").show();
+                        $("#message").html("Nomor AC sudah ada, silahkan masukkan nomor AC yang lain.");
+                    }
+                    else {
+                        $("#valid").show();
+                        $("#invalid").hide();
+                        $("#message").html("Nomor AC diterima.");
+                    }
+                }
+        );
+    }
+</script>
+
+
+

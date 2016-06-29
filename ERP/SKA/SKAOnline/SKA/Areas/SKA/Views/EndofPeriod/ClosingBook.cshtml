@@ -1,0 +1,96 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.EndofPeriodViewModel
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Tutup Buku";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+@*<script type = "text/javascript">
+	function openDialog() {
+		$( "#dialog:ui-dialog" ).dialog( "destroy" );
+
+		$("#dialog-confirm").dialog({
+		    resizable: false,
+		    height: 140,
+		    modal: true,
+		    buttons: {
+		        "Ya": function () {
+		            document.op("Index");
+		        },
+		        "Tidak": function () {
+		            $(this).dialog("close");
+		        }
+		    }
+		});
+	}
+</script>*@
+<div class="box-head">
+	<h2>Tutup Buku</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm()) {
+    <p>
+        <b>PERHATIAN!!</b>
+        <br /><br />
+        Kami sarankan anda membuat cadangan file data anda sebelum melanjutkan proses ini.
+        <br />
+        Sudahkan anda mencetak Laporan:
+    </p>    
+    <br />
+        <ul>
+            <li>RUGI LABA</li>
+            <li>NERACA</li>
+        </ul>
+    <br />
+    <table>
+        <tr>
+            <td>
+                Tanggal tutup buku
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.Telerik().DatePicker().Name("ClosingDate").Format("dd-MM-yyyy").Name("ClosingDate").HtmlAttributes(new { style = "width:140px" })
+                @Html.ValidationMessageFor(model => model.ClosingDate)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Referensi/Nomor Bukti   
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.EditorFor(model => model.EvidenceNumber)
+                @Html.ValidationMessageFor(model => model.EvidenceNumber)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Keterangan
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.EditorFor(model => model.Information)
+                @Html.ValidationMessageFor(model => model.Information)
+            </td>
+        </tr>
+    </table>
+    <br />
+    
+        <p>
+                <input type="submit" value="Lanjutkan" class="t-button" style ="width:60px" />
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index","EndofPeriod",null )">Kembali</a>
+        </p>
+    }
+    
+</div>
+
+@*<div id="dialog-confirm" style="display:none;" title="Konfirmasi">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Apakah anda yakin untuk melanjutkan proses ini?</p>
+</div>*@

@@ -1,0 +1,79 @@
+﻿@model SKA.Models.PettyCashSetup
+
+@{
+    ViewBag.Title = "Voucher Kas Kecil - Edit Setup";
+    Layout = "~/Areas/PettyCashes/Views/Shared/_PettyCashesLayout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div class="box-head">
+	<h2>Ubah Setup Voucher Kas Kecil</h2>
+</div>
+<div class="box-content">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <table>
+                <tr>
+                    <td>Disetujui</td>
+                    <td>:</td>
+                    <td>
+                        @Html.EditorFor(model => model.ApproverName)
+                        @Html.ValidationMessageFor(model => model.ApproverName)
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>Jabatan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.EditorFor(model => model.ApproverPosition)
+                        @Html.ValidationMessageFor(model => model.ApproverPosition)
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>Dibuat</td>
+                    <td>:</td>
+                    <td>
+                        @Html.EditorFor(model => model.MakerName)
+                        @Html.ValidationMessageFor(model => model.MakerName)
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>Jabatan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.EditorFor(model => model.MakerPosition)
+                        @Html.ValidationMessageFor(model => model.MakerPosition)
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>Pembuat Rekap</td>
+                    <td>:</td>
+                    <td>
+                        @Html.EditorFor(model => model.RecapitulationMaker)
+                        @Html.ValidationMessageFor(model => model.RecapitulationMaker)
+                    </td>
+                 </tr>
+                 <tr>
+                    <td>Jabatan</td>
+                    <td>:</td>
+                    <td>
+                        @Html.EditorFor(model => model.RecapitulationMakerPosition)
+                        @Html.ValidationMessageFor(model => model.RecapitulationMakerPosition)
+                    </td>
+                 </tr>
+                 <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                       <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+                       &nbsp
+                       <a class ="t-button" style ="width:60px" href="@Url.Action("Index","PettyCashesSetup",null )">Kembali</a>
+                       
+                    </td>
+                 </tr>
+        </table>
+    }
+
+</div>

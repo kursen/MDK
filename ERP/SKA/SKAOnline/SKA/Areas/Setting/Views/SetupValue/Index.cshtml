@@ -1,0 +1,32 @@
+﻿@model SKA.Models.SystemVoucherSetup
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Setting - Setup Nilai Ambang";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+}
+<div class="box-head">
+	<h2>Setup Nilai Ambang</h2>
+</div>
+<div class="box-content">
+    <table class="basic-table">
+        <tr>
+            <td>Nilai</td>
+            <td>:</td>
+            <td>
+                @Html.Telerik().CurrencyTextBox().Name("Value").Value((decimal)Model.Value).CurrencySymbol("Rp. ").Enable(false)
+            </td>
+        </tr>
+        @if (User.IsInRole("User") == false && userBranchCode == "00")
+        {
+            <tr>
+            <td colspan="3" align="right"><br /><a class="t-button" style="width:60px" href="@Url.Action("Edit/1", "SetupValue", null)">Edit</a></td></tr>
+        }
+        
+        </table>
+</div>

@@ -1,0 +1,27 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Ikhtisar Utang Jangka Panjang";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Ikhtisar Utang Jangka Panjang</h2>
+</div>
+<div class="box-content">
+    @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.OverviewLongTermDebtViewModel>()
+                    .Name("OverviewLongTermDebtGrid")
+                    .Columns(col =>
+                    {
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                        col.Bound(o => o.Name).Title("Uraian").Width(250);
+                        col.Bound(o => o.Month).Title("Bulan");
+                        col.Bound(o => o.ThisYearorMonth).Title("Tahun ini (bulan ini)").Format("Rp. {0:N}");
+                        col.Bound(o => o.Residual).Title("Sisa").Format("Rp. {0:N}");
+                        col.Bound(o => o.NextOverdue).Title("Jatuh Tempo YAD").Format("Rp. {0:N}");
+                        col.Bound(o => o.Amount).Title("Jumlah").Format("Rp. {0:N}");
+                    })
+                                    .DataBinding(binding => binding.Ajax().Select("GetList", "OverviewLongTermDebt"))
+                    .Sortable()
+                    .Filterable()
+    )
+</div>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRDModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="HrdEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Master_Personal" EntityType="HRDModel.Master_Personal" />
+    <EntitySet Name="Occupations" EntityType="HRDModel.Occupation" />
+    <AssociationSet Name="FK_Master_Personal_Occupation" Association="HRDModel.FK_Master_Personal_Occupation">
+      <End Role="Occupation" EntitySet="Occupations" />
+      <End Role="Master_Personal" EntitySet="Master_Personal" />
+    </AssociationSet>
+    <EntitySet Name="ManagementLevels" EntityType="HRDModel.ManagementLevel" />
+    <AssociationSet Name="FK_Occupation_ManagementLevel" Association="HRDModel.FK_Occupation_ManagementLevel">
+      <End Role="ManagementLevel" EntitySet="ManagementLevels" />
+      <End Role="Occupation" EntitySet="Occupations" />
+    </AssociationSet>
+    <EntitySet Name="vOffices" EntityType="HRDModel.vOffice" />
+    <AssociationSet Name="vOfficeMaster_Personal" Association="HRDModel.vOfficeMaster_Personal">
+      <End Role="vOffice" EntitySet="vOffices" />
+      <End Role="Master_Personal" EntitySet="Master_Personal" />
+    </AssociationSet>
+    <FunctionImport Name="ReportEmployee" ReturnType="Collection(HRDModel.ReportEmployee_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Master_Personal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Alias" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NIK" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Title_Front" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Title_Back" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+    <Property Name="PlaceOfBirth" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DateOfBirth" Type="DateTime" />
+    <Property Name="Religion" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="HomeAddress_Street" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="HomeAddress_City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="HomeAddress_PostCode" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="HomePhone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdate" Type="DateTime" />
+    <Property Name="WorkStartDate" Type="DateTime" />
+    <Property Name="BloodType" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="EmergencyCallNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="OccupationID" Type="Int32" Nullable="false" />
+    <Property Name="OfficeId" Type="Int32" Nullable="false" />
+    <Property Name="WorkerStatus" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Occupation" Relationship="HRDModel.FK_Master_Personal_Occupation" FromRole="Master_Personal" ToRole="Occupation" />
+    <NavigationProperty Name="Office" Relationship="HRDModel.vOfficeMaster_Personal" FromRole="Master_Personal" ToRole="vOffice" />
+  </EntityType>
+  <EntityType Name="Occupation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="ManagementLevelId" Type="Int32" Nullable="false" />
+    <Property Name="Ordinat" Type="Int32" Nullable="false" />
+    <Property Name="ReportTo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Master_Personal" Relationship="HRDModel.FK_Master_Personal_Occupation" FromRole="Occupation" ToRole="Master_Personal" />
+    <NavigationProperty Name="ManagementLevel" Relationship="HRDModel.FK_Occupation_ManagementLevel" FromRole="Occupation" ToRole="ManagementLevel" />
+  </EntityType>
+  <Association Name="FK_Master_Personal_Occupation">
+    <End Type="HRDModel.Occupation" Role="Occupation" Multiplicity="1" />
+    <End Type="HRDModel.Master_Personal" Role="Master_Personal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Occupation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Master_Personal">
+        <PropertyRef Name="OccupationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ManagementLevel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="LevelName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Occupations" Relationship="HRDModel.FK_Occupation_ManagementLevel" FromRole="ManagementLevel" ToRole="Occupation" />
+  </EntityType>
+  <Association Name="FK_Occupation_ManagementLevel">
+    <End Type="HRDModel.ManagementLevel" Role="ManagementLevel" Multiplicity="1" />
+    <End Type="HRDModel.Occupation" Role="Occupation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ManagementLevel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Occupation">
+        <PropertyRef Name="ManagementLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vOffice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Code" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Abbreviation" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Parent_ID" Nullable="false" />
+    <Property Type="Int32" Name="Ordinal" Nullable="false" />
+    <NavigationProperty Name="Master_Personal" Relationship="HRDModel.vOfficeMaster_Personal" FromRole="vOffice" ToRole="Master_Personal" />
+  </EntityType>
+  <Association Name="vOfficeMaster_Personal">
+    <End Type="HRDModel.vOffice" Role="vOffice" Multiplicity="1" />
+    <End Type="HRDModel.Master_Personal" Role="Master_Personal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vOffice">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Master_Personal">
+        <PropertyRef Name="OfficeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="ReportEmployee_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="EmployeeID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Alias" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NIK" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Title_Front" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Title_Back" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="PlaceOfBirth" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Religion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="HomeAddress_Street" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="HomeAddress_City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HomeAddress_PostCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="HomePhone" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaritalStatus" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="255" />
+    <Property Type="Binary" Name="Photo" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="LastUpdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="WorkStartDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="BloodType" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="EmergencyCallNumber" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Position" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Area" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="WorkerStatus" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="LevelName" Nullable="false" MaxLength="30" />
+  </ComplexType>
+</Schema>

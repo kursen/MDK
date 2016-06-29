@@ -1,0 +1,44 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.Setting.Models.ViewModels.ParentAccountViewModel
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.maskedinput.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+        $("#Code").mask("999", { placeholder: " " });
+    });
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>Kepala Kode Perkiraan</td>
+            <td>:</td>
+            <td>
+                @Html.EditorFor(model => model.Code)
+                @Html.ValidationMessageFor(model => model.Code)
+            </td>
+        </tr>
+        <tr>
+            <td>Nama Perkiraan</td>
+            <td>:</td>
+            <td>
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+                &nbsp;
+                <input type="reset" value="Reset" class="t-button" style ="width:60px" />
+                &nbsp;
+                <a class ="t-button" style ="width:60px" href="@Url.Action("Index","ParentAccount",null )">Kembali</a>
+           </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,16 @@
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe.config
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\obj\x86\Debug\SqlServerSync.vbproj.ResolveComReference.cache
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe.manifest
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.application
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.exe
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.pdb
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\bin\Debug\SQLServerSync.xml
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\obj\x86\Debug\SQLServerSync.Resources.resources
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\obj\x86\Debug\SQLServerSync.ProjectInstaller.resources
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\obj\x86\Debug\SQLServerSync.SyncService.resources
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\obj\x86\Debug\SqlServerSync.vbproj.GenerateResource.Cache
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\obj\x86\Debug\SQLServerSync.exe.manifest
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\obj\x86\Debug\SQLServerSync.application
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\obj\x86\Debug\SQLServerSync.exe
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\obj\x86\Debug\SQLServerSync.xml
+D:\New MDK\trunk\Service\SqlServerSync\SqlServerSync\obj\x86\Debug\SQLServerSync.pdb

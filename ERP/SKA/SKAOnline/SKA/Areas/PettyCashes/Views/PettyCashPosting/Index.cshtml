@@ -1,0 +1,38 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.PettyCashes.Models.ViewModels.PettyCashPostingViewModel
+
+@{
+    ViewBag.Title = "Posting Voucher Kas Kecil";
+    Layout = "~/Areas/PettyCashes/Views/Shared/_PettyCashesLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Posting Voucher Kas Kecil</h2>
+</div>
+<br />
+<div class="box-content">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>
+                Tanggal Posting
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.Telerik().DatePicker().Name("PostingDate").Format("dd-MM-yyyy")
+                @Html.ValidationMessageFor(model => model.PostingDate)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><input type="submit" value="Posting" class="t-button" style ="width:60px" /></td>
+        </tr>
+    </table>
+}
+</div>
+

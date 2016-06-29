@@ -1,0 +1,36 @@
+﻿@using Telerik.Web.Mvc.UI
+
+@(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.PartnerViewModel>()
+    .Name("PartnerGrid").DataBinding(dataBinding =>
+    {
+        dataBinding.Ajax()
+            .Select("GetPartnerList", "VoucherKas");
+    })
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Id).Hidden();
+        columns.Bound(p => p.Code).Title("Kode Rekanan");
+        columns.Bound(p => p.Name).Title("Nama Rekanan");
+        columns.Bound(p => p.AccountCode).Title("Kode Perkiraan Rekanan");
+    })
+    .ClientEvents(events =>
+    {
+        events.OnRowSelect("PartnerGrid_OnRowSelect");
+    })
+    .Pageable()
+    .Selectable()
+    .Filterable()
+    .Sortable()
+    )
+
+    @Html.Hidden("PartnerGridSelectedId")
+    @Html.Hidden("PartnerGridSelectedName")
+
+<script type="text/javascript">
+    function PartnerGrid_OnRowSelect(e) {
+        var row = e.row;
+
+        $("#PartnerGridSelectedId").val(row.cells[0].innerHTML);
+        $("#PartnerGridSelectedName").val(row.cells[2].innerHTML);
+    }
+</script>

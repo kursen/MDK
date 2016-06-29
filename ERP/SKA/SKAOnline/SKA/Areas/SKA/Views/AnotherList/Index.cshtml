@@ -1,0 +1,64 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Daftar Lainnya";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+<div class="box-head">
+	<h2>Daftar Lainnya</h2>
+</div>
+<div class="box-content">
+@(Html.Telerik().TreeView()
+        .Name("TreeView")
+        .Items(item =>
+        {
+            item.Add()
+                .Text("A. Anggaran Proyeksi")
+                .Items(subItem =>
+                {       
+                    subItem.Add()
+                            .Text("Anggaran Laba Rugi").Action("GetYear", "ProfitsandLossBudget");
+                    subItem.Add()
+                            .Text("Anggaran Perputaran Uang").Action("GetYear", "VelocityMoneyBudgets");
+                    subItem.Add()
+                            .Text("Proyeksi Posisi Keuangan").Action("GetYear", "BudgetFinancialPosition");
+                });
+            item.Add()
+                .Text("B. Set Format Buku Jurnal")
+                .Items((subItem) =>
+                {
+                    subItem.Add()
+                            .Text("Jurnal Daftar Hutang Harus Dibayar").Action("Index", "DHHDJournalFormats");
+                    subItem.Add()
+                            .Text("Jurnal Rekening").Action("Index", "AccountJournalFormats");
+                    subItem.Add()
+                            .Text("Jurnal Penerimaan Kas").Action("Index", "CashReceiptJournalFormats");
+                    subItem.Add()
+                            .Text("Jurnal Bayar Kas").Action("Index", "CashPaymentJournalFormats");
+                    subItem.Add()
+                            .Text("Jurnal Pembayaran Bahan Instalasi dan Kimia").Action("Index", "PBIKJournalFormats");
+                });
+            item.Add()
+                .Text("C. Set P & P Operasional")
+                .Items((subItem) =>
+                {
+                    subItem.Add()
+                            .Text("Daftar Penerimaan dan Pengeluaran Operasional").Action("Index", "RevenueExpenditure");
+                    subItem.Add()
+                        .Text("Cetak Penerimaan Operasional").Action("ShowReport", "RevenueExpenditure", new { reportName = "OperationalExpenditureForm" });
+                    subItem.Add()
+                        .Text("Cetak Pengeluaran Operasional").Action("ShowReport", "RevenueExpenditure", new { reportName = "OperationalRevenueForm" });
+                });
+            item.Add()
+                .Text("D. Setup Direktur dan Lainnya")
+                .Items((subItem) =>
+                {
+                    subItem.Add()
+                            .Text("Laporan Bulanan").Action("Index", "MonthlyReportsSetup");
+                    subItem.Add()
+                            .Text("Laporan Tahunan").Action("Index", "AnnualReportsSetup"); 
+                });
+            item.Add()
+                .Text("E. Cetak Anggaran Laba Rugi").Action("ShowReport", "AnotherList", new { reportName = "ProfitandLossBudgetReport" });
+        })
+)
+</div>    

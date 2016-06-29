@@ -1,0 +1,2960 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ProjectManagement
+</name>
+</assembly>
+<members>
+<member name="M:ProjectManagement.ProjectManagement.Areas.ProjectManagement.Controllers.FinanceController.ProjectFundSummary(System.Int32)">
+	<summary>
+ Rekap kebutuhan dana adalah jumlah dana yang dibutuhkan untuk project dibagi atas periode tertentu,
+ berdasarkan timesheet project
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ProjectManagement.ProjectManagement.Areas.ProjectManagement.Controllers.BudgetController.GetRAPItems(System.Int32)">
+	<summary>
+	</summary>
+	<param name="Id">Project Info Id</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:ProjectManagement.MDKDataSet.GetTimesheetItemsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.ScheduleEquipmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.ScheduleMaterialDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.getTitleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetWeeklyReportDetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetMonthlyReportDetailDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetWeeklyReportDetail_withADDDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetMonthlyReportDetail_withADDDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetDailyReportDataDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetWeeklyReportHeaderFooterDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetMonthlyReportHeaderFooterDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetTimesheetItemsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.ScheduleEquipmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.ScheduleMaterialRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.getTitleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetWeeklyReportDetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetMonthlyReportDetailRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetWeeklyReportDetail_withADDRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetMonthlyReportDetail_withADDRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetDailyReportDataRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetWeeklyReportHeaderFooterRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetMonthlyReportHeaderFooterRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetTimesheetItemsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.ScheduleEquipmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.ScheduleMaterialRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.getTitleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetWeeklyReportDetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetMonthlyReportDetailRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetWeeklyReportDetail_withADDRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetMonthlyReportDetail_withADDRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetDailyReportDataRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetWeeklyReportHeaderFooterRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet.GetMonthlyReportHeaderFooterRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.GetTimesheetItemsTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.ScheduleEquipmentTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.ScheduleMaterialTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.getTitleTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.GetWeeklyReportDetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.GetMonthlyReportDetailTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.GetWeeklyReportDetail_withADDTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.GetMonthlyReportDetail_withADDTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.GetDailyReportDataTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.GetWeeklyReportHeaderFooterTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.GetMonthlyReportHeaderFooterTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:ProjectManagement.MDKDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(ProjectManagement.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:ProjectManagement.MDKDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(ProjectManagement.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:ProjectManagement.MDKDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(ProjectManagement.MDKDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:ProjectManagement.MDKDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:ProjectManagement.MDKDataSetTableAdapters.TableAdapterManager.UpdateAll(ProjectManagement.MDKDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:ProjectManagement.MDKDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.#ctor">
+	<summary>
+ Initializes a new ProjectManagement_ERPEntities object using the connection string found in the 'ProjectManagement_ERPEntities' section of the application configuration file.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.#ctor(System.String)">
+	<summary>
+ Initialize a new ProjectManagement_ERPEntities object.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+	<summary>
+ Initialize a new ProjectManagement_ERPEntities object.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.CompanyInfoes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectTaskDivisions">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectTaskDivisionItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectTaskWeights">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectTimeSheets">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.Materials">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectDocDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectTaskDivisionItemVisualColors">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.Equipments">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectCostRecords">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectCostRecordItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectInfoes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.DailyReports">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.DailyReportFieldPersonnelUses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.DailyReportIncidenceOfInhibitorActivities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.DailyReportLaborUses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.DailyReportTasks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.DailyReportEquipmentUses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectMutualCheck0Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.DailyReportBaseConstructionMaterialUses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectTaskWeight_MutualCheck0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.MonthlyReports">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.WeeklyReports">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ProjectMutualCheck0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectManagement_ERPEntities.ReportLayouts">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToCompanyInfoes(ProjectManagement.CompanyInfo)">
+	<summary>
+ Deprecated Method for adding a new object to the CompanyInfoes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectTaskDivisions(ProjectManagement.ProjectTaskDivision)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectTaskDivisions EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectTaskDivisionItems(ProjectManagement.ProjectTaskDivisionItem)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectTaskDivisionItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectTaskWeights(ProjectManagement.ProjectTaskWeight)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectTaskWeights EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectTimeSheets(ProjectManagement.ProjectTimeSheet)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectTimeSheets EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToMaterials(ProjectManagement.Material)">
+	<summary>
+ Deprecated Method for adding a new object to the Materials EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectDocDetails(ProjectManagement.ProjectDocDetail)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectDocDetails EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectTaskDivisionItemVisualColors(ProjectManagement.ProjectTaskDivisionItemVisualColor)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectTaskDivisionItemVisualColors EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToEquipments(ProjectManagement.Equipment)">
+	<summary>
+ Deprecated Method for adding a new object to the Equipments EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectCostRecords(ProjectManagement.ProjectCostRecord)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectCostRecords EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectCostRecordItems(ProjectManagement.ProjectCostRecordItem)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectCostRecordItems EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectInfoes(ProjectManagement.ProjectInfo)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectInfoes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToDailyReports(ProjectManagement.DailyReport)">
+	<summary>
+ Deprecated Method for adding a new object to the DailyReports EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToDailyReportFieldPersonnelUses(ProjectManagement.DailyReportFieldPersonnelUse)">
+	<summary>
+ Deprecated Method for adding a new object to the DailyReportFieldPersonnelUses EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToDailyReportIncidenceOfInhibitorActivities(ProjectManagement.DailyReportIncidenceOfInhibitorActivity)">
+	<summary>
+ Deprecated Method for adding a new object to the DailyReportIncidenceOfInhibitorActivities EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToDailyReportLaborUses(ProjectManagement.DailyReportLaborUse)">
+	<summary>
+ Deprecated Method for adding a new object to the DailyReportLaborUses EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToDailyReportTasks(ProjectManagement.DailyReportTask)">
+	<summary>
+ Deprecated Method for adding a new object to the DailyReportTasks EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToDailyReportEquipmentUses(ProjectManagement.DailyReportEquipmentUse)">
+	<summary>
+ Deprecated Method for adding a new object to the DailyReportEquipmentUses EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectMutualCheck0Item(ProjectManagement.ProjectMutualCheck0Item)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectMutualCheck0Item EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToDailyReportBaseConstructionMaterialUses(ProjectManagement.DailyReportBaseConstructionMaterialUse)">
+	<summary>
+ Deprecated Method for adding a new object to the DailyReportBaseConstructionMaterialUses EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectTaskWeight_MutualCheck0(ProjectManagement.ProjectTaskWeight_MutualCheck0)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectTaskWeight_MutualCheck0 EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToMonthlyReports(ProjectManagement.MonthlyReport)">
+	<summary>
+ Deprecated Method for adding a new object to the MonthlyReports EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToWeeklyReports(ProjectManagement.WeeklyReport)">
+	<summary>
+ Deprecated Method for adding a new object to the WeeklyReports EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToProjectMutualCheck0(ProjectManagement.ProjectMutualCheck0)">
+	<summary>
+ Deprecated Method for adding a new object to the ProjectMutualCheck0 EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.AddToReportLayouts(ProjectManagement.ReportLayout)">
+	<summary>
+ Deprecated Method for adding a new object to the ReportLayouts EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetTimesheetItems(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="projectInfoId">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.getTitle(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="projectInfoId">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.ScheduleEquipment(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="projectInfoId">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.ScheduleMaterial(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="projectInfoId">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetDailyReportDateList(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="projectID">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetDailyReportData(System.String)">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="idList">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetWeeklyReportHeaderFooter(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="weekReportID">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetMonthlyReportHeaderFooter(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="monthReportID">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetWeeklyReportList(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="projectID">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetMonthlyReportList(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="projectID">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetDailyReportFor_G(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="projectInfoID">No Metadata Documentation available.</param>
+	<param name="dayWork">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetWeeklyReportDetail(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="weekReportID">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetMonthlyReportDetail(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="monthReportID">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetWeeklyReportDetail_withADD(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="weekReportID">No Metadata Documentation available.</param>
+</member><member name="M:ProjectManagement.ProjectManagement_ERPEntities.GetMonthlyReportDetail_withADD(System.Nullable{System.Int32})">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+	<param name="monthReportID">No Metadata Documentation available.</param>
+</member><member name="T:ProjectManagement.ProjectManagement_ERPEntities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.CompanyInfo.CreateCompanyInfo(System.Int32,System.String,System.String,System.String)">
+	<summary>
+ Create a new CompanyInfo object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="name">Initial value of the Name property.</param>
+	<param name="city">Initial value of the City property.</param>
+	<param name="phone1">Initial value of the Phone1 property.</param>
+</member><member name="P:ProjectManagement.CompanyInfo.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.CompanyInfo.Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.CompanyInfo.Alias">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.CompanyInfo.Address1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.CompanyInfo.Address2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.CompanyInfo.City">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.CompanyInfo.Phone1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.CompanyInfo.Phone2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.CompanyInfo.Fax">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.CompanyInfo.Annotation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.CompanyInfo.ProjectInfoes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.CompanyInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.DailyReport.CreateDailyReport(System.Int64,System.Int32)">
+	<summary>
+ Create a new DailyReport object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="projectInfoID">Initial value of the ProjectInfoID property.</param>
+</member><member name="P:ProjectManagement.DailyReport.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.ProjectInfoID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.DayWork">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.FiledContractors">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.CheckedConsultants">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.ApprovedTechnicalAssistant">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.ProjectInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.DailyReportFieldPersonnelUses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.DailyReportIncidenceOfInhibitorActivities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.DailyReportLaborUses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.DailyReportTasks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.DailyReportEquipmentUses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReport.DailyReportBaseConstructionMaterialUses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.DailyReport">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.DailyReportBaseConstructionMaterialUse.CreateDailyReportBaseConstructionMaterialUse(System.Int64,System.Int64,System.Int32,System.Decimal,System.Decimal,System.String,System.String)">
+	<summary>
+ Create a new DailyReportBaseConstructionMaterialUse object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="dailyReportId">Initial value of the DailyReportId property.</param>
+	<param name="number">Initial value of the Number property.</param>
+	<param name="quantityUse">Initial value of the QuantityUse property.</param>
+	<param name="quantityImported">Initial value of the QuantityImported property.</param>
+	<param name="materialName">Initial value of the MaterialName property.</param>
+	<param name="quantityUnit">Initial value of the QuantityUnit property.</param>
+</member><member name="P:ProjectManagement.DailyReportBaseConstructionMaterialUse.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportBaseConstructionMaterialUse.DailyReportId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportBaseConstructionMaterialUse.Number">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportBaseConstructionMaterialUse.QuantityUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportBaseConstructionMaterialUse.QuantityImported">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportBaseConstructionMaterialUse.MaterialName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportBaseConstructionMaterialUse.QuantityUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportBaseConstructionMaterialUse.DailyReport">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportBaseConstructionMaterialUse.DailyReportReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.DailyReportBaseConstructionMaterialUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.DailyReportEquipmentUse.CreateDailyReportEquipmentUse(System.Int64,System.Int64,System.String,System.Int32,System.Int32,System.String,System.String)">
+	<summary>
+ Create a new DailyReportEquipmentUse object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="dailyReportId">Initial value of the DailyReportId property.</param>
+	<param name="equipmentName">Initial value of the EquipmentName property.</param>
+	<param name="number">Initial value of the Number property.</param>
+	<param name="amount">Initial value of the Amount property.</param>
+	<param name="measurementUnit">Initial value of the MeasurementUnit property.</param>
+	<param name="condition">Initial value of the Condition property.</param>
+</member><member name="P:ProjectManagement.DailyReportEquipmentUse.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportEquipmentUse.DailyReportId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportEquipmentUse.EquipmentName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportEquipmentUse.Number">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportEquipmentUse.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportEquipmentUse.MeasurementUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportEquipmentUse.Condition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportEquipmentUse.DailyReport">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportEquipmentUse.DailyReportReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.DailyReportEquipmentUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.DailyReportFieldPersonnelUse.CreateDailyReportFieldPersonnelUse(System.Int64,System.Int64,System.String,System.String,System.Byte,System.String,System.Int32)">
+	<summary>
+ Create a new DailyReportFieldPersonnelUse object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="dailyReportId">Initial value of the DailyReportId property.</param>
+	<param name="positionType">Initial value of the PositionType property.</param>
+	<param name="positionTypeName">Initial value of the PositionTypeName property.</param>
+	<param name="ordinal">Initial value of the Ordinal property.</param>
+	<param name="position">Initial value of the Position property.</param>
+	<param name="amount">Initial value of the Amount property.</param>
+</member><member name="P:ProjectManagement.DailyReportFieldPersonnelUse.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportFieldPersonnelUse.DailyReportId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportFieldPersonnelUse.PositionType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportFieldPersonnelUse.PositionTypeName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportFieldPersonnelUse.Ordinal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportFieldPersonnelUse.Position">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportFieldPersonnelUse.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportFieldPersonnelUse.DailyReport">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportFieldPersonnelUse.DailyReportReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.DailyReportFieldPersonnelUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.DailyReportIncidenceOfInhibitorActivity.CreateDailyReportIncidenceOfInhibitorActivity(System.Int64,System.Int64,System.Int32,System.String,System.DateTime,System.String,System.Boolean)">
+	<summary>
+ Create a new DailyReportIncidenceOfInhibitorActivity object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="dailyReportId">Initial value of the DailyReportId property.</param>
+	<param name="number">Initial value of the Number property.</param>
+	<param name="type">Initial value of the Type property.</param>
+	<param name="time">Initial value of the Time property.</param>
+	<param name="location">Initial value of the Location property.</param>
+	<param name="isResponsibilityOfContractor">Initial value of the IsResponsibilityOfContractor property.</param>
+</member><member name="P:ProjectManagement.DailyReportIncidenceOfInhibitorActivity.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportIncidenceOfInhibitorActivity.DailyReportId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportIncidenceOfInhibitorActivity.Number">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportIncidenceOfInhibitorActivity.Type">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportIncidenceOfInhibitorActivity.Time">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportIncidenceOfInhibitorActivity.Location">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportIncidenceOfInhibitorActivity.IsResponsibilityOfContractor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportIncidenceOfInhibitorActivity.DailyReport">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportIncidenceOfInhibitorActivity.DailyReportReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.DailyReportIncidenceOfInhibitorActivity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.DailyReportLaborUse.CreateDailyReportLaborUse(System.Int64,System.Int64,System.Int32,System.String,System.Int32,System.String)">
+	<summary>
+ Create a new DailyReportLaborUse object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="dailyReportId">Initial value of the DailyReportId property.</param>
+	<param name="number">Initial value of the Number property.</param>
+	<param name="position">Initial value of the Position property.</param>
+	<param name="amount">Initial value of the Amount property.</param>
+	<param name="unit">Initial value of the Unit property.</param>
+</member><member name="P:ProjectManagement.DailyReportLaborUse.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportLaborUse.DailyReportId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportLaborUse.Number">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportLaborUse.Position">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportLaborUse.Amount">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportLaborUse.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportLaborUse.DailyReport">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportLaborUse.DailyReportReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.DailyReportLaborUse">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.DailyReportTask.CreateDailyReportTask(System.Int64,System.Int64,System.Int32,System.Double)">
+	<summary>
+ Create a new DailyReportTask object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="dailyReportId">Initial value of the DailyReportId property.</param>
+	<param name="projectTaskDivisionItemId">Initial value of the ProjectTaskDivisionItemId property.</param>
+	<param name="volume">Initial value of the Volume property.</param>
+</member><member name="P:ProjectManagement.DailyReportTask.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportTask.DailyReportId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportTask.ProjectTaskDivisionItemId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportTask.Volume">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportTask.Location">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportTask.DailyReport">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportTask.DailyReportReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportTask.ProjectTaskDivisionItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.DailyReportTask.ProjectTaskDivisionItemReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.DailyReportTask">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.Equipment.CreateEquipment(System.Int32,System.String,System.Int32,System.String,System.DateTime,System.DateTime)">
+	<summary>
+ Create a new Equipment object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="equipments">Initial value of the Equipments property.</param>
+	<param name="volume">Initial value of the Volume property.</param>
+	<param name="unit">Initial value of the Unit property.</param>
+	<param name="beginDate">Initial value of the BeginDate property.</param>
+	<param name="endDate">Initial value of the EndDate property.</param>
+</member><member name="P:ProjectManagement.Equipment.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Equipment.Equipments">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Equipment.ProjectInfoID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Equipment.Volume">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Equipment.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Equipment.BeginDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Equipment.EndDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Equipment.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Equipment.ProjectInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.Equipment">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.Material.CreateMaterial(System.Int32,System.String,System.Decimal,System.Decimal,System.String,System.DateTime,System.DateTime)">
+	<summary>
+ Create a new Material object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="materials">Initial value of the Materials property.</param>
+	<param name="volume">Initial value of the Volume property.</param>
+	<param name="v_Lap">Initial value of the V_Lap property.</param>
+	<param name="unit">Initial value of the Unit property.</param>
+	<param name="beginDate">Initial value of the BeginDate property.</param>
+	<param name="endDate">Initial value of the EndDate property.</param>
+</member><member name="P:ProjectManagement.Material.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Material.Materials">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Material.Volume">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Material.V_Lap">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Material.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Material.BeginDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Material.EndDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Material.ProjectInfoID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Material.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.Material.ProjectInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.Material">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.MonthlyReport.CreateMonthlyReport(System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Create a new MonthlyReport object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectInfoId">Initial value of the ProjectInfoId property.</param>
+	<param name="monthNumber">Initial value of the MonthNumber property.</param>
+</member><member name="P:ProjectManagement.MonthlyReport.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.ProjectInfoId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.ImplementingActivities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.MonthNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Place">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.DateApproval">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval1Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval1Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval1Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval1Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval2Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval2Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval2Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval2Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval3Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval3Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval3Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.Approval3Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.MonthlyReport.ProjectInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.MonthlyReport">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectCostRecord.CreateProjectCostRecord(System.Int32,System.Int32,System.String,System.String,System.DateTime,System.String,System.String)">
+	<summary>
+ Create a new ProjectCostRecord object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectInfoId">Initial value of the ProjectInfoId property.</param>
+	<param name="taskGroupTitle">Initial value of the TaskGroupTitle property.</param>
+	<param name="packetCode">Initial value of the PacketCode property.</param>
+	<param name="transactionDate">Initial value of the TransactionDate property.</param>
+	<param name="recordedBy">Initial value of the RecordedBy property.</param>
+	<param name="cashier">Initial value of the Cashier property.</param>
+</member><member name="P:ProjectManagement.ProjectCostRecord.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecord.ProjectInfoId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecord.TaskGroupTitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecord.PacketCode">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecord.TransactionDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecord.RecordedBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecord.Cashier">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecord.ProjectCostRecordItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectCostRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectCostRecordItem.CreateProjectCostRecordItem(System.Int32,System.Int32,System.String,System.String,System.Decimal)">
+	<summary>
+ Create a new ProjectCostRecordItem object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectCostRecordId">Initial value of the ProjectCostRecordId property.</param>
+	<param name="postCategory">Initial value of the PostCategory property.</param>
+	<param name="itemDescription">Initial value of the ItemDescription property.</param>
+	<param name="value">Initial value of the Value property.</param>
+</member><member name="P:ProjectManagement.ProjectCostRecordItem.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecordItem.ProjectCostRecordId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecordItem.PostCategory">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecordItem.ItemDescription">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecordItem.Value">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecordItem.Notes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecordItem.ProjectCostRecord">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectCostRecordItem.ProjectCostRecordReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectCostRecordItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectDocDetail.CreateProjectDocDetail(System.Int64,System.Int32,System.String)">
+	<summary>
+ Create a new ProjectDocDetail object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="projectInfoID">Initial value of the ProjectInfoID property.</param>
+	<param name="docTitle">Initial value of the DocTitle property.</param>
+</member><member name="P:ProjectManagement.ProjectDocDetail.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectDocDetail.ProjectInfoID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectDocDetail.DocTitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectDocDetail.Description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectDocDetail.DocFile">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectDocDetail.DocType">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectDocDetail.FileName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectDocDetail.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectDocDetail.ProjectInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectDocDetail">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectInfo.CreateProjectInfo(System.Int32,System.String,System.String,System.DateTime,System.Int32,System.String,System.String,System.Int32,System.Decimal,System.String,System.Boolean)">
+	<summary>
+ Create a new ProjectInfo object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectCode">Initial value of the ProjectCode property.</param>
+	<param name="projectTitle">Initial value of the ProjectTitle property.</param>
+	<param name="dateStart">Initial value of the DateStart property.</param>
+	<param name="numberOfDays">Initial value of the NumberOfDays property.</param>
+	<param name="dayUnit">Initial value of the DayUnit property.</param>
+	<param name="contractNumber">Initial value of the ContractNumber property.</param>
+	<param name="companyInfoId">Initial value of the CompanyInfoId property.</param>
+	<param name="contractValue">Initial value of the ContractValue property.</param>
+	<param name="consultanName">Initial value of the ConsultanName property.</param>
+	<param name="archive">Initial value of the Archive property.</param>
+</member><member name="P:ProjectManagement.ProjectInfo.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.ProjectCode">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.ProjectTitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.DateStart">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.NumberOfDays">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.DayUnit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.ContractNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.CompanyInfoId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.ContractValue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.ConsultanName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.Location">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.Archive">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.CompanyInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.CompanyInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.Equipments">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.Materials">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.ProjectDocDetails">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.ProjectTaskDivisions">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.ProjectTimeSheets">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.DailyReports">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.MonthlyReports">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.WeeklyReports">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.ProjectMutualCheck0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectInfo.ReportLayouts">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectMutualCheck0.CreateProjectMutualCheck0(System.Int32,System.DateTime,System.String,System.String,System.Int32)">
+	<summary>
+ Create a new ProjectMutualCheck0 object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="documentDate">Initial value of the DocumentDate property.</param>
+	<param name="documentNumber">Initial value of the DocumentNumber property.</param>
+	<param name="description">Initial value of the Description property.</param>
+	<param name="projectInfoId">Initial value of the ProjectInfoId property.</param>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.DocumentDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.DocumentNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.Description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.ProjectInfoId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.ProposedByName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.ProposedByOccupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.ProposedByCompany">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.CheckedByName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.CheckedByOccupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.CheckedByCompany">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.ApprovedByName">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.ApprovedByOccupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.ApprovedByCompany">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.ApprovedByNIPP">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0.ProjectInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectMutualCheck0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectMutualCheck0Item.CreateProjectMutualCheck0Item(System.Int32,System.Int32,System.Int32,System.Double)">
+	<summary>
+ Create a new ProjectMutualCheck0Item object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectMutualCheck0Id">Initial value of the ProjectMutualCheck0Id property.</param>
+	<param name="projectTaskDivisionItemId">Initial value of the ProjectTaskDivisionItemId property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0Item.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0Item.ProjectMutualCheck0Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0Item.ProjectTaskDivisionItemId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectMutualCheck0Item.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectMutualCheck0Item">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectTaskDivision.CreateProjectTaskDivision(System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+	<summary>
+ Create a new ProjectTaskDivision object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectInfoId">Initial value of the ProjectInfoId property.</param>
+	<param name="taskTitle">Initial value of the TaskTitle property.</param>
+	<param name="ordinal">Initial value of the Ordinal property.</param>
+	<param name="divisionNumber">Initial value of the DivisionNumber property.</param>
+</member><member name="P:ProjectManagement.ProjectTaskDivision.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivision.ProjectInfoId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivision.TaskTitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivision.Ordinal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivision.DivisionNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivision.ProjectTaskDivisionItems">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivision.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivision.ProjectInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectTaskDivision">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectTaskDivisionItem.CreateProjectTaskDivisionItem(System.Int32,System.Int32,System.String,System.Double,System.String,System.Decimal,System.Int32,System.String,System.Int32)">
+	<summary>
+ Create a new ProjectTaskDivisionItem object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectTaskDivisionId">Initial value of the ProjectTaskDivisionId property.</param>
+	<param name="taskTitle">Initial value of the TaskTitle property.</param>
+	<param name="quantity">Initial value of the Quantity property.</param>
+	<param name="unitQuantity">Initial value of the UnitQuantity property.</param>
+	<param name="value">Initial value of the Value property.</param>
+	<param name="ordinal">Initial value of the Ordinal property.</param>
+	<param name="paymentNumber">Initial value of the PaymentNumber property.</param>
+	<param name="workDays">Initial value of the WorkDays property.</param>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.ProjectTaskDivisionId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.TaskTitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.Quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.UnitQuantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.Value">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.Ordinal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.PaymentNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.WorkDays">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.ProjectTaskDivision">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.ProjectTaskDivisionReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItem.DailyReportTasks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectTaskDivisionItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectTaskDivisionItemVisualColor.CreateProjectTaskDivisionItemVisualColor(System.Int32,System.Int32,System.String,System.String,System.String)">
+	<summary>
+ Create a new ProjectTaskDivisionItemVisualColor object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="projectTaskDivisionItemId">Initial value of the ProjectTaskDivisionItemId property.</param>
+	<param name="cellBackgroundColor">Initial value of the CellBackgroundColor property.</param>
+	<param name="cellTextColor">Initial value of the CellTextColor property.</param>
+	<param name="rowBackgroundColor">Initial value of the RowBackgroundColor property.</param>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItemVisualColor.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItemVisualColor.ProjectTaskDivisionItemId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItemVisualColor.CellBackgroundColor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItemVisualColor.CellTextColor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskDivisionItemVisualColor.RowBackgroundColor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectTaskDivisionItemVisualColor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectTaskWeight.CreateProjectTaskWeight(System.Int32,System.Int32,System.Int32,System.Double)">
+	<summary>
+ Create a new ProjectTaskWeight object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectTaskDivisionItemId">Initial value of the ProjectTaskDivisionItemId property.</param>
+	<param name="weekNumber">Initial value of the WeekNumber property.</param>
+	<param name="weight">Initial value of the Weight property.</param>
+</member><member name="P:ProjectManagement.ProjectTaskWeight.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskWeight.ProjectTaskDivisionItemId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskWeight.WeekNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskWeight.Weight">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectTaskWeight">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectTaskWeight_MutualCheck0.CreateProjectTaskWeight_MutualCheck0(System.Int32,System.Int32,System.Int32,System.Double)">
+	<summary>
+ Create a new ProjectTaskWeight_MutualCheck0 object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectTaskDivisionItemId">Initial value of the ProjectTaskDivisionItemId property.</param>
+	<param name="weekNumber">Initial value of the WeekNumber property.</param>
+	<param name="weight">Initial value of the Weight property.</param>
+</member><member name="P:ProjectManagement.ProjectTaskWeight_MutualCheck0.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskWeight_MutualCheck0.ProjectTaskDivisionItemId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskWeight_MutualCheck0.WeekNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTaskWeight_MutualCheck0.Weight">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectTaskWeight_MutualCheck0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ProjectTimeSheet.CreateProjectTimeSheet(System.Int32)">
+	<summary>
+ Create a new ProjectTimeSheet object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.ProjectInfoId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.CreatedBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.CreatedByOccupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.KnownBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.KnownByOccupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.ApprovedBy">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.ApprovedByOccupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.RevisionNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.RevisionDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ProjectTimeSheet.ProjectInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ProjectTimeSheet">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ReportLayout.CreateReportLayout(System.Int32,System.Int32)">
+	<summary>
+ Create a new ReportLayout object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="idProjectInfo">Initial value of the IdProjectInfo property.</param>
+</member><member name="P:ProjectManagement.ReportLayout.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ReportLayout.Title1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ReportLayout.Title2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ReportLayout.RightLogo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ReportLayout.LeftLogo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ReportLayout.IdProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ReportLayout.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ReportLayout.ProjectInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ReportLayout">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.WeeklyReport.CreateWeeklyReport(System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Create a new WeeklyReport object.
+ </summary>
+	<param name="id">Initial value of the Id property.</param>
+	<param name="projectInfoId">Initial value of the ProjectInfoId property.</param>
+	<param name="weekNumber">Initial value of the WeekNumber property.</param>
+</member><member name="P:ProjectManagement.WeeklyReport.Id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.ProjectInfoId">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.ImplementingActivities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.WeekNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Place">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.DateApproval">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval1Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval1Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval1Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval1Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval2Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval2Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval2Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval2Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval3Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval3Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval3Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.Approval3Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.ProjectInfo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.WeeklyReport.ProjectInfoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.WeeklyReport">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportData_Result.DateReport">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportData_Result.GroupData">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportData_Result.Column1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportData_Result.Column2">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportData_Result.Column3">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportData_Result.Column4">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportData_Result.Column5">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportData_Result.Column6">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportData_Result.Column7">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportData_Result.Column8">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetDailyReportData_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportDateList_Result.DateItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportDateList_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportDateList_Result.DayNum">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetDailyReportDateList_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportFor_G_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportFor_G_Result.Title">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportFor_G_Result.Value">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetDailyReportFor_G_Result.Alias">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetDailyReportFor_G_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.IDDivision">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.OrdinalDivision">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.Division">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.IDItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.OrdinalItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.PaymentNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.UraianPekerjaan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.SAT">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.HargaSatuan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.Kuantitas">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.JumlahHarga">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.Bobot">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.KuantitasLalu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.BobotLalu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.KuantitasSekarang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.BobotSekarang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.KuantitasTotal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_Result.BobotTotal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetMonthlyReportDetail_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.IDDivision">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.OrdinalDivision">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.Division">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.IDItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.OrdinalItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.PaymentNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.UraianPekerjaan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.SAT">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.HargaSatuan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.Kuantitas">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.JumlahHarga">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.Bobot">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.KuantitasLalu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.BobotLalu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.KuantitasSekarang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.BobotSekarang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.KuantitasTotal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.BobotTotal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.KuantitasMC0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.JumlahHargaMC0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportDetail_withADD_Result.BobotMC0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetMonthlyReportDetail_withADD_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.GetMonthlyReportHeaderFooter_Result.CreateGetMonthlyReportHeaderFooter_Result(System.String,System.String,System.String,System.String,System.DateTime,System.Decimal,System.String,System.String,System.String,System.Int32)">
+	<summary>
+ Create a new GetMonthlyReportHeaderFooter_Result object.
+ </summary>
+	<param name="namaPaket">Initial value of the NamaPaket property.</param>
+	<param name="konsultanSupervisi">Initial value of the KonsultanSupervisi property.</param>
+	<param name="kontraktor">Initial value of the Kontraktor property.</param>
+	<param name="noKontrak">Initial value of the NoKontrak property.</param>
+	<param name="tanggalKontrak">Initial value of the TanggalKontrak property.</param>
+	<param name="nilaiKontrak">Initial value of the NilaiKontrak property.</param>
+	<param name="nOKONTRAKADDI">Initial value of the NOKONTRAKADDI property.</param>
+	<param name="tANGGALKONTRAKADDI">Initial value of the TANGGALKONTRAKADDI property.</param>
+	<param name="nILAIKONTRAKADD01">Initial value of the NILAIKONTRAKADD01 property.</param>
+	<param name="masaWaktu">Initial value of the MasaWaktu property.</param>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.PelaksanaKegiatan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.NamaPaket">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.KonsultanSupervisi">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.BulanKe">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.PeriodeAwal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.PeriodeAkhir">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Kontraktor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.NoKontrak">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.TanggalKontrak">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.NilaiKontrak">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.NOKONTRAKADDI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.TANGGALKONTRAKADDI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.NILAIKONTRAKADD01">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.MasaWaktu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Place">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.DateApproval">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval1Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval1Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval1Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval1Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval2Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval2Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval2Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval2Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval3Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval3Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval3Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.Approval3Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.JudulAtas">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.JudulBawah">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.LogoKanan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportHeaderFooter_Result.LogoKiri">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetMonthlyReportHeaderFooter_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.MonthNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.BeginWeek">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.EndWeek">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.BeginDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.EndDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.ImplementingActivities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Place">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.DateApproval">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval1Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval1Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval1Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval1Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval2Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval2Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval2Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval2Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval3Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval3Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval3Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.Approval3Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetMonthlyReportList_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetMonthlyReportList_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.divisionid">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.divisiontitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.divisionordinal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.divisionnumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.paymentnumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.tasktitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.quantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.unitquantity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.value">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.totalitemvalue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.ordinal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.workdays">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.taskweight">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetTimesheetItems_Result.ordinalSort">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetTimesheetItems_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.getTitle_Result.CreategetTitle_Result(System.String,System.String,System.String)">
+	<summary>
+ Create a new getTitle_Result object.
+ </summary>
+	<param name="projectTitle">Initial value of the ProjectTitle property.</param>
+	<param name="projectCode">Initial value of the ProjectCode property.</param>
+	<param name="lokasi">Initial value of the Lokasi property.</param>
+</member><member name="P:ProjectManagement.getTitle_Result.ProjectTitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.getTitle_Result.ProjectCode">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.getTitle_Result.Lokasi">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.getTitle_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.IDDivision">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.OrdinalDivision">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.Division">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.IDItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.OrdinalItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.PaymentNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.UraianPekerjaan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.SAT">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.HargaSatuan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.Kuantitas">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.JumlahHarga">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.Bobot">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.KuantitasLalu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.BobotLalu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.KuantitasSekarang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.BobotSekarang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.KuantitasTotal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_Result.BobotTotal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetWeeklyReportDetail_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.IDDivision">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.OrdinalDivision">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.Division">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.IDItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.OrdinalItem">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.PaymentNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.UraianPekerjaan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.SAT">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.HargaSatuan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.Kuantitas">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.JumlahHarga">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.Bobot">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.KuantitasLalu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.BobotLalu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.KuantitasSekarang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.BobotSekarang">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.KuantitasTotal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.BobotTotal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.KuantitasMC0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.JumlahHargaMC0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportDetail_withADD_Result.BobotMC0">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetWeeklyReportDetail_withADD_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.GetWeeklyReportHeaderFooter_Result.CreateGetWeeklyReportHeaderFooter_Result(System.String,System.String,System.String,System.String,System.DateTime,System.Decimal,System.String,System.String,System.String,System.Int32)">
+	<summary>
+ Create a new GetWeeklyReportHeaderFooter_Result object.
+ </summary>
+	<param name="namaPaket">Initial value of the NamaPaket property.</param>
+	<param name="konsultanSupervisi">Initial value of the KonsultanSupervisi property.</param>
+	<param name="kontraktor">Initial value of the Kontraktor property.</param>
+	<param name="noKontrak">Initial value of the NoKontrak property.</param>
+	<param name="tanggalKontrak">Initial value of the TanggalKontrak property.</param>
+	<param name="nilaiKontrak">Initial value of the NilaiKontrak property.</param>
+	<param name="nOKONTRAKADDI">Initial value of the NOKONTRAKADDI property.</param>
+	<param name="tANGGALKONTRAKADDI">Initial value of the TANGGALKONTRAKADDI property.</param>
+	<param name="nILAIKONTRAKADD01">Initial value of the NILAIKONTRAKADD01 property.</param>
+	<param name="masaWaktu">Initial value of the MasaWaktu property.</param>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.PelaksanaKegiatan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.NamaPaket">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.KonsultanSupervisi">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.MingguKe">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.PeriodeAwal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.PeriodeAkhir">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Kontraktor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.NoKontrak">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.TanggalKontrak">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.NilaiKontrak">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.NOKONTRAKADDI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.TANGGALKONTRAKADDI">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.NILAIKONTRAKADD01">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.MasaWaktu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Place">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.DateApproval">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval1Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval1Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval1Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval1Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval2Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval2Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval2Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval2Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval3Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval3Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval3Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.Approval3Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.JudulAtas">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.JudulBawah">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.LogoKanan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportHeaderFooter_Result.LogoKiri">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetWeeklyReportHeaderFooter_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.WeekNumber">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.BeginDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.EndDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.ImplementingActivities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Place">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.DateApproval">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval1Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval1Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval1Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval1Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval2Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval2Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval2Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval2Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval3Occupation">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval3Company">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval3Name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.Approval3Identity">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.GetWeeklyReportList_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.GetWeeklyReportList_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.RapSchedule_Result.CreateRapSchedule_Result(System.String)">
+	<summary>
+ Create a new RapSchedule_Result object.
+ </summary>
+	<param name="projectTitle">Initial value of the ProjectTitle property.</param>
+</member><member name="P:ProjectManagement.RapSchedule_Result.ProjectTitle">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.RapSchedule_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ScheduleEquipment_Result.CreateScheduleEquipment_Result(System.Int32,System.String,System.Int32,System.String,System.DateTime,System.DateTime)">
+	<summary>
+ Create a new ScheduleEquipment_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="equipments">Initial value of the Equipments property.</param>
+	<param name="volume">Initial value of the Volume property.</param>
+	<param name="unit">Initial value of the Unit property.</param>
+	<param name="beginDate">Initial value of the BeginDate property.</param>
+	<param name="endDate">Initial value of the EndDate property.</param>
+</member><member name="P:ProjectManagement.ScheduleEquipment_Result.nomor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleEquipment_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleEquipment_Result.Equipments">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleEquipment_Result.ProjectInfoID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleEquipment_Result.Volume">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleEquipment_Result.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleEquipment_Result.BeginDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleEquipment_Result.EndDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ScheduleEquipment_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:ProjectManagement.ScheduleMaterial_Result.CreateScheduleMaterial_Result(System.Int32,System.String,System.Decimal,System.String,System.DateTime,System.DateTime,System.Decimal)">
+	<summary>
+ Create a new ScheduleMaterial_Result object.
+ </summary>
+	<param name="id">Initial value of the ID property.</param>
+	<param name="materials">Initial value of the Materials property.</param>
+	<param name="volume">Initial value of the Volume property.</param>
+	<param name="unit">Initial value of the Unit property.</param>
+	<param name="beginDate">Initial value of the BeginDate property.</param>
+	<param name="endDate">Initial value of the EndDate property.</param>
+	<param name="volumeLapangan">Initial value of the volumeLapangan property.</param>
+</member><member name="P:ProjectManagement.ScheduleMaterial_Result.nomor">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleMaterial_Result.ID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleMaterial_Result.Materials">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleMaterial_Result.ProjectInfoID">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleMaterial_Result.Volume">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleMaterial_Result.Unit">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleMaterial_Result.BeginDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleMaterial_Result.EndDate">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:ProjectManagement.ScheduleMaterial_Result.volumeLapangan">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:ProjectManagement.ScheduleMaterial_Result">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member>
+</members>
+</doc>

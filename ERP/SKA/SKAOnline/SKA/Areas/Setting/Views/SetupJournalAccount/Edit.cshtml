@@ -1,0 +1,100 @@
+﻿@model SKA.Areas.Setting.Models.ViewModels.SetupJournalAccountViewModel
+
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Setting - Edit Kode Perkiraan Jurnal";
+    Layout = "~/Areas/Setting/Views/Shared/_SettingLayout.cshtml";
+    string userBranchCode = string.Empty;
+
+    if (Session["UserBranchCode"] != null)
+    {
+        userBranchCode = Session["UserBranchCode"].ToString();
+    }
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div class="box-content">
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>
+                Jurnal
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.JournalName, new { @readonly = "readonly"})
+                @Html.ValidationMessageFor(model => model.JournalName)
+            </td>
+        </tr>
+    </table>
+    @(Html.Telerik().Grid<SKA.Areas.Setting.Models.ViewModels.SetupJournalAccountDetailViewModel>()
+                    .Name("Grid")
+                    .DataKeys(keys =>
+                        {
+                            keys.Add(p => p.Id);
+                        }
+                    )
+
+                    .ToolBar(toolbar =>
+                        {
+                            toolbar.Insert().ButtonType(GridButtonType.ImageAndText).ImageHtmlAttributes(new { style = "margin-left:0" });
+
+                        })
+                    .DataBinding(databinding =>
+                        {
+                            databinding.Ajax()
+                                .Select("_SelectDetail", "SetupJournalAccount")
+                                .Insert("_InsertDetail", "SetupJournalAccount")
+                                .Update("_UpdateDetail", "SetupJournalAccount")
+                                .Delete("_DeleteDetail", "SetupJournalAccount");
+                        }
+                    )
+                    .Columns(col =>
+                        {
+                            col.Bound(p => p.AccountCode).Width(300).Title("Kode Perkiraan - Nama Perkiraan");
+                            col.Bound(p => p.AccountSide).Title("Debet/Kredit");
+                            col.Bound(p => p.Id).Hidden();
+                            col.Command(commands =>
+                            {
+                                if (userBranchCode == "00")
+                                {
+                                    commands.Edit().ButtonType(GridButtonType.ImageAndText);
+                                    if (User.IsInRole("") == false)
+                                    {
+                                        commands.Delete().ButtonType(GridButtonType.ImageAndText);
+                                    }
+                                }
+                            }
+                            );
+                        }
+                    )
+                    .ClientEvents(events =>
+                        {
+                            events.OnEdit("onEdit");  
+                        })
+    )
+    <p>
+        <input type="submit" value="Simpan" class="t-button" style ="width:60px" />
+        &nbsp;
+        <input type="reset" value="Reset" class="t-button" style ="width:60px" />
+        &nbsp;
+        <a class ="t-button" style ="width:60px" href="@Url.Action("Index", "SetupJournalAccount", null)">Kembali</a>
+     </p>
+}
+</div>
+<script type = "text/javascript">
+    function onEdit(e) {
+        $("#AccountCode").select();
+    }
+</script>
+@section HeadContent{
+    <style type = "text/css">
+    .t-autocomplete, .text-box-single-line{
+        width: 300px;
+    }
+    </style>
+}

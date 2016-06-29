@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<controllers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <controller name="Common" roles="*">
+    <actions>
+      <action name="GlobalEmployeeNames" roles="*" />
+      <action name="UnitQuantityName" roles="*" />
+    </actions>
+  </controller>
+  <controller name="DeliveryOrder" roles="*">
+    <actions>
+      <action name="Create" roles="*" />
+      <action name="Delete" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="DetailPO" roles="*" />
+      <action name="Edit" roles="*" />
+      <action name="GetDOList" roles="*" />
+      <action name="GetPOItems" roles="*" />
+      <action name="GetPurchaseOrderItems" roles="*" />
+      <action name="GetPurchaseOrderNumber" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="PrintDO" roles="*" />
+      <action name="Save" roles="*" />
+      <action name="SavePartial" roles="*" />
+      <action name="SavePartialDetail" roles="*" />
+      <action name="Search" roles="*" />
+    </actions>
+  </controller>
+  <controller name="DepartmentPurchaseRequisition" roles="*">
+    <actions>
+      <action name="Archive" roles="*" />
+      <action name="Create" roles="*" />
+      <action name="DeleteDetail" roles="*" />
+      <action name="DeleteDocument" roles="*" />
+      <action name="DepartmentPRDetailValidation" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="Edit" roles="*" />
+      <action name="GetDescription" roles="*" />
+      <action name="GetDetails" roles="*" />
+      <action name="GetRequestItems" roles="*" />
+      <action name="GetRequisitionList" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="PrintPR" roles="*" />
+      <action name="Save" roles="*" />
+    </actions>
+  </controller>
+  <controller name="DepartmentPurchasingRequestApproval" roles="*">
+    <actions>
+      <action name="Detail" roles="*" />
+      <action name="GetRequisitionList" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="UpdateDocState" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Home" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+      <action name="RequestStatistic" roles="*" />
+    </actions>
+  </controller>
+  <controller name="ProjectPurchasingRequestApproval" roles="*">
+    <actions>
+      <action name="Detail" roles="*" />
+      <action name="GetRequisitionList" roles="*" />
+      <action name="Index" roles="*" />
+    </actions>
+  </controller>
+  <controller name="ProjectPurchasingRequest" roles="*">
+    <actions>
+      <action name="Archive" roles="*" />
+      <action name="DeleteDocument" roles="*" />
+      <action name="DeleteRequestItem" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="Edit" roles="*" />
+      <action name="GetProjectRequestItems" roles="*" />
+      <action name="GetProposedGoodList" roles="*" />
+      <action name="GetRequisitionList" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="PrintPR" roles="*" />
+      <action name="ProjectPRDetailValidation" roles="*" />
+    </actions>
+  </controller>
+  <controller name="PurchaseOrder" roles="*">
+    <actions>
+      <action name="Archive" roles="*" />
+      <action name="ClosePO" roles="*" />
+      <action name="Create" roles="*" />
+      <action name="DeleteDocument" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="Edit" roles="*" />
+      <action name="GetPOItems" roles="*" />
+      <action name="GetPOList" roles="*" />
+      <action name="GetRequisitionItem" roles="*" />
+      <action name="GetVendorInfo" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="PODetailValidation" roles="*" />
+      <action name="PrintPO" roles="*" />
+      <action name="Save" roles="*" />
+      <action name="Search" roles="*" />
+      <action name="SearchRequisition" roles="*" />
+    </actions>
+  </controller>
+  <controller name="SearchPurchaseRequisition" roles="*">
+    <actions>
+      <action name="Index" roles="*" />
+    </actions>
+  </controller>
+  <controller name="Vendor" roles="*">
+    <actions>
+      <action name="Create" roles="*" />
+      <action name="Delete" roles="*" />
+      <action name="Detail" roles="*" />
+      <action name="getList" roles="*" />
+      <action name="Index" roles="*" />
+      <action name="SavePartial" roles="*" />
+    </actions>
+  </controller>
+</controllers>

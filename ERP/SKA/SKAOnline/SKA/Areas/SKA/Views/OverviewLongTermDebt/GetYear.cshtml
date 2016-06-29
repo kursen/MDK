@@ -1,0 +1,26 @@
+﻿@using Telerik.Web.Mvc.UI
+@model SKA.Areas.SKA.Models.ViewModels.OverviewLongTermDebtViewModel
+@{
+    ViewBag.Title = "Pilih Tahun Ikhtisar Utang Jangka Panjang";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Pilih Tahun</h2>
+</div>
+<div class="box-content">
+<br />
+<table>
+    <tr>
+        <td>
+            Tahun
+        </td>
+        <td>
+            :
+        </td>
+        <td>
+        @Html.DropDownListFor(model => model.Month, (SelectList)ViewBag.Year, new { onchange = "document.location.href = '/ska/SKA/OverviewLongTermDebt/Index?year=' + this.options[this.selectedIndex].value;" })
+        </td>
+    </tr>
+</table>
+</div>

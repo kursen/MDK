@@ -1,0 +1,52 @@
+﻿@model SKA.Areas.SKA.Models.ViewModels.BeginningBalancesViewModel
+
+@{
+    ViewBag.Title = "Data Tahun Lalu - Hapus Data Saldo Laba/Awal";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Hapus Data Saldo Laba/Awal</h2>
+</div>
+<div class="box-content">
+<br />
+<h3>Apakah anda yakin untuk menghapus data ini?</h3>
+<br />
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                Jumlah
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Amount)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tahun
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Year)
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+                <input type="submit" value="Hapus" class="t-button" style ="width:60px" />
+                &nbsp;<a class ="t-button" style ="width:60px" href="@Url.Action("Index", "NetIncomes", null)">Kembali</a>
+            </td>
+        </tr>
+    </table>
+}
+</div>

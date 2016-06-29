@@ -1,0 +1,56 @@
+﻿@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "SKA - Anggaran Laba Rugi";
+    Layout = "~/Areas/SKA/Views/Shared/_SkaLayout.cshtml";
+}
+
+<div class="box-head">
+	<h2>Anggaran Laba Rugi</h2>
+</div>
+<div class="box-content">
+@using (Html.BeginForm("Index", "ProfitsandLossBudget"))
+{ 
+        <table>
+            <tr>
+                <td>
+                    Cari
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    @Html.TextBox("searchValue")
+                </td>
+                <td>
+                    <input type = "submit" value = "Cari"/>
+                </td>
+            </tr>
+        </table>
+}
+    @(Html.Telerik().Grid<SKA.Areas.SKA.Models.ViewModels.ProfitsandLossBudgetViewModel>()
+                    .Name("ProfitsandLossBudgetGrid")
+                    .Columns(col =>
+                    {
+                        col.Bound(o => o.Id).ClientTemplate(Html.ActionLink("Edit", "Edit", new { id = "<#= Id #>" }).ToString()).Title("").Sortable(false).Width(50);
+                        col.Bound(o => o.Name).Title("Nomor Kas").Width(250);
+                        col.Bound(o => o.Amount).Title("Total").Format("{0:N}").Width(200);
+                        col.Bound(o => o.January).Title("Januari").Format("{0:N}").Width(200);
+                        col.Bound(o => o.February).Title("Februari").Format("{0:N}").Width(200);
+                        col.Bound(o => o.March).Title("Maret").Format("{0:N}").Width(200);
+                        col.Bound(o => o.April).Title("April").Format("{0:N}").Width(200);
+                        col.Bound(o => o.May).Title("Mei").Format("{0:N}").Width(200);
+                        col.Bound(o => o.June).Title("Juni").Format("{0:N}").Width(200);
+                        col.Bound(o => o.July).Title("Juli").Format("{0:N}").Width(200);
+                        col.Bound(o => o.August).Title("Agustus").Format("{0:N}").Width(200);
+                        col.Bound(o => o.September).Title("September").Format("{0:N}").Width(200);
+                        col.Bound(o => o.October).Title("Oktober").Format("{0:N}").Width(200);
+                        col.Bound(o => o.November).Title("November").Format("{0:N}").Width(200);
+                        col.Bound(o => o.December).Title("Desember").Format("{0:N}").Width(200);
+                    })
+                    .DataBinding(binding => binding.Ajax().Select("GetList", "ProfitsandLossBudget", new { searchValue = @ViewBag.SearchValue}))
+                    .Sortable()
+                    .Filterable()
+                    .HtmlAttributes(new {style = "width:100%;"})
+                    .Scrollable()
+    )
+</div>
